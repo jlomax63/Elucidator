@@ -1,0 +1,1088 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:afn="http://jena.hpl.hp.com/ARQ/function#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:sm="http://topbraid.org/sparqlmotion#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://topbraid.org/functions-smf">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://spinrdf.org/spl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.3</owl:versionInfo>
+  </owl:Ontology>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#regex">
+    <rdfs:comment>An input string is converted into a result string by applying a match and replacement expressions.
+For example, the input string "semantic web" with the match expression "([A-z]+) ([A-z]+)" and the replacement expression "The $1 life" returns the string "The semantic life".
+An optional input string is returned, if no match occurs. If this string is empty and no match occurs, then the result string is unbound.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The replacement expression</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >regex</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The optional string returned as result string if no match occurs. If this string is empty and no match occurs, then the result string is unbound.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg4"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#lowerTitleCase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lowerTitleCase</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Converts an input string into lower title case. 
+For example, "semantic web" becomes "semantic Web".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#countMatches">
+    <rdfs:comment>Counts all occurences of a triple pattern based on subject (?arg1), predicate (?arg2) and object (?arg3) input. Any of those can be unbound variables.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the predicate in the match triple, or an unbound variable for a wildcard</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the object in the match triple, or an unbound variable for a wildcard</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >countMatches</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the subject in the match triple, or an unbound variable for a wildcard</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#if">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the result if the condition is false</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the result if the condition is true</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The condition that shall be evaluated. If true then return the ?arg2 argument, otherwise return ?arg3.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >if</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:comment>Evaluates a condition and depending on the outcome either returns the true argument or the false argument. This is comparable to Java's ... ? ... : ... notation.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#lowerCamelCase">
+    <rdfs:comment>Converts an input string into lower camel case.
+For example, "semantic web" becomes "semanticWeb".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lowerCamelCase</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#parseDate">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >parseDate</rdfs:label>
+    <rdfs:comment>Converts a string in a semi-structured format into a xsd:date, xsd:dateTime or xsd:time literal. The input string must be in a given template format, e.g. "yyyy.MM.dd G 'at' HH:mm:ss z" for strings such as 2001.07.04 AD at 12:08:56 PDT.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input text</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The template of the input string. This must conform to the pattern language implemented by the Java SimpleDateFormat class (http://java.sun.com/j2se/1.4.2/docs/api/java/text/SimpleDateFormat.html).</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#maxCardinality">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the property to get the cardinality of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#OntologyFunctions"/>
+    <rdfs:comment>Gets the maximum cardinality of a property at a class. The function checks for locally defined owl:maxCardinality restrictions on the class or its superclasses. If none is found, it will check if the property is functional and, if so, return 1. Otherwise it will return null.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maxCardinality</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the class to get the cardinality at</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#trim">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Creates a new string value by trimming an input string. Leading and trailing whitespaces are deleted.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the text to trim</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trim</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#buildStringFromRDFList">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the separator to insert between each string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the template string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the head of the rdf:List to convert to string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Builds a string from the members of a given rdf:List (?arg1). The function iterates over all members of the list (which must be well-formed according to the RDF syntax rules). For each member, a string template (?arg2) is applied where the expression {?member} will be substituted with the current member. Optionally, a separator (?arg3) can be inserted between the list members in the result string, e.g. to insert a comma.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >buildStringFromRDFList</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#deriveURI">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment>Constructs a new URI resource by concatenating a string constant {?arg2} to the URI of a given resource {?arg1}. Example:
+
+smf:deriveURI(owl:Thing, "-Child") = owl:Thing-Child</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the URI resource that constitutes the left part of the new URI</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the additional string that will be appended to the right of {?arg1}</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body>
+      <sp:Select>
+        <sp:where rdf:parseType="Collection">
+          <sp:Let>
+            <sp:variable>
+              <sp:Variable rdf:about="http://spinrdf.org/sp#_uri">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >uri</sp:varName>
+              </sp:Variable>
+            </sp:variable>
+            <sp:expression>
+              <smf:resource>
+                <sp:arg1>
+                  <fn:string-join>
+                    <sp:arg1>
+                      <xsd:string>
+                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                      </xsd:string>
+                    </sp:arg1>
+                    <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                  </fn:string-join>
+                </sp:arg1>
+              </smf:resource>
+            </sp:expression>
+          </sp:Let>
+        </sp:where>
+        <sp:resultVariables rdf:parseType="Collection">
+          <sp:Variable rdf:about="http://spinrdf.org/sp#_uri"/>
+        </sp:resultVariables>
+      </sp:Select>
+    </spin:body>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >deriveURI</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#titleCase">
+    <rdfs:comment>Converts an input string to title case.
+For example, "germany" becomes "Germany".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >titleCase</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <rdf:Description>
+    <rdf:first rdf:resource="http://topbraid.org/sparqlmotionfunctions#class"/>
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://topbraid.org/sparqlmotionfunctions#property"/>
+    </rdf:rest>
+  </rdf:Description>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#lastIndexOf">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lastIndexOf</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the string to search in</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Gets the last index of the first occurence of a certain substring in a given search string. Returns null if the substring is not found.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the sub string to search for</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#convertSPINRDFToString">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Query"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the root of the SPIN RDF query</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Converts a SPARQL query encoded in SPIN RDF format to a SPARQL string in textual form. The SPIN query must be well-formed in the context graph at execution time, and the provided argument must be the root of the expression (e.g., an instance of sp:Select).</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >true to embed HTML markup into the output</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >convertSPINRDFToString</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#random">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MathematicalFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >random</rdfs:label>
+    <rdfs:comment>Creates a random xsd:double between 0 and 1.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#countResults">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment>Runs an nested SPARQL query and counts its results. Note that the nested query will reuse the variable bindings from its surrounding.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >countResults</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the SPARQL select query string to execute</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#definedIn">
+    <rdfs:comment>Returns the base URI of the ontology that the input resource is defined in.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#OntologyFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The input resource</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >definedIn</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#definedInFile">
+    <rdfs:comment>Returns the workspace file path of the ontology that the input resource is defined in, if it exists.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#OntologyFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The input resource</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >definedInFile</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#trace">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trace</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the template string to print</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Same as smf:buildString, but with the side effect of printing the string into the Error Log of TopBraid Composer. This can be used as an efficient debugging aid. The result of the function is the evaluated template.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#upperCase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >upperCase</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Converts an input string into upper case. 
+For example, "semantic web" becomes "SEMANTIC WEB".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#geoCode">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >geo code</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The address as a raw string, e.g. "1600 Amphitheatre Parkway, Mountain View, CA".</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Attempts to convert a textual address (?arg1) into a comma-separated pair of lat/long values. The implementation currently uses the Google API (http://code.google.com/apis/maps/documentation/geocoding/) to do the actual work.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >An (optional) country code such as "au" to aid the search.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#duration">
+    <rdfs:comment>Returns the duration between two dates in terms of one of the given "types". "type" is a string constant, which indicates the type of duration. It can be:
+String value - Explanation
+ms - milliseconds
+s - seconds
+m - minutes
+h - hours
+d - days
+mon - months
+y - years
+c - centuries</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The begin date</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >duration</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The end date</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The type of the duration: It can be one of: "ms", "s", "m", "h", "d", "mon", "y", "c".</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#minCardinality">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the class to get the minimum cardinality at</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#OntologyFunctions"/>
+    <rdfs:comment>Gets the minimum cardinality of a property at a class. The function checks for locally defined owl:minCardinality restrictions on the class or its superclasses. If none is found, it will return null.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >minCardinality</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the property to get the cardinality of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#dbpedia">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dbpedia</rdfs:label>
+    <rdfs:comment>Attempts to get a DBPedia page for a string.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the label to get a DBpedia resource for</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#subString">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the start index (0 is the first character); if not bound, then the function will return null</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Extracts a substring from an input string. This is similar to afn:substr but more robust against null values.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >subString</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the end index; if not bound, use the length of text - 1</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#buildURI">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >buildURI</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The URI template such as "&lt;http://my.com/Instance-{?index}&gt;". If the template contains a full URI, then it must be wrapped by &lt;...&gt;, otherwise the system will treat it as a qname.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Constructs a new URI resource by inserting the existing variable bindings into a template. The template can mention variable names in curly braces, such as "my:Instance-{?index}" would create "my:Instance-42" is ?index has the value 42. As an alternative to variable names, the function can take additional arguments after the template, the variables of which can be accessed using {?1}, {?2} etc. For example: smf:buildURI("my:Instance-{?1}-{?2}", ?day, ?month) would insert day and month at places {?1} and {?2}.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#camelCase">
+    <rdfs:comment>Converts an input string into camel case. 
+For example, "semantic web" becomes "SemanticWeb".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >camelCase</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#buildString">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the template string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Constructs a new string by inserting the existing variable bindings into a template. The template can mention variable names in curly braces, such as "Hello {?index}" would create "Hello 42" is ?index has the value 42. As an alternative to variable names, the function can take additional arguments after the template, the variables of which can be accessed using {?1}, {?2} etc. For example: smf:buildString("Hello-{?1}-{?2}", ?day, ?month) would insert day and month at places {?1} and {?2}.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >buildString</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#hasAllObjects">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#BooleanFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Checks whether a given subject/predicate combination has all values enumerated from a given rdf:List. In other words, for each member ?object of the rdf:List, the triple (?arg1, ?arg2, ?object) must be in the model to return true. If the list is empty, true will also be returned.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the match subject</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the match predicate</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >an rdf:List containing the match objects</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAllObjects</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#isBound">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Checks whether the input expression evaluates to a bound variable. This is similar to the built-in bound function of SPARQL, but bound expects a variable as argument and therefore can not be used to evaluate arbitrary nested functions.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isBound</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#BooleanFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the argument or variable to evaluate</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#htmlString">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Converts an input string to an HTML string - i.e. special characters are converted.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >htmlString</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#currentTimeMillis">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    <rdfs:comment>Returns the current time in milliseconds. See System.currentTimeMillis() in Java.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >currentTimeMillis</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#setLanguage">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >setLanguage</rdfs:label>
+    <rdfs:comment>Creates a new string literal with a given language from an existing value. For example, smf:setLanguage("House", "en") becomes "House"@en.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the language of the result literal; may be empty to delete any existing language</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the text to set the language of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#lowerCase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lowerCase</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The match expression</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the input string</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Converts an input string into lower case. 
+For example, "SEMANTIC Web" becomes "semantic web".
+An optional matching expression can be given to only convert the matched characters.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#exec">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >exec</rdfs:label>
+    <rdfs:comment>Executes a named system command with an optional number of arguments.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The command to execute.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#prefix">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Gets the prefix of a given resource (?arg1). Returns nothing if the argument is a URI that cannot be abbreviated with a prefix.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The resource to get the prefix of.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body>
+      <sp:Select>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A0">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >prefix</sp:varName>
+          </rdf:Description>
+        </sp:resultVariables>
+        <sp:where rdf:parseType="Collection">
+          <sp:Let>
+            <sp:expression>
+              <smf:qname>
+                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+              </smf:qname>
+            </sp:expression>
+            <sp:variable>
+              <rdf:Description rdf:nodeID="A1">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >qname</sp:varName>
+              </rdf:Description>
+            </sp:variable>
+          </sp:Let>
+          <sp:Filter>
+            <sp:expression>
+              <sp:not>
+                <sp:arg1>
+                  <fn:starts-with>
+                    <sp:arg2>&lt;</sp:arg2>
+                    <sp:arg1 rdf:nodeID="A1"/>
+                  </fn:starts-with>
+                </sp:arg1>
+              </sp:not>
+            </sp:expression>
+          </sp:Filter>
+          <sp:Let>
+            <sp:expression>
+              <smf:indexOf>
+                <sp:arg2>:</sp:arg2>
+                <sp:arg1 rdf:nodeID="A1"/>
+              </smf:indexOf>
+            </sp:expression>
+            <sp:variable>
+              <rdf:Description rdf:nodeID="A2">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >sep</sp:varName>
+              </rdf:Description>
+            </sp:variable>
+          </sp:Let>
+          <sp:Let>
+            <sp:expression>
+              <afn:substr>
+                <sp:arg3 rdf:nodeID="A2"/>
+                <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:arg2>
+                <sp:arg1 rdf:nodeID="A1"/>
+              </afn:substr>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A0"/>
+          </sp:Let>
+        </sp:where>
+      </sp:Select>
+    </spin:body>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >prefix</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#invoke">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >invoke</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The URI resource defining the function to call.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://spinrdf.org/spin#Function"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Calls another SPARQL function specified by a URI resource (?arg1), with additional arguments passed into from ?arg2 onwards. This can be used to dynamically call functions, the URI of which is now known statically. The result of the function call will be passed on as result of the invoke call.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#firstBound">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >first bound</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Evaluates the expressions starting with the first argument, and returns the first result that is bound. This can be used to implement complex if ... then ... else if ... else if ... else patterns. The implementation does lazy evaluation, i.e. the arguments will only be evaluated if needed. The function declares no arguments, but any number of arguments is allowed at run time.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#localRange">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the class to get the local range at</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#OntologyFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >localRange</rdfs:label>
+    <rdfs:comment>Gets the local range of a property at a class. The function first checks for locally defined owl:allValuesFrom restrictions on the class or its superclasses. If none is found, it will try to use the global rdfs:range of the property. If this does not exist either, it will return null.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the property to get the range of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#convertRDFToText">
+    <rdfs:comment>Converts the current RDF graph to text. Optionally the serialization of the RDF graph as text can be given. By default, the serialization is N3.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >convertRDFToText</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The optional serialization format of the output. By default, it is N3. This value should be an instance of "sml:RDFSerialization" from sparqlmotionlib.owl ontology. For example: sml:RDFXML.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#generateLabel">
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >An (optional) string template, that may include any of the following special commands:
+- {date} inserts the current date
+- {name} inserts the generated label
+- {name:lower-case} inserts the label as lower case
+- {name:upper-case} inserts the label as upper case
+- {name:title-case} insert the label as title case
+Any other characters will be inserted as they appear.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Can be used to derive a "human-readable" label from a resource URI or local name. For example, with the input ex:firstName this will return "first name". The result can then be used in the rest of the SPARQL query, e.g. to create an rdfs:label.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A URI resource or string literal that is used to generate a label. For URI resources, the local name will be used, the full string otherwise.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >generate label</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#cast">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the "old" literal that shall be converted</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the target datatype, e.g. xsd:integer</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cast</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <rdfs:comment>Creates a new literal from an existing literal, but with a different datatype. This can, for example, be used to convert between floating point values and int values.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#generateUUID">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Generates a new unique ID as a string literal. This is often useful for creating "random" URIs and other identifiers.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >generateUUID</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#name">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Gets a human-readable string representation from an RDF node. If it's a literal, the function will return the literal's lexical text. If it's a resource the system will use the rdfs:label (if exists) or otherwise use the qname.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >name</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the node (literal or resource) that shall be rendered into a string</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spl:Argument rdf:nodeID="A3">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >the sub string to search for</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A4">
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >the URI resource to get the qname of</rdfs:comment>
+  </spl:Argument>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#indexOf">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the string to search in</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Gets the index of the first occurence of a certain substring in a given search string. Returns null if the substring is not found.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indexOf</rdfs:label>
+    <spin:constraint rdf:nodeID="A3"/>
+  </spin:Function>
+  <spl:Argument rdf:nodeID="A5">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >the URI to convert</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spl:Argument>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#resource">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >resource</rdfs:label>
+    <rdfs:comment>Converts a given URI string to an RDF resource with that URI.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A5"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://topbraid.org/sparqlmotionfunctions#qname">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >qname</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Gets the qname of a resource, using the defined namespace abbreviations. In contrast to the official specs, this function will drop the : character if it's the first character in the string. If the resource does not have a suitable prefix abbreviation, the function will return the URI wrapped by &lt;...&gt;.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A4"/>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

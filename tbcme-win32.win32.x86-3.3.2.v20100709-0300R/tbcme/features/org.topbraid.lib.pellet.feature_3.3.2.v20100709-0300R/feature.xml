@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.pellet.feature"
+      label="org.topbraid.lib.pellet.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant, Inc.">
+
+   <description>
+      Pellet library and dependent functionality in TopBraid.
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+   </copyright>
+
+   <license>
+      About This Content
+
+March 2010
+End User License Agreement
+
+TopQuadrant makes available all content in this plug-in (“Content”). Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the End User License Agreement (“EULA”). This EULA sets forth the terms applicable to use and licensing by the customer (“Customer”) of software provided by TopQuadrant, Inc. (“TopQuadrant”). It is important that you read this document before installing or using the software provided by TopQuadrant (the “Software”) and any associated documentation or materials provided by TopQuadrant (“Documentation”). A copy of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then Customer is not licensed to use the Software, and you must destroy any downloaded copies of the Software in your or Customer‘s possession or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf to download and print a copy of this EULA for your records.
+Third Party Content
+
+The Content includes items that have been sourced from third parties as set out below.
+Pellet - Java based OWL-DL reasoner
+
+The plug-in is accompanied by software, Pellet - Java based OWL-DL reasoner (“Pellet”) v1.5.2, developed by Clark &amp; Parsia, LLC. It does NOT include the following files from the original Pellet distribution:
+
+    * Jena: antlr-2.7.5.jar, icu4j_3_4.jar, junit.jar, xercesImpl.jar, arq-extra.jar, iri.jar, log4j-1.2.12.jar, xml-apis.jar, arq.jar, jena.jar, lucene-core-2.0.0.jar, commons-logging-1.1.jar, jenatest.jar, stax-api-1.0.jar, concurrent.jar, json.jar, wstx-asl-3.0.0.jar
+    * Jetty: jetty.jar
+    * JUnit: junit.jar
+    * pellet.jar
+    * servlet.jar
+
+but DOES include the following files which are located in the root of the plug-in:
+
+    * OWL API: commons-lang-2.2.jar, owlapi-functionalparser.jar, owlapi-owlxmlparser.jar, owlapi-apibinding.jar, owlapi-functionalrenderer.jar, owlapi-owlxmlrenderer.jar, owlapi-api.jar, owlapi-impl.jar, owlapi-rdfapi.jar, owlapi-change.jar, owlapi-krssparser.jar, owlapi-rdfxmlparser.jar, owlapi-debugging.jar, owlapi-metrics.jar, owlapi-rdfxmlrenderer.jar, owlapi-dig1_1.jar, owlapi-oboparser.jar, owlapi-util.jar
+    * XSDLib: relaxngDatatype.jar, xsdlib.jar
+
+Your use of Pellet is subject to the terms and conditions of the MIT License. A copy of the license can be found in /org.topbraid.lib.pellet/about_files/pellet.LICENSE.txt and is also available at http://www.opensource.org/licenses/mit-license.php.
+
+The modified source code for the Pellet is included in the folder(s) listed below:
+
+    * /org.topbraid.lib.pellet/src
+   </license>
+
+   <plugin
+         id="org.topbraid.lib.pellet"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.logging"
+         download-size="0"
+         install-size="0"
+         version="1.0.4.v200904062259"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.lib.jena"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.log4j"
+         download-size="0"
+         install-size="0"
+         version="1.2.13.v200903072027"
+         unpack="false"/>
+
+   <plugin
+         id="org.junit4"
+         download-size="0"
+         install-size="0"
+         version="4.5.0.v20090824"
+         unpack="false"/>
+
+   <plugin
+         id="org.hamcrest.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.v20090501071000"
+         unpack="false"/>
+
+</feature>

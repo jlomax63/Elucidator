@@ -1,0 +1,22 @@
+[cancerName]	datatypeName	platformID	genomicCenterName	FileCount
+ov	mirna	h-mirna_8x15kv2	University Of North Carolina at Chapel Hill	7340
+ov	transcriptome	agilentg4502a_07_3	University Of North Carolina at Chapel Hill	6889
+gbm	mirna	h-mirna_8x15k	University Of North Carolina at Chapel Hill	3027
+gbm	transcriptome	agilentg4502a_07_2	University Of North Carolina at Chapel Hill	2660
+gbm	cna	hg-cgh-244a	Memorial Sloan Kettering Cancer Center	2255
+gbm	transcriptome	ht_hg-u133a	Broad Institute of MIT and Harvard	2180
+ov	transcriptome	ht_hg-u133a	Broad Institute of MIT and Harvard	1779
+ov	cna	cgh-1x1m_g4447a	Memorial Sloan Kettering Cancer Center	1773
+gbm	transcriptome	agilentg4502a_07_1	University Of North Carolina at Chapel Hill	1499
+ov	methylation	humanmethylation27	Johns Hopkins University / University Of Southern California	1469
+gbm	cna	hg-cgh-244a	Harvard	1068
+ov	cna	hg-cgh-244a	Harvard	472
+gbm	methylation	humanmethylation27	Johns Hopkins University / University Of Southern California	373
+ov	transcriptome	agilentg4502a_07_2	University Of North Carolina at Chapel Hill	342
+ov	cna	hg-cgh-244a	Memorial Sloan Kettering Cancer Center	174
+gbm	mirna	h-mirna_8x15kv2	University Of North Carolina at Chapel Hill	141
+lusc	transcriptome	agilentg4502a_07_3	University Of North Carolina at Chapel Hill	72
+lusc	methylation	humanmethylation27	Johns Hopkins University / University Of Southern California	47
+lusc	cna	cgh-1x1m_g4447a	Memorial Sloan Kettering Cancer Center	46
+gbm	methylation	illuminadnamethylation_oma002_cpi	Johns Hopkins University / University Of Southern California	28
+gbm	methylation	illuminadnamethylation_oma003_cpi	Johns Hopkins University / University Of Southern California	20

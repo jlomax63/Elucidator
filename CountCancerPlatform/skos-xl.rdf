@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.w3.org/TR/skos-reference/skos-xl.rdf" > 
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#labelRelation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:scopeNote xml:lang="en">skosxl:labelRelation is not intended to be used directly, but rather as the basis for a design pattern which can be refined for more specific labeling scenarios.</skos:scopeNote>
+    <skos:definition xml:lang="en">The property skosxl:labelRelation is used for representing binary ('direct') relations between instances of the class skosxl:Label.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">label relation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#prefLabel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    <skos:definition xml:lang="en">The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">preferred label</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#literalForm">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">The range of skosxl:literalForm is the class of RDF plain literals.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource.</rdfs:comment>
+    <skos:definition xml:lang="en">The property skosxl:literalForm is used to give the literal form of an skosxl:Label.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">literal form</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#literalForm"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#hiddenLabel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">If C skosxl:hiddenLabel L and L skosxl:literalForm V, then C skos:hiddenLabel V.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#hiddenLabel"/>
+    <skos:definition xml:lang="en">The property skosxl:hiddenLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:hiddenLabel.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">hidden label</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#Label">
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:definition xml:lang="en">A special class of lexical entities.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">Label</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl">
+    <dct:description xml:lang="en">An RDF vocabulary extending SKOS and allowing the description and linking of lexical entities.</dct:description>
+    <dct:contributor>Participants in W3C's Semantic Web Deployment Working Group.</dct:contributor>
+    <dct:title xml:lang="en">SKOS XL Vocabulary</dct:title>
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2008/05/skos"/>
+    <dct:creator>Sean Bechhofer</dct:creator>
+    <dct:creator>Alistair Miles</dct:creator>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment xml:lang="en">If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    <skos:definition xml:lang="en">The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel.</skos:definition>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+    <rdfs:label xml:lang="en">alternative label</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

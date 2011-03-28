@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:tcga="http://mdanderson.org/tcga#"
+>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#usr-local-data-data03-tcga01-anonsite-tcga-tumor-gbm-cgcc-hms-harvard-edu-hg-cgh-244a-cna-hms-harvard-edu_GBM-HG-CGH-244A-10-2-0TCGA-06-0192-01B-01D-0336-02_BioSizing-tsvFileLocation">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#FileLocation"/>
+    <tcga:has_directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.10.2.0</tcga:has_directory>
+    <tcga:has_file>TCGA-06-0192-01B-01D-0336-02_BioSizing.tsv</tcga:has_file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_file">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_directory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#FileLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="floc1"/>
+    <rdfs:subClassOf rdf:nodeID="floc2"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_directory"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_file"/>
+  </rdf:Description>
+</rdf:RDF>
+

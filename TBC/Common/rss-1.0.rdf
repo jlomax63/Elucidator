@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://purl.org/rss/1.0/schema.rdf" > 
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/item">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>An RSS item.</rdfs:comment>
+    <rdfs:label>Item</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/description">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/description"/>
+    <rdfs:comment>A short text description of the subject.</rdfs:comment>
+    <rdfs:label>Description</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/name">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>The text input field's (variable) name.</rdfs:comment>
+    <rdfs:label>Name</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/channel">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>An RSS information channel.</rdfs:comment>
+    <rdfs:label>Channel</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/url">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+    <rdfs:comment>The URL of the image to used in the 'src' attribute of the channel's image tag when rendered as HTML.</rdfs:comment>
+    <rdfs:label>URL</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/link">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+    <rdfs:comment>The URL to which an HTML rendering of the subject will link.</rdfs:comment>
+    <rdfs:label>Link</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/items">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>Points to a list of rss:item elements that are members of the subject channel.</rdfs:comment>
+    <rdfs:label>Items</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/textinput">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>An RSS text input.</rdfs:comment>
+    <rdfs:label>Text Input</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/image">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:comment>An RSS image.</rdfs:comment>
+    <rdfs:label>Image</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/rss/1.0/title">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/rss/1.0/"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/title"/>
+    <rdfs:comment>A descriptive title for the channel.</rdfs:comment>
+    <rdfs:label>Title</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

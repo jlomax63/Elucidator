@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#"
+   xmlns:tcga="http://mdacc.org/TCGAArchive#"
+>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#platformIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#snpPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>snp</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#ArchiveDownloadName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platV1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/TCGAArchive#hasName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#CreationDateTime2009-04-20">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#DateTime"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#CreationDateTime"/>
+    <tcga:dateTime>2009-04-20</tcga:dateTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationgenome_wide_snp_6">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#genome_wide_snp_6PlatformIdentifier"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationgenome_wide_snp_6"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#snpPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#cnaPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#lohPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#CreationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#DateTime"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformIdentifier">
+    <rdfs:subClassOf rdf:nodeID="platid1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#MicroarrayPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#tracerelPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#tracerelPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationwhg-4x44K_g4112f">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#whg-4x44K_g4112fPlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationwhg-4x44K_g4112f"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationabi">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#abiPlatformIdentifier"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationabi"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#mutationPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#tracerelPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#illuminadnamethylation_oma003_cpiPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>illuminadnamethylation_oma003_cpi</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationhuex-1_0-st-v2">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#huex-1_0-st-v2PlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationhuex-1_0-st-v2"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#exonPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#abiPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>abi</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformDatatype">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:nodeID="platdt1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#MicroarrayPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#hasValidPlatformDatatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/TCGAArchive#validPlatformDatatypeOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchivePackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#snpPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#snpPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#cnaPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>cna</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#LabelingPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#LabelingPackage"/>
+    <tcga:hasName>LabelingPackage1</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#agilentg4502a_07_1PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>agilentg4502a_07_1</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#lohPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#lohPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platV2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/TCGAArchive#platformIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/JimLomax">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:firstName>Jim</foaf:firstName>
+    <foaf:surname>Lomax</foaf:surname>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#TemporalPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#TemporalPackage"/>
+    <tcga:hasName>TemporalPackage1</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#whg-4x44K_g4112fPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>whg-4x44K_g4112f</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationh-mirna_8x15k">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#h-mirna_8x15kPlatformIdentifier"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationh-mirna_8x15k"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#mirnaPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platid1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchiveDownloadName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#LabelingPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationhumanhap550">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#humanhap550PlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationhumanhap550"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#snpPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#cnaPlatformDatatype"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#lohPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#methylationPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#methylationPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platdt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#genome_wide_snp_6PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>genome_wide_snp_6</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationagilentg4502a_07_1">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#agilentg4502a_07_1PlatformIdentifier"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationagilentg4502a_07_1"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidation">
+    <rdfs:subClassOf rdf:nodeID="platV2"/>
+    <rdfs:subClassOf rdf:nodeID="platV3"/>
+    <rdfs:subClassOf rdf:nodeID="platV1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#MicroarrayPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#validPlatformDatatypeOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationilluminadnamethylation_oma003_cpi">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#illuminadnamethylation_oma003_cpiPlatformIdentifier"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationilluminadnamethylation_oma003_cpi"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#methylationPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationhg-cgh-244a">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#hg-cgh-244aPlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationhg-cgh-244a"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#cnaPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#exonPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>exon</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#MicroarrayPackage">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationilluminadnamethylation_oma002_cpi">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#illuminadnamethylation_oma002_cpiPlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationilluminadnamethylation_oma002_cpi"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#methylationPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platV3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/TCGAArchive#hasValidPlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#dateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#CreationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/TCGAArchive#creationDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#mutationPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>mutation</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#DateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="dt1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#TemporalPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#illuminadnamethylation_oma002_cpiPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>illuminadnamethylation_oma002_cpi</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#hg-cgh-244aPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>hg-cgh-244a</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformValidationagilentg4502a_07_2">
+    <tcga:platformIdentifier rdf:resource="http://mdacc.org/TCGAArchive#agilentg4502a_07_2PlatformIdentifier"/>
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidation"/>
+    <tcga:hasName rdf:resource="http://mdacc.org/TCGAArchive#PlatformValidationagilentg4502a_07_2"/>
+    <tcga:hasValidPlatformDatatype rdf:resource="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#humanhap550PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>humanhap550</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#exonPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#exonPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#lohPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>loh</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#cnaPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#cnaPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchivePackage1">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#ArchivePackage"/>
+    <tcga:hasName>ArchivePackage1</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformDatatypeName">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#LabelingPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#creationDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://mdacc.org/TCGAArchive#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/TCGAArchive#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#LabelingPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <tcga:hasName rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#mutationPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#mutationPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#mirnaPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#mirnaPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#mirnaPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>mirna</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#transcriptomePlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>transcriptome</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#huex-1_0-st-v2PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>huex-1_0-st-v2</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#MicroarrayPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#MicroarrayPackage"/>
+    <tcga:hasName>MicroarrayPackage1</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#TemporalPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#methylationPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>methylation</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#h-mirna_8x15kPlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>h-mirna_8x15k</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#tracerelPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformDatatypeName"/>
+    <skos-xl:literalForm>tracerel</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#agilentg4502a_07_2PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformIdentifier"/>
+    <dc:identifier>agilentg4502a_07_2</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#TCGAArchiveDownload2009-04-20ArchiveDownload">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#ArchiveDownload"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#TCGAArchiveDownload2009-04-20ArchiveDownloadName"/>
+    <tcga:creationDate rdf:resource="http://mdacc.org/TCGAArchive#CreationDateTime2009-04-20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchiveDownload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#TCGAArchiveDownload2009-04-20ArchiveDownloadName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#ArchiveDownloadName"/>
+    <skos-xl:literalForm>TCGAArchiveDownload2009-04-20</skos-xl:literalForm>
+  </rdf:Description>
+</rdf:RDF>

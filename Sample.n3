@@ -1,0 +1,1360 @@
+# Saved by TopBraid on Wed Feb 23 17:34:44 CST 2011
+# baseURI: http://mdacc.org/Sample
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/Clinical
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+
+@prefix archive:  <http://mdacc.org/Archive#> .
+@prefix clincal:  <http://mdacc.org/Clinical#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix microarray:  <http://mdacc.org/Microarray#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sample:  <http://mdacc.org/Sample#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix temporal:  <http://mdacc.org/Temporal#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+clincal:excisedFrom
+      rdf:type owl:ObjectProperty ;
+      rdfs:range clincal:AnatomicSite ;
+      label:creator foaf:JimLomax .
+
+clincal:finding
+      label:creator foaf:JimLomax .
+
+clincal:verificationByBCR
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:boolean .
+
+<http://mdacc.org/Sample>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Clinical> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+sample:Absorbance260Nm
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of 260nm light that is not transmitted through a substance or solution."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:Absorbance260To280Nm
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding entity in the BioPortal for 260-280 nm absorbance value."^^xsd:string , "This ratio reveals the purity of nucleic acids. The A260A280 ratio is a quality assurance test on an analyte, post-extraction. The ratio will indicate the purity of the analyte."^^xsd:string ;
+      rdfs:subClassOf sample:PurityMeasurment ;
+      dc:creator foaf:JimLomax .
+
+sample:Absorbance280Nm
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of 280nm light that is not transmitted through a substance or solution."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:Aliquot
+      rdf:type owl:Class ;
+      rdfs:comment "An Aliquot is a biological entity and it represents a measurable component of a biological sample,  generally of one genomic type, such as RNA or DNA. An Aliquot is considered a part of a biological sample but not in the same capacity as a Portion. A Portion is a subdivision of the biological sample involving all of the samples constituents, an Aliquot is just one constituent. "^^xsd:string ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:aliquotId ;
+                owl:someValuesFrom sample:AliquotId
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:AliquotAmount
+      rdf:type owl:Class ;
+      rdfs:comment "An aliquot amount is composed of quantity and units. Since the quantity and units associated with aliquot quantities may contain further definitions/restrictions/labels, they will be constructed as concepts themselves."^^xsd:string ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:quantity ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:units ;
+                owl:someValuesFrom sample:AliquotQuantityUnits
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:AliquotId
+      rdf:type owl:Class ;
+      rdfs:comment "Aliquot Id is a concept for uniquely identifying an Aliquot.  "^^xsd:string ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
+      dc:creator foaf:JimLomax .
+
+sample:AliquotQuantity
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity measurement of an aliquot; perspectives may vary on how quantities are represented, particularly units of measurement."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:AliquotQuantityUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:Units .
+
+sample:Analyte
+      rdf:type owl:Class ;
+      rdfs:comment "A substance or chemical constituent determined (identified) from an analytical procedure. The substance can  refer to a solute in solvent or one substance in the presence of a hetergeneous mixture of substances."^^xsd:string , "For example in blood glucose testing, the analyte is glucose."^^xsd:string , "In TCGA context, an Analyte is created from (exactly) one Portion"^^xsd:string ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
+      dc:creator foaf:JimLomax .
+
+sample:BCRAliquotBarcode1_AliquotId
+      rdf:type sample:AliquotId .
+
+sample:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+sample:BloodDerivedNormal_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:BloodDerivedNormal_SampleTypeLabel .
+
+sample:BloodDerivedTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:BloodDerivedNormal_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:BuccalCellLineControlTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:CellLineControl_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:BuccalCellNormalTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:BuccalCellNormal_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:BuccalCellNormal_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:BuccalCellNormal_SampleTypeLabel .
+
+sample:C20_FreezingMethod
+      rdf:type sample:FreezingMethod ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:C20_FreezingMethodLabel .
+
+sample:C80_FreezingMethod
+      rdf:type sample:FreezingMethod ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:C80_FreezingMethodLabel .
+
+sample:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+sample:CellLineControl_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:CellLineControl_SampleTypeLabel .
+
+sample:Concentration
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of a substance per volume or unit of weight."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:ConcentrationUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:Units .
+
+sample:DNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is DNA"^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:TotalRNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:RepliGDNAAnalyte .
+
+sample:DNAAnalyte2_DNAAnalyte
+      rdf:type sample:DNAAnalyte .
+
+sample:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+sample:DNATissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:DNA_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:DNA_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:DNA_SampleTypeLabel .
+
+sample:Dosage
+      rdf:type owl:Class ;
+      rdfs:comment "A quantity of an agent (such as substance or energy) administered, taken, or absorbed at one time."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:DosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:Units ;
+      dc:creator foaf:JimLomax .
+
+sample:DryIce_FreezingMethod
+      rdf:type sample:FreezingMethod ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:DryIce_FreezingMethodLabel .
+
+sample:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+sample:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+sample:EBVImmortalizedNormalAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is Epstein-Barr virus immortalized B cells used as a control group."^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:DNAAnalyte , sample:TotalRNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:RepliGDNAAnalyte .
+
+sample:EBVImmortalizedNormalAnalyte1_EBVImmortalizedNormalAnalyte
+      rdf:type sample:EBVImmortalizedNormalAnalyte .
+
+sample:EBVImmortalizedNormal_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:EBVImmortalizedNormal_SampleTypeLabel .
+
+sample:EBVImmortalizedTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:EBVImmortalizedNormal_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:ExampleTissueSampleID
+      rdf:type sample:TissueSampleID ;
+      dc:identifier "ExampleTissueSampleID12345"^^xsd:string .
+
+sample:ExampleTissueType
+      rdf:type sample:TissueType .
+
+sample:Example_Aliquot
+      rdf:type sample:Aliquot ;
+      clincal:concentration
+              clincal:ThreeM_Concentration ;
+      clincal:volume clincal:AliquotExample_Volume ;
+      label:barcode label:Aliquot1_BCRAliquotBarcode ;
+      temporal:shippedOn temporal:AliquotExample_ShipmentDateTime .
+
+sample:Example_Analyte
+      rdf:type sample:Analyte ;
+      archive:gelImageFileLocation
+              archive:GelImageExample_FileLocation ;
+      clincal:concentration
+              clincal:TenM_Concentration ;
+      clincal:protocol clincal:aDNAPreparation_Protocol ;
+      clincal:purityMeasurement
+              clincal:Example_Absorbance260To280Nm ;
+      clincal:volume clincal:AnalyteExample_Volume ;
+      label:barcode label:Analyte1_BCRAnalyteBarcode ;
+      microarray:well microarray:Example_Well ;
+      sample:aliquot sample:Example_Aliquot .
+
+sample:Example_DNAAnalyte
+      rdf:type sample:DNAAnalyte ;
+      sample:normalTumorGenotypeMatch
+              "false"^^xsd:boolean .
+
+sample:Example_GBMTumorPathology
+      rdf:type sample:GBMTumorPathology ;
+      clincal:anatomicLocation
+              clincal:Brain_BrainAnatomicSite ;
+      clincal:gemistocytePresent
+              "true"^^xsd:boolean ;
+      clincal:indicator clincal:GlialFibrillaryAcideicProtein_Indicator , clincal:MindBomb1Protein_Indicator ;
+      clincal:leptomeningialInvolvement
+              "true"^^xsd:boolean ;
+      clincal:nuclearGrade
+              clincal:Example_NuclearGrade ;
+      clincal:oligodendroglialComponent
+              "false"^^xsd:boolean ;
+      sample:histologicalType
+              clincal:GlioblastomaMultiforme_Glioblastoma ;
+      sample:tissueSample sample:Example_TissueSample .
+
+sample:Example_LungTumorPathology
+      rdf:type sample:LungTumorPathology ;
+      clincal:anatomicLocation
+              clincal:Lung_LungAnatomicSite ;
+      clincal:nuclearGrade
+              clincal:Example_NuclearGrade ;
+      sample:histologicalType
+              clincal:GlioblastomaMultiforme_Glioblastoma ;
+      sample:tissueSample sample:Example_TissueSample .
+
+sample:Example_OctEmbedded
+      rdf:type sample:OctEmbedded ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:value "true"^^xsd:boolean .
+
+sample:Example_OvarianTumorPathology
+      rdf:type sample:OvarianTumorPathology ;
+      clincal:anatomicLocation
+              clincal:Ovary_OvaryAnatomicSite ;
+      clincal:nuclearGrade
+              clincal:Example_NuclearGrade ;
+      sample:histologicalType
+              clincal:OvarianTumor_OvarianTumor ;
+      sample:tissueSample sample:Example_TissueSample .
+
+sample:Example_Portion
+      rdf:type sample:Portion ;
+      clincal:volume clincal:PortionExample_Volume ;
+      clincal:weight clincal:Example_InitialWeight ;
+      label:barcode label:Example_BCRPortionBarcode ;
+      sample:analyte sample:Example_Analyte ;
+      temporal:createdOn temporal:May13_2010_CreationDateTime .
+
+sample:Example_PortionID
+      rdf:type sample:PortionID ;
+      dc:identifier "ExamplePortionID12345"^^xsd:string .
+
+sample:Example_RNAAnalyte
+      rdf:type sample:RNAAnalyte ;
+      sample:ratio28s18s "10.1"^^xsd:float ;
+      sample:rinvalue "8.8"^^xsd:float .
+
+sample:Example_SampleIntermediateDimension
+      rdf:type sample:SampleIntermediateDimension ;
+      clincal:units clincal:Centimeter_LengthUnits ;
+      clincal:value "6.2"^^xsd:string ;
+      label:creator foaf:JimLomax .
+
+sample:Example_SampleLongestDimension
+      rdf:type sample:SampleLongestDimension ;
+      clincal:units clincal:Centimeter_LengthUnits ;
+      clincal:value "10.2"^^xsd:string ;
+      label:creator foaf:JimLomax .
+
+sample:Example_SampleShortestDimension
+      rdf:type sample:SampleShortestDimension ;
+      clincal:units clincal:Centimeter_LengthUnits ;
+      clincal:value "2.2"^^xsd:string ;
+      label:creator foaf:JimLomax .
+
+sample:Example_TissueSample
+      rdf:type sample:TissueSample ;
+      clincal:currentWeight
+              clincal:Example_CurrentWeight ;
+      clincal:excisedFrom clincal:Bladder_BladderAnatomicSite ;
+      clincal:initialWeight
+              clincal:Example_InitialWeight ;
+      clincal:purityMeasurement
+              clincal:Example_Absorbance260To280Nm ;
+      clincal:stage clincal:ExampleStage1_BladderCancerTumorStage ;
+      label:barcode label:Sample1_BCRSampleBarcode ;
+      label:creator foaf:JimLomax ;
+      sample:analyte sample:Example_Analyte ;
+      sample:octEmbedded sample:Example_OctEmbedded ;
+      sample:patient clincal:ExamplePatient_Patient ;
+      sample:portion sample:Example_Portion ;
+      sample:sampleDimension
+              sample:Example_SampleShortestDimension , sample:Example_SampleLongestDimension , sample:Example_SampleIntermediateDimension ;
+      sample:sampleType sample:PrimaryTumor_SampleType ;
+      sample:tissueSampleId
+              sample:ExampleTissueSampleID ;
+      sample:tissueType sample:ExampleTissueType ;
+      sample:tumorPathology
+              sample:Example_TumorPathology , sample:Example_GBMTumorPathology ;
+      temporal:collectedOn
+              temporal:June21_2010_CollectionDateTime ;
+      temporal:numberOfDaysToCollection
+              "123"^^xsd:int ;
+      temporal:timeBetweenClampingAndFreezing
+              "12"^^xsd:int ;
+      temporal:timeBetweenExcisionAndFreezing
+              "11"^^xsd:int .
+
+sample:Example_TumorPathology
+      rdf:type sample:TumorPathology ;
+      clincal:lymphaticInvasion
+              "true"^^xsd:boolean ;
+      clincal:marginsInvolved
+              "false"^^xsd:boolean ;
+      clincal:metastaticIndication
+              clincal:Malignant_MetastaticIndication ;
+      clincal:numberOfLymphNodesExamined
+              "12"^^xsd:string ;
+      clincal:numberOfLymphNodesExaminedPositive
+              "11"^^xsd:string ;
+      clincal:numberOfRegionalLymphNodesExamined
+              10 ;
+      clincal:numberOfRegionalLymphNodesExaminedPositive
+              3 ;
+      clincal:venousInvasion
+              "false"^^xsd:boolean ;
+      clincal:verificationByBCR
+              "false"^^xsd:boolean ;
+      sample:tissueSample sample:Example_TissueSample .
+
+sample:Example_Weight
+      rdf:type sample:Weight ;
+      sample:units sample:Pounds_WeightUnits .
+
+sample:FreezingMethod
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:PreparationMethod ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:FreezingMethodLabel
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+sample:GBMTumorPathology
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TumorPathology ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty clincal:anatomicLocation ;
+                owl:someValuesFrom clincal:BrainAnatomicSite
+              ] .
+
+sample:GenomePlexAmplifiedDNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question  is DNA collected from whole genome amplification by GenomePlex’s chromatin imunoprecipitation."^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:DNAAnalyte , sample:TotalRNAAnalyte , sample:RepliGDNAAnalyte .
+
+sample:GenomePlexAmplifiedDNAAnalyte1_GenomePlexAmplifiedDNAAnalyte
+      rdf:type sample:GenomePlexAmplifiedDNAAnalyte .
+
+sample:GenomePlexAmplifiedDNATissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:GenomePlexAmplified_DNASampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:GenomePlexAmplified_DNASampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:GenomePlexAmplifiedDNA_SampleTypeLabel .
+
+sample:Gray_DosageUnits
+      rdf:type sample:RadiationDosageUnits .
+
+sample:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              sample:DurationDescription_30Days .
+
+sample:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              sample:Patient1Birth_Instant .
+
+sample:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              sample:DurationDescription_30Days .
+
+sample:LiquidN2Vapor_FreezingMethod
+      rdf:type sample:FreezingMethod ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:LiquidN2Vapor_FreezingMethodLabel .
+
+sample:LungTumorPathology
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TumorPathology ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty clincal:anatomicLocation ;
+                owl:someValuesFrom clincal:LungAnatomicSite
+              ] .
+
+sample:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+sample:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+sample:Milliliter_VolumeUnits
+      rdf:type sample:VolumeUnits .
+
+sample:Molarity_ConcentrationUnits
+      rdf:type sample:ConcentrationUnits .
+
+sample:Nucleus
+      rdf:type mage:CellularComponent .
+
+sample:OctEmbedded
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:value ;
+                owl:someValuesFrom xsd:boolean
+              ] ;
+      label:designNote "The value is boolean"^^xsd:string ;
+      label:domainQuestion
+              "There are still some questions as to the knowledge represented in this concept."^^xsd:string .
+
+sample:OneM_Concentration
+      rdf:type sample:Concentration ;
+      sample:units sample:Molarity_ConcentrationUnits .
+
+sample:OnePointFiveM_Concentration
+      rdf:type sample:Concentration ;
+      sample:units sample:Molarity_ConcentrationUnits .
+
+sample:Ontology_1
+      rdf:type owl:Ontology .
+
+sample:OvarianTumorPathology
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TumorPathology ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty clincal:anatomicLocation ;
+                owl:someValuesFrom clincal:LungAnatomicSite
+              ] .
+
+sample:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+sample:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+sample:Patient1_PatientId
+      rdf:type clincal:PatientId .
+
+sample:Patient2_PatientId
+      rdf:type clincal:PatientId .
+
+sample:Pill_DosageUnits
+      rdf:type sample:DosageUnits .
+
+sample:Portion
+      rdf:type owl:Class ;
+      rdfs:comment "A portion is a physical subdivision of a sample. Samples are potioned for multiple assays."^^xsd:string ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:hasPortionID ;
+                owl:someValuesFrom sample:PortionID
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:PortionID
+      rdf:type owl:Class ;
+      rdfs:comment "Unique identifier for the portion within its defining context."^^xsd:string ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:Pounds_WeightUnits
+      rdf:type sample:WeightUnits .
+
+sample:PreparationMethod
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:PrimaryBloodDerivedTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:PrimaryBloodDervivedCancer_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:PrimaryBloodDervivedCancer_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:PrimaryBloodDerivedCancer_SampleTypeLabel .
+
+sample:PrimaryTumorTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:PrimaryTumor_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:PrimaryTumor_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:PrimaryTumor_SampleTypeLabel .
+
+sample:Proteasome
+      rdf:type mage:CellularComponent .
+
+sample:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+sample:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+sample:PurityMeasurment
+      rdf:type owl:Class ;
+      rdfs:comment "Measures the purity of a substance."^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:Quantity
+      rdf:type owl:Class ;
+      rdfs:comment "How much of something there is to measure.A quantity is more than a numeric value; it is a numeric value with units of measurement"^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:units ;
+                owl:someValuesFrom sample:Units
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:RNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question  is purified RNA from tissue."^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:DNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:RepliGDNAAnalyte .
+
+sample:RNATissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:RNA_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:RNA_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:RNA_SampleTypeLabel .
+
+sample:RadiationDosage
+      rdf:type owl:Class ;
+      rdfs:comment "The amount of radiation energy that is deposited in a unit mass of material, such as tissues of plants or animal. In RADIOTHERAPY, radiation dosage is expressed in gray units (Gy). In RADIOLOGIC HEALTH, the dosage is expressed by the product of absorbed dose (Gy) and quality factor (a function of linear energy transfer), and is called radiation dose equivalent in sievert units (Sv)."^^xsd:string ;
+      rdfs:subClassOf sample:Dosage ;
+      dc:creator foaf:JimLomax .
+
+sample:RadiationDosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:DosageUnits ;
+      dc:creator foaf:JimLomax .
+
+sample:RecurrentBloodDerivedCancerTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:RecurrentBloodDerivedCancer_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:RecurrentBloodDerivedCancer_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:RecurrentBloodDerivedCancer_SampleTypeLabel .
+
+sample:RecurrentTumorTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:RecurrentTumor_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:RecurrentTumor_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:RecurrentTumor_SampleTypeLabel .
+
+sample:Regimen
+      rdf:type owl:Class ;
+      rdfs:comment "A treatment plan that specifies the dosage, the schedule, and the duration of treatment."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+sample:Regimen1_Regimen
+      rdf:type sample:Regimen .
+
+sample:RepliGDNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is DNA collected from whole genome amplification by Qiagen’s multiple displacement amplification."^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:DNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:TotalRNAAnalyte .
+
+sample:RepliGDNATissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:RepliGDNA_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:RepliGDNA_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:RepliGDNA_SampleTypeLabel .
+
+sample:Resource_2
+      rdf:type rdfs:Resource .
+
+sample:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+sample:SampleClamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleCurrentWeight
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleDimension
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage ;
+      label:creator foaf:JimLomax .
+
+sample:SampleExcision
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleFreezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleInitialWeight
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleIntermediateDimension
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleDimension ;
+      label:creator foaf:JimLomax .
+
+sample:SampleLongestDimension
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleDimension ;
+      label:creator foaf:JimLomax .
+
+sample:SamplePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+sample:SampleShortestDimension
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleDimension ;
+      label:creator foaf:JimLomax .
+
+sample:SampleTumorPathology
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:SampleType
+      rdf:type owl:Class ;
+      rdfs:comment "Sample Type indicates the molecular origin and sometimes the  neoplastic state of the tissue from which the sample was taken."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:SampleTypeLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+sample:Slide
+      rdf:type owl:Class ;
+      rdfs:comment "A flat rectangular piece of glass on which specimens can be mounted for microscopic study."^^xsd:string , "We need a term for the slide analysis results, this concept will hold the quantitative values associated with each slide interpretation. For now I will leave this concept alone and add the slide result properties"^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+sample:Slide1_Slide
+      rdf:type sample:Slide .
+
+sample:SlidesTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:Slides_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:Slides_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:Slide_SampleTypeLabel .
+
+sample:SolidTissueNormalTissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:SolidTissueNormal_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:SolidTissueNormal_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:SolidTissueNormal_SampleTypeLabel .
+
+sample:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+sample:TenM_Concentration
+      rdf:type sample:Concentration ;
+      sample:units sample:Molarity_ConcentrationUnits .
+
+sample:ThreeM_Concentration
+      rdf:type sample:Concentration ;
+      sample:units sample:Molarity_ConcentrationUnits .
+
+sample:TimeBetweenSampleExcisionAndFreezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage .
+
+sample:TissueSample
+      rdf:type owl:Class ;
+      rdfs:comment "A tissue sample is the product of an excision."^^xsd:string , "A tissue sample in the context of TCGA  is a biological sample from a tumor."^^xsd:string ;
+      rdfs:subClassOf clincal:Biospecimen , skos:Concept , sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:portion ;
+                owl:someValuesFrom sample:Portion
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty label:barcode ;
+                owl:someValuesFrom label:BCRSampleBarcode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:tissueType ;
+                owl:someValuesFrom sample:TissueType
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty sample:patient
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty sample:tissueType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:TissueSampleID
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] .
+
+sample:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+sample:TissueType
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:SampleTypeLabel
+              ] .
+
+sample:TotalRNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question  is purified RNA from tissue. It contains all the RNA of the cells. This is in contrast to a  purification containing only mRNA"^^xsd:string ;
+      rdfs:subClassOf sample:Analyte ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:DNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:RepliGDNAAnalyte .
+
+sample:TotalRNATissueSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:TissueSample ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:hasValue sample:TotalRNA_SampleType ;
+                owl:onProperty sample:sampleType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:TotalRNA_SampleType
+      rdf:type sample:SampleType ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:prefLabel label:TotalRNA_SampleTypeLabel .
+
+sample:TumorPathology
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:tissueSample ;
+                owl:someValuesFrom sample:TissueSample
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:designNote "This is a temporary concept to specifically house the TCGA tumor pathology information."^^xsd:string , "This information should be allocated to the a Tumor concept as a collection of properties, however right now we will make a restrictive relationship from Tumor pathology to TissueSample"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:JimLomax , foaf:DawitGebremichael .
+
+sample:TwentyThreeGray_RadiationDosage
+      rdf:type sample:RadiationDosage ;
+      sample:units sample:Gray_DosageUnits .
+
+sample:TwoPills_Dosage
+      rdf:type sample:Dosage ;
+      sample:units sample:Pill_DosageUnits .
+
+sample:UnitOfMeasure
+      rdf:type owl:Class ;
+      rdfs:comment "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:UnitsLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+sample:Units
+      rdf:type owl:Class ;
+      rdfs:comment "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:UnitsLabel
+              ] ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass sample:UnitOfMeasure .
+
+sample:VolumeUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:Units .
+
+sample:Weight
+      rdf:type owl:Class ;
+      rdfs:comment "The vertical force exerted by a mass as a result of gravity"^^xsd:string ;
+      rdfs:subClassOf sample:Quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:WeightUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:Units .
+
+sample:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:hasAccessionNumber .
+
+sample:aliquot
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to an instance of an Aliquot "^^xsd:string ;
+      rdfs:range sample:Aliquot ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf sample:aliquotOf .
+
+sample:aliquotId
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to an instance of an Aliquot Identifier"^^xsd:string , "This property may be used to relate an Aliquot to it's identifier, however it is not limited to this domain usage."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf sample:aliquotIdOf .
+
+sample:aliquotIdOf
+      rdf:type owl:ObjectProperty .
+
+sample:aliquotOf
+      rdf:type owl:ObjectProperty .
+
+sample:allelicProbeAOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:probeSequenceOf .
+
+sample:allelicProbeBOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:probeSequenceOf .
+
+sample:analyte
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:Analyte .
+
+sample:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+sample:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+sample:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+sample:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+sample:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+sample:eosinophilInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+sample:granulocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:hasGenomicSequenceId ;
+      owl:inverseOf sample:accessionNumberOf .
+
+sample:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+sample:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+sample:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+sample:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf sample:patientIdOf .
+
+sample:hasPortionID
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology"^^xsd:string .
+
+sample:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+sample:histologicalType
+      rdf:type owl:ObjectProperty ;
+      rdfs:range clincal:TumorType ;
+      label:creator foaf:JimLomax .
+
+sample:inflammationInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:lymphocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:monocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:necrosisPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:neutrophilInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:normalCellsPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:normalTumorGenotypeMatch
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:boolean ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:octEmbedded
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:OctEmbedded ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:parentOf
+      rdf:type owl:TransitiveProperty .
+
+sample:patient
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string ;
+      owl:inverseOf sample:patientOf .
+
+sample:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf sample:patientIdOf .
+
+sample:patientIdOf
+      rdf:type owl:ObjectProperty .
+
+sample:patientOf
+      rdf:type owl:ObjectProperty .
+
+sample:pcrAmplicationSuccessful
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:boolean ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:percentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:quantity .
+
+sample:place
+      rdf:type owl:ObjectProperty ;
+      label:creator foaf:JimLomax .
+
+sample:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+sample:portion
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology (which also depends on accepting Vial)"^^xsd:string ;
+      owl:inverseOf sample:portionOf .
+
+sample:portionOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:TissueSample ;
+      owl:inverseOf sample:tissueSampleOf .
+
+sample:preparationMethod
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:PreparationMethod ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:probeSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:sequenceOf .
+
+sample:proliferatingCellsQuantity
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:quantity ;
+      dc:creator foaf:JimLomax .
+
+sample:quantity
+      rdf:type rdf:Property ;
+      rdfs:comment "The quantity property related a subject with literal value interpreted as its quantity according to some unit of measurement."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+sample:ratio28s18s
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:rinvalue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:float ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+sample:sampleDimension
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain sample:TissueSample ;
+      rdfs:range sample:SampleDimension ;
+      label:creator foaf:JimLomax .
+
+sample:sampleType
+      rdf:type owl:ObjectProperty .
+
+sample:sequenceOf
+      rdf:type owl:ObjectProperty .
+
+sample:targetSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf sample:sequenceOf .
+
+sample:tissueSample
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:TissueSample ;
+      label:creator foaf:JimLomax .
+
+sample:tissueSampleId
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Tissue Sample into the ontology. Generaly TissueSample IDs embed information about what Organization supplied the sample and often a Patient ID."^^xsd:string .
+
+sample:tissueSampleOf
+      rdf:type owl:ObjectProperty ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf sample:tissueSample .
+
+sample:tissueType
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf sample:tissueTypeOf .
+
+sample:tissueTypeOf
+      rdf:type owl:ObjectProperty .
+
+sample:tumorCellsPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:tumorNucleiPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf sample:percentage ;
+      dc:creator foaf:JimLomax .
+
+sample:tumorPathology
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:TumorPathology ;
+      label:creator foaf:JimLomax .
+
+sample:units
+      rdf:type owl:ObjectProperty ;
+      rdfs:range sample:Units .
+
+sample:value
+      rdf:type owl:DatatypeProperty .
+
+tcga:10ml_AliquotAmount
+      rdf:type sample:AliquotAmount ;
+      sample:quantity "10"^^xsd:string .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

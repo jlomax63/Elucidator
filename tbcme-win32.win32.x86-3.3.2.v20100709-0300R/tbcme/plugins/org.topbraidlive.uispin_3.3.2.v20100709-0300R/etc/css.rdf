@@ -1,0 +1,601 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:css="http://uispin.org/css#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://uispin.org/css">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://uispin.org/ui"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.1.0</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A collection of standard CSS style properties in RDF, so that they can be shared by other ontologies such as HTML and SVG.</rdfs:comment>
+  </owl:Ontology>
+  <ui:StyleProperty rdf:ID="word-spacing">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >word-spacing</rdfs:label>
+    <rdfs:subPropertyOf>
+      <ui:StyleProperty rdf:ID="properties">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >properties</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >An "abstract" base property to group the CSS properties underneath.</rdfs:comment>
+      </ui:StyleProperty>
+    </rdfs:subPropertyOf>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="direction">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >direction</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="padding-top">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >padding-top</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="z-index">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >z-index</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-top">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-top</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="min-height">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min-height</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="counter-reset">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >counter-reset</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="cue-before">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cue-before</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="play-during">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >play-during</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="padding-right">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >padding-right</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="clip">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clip</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="table-layout">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >table-layout</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="margin-left">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >margin-left</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="width">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >width</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="quotes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >quotes</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="text-decoration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >text-decoration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="pitch">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pitch</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="voice-family">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >voice-family</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="line-height">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >line-height</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="richness">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >richness</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="volume">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >volume</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="pitch-range">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pitch-range</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font-size">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font-size</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="empty-cells">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >empty-cells</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-left">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-left</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background-repeat">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background-repeat</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="max-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="letter-spacing">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >letter-spacing</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="white-space">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >white-space</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="clear">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clear</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background-attachment">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background-attachment</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="unicode-bidi">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >unicode-bidi</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font-family">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font-family</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="vertical-align">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vertical-align</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-right-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-right-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="text-indent">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >text-indent</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="bottom">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bottom</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="max-height">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max-height</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="overflow">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >overflow</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="text-align">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >text-align</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-top-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-top-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="padding">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >padding</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-left-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-left-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="widows">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >widows</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-bottom-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-bottom-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="outline-color">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outline-color</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="float">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >float</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-bottom-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-bottom-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="top">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >top</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="list-style-image">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >list-style-image</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="margin-top">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >margin-top</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-right-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-right-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="elevation">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elevation</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-top-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-top-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="left">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >left</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="display">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >display</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="cue">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cue</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="caption-side">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >caption-side</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font-weight">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font-weight</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="bottom-left-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bottom-left-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="page-break-before">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >page-break-before</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="position">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >position</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="pause-before">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pause-before</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="margin-bottom">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >margin-bottom</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="cursor">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cursor</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-top-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-top-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="content">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >content</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="visibility">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >visibility</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="speech-rate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >speech-rate</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="list-style">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >list-style</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="speak-header">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >speak-header</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-spacing">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-spacing</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="page-break-inside">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >page-break-inside</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font-variant">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font-variant</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="list-style-position">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >list-style-position</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="speak-numeral">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >speak-numeral</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="min-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="orphans">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >orphans</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="outline">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outline</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-right">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-right</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="height">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >height</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="azimuth">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >azimuth</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="stress">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stress</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="cue-after">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cue-after</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-right-width">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-right-width</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="margin">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >margin</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="padding-left">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >padding-left</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="pause">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pause</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="list-style-type">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >list-style-type</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background-position">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background-position</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="right">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >right</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="counter-increment">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >counter-increment</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="margin-right">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >margin-right</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="padding-bottom">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >padding-bottom</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="page-break-after">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >page-break-after</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="speak">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >speak</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="text-transform">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >text-transform</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-left-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-left-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="outline-width">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outline-width</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="outline-style">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outline-style</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="pause-after">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pause-after</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="speak-punctuation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >speak-punctuation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-bottom-color">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-bottom-color</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-collapse">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-collapse</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="font">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >font</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="background-image">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background-image</rdfs:label>
+  </ui:StyleProperty>
+  <ui:StyleProperty rdf:ID="border-bottom">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >border-bottom</rdfs:label>
+  </ui:StyleProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

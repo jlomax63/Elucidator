@@ -1,0 +1,988 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sml="http://topbraid.org/sparqlmotionlib#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:diff="http://topbraid.org/diff#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://topbraid.org/diff">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://topbraid.org/sparqlmotionlib"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An RDF Schema that can be used to represent the results of a diff operation (differences between two versions of an RDF model). Also provides SPIN rules that can be used to construct instances.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.1</owl:versionInfo>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="Diff">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diff</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="DeletedTripleDiff">
+    <spin:rule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A0">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >label</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >subject</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >object</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Let>
+            <sp:expression>
+              <smf:buildString>
+                <sp:arg1>Deleted {?object} from {?predicate} at {?subject}</sp:arg1>
+              </smf:buildString>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A0"/>
+          </sp:Let>
+        </sp:where>
+      </sp:Construct>
+    </spin:rule>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deleted triple diff</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="TripleDiff"/>
+    </rdfs:subClassOf>
+    <diff:rule>
+      <sp:Construct>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Construct DeletedTripleDiffs for added triples</rdfs:comment>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:resource="#DeletedTripleDiff"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A1"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A2">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >subject</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:nodeID="A1"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A3">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >predicate</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:nodeID="A1"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A4">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >object</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+            <sp:subject rdf:nodeID="A1"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:nodeID="A4"/>
+                <sp:predicate rdf:nodeID="A3"/>
+                <sp:subject rdf:nodeID="A2"/>
+              </rdf:Description>
+              <sp:Filter>
+                <sp:expression>
+                  <sp:and>
+                    <sp:arg2>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:isBlank>
+                            <sp:arg1 rdf:nodeID="A4"/>
+                          </sp:isBlank>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:and>
+                        <sp:arg2>
+                          <sp:isIRI>
+                            <sp:arg1 rdf:nodeID="A3"/>
+                          </sp:isIRI>
+                        </sp:arg2>
+                        <sp:arg1>
+                          <sp:isIRI>
+                            <sp:arg1 rdf:nodeID="A2"/>
+                          </sp:isIRI>
+                        </sp:arg1>
+                      </sp:and>
+                    </sp:arg1>
+                  </sp:and>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode>
+              <rdfs:Resource rdf:ID="old">
+                <rdfs:comment>Name of the old graph during a diff:rule execution.</rdfs:comment>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >old</rdfs:label>
+              </rdfs:Resource>
+            </sp:graphNameNode>
+          </sp:NamedGraph>
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <spl:hasValue>
+                        <sp:arg3 rdf:nodeID="A4"/>
+                        <sp:arg2 rdf:nodeID="A3"/>
+                        <sp:arg1 rdf:nodeID="A2"/>
+                      </spl:hasValue>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode>
+              <rdfs:Resource rdf:ID="new">
+                <rdfs:comment>Name of the new graph during a diff:rule execution.</rdfs:comment>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >new</rdfs:label>
+              </rdfs:Resource>
+            </sp:graphNameNode>
+          </sp:NamedGraph>
+        </sp:where>
+      </sp:Construct>
+    </diff:rule>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="AddedTripleDiff">
+    <spin:rule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A5">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >label</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >subject</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >object</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Let>
+            <sp:expression>
+              <smf:buildString>
+                <sp:arg1>Added {?object} to {?predicate} at {?subject}</sp:arg1>
+              </smf:buildString>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A5"/>
+          </sp:Let>
+        </sp:where>
+      </sp:Construct>
+    </spin:rule>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Added triple diff</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#TripleDiff"/>
+    </rdfs:subClassOf>
+    <diff:rule>
+      <sp:Construct>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Construct AddedTripleDiffs for added triples</rdfs:comment>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:resource="#AddedTripleDiff"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A6"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A7">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >subject</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:nodeID="A6"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A8">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >predicate</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:nodeID="A6"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A9">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >object</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+            <sp:subject rdf:nodeID="A6"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:nodeID="A9"/>
+                <sp:predicate rdf:nodeID="A8"/>
+                <sp:subject rdf:nodeID="A7"/>
+              </rdf:Description>
+              <sp:Filter>
+                <sp:expression>
+                  <sp:and>
+                    <sp:arg2>
+                      <sp:not>
+                        <sp:arg1>
+                          <sp:isBlank>
+                            <sp:arg1 rdf:nodeID="A9"/>
+                          </sp:isBlank>
+                        </sp:arg1>
+                      </sp:not>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:and>
+                        <sp:arg2>
+                          <sp:isIRI>
+                            <sp:arg1 rdf:nodeID="A8"/>
+                          </sp:isIRI>
+                        </sp:arg2>
+                        <sp:arg1>
+                          <sp:isIRI>
+                            <sp:arg1 rdf:nodeID="A7"/>
+                          </sp:isIRI>
+                        </sp:arg1>
+                      </sp:and>
+                    </sp:arg1>
+                  </sp:and>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#new"/>
+          </sp:NamedGraph>
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <spl:hasValue>
+                        <sp:arg3 rdf:nodeID="A9"/>
+                        <sp:arg2 rdf:nodeID="A8"/>
+                        <sp:arg1 rdf:nodeID="A7"/>
+                      </spl:hasValue>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#old"/>
+          </sp:NamedGraph>
+        </sp:where>
+      </sp:Construct>
+    </diff:rule>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="AddedBlankNodeDiff">
+    <spin:rule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A10">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >label</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >subject</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >objectName</sp:varName>
+            </sp:object>
+            <sp:predicate>
+              <rdf:Property rdf:ID="objectName"/>
+            </sp:predicate>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Let>
+            <sp:expression>
+              <smf:buildString>
+                <sp:arg1>Added "{?objectName}" to {?predicate} at {?subject}</sp:arg1>
+              </smf:buildString>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A10"/>
+          </sp:Let>
+        </sp:where>
+      </sp:Construct>
+    </spin:rule>
+    <diff:rule>
+      <sp:Construct>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Construct AddedBlankNodeDiffs for added blank nodes</rdfs:comment>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:resource="#AddedBlankNodeDiff"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A11"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A12">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >subject</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:nodeID="A11"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A13">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >predicate</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:nodeID="A11"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A14">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >objectName</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate>
+              <rdf:Property rdf:about="#objectName"/>
+            </sp:predicate>
+            <sp:subject rdf:nodeID="A11"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object>
+                  <rdf:Description rdf:nodeID="A15">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >object</sp:varName>
+                  </rdf:Description>
+                </sp:object>
+                <sp:predicate rdf:nodeID="A13"/>
+                <sp:subject rdf:nodeID="A12"/>
+              </rdf:Description>
+              <sp:Let>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg2>
+                      <smf:name>
+                        <sp:arg1 rdf:nodeID="A15"/>
+                      </smf:name>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:and>
+                        <sp:arg2>
+                          <sp:isBlank>
+                            <sp:arg1 rdf:nodeID="A15"/>
+                          </sp:isBlank>
+                        </sp:arg2>
+                        <sp:arg1>
+                          <sp:and>
+                            <sp:arg2>
+                              <sp:isIRI>
+                                <sp:arg1 rdf:nodeID="A13"/>
+                              </sp:isIRI>
+                            </sp:arg2>
+                            <sp:arg1>
+                              <sp:isIRI>
+                                <sp:arg1 rdf:nodeID="A12"/>
+                              </sp:isIRI>
+                            </sp:arg1>
+                          </sp:and>
+                        </sp:arg1>
+                      </sp:and>
+                    </sp:arg1>
+                  </smf:if>
+                </sp:expression>
+                <sp:variable rdf:nodeID="A14"/>
+              </sp:Let>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#new"/>
+          </sp:NamedGraph>
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <fn:starts-with>
+                        <sp:arg2>&lt;@</sp:arg2>
+                        <sp:arg1 rdf:nodeID="A14"/>
+                      </fn:starts-with>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <diff:hasValueWithName>
+                        <sp:arg3 rdf:nodeID="A14"/>
+                        <sp:arg2 rdf:nodeID="A13"/>
+                        <sp:arg1 rdf:nodeID="A12"/>
+                      </diff:hasValueWithName>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#old"/>
+          </sp:NamedGraph>
+        </sp:where>
+      </sp:Construct>
+    </diff:rule>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Added blank node diff</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="BlankNodeDiff"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="DeletedBlankNodeDiff">
+    <spin:rule>
+      <sp:Construct>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A16">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >label</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >subject</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >objectName</sp:varName>
+            </sp:object>
+            <sp:predicate>
+              <rdf:Property rdf:about="#objectName"/>
+            </sp:predicate>
+            <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </rdf:Description>
+          <sp:Let>
+            <sp:expression>
+              <smf:buildString>
+                <sp:arg1>Deleted "{?objectName}" from {?predicate} at {?subject}</sp:arg1>
+              </smf:buildString>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A16"/>
+          </sp:Let>
+        </sp:where>
+      </sp:Construct>
+    </spin:rule>
+    <diff:rule>
+      <sp:Construct>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Construct DeletedBlankNodeDiffs for added blank nodes</rdfs:comment>
+        <sp:templates rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:resource="#DeletedBlankNodeDiff"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A17"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A18">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >subject</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+            <sp:subject rdf:nodeID="A17"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A19">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >predicate</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+            <sp:subject rdf:nodeID="A17"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A20">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >objectName</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate>
+              <rdf:Property rdf:about="#objectName"/>
+            </sp:predicate>
+            <sp:subject rdf:nodeID="A17"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:where rdf:parseType="Collection">
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object>
+                  <rdf:Description rdf:nodeID="A21">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >object</sp:varName>
+                  </rdf:Description>
+                </sp:object>
+                <sp:predicate rdf:nodeID="A19"/>
+                <sp:subject rdf:nodeID="A18"/>
+              </rdf:Description>
+              <sp:Let>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg2>
+                      <smf:name>
+                        <sp:arg1 rdf:nodeID="A21"/>
+                      </smf:name>
+                    </sp:arg2>
+                    <sp:arg1>
+                      <sp:and>
+                        <sp:arg2>
+                          <sp:isBlank>
+                            <sp:arg1 rdf:nodeID="A21"/>
+                          </sp:isBlank>
+                        </sp:arg2>
+                        <sp:arg1>
+                          <sp:and>
+                            <sp:arg2>
+                              <sp:isIRI>
+                                <sp:arg1 rdf:nodeID="A19"/>
+                              </sp:isIRI>
+                            </sp:arg2>
+                            <sp:arg1>
+                              <sp:isIRI>
+                                <sp:arg1 rdf:nodeID="A18"/>
+                              </sp:isIRI>
+                            </sp:arg1>
+                          </sp:and>
+                        </sp:arg1>
+                      </sp:and>
+                    </sp:arg1>
+                  </smf:if>
+                </sp:expression>
+                <sp:variable rdf:nodeID="A20"/>
+              </sp:Let>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#old"/>
+          </sp:NamedGraph>
+          <sp:NamedGraph>
+            <sp:elements rdf:parseType="Collection">
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <fn:starts-with>
+                        <sp:arg2>&lt;@</sp:arg2>
+                        <sp:arg1 rdf:nodeID="A20"/>
+                      </fn:starts-with>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+              <sp:Filter>
+                <sp:expression>
+                  <sp:not>
+                    <sp:arg1>
+                      <diff:hasValueWithName>
+                        <sp:arg3 rdf:nodeID="A20"/>
+                        <sp:arg2 rdf:nodeID="A19"/>
+                        <sp:arg1 rdf:nodeID="A18"/>
+                      </diff:hasValueWithName>
+                    </sp:arg1>
+                  </sp:not>
+                </sp:expression>
+              </sp:Filter>
+            </sp:elements>
+            <sp:graphNameNode rdf:resource="#new"/>
+          </sp:NamedGraph>
+        </sp:where>
+      </sp:Construct>
+    </diff:rule>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deleted blank node diff</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#BlankNodeDiff"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#BlankNodeDiff">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Blank node diff</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Diff"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#TripleDiff">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Triple diff</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Diff"/>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="rule">
+    <rdfs:comment>Points to a diff rule</rdfs:comment>
+    <rdfs:range rdf:resource="http://spinrdf.org/sp#Construct"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#query"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rule</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="#objectName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >object name</rdfs:label>
+  </rdf:Property>
+  <spin:Template rdf:ID="ShowAllDiffs">
+    <spin:body>
+      <sp:Select>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A22">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >subject</sp:varName>
+          </rdf:Description>
+          <rdf:Description rdf:nodeID="A23">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >predicate</sp:varName>
+          </rdf:Description>
+          <rdf:Description rdf:nodeID="A24">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >label</sp:varName>
+          </rdf:Description>
+        </sp:resultVariables>
+        <sp:where rdf:parseType="Collection">
+          <sp:TriplePath>
+            <sp:object rdf:resource="#Diff"/>
+            <sp:path>
+              <sp:ModPath>
+                <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:modMin>
+                <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >-2</sp:modMax>
+                <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+              </sp:ModPath>
+            </sp:path>
+            <sp:subject>
+              <rdf:Description rdf:nodeID="A25">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >type</sp:varName>
+              </rdf:Description>
+            </sp:subject>
+          </sp:TriplePath>
+          <rdf:Description>
+            <sp:object rdf:nodeID="A25"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject>
+              <rdf:Description rdf:nodeID="A26">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >diff</sp:varName>
+              </rdf:Description>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:nodeID="A24"/>
+                <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+                <sp:subject rdf:nodeID="A26"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:nodeID="A22"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+                <sp:subject rdf:nodeID="A26"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+          <sp:Optional>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:object rdf:nodeID="A23"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+                <sp:subject rdf:nodeID="A26"/>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Optional>
+        </sp:where>
+      </sp:Select>
+    </spin:body>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Show all diffs</rdfs:label>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diffs</spin:labelTemplate>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <rdfs:comment>Shows all Diffs in the current model.</rdfs:comment>
+  </spin:Template>
+  <spin:Template rdf:ID="ShowRelatedDiffs">
+    <spin:body>
+      <sp:Select>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A27">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >label</sp:varName>
+          </rdf:Description>
+          <rdf:Description rdf:nodeID="A28">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >diff</sp:varName>
+          </rdf:Description>
+        </sp:resultVariables>
+        <sp:where rdf:parseType="Collection">
+          <sp:TriplePath>
+            <sp:object rdf:resource="#Diff"/>
+            <sp:path>
+              <sp:ModPath>
+                <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:modMin>
+                <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >-2</sp:modMax>
+                <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+              </sp:ModPath>
+            </sp:path>
+            <sp:subject>
+              <rdf:Description rdf:nodeID="A29">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >type</sp:varName>
+              </rdf:Description>
+            </sp:subject>
+          </sp:TriplePath>
+          <rdf:Description>
+            <sp:object rdf:nodeID="A29"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+            <sp:subject rdf:nodeID="A28"/>
+          </rdf:Description>
+          <sp:Union>
+            <sp:elements rdf:parseType="Collection">
+              <rdf:Description>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:parseType="Resource">
+                  <sp:object>
+                    <rdf:Description rdf:nodeID="A30">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >selectedResource</sp:varName>
+                    </rdf:Description>
+                  </sp:object>
+                  <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
+                  <sp:subject rdf:nodeID="A28"/>
+                </rdf:first>
+              </rdf:Description>
+              <rdf:Description>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:parseType="Resource">
+                  <sp:object rdf:nodeID="A30"/>
+                  <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
+                  <sp:subject rdf:nodeID="A28"/>
+                </rdf:first>
+              </rdf:Description>
+              <rdf:Description>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:parseType="Resource">
+                  <sp:object rdf:nodeID="A30"/>
+                  <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
+                  <sp:subject rdf:nodeID="A28"/>
+                </rdf:first>
+              </rdf:Description>
+            </sp:elements>
+          </sp:Union>
+          <rdf:Description>
+            <sp:object rdf:nodeID="A27"/>
+            <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+            <sp:subject rdf:nodeID="A28"/>
+          </rdf:Description>
+        </sp:where>
+      </sp:Select>
+    </spin:body>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Show related diffs</rdfs:label>
+    <spin:constraint>
+      <sml:SelectedResourceArgument>
+        <spl:predicate rdf:resource="http://topbraid.org/sparqlmotionlib#selectedResource"/>
+      </sml:SelectedResourceArgument>
+    </spin:constraint>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >{?selectedResource} Diffs</spin:labelTemplate>
+    <rdfs:comment>Shows all Diffs related to a selected resource.</rdfs:comment>
+  </spin:Template>
+  <rdf:Description rdf:nodeID="A31">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >object</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <sp:object rdf:nodeID="A31"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#_arg2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <rdf:first>
+      <sp:Filter>
+        <sp:expression>
+          <sp:eq>
+            <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg3"/>
+            <sp:arg1>
+              <smf:name>
+                <sp:arg1 rdf:nodeID="A31"/>
+              </smf:name>
+            </sp:arg1>
+          </sp:eq>
+        </sp:expression>
+      </sp:Filter>
+    </rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <sp:Ask rdf:nodeID="A34">
+    <sp:where rdf:parseType="Resource">
+      <rdf:first rdf:nodeID="A32"/>
+      <rdf:rest rdf:nodeID="A33"/>
+    </sp:where>
+  </sp:Ask>
+  <spin:Function rdf:ID="hasValueWithName">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:body rdf:nodeID="A34"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has value with name</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#BooleanFunctions"/>
+    <rdfs:comment>Checks whether a given subject (?arg1) / predicate (?arg2) combination has an object that has a label that matches a given label (?arg3), where the labels are compared using smf:name. This function can be used to check whether a given blank node (with a given label) is still available (via string comparison) in another graph.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The subject to match (or null).</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The predicate to match (or null)</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The string to compare the label with.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

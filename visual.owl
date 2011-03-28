@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:visual="http://topbraid.org/visual#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://topbraid.org/visual">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A generic graphics ontology for drawing engines.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.6.0</owl:versionInfo>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="Box">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Polygon"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Text">
+    <rdfs:subClassOf rdf:resource="#Box"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Image">
+    <rdfs:subClassOf rdf:resource="#Box"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Edge">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="PolyLine"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="RowLayout">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Layout"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>Layout that aligns all child components horizontally, from left to right. May have alignment.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="PolyLineDecoration">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:about="#PolyLine"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Poly line decoration</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="EdgeDecoration"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Graph">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Composite"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#PolyLine">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Shape"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Color"/>
+  <rdfs:Class rdf:ID="Point">
+    <rdfs:subClassOf rdf:resource="#Shape"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="VerticalLayout">
+    <rdfs:subClassOf rdf:resource="#Layout"/>
+    <rdfs:comment>Lays out its child components from top to bottom. visual:alignment can indicate to center or right-align these children relative to each other.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#Polygon">
+    <rdfs:subClassOf rdf:resource="#Shape"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ArialFont">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="Font"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Arial</owl:hasValue>
+        <owl:onProperty>
+          <rdf:Property rdf:ID="fontName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SansSerif</owl:hasValue>
+        <owl:onProperty>
+          <rdf:Property rdf:about="#fontName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#EdgeDecoration">
+    <rdfs:comment>The superclass of all Shapes that can appear as decoration of an edge.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Shape"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edge decoration</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Oval">
+    <rdfs:subClassOf rdf:resource="#Box"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="GraphLayout">
+    <rdfs:subClassOf rdf:resource="#Layout"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Alignment"/>
+  <rdfs:Class rdf:ID="Line">
+    <rdfs:subClassOf rdf:resource="#PolyLine"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="TimesFont">
+    <rdfs:subClassOf rdf:resource="#Font"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Times</owl:hasValue>
+        <owl:onProperty>
+          <rdf:Property rdf:about="#fontName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Times New Roman</owl:hasValue>
+        <owl:onProperty>
+          <rdf:Property rdf:about="#fontName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="PolygonDecoration">
+    <rdfs:subClassOf rdf:resource="#EdgeDecoration"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Polygon decoration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Polygon"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="Rectangle">
+    <rdfs:subClassOf rdf:resource="#Box"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="CourierFont">
+    <rdfs:subClassOf rdf:resource="#Font"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Courier</owl:hasValue>
+        <owl:onProperty>
+          <rdf:Property rdf:about="#fontName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#Composite">
+    <rdfs:subClassOf rdf:resource="#Box"/>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="child">
+    <rdfs:domain rdf:resource="#Composite"/>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:ID="dependent"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="endPoint">
+    <rdfs:domain rdf:resource="#PolyLine"/>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#dependent"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Point"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="rgbGreen">
+    <rdfs:domain rdf:resource="#Color"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="fillColor">
+    <rdfs:range rdf:resource="#Color"/>
+    <rdfs:domain rdf:resource="#Polygon"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="x">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdfs:Class rdf:about="#Box"/>
+          <rdfs:Class rdf:about="#Point"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </rdf:Property>
+  <rdf:Property rdf:ID="endShape">
+    <rdfs:domain rdf:resource="#Edge"/>
+    <rdfs:range rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="label">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >label</rdfs:label>
+    <rdfs:comment>Can be used to attach a label to an Edge.</rdfs:comment>
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#dependent"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Edge"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="rgbBlue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Color"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="textAlignment">
+    <rdfs:range rdf:resource="#Alignment"/>
+    <rdfs:domain rdf:resource="#Text"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="alignment">
+    <rdfs:range rdf:resource="#Alignment"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="color">
+    <rdfs:domain rdf:resource="#Shape"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Shape's main drawing color</rdfs:comment>
+    <rdfs:range rdf:resource="#Color"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="string">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Text"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="#fontName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Font"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="node">
+    <rdfs:domain rdf:resource="#Graph"/>
+    <rdfs:subPropertyOf rdf:resource="#child"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxWidth">
+    <rdfs:comment>The maximum width of a Box used by layout engines.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Box"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max width</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="corner">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#dependent"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Polygon"/>
+    <rdfs:range rdf:resource="#Point"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="#dependent">
+    <rdfs:range rdf:resource="#Shape"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="image">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="#Image"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="height">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Box"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="startDecoration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >start decoration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#dependent"/>
+    <rdfs:domain rdf:resource="#Edge"/>
+    <rdfs:range rdf:resource="#EdgeDecoration"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="bendPoint">
+    <rdfs:subPropertyOf rdf:resource="#dependent"/>
+    <rdfs:domain rdf:resource="#PolyLine"/>
+    <rdfs:range rdf:resource="#Point"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="width">
+    <rdfs:domain rdf:resource="#Box"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="boldFace">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Indicates that a font should be printed in bold face.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Font"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="fontSize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Font"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="layout">
+    <rdfs:range rdf:resource="#Layout"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minWidth">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min width</rdfs:label>
+    <rdfs:comment>The minimum width of a Box used by layout engines.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Box"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="y">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdfs:Class rdf:about="#Box"/>
+          <rdfs:Class rdf:about="#Point"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="startPoint">
+    <rdfs:domain rdf:resource="#PolyLine"/>
+    <rdfs:subPropertyOf rdf:resource="#dependent"/>
+    <rdfs:range rdf:resource="#Point"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="rgbRed">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Color"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="edge">
+    <rdfs:range rdf:resource="#Edge"/>
+    <rdfs:domain rdf:resource="#Graph"/>
+    <rdfs:subPropertyOf rdf:resource="#child"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxHeight">
+    <rdfs:comment>The maximum height of a Box used by layout engines.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Box"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max height</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="minHeight">
+    <rdfs:comment>The minimum height of a Box used by layout engines.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Box"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min height</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="endDecoration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >end decoration</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#dependent"/>
+    <rdfs:domain rdf:resource="#Edge"/>
+    <rdfs:range rdf:resource="#EdgeDecoration"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="italics">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Font"/>
+    <rdfs:comment>Indicates that characters should be printed in italics.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >italics</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="toolTipText">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="childIndex">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="shape">
+    <rdfs:subPropertyOf rdf:resource="#dependent"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shape</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="startShape">
+    <rdfs:domain rdf:resource="#Edge"/>
+    <rdfs:range rdf:resource="#Shape"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="font">
+    <rdfs:domain rdf:resource="#Text"/>
+    <rdfs:range rdf:resource="#Font"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="depicts">
+    <rdfs:comment>Can be used to link a Shape with the resource from the domain model that it represents.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:domain rdf:resource="#Shape"/>
+  </rdf:Property>
+  <visual:Color rdf:ID="ColorBlack">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkYellow">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbRed>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkBlue">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorRed">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbRed>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorEclipseGray">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >236</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >233</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >216</visual:rgbBlue>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The color used on Eclipse/Windows as forms background.</rdfs:comment>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkGray">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkMagenta">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorWhite">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkGreen">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorGray">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >192</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >192</visual:rgbBlue>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >192</visual:rgbGreen>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorMagenta">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbBlue>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbRed>
+  </visual:Color>
+  <visual:RowLayout rdf:ID="RightRowLayout">
+    <visual:alignment>
+      <visual:Alignment rdf:ID="RightAlignment"/>
+    </visual:alignment>
+  </visual:RowLayout>
+  <visual:VerticalLayout rdf:ID="CenterVerticalLayout">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Center vertical layout</rdfs:label>
+    <visual:alignment>
+      <visual:Alignment rdf:ID="CenterAlignment"/>
+    </visual:alignment>
+  </visual:VerticalLayout>
+  <visual:Color rdf:ID="ColorBlue">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbBlue>
+  </visual:Color>
+  <visual:RowLayout rdf:ID="LeftRowLayout">
+    <visual:alignment>
+      <visual:Alignment rdf:ID="LeftAlignment"/>
+    </visual:alignment>
+  </visual:RowLayout>
+  <visual:Color rdf:ID="ColorYellow">
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbGreen>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorDarkRed">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorGreen">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbBlue>
+  </visual:Color>
+  <visual:VerticalLayout rdf:ID="DefaultVerticalLayout"/>
+  <visual:Color rdf:ID="ColorDarkCyan">
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbGreen>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >128</visual:rgbBlue>
+  </visual:Color>
+  <visual:Color rdf:ID="ColorCyan">
+    <visual:rgbGreen rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbGreen>
+    <visual:rgbRed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</visual:rgbRed>
+    <visual:rgbBlue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >255</visual:rgbBlue>
+  </visual:Color>
+  <visual:RowLayout rdf:ID="CenterRowLayout">
+    <visual:alignment rdf:resource="#CenterAlignment"/>
+  </visual:RowLayout>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:forms="http://www.topbraid.org/2007/01/forms.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.topbraid.org/2007/01/forms.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An RDF Schema to capture the contents and layout of resource forms in the TopBraid platform.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.1</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PropertyWidgetGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A virtual placeholder for zero or more Widgets for properties of a certain type.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Control"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SearchForm">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Search form</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Form"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Panel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Composite that can be used to group and lay out child components.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Composite"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ListBox">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PropertyWidget"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >List box</rdfs:label>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment>A list displaying multiple values to choose from.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Composite">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Control that may contain child panels. This class should not be directly instantiated, but instead serves as an "abstract" superclass only.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Control"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Form">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Composite representing a resource. Forms are typically selected on a by type basis, using the subjectType predicate. rdfs:label can be used to specify a title.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Composite"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RichTextArea">
+    <rdfs:comment>A multi-line area of text including HTML markup, ideally rendered as WYSIWYG.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rich text area</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="CheckBox">
+    <rdfs:comment>A check box to select a boolean value.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Check box</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Section">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A labeled Composite that can be expanded or collapsed. The label can be specified using rdfs:label.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Composite"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Separator">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A panel serving as visual separator, e.g. using a horizontal line.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Control"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ComboBox">
+    <rdfs:comment>A combo box to pick one out of several enumerated values.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Combo box</rdfs:label>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tree">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tree</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Wizard">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Wizard</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Form"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TextInput">
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text input</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>A single line of text.</rdfs:comment>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Table">
+    <rdfs:comment>A tabular display of resources in one or more columns.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Table</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyWidget"/>
+    </rdfs:subClassOf>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PropertyWidget">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A Control displaying values of a given property. Unless an rdfs:label is specified, the title of the widget should be derived from the predicate.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Control"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ReferencesWidgetGroup">
+    <rdfs:comment>A virtual placeholder for all properties that point to the current resource via an object, predicate-&gt;subject relationship. The form engine should create one reference widget for each property with incoming values.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >References widget group</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Control"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EditForm">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edit form</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Form"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Control">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An abstract top-level concept representing a rectangular area on the screen. This class should not be instantiated directly.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="RadioButtons">
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Radio buttons</rdfs:label>
+    <rdfs:comment>Radio buttons to select one of our several enumerated values. For datatype properties, this assumes that the range is a datatype enumeration (owl:oneOf). For object properties, it will enumerate all instances of the range class, or use those defined by an OWL enumerated class.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#PropertyWidget"/>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TextArea">
+    <rdfs:comment>A multi-line text area.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text area</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PropertyWidget"/>
+    <forms:widgetTypeRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Label">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A static user interface component displaying text stored as rdfs:label.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Control"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="subjectType">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies the type of subjects for a form.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Form"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="formType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >form type</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment>Can be used to restrict widget types to certain form types. The value range of this property is one of the top-level form type classes, e.g. forms:SearchForm. Values indicate that this form type is only permitted as child of forms of the given type.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="predicateType">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Assigns a property type (e.g. owl:AnnotationProperties) to a WidgetGroup.</rdfs:comment>
+    <rdfs:domain rdf:resource="#PropertyWidgetGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="predicate">
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="#PropertyWidget"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Assigns a property to a widget. The value of this may either be a plain property or it may be a property expression. Currently only one type of property expressions is supported by TopBraid, using owl:inverseOf. For example, to specify that the value of a widget shall be an inverse of my:child, then the triples would be
+?widget forms:predicate ?anon .
+?anon owl:inverseOf my:child .
+where ?anon should be a blank node.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="parentOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Holds the child control of a parent Composite.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Composite"/>
+    <rdfs:range rdf:resource="#Control"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="treeRoot">
+    <rdfs:comment>Can be used to specify the root resource of a forms:Tree widget.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Tree"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tree root</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="keyProperties">
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment>A list of rdf:Properties for a class, indicating which properties are most important for that class. This information can be used, for example, to determine which properties to show in TopBraid Composer's Instances View, and TopBraid Live's search window.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="widgetTypeRange">
+    <rdfs:comment>Can be used to link a WidgetType with one or more range classes (such as xsd:string). Special meaning have rdfs:Literal (means any literal datatype and rangeless datatype properties) and rdfs:Resource (for rangeless object properties).</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >widget type range</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="treePredicate">
+    <rdfs:domain rdf:resource="#Tree"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tree predicate</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="childIndex">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The index of a child Control among among its siblings. The values of this are typically ordered continuously from 0 upwards.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Control"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="maxCardinality">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The maximum number of values permitted in a given widget.</rdfs:comment>
+    <rdfs:domain rdf:resource="#PropertyWidget"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="useLabels">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicates whether widgets shall use the rdfs:label of the predicate if no other value has been specified.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Control"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="autoExpand">
+    <rdfs:comment>If true, then the widget will try to expand all its initial values into "nested" forms (or whatever default viewer has been configured, such as image viewer).</rdfs:comment>
+    <rdfs:domain rdf:resource="#PropertyWidget"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >auto expand</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="collapsed">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies whether a Section shall appear collapsed by default.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Section"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hiddenIfNoValue">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies if a Widget shall be hidden if the subject has no value for the given property.</rdfs:comment>
+    <rdfs:domain rdf:resource="#PropertyWidget"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="minCardinality">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The minimum number of values expected for a widget.</rdfs:comment>
+    <rdfs:domain rdf:resource="#PropertyWidget"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="useDomain">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Can be used to indicate that a Form should contain all properties with matching domains, even if the subject does not have any values for the properties.  Default is false, i.e. only those properties with values are shown on a form.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Form"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="numColumns">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies the number of columns for layout purposes. If no value is specified, a default of 1 will be assumed.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Composite"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

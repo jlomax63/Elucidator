@@ -1,0 +1,2860 @@
+# Saved by TopBraid on Sun Oct 17 22:32:36 CDT 2010
+# baseURI: http://mdacc.org/TCGAArchive/Clim
+# imports: http://www.semanticdesktop.org/ontologies/2007/03/22/nco
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.w3.org/2008/05/skos-xl
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://mged.sourceforge.net/ontologies/MGEDOntology.owl
+# imports: http://spinrdf.org/spin
+
+@prefix :        <http://mdacc.org/TCGAArchive/Clim#> .
+@prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix p3:      <http://my.com/file3#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+tcga:2Pills_Dosage
+      rdf:type :Dosage .
+
+<http://mdacc.org/TCGAArchive/Clim>
+      rdf:type owl:Ontology ;
+      owl:imports foaf: , <http://www.semanticdesktop.org/ontologies/2007/03/22/nco> , dc: , <http://mged.sourceforge.net/ontologies/MGEDOntology.owl> , <http://spinrdf.org/spin> , <http://www.w3.org/2008/05/skos-xl> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:AJCCScoringForSarcoma
+      rdf:type owl:Class ;
+      rdfs:comment "Scoring system for sarcoma specified by the American Joint Committee on Cancer (AJCC)"^^xsd:string ;
+      rdfs:subClassOf :DiseaseScoringSystem ;
+      dc:creator foaf:JimLomax .
+
+:Absorbance260Nm
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of 260nm light that is not transmitted through a substance or solution."^^xsd:string ;
+      rdfs:subClassOf :Quantity ;
+      dc:creator foaf:JimLomax .
+
+:Absorbance260To280Nm
+      rdf:type owl:Class ;
+      rdfs:comment "This ratio reveals the purity of nucleic acids. The A260A280 ratio is a quality assurance test on the analyte, post-extraction. The ratio will indicate the purity of the analyte."^^xsd:string , "There is no corresponding entity in the BioPortal for 260-280 nm absorbance value."^^xsd:string ;
+      rdfs:subClassOf :PurityMeasurment ;
+      dc:creator foaf:JimLomax .
+
+:Absorbance280Nm
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of 280nm light that is not transmitted through a substance or solution."^^xsd:string ;
+      rdfs:subClassOf :Quantity ;
+      dc:creator foaf:JimLomax .
+
+:Aliquot
+      rdf:type owl:Class ;
+      rdfs:comment "An Aliquot is a biological entity and it represents a measurable component of a biological sample,  generally of one genomic type, such as RNA or DNA. An Aliquot is considered a part of a biological sample but not in the same capacity as a Portion. A Portion is a subdivision of the biological sample involving all of the samples constituents, an Aliquot is just one constituent. An Aliquot will be measured by a quantity and units."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasAliquotId ;
+                owl:someValuesFrom :AliquotId
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasAmount ;
+                owl:someValuesFrom :AliquotAmount
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :AliquotLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:AliquotAmount
+      rdf:type owl:Class ;
+      rdfs:comment "An aliquot amount is composed of quantity and units. Since the quantity and units associated with aliquot quantities may contain further definitions/restrictions/labels, they will be constructed as concepts themselves."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :units ;
+                owl:someValuesFrom :AliquotQuantityUnits
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :quantity ;
+                owl:someValuesFrom :AliquotQuantity
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:AliquotId
+      rdf:type owl:Class ;
+      rdfs:comment "Aliquot Id is a concept for uniquely identifying an Aliquot. The consumable label for a Aliquot Id may vary across  domain interpretations. This is the case with The Cancer Genome Atlas, where aliquots are identified by a \"BCRAliquotBarcode\".  To allow for variations in  consumable labels for the concept, the  SKOS-XL framework is used; SKOS-XL in particular for its extensions that allow relationships  to exist between labels. To aid in data integration a Aliquot Id will be defined  by a union of known concepts that logically map to the concept of Aliquot Id."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Barcode :BCRAliquotBarcode)
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :AliquotLabel
+              ] .
+
+:AliquotIdLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:AliquotLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:AliquotQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Quantity .
+
+:AliquotQuantityUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Units .
+
+:Analyte
+      rdf:type owl:Class ;
+      rdfs:comment " A substance derived from an analytical procedure such as a titration"^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasConcentration ;
+                owl:someValuesFrom :Concentration
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :AnalyteLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:AnalyteLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:AnaplasticAstrocytoma
+      rdf:type owl:Class ;
+      rdfs:comment "A diffusely infiltrating, WHO grade III astrocytoma with focal or dispersed anaplasia, and a marked proliferative potential. It may arise from a low-grade astrocytoma, but it can also be diagnosed at first biopsy, without indication of a less malignant precursor lesion. It has an intrinsic tendency for malignant progression to glioblastoma."^^xsd:string ;
+      rdfs:subClassOf :Astrocytoma ;
+      dc:creator foaf:JimLomax .
+
+:AnatomicSite
+      rdf:type owl:Class ;
+      rdfs:comment "Body tissue, region, surface, cavity, fluid, organ, or collection of organs."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:ArachnoidMatter
+      rdf:type :Meninges , :Leptomeninges .
+
+:Astrocyte
+      rdf:type owl:Class ;
+      rdfs:comment "The largest and most numerous neuroglial cells in the brain and spinal cord. Astrocytes are irregularly shaped with many long processes, including those with \"end feet\" which form the glial (limiting) membrane and directly and indirectly contribute to the blood brain barrier. They regulate the extracellular ionic and chemical environment, and \"reactive astrocytes\" (along with microglia) respond to injury. Astrocytes have high- affinity transmitter uptake systems, voltage-dependent and transmitter-gated ion channels, and can release transmitter, but their role in signaling (as in many other functions) is not well understood"^^xsd:string ;
+      rdfs:subClassOf :GlialCell ;
+      dc:creator foaf:JimLomax .
+
+:Astrocytoma
+      rdf:type owl:Class ;
+      rdfs:comment "A tumor of the brain or spinal cord showing astrocytic differentiation. It includes the following clinicopathological entities: pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, pleomorphic xanthoastrocytoma, and subependymal giant cell astrocytoma."^^xsd:string ;
+      rdfs:subClassOf :Glioma ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Tumor [ rdf:type owl:Restriction ;
+                            owl:onProperty :cellularOrigin ;
+                            owl:someValuesFrom :Astrocyte
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:BCR  rdf:type mage:Roles .
+
+:BCRAliquotBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode .
+
+:BCRAnalyteBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode .
+
+:BCRExaminationBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode ;
+      dc:creator foaf:JimLomax .
+
+:BCRPatientBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode .
+
+:BCRPortionBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode ;
+      dc:creator foaf:JimLomax .
+
+:BCRSampleBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode ;
+      dc:creator foaf:JimLomax .
+
+:BCRSlideBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode ;
+      dc:creator foaf:JimLomax .
+
+:BCRSurgeryBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Barcode ;
+      dc:creator foaf:JimLomax .
+
+:Barcode
+      rdf:type owl:Class ;
+      rdfs:comment "Barcode may not be best represented as a class; it is a unique identifier for an object in context of TCGA; which of course, is not the entirety of our universe."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:Biomarker
+      rdf:type owl:Class ;
+      rdfs:comment "A variation in cellular or biochemical components or processes, structures, or functions that is objectively measurable in a biological system and that characterizes normal biologic processes, pathogenic processes, an organism's state of health or disease, likelihood of developing a disease, prognosis, or response to a particular therapeutic intervention."^^xsd:string ;
+      rdfs:subClassOf :Indicator ;
+      dc:creator foaf:JimLomax .
+
+:Birth
+      rdf:type owl:Class ;
+      rdfs:subClassOf :PatientlEvent .
+
+:Brain
+      rdf:type owl:Class ;
+      rdfs:comment "An organ composed of grey and white matter containing billions of neurons that is the center for intelligence and reasoning. It is protected by the bony cranium."^^xsd:string ;
+      rdfs:subClassOf :AnatomicSite ;
+      dc:creator foaf:JimLomax .
+
+:BrainMembrane
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Membrane ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Membrane [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAnatomicSite ;
+                            owl:someValuesFrom :Brain
+                          ])
+              ] .
+
+:CGCC
+      rdf:type mage:Roles .
+
+:Cancer
+      rdf:type owl:Class ;
+      rdfs:comment "The concept of Cancer. This could to reference a taxonomy of cancer types however, the question of which taxonomy is currently under discussion."^^xsd:string ;
+      rdfs:subClassOf :Disease ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :CancerName
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:CancerIdentifier
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:CancerName
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:CancerProgression
+      rdf:type owl:Class ;
+      rdfs:comment "The worsening of cancer over time."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:CancerProgressionIndicator
+      rdf:type owl:Class ;
+      rdfs:comment "Any indicator of cancer progression"^^xsd:string ;
+      rdfs:subClassOf :Indicator ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Indicator [ rdf:type owl:Restriction ;
+                            owl:onProperty :indicates ;
+                            owl:someValuesFrom :CancerProgression
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:Cell
+      rdf:type owl:Class ;
+      rdfs:comment "This is an alternative perspective of a Cell; a class that allows further extension (and variation) of Cell outside of a MAGE or TCGA perspective. This class is equivalent to the MAGE BioMaterial class that has a has_type property with a MAGE MaterialType of Cell."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:hasValue mage:cell ;
+                owl:onProperty mage:has_type
+              ] .
+
+:CellLineSample
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom :Cancer ;
+                owl:onProperty :hasCancer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty :hasCancer
+              ] .
+
+:ChemotherapyTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "The use of synthetic or naturally-occurring chemicals for the treatment of diseases. Although this term is used to describe any therapy involving the use of chemical-based agents, it is particularly used to refer to the use of chemical-based agents to treat cancer."^^xsd:string ;
+      rdfs:subClassOf :TherapeuticProcedure ;
+      dc:contributor foaf:JimLomax .
+
+:ClinicalPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+:Concentration
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of a substance per volume or unit of weight."^^xsd:string ;
+      rdfs:subClassOf :Quantity ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :ConcentrationLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:ConcentrationLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:DCC  rdf:type mage:Roles .
+
+:DNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is DNA"^^xsd:string ;
+      rdfs:subClassOf :Analyte ;
+      dc:creator foaf:JimLomax .
+
+:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+:Death
+      rdf:type owl:Class ;
+      rdfs:subClassOf :PatientlEvent .
+
+:DeathVitalStatus
+      rdf:type :VitalStatus .
+
+:Disease
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:DiseaseMarker
+      rdf:type owl:Class ;
+      rdfs:comment "Specific molecular signature of disease, physiological measurement, genotype structural or functional characteristic, metabolic changes, or other determinant that may simplify the diagnostic process, make diagnoses more accurate, distinguish different causes of disease, or enable physicians to make diagnoses before symptoms appear and to track disease progression."^^xsd:string ;
+      rdfs:subClassOf :Biomarker ;
+      dc:creator foaf:JimLomax .
+
+:DiseaseOutcome
+      rdf:type owl:Class ;
+      rdfs:comment "The result of a disease. There are most likely members to this concept that are defined by NCI Thesaurus."^^xsd:string ;
+      rdfs:subClassOf :Outcome ;
+      dc:creator foaf:JimLomax .
+
+:DiseaseScoringSystem
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:DiseaseStagingSystem
+      rdf:type owl:Class ;
+      rdfs:comment "A systematic method for clinicopathologic evaluation of tumors."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:Dosage
+      rdf:type owl:Class ;
+      rdfs:comment "A quantity of an agent (such as substance or energy) administered, taken, or absorbed at one time."^^xsd:string ;
+      rdfs:subClassOf :Quantity ;
+      dc:creator foaf:JimLomax .
+
+:DosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Units ;
+      dc:creator foaf:JimLomax .
+
+:DrugTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication"^^xsd:string ;
+      rdfs:subClassOf :TherapeuticProcedure ;
+      dc:creator foaf:JimLomax .
+
+:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+:DuraMatter
+      rdf:type :Meninges , :Leptomeninges .
+
+:EBVImmortalizedNormalAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is Epstein-Barr virus immortalized B cells used as a control group."^^xsd:string ;
+      rdfs:subClassOf :Analyte ;
+      dc:creator foaf:JimLomax .
+
+:EndocrineTreatment
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TherapeuticProcedure ;
+      dc:creator foaf:JimLomax .
+
+:Equipment
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Ethnicity
+      rdf:type owl:Class ;
+      rdfs:comment "The US Census Bureau makes use of both race and ethnicity in surveys, however there are no race or ethnicity vocabularies or taxonomies used."^^xsd:string , "http://en.wikipedia.org/wiki/Race_and_ethnicity_in_the_United_States_Census"^^xsd:string ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :EthnicityName
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:EthnicityLatino
+      rdf:type :Ethnicity .
+
+:EthnicityName
+      rdf:type owl:Class ;
+      rdfs:comment "The US Census Bureau makes use of both race and ethnicity in surveys, however there are no race or ethnicity vocabularies or taxonomies used."^^xsd:string , "http://en.wikipedia.org/wiki/Race_and_ethnicity_in_the_United_States_Census"^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:ExternalBeamRadiationTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation therapy that uses a machine to aim high-energy rays at the cancer."^^xsd:string ;
+      rdfs:subClassOf :RadiationTreatment ;
+      dc:creator foaf:JimLomax .
+
+:Finding
+      rdf:type owl:Class ;
+      rdfs:comment "Objective evidence of disease perceptible to the examining physician (sign) and subjective evidence of disease perceived by the patient (symptom)."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:FollowupAppointment
+      rdf:type owl:Class ;
+      rdfs:subClassOf :PatientlEvent .
+
+:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+:GSC  rdf:type mage:Roles .
+
+:GelElectrophoresis
+      rdf:type owl:Class ;
+      rdfs:comment "Gel electrophoresis is a method of separating large molecules (such as DNA fragments or proteins) from a mixture of similar molecules by electrophoretic filtration through a gelatinous matrix. Subject to an electric field, each molecule in the sample mixture migrates through the matrix at a different rate, depending mainly on electrical charge and size, resulting in spatial separation within the matrix of each molecular species in the sample mixture. Agarose and acrylamide in a cylindrical tube or slab gel are commonly used media for electrophoresis of proteins and nucleic acids."^^xsd:string ;
+      rdfs:subClassOf :LabProcedure ;
+      dc:creator foaf:JimLomax .
+
+:Gemistocyte
+      rdf:type owl:Class ;
+      rdfs:comment "A pathologic astrocyte in which the cell body swells and contains glial filaments and an eccentric nucleus; seen particularly in demyelinating and neoplastic conditions. A gemistocytic presence in the context of of known astrocytoma is a indication of cancer progression and a worsening prognosis for the patient."^^xsd:string ;
+      rdfs:subClassOf :Astrocyte , :CancerProgressionIndicator ;
+      dc:creator foaf:JimLomax .
+
+:Gender
+      rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :GenderName
+              ] .
+
+:GenderFemale
+      rdf:type :Gender .
+
+:GenderMale
+      rdf:type :Gender .
+
+:GenderName
+      rdf:type owl:Class ;
+      rdfs:comment "The US Census Bureau makes use of both race and ethnicity in surveys, however there are no race or ethnicity vocabularies or taxonomies used."^^xsd:string , "http://en.wikipedia.org/wiki/Race_and_ethnicity_in_the_United_States_Census"^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:GenomePlexAmplifiedDNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question  is DNA collected from whole genome amplification by GenomePlex’s chromatin imunoprecipitation."^^xsd:string ;
+      rdfs:subClassOf :Analyte ;
+      dc:creator foaf:JimLomax .
+
+:GiantCellGlioblastoma
+      rdf:type owl:Class ;
+      rdfs:comment "A rare histological variant of glioblastoma (WHO grade IV) with a predominance of bizarre, multinucleated giant cells, an occasionally abundant stromal reticulin network, and a high frequency of TP53 mutations"^^xsd:string ;
+      rdfs:subClassOf :Glioblastoma ;
+      dc:creator foaf:JimLomax .
+
+:GleasonScoringForProstateCancer
+      rdf:type owl:Class ;
+      rdfs:comment "The score derived from universally embraced prostate cancer grading system developed by Dr. Donald F. Gleason in 1977. The system provides a reproducible description of the glandular architecture of prostate tissue to which a pathologist assigns a score depending primarily on the microscopic patterns of cancerous glands and cell morphology. The system correlates well with behavior at the extremes: Gleason 1+1 tumors are the most well differentiated, slowly growing and rarely spread; Gleason 4+5 tumors are the most poorly differentiated, often widely metastatic at the time of diagnosis. In the commoner intermediate grade tumors, however, behavior is extremely variable."^^xsd:string ;
+      rdfs:subClassOf :DiseaseScoringSystem ;
+      dc:creator foaf:JimLomax .
+
+:GlialCell
+      rdf:type owl:Class ;
+      rdfs:comment "The non-neuronal cells of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu, participate in the blood-brain and blood-retina barriers, form the myelin insulation of nervous pathways, guide neuronal migration during development, and exchange metabolites with neurons."^^xsd:string ;
+      rdfs:subClassOf :Cell ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Cell [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAnatomicSite ;
+                            owl:someValuesFrom :Brain
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:GlialFibrillaryAcideicProtein
+      rdf:type :Protein , :TumorMarker , :CancerProgressionIndicator .
+
+:Glioblastoma
+      rdf:type owl:Class ;
+      rdfs:comment "The most malignant astrocytic tumor (WHO grade IV). It is composed of poorly differentiated neoplastic astrocytes and it is characterized by the presence of cellular polymorphism, nuclear atypia, brisk mitotic activity, vascular thrombosis, microvascular proliferation and necrosis. It typically affects adults and is preferentially located in the cerebral hemispheres. It may develop from diffuse astrocytoma WHO grade II or anaplastic astrocytoma (secondary glioblastoma), but more frequently, it manifests after a short clinical history de novo, without evidence of a less malignant precursor lesion (primary glioblastoma). Two histologic variants are recognized: giant cell glioblastoma and gliosarcoma"^^xsd:string ;
+      rdfs:subClassOf :Glioma ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :GlioblastomaLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:GlioblastomaCancer
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Cancer .
+
+:GlioblastomaCancerIdEnglish
+      rdf:type :CancerIdentifier ;
+      skos-xl:literalForm "Glioblastoma"@en .
+
+:GlioblastomaCancer_GBM
+      rdf:type :GlioblastomaCancer .
+
+:GlioblastomaLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:GlioblastomaWithOligodendroglialComponent
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Oligodendroglioma ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Oligodendroglioma [ rdf:type owl:Restriction ;
+                            owl:onProperty :exhibitsMorphology ;
+                            owl:someValuesFrom :Glioblastoma
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:Glioma
+      rdf:type owl:Class ;
+      rdfs:comment "A benign or malignant brain and spinal cord tumor that arises from glial cells (astrocytes, oligodendrocytes, ependymal cells)."^^xsd:string ;
+      rdfs:subClassOf :Tumor ;
+      dc:creator foaf:JimLomax .
+
+:Gliosarcoma
+      rdf:type owl:Class ;
+      rdfs:comment "A rare histological variant of glioblastoma (WHO grade IV) characterized by a biphasic tissue pattern with alternating areas displaying glial and mesenchymal differentiation (WHO). It is associated with the molecular abnormalities seen in primary and secondary glioblastomas, except for the amplification of EGFR."^^xsd:string ;
+      rdfs:subClassOf :Glioblastoma ;
+      dc:creator foaf:JimLomax .
+
+:Gray_DosageUnits
+      rdf:type :RadiationDosageUnits ;
+      :value  "Gray"^^xsd:string .
+
+:HistologicGrade
+      rdf:type owl:Class ;
+      rdfs:comment "The degree of abnormality of cancer cells, a measure of differentiation, the extent to which cancer cells are similar in appearance and function to healthy cells of the same tissue type. The degree of differentiation often relates to the clinical behavior of the particular tumor. Based on the microscopic findings, tumor grade is commonly described by one of four degrees of severity. Histopathologic grade of a tumor may be used to plan treatment and estimate the future course, outcome, and overall prognosis of disease. Certain types of cancers, such as soft tissue sarcoma, primary brain tumors, lymphomas, and breast have special grading systems"^^xsd:string ;
+      rdfs:subClassOf :DiseaseScoringSystem ;
+      dc:creator foaf:JimLomax .
+
+:HistologicType
+      rdf:type owl:Class ;
+      rdfs:comment "Refers to the type of tissue in which a tumor originated."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:ImmunotherapyTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "Therapy designed to induce changes in a patient's immune status in order to treat disease."^^xsd:string ;
+      rdfs:subClassOf :TherapeuticProcedure ;
+      dc:creator foaf:JimLomax .
+
+:Indicator
+      rdf:type owl:Class ;
+      rdfs:comment "An event, entity or condition that typically characterizes a prescribed environment or situation and determines or aids in determining whether certain stated circumstances exist or criteria are satisfied."^^xsd:string ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :indicates ;
+                owl:someValuesFrom owl:Thing
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:InformedConsentVerfied
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:JewishOrigin
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:LabProcedure
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Leptomeninges
+      rdf:type owl:Class ;
+      rdfs:comment "The two innermost layers of tissue that cover the brain and spinal cord, the arachnoid mater and the pia mater."^^xsd:string ;
+      rdfs:subClassOf :BrainMembrane ;
+      dc:creator foaf:JimLomax .
+
+:LeptomeningialInvolvedTumor
+      rdf:type owl:Class ;
+      rdfs:comment "A thin sheet or layer of pliable tissue, serving as a covering or envelope of a part, as the lining of a cavity, as a partition or septum, or to connect two structures."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Tumor [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAnatomicSite ;
+                            owl:someValuesFrom :Leptomeninges
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:LifeVitalStatus
+      rdf:type :VitalStatus .
+
+:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+:MedicalExaminationLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:Membrane
+      rdf:type owl:Class ;
+      rdfs:comment "A thin sheet or layer of pliable tissue, serving as a covering or envelope of a part, as the lining of a cavity, as a partition or septum, or to connect two structures."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:Meninges
+      rdf:type owl:Class ;
+      rdfs:comment "A membrane that cover and protect the brain and spinal cord."^^xsd:string ;
+      rdfs:subClassOf :BrainMembrane ;
+      dc:creator foaf:JimLomax .
+
+:Microplate
+      rdf:type owl:Class ;
+      rdfs:comment "A Microplate is a piece of equipment containing physical subdivisions that are arrayed in a standard size, number and arrangement, each holds a small amount of substance; Note: the hasWell property may be better represented as something more general like hasSubdivision"^^xsd:string ;
+      rdfs:subClassOf :Equipment , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasWell ;
+                owl:someValuesFrom :Well
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:MindBombProtein1
+      rdf:type :Protein , :TumorMarker , :CancerProgressionIndicator .
+
+:NormalSample
+      rdf:type rdfs:Class ;
+      owl:differentFrom :CellLineSample , :TumorSample .
+
+:NuclearGrade
+      rdf:type owl:Class ;
+      rdfs:comment "An evaluation of the size and shape of the nucleus in tumor cells and the percentage of tumor cells that are in the process of dividing or growing. Cancers with low nuclear grade grow and spread less quickly than cancers with high nuclear grade."^^xsd:string ;
+      rdfs:subClassOf :DiseaseScoringSystem ;
+      dc:creator foaf:JimLomax .
+
+:Nucleus
+      rdf:type mage:CellularComponent .
+
+:OVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TumorStage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ])
+              ] .
+
+:Oligodendrocyte
+      rdf:type owl:Class ;
+      rdfs:comment "A class of neuroglial (macroglial) cells in the central nervous system. Oligodendroglia may be called interfascicular, perivascular, or perineuronal satellite cells according to their location. The most important recognized function of these cells is the formation of the insulating myelin sheaths of axons in the central nervous system"^^xsd:string ;
+      rdfs:subClassOf :GlialCell ;
+      dc:creator foaf:JimLomax .
+
+:Oligodendroglioma
+      rdf:type owl:Class ;
+      rdfs:comment "A well-differentiated (WHO grade II), diffusely infiltrating neuroglial tumor, typically located in the cerebral hemispheres. It is composed predominantly of cells which morphologically resemble oligodendroglia. The neoplastic cells have rounded homogeneous nuclei and, on paraffin sections, a swollen, clear cytoplasm "^^xsd:string ;
+      rdfs:subClassOf :Glioma ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:Tumor [ rdf:type owl:Restriction ;
+                            owl:onProperty :cellularOrigin ;
+                            owl:someValuesFrom :Oligodendrocyte
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:Outcome
+      rdf:type owl:Class ;
+      rdfs:comment """The result of an action. This definition is necessarily generic to support the more specific uses of the concept. An outcome is a temporal event; it occurs on a specific date/time
+"""^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      dc:creator foaf:JimLomax .
+
+:OvarianCancer
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Cancer .
+
+:OvarianCancerIdEnglish
+      rdf:type :CancerIdentifier ;
+      skos-xl:literalForm "Ovarian"@en .
+
+:OvarianCancer_OV
+      rdf:type :OvarianCancer .
+
+:PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "The extent of  metastasis to other parts of the body. "^^xsd:string ;
+      rdfs:subClassOf :PathologicTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "The extent of the primary tumor as pathology reveals. The extent of the primary tumor increases as the classification number increases. pT0 means that the pathologic results indicate no primary tumor. pT1 - pT4 are diesgnations for increasing pathlogic primary tumor extent, however there are no quantitative measurements, direct or relative,  with the designations."^^xsd:string ;
+      rdfs:subClassOf :PathologicTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "The extent of regional  lymph node metastasis as pathology reveals. The extent of regional lymph node metatstasis increases as the classification number increases. pN0 means that the pathologic results indicate noregional lymph node metastasis. pN1 - pN3 are designations for increasing metastasis of regional lymph nodes, however there are no quantitative measurements, direct or relative,  with the designations."^^xsd:string ;
+      rdfs:subClassOf :PathologicTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:PathologicTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM staging performed as part of pathologic specimen. Pathological TMN staging findings, while there is a generic classification scheme, are not always reported according to that scheme. The classification scheme can vary by cancer type, pathologist, institution, lab or any number of other factors. Also, while the coding scheme for TMN staging is standarized for some cancer types, again, this does not mean that it will be used."^^xsd:string ;
+      rdfs:subClassOf :Finding ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :code ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :tnmScheme ;
+                owl:someValuesFrom :TNMDiseaseStagingSystem
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:PathologicalDiagnosis
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:PathologicalDiagnosisMethod
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Patient
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasPatientId ;
+                owl:someValuesFrom :PatientId
+              ] .
+
+:PatientId
+      rdf:type owl:Class ;
+      rdfs:comment "Patient Id is a concept for uniquely identifying a Patient. The consumable label for a Patient Id may vary across  domain interpretations. This is the case with The Cancer Genome Atlas, where patients are identified in a clinical context by a \"BCRPatientBarcode\".  To allow for variations in  consumable labels for the concept, the  SKOS-XL framework is used; SKOS-XL in particular for its extensions that allow relationships  to exist between labels. To aid in data integration a Patient Id will be defined  by a union of known concepts that logically map to the concept of Patient Id."^^xsd:string ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Barcode :BCRPatientBarcode)
+              ] .
+
+:PatientlEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:PersonNeoplasmCancerStatus
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Pill_DosageUnits
+      rdf:type :DosageUnits ;
+      :value  "Pill"^^xsd:string .
+
+:PreTreatmentHistory
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:PrimaryTherapyOutcomeSuccess
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:PriorCancerOccurence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Proteasome
+      rdf:type mage:CellularComponent .
+
+:Protein
+      rdf:type owl:Class ;
+      rdfs:comment "A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons"^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+:Protocol
+      rdf:type owl:Class ;
+      rdfs:comment "A rule which guides how an activity should be performed."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :name ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :ProtocolLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:ProtocolLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:PurityMeasurment
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Quantity .
+
+:Quantity
+      rdf:type owl:Class ;
+      rdfs:comment "How much of something there is to measure."^^xsd:string ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :units ;
+                owl:someValuesFrom :Units
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :value ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :QuantityLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:QuantityLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:Race
+      rdf:type owl:Class ;
+      rdfs:comment "The US Census Bureau makes use of both race and ethnicity in surveys, however there are no race or ethnicity vocabularies or taxonomies used."^^xsd:string , "http://en.wikipedia.org/wiki/Race_and_ethnicity_in_the_United_States_Census"^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      dc:creator foaf:JimLomax .
+
+:RadiationDosage
+      rdf:type owl:Class ;
+      rdfs:comment """The amount of radiation energy that is deposited in a unit mass of material, such as tissues of plants or animal. In RADIOTHERAPY, radiation dosage is expressed in gray units (Gy). In RADIOLOGIC HEALTH, the dosage is expressed by the product of absorbed dose (Gy) and quality factor (a function of linear energy transfer), and is called radiation dose equivalent in sievert units (Sv).
+
+"""^^xsd:string ;
+      rdfs:subClassOf :Dosage ;
+      dc:creator foaf:JimLomax .
+
+:RadiationDosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf :DosageUnits ;
+      dc:creator foaf:JimLomax .
+
+:RadiationTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "The use of high-energy radiation from x-rays, gamma rays, neutrons, and other sources to kill cancer cells and shrink tumors. Radiation may come from a machine outside the body (external-beam radiation therapy) or from materials called radioisotopes. Radioisotopes produce radiation and can be placed in or near the tumor or in the area near cancer cells. This type of radiation treatment is called internal radiation therapy, implant radiation, interstitial radiation, or brachytherapy. Systemic radiation therapy uses a radioactive substance, such as a radiolabeled monoclonal antibody, that circulates throughout the body."^^xsd:string ;
+      rdfs:subClassOf :TherapeuticProcedure ;
+      dc:creator foaf:JimLomax .
+
+:RadioIsotopeTreatment
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation therapy that uses a machine to aim high-energy rays at the cancer."^^xsd:string ;
+      rdfs:subClassOf :RadiationTreatment ;
+      dc:creator foaf:JimLomax .
+
+:RepliGDNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question is DNA collected from whole genome amplification by Qiagen’s multiple displacement amplification."^^xsd:string ;
+      rdfs:subClassOf :Analyte ;
+      dc:creator foaf:JimLomax .
+
+:ResidualTumor
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Resource_2
+      rdf:type rdfs:Resource .
+
+:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+:SPARQLQueryClassficationOf
+      rdf:type owl:ObjectProperty .
+
+:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+:SiteOfTumorFirestRecurrence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Stage0TMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage0TMNOVTumorStage_MDA
+      rdf:type :Stage0TMNOVTumorStage ;
+      :hasCancer :OvarianCancer_OV ;
+      :hasDiseaseStagingSystem
+              :TNMOvarianNeoplasmStagingSystem_MDA ;
+      :hasFinding :Stage0_PathologicRegionalLymphNodesTNMFinding_OV_MDA , :Stage0_PathologicPrimaryTumorTNMFinding_OV_MDA , :Stage0_PathologicDistantMetastasisTNMFinding_OV_MDA .
+
+:Stage0_PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "No morphologic evidence of distant metastasis, in accordance with TNM classification system guidelines."^^xsd:string ;
+      rdfs:subClassOf :PathologicDistantMetastasisTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage0_PathologicDistantMetastasisTNMFinding_OV_MDA
+      rdf:type :Stage0_PathologicDistantMetastasisTNMFinding ;
+      rdfs:comment """ No distant metastases are found (this excludes peritoneal metastasis).
+"""^^xsd:string ;
+      :code   "M0"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage0_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "No morphologic evidence of primary tumor, in accordance with TNM classification system guidelines."^^xsd:string ;
+      rdfs:subClassOf :PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage0_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage0_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT0"^^xsd:string ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage0_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage0_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "No primary tumor identified"^^xsd:string ;
+      :code   "T0"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage0_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "No evidence of regional lymph node metastasis, in accordance with TNM classification system guidelines."^^xsd:string ;
+      rdfs:subClassOf :PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage0_PathologicRegionalLymphNodesTNMFinding_OV_MDA
+      rdf:type :Stage0_PathologicRegionalLymphNodesTNMFinding ;
+      rdfs:comment "Regional lymph nodes contain no metastases."^^xsd:string ;
+      :code   "N0"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :PathologicDistantMetastasisTNMFinding ;
+      :moreExtensiveThan :Stage0_PathologicDistantMetastasisTNMFinding_OV_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicDistantMetastasisTNMFinding_OV_MDA
+      rdf:type :Stage1_PathologicDistantMetastasisTNMFinding ;
+      rdfs:comment "Distant metastases are present."^^xsd:string ;
+      :code   "M1"^^xsd:string ;
+      :moreExtensiveThan :Stage1_PathologicDistantMetastasisTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage1_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT1"^^xsd:string ;
+      :moreExtensiveThan :Stage0_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage1_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage1_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor is limited to one or both ovaries."^^xsd:string ;
+      :code   "T1"^^xsd:string ;
+      :moreExtensiveThan :Stage0_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1_PathologicRegionalLymphNodesTNMFinding_OV_MDA
+      rdf:type :Stage1_PathologicRegionalLymphNodesTNMFinding ;
+      rdfs:comment "Evidence of lymph node metastasis. "^^xsd:string ;
+      :code   "N1"^^xsd:string ;
+      :moreExtensiveThan :Stage0_PathologicRegionalLymphNodesTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1aTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage1a_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage1a_PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicDistantMetastasisTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1a_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1a_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage1a_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT1a"^^xsd:string ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage1a_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage1a_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor is limited to one ovary. The capsule, or outer wall of the tumor, is intact, there is no tumor on the ovarian surface, and there are no cancer cells in ascites (abdominal fluid build-up) or peritoneal lavage (\"washings\" from the abdominal cavity). "^^xsd:string ;
+      :code   "T1a"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1a_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1bTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage1b_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage1b_PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicDistantMetastasisTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1b_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1b_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage1b_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT1b"^^xsd:string ;
+      :moreExtensiveThan :Stage1a_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage1b_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage1b_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor is limited to both ovaries. The capsule is intact, there is no tumor on the ovarian surface, and there are no cancer cells in ascites or peritoneal lavage. "^^xsd:string ;
+      :code   "T1b"^^xsd:string ;
+      :moreExtensiveThan :Stage1a_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1b_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1cTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage1c_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage1c_PathologicDistantMetastasisTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicDistantMetastasisTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1c_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage1c_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage1c_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT1c"^^xsd:string ;
+      :moreExtensiveThan :Stage1b_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage1c_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage1c_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor is limited to one or both ovaries with any of the following: ruptured capsule (burst outer wall of the tumor), tumor on ovarian surface, or cancer cells in the ascites or peritoneal lavage. "^^xsd:string ;
+      :code   "T1c"^^xsd:string ;
+      :moreExtensiveThan :Stage1b_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage1c_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage1_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage2_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT2"^^xsd:string ;
+      :moreExtensiveThan :Stage1_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage2_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage2_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor involves one or both ovaries with spread into the pelvis. "^^xsd:string ;
+      :code   "T2"^^xsd:string ;
+      :moreExtensiveThan :Stage1_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage2_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2aTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage2a_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage2a_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2a_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage2a_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT2a"^^xsd:string ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage2a_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage2a_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor has spread and/or attaches to the uterus and/or fallopian tubes. There are no cancer cells in ascites or peritoneal lavage. "^^xsd:string ;
+      :code   "T2a"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage2a_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2bTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage2b_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage2b_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2b_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage2b_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT2b"^^xsd:string ;
+      :moreExtensiveThan :Stage2a_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage2b_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage2b_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor has spread to other pelvic tissues. There are no cancer cells in ascites or peritoneal lavage. "^^xsd:string ;
+      :code   "T2b"^^xsd:string ;
+      :moreExtensiveThan :Stage2a_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage2b_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2cTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage2c_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage2c_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage2c_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage2c_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT2c"^^xsd:string ;
+      :moreExtensiveThan :Stage2b_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage2c_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage2c_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor has spread to pelvic tissues, with cancer cells in ascites or peritoneal lavage. "^^xsd:string ;
+      :code   "T2c"^^xsd:string ;
+      :moreExtensiveThan :Stage2b_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage2c_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage2_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage3_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT3"^^xsd:string ;
+      :moreExtensiveThan :Stage2_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage3_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage3_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Tumor involves one or both ovaries, with microscopically confirmed peritoneal metastasis outside the pelvis and/or metastasis to regional (nearby) lymph node(s). "^^xsd:string ;
+      :code   "T3"^^xsd:string ;
+      :moreExtensiveThan :Stage2_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage3_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3aTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage3a_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage3a_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3a_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage3a_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT3a"^^xsd:string ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage3a_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage3a_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Microscopic peritoneal metastasis beyond the pelvis. "^^xsd:string ;
+      :code   "T3a"^^xsd:string ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage3a_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3bTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage3b_PathologicPrimaryTumorTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage3b_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3b_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage3b_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT3b"^^xsd:string ;
+      :moreExtensiveThan :Stage3a_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage3b_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage3b_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Macroscopic (visible to the naked eye) peritoneal metastasis beyond the pelvis, 2 cm or less in greatest dimension. "^^xsd:string ;
+      :code   "T3b"^^xsd:string ;
+      :moreExtensiveThan :Stage3a_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage3b_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3cTMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Class ;
+                            owl:unionOf ([ rdf:type owl:Class ;
+                                        owl:intersectionOf ([ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasFinding ;
+                                                    owl:someValuesFrom :Stage3b_PathologicPrimaryTumorTNMFinding
+                                                  ] [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasFinding ;
+                                                    owl:someValuesFrom :Stage0_PathologicRegionalLymphNodesTNMFinding
+                                                  ] [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasFinding ;
+                                                    owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                                                  ])
+                                      ] [ rdf:type owl:Class ;
+                                        owl:intersectionOf ([ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasFinding ;
+                                                    owl:someValuesFrom :Stage1_PathologicRegionalLymphNodesTNMFinding
+                                                  ] [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasFinding ;
+                                                    owl:someValuesFrom :Stage0_PathologicDistantMetastasisTNMFinding
+                                                  ])
+                                      ])
+                          ])
+              ] .
+
+:Stage3c_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage3c_PathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage3c_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT3c"^^xsd:string ;
+      :moreExtensiveThan :Stage3b_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:Stage3c_PathologicPrimaryTumorTNMFinding_OV_MDA
+      rdf:type :Stage3c_PathologicPrimaryTumorTNMFinding ;
+      rdfs:comment "Peritoneal metastasis beyond the pelvis, more than 2 cm in greatest dimension. "^^xsd:string ;
+      :code   "T3c"^^xsd:string ;
+      :moreExtensiveThan :Stage3b_PathologicPrimaryTumorTNMFinding_OV_MDA ;
+      :tnmScheme :TNMOvarianNeoplasmStagingSystem_MDA ;
+      dc:creator foaf:JimLomax .
+
+:Stage3c_PathologicRegionalLymphNodesTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "Comment placeholder"^^xsd:string ;
+      rdfs:subClassOf :Stage3_PathologicRegionalLymphNodesTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage4TMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :TMNOVTumorStage ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFinding ;
+                            owl:someValuesFrom :Stage1_PathologicDistantMetastasisTNMFinding
+                          ])
+              ] .
+
+:Stage4_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage4a_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage4_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage4b_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage4_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage4c_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage4_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:Stage4d_PathologicPrimaryTumorTNMFinding
+      rdf:type owl:Class ;
+      rdfs:comment "TNM stagingof the primary tumor"^^xsd:string ;
+      rdfs:subClassOf :Stage4_PathologicPrimaryTumorTNMFinding ;
+      dc:creator foaf:JimLomax .
+
+:TMNOVTumorStage
+      rdf:type owl:Class ;
+      rdfs:subClassOf :OVTumorStage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TumorStage [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom :OvarianCancer
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiseaseStagingSystem ;
+                            owl:someValuesFrom :TNMDiseaseStagingSystem
+                          ])
+              ] .
+
+:TNMDiseaseStagingSystem
+      rdf:type owl:Class ;
+      rdfs:comment "A systematic method for clinicopathologic evaluation of tumors. The TNM staging system is a general framework with some guidelines for classification, however the system can, and in most cases must be made more specific to be useful. Materialization of a TMN system can specific to a cancer type, institutional, pathologist or clinician requirements. For example the TNM classification system for lung cancer (small cell carcinoma) is very well defined. However, this does not mean that a specific pathologist will follow the classification guidelines."^^xsd:string ;
+      rdfs:subClassOf :DiseaseStagingSystem ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :specifier ;
+                owl:someValuesFrom foaf:Agent
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:TNMDiseaseStagingSystem_MDA
+      rdf:type :TNMDiseaseStagingSystem .
+
+:TNMOvarianNeoplasmStagingSystem
+      rdf:type owl:Class ;
+      rdfs:comment "A system for specific evaluation of tumors of the ovaries."^^xsd:string ;
+      rdfs:subClassOf :TNMDiseaseStagingSystem ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:intersectionOf (:TNMDiseaseStagingSystem [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCancer ;
+                            owl:someValuesFrom
+                                    [ rdf:type owl:Class ;
+                                      owl:unionOf (:Cancer :Tumor)
+                                    ]
+                          ])
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:TNMOvarianNeoplasmStagingSystem_MDA
+      rdf:type :TNMOvarianNeoplasmStagingSystem ;
+      dc:creator foaf:JimLomax .
+
+:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+:TherapeuticProcedure
+      rdf:type owl:Class ;
+      rdfs:comment "An action or administration of therapeutic agents to produce an effect that is intended to alter the course of a pathologic process."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , :PatientlEvent ;
+      dc:creator foaf:JimLomax .
+
+:TherapeuticProcedureOutcome
+      rdf:type owl:Class ;
+      rdfs:comment "The result of a therpeutic procedure (therapy). There are most likely members to this concept that are defined by NCI Thesaurus."^^xsd:string ;
+      rdfs:subClassOf :Outcome ;
+      dc:creator foaf:JimLomax .
+
+:TissueSample
+      rdf:type owl:Class ;
+      rdfs:comment "A tissue sample is a biological sample from a tumor. The sample is physically collected from a Collection Site. The sample originates from a Patient. The sample and collection of the sample from the patient are done in the context of a specific project, such as TCGA. The sample may be associated with only one patient, but the sample may be associated with many Projects. A sample by its nature must have one Portion; the Portion is the physical containment of the sample."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty :hasPatient
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasPatient ;
+                owl:someValuesFrom :Patient
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement ;
+      owl:distinctMembers (:NormalSample) , (:TumorSample) , (:CellLineSample) .
+
+:TotalRNAAnalyte
+      rdf:type owl:Class ;
+      rdfs:comment "The analyte in question  is purified RNA from tissue. It contains all the RNA of the cells. This is in contrast to the purification containing only mRNA"^^xsd:string ;
+      rdfs:subClassOf :Analyte ;
+      dc:creator foaf:JimLomax .
+
+:Tumor
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:TumorGrade
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:TumorMarker
+      rdf:type owl:Class ;
+      rdfs:comment "A substance present in or produced by a tumor or by the host, that can be used for differentiating neoplastic from normal tissue based on measurements in body fluids, secretions, cells, and/or tissues. Markers are used in diagnosis, staging and prognosis of cancer, provide an estimation of tumor burden, and serve for monitoring effects of therapy, detecting recurrence, localization of tumors, and screening in general populations."^^xsd:string ;
+      rdfs:subClassOf :DiseaseMarker ;
+      dc:creator foaf:JimLomax .
+
+:TumorProgression
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:TumorRecurrence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:TumorResidualDisease
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:TumorSample
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty :hasCancer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom :Cancer ;
+                owl:onProperty :hasCancer
+              ] .
+
+:TumorStage
+      rdf:type owl:Class ;
+      rdfs:comment "A tumor stage is a designation given to a particular incidence of cancer based on a particular staging scheme."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasDiseaseStagingSystem ;
+                owl:someValuesFrom :DiseaseStagingSystem
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :hasCancer ;
+                owl:someValuesFrom :Cancer
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:TumorTissueSite
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Units
+      rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty :value ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :UnitsLabel
+              ] .
+
+:UnitsLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:VitalStatus
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage .
+
+:Weight
+      rdf:type owl:Class ;
+      rdfs:comment "The vertical force exerted by a mass as a result of gravity"^^xsd:string ;
+      rdfs:subClassOf :Quantity ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :WeightLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:WeightLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:WeightUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf :Units .
+
+:WeightUnits_Pounds
+      rdf:type :WeightUnits ;
+      :value  "Pounds"^^xsd:string .
+
+:Weight_Example
+      rdf:type :Weight ;
+      :units  :WeightUnits_Pounds ;
+      :value  "10.1"^^xsd:string .
+
+:Well
+      rdf:type owl:Class ;
+      rdfs:comment "A Well is a logical and physical division of a Microplate; it is a physical container for a small amount of substance to be analyzed"^^xsd:string ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> , :ClinicalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom :WellLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+:WellLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf :ClinicalPackage , skos-xl:Label ;
+      dc:creator foaf:JimLomax .
+
+:WellNumber
+      rdf:type owl:Class ;
+      rdfs:comment "A WellNumber is a unique identification for a Well in the context of its container. For TCGA data the parent will be a Microplate."^^xsd:string ;
+      rdfs:subClassOf :ClinicalPackage , <http://www.w3.org/2004/02/skos/core#Concept> ;
+      dc:creator foaf:JimLomax .
+
+:abbreviation
+      rdf:type owl:DatatypeProperty .
+
+:accessLevelOf
+      rdf:type owl:ObjectProperty .
+
+:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasAccessionNumber .
+
+:activeDatatype
+      rdf:type rdf:Property .
+
+:activityOf
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :hasActivity .
+
+:actorOf
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :hasActor .
+
+:allelicProbeAOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :probeSequenceOf .
+
+:allelicProbeBOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :probeSequenceOf .
+
+:applicationOf
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :hasApplication .
+
+:approver
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:contributor .
+
+:archiveDownloadName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:archiveDownloadOf
+      rdf:type owl:ObjectProperty .
+
+:archiveListingName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:archiveOf
+      rdf:type owl:ObjectProperty .
+
+:archiveVersionOf
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :hasArchiveVersion .
+
+:bcrName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :organizationName .
+
+:biologicalTagOf
+      rdf:type owl:ObjectProperty .
+
+:cancerId
+      rdf:type owl:ObjectProperty .
+
+:cancerName
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Cancer into the ontology"^^xsd:string .
+
+:cancerOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Cancer into the ontology"^^xsd:string ;
+      rdfs:range :Cancer .
+
+:cellularOrigin
+      rdf:type owl:ObjectProperty .
+
+:channelTypeOf
+      rdf:type owl:ObjectProperty .
+
+:chromosomeArm
+      rdf:type owl:ObjectProperty .
+
+:chromosomeArmName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:chromosomeBandNumber
+      rdf:type owl:ObjectProperty .
+
+:chromosomeBandOf
+      rdf:type owl:ObjectProperty .
+
+:chromosomeNumber
+      rdf:type owl:ObjectProperty .
+
+:chromosomeOf
+      rdf:type owl:ObjectProperty .
+
+:code
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range rdfs:Literal .
+
+:collectionSiteDomain
+      rdf:type rdf:Property .
+
+:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+:collectionSiteName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:collectionSiteOf
+      rdf:type owl:ObjectProperty .
+
+:collectsIntensityValuesFrom
+      rdf:type rdf:Property .
+
+:compressionAlgorithmOf
+      rdf:type owl:ObjectProperty .
+
+:conceptInvolvedBy
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :involvesConcept .
+
+:controlFeatureTypeOf
+      rdf:type owl:ObjectProperty .
+
+:correspondsTo
+      rdf:type owl:ObjectProperty .
+
+:cpgSiteIdOf
+      rdf:type owl:ObjectProperty .
+
+:createdDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+:creationDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf :dateTime .
+
+:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+:dateTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Any entity in the ontology having a dateTime"^^xsd:string .
+
+:dd   rdf:type owl:ObjectProperty .
+
+:descriptionOf
+      rdf:type rdf:Property ;
+      owl:inverseOf :hasApplication .
+
+:designElementOf
+      rdf:type owl:ObjectProperty .
+
+:design_rationale
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:description .
+
+:directory
+      rdf:type owl:ObjectProperty .
+
+:diseaseGrading
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "comment placeholder"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:emitsColor
+      rdf:type rdf:Property .
+
+:endingBasePairNumber
+      rdf:type owl:DatatypeProperty .
+
+:exhibitsMorphology
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The subject exhibits a morphology resembling the predicate."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:extendedByUseCase
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :extendsUseCase .
+
+:extendsUseCase
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "This property represents the modeling situation where one Use Case extends the behavior of another Use Case. The extending Use Case initiates and owns the extends relationship. The extended Use Case is unaware that it has been extended, as it must remain a unit of intact behavior for potential extension by other extending Use Cases.  The domain and range for this property are both implicitly Use Cases."^^xsd:string ;
+      rdfs:label "Extends Use Case"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:extensionActivityOf
+      rdf:type owl:ObjectProperty .
+
+:extensionOf
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :hasExtension .
+
+:extensionPointOf
+      rdf:type owl:ObjectProperty .
+
+:file
+      rdf:type owl:ObjectProperty .
+
+:fileTypeOf
+      rdf:type owl:ObjectProperty .
+
+:geneIdOf
+      rdf:type owl:ObjectProperty .
+
+:geneSymbolOf
+      rdf:type owl:ObjectProperty .
+
+:generalizesUseCase
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "This property represents the modeling situation where one Use Case generalizes the behavior of another Use Case. The generalizing Use Case represents a set of  common behaviors, requirements, constraints, and assumptions with a more specialized use case.  The domain and range for this property are both implicitly Use Cases. The inverse of this property is specializesUseCase."^^xsd:string ;
+      rdfs:label "Generalizes Use Case"^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf :specializesUseCase .
+
+:genomeBuild
+      rdf:type owl:ObjectProperty .
+
+:genomicCenterOf
+      rdf:type owl:ObjectProperty .
+
+:genomicSequenceIdOf
+      rdf:type owl:ObjectProperty .
+
+:genomicSequenceSourceReferenceOf
+      rdf:type owl:ObjectProperty .
+
+:goalOf
+      rdf:type owl:TransitiveProperty ;
+      owl:inverseOf :hasGoal .
+
+:hasAccessLevel
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :accessLevelOf .
+
+:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasGenomicSequenceId ;
+      owl:inverseOf :accessionNumberOf .
+
+:hasActivity
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :activityOf .
+
+:hasActor
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :actorOf .
+
+:hasAliquotId
+      rdf:type owl:ObjectProperty .
+
+:hasAllelicProbeA
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasProbeSequence ;
+      owl:inverseOf :allelicProbeAOf .
+
+:hasAllelicProbeB
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasProbeSequence ;
+      owl:inverseOf :allelicProbeBOf .
+
+:hasAmount
+      rdf:type owl:ObjectProperty .
+
+:hasAnatomicSite
+      rdf:type owl:ObjectProperty .
+
+:hasApplication
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :applicationOf .
+
+:hasApproval
+      rdf:type owl:AnnotationProperty .
+
+:hasArchive
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :archiveOf .
+
+:hasArchiveDownload
+      rdf:type owl:ObjectProperty .
+
+:hasArchiveName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+:hasBarcode
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+:hasBiologicalTag
+      rdf:type rdf:Property ;
+      owl:inverseOf :biologicalTagOf .
+
+:hasBranchConidition
+      rdf:type owl:ObjectProperty .
+
+:hasCancer
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Cancer into the ontology"^^xsd:string ;
+      rdfs:range :Cancer ;
+      owl:inverseOf :cancerOf .
+
+:hasChannelType
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :channelTypeOf .
+
+:hasChromosome
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :chromosomeOf .
+
+:hasChromosomeBand
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :chromosomeBandOf .
+
+:hasCollectionSite
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Collection Site  into the ontology"^^xsd:string ;
+      owl:inverseOf :collectionSiteOf .
+
+:hasCompressionAlgorithm
+      rdf:type rdf:Property ;
+      owl:inverseOf :compressionAlgorithmOf .
+
+:hasConcentration
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasAmount .
+
+:hasControlFeatureType
+      rdf:type rdf:Property ;
+      owl:inverseOf :controlFeatureTypeOf .
+
+:hasControlType
+      rdf:type rdf:Property .
+
+:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf :cpgSiteIdOf .
+
+:hasDatatype
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :platformOf .
+
+:hasDescription
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:description .
+
+:hasDesignElement
+      rdf:type owl:ObjectProperty .
+
+:hasDiseaseStagingSystem
+      rdf:type rdf:Property .
+
+:hasExtension
+      rdf:type owl:ObjectProperty .
+
+:hasExtensionActivity
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :extensionActivityOf .
+
+:hasExtensionPoint
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :extensionPointOf .
+
+:hasFileType
+      rdf:type owl:TransitiveProperty ;
+      owl:inverseOf :fileTypeOf .
+
+:hasFinding
+      rdf:type rdf:Property .
+
+:hasGeneId
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :geneIdOf .
+
+:hasGeneSymbol
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :geneSymbolOf .
+
+:hasGenomicCenter
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Genomic Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf :hasOrganization ;
+      owl:inverseOf :genomicCenterOf .
+
+:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf :genomicSequenceIdOf .
+
+:hasGenomicSequenceReferenceSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A property that describes a genomic sequence's source reference (such as NCBI's refseq sequence database)"^^xsd:string ;
+      owl:inverseOf :genomicSequenceSourceReferenceOf .
+
+:hasGoal
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :goalOf .
+
+:hasIdentifier
+      rdf:type owl:ObjectProperty .
+
+:hasImageFormat
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :imageFormatOF .
+
+:hasInterest
+      rdf:type owl:ObjectProperty .
+
+:hasLanguage
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Property indicating that the class has a language dimension. The assumption is that the language dimension is not the language of the class."^^xsd:string .
+
+:hasMeasurement
+      rdf:type rdf:Property .
+
+:hasMicroarray
+      rdf:type owl:ObjectProperty .
+
+:hasMolecularLocation
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :locatedBy ;
+      owl:inverseOf :molecularLocationOf .
+
+:hasName
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf rdfs:label .
+
+:hasNextBase
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :nextBaseOf .
+
+:hasNumber
+      rdf:type rdf:Property .
+
+:hasOrder
+      rdf:type rdf:Property .
+
+:hasOrganization
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :organizationOf .
+
+:hasOrganizationDomain
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :organizationDomainOf .
+
+:hasParent
+      rdf:type owl:TransitiveProperty ;
+      owl:inverseOf :parentOf .
+
+:hasPatient
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string ;
+      owl:inverseOf :patientOf .
+
+:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Contingent on acceptance of Patient into the ontology, this will be addressed when we add clinical aspects."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf :patientIdOf .
+
+:hasPlatform
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :platformOf .
+
+:hasPlatingCenter
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accptance of Plating Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf :hasOrganization .
+
+:hasPortion
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology (which also depends on accepting Vial)"^^xsd:string ;
+      owl:inverseOf :portionOf .
+
+:hasPortionID
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology"^^xsd:string .
+
+:hasPostcondition
+      rdf:type rdf:Property .
+
+:hasPrecondition
+      rdf:type rdf:Property .
+
+:hasProbe
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :probeOf .
+
+:hasProbeSequence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasSequence ;
+      owl:inverseOf :probeSequenceOf .
+
+:hasProject
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :platformOf .
+
+:hasQuery
+      rdf:type owl:ObjectProperty .
+
+:hasResponsibiliy
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :responsibilityOf .
+
+:hasSPARQLQueryClassification
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :SPARQLQueryClassficationOf .
+
+:hasSPARQLQuerySubClassification
+      rdf:type owl:TransitiveProperty .
+
+:hasSequence
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :sequenceOf .
+
+:hasSpot
+      rdf:type rdf:Property .
+
+:hasTargetSequence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasSequence ;
+      owl:inverseOf :targetSequenceOf .
+
+:hasTissueSample
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting TissueSample into the ontology"^^xsd:string ;
+      owl:inverseOf :tissueSampleOf .
+
+:hasTissueType
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :tissueTypeOf .
+
+:hasValidPlatformDatatype
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :validPlatformDatatypeOf .
+
+:hasVendor
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasOrganization ;
+      owl:inverseOf :vendorOf .
+
+:hasWell
+      rdf:type rdf:Property ;
+      rdfs:comment "A property indicating that the subject has an association to a Well; this may be a subclass of a more generalizable property, hasPhysicalSubdivision"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:has_Term
+      rdf:type owl:ObjectProperty .
+
+:has_address
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Under discussion. We feel there will be a need to have this property for classes that will have Addresses."^^xsd:string .
+
+:has_address_role
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Address Role into the ontology"^^xsd:string .
+
+:has_aliquot
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Aliquot into the ontology"^^xsd:string ;
+      rdfs:range :Aliquot .
+
+:has_aliquot_barcode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Aliquot into the ontology. Aliquot Barcodes have a specific text representation that can be described by a regular expression."^^xsd:string .
+
+:has_bio_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on use case  for a class having a TCGA:BioMaterial"^^xsd:string .
+
+:has_chromosome_subband
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :hasChromosomeBand .
+
+:has_cytogenic_location
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf :locatedBy .
+
+:has_genomic_center_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Genomic Center into the ontology. Genomic Center IDs have a specific format."^^xsd:string ;
+      rdfs:range xsd:integer .
+
+:has_input_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "We are discussing creating this property as it seems apprporitate for a Treatment. However, we are still trying to discern what MAGE is trying to represent in  their Treatment class. A Treatment should transform an input material to an output material but there is no mention of a material in the MAGE Treatment."^^xsd:string ;
+      owl:inverseOf :has_output_material .
+
+:has_labeling_compound
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A labeling compound is typically used on a bio material that will subsequently undergo image processing to extract a feature indentified by the labeled compound. There is a has_compund property in MAGE but we may add this as a subclass of that property for those classes that would only allow LabelingCompounds."^^xsd:string .
+
+:has_material_source
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "We will need to add this to the ontology so that classes that are Bio Material (or subclasses) can specify where the material was obtained. Still under discussion."^^xsd:string .
+
+:has_organization_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Still under investigation but it seems to be missing from the MAGE ontology"^^xsd:string .
+
+:has_output_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting a new definition of Treatment, see has_input_material Property"^^xsd:string ;
+      owl:inverseOf :has_input_material .
+
+:has_plate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepatnce of Plate into the ontology"^^xsd:string .
+
+:has_plate_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Plate into the ontology"^^xsd:string .
+
+:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+:has_plating_center_ID
+      rdf:type rdf:Property , owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Plating Center into the ontology"^^xsd:string .
+
+:has_quality_control
+      rdf:type owl:ObjectProperty .
+
+:has_raw_source
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting Aliquot into the ontology. In TCGA parlance, an Aliguot would have exactly one raw source from which it was derived orginally and that raw source would be a BioMaterial"^^xsd:string .
+
+:has_string_representation
+      rdf:type owl:DatatypeProperty .
+
+:has_vial
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting Vial into the ontology"^^xsd:string .
+
+:has_vial_ID
+      rdf:type owl:DatatypeProperty .
+
+:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+:imageFormatOF
+      rdf:type owl:ObjectProperty .
+
+:imageSource
+      rdf:type rdf:Property .
+
+:includedByUseCase
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :includesUseCase .
+
+:includesUseCase
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Indicates that the subject Use Case includes the behavior of the object Use Case"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:indicates
+      rdf:type owl:ObjectProperty .
+
+:inspiredBy
+      rdf:type owl:ObjectProperty .
+
+:involvesConcept
+      rdf:type owl:ObjectProperty ;
+      rdfs:range
+              [ rdf:type owl:Class ;
+                owl:unionOf (rdfs:Class owl:AnnotationProperty owl:DatatypeProperty owl:ObjectProperty)
+              ] .
+
+:isExternal
+      rdf:type owl:DatatypeProperty .
+
+:isPrimary
+      rdf:type owl:DatatypeProperty .
+
+:isSuccessful
+      rdf:type rdf:Property .
+
+:lastModifiedDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :dateTime .
+
+:lessExtensiveThan
+      rdf:type owl:ObjectProperty .
+
+:locatedBy
+      rdf:type rdf:Property .
+
+:methylated
+      rdf:type owl:DatatypeProperty .
+
+:microarrayIdentifier
+      rdf:type owl:ObjectProperty .
+
+:molecularLocationOf
+      rdf:type owl:ObjectProperty .
+
+:moreExtensiveThan
+      rdf:type owl:TransitiveProperty ;
+      rdfs:domain :Indicator ;
+      rdfs:range :Finding ;
+      owl:inverseOf :lessExtensiveThan .
+
+:name
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf rdfs:label .
+
+:nextBaseOf
+      rdf:type owl:ObjectProperty .
+
+:organizationDomainOf
+      rdf:type owl:ObjectProperty .
+
+:organizationName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:organizationOf
+      rdf:type owl:ObjectProperty .
+
+:parentGoal
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "comment placeholder"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+:parentOf
+      rdf:type owl:TransitiveProperty .
+
+:patientIdOf
+      rdf:type owl:ObjectProperty .
+
+:patientOf
+      rdf:type owl:ObjectProperty .
+
+:platformDatatypeOf
+      rdf:type owl:ObjectProperty .
+
+:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+:platformName
+      rdf:type owl:ObjectProperty .
+
+:platformOf
+      rdf:type owl:ObjectProperty .
+
+:portionOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:range :TissueSample ;
+      owl:inverseOf :tissueSampleOf .
+
+:postconditionOf
+      rdf:type rdf:Property .
+
+:preconditionOf
+      rdf:type rdf:Property .
+
+:probeOf
+      rdf:type owl:ObjectProperty .
+
+:probeSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :sequenceOf .
+
+:projectName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+:projectOf
+      rdf:type owl:ObjectProperty .
+
+:pt4StagePathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage4_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT4"^^xsd:string ;
+      :moreExtensiveThan :Stage3_PathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:pt4aStagePathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage4a_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT4a"^^xsd:string ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:pt4bStagePathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage4b_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT4b"^^xsd:string ;
+      :moreExtensiveThan :pt4aStagePathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:pt4cStagePathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage4c_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT4c"^^xsd:string ;
+      :moreExtensiveThan :pt4bStagePathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:pt4dStagePathologicPrimaryTumorTNMFinding_MDA
+      rdf:type :Stage4d_PathologicPrimaryTumorTNMFinding ;
+      :code   "pT4d"^^xsd:string ;
+      :moreExtensiveThan :pt4cStagePathologicPrimaryTumorTNMFinding_MDA ;
+      :tnmScheme :TNMDiseaseStagingSystem_MDA .
+
+:quantity
+      rdf:type rdf:Property .
+
+:queryOf
+      rdf:type owl:ObjectProperty .
+
+:realizedBy
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf :inspiredBy .
+
+:refersTo
+      rdf:type owl:ObjectProperty .
+
+:responsibilityOf
+      rdf:type owl:ObjectProperty .
+
+:science_background
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:description .
+
+:sequence
+      rdf:type rdf:Property .
+
+:sequenceOf
+      rdf:type owl:ObjectProperty .
+
+:shape
+      rdf:type rdf:Property .
+
+:specializesUseCase
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "This property represents the modeling situation where one Use Case specializes the behavior of another Use Case. The specializing Use Case has common behaviors, requirements, constraints, and assumptions with a more general use case.  The domain and range for this property are both implicitly Use Cases. The inverse of this property is generalizesUseCase."^^xsd:string ;
+      rdfs:label "Generalizes Use Case"^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf :generalizesUseCase .
+
+:specifier
+      rdf:type rdf:Property ;
+      rdfs:range foaf:Agent .
+
+:startingBasePairNumber
+      rdf:type owl:DatatypeProperty .
+
+:subGoal
+      rdf:type owl:TransitiveProperty ;
+      owl:inverseOf :parentGoal .
+
+:targetSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :sequenceOf .
+
+:tissueSampleId
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Tissue Sample into the ontology. Generaly TissueSample IDs embed information about what Organization supplied the sample and often a Patient ID."^^xsd:string .
+
+:tissueSampleOf
+      rdf:type owl:ObjectProperty ;
+      dc:creator foaf:JimLomax .
+
+:tissueTypeOf
+      rdf:type owl:ObjectProperty .
+
+:tnmScheme
+      rdf:type rdf:Property ;
+      rdfs:range :TNMDiseaseStagingSystem .
+
+:units
+      rdf:type rdf:Property .
+
+:updatedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+:validPlatformDatatypeOf
+      rdf:type owl:ObjectProperty .
+
+:value
+      rdf:type owl:DatatypeProperty .
+
+:variationOf
+      rdf:type rdf:Property .
+
+:vendor
+      rdf:type mage:Roles ;
+      rdfs:comment "The role of vendor is curently distinct from hardware or software manufacture, it is intended to represent any vendor that supplies hardware, software or consulting services in any combination. We may eventually discard its usage or classify then draw equivalnces elsewhere within the ontology"^^xsd:string .
+
+:vendorOf
+      rdf:type owl:ObjectProperty .
+
+:xDimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having an x dimemsion"^^xsd:string .
+
+:xMax
+      rdf:type owl:DatatypeProperty .
+
+:yDimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having a Y dimension"^^xsd:string .
+
+:yMax
+      rdf:type owl:DatatypeProperty .
+
+mage:has_number
+      rdf:type owl:DatatypeProperty .
+
+mage:has_ordered_basepair
+      rdf:type owl:ObjectProperty .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

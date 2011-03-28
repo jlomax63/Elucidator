@@ -1,0 +1,1677 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://spinrdf.org/spl" > 
+  <rdf:Description rdf:about="#MathematicalFunctions">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spin:abstract>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mathematical functions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <sp:where rdf:nodeID="A1"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <sp:subject rdf:nodeID="A3"/>
+    <sp:object rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</sp:arg2>
+    <sp:arg1 rdf:nodeID="A5"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#eq"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:first rdf:nodeID="A7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_age">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">age</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:first rdf:nodeID="A9"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <sp:arg1 rdf:nodeID="A5"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A14"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdf:first rdf:nodeID="A16"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdf:first rdf:nodeID="A18"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+    <sp:arg1 rdf:nodeID="A20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:first rdf:nodeID="A22"/>
+    <rdf:rest rdf:nodeID="A23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MiscFunctions">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spin:abstract>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Misc functions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optional</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#TriplePath"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:path rdf:nodeID="A28"/>
+    <sp:object rdf:resource="http://spinrdf.org/spin#_arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#ne">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">!=</spin:symbol>
+    <rdfs:comment>Returns true if ?arg1 != ?arg2.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A29"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ne</rdfs:label>
+    <spin:constraint rdf:nodeID="A30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:first rdf:nodeID="A32"/>
+    <rdf:rest rdf:nodeID="A33"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:first rdf:nodeID="A35"/>
+    <rdf:rest rdf:nodeID="A8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Argument">
+    <spin:constraint rdf:nodeID="A36"/>
+    <spin:constraint rdf:nodeID="A37"/>
+    <spin:constraint rdf:nodeID="A38"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Argument</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#AskTemplates"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#AskTemplate"/>
+    <spin:constraint rdf:nodeID="A39"/>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Argument {?predicate} : {?valueType}</spin:labelTemplate>
+    <spin:body rdf:nodeID="A40"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Provides metadata about an argument of a SPIN Function or Template. Arguments wrap a given rdf:Property (predicate) and specify its value type and whether the argument is optional. When used as spin:constraing, the body of this template will verify that a non-optional value exists and that it has the specified value type.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A41"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <sp:object rdf:nodeID="A42"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#body"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <sp:arg1 rdf:nodeID="A12"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#isURI">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A44"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isURI</spin:symbol>
+    <rdfs:comment>Checks whether a node is a URI.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isURI</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:object rdf:resource="http://spinrdf.org/spin#_arg3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#and"/>
+    <sp:arg2 rdf:nodeID="A45"/>
+    <sp:arg1 rdf:nodeID="A46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#lt">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A47"/>
+    <spin:constraint rdf:nodeID="A48"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;</spin:symbol>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lt</rdfs:label>
+    <rdfs:comment>Returns true if ?arg1 &lt; ?arg2.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#isLiteral"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#eq">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A50"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">=</spin:symbol>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A51"/>
+    <rdfs:comment>Returns true if both arguments are equal.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Optional"/>
+    <sp:elements rdf:nodeID="A15"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_valueType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <sp:subject rdf:nodeID="A54"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#sameTerm"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    <sp:arg2 rdf:nodeID="A55"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ModPath"/>
+    <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</sp:modMax>
+    <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sp:modMin>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <rdf:first rdf:nodeID="A57"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <rdf:first rdf:nodeID="A59"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_class">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the first operand of the intersection</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <rdf:first rdf:nodeID="A62"/>
+    <rdf:rest rdf:nodeID="A31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#regex">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regex</rdfs:label>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regex</spin:symbol>
+    <spin:constraint rdf:nodeID="A63"/>
+    <rdfs:subClassOf rdf:resource="#StringFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Returns true if a string (?arg1) matches the regular expression supplied as a pattern (?arg2) as influenced by the value of flags (?arg3), otherwise returns false.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A64"/>
+    <spin:constraint rdf:nodeID="A65"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the node to check</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A67"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#InferDefaultValue">
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Default value for {?predicate}: {?defaultValue}</spin:labelTemplate>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#ConstructTemplates"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infer default value</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Can be used to infer default values for a given subject/predicate combination. This is typically assigned as spin:rule to a class. If ?this does not already have a value for a given property {?predicate}, then this will infer the value {?defaultValue}.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A68"/>
+    <spin:constraint rdf:nodeID="A69"/>
+    <spin:body rdf:nodeID="A70"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#ConstructTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <sp:expression rdf:nodeID="A72"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#and">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:comment>Return the logical AND between two (boolean) operands.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A73"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</rdfs:label>
+    <spin:constraint rdf:nodeID="A60"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&amp;&amp;</spin:symbol>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <rdf:first rdf:nodeID="A75"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vars</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>the first value to compare</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A53"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <rdf:first rdf:nodeID="A80"/>
+    <rdf:rest rdf:nodeID="A81"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A82">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <rdf:rest rdf:nodeID="A83"/>
+    <rdf:first rdf:nodeID="A84"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <rdf:first rdf:nodeID="A86"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Optional"/>
+    <sp:elements rdf:nodeID="A58"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A88">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defaultValue</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OntologyFunctions">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spin:abstract>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology functions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_b">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A89"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A90">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#resultVariables"/>
+    <sp:object rdf:nodeID="A76"/>
+    <sp:subject rdf:nodeID="A91"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the variable or expression that is checked</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_valueType">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">valueType</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the property that is expected to hold the value</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A73">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment>the second operand of the intersection</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <rdf:rest rdf:nodeID="A13"/>
+    <rdf:first rdf:nodeID="A95"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#isIRI"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#_arg2"/>
+    <sp:object rdf:resource="http://spinrdf.org/sp#_object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <rdf:first rdf:nodeID="A99"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <rdf:rest rdf:nodeID="A101"/>
+    <rdf:first rdf:nodeID="A102"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Union"/>
+    <sp:elements rdf:nodeID="A104"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <rdf:first rdf:nodeID="A106"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the expected property</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicate</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <spl:predicate rdf:resource="#predicate"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the property holding the values of each function call</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <rdf:first rdf:nodeID="A110"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <sp:object rdf:nodeID="A111"/>
+    <sp:predicate rdf:nodeID="A112"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A113">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the type that the instance must have</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A114">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A115">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A116">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A117"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicate</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#isBlank">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isBlank</spin:symbol>
+    <spin:constraint rdf:nodeID="A120"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Checks whether a given node is a blank node.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isBlank</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_datatype">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A121">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+    <sp:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CONSTRUCT 
+  { ?this ?predicate ?defaultValue .}
+WHERE
+  { ?this rdf:type ?directType .
+    ?directType rdfs:subClassOf* ?type .
+    ?type spin:constraint ?attribute .
+    ?attribute spl:defaultValue ?defaultValue .
+    ?attribute spl:predicate ?predicate
+  }</sp:text>
+    <sp:where rdf:nodeID="A79"/>
+    <sp:templates rdf:nodeID="A98"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A122">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the literal to get the language of</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
+    <rdf:type rdf:resource="#objectCount"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_predicate"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_minCount2">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minCount2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A124">
+    <sp:expression rdf:nodeID="A125"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:first rdf:nodeID="A103"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A112">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicate</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1.1</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://spinrdf.org/spin"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#LibraryOntology"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of generally useful SPARQL functions (expressed as SPIN functions), and SPIN templates. Also provides a top-level classification of functions.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a comment describing the argument</rdfs:comment>
+    <spl:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A126">
+    <sp:arg1 rdf:nodeID="A111"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A127">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defaultValue</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="#instance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+    <rdfs:domain rdf:resource="http://spinrdf.org/sp#ModuleCall"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">instance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A128">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the type to match against</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_minCount">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minCount</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A129">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ModPath"/>
+    <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</sp:modMax>
+    <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sp:modMin>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <rdf:first rdf:nodeID="A131"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A132">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Select"/>
+    <sp:where rdf:nodeID="A133"/>
+    <sp:resultVariables rdf:nodeID="A116"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A134">
+    <rdf:first rdf:nodeID="A135"/>
+    <rdf:rest rdf:nodeID="A136"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A137">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the node being tested</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#divide">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">divide</rdfs:label>
+    <spin:constraint rdf:nodeID="A138"/>
+    <rdfs:comment>Returns the arithmetic quotient of its operands.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A77"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/</spin:symbol>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A139">
+    <rdf:rest rdf:nodeID="A140"/>
+    <rdf:first rdf:nodeID="A141"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A142">
+    <rdf:first rdf:nodeID="A143"/>
+    <rdf:rest rdf:nodeID="A144"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A111">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vars</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <rdf:type rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#unaryPlus">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <rdfs:comment>Returns the operand ?arg1 with the sign unchanged. Semantically, this operation performs no operation.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+</spin:symbol>
+    <spin:constraint rdf:nodeID="A145"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unary plus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <rdf:rest rdf:nodeID="A100"/>
+    <rdf:first rdf:nodeID="A71"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_maxCount"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spl:predicate rdf:resource="#valueType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the value type of the argument</rdfs:comment>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A146">
+    <rdf:first rdf:nodeID="A147"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#sub">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <rdfs:comment>Returns the arithmetic difference of its operands.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A148"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sub</rdfs:label>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</spin:symbol>
+    <spin:constraint rdf:nodeID="A149"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#or">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">||</spin:symbol>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Returns the logical OR between two (boolean) operands.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A150"/>
+    <spin:constraint rdf:nodeID="A151"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A125">
+    <sp:arg1 rdf:nodeID="A126"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_predicate">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicate</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <rdf:first rdf:nodeID="A152"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A136">
+    <rdf:first rdf:nodeID="A153"/>
+    <rdf:rest rdf:nodeID="A146"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A131">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:predicate rdf:nodeID="A119"/>
+    <sp:object rdf:nodeID="A88"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_p">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A154">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+    <sp:arg1 rdf:nodeID="A155"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#StringFunctions">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spin:abstract>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">String functions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A156">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the node to convert to string</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A157">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A141">
+    <sp:elements rdf:nodeID="A24"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Optional"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasValueOfType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasValueOfType</rdfs:label>
+    <spin:body rdf:nodeID="A158"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A128"/>
+    <spin:constraint rdf:nodeID="A107"/>
+    <rdfs:comment>Checks whether a given subject (?arg1) has at least one value of a given type (?arg3) for a given property (?arg2) or one of its sub-properties.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A159"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A160">
+    <sp:expression rdf:nodeID="A161"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A162">
+    <sp:elements rdf:nodeID="A94"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Union"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A150">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A163">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spl:predicate rdf:resource="#minCount"/>
+    <rdfs:comment>the minimum number of values permitted for the property</rdfs:comment>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <sp:where rdf:nodeID="A164"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+    <sp:templates rdf:nodeID="A130"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Let"/>
+    <sp:variable rdf:nodeID="A114"/>
+    <sp:expression rdf:nodeID="A165"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A166">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_value"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">indicates whether the argument is optional</rdfs:comment>
+    <spl:predicate rdf:resource="#optional"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A167">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#and"/>
+    <sp:arg2 rdf:nodeID="A168"/>
+    <sp:arg1 rdf:nodeID="A169"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A170">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the node being tested</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BooleanFunctions">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spin:abstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logical functions</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A171">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+    <sp:arg1 rdf:nodeID="A172"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A173">
+    <rdf:type rdf:resource="#objectCount"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_predicate"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A174">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment>the second number</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A159">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the subject that is expected to have the value</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A175">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A154"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Attribute">
+    <spin:body rdf:nodeID="A176"/>
+    <spin:constraint rdf:nodeID="A163"/>
+    <rdfs:comment>Defines an "attribute" of a class. Attribute definitions bundle common modeling patterns known from object-oriented languages like UML. Each attribute can have min and max cardinality, a value type and a default value. The attribute links a class with one RDF property. This template should be used as spin:constraints on a class to make sure that classes meet the expected cardinalities and valueType constraints.
+If a model wants to use spl:defaultValue, then it should instantiate the spl:ConstructDefaultValues as a spin:constructor at some root class, such as rdfs:Resource.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A177"/>
+    <spin:constraint rdf:nodeID="A178"/>
+    <spin:constraint rdf:nodeID="A179"/>
+    <spin:constraint rdf:nodeID="A180"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute</rdfs:label>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute {?predicate} : {?valueType} [{?minCount},{?maxCount}]</spin:labelTemplate>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#AskTemplate"/>
+    <spin:constraint rdf:nodeID="A181"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#AskTemplates"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A182"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A161">
+    <sp:arg2 rdf:nodeID="A4"/>
+    <sp:arg1 rdf:nodeID="A43"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#or"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A183">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Function body must be either an Ask query or a Select with exactly one result variable</rdfs:comment>
+    <sp:where rdf:nodeID="A184"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <sp:object rdf:nodeID="A111"/>
+    <sp:predicate rdf:nodeID="A112"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A144">
+    <rdf:first rdf:nodeID="A115"/>
+    <rdf:rest rdf:nodeID="A109"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:nodeID="A139"/>
+    <rdf:first rdf:nodeID="A160"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the default value for the argument</rdfs:comment>
+    <spl:predicate rdf:resource="#defaultValue"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#isIRI">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isIRI</rdfs:label>
+    <spin:constraint rdf:nodeID="A137"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Checks whether a given node is a IRI node.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isIRI</spin:symbol>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A185">
+    <sp:where rdf:nodeID="A85"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A186">
+    <rdf:first rdf:nodeID="A187"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:object rdf:nodeID="A188"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A120">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the node being checked</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A189">
+    <sp:arg2 rdf:nodeID="A190"/>
+    <sp:arg1 rdf:nodeID="A111"/>
+    <rdf:type rdf:resource="#instanceOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A191">
+    <rdf:first rdf:nodeID="A192"/>
+    <rdf:rest rdf:nodeID="A56"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A179">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spl:predicate rdf:resource="#valueType"/>
+    <rdfs:comment>the type that all values of the property must have</rdfs:comment>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A148">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A193">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attribute</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A194">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the subject to get the number of objects of</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#defaultValue">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">default value</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A195">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the language tag that ?arg1 must have</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A196"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A149">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A168">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#lt"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_minCount"/>
+    <sp:arg1 rdf:nodeID="A123"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A192">
+    <rdf:first rdf:nodeID="A52"/>
+    <rdf:rest rdf:nodeID="A17"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A197">
+    <rdf:first rdf:nodeID="A61"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A198">
+    <rdf:first rdf:nodeID="A199"/>
+    <rdf:rest rdf:nodeID="A200"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#add">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">add</rdfs:label>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+</spin:symbol>
+    <spin:constraint rdf:nodeID="A201"/>
+    <rdfs:comment>Returns the arithmetic sum of its operands.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A174"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <rdf:first rdf:nodeID="A202"/>
+    <rdf:rest rdf:nodeID="A198"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A203">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <sp:where rdf:nodeID="A204"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A155">
+    <rdf:type rdf:resource="#instanceOf"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_valueType"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#TriplePath"/>
+    <sp:object rdf:resource="http://spinrdf.org/spin#_arg2"/>
+    <sp:path rdf:nodeID="A205"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#bound">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A92"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bound</spin:symbol>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bound</rdfs:label>
+    <rdfs:comment>Returns true if ?arg1 is bound to a value. Returns false otherwise. Variables with the value NaN or INF are considered bound.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:object rdf:nodeID="A157"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#body"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A206">
+    <sp:subject rdf:nodeID="A193"/>
+    <sp:predicate rdf:resource="#predicate"/>
+    <sp:object rdf:nodeID="A108"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A178">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <rdfs:comment>a comment describing the meaning of this attribute</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A172">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A207">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#sameTerm">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">same term</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A208"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sameTerm</spin:symbol>
+    <spin:constraint rdf:nodeID="A209"/>
+    <rdfs:comment>Returns TRUE if ?arg1 and ?arg2 are the same RDF term as defined in Resource Description Framework (RDF): Concepts and Abstract Syntax [CONCEPTS]; returns FALSE otherwise.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A151">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A147">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:object rdf:nodeID="A210"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#lang">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#StringFunctions"/>
+    <spin:constraint rdf:nodeID="A122"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lang</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lang</spin:symbol>
+    <rdfs:comment>Returns the language tag of ?arg1, if it has one. It returns "" if the literal has no language tag. Node that the RDF data model does not include literals with an empty language tag.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#unaryMinus">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <rdfs:comment>Returns the operand ?arg1 with the sign reversed. If ?arg1 is positive, its negative is returned; if it is negative, its positive is returned.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</spin:symbol>
+    <spin:constraint rdf:nodeID="A211"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unary minus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A164">
+    <rdf:first rdf:nodeID="A87"/>
+    <rdf:rest rdf:nodeID="A105"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:first rdf:nodeID="A166"/>
+    <rdf:rest rdf:nodeID="A74"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#isLiteral"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A210">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_count">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A212">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the literal to get the datatype of</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#langMatches">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#StringFunctions"/>
+    <spin:constraint rdf:nodeID="A195"/>
+    <rdfs:comment>Returns true if language-tag (first argument) matches language-range (second argument) per the basic filtering scheme defined in [RFC4647] section 3.3.1.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A213"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">langMatches</spin:symbol>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">langMatches</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#class">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>the flags</rdfs:comment>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A205">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ModPath"/>
+    <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sp:modMin>
+    <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</sp:modMax>
+    <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A204">
+    <rdf:first rdf:nodeID="A27"/>
+    <rdf:rest rdf:nodeID="A6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#count">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A214">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the subject that is expected to have the value</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A188">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">directType</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A215">
+    <rdf:first rdf:nodeID="A206"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A176">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <sp:where rdf:nodeID="A216"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment>the second value to compare</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A117">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Count"/>
+    <sp:expression rdf:resource="http://spinrdf.org/sp#_object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A217">
+    <sp:expression rdf:nodeID="A218"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+    <sp:arg1 rdf:nodeID="A171"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A219">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anyValue</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="#optional">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optional</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#objectCount">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:comment>Gets the number of values of a given property (?arg2) at a given subject (?arg1). The result is the number of matches of (?arg1, ?arg2, ?object).</rdfs:comment>
+    <spin:constraint rdf:nodeID="A220"/>
+    <spin:constraint rdf:nodeID="A194"/>
+    <rdfs:subClassOf rdf:resource="#OntologyFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">objectCount</rdfs:label>
+    <spin:body rdf:nodeID="A132"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A145">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the operand</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A221">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#or"/>
+    <sp:arg1 rdf:nodeID="A222"/>
+    <sp:arg2 rdf:nodeID="A223"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A224">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A165">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#datatype"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A140">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A124"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_t">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A110">
+    <rdf:rest rdf:nodeID="A225"/>
+    <rdf:first rdf:nodeID="A78"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A208">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment>the second argument</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#str">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#StringFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">str</spin:symbol>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">str</rdfs:label>
+    <spin:constraint rdf:nodeID="A156"/>
+    <rdfs:comment>Returns the lexical form of ?arg1 (a literal); returns the codepoint representation of ?arg1 (an IRI). This is useful for examining parts of an IRI, for instance, the host-name.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A181">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <spl:predicate rdf:resource="#predicate"/>
+    <rdfs:comment>the RDF property holding the attribute value</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A217"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A218">
+    <sp:arg1 rdf:nodeID="A189"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A226">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#eq"/>
+    <sp:arg1 rdf:nodeID="A114"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_maxCount">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maxCount</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A106">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A227"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A135">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A221"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:first rdf:nodeID="A134"/>
+    <rdf:rest rdf:nodeID="A197"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A228">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment>the instance being tested</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A229">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The literal to test.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A158">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <sp:where rdf:nodeID="A21"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:predicate rdf:nodeID="A119"/>
+    <sp:object rdf:nodeID="A219"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>the input string</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasValue">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasValue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:comment>Checks whether a given resource (?arg1) has a given value (?arg3) for a given property (?arg2) or one of the sub-properties of it.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A214"/>
+    <spin:constraint rdf:nodeID="A93"/>
+    <spin:constraint rdf:nodeID="A230"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:body rdf:nodeID="A203"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A184">
+    <rdf:first rdf:nodeID="A231"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#valueType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#not">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A232"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Returns the boolean negation of the argument.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">!</spin:symbol>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A233">
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:object rdf:resource="http://spinrdf.org/sp#Select"/>
+    <sp:subject rdf:nodeID="A90"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_value">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A180">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="#maxCount"/>
+    <rdfs:comment>the maximum number of values permitted for the property</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A234">
+    <sp:subject rdf:nodeID="A193"/>
+    <sp:predicate rdf:resource="#defaultValue"/>
+    <sp:object rdf:nodeID="A127"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A230">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the expected value</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#predicate">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">predicate</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/sp#arg"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A235">
+    <sp:expression rdf:nodeID="A96"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A232">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the operand to negate</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A236">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Union"/>
+    <sp:elements rdf:nodeID="A142"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A237">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A226"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A209">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the first argument</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A153">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#TriplePath"/>
+    <sp:subject rdf:nodeID="A210"/>
+    <sp:path rdf:nodeID="A238"/>
+    <sp:object rdf:resource="http://spinrdf.org/spin#_arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+    <sp:where rdf:nodeID="A239"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#gt"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_maxCount"/>
+    <sp:arg1 rdf:nodeID="A173"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the match pattern</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A240">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+    <sp:arg1 rdf:nodeID="A219"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#maxCount">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="#count"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A241">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A242">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_value"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_predicate"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A223">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#isBlank"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A243">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A244">
+    <rdf:first rdf:nodeID="A175"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A152">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Union"/>
+    <sp:elements rdf:nodeID="A245"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A220">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>the property to get the number of values of</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A216">
+    <rdf:first rdf:nodeID="A236"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A99">
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:predicate rdf:nodeID="A108"/>
+    <sp:object rdf:nodeID="A127"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#ge">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A241"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ge</rdfs:label>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;=</spin:symbol>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Returns true if ?arg1 &gt;= ?arg2.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A246"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">body</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <rdf:first rdf:nodeID="A237"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A247">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+    <sp:expression rdf:nodeID="A167"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A201">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the first number</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A238">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ModPath"/>
+    <sp:subPath rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:modMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-2</sp:modMax>
+    <sp:modMin rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sp:modMin>
+  </rdf:Description>
+  <rdf:Description rdf:about="#instanceOf">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">instanceOf</rdfs:label>
+    <rdfs:comment>Checks whether a given resource (?arg1) has a given type (?arg2). In order to fulfill this condition, there must either be a triple ?arg1 rdf:type ?arg2, or ?instance rdf:type ?subClass where ?subClass is a subclass of ?arg2. If the first argument is a literal, then the second argument must be the matching XSD datatype.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{?arg1} instance of {?arg2}</spin:labelTemplate>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A113"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A228"/>
+    <spin:body rdf:nodeID="A0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A177">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the default value of the attribute</rdfs:comment>
+    <spl:predicate rdf:resource="#defaultValue"/>
+    <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</spl:optional>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A239">
+    <rdf:rest rdf:nodeID="A248"/>
+    <rdf:first rdf:nodeID="A235"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A196">
+    <rdf:type rdf:resource="#instanceOf"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg3"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A249">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A227">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+    <sp:arg1 rdf:nodeID="A240"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A245">
+    <rdf:first rdf:nodeID="A26"/>
+    <rdf:rest rdf:nodeID="A186"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The predicate to infer the default value of.</rdfs:comment>
+    <spl:predicate rdf:resource="#predicate"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A225">
+    <rdf:first rdf:nodeID="A242"/>
+    <rdf:rest rdf:nodeID="A244"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A199">
+    <sp:subject rdf:nodeID="A249"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#constraint"/>
+    <sp:object rdf:nodeID="A193"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A211">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A222">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#isIRI"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#le">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A224"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:constraint rdf:nodeID="A82"/>
+    <rdfs:comment>Returns true if ?arg1 &lt;= ?arg2.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;=</spin:symbol>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">le</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A190">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">valueType</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#datatype">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#OntologyFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</rdfs:label>
+    <spin:constraint rdf:nodeID="A212"/>
+    <rdfs:comment>Returns the datatype IRI of argument ?arg1; returns xsd:string if the parameter is a simple literal.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</spin:symbol>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A143">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A247"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_str">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">str</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A182">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#and"/>
+    <sp:arg1 rdf:nodeID="A49"/>
+    <sp:arg2 rdf:nodeID="A19"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_optional">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optional</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A213">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment>the literal that is expected to have ?arg2 as language tag</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="#minCount">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="#count"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment>the first operand</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A246">
+    <rdf:type rdf:resource="#Argument"/>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:comment>the second operand</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#gt">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;</spin:symbol>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gt</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Returns true if ?arg1 &gt; arg2.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A66"/>
+    <spin:constraint rdf:nodeID="A118"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A187">
+    <rdf:first rdf:nodeID="A233"/>
+    <rdf:rest rdf:nodeID="A34"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A231">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Union"/>
+    <sp:elements rdf:nodeID="A191"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A202">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#TriplePath"/>
+    <sp:subject rdf:nodeID="A188"/>
+    <sp:path rdf:nodeID="A129"/>
+    <sp:object rdf:nodeID="A249"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A200">
+    <rdf:first rdf:nodeID="A234"/>
+    <rdf:rest rdf:nodeID="A215"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A248">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A162"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A169">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_minCount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#mul">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#MathematicalFunctions"/>
+    <spin:constraint rdf:nodeID="A243"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mul</rdfs:label>
+    <spin:constraint rdf:nodeID="A207"/>
+    <rdfs:comment>Returns the arithmetic product of its operands.</rdfs:comment>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</spin:symbol>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <rdf:type rdf:resource="#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The default value to infer.</rdfs:comment>
+    <spl:predicate rdf:resource="#defaultValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#isLiteral">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLiteral</spin:symbol>
+    <spin:constraint rdf:nodeID="A170"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment>Checks whether a given node is a literal.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLiteral</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <sp:arg1 rdf:nodeID="A190"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#bound"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_error">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">error</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A133">
+    <rdf:first rdf:nodeID="A97"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_object">
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="#isUntypedLiteral">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+    <rdfs:subClassOf rdf:resource="#BooleanFunctions"/>
+    <spin:constraint rdf:nodeID="A229"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isUntypedLiteral</rdfs:label>
+    <rdfs:comment>Checks whether a given literal is untyped. This function was introduced because the built-in datatype operand in SPARQL casts untyped literals to xsd:string, making it impossible to check it this way. This function here uses a work-around using sameTerm instead.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spin:body rdf:nodeID="A185"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConstructDefaultValues">
+    <spin:body rdf:nodeID="A121"/>
+    <rdfs:comment>This template can be attached as spin:constructor to a root class such as rdfs:Resource to ensure that SPIN processors assign default values to certain properties. Looks for any templates attached as spin:constraints to the types of ?this and then assigns their declared spl:defaultValues.</rdfs:comment>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Construct default values</spin:labelTemplate>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Construct default values</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#ConstructTemplates"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#ConstructTemplate"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:mage="http://mdanderson.org/mage#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:tcga="http://mdanderson.org/tcga#"
+>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_platform_identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_file"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DateTime2010-12-13">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <tcga:has_date_time>2010-12-13</tcga:has_date_time>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_directory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CreationDateTime2000-12-12">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platID1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="av1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CreationDateTime2010-12-13">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#IlluminaOrg">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Organization"/>
+    <tcga:has_organization_domain rdf:resource="http://mdanderson.org/tcga#illumina.orgOrgDomain"/>
+    <tcga:has_organization_domain rdf:resource="http://mdanderson.org/tcga#intgen.orgOrgDomain"/>
+    <tcga:has_organization_name rdf:resource="http://mdanderson.org/tcga#Illumina"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="orgD1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_creation_date">
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/tcga#has_date_time"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ProjectPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#OrganizationDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#OrganizationPackage"/>
+    <rdfs:subClassOf rdf:nodeID="orgD1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ModificationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_last_modified_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="org1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#OrganizationPackage"/>
+    <rdfs:subClassOf rdf:nodeID="org2"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ad1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveDownloadName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_archive_download_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveVersion"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_archive_version"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_date_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#Organization"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_vendor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ComputationalArtifact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchiveListing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="org1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#OrganizationName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_organization_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="an1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_genomic_center">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#PlatformName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="platN1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#MicroarrayPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ProjectName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="prn1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ProjectPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#OrganizationName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="orgN1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#OrganizationPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_archive_download_name">
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/mage#has_name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pr1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ProjectName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_project_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveName"/>
+    <rdfs:subClassOf rdf:nodeID="an1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <mage:has_name>ArchiveName</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_organization_name">
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/mage#has_name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#GBM">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#CancerName"/>
+    <mage:has_name>GBM</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_cancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="prn1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#OrganizationPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TemporalPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#FileLocation"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.10.2.0TCGA-06-0192-01B-01D-0336-02_BioSizing.tsvFileLocation">
+    <tcga:has_file>TCGA-06-0192-01B-01D-0336-02_BioSizing.tsv</tcga:has_file>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#FileLocation"/>
+    <tcga:has_directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.10.2.0</tcga:has_directory>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_date_time"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Archive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="a3"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Illumina-HumanMethylation27-1.0.0ID">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#PlatformIdentifier"/>
+    <mage:has_name>Illumina-HumanMethylation27-1.0.0</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_archive_version">
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/mage#has_version"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TCGAProjectName">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ProjectName"/>
+    <mage:has_name>TCGA</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveListing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="al5"/>
+    <rdfs:subClassOf rdf:nodeID="al6"/>
+    <rdfs:subClassOf rdf:nodeID="al2"/>
+    <rdfs:subClassOf rdf:nodeID="al1"/>
+    <rdfs:subClassOf rdf:nodeID="al7"/>
+    <rdfs:subClassOf rdf:nodeID="al3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Illumina-HumanMethylation27-1.0.0IDPlatform">
+    <mage:has_platform_name rdf:resource="http://mdanderson.org/tcga#HumanMethylation27"/>
+    <tcga:has_vendor rdf:resource="http://mdanderson.org/tcga#IlluminaOrg"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Platform"/>
+    <tcga:has_platform_identifier rdf:resource="http://mdanderson.org/tcga#Illumina-HumanMethylation27-1.0.0ID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="aft1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#1.0.0ArchiveVersion">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveVersion"/>
+    <mage:has_name>1.0.0</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Cancer">
+    <tcga:has_cancer_name rdf:resource="http://mdanderson.org/tcga#CancerName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#CancerPackage"/>
+    <rdfs:subClassOf rdf:nodeID="can1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_datatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_file_type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#PlatformDatatype"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platN1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#computationalArtifactNameComputationalArtifact">
+    <tcga:has_project rdf:resource="http://mdanderson.org/tcga#TCGAProject"/>
+    <tcga:has_genomic_center rdf:resource="http://mdanderson.org/tcga#IlluminaOrg"/>
+    <tcga:has_platform rdf:resource="http://mdanderson.org/tcga#Illumina-HumanMethylation27-1.0.0IDPlatform"/>
+    <tcga:has_archive_listing_name rdf:resource="http://mdanderson.org/tcga#computationalArtifactName"/>
+    <tcga:has_datatype rdf:resource="http://mdanderson.org/tcga#DNAMethylationPlatformDatatype"/>
+    <tcga:has_archive rdf:resource="http://mdanderson.org/tcga#ArchiveNameArchive"/>
+    <tcga:has_cancer rdf:resource="http://mdanderson.org/tcga#GBMCancer"/>
+    <tcga:has_file_type rdf:resource="http://mdanderson.org/tcga#dataArchiveFileType"/>
+    <mage:has_location rdf:resource="http://mdanderson.org/tcga#/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.10.2.0TCGA-06-0192-01B-01D-0336-02_BioSizing.tsvFileLocation"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ComputationalArtifact"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveListing"/>
+    <tcga:has_last_modified_date rdf:resource="http://mdanderson.org/tcga#ModificationDateTime2010-01-01"/>
+    <tcga:has_archive_download rdf:resource="http://mdanderson.org/tcga#archiveDownloadNameArchiveDownload"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DNAMethylationPlatformDatatype">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#PlatformDatatype"/>
+    <mage:has_name>DNA Methylation</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#archiveDownloadNameArchiveDownloadName">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveDownloadName"/>
+    <mage:has_name>archiveDownloadName</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_creation_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveDownload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ad1"/>
+    <rdfs:subClassOf rdf:nodeID="ad2"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DateTime2000-12-12">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <tcga:has_date_time>2000-12-12</tcga:has_date_time>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveListingName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_archive_listing_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#dataArchiveFileType">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveFileType"/>
+    <mage:has_name>data</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="dt1"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TCGAProject">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Project"/>
+    <tcga:has_project_name rdf:resource="http://mdanderson.org/tcga#TCGA"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#PlatformDataType"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_platform_datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveDownload"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_archive_download"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platDT1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TemporalPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+    <mage:has_name>TemporalPackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Platform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="plat3"/>
+    <rdfs:subClassOf rdf:nodeID="plat2"/>
+    <rdfs:subClassOf rdf:nodeID="plat1"/>
+    <rdfs:subClassOf rdf:nodeID="plat4"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#MicroarrayPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#PlatformIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="platID1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#MicroarrayPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#Archive"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_archive"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#PlatformName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_platform_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="av1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CancerPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#CancerPackage"/>
+    <mage:has_name>CancerPackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#OrganizationPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#OrganizationPackage"/>
+    <mage:has_name>OrganizationPackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <mage:has_name>ArchivePackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_file">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DateTime2010-01-01">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <tcga:has_date_time>2010-01-01</tcga:has_date_time>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#PlatformIdentifier"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_platform_identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ad2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_creation_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_archive_listing_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_archive_download">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="orgN1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#HumanMethylation27">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#PlatformName"/>
+    <mage:has_name>HumanMethylation27</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_date_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cann1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="adn1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ModificationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#dateTime"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_last_modified_date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_platform_datatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveFileType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="aft1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#MicroarrayPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#MicroarrayPackage"/>
+    <mage:has_name>MicroarrayPackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_vendor">
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/tcga#has_organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ProjectPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ProjectPackage"/>
+    <mage:has_name>ProjectPackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CreationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#FileLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="floc2"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="floc1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveDownloadName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="adn1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_platform_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="pr1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ProjectPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ModificationDateTime2010-01-01">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ModificationDateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#intgen.orgOrgDomain">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#OrganizationDomain"/>
+    <mage:has_name>intgen.org</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#archiveDownloadNameArchiveDownload">
+    <tcga:has_archive_download_name rdf:resource="http://mdanderson.org/tcga#archiveDownloadNameArchiveDownloadName"/>
+    <tcga:has_creation_date rdf:resource="http://mdanderson.org/tcga#CreationDateTime2010-12-13"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveDownload"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#PlatformDatatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="platDT1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#MicroarrayPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="org2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#OrganizationDomain"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_organization_domain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#illumina.orgOrgDomain">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#OrganizationDomain"/>
+    <mage:has_name>illumina.org</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_projet_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#GBMCancer">
+    <tcga:has_cancer_name rdf:resource="http://mdanderson.org/tcga#GBM"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Cancer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CancerName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="cann1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#CancerPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Illumina">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#OrganizationName"/>
+    <mage:has_name>Illumina</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CancerPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#MicroarrayPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="can1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#CancerName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_caner_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveNameArchive">
+    <tcga:has_version rdf:resource="http://mdanderson.org/tcga#1.0.0"/>
+    <tcga:has_creation_date rdf:resource="http://mdanderson.org/tcga#2000-12-12"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Archive"/>
+    <mage:has_name rdf:resource="http://mdanderson.org/tcga#ArchiveName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_platform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_archive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_directory"/>
+  </rdf:Description>
+</rdf:RDF>
+

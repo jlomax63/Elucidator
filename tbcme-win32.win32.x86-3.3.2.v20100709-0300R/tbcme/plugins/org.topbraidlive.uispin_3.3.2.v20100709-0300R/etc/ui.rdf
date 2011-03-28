@@ -1,0 +1,578 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions#"
+    xmlns:letrs="http://uispin.org/letrs#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:spr="http://spinrdf.org/spr#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:let="http://uispin.org/let#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://uispin.org/ui">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.8.1</owl:versionInfo>
+    <owl:imports rdf:resource="http://spinrdf.org/spra"/>
+    <rdfs:seeAlso rdf:resource="http://uispin.org"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The core model of UISPIN, a SPARQL-based user interface description framework. UISPIN can be used to describe how resources should be rendered on the screen, in a platform independent way.</rdfs:comment>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="StyleProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Style property</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metaclass of properties that represent a (CSS) style.</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ChildProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Child property</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metaclass for properties that represent a parent-child relationship between UI nodes. This can be used as marker so that editing tools can display child relationships in an ordered fashion.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ViewProperty">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metaclass of properties that link a class with a view, e.g. ui:view. Can be used by user interface engines to distinguish views from other properties.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >View property</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="NodeClass">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Node class</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metaclass of ui:Node classes.</rdfs:comment>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="abstract">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:ID="systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicates that elements of this type should not be instantiated directly. This is comparable to the notion of abstract classes in object-oriented languages like UML.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abstract</rdfs:label>
+    <rdfs:domain rdf:resource="#NodeClass"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="condition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The condition of an ui:If element. Must evaluate to a literal with the lexical form "true".</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >condition</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="node">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Can be used to point to a ui:Node. For example, ui:MoveNode uses this property.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >node</rdfs:label>
+    <rdfs:range>
+      <ui:NodeClass rdf:ID="Node">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Node</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The base class of all user interface objects, i.e. objects that represent a visual area on the screen or represent scripts, events or any other part of a DOM-like model.</rdfs:comment>
+      </ui:NodeClass>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resultSet">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#query"/>
+    <rdfs:range rdf:resource="http://spinrdf.org/sp#Select"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >result set</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Represents a SPARQL result set - typically derived from a SELECT query. Arguments of this property (or sub-property thereof) are executed in the context where they are declared.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:ID="text">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The actual text in a ui:TextNode.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >text</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="indexVar">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >index var</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="childIndex">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The index of a child among its siblings, starting at 0.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Node"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >child index</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resource">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >resource</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used by ui:ResourceView.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:ID="view">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >view</rdfs:label>
+    <rdfs:range>
+      <ui:NodeClass rdf:ID="Element">
+        <rdfs:subClassOf rdf:resource="#Node"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abstract base class for all UISPIN elements, which are nodes that can contain other nodes. The child nodes are represented using ui:child. Children can be ordered using ui:childIndex.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Element</rdfs:label>
+        <spin:constraint>
+          <spl:Attribute>
+            <spl:predicate>
+              <ui:ChildProperty rdf:ID="child">
+                <rdfs:subPropertyOf>
+                  <rdf:Property rdf:about="#systemProperty"/>
+                </rdfs:subPropertyOf>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >child</rdfs:label>
+                <rdfs:range rdf:resource="#Node"/>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Points from a parent element to a child node.</rdfs:comment>
+              </ui:ChildProperty>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The children of this panel.</rdfs:comment>
+            <spl:valueType rdf:resource="#Node"/>
+          </spl:Attribute>
+        </spin:constraint>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+      </ui:NodeClass>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links a resource (instance) with an element that can be used to render the resource on the screen. Queries associated with the element can access the resource with the variable ?this.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:ID="id">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An identifier of ui:Nodes. Can be attached to ui:views and ui:instanceViews to mark them as specific types (see ui:matchIds).</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >id</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="headIncludes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >head includes</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#NodeClass"/>
+    <rdfs:range rdf:resource="#Element"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Can point to one or more elements that will be inserted into the head section of the target document.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:ID="varName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >var name</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="query">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >query</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#query"/>
+    <rdfs:range rdf:resource="http://spinrdf.org/sp#Select"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Represents a SPARQL SELECT query. Arguments of this property (or sub-properties thereof) are not evaluated immediately, but rather represent the query itself. These queries can be inserted into ui:resultSet properties for execution, e.g. ui:resultSet="{= ?query }".</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="#systemProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >system property</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="matchIds">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A comma-separated list of ids. Used by ui:ResourceView.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#systemProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >match ids</rdfs:label>
+  </rdf:Property>
+  <owl:FunctionalProperty rdf:ID="prototype">
+    <rdfs:range rdf:resource="#Node"/>
+    <rdfs:domain rdf:resource="#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >prototype</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links a UI class with a prototype instance of itself. This instance will be taken as template for any instance being created of the class.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#systemProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:FunctionalProperty>
+  <ui:NodeClass rdf:ID="moveNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >moveNode</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#node"/>
+        <spl:valueType rdf:resource="#Node"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The new child to insert, typically a SPARQL expression consisting of a single variable that is bound by the surrounding elements.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="ControlElement">
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Control element</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Element"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >"Abstract" base class for UISPIN control elements such as ui:ForEach and ui:If.</rdfs:comment>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reparents the ui:Node specified by ui:node. The node will lose its old parent and become a child of ?this. ui:MoveNode is typically used in prototype elements that need to push the declared direct children of a parent further down.</rdfs:comment>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="let">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >let</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ControlElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A basically "empty" element that simply inserts its children. Can be used to host let: assignments, or to otherwise group multiple children.</rdfs:comment>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="CommentNode">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The text of this comment.</rdfs:comment>
+        <spl:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A node representing a comment. Comments are ignored by the display engine, but are useful for documenting code or (temporarily) disabling certain sections without deleting them.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Comment node</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Node"/>
+  </ui:NodeClass>
+  <spin:Function rdf:ID="link">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >link</rdfs:label>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A literal or URI resource to create a link for.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body>
+      <sp:Select>
+        <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <sp:resultVariables rdf:parseType="Collection">
+          <xsd:string>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+          </xsd:string>
+        </sp:resultVariables>
+      </sp:Select>
+    </spin:body>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creates a hyperlink for a given literal or URI resource. This is by default the URI itself (or the literal value).  But UISPIN engines can change this implementation to take control over how hyperlinks are created.  UISPIN users that need to create hyperlinks should always go through this function, to make sure that engines can redirect links.</rdfs:comment>
+  </spin:Function>
+  <ui:NodeClass rdf:ID="resourceView">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >resourceView</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Placeholder for the best suitable element to display a given resource. This will be inserted based on the link properties such as ui:view and ui:instanceView.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#resource"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The resource to insert a view for.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ControlElement"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Can be used to specify a preference of what kinds of views to render, if multiple are present. Will be compared against the ui:id of each view. Typical values are: "summary" (a short but informative display of about 1-5 rows) and "label" (a compact display occupying not more than 1 row). If left empty then it will be matched against views that have no id or the id "full".</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="#matchIds"/>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <spin:Function rdf:ID="encodeURL">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Encodes a given string so that it can be made part of a well-formed URL, e.g. in server callbacks.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The string to encode.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >encode URL</rdfs:label>
+  </spin:Function>
+  <ui:NodeClass rdf:ID="forEach">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >forEach</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ControlElement"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >index</spl:defaultValue>
+        <spl:predicate rdf:resource="#indexVar"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The name of an (optional) index variable that will be assigned with the current iteration index as an xsd:integer, starting at 0.</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <spl:predicate rdf:resource="#resultSet"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The result set to iterate over, typically defined by a SELECT query (or SPIN template).</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A control element representing a "for" loop that iterates over all results of a given SPARQL SELECT query (or SPIN template) and repeatedly inserts the child element(s) for each iteration. The result variables will be visible to the child elements in the scope, e.g. in nested SPARQL expressions.</rdfs:comment>
+  </ui:NodeClass>
+  <spin:MagicProperty rdf:ID="eval">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#MagicProperties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eval</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Evaluates a ui:Node (left side, ?arg1) and binds the variable on the right. The result will be either ?arg1 itself, or (if ?arg1 is a ui:ControlElement) a list of the first children of ?arg1 (in depth-first traversal using child index ordering) that are not ui:ControlElements. The result (right hand side) will therefore never contain control elements.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The ui:Node to evaluate. Must not be a variable.</rdfs:comment>
+        <spl:valueType rdf:resource="#Node"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="#Node"/>
+    <rdfs:subPropertyOf rdf:resource="#systemProperty"/>
+  </spin:MagicProperty>
+  <spin:Function rdf:ID="uniqueId">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >unique id</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Generates a string identifier that is unique for the life time of the UISPIN execution engine.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spin:Function>
+  <spr:Aggregator rdf:ID="CommaSeparatedLabelList">
+    <spr:startValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></spr:startValue>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Comma separated label list</rdfs:label>
+    <spr:stepFunction>
+      <spin:Function rdf:ID="CommaSeparatedLabelListAggregatorStepFunction">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Comma separated label list aggregator step function</rdfs:label>
+        <spin:body>
+          <sp:Select>
+            <sp:resultVariables rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="A0">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >result</sp:varName>
+              </rdf:Description>
+            </sp:resultVariables>
+            <sp:where rdf:parseType="Collection">
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A1">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >label</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <ui:label>
+                    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                  </ui:label>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1>
+                      <sp:gt>
+                        <sp:arg1>
+                          <fn:string-length>
+                            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                          </fn:string-length>
+                        </sp:arg1>
+                        <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</sp:arg2>
+                      </sp:gt>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <fn:concat>
+                        <sp:arg2>,</sp:arg2>
+                        <sp:arg3 rdf:nodeID="A1"/>
+                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                      </fn:concat>
+                    </sp:arg2>
+                    <sp:arg3 rdf:nodeID="A1"/>
+                  </smf:if>
+                </sp:expression>
+                <sp:variable rdf:nodeID="A0"/>
+              </sp:Let>
+            </sp:where>
+          </sp:Select>
+        </spin:body>
+        <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#AggregatorStepFunctions"/>
+      </spin:Function>
+    </spr:stepFunction>
+  </spr:Aggregator>
+  <spin:Function rdf:ID="systemPreference">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The name of the preference to get.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gets a system preference set by the UISPIN execution environment. These are typically server-specific settings such as how to redirect hyperlinks, or Google API keys, that can be queried by UISPIN elements to adjust the page generation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >system preference</rdfs:label>
+  </spin:Function>
+  <ui:NodeClass rdf:ID="TextNode">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A text node in a UISPIN document. Will be mapped to XML text nodes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Node"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#text"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The text of this TextNode.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Text node</rdfs:label>
+  </ui:NodeClass>
+  <spin:Function rdf:ID="decodeNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >decode node</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The id of the RDF node to decode.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creates an RDF node from a string representation created with ui:encodeNode. This basically turns a qname back into a URI etc.</rdfs:comment>
+  </spin:Function>
+  <rdfs:Resource rdf:ID="graph">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The URI of the named graph containing the triples of the UI view definitions. This named graph can be accessed in UISPIN queries using GRAPH ui:graph { ... } to query metadata associated with the current UISPIN node (?thisNode).</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >graph</rdfs:label>
+  </rdfs:Resource>
+  <spin:Function rdf:ID="encodeNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >encode node</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The node to encode.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creates a string representation of a given RDF node (?arg1), using qnames where possible.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spin:Function>
+  <ui:NodeClass rdf:ID="if">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >if</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The value that must be true.</rdfs:comment>
+        <spl:predicate rdf:resource="#condition"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ControlElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Defines an if statement. If the ui:condition is "true", then the children of this element will be inserted.</rdfs:comment>
+  </ui:NodeClass>
+  <ui:ViewProperty rdf:ID="instanceView">
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:range rdf:resource="#Element"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >instance view</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Links a class with elements that can be used to display instances of that class. In those elements, the variable ?this points to the instance being displayed.</rdfs:comment>
+  </ui:ViewProperty>
+  <spin:Function rdf:ID="label">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >label</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Computes the display label for a given RDF node (literal or resource).
+
+Body:
+SELECT ?name
+WHERE {
+    LET (?name := smf:name(?arg1)) .
+}</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The node to get the label of.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

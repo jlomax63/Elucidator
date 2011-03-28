@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:mage="http://mdanderson.org/mage#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveListingName">
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="aln1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveListingToday">
+    <mage:has_name>ArchiveListingToday</mage:has_name>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveListingName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage1">
+    <mage:has_name>ArchivePackage1</mage:has_name>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="aln1">
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+</rdf:RDF>
+

@@ -1,0 +1,470 @@
+# Saved by TopBraid on Tue Jan 18 13:57:21 CST 2011
+# baseURI: http://mdacc.org/Experiment
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+# imports: http://mdacc.org/Label
+
+@prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix experiment:  <http://mdacc.org/Experiment#> .
+@prefix fn:      <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Experiment>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+experiment:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+experiment:BiologicalTag
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:Compound .
+
+experiment:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Birth1_PatientEvent
+      rdf:type experiment:BirthPatientEvent ;
+      time-entry:before experiment:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+experiment:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+experiment:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type experiment:ChemotherapyPatientEvent .
+
+experiment:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type experiment:ChemotherapyPatientEvent .
+
+experiment:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type experiment:ChemotherapyPatientEvent .
+
+experiment:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+experiment:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Color
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , experiment:ExperimentPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#ColorLabel>
+              ] .
+
+experiment:Compound
+      rdf:type owl:Class ;
+      rdfs:comment "The concept of a chemical compound. This should most likely point off to chemical compound taxonomy."^^xsd:string ;
+      rdfs:subClassOf experiment:ExperimentPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#CompoundLabel>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+experiment:Cy3FlourescentTag
+      rdf:type experiment:FlourescentTag .
+
+experiment:Cy5FlourescentTag
+      rdf:type experiment:FlourescentTag .
+
+experiment:DNAMethylationBioAssayAffymetrix
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#PhysicalBioAssay> .
+
+experiment:DeathPatient1_PatientEvent
+      rdf:type experiment:DeathPatientEvent ;
+      time-entry:ends experiment:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+experiment:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:DukeBrainBankOwner
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Person> .
+
+experiment:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+experiment:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:TemporalEvent .
+
+experiment:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf experiment:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:ExperimentPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+experiment:FlourescentTag
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:BiologicalTag ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty experiment:emitsColor
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty experiment:emitsColor ;
+                owl:someValuesFrom experiment:Color
+              ] .
+
+experiment:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+experiment:GreenColor
+      rdf:type experiment:Color .
+
+experiment:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              experiment:DurationDescription_30Days .
+
+experiment:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              experiment:Patient1Birth_Instant .
+
+experiment:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              experiment:DurationDescription_30Days .
+
+experiment:LightEmittingCompound
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:ExperimentPackage .
+
+experiment:MDAndersonBrainBankOwner
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Person> .
+
+experiment:MDAndersonBrainBankRepository
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#BioSourceProvider> .
+
+experiment:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith experiment:TherapeuticProcedurePatientEvent , experiment:DeathPatientEvent , experiment:SurgicalProcedurePatientEvent , experiment:BirthPatientEvent .
+
+experiment:MedicalAppointment_PatientEvent
+      rdf:type experiment:MedicalAppointmentPatientEvent .
+
+experiment:Nucleus
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+experiment:Ontology_1
+      rdf:type owl:Ontology .
+
+experiment:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+experiment:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+experiment:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf experiment:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Proteasome
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+experiment:ProteinDimer
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+experiment:ProteinTrimer
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+experiment:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:RedColor
+      rdf:type experiment:Color .
+
+experiment:Resource_2
+      rdf:type rdfs:Resource .
+
+experiment:RoughEndoplasmicReticulum
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+experiment:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+experiment:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf experiment:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf experiment:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+experiment:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              experiment:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+experiment:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              experiment:TherapeuticProcedureList1_Item_Radiation1 .
+
+experiment:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+experiment:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf experiment:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+experiment:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              experiment:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              experiment:TherapeuticProcedureList1_Item_Radiation1 .
+
+experiment:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+experiment:abbreviatedForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Property that established a term to abbreviation of term relationship between skos-xl Labels."^^xsd:string ;
+      rdfs:subPropertyOf skos-xl:labelRelation ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf experiment:fullForm .
+
+experiment:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf experiment:hasAccessionNumber .
+
+experiment:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+experiment:biologicalTagOf
+      rdf:type owl:ObjectProperty .
+
+experiment:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:cy3LabelingProtocol1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Protocol> .
+
+experiment:cy3LabelingTreatment1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Treatment> .
+
+experiment:cy3PreWashProtocol1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Protocol> .
+
+experiment:cy3PreWashTreatment1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Treatment> .
+
+experiment:emitsColor
+      rdf:type rdf:Property ;
+      rdfs:range experiment:Color .
+
+experiment:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:fullForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skos-xl:labelRelation .
+
+experiment:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf experiment:hasGenomicSequenceId ;
+      owl:inverseOf experiment:accessionNumberOf .
+
+experiment:hasApproval
+      rdf:type owl:AnnotationProperty .
+
+experiment:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#has_version> .
+
+experiment:hasBiologicalTag
+      rdf:type rdf:Property ;
+      owl:inverseOf experiment:biologicalTagOf .
+
+experiment:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+experiment:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#has_version> .
+
+experiment:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+experiment:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+<http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Affiliation_1>
+      rdf:type <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Affiliation> .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

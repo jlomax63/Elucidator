@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:tables="http://topbraid.org/tables#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://topbraid.org/tables">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment>A simple ontology that can be used to annotate other ontologies so that they can be mapped to tabular formats such as spreadsheets. This ontology is used, for example, by the Excel back-end of TopBraid.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0</owl:versionInfo>
+  </owl:Ontology>
+  <owl:AnnotationProperty rdf:ID="rowIndex">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >row index</rdfs:label>
+    <rdfs:comment>This property can be used to annotate instances to instruct the engine that this instance shall be written to a row at a given index.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:ID="sheetIndex">
+    <rdfs:comment>This property can be used to annotate classes to instruct the engine that this class shall be written to a sheet with a given index.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sheet index</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:ID="columnIndex">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >column index</rdfs:label>
+    <rdfs:comment>This property can be used to annotate properties to instruct the engine that this property shall be written to a column at a given index.</rdfs:comment>
+  </owl:AnnotationProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

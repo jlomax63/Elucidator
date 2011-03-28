@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.saxon.feature"
+      label="org.topbraid.lib.saxon.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant, Inc.">
+
+   <description>
+      Saxon library and dependent functionality in TopBraid.
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+   </copyright>
+
+   <license>
+      About This Content
+
+March 2010
+End User License Agreement
+
+TopQuadrant makes available all content in this plug-in (“Content”). Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the End User License Agreement (“EULA”). This EULA sets forth the terms applicable to use and licensing by the customer (“Customer”) of software provided by TopQuadrant, Inc. (“TopQuadrant”). It is important that you read this document before installing or using the software provided by TopQuadrant (the “Software”) and any associated documentation or materials provided by TopQuadrant (“Documentation”). A copy of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then Customer is not licensed to use the Software, and you must destroy any downloaded copies of the Software in your or Customer‘s possession or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf to download and print a copy of this EULA for your records.
+Third Party Content
+Saxon-PE - XPath 2.0, XSLT 2.0, and XQuery 1.0 implementation library
+
+The plug-in is accompanied by software developed by the Saxonica. The binary code of Saxon-PE v9.2 (“Saxon”) is included without modification in the following file:
+
+    * lib/saxon9pe.jar
+
+Saxon uses a number of third-party components that are published under licenses as listed below. Your use of Saxon is subject to the terms and conditions of these licenses.
+
+Base64 Encoder/Decoder  	Netscape Communications Corp  	Netscape 1.1(online)  	-
+Generic Sorter 	CERN 	CERN License 	-
+Unicode Normalization 	Unicode Consortium 	Unicode Terms of Use 	COPYRIGHT AND PERMISSION NOTICE
+XPath Parser 	James Clark 	- 	Copyright Notice
+Regex Translator 	Thai Open Source Center Ltd. 	- 	Copyright Notice
+Ant Saxon Task 	Apache Foundation 	Apache License, Version 2.0(online) 	Notice
+
+Check third-party source components in Saxon for additional information.
+   </license>
+
+   <plugin
+         id="org.topbraid.lib.saxon"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:afn="http://jena.hpl.hp.com/ARQ/function#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:sm="http://topbraid.org/sparqlmotion#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://topbraid.org/functions-afn">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://spinrdf.org/spl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0</owl:versionInfo>
+  </owl:Ontology>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#sha1sum">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sha1sum</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the value to get the sha1sum of</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Computes the sha1sum of a given input value (?arg1).</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#max">
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max</rdfs:label>
+    <rdfs:comment>Gets the max value of two numeric arguments.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the second value to compare</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MathematicalFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the first value to compare</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#pi">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MathematicalFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pi</rdfs:label>
+    <rdfs:comment>Returns the value of pi, as an xsd:double.</rdfs:comment>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#localname">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the URI resource to get the local name of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Returns the local name of a URI resource. Based on splitting the IRI, not on any prefixes in the query or dataset. For example, the local name of http://test.com/my#Example is Example.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >localname</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#e">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:comment>Returns the value of e, as xsd:double.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >e</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MathematicalFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#namespace">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the URI resource to get the namespace of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment>Returns the namespace of a URI resource. Based on splitting the IRI, not on any prefixes in the query or dataset. For example, the namespace of http://test.com/my#Example is http://test.com/my#.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >namespace</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#now">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >now</rdfs:label>
+    <rdfs:comment>Gets the current time as xsd:dateTime.  Actually, the time the query started. Constant throughout a query execution.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MiscFunctions"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#min">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the second value to compare</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#MathematicalFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the first value to compare</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Gets the min value of two numeric arguments.</rdfs:comment>
+    <spin:returnType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </spin:Function>
+  <spin:Function rdf:about="http://jena.hpl.hp.com/ARQ/function#substr">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the index of the last character to include in the result</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the text to get a sub string of</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment>Extracts a substring, Java style using startIndex and endIndex.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >substr</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >the index of the first character (text starts with index 0)</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

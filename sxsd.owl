@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:sxml="http://topbraid.org/sxml#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:sxsd="http://topbraid.org/sxsd#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://topbraid.org/sxsd">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://topbraid.org/sxml"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SimpleType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Simple type</rdfs:label>
+    <sxml:element>xsd:simpleType</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="ComplexContent">
+    <sxml:element>xsd:complexContent</sxml:element>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Complex content</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Choice">
+    <rdfs:label>xsd:choice</rdfs:label>
+    <sxml:element>xsd:choice</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Import">
+    <rdfs:label>xsd:import</rdfs:label>
+    <sxml:element>xsd:import</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Annotation">
+    <rdfs:label>xsd:annotation</rdfs:label>
+    <sxml:element>xsd:annotation</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="ComplexType">
+    <rdfs:label>xsd:complexType</rdfs:label>
+    <sxml:element>xsd:complexType</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Schema">
+    <rdfs:label>xsd:schema</rdfs:label>
+    <sxml:element>xsd:schema</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Extension">
+    <sxml:element>xsd:extension</sxml:element>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Extension</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Enumeration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Enumeration</rdfs:label>
+    <sxml:element>xsd:enumeration</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Restriction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Restriction</rdfs:label>
+    <sxml:element>xsd:restriction</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Documentation">
+    <rdfs:label>xsd:documentation</rdfs:label>
+    <sxml:element>xsd:documentation</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Attribute">
+    <rdfs:label>xsd:attribute</rdfs:label>
+    <sxml:element>xsd:attribute</sxml:element>
+  </owl:Class>
+  <owl:Class rdf:ID="Element">
+    <rdfs:label>xsd:element</rdfs:label>
+    <sxml:element>xsd:element</sxml:element>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="schemaLocation">
+    <rdfs:domain rdf:resource="#Import"/>
+    <rdfs:label>schemaLocation</rdfs:label>
+    <sxml:attribute>schemaLocation</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="xml-lang">
+    <rdfs:domain rdf:resource="#Documentation"/>
+    <rdfs:label>xml:lang</rdfs:label>
+    <sxml:attribute>xml:lang</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="type">
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:label>type</rdfs:label>
+    <sxml:attribute>type</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="value">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >value</rdfs:label>
+    <sxml:attribute>value</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="base">
+    <sxml:attribute>base</sxml:attribute>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >base</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="elementFormDefault">
+    <rdfs:domain rdf:resource="#Schema"/>
+    <rdfs:label>elementFormDefault</rdfs:label>
+    <sxml:attribute>elementFormDefault</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="namespace">
+    <rdfs:domain rdf:resource="#Import"/>
+    <rdfs:label>namespace</rdfs:label>
+    <sxml:attribute>namespace</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="maxOccurs">
+    <rdfs:domain rdf:resource="#Choice"/>
+    <rdfs:label>maxOccurs</rdfs:label>
+    <sxml:attribute>maxOccurs</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="minOccurs">
+    <rdfs:domain rdf:resource="#Choice"/>
+    <rdfs:label>minOccurs</rdfs:label>
+    <sxml:attribute>minOccurs</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="targetNamespace">
+    <rdfs:domain rdf:resource="#Schema"/>
+    <rdfs:label>targetNamespace</rdfs:label>
+    <sxml:attribute>targetNamespace</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ref">
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:label>ref</rdfs:label>
+    <sxml:attribute>ref</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="use">
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:label>use</rdfs:label>
+    <sxml:attribute>use</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="attributeFormDefault">
+    <rdfs:domain rdf:resource="#Schema"/>
+    <rdfs:label>attributeFormDefault</rdfs:label>
+    <sxml:attribute>attributeFormDefault</sxml:attribute>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="name">
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:label>name</rdfs:label>
+    <sxml:attribute>name</sxml:attribute>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

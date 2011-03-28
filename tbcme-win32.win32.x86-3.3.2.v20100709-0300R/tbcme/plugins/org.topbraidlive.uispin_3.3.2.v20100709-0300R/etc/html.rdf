@@ -1,0 +1,2788 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:html="http://uispin.org/html#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:style="http://uispin.org/style#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://uispin.org/html">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://uispin.org/css"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.1.0</owl:versionInfo>
+    <owl:imports rdf:resource="http://uispin.org/ui"/>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="Attribute">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Attribute</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="StyleProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Style property</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdfs:Class>
+  <owl:FunctionalProperty rdf:ID="class">
+    <rdfs:subPropertyOf>
+      <html:Attribute rdf:ID="attributes">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >attributes</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >An "abstract" super-property that is grouping all HTML attributes to avoid clutter in user interfaces.</rdfs:comment>
+      </html:Attribute>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >class</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </owl:FunctionalProperty>
+  <ui:NodeClass rdf:ID="Q">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="TextElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Text elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Q</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="cite">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cite</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="AttrsAttributeGroup">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Attrs attribute group</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="CoreAttributeGroup">
+            <rdfs:subClassOf>
+              <ui:NodeClass rdf:ID="AttributeGroups">
+                <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                >true</ui:abstract>
+                <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Attribute Groups</rdfs:label>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Abstract superclass of classes that are used to attach attributes to HTML elements. Correspond to the attribute groups in the HTML DTD.</rdfs:comment>
+              </ui:NodeClass>
+            </rdfs:subClassOf>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Core attribute group</rdfs:label>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="id">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >id</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Document-wide unique id.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="style">
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >style</rdfs:label>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Associated style info.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate rdf:resource="#class"/>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Space-separated list of classes.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="title">
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >title</rdfs:label>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Advisory title.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="I18NAttributeGroup">
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="dir">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >dir</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Direction for weak/neutral text.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >i18n attribute group</rdfs:label>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="lang">
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >lang</rdfs:label>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Language code.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <rdfs:subClassOf rdf:resource="#AttributeGroups"/>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="clear">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >clear</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Tfoot">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tfoot</rdfs:label>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="TableRowGroupElements">
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="CellVAlignAttributeGroup">
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="valign">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >valign</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >(top|middle|bottom|baseline)</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Cell VAlign attribute group</rdfs:label>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+            <rdfs:subClassOf rdf:resource="#AttributeGroups"/>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Table row group elements</rdfs:label>
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="TableElements">
+            <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Table elements</rdfs:label>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Abstract base class for table containers.</rdfs:comment>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/tables.html#h-11.2.3"/>
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="CellHAlignAttributeGroup">
+            <rdfs:subClassOf rdf:resource="#AttributeGroups"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Cell HAlign attribute group</rdfs:label>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="align">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >align</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >(left|center|right|justify|char)</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="char">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >char</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Alignment char, e.g. char=':'.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+            <spin:constraint>
+              <spl:Argument>
+                <spl:predicate>
+                  <html:Attribute rdf:ID="charoff">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >charoff</rdfs:label>
+                    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                  </html:Attribute>
+                </spl:predicate>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Offset for alignment char.</rdfs:comment>
+              </spl:Argument>
+            </spin:constraint>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Sup">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sup</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="P">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >P</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="link">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >link</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Kbd">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kbd</rdfs:label>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="PhraseElements">
+        <rdfs:subClassOf rdf:resource="#TextElements"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Phrase elements</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Tt">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tt</rdfs:label>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="FontStyleElements">
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/graphics.html#h-15.2.1"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf>
+          <ui:NodeClass rdf:ID="GraphicsElements">
+            <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+            <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</ui:abstract>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Graphics elements</rdfs:label>
+          </ui:NodeClass>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Font style elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="selected">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >selected</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Noframes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Noframes</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/frames.html#h-16.4.1"/>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="FrameElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Frame elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Frameset">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Frameset</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/frames.html#h-16.2.1"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onunload">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onunload</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >All the frames have been removed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="rows">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >rows</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List of lengths.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="cols">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cols</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List of lengths.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onload">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onload</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >All the frames have been loaded.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#CoreAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#FrameElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Abbr">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abbr</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Dfn">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dfn</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Ins">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ins</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="datetime">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >datetime</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#cite"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="object">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >object</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Optgroup">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="FormElements">
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Form elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Optgroup</rdfs:label>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="language">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >language</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Textarea">
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.7"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#rows"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="readonly">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >readonly</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="name">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >name</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="accesskey">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >accesskey</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onchange">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onchange</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element value was changed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Textarea</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onfocus">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onfocus</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="tabindex">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >tabindex</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onselect">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onselect</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Some text was selected.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#cols"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onblur">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onblur</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="disabled">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >disabled</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Unavailable in this context.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Var">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Var</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Font">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Font</rdfs:label>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="color">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >color</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <html:Attribute rdf:ID="label">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >label</rdfs:label>
+  </html:Attribute>
+  <html:Attribute rdf:ID="background">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >background</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Link">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="rev">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >rev</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Reverse link types.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="LinkElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Link elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/links.html#h-12.3"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="rel">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >rel</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Forward link types.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="charset">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >charset</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Char encoding of linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="href">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >href</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI for linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="hreflang">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >hreflang</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Language code.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Link</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="type">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >type</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Advisory content type.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="media">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >media</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For rendering on these media.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Bdo">
+    <rdfs:subClassOf rdf:resource="#I18NAttributeGroup"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bdo</rdfs:label>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="LanguageElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Language elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#CoreAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Dir">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="ListElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List elements</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abstract base class for HTML list elements.</rdfs:comment>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dir</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Dt">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dt</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Cite">
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cite</rdfs:label>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="vlink">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vlink</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Noscript">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="ScriptElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Script elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Noscript</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/scripts.html#h-18.3.1"/>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Table">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="width">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >width</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Table width.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Table</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="cellspacing">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cellspacing</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Spacing between cells.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="rules">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >rules</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Rulings between rows and cols.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#TableElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="summary">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >summary</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Purpose/structure for speech output.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="border">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >border</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Controls frame width around table.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="cellpadding">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >cellpadding</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Spacing within cells.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="frame">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >frame</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Which parts of frame to render.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Colgroup">
+    <rdfs:subClassOf rdf:resource="#CellVAlignAttributeGroup"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Colgroup</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="span">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >span</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Default number of columns in group.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#TableElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/tables.html#h-11.2.4"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#width"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Default width for enclosed COLs.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#CellHAlignAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="I">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >I</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Body">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="GlobalElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Global elements</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Body</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Span">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Span</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Thead">
+    <rdfs:subClassOf rdf:resource="#TableRowGroupElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thead</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Blockquote">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Blockquote</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#cite"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Iframe">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="longdesc">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >longdesc</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Link to long description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="marginwidth">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >marginwidth</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Margin widths in pixels.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#width"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Frame width.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="scrolling">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >scrolling</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Scrollbar or none.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#FrameElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="marginheight">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >marginheight</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Margin height in pixels.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="frameborder">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >frameborder</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Request frame borders?</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="src">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >src</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Source of frame content.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#CoreAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#align"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Vertical or horizontal alignment.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/frames.html#h-16.5"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Internal Frame</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Name of frame for targetting.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="height">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >height</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Frame height.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Frame">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#marginwidth"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Margin widths in pixels.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#FrameElements"/>
+    <rdfs:subClassOf rdf:resource="#CoreAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#frameborder"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Request frame borders?</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="noresize">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >noresize</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Allow users to resize frames?</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#src"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Source of frame content.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Frame</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#scrolling"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Scrollbar or none.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#marginheight"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Margin height in pixels.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Name of frame for targetting.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#longdesc"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Link to long description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/frames.html#h-16.2.2"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Isindex">
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Isindex</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Html">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Html</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#dir"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#lang"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Input">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#src"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For fields with images.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="size">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >size</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Specific to each type of field.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="value">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >value</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Specify for radio buttons and checkboxes.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="maxlength">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >maxlength</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Max chars for text fields.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.4"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Submit as part of form.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onchange"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element value was changed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Input</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="ismap">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ismap</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Use server-side image map.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="checked">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >checked</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For radio buttons and check boxes.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >What kind of widget is needed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="accept">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >accept</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List of MIME types for file upload.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="alt">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >alt</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Short description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onselect"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Some text was selected.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#disabled"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Unavailable in this context.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#readonly"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For text and passwd.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="usemap">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >usemap</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Use client-side image map.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Div">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Div</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="prompt">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >prompt</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Samp">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Samp</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Param">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Param</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >content type for value</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/objects.html#h-13.3.2"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#id"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Document-wide unique id.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Property name.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Property value.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="valuetype">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >valuetype</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >How to interpret value.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="ObjectsElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Objects element</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Option">
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Option</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Del">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Del</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#datetime"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#cite"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Tbody">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tbody</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TableRowGroupElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Meta">
+    <rdfs:subClassOf rdf:resource="#I18NAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="http-equiv">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >http-equiv</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="content">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >content</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="scheme">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >scheme</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Meta</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Sub">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sub</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="B">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >B</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="compact">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >compact</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <html:Attribute rdf:ID="start">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >start</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <html:Attribute rdf:ID="target">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >target</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="A">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#href"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI for linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="coords">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >coords</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For use with client-side image maps.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/links.html#edef-A"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#hreflang"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Language code.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="shape">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >shape</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For use with client-side image maps.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Named link end.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#LinkElements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Each A element defines an anchor
+
+The A element's content defines the position of the anchor.
+The name attribute names the anchor so that it may be the destination of zero or more links (see also anchors with id).
+The href attribute makes this anchor the source anchor of exactly one link.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#rel"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Forward link types.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Advisory content type.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#charset"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Char encoding of linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#rev"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Reverse link types.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Pre">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pre</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Object">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#width"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Override width.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="standby">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >standby</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Message to show while loading.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="declare">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >declare</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Declare but don't instantiate flag.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Submit as part of form.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Content type for data.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/objects.html#h-13.3"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="data">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >data</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Reference to object's data.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="classid">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >classid</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Identifies an implementation.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="codetype">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >codetype</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Content type for code.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="archive">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >archive</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Space-separated list of URIs.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#usemap"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Use client-side image map.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ObjectsElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#height"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Override height.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="codebase">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >codebase</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Base URI for classid, data, archive.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="noshade">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >noshade</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Area">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#href"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI for linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="nohref">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >nohref</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >This region has no action.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#coords"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Comma-separated list of lengths.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#shape"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Controls interpretation of coords.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/objects.html#edef-AREA"/>
+    <rdfs:subClassOf rdf:resource="#ObjectsElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Area</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#alt"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Short description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Form">
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.3"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Name of form for scripting.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accept"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List of MIME types for file upload</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="method">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >method</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >HTTP method used to submit the form.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="accept-charset">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >accept-charset</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >List of supported charsets.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="enctype">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >enctype</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >This attribute specifies the content type used to submit the form to the server (when the value of method is "post").</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Form</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="action">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >action</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Server-side form handler.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onsubmit">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onsubmit</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The form was submitted.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onreset">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onreset</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The form was reset.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Applet">
+    <rdfs:subClassOf rdf:resource="#ObjectsElements"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Applet</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Select">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#disabled"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Unavailable in this context.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Field name.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.6"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Select</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#size"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Rows visible.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="multiple">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >multiple</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Default is single selection.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onchange"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element value was changed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Acronym">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Acronym</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="nowrap">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nowrap</rdfs:label>
+  </html:Attribute>
+  <html:Attribute rdf:ID="bgcolor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bgcolor</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <html:Attribute rdf:ID="face">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >face</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Style">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="StyleElements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Style elements</rdfs:label>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Style</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/styles.html#h-14.2.3"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Content type of style language.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#media"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Designed for use with these media.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#title"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Advisory title.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#I18NAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="H1">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H1</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/global.html#edef-H1"/>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="Heading">
+        <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abstract base class of the various headings elements.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Heading</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Ul">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UL</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Button">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For use as form button.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#tabindex"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in tabbing order.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#value"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sent to server when submitted.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Button</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#disabled"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Unavailable in this context.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.5"/>
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Th">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Table header</rdfs:label>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="Td">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/tables.html#h-11.2.6"/>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="abbr">
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >abbr</rdfs:label>
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Abbreviation for header cell.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <rdfs:subClassOf rdf:resource="#TableElements"/>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="headers">
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >headers</rdfs:label>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >List of id's for header cells.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="scope">
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >scope</rdfs:label>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Scope covered by header cells.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <rdfs:subClassOf rdf:resource="#CellVAlignAttributeGroup"/>
+        <rdfs:subClassOf rdf:resource="#CellHAlignAttributeGroup"/>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="colspan">
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >colspan</rdfs:label>
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Number of columns spanned by cell.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="axis">
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >axis</rdfs:label>
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Comma-separated list of related headers.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Td</rdfs:label>
+        <spin:constraint>
+          <spl:Argument>
+            <spl:predicate>
+              <html:Attribute rdf:ID="rowspan">
+                <rdfs:subPropertyOf rdf:resource="#attributes"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >rowspan</rdfs:label>
+              </html:Attribute>
+            </spl:predicate>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Number of rows spanned by cell.</rdfs:comment>
+          </spl:Argument>
+        </spin:constraint>
+        <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Label">
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.9.1"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onblur"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element lost the focus</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="for">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >for</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Matches field ID value.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#onfocus"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The element got the focus.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Label</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Caption">
+    <rdfs:subClassOf rdf:resource="#TableElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Caption</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Li">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Li</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Dd">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dd</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Ol">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OL</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Em">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Em</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="version">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >version</rdfs:label>
+  </html:Attribute>
+  <html:Attribute rdf:ID="hspace">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hspace</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="H4">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H4</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Heading"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="H5">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H5</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Heading"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Hr">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hr</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/present/graphics.html#h-15.3"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Col">
+    <rdfs:subClassOf rdf:resource="#TableElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Col</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/tables.html#h-11.2.4"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Strong">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Strong</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Basefont">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Basefont</rdfs:label>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="code">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >code</rdfs:label>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="H2">
+    <rdfs:subClassOf rdf:resource="#Heading"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H2</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Br">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Br</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CoreAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Title">
+    <rdfs:subClassOf rdf:resource="#I18NAttributeGroup"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Title</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Center">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Center</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="H3">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H3</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Heading"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="vspace">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vspace</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Fieldset">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fieldset</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.10"/>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Strike">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Strike</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </ui:NodeClass>
+  <html:Attribute rdf:ID="alink">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >alink</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+  </html:Attribute>
+  <ui:NodeClass rdf:ID="Legend">
+    <rdfs:subClassOf rdf:resource="#FormElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/forms.html#h-17.10"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#accesskey"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Accessibility key character.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Legend</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Img">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#ismap"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Use server-side image map.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#alt"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Short description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#src"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI of image to embed.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Image</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#usemap"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Use client-side image map.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#height"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Override height.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#width"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Override width</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ObjectsElements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#longdesc"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Link to long description.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Name of image for scripting.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/objects.html#h-13.2"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Address">
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Address</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Menu">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Menu</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Script">
+    <rdfs:subClassOf rdf:resource="#ScriptElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Script</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/interact/scripts.html#h-18.2.1"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#charset"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Char encoding of linked resource.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#type"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Content type of script language.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#src"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI for an external script.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="defer">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >defer</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >UA may defer execution of script.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Head">
+    <rdfs:subClassOf rdf:resource="#I18NAttributeGroup"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="profile">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >profile</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Head</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#GlobalElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Big">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Big</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="U">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >U</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Tr">
+    <rdfs:subClassOf rdf:resource="#CellVAlignAttributeGroup"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/tables.html#h-11.2.5"/>
+    <rdfs:subClassOf rdf:resource="#TableElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Table row</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#CellHAlignAttributeGroup"/>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Base">
+    <rdfs:subClassOf rdf:resource="#LinkElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/links.html#h-12.4"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#href"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >URI that acts as base URI.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Base</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Code">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Code</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhraseElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Dl">
+    <rdfs:subClassOf rdf:resource="#ListElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dl</rdfs:label>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="H6">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >H6</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Heading"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="EventsAttributeGroup">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Events attribute group</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onmouseover">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onmouseover</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer was moved onto.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onmousedown">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onmousedown</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer button was pressed down.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onkeydown">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onkeydown</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A key was pressed down.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onmouseout">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onmouseout</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer was moved away.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#AttributeGroups"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onmousemove">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onmousemove</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer was moved within.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onclick">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onclick</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer button was clicked.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onkeyup">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onkeyup</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A key was released.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ui:abstract>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onkeypress">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onkeypress</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A key was pressed and released.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="ondblclick">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ondblclick</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer button was double clicked.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <html:Attribute rdf:ID="onmouseup">
+            <rdfs:subPropertyOf rdf:resource="#attributes"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >onmouseup</rdfs:label>
+          </html:Attribute>
+        </spl:predicate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A pointer button was released.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Map">
+    <rdfs:subClassOf rdf:resource="#ObjectsElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/html401/struct/objects.html#h-13.6.1"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#name"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >For reference by usemap.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Map</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#AttrsAttributeGroup"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Small">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Small</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="S">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >S</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FontStyleElements"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </ui:NodeClass>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

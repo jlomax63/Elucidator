@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:hipaa="http://hipaa.gov/personalidentifiers#"
+    xmlns:j.0="http://spinrdf.org/spin#"
+    xmlns="http://utmdacc.org/classificationPOC#"
+    xmlns:policy="http://utmdacc.org/dataclassificationpolicy#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:emr="http://utmdacc.org/emr#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://utmdacc.org/classificationPOC">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+    <owl:imports rdf:resource="http://utmdacc.org/emr"/>
+    <owl:imports rdf:resource="http://hipaa.gov/personalidentifiers"/>
+    <owl:imports rdf:resource="http://utmdacc.org/dataclassificationpolicy"/>
+    <j.0:imports rdf:resource="http://topbraid.org/spin/owlrl-all"/>
+  </owl:Ontology>
+  <rdf:Description rdf:about="http://utmdacc.org/emr#Patient">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty rdf:resource="http://hipaa.gov/personalidentifiers#isHIPAAPersonalIdentifier"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <emr:DoctorID rdf:ID="DoctorID_1"/>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

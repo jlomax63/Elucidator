@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:owlrl="http://topbraid.org/spin/owlrl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://topbraid.org/spin/owlrl-all" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-hv2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxc1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-trp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-inv2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-sym"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-diff1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-fp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-dom2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-diff2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-ifp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-eqp1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-dp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-uni"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-svf1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-oo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-hv1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-cls"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-trans"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-spo1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-pdw"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-svf2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-rep-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <spin:constraint rdf:nodeID="A22"/>
+    <spin:rule rdf:nodeID="A23"/>
+    <spin:rule rdf:nodeID="A24"/>
+    <spin:rule rdf:nodeID="A18"/>
+    <spin:constraint rdf:nodeID="A25"/>
+    <spin:rule rdf:nodeID="A13"/>
+    <spin:constraint rdf:nodeID="A5"/>
+    <spin:rule rdf:nodeID="A26"/>
+    <spin:constraint rdf:nodeID="A19"/>
+    <spin:rule rdf:nodeID="A7"/>
+    <spin:rule rdf:nodeID="A27"/>
+    <spin:rule rdf:nodeID="A28"/>
+    <spin:rule rdf:nodeID="A0"/>
+    <spin:rule rdf:nodeID="A15"/>
+    <spin:rule rdf:nodeID="A20"/>
+    <spin:constraint rdf:nodeID="A8"/>
+    <spin:rule rdf:nodeID="A2"/>
+    <spin:constraint rdf:nodeID="A29"/>
+    <spin:rule rdf:nodeID="A21"/>
+    <spin:rule rdf:nodeID="A30"/>
+    <spin:rule rdf:nodeID="A31"/>
+    <spin:constraint rdf:nodeID="A32"/>
+    <spin:rule rdf:nodeID="A14"/>
+    <spin:rule rdf:nodeID="A33"/>
+    <spin:rule rdf:nodeID="A17"/>
+    <spin:rule rdf:nodeID="A34"/>
+    <spin:rule rdf:nodeID="A35"/>
+    <spin:rule rdf:nodeID="A36"/>
+    <spin:rule rdf:nodeID="A37"/>
+    <spin:constraint rdf:nodeID="A38"/>
+    <spin:rule rdf:nodeID="A16"/>
+    <spin:rule rdf:nodeID="A39"/>
+    <spin:rule rdf:nodeID="A40"/>
+    <spin:rule rdf:nodeID="A41"/>
+    <spin:rule rdf:nodeID="A42"/>
+    <spin:constraint rdf:nodeID="A43"/>
+    <spin:rule rdf:nodeID="A9"/>
+    <spin:rule rdf:nodeID="A6"/>
+    <spin:rule rdf:nodeID="A44"/>
+    <spin:rule rdf:nodeID="A45"/>
+    <spin:constraint rdf:nodeID="A46"/>
+    <spin:rule rdf:nodeID="A47"/>
+    <spin:rule rdf:nodeID="A10"/>
+    <spin:rule rdf:nodeID="A48"/>
+    <spin:rule rdf:nodeID="A4"/>
+    <spin:rule rdf:nodeID="A49"/>
+    <spin:rule rdf:nodeID="A50"/>
+    <spin:rule rdf:nodeID="A51"/>
+    <spin:constraint rdf:nodeID="A52"/>
+    <spin:rule rdf:nodeID="A53"/>
+    <spin:rule rdf:nodeID="A54"/>
+    <spin:rule rdf:nodeID="A55"/>
+    <spin:rule rdf:nodeID="A11"/>
+    <spin:rule rdf:nodeID="A56"/>
+    <spin:rule rdf:nodeID="A57"/>
+    <spin:rule rdf:nodeID="A3"/>
+    <spin:constraint rdf:nodeID="A58"/>
+    <spin:rule rdf:nodeID="A12"/>
+    <spin:rule rdf:nodeID="A59"/>
+    <spin:rule rdf:nodeID="A60"/>
+    <spin:rule rdf:nodeID="A61"/>
+    <spin:rule rdf:nodeID="A62"/>
+    <spin:rule rdf:nodeID="A63"/>
+    <spin:constraint rdf:nodeID="A1"/>
+    <spin:rule rdf:nodeID="A64"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-svf1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-hv"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-npa2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-int"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-spo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-avf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-rng"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-irp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-asyp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-rng1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxqc4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-uni"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-rng2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-op"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-adp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-symp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-inv1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-avf2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-avf1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxqc2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-ref"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxc2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-spo2-2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxqc3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cax-eqc1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#LibraryOntology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment>Can be imported into any RDF/OWL model to activate all OWL RL rules at owl:Thing.</rdfs:comment>
+    <owl:imports rdf:resource="http://topbraid.org/spin/owlrl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-int1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-maxqc1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-eqp2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cax-adc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cax-dw"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-dom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-rep-s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-eqc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-int2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-dom1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-sco"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#eq-rep-p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-npa1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#scm-eqp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cax-eqc2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#prp-key"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cls-svf2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:type rdf:resource="http://topbraid.org/spin/owlrl#cax-sco"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

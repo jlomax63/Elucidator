@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Eclipse-BundleShape: dir
+Bundle-Name: TopBraid Live UISPIN plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.resources,org.eclipse.core.runtime,or
+ g.junit4,org.topbraid.lib.jena,org.topbraid.lib.spin,org.topbraid.cor
+ e,org.topbraid.eclipsex,org.topbraid.jenax,org.topbraid.sparqlmotion,
+ org.topbraid.spin,org.topbraid.strings,org.topbraid.uispin,org.topbra
+ id.uispin.xml,org.topbraidlive.server,org.topbraidlive.admin
+TopBraid:  ME, MEM
+Bundle-Vendor: TopQuadrant, Inc.
+Bundle-Version: 3.3.2.v20100709-0300R
+Bundle-Activator: org.topbraidlive.uispin.Activator
+Bundle-ManifestVersion: 2
+Import-Package: javax.servlet,javax.servlet.http
+Bundle-SymbolicName: org.topbraidlive.uispin;singleton:=true
+
+

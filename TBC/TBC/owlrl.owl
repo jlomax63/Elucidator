@@ -1,0 +1,4035 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:owlrl="http://topbraid.org/spin/owlrl#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:list="http://jena.hpl.hp.com/ARQ/list#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://topbraid.org/spin/owlrl" > 
+  <rdf:Description rdf:nodeID="A0">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <sp:object rdf:nodeID="A2"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:nodeID="A9"/>
+    <rdf:first rdf:nodeID="A10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A12"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-hv1</rdfs:comment>
+    <sp:templates rdf:nodeID="A15"/>
+    <sp:where rdf:nodeID="A16"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-svf1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-svf1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A17"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first rdf:nodeID="A20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:rest rdf:nodeID="A22"/>
+    <rdf:first rdf:nodeID="A23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Checks whether there is a value of a key property that
+is different for the two instances arg2 and arg3</rdfs:comment>
+    <sp:where rdf:nodeID="A25"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Ask"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A27"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A29"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:nodeID="A32"/>
+    <rdf:first rdf:nodeID="A33"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-key">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-key</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A34"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:rest rdf:nodeID="A36"/>
+    <rdf:first rdf:nodeID="A37"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_p3">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p3</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:nodeID="A42"/>
+    <rdf:first rdf:nodeID="A43"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first rdf:nodeID="A4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <rdf:rest rdf:nodeID="A47"/>
+    <rdf:first rdf:nodeID="A48"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <rdf:rest rdf:nodeID="A49"/>
+    <rdf:first rdf:nodeID="A50"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The list of key properties.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxc2</rdfs:comment>
+    <sp:templates rdf:nodeID="A55"/>
+    <sp:where rdf:nodeID="A56"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_p2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <sp:object>Shared instance of classes from an AllDisjointClasses block</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <rdf:rest rdf:nodeID="A26"/>
+    <rdf:first rdf:nodeID="A58"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-eqp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-eqp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A59"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-svf1</rdfs:comment>
+    <sp:templates rdf:nodeID="A60"/>
+    <sp:where rdf:nodeID="A61"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#hasValue"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p3"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <sp:object rdf:nodeID="A7"/>
+    <sp:predicate rdf:nodeID="A64"/>
+    <sp:subject rdf:nodeID="A40"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A66"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <sp:object rdf:nodeID="A30"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+    <sp:subject rdf:nodeID="A53"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:nodeID="A28"/>
+    <rdf:first rdf:nodeID="A70"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <rdf:rest rdf:nodeID="A21"/>
+    <rdf:first rdf:nodeID="A51"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <rdf:rest rdf:nodeID="A35"/>
+    <rdf:first rdf:nodeID="A0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_p1">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p1</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-rng2</rdfs:comment>
+    <sp:templates rdf:nodeID="A73"/>
+    <sp:where rdf:nodeID="A8"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <rdf:rest rdf:nodeID="A41"/>
+    <rdf:first rdf:nodeID="A6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-asyp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-asyp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A74"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <rdf:rest rdf:nodeID="A76"/>
+    <rdf:first rdf:nodeID="A63"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-svf2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-svf2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A77"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:nodeID="A79"/>
+    <rdf:first rdf:nodeID="A67"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A80"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A68"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A82">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <rdf:rest rdf:nodeID="A85"/>
+    <rdf:first rdf:nodeID="A86"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <rdf:rest rdf:nodeID="A88"/>
+    <rdf:first rdf:nodeID="A89"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A90">
+    <rdf:rest rdf:nodeID="A57"/>
+    <rdf:first rdf:nodeID="A91"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <rdf:rest rdf:nodeID="A93"/>
+    <rdf:first rdf:nodeID="A94"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A96"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <rdf:rest rdf:nodeID="A71"/>
+    <rdf:first rdf:nodeID="A83"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <rdf:rest rdf:nodeID="A99"/>
+    <rdf:first rdf:nodeID="A100"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_s"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxqc4</rdfs:comment>
+    <sp:templates rdf:nodeID="A103"/>
+    <sp:where rdf:nodeID="A97"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:nodeID="A105"/>
+    <rdf:first rdf:nodeID="A106"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <rdf:rest rdf:nodeID="A108"/>
+    <rdf:first rdf:nodeID="A109"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A110"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A111"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-spo2-2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-spo2 for chain length 2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A112"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A113">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A114"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A115">
+    <sp:object rdf:nodeID="A116"/>
+    <sp:predicate rdf:nodeID="A117"/>
+    <sp:subject rdf:nodeID="A7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <rdf:rest rdf:nodeID="A119"/>
+    <rdf:first rdf:nodeID="A120"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A121">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A99">
+    <rdf:rest rdf:nodeID="A122"/>
+    <rdf:first rdf:nodeID="A123"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A106">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#intersectionOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A124">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-fp</rdfs:comment>
+    <sp:templates rdf:nodeID="A125"/>
+    <sp:where rdf:nodeID="A126"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_y1">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y1</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A127"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Nothing">
+    <spin:constraint rdf:nodeID="A128"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A129"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A110">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-sco">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-sco</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A130"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A114">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A131">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first rdf:nodeID="A1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A115"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A132"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A120">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A133"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A134">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A135">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A136">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A121"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A126">
+    <rdf:rest rdf:nodeID="A137"/>
+    <rdf:first rdf:nodeID="A138"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A139"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_y2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-uni">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-uni</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A140"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A129">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A141">
+    <rdf:rest rdf:nodeID="A142"/>
+    <rdf:first rdf:nodeID="A143"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A144">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A145">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c3"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A146">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A147"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A148">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_z"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A149">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#hasValue"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A150">
+    <rdf:rest rdf:nodeID="A151"/>
+    <rdf:first rdf:nodeID="A152"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A153">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A154"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_yi">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yi</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A155">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-pdw</rdfs:comment>
+    <sp:templates rdf:nodeID="A156"/>
+    <sp:where rdf:nodeID="A157"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-int2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-int2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A158"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A159">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A160"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A161">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A162"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A163">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A164">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A145"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A147">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A165">
+    <rdf:rest rdf:nodeID="A166"/>
+    <rdf:first rdf:nodeID="A149"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-diff2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-diff2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A167"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A168">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A169"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A170">
+    <rdf:rest rdf:nodeID="A171"/>
+    <rdf:first rdf:nodeID="A172"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A154">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A111">
+    <sp:object>Violation of owl:AllDisjointProperties</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A132"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A162">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A173">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A174"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A175">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_i">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">i</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A176">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A177">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A178"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A88">
+    <rdf:rest rdf:nodeID="A159"/>
+    <rdf:first rdf:nodeID="A179"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A180">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A181"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A169">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_z"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A182">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A183"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A166">
+    <rdf:rest rdf:nodeID="A184"/>
+    <rdf:first rdf:nodeID="A185"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A179">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-int1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-int1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A186"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A157">
+    <rdf:rest rdf:nodeID="A187"/>
+    <rdf:first rdf:nodeID="A188"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A189">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-dom</rdfs:comment>
+    <sp:templates rdf:nodeID="A11"/>
+    <sp:where rdf:nodeID="A84"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A181">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A190">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A191"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-trans">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-trans</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A192"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A193">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A194">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A195"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A196">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+    <sp:subject rdf:nodeID="A197"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A198">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_c">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A199">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#inverseOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A200">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A201">
+    <rdf:rest rdf:nodeID="A202"/>
+    <rdf:first rdf:nodeID="A203"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A204">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A205"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A206">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A207">
+    <rdf:rest rdf:nodeID="A208"/>
+    <rdf:first rdf:nodeID="A209"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A210">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A211">
+    <rdf:rest rdf:nodeID="A170"/>
+    <rdf:first rdf:nodeID="A190"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A212">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A198"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A183">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A213">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-spo1</rdfs:comment>
+    <sp:templates rdf:nodeID="A214"/>
+    <sp:where rdf:nodeID="A215"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A216">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A217"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A218">
+    <rdf:rest rdf:nodeID="A219"/>
+    <rdf:first rdf:nodeID="A196"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A220">
+    <rdf:rest rdf:nodeID="A221"/>
+    <rdf:first rdf:nodeID="A200"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A205">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A222">
+    <rdf:rest rdf:nodeID="A141"/>
+    <rdf:first rdf:nodeID="A173"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A223">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxc1</rdfs:comment>
+    <sp:templates rdf:nodeID="A224"/>
+    <sp:where rdf:nodeID="A207"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A225">
+    <sp:object rdf:nodeID="A226"/>
+    <sp:predicate rdf:nodeID="A227"/>
+    <sp:subject rdf:nodeID="A228"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A229">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A230"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A203">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A231"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A232">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-dom">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-dom</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A189"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A233">
+    <rdf:rest rdf:nodeID="A234"/>
+    <rdf:first rdf:nodeID="A235"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A236">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sp:object>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#length"/>
+    <sp:subject rdf:nodeID="A30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A237">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c3"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A238">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A239">
+    <sp:object>Property declared disjoint with</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <rdf:rest rdf:nodeID="A240"/>
+    <rdf:first rdf:nodeID="A241"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A241">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A242">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A243">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A225"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A244">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-hv2</rdfs:comment>
+    <sp:templates rdf:nodeID="A245"/>
+    <sp:where rdf:nodeID="A165"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-diff1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-diff1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A246"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A235">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A247"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A151">
+    <rdf:rest rdf:nodeID="A212"/>
+    <rdf:first rdf:nodeID="A232"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A248">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-inv2</rdfs:comment>
+    <sp:templates rdf:nodeID="A249"/>
+    <sp:where rdf:nodeID="A250"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A251">
+    <rdf:rest rdf:nodeID="A46"/>
+    <rdf:first rdf:nodeID="A13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <rdf:rest rdf:nodeID="A252"/>
+    <rdf:first rdf:nodeID="A236"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cax-dw">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cax-dw</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A253"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A254">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A193"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A255">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A206"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A239"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A256">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-op</rdfs:comment>
+    <sp:templates rdf:nodeID="A69"/>
+    <sp:where rdf:nodeID="A204"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A221">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A237"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A240">
+    <rdf:rest rdf:nodeID="A161"/>
+    <rdf:first rdf:nodeID="A144"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A257">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A210"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A258">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A148"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A195">
+    <sp:object>Maximum qualified cardinality of 0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A259"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A250">
+    <rdf:rest rdf:nodeID="A216"/>
+    <rdf:first rdf:nodeID="A199"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A152">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A260"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A234">
+    <rdf:rest rdf:nodeID="A261"/>
+    <rdf:first rdf:nodeID="A262"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A263">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A264">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A265"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A266">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_v"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A267">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A268"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A269">
+    <rdf:rest rdf:nodeID="A90"/>
+    <rdf:first rdf:nodeID="A134"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A270">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A271">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A272">
+    <rdf:rest rdf:nodeID="A273"/>
+    <rdf:first rdf:nodeID="A274"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-avf2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-avf2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A275"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A276">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A277"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A278">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-dom1</rdfs:comment>
+    <sp:templates rdf:nodeID="A95"/>
+    <sp:where rdf:nodeID="A279"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A280">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?0</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A156">
+    <rdf:rest rdf:nodeID="A281"/>
+    <rdf:first rdf:nodeID="A282"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A283">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_v"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A284">
+    <sp:arg1 rdf:nodeID="A285"/>
+    <sp:arg2 rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:arg3 rdf:nodeID="A286"/>
+    <rdf:type rdf:resource="http://topbraid.org/sparqlmotionfunctions#hasAllObjects"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A287">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A266"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A288">
+    <rdf:rest rdf:nodeID="A289"/>
+    <rdf:first rdf:nodeID="A290"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A291">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-avf</rdfs:comment>
+    <sp:templates rdf:nodeID="A292"/>
+    <sp:where rdf:nodeID="A269"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A293">
+    <rdf:rest rdf:nodeID="A294"/>
+    <rdf:first rdf:nodeID="A267"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A295">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A274">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#intersectionOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-avf1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-avf1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A296"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A297">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A298">
+    <rdf:rest rdf:nodeID="A299"/>
+    <rdf:first rdf:nodeID="A300"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A192">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-trans</rdfs:comment>
+    <sp:templates rdf:nodeID="A168"/>
+    <sp:where rdf:nodeID="A301"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-rep-s">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-rep-s</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A302"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-asyp</rdfs:comment>
+    <sp:templates rdf:nodeID="A303"/>
+    <sp:where rdf:nodeID="A304"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A261">
+    <rdf:rest rdf:nodeID="A305"/>
+    <rdf:first rdf:nodeID="A306"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-avf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-avf</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A291"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A282">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A307">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A283"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A308">
+    <rdf:rest rdf:nodeID="A309"/>
+    <rdf:first rdf:nodeID="A310"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A311">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A312">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A313">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A242"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A314">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cax-adc</rdfs:comment>
+    <sp:templates rdf:nodeID="A315"/>
+    <sp:where rdf:nodeID="A201"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A273">
+    <rdf:rest rdf:nodeID="A316"/>
+    <rdf:first rdf:nodeID="A317"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A252">
+    <rdf:rest rdf:nodeID="A298"/>
+    <rdf:first rdf:nodeID="A318"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A319">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A297"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A262">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_u"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A247"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A265">
+    <sp:object rdf:nodeID="A320"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A285"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A304">
+    <rdf:rest rdf:nodeID="A288"/>
+    <rdf:first rdf:nodeID="A263"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-dp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-dp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A321"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A322">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_v"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A323">
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_x1"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_x2"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A324">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A311"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A325">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A268"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A326">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A312"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A310">
+    <sp:object rdf:nodeID="A270"/>
+    <sp:predicate rdf:nodeID="A327"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A277">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A317">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_ci"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A328">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A329">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_ci"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A318">
+    <sp:object rdf:nodeID="A280"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#index"/>
+    <sp:subject rdf:nodeID="A30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A330">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A188">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#propertyDisjointWith"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A331">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A332">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A333">
+    <sp:object rdf:nodeID="A175"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#hasKey"/>
+    <sp:subject rdf:nodeID="A177"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A334">
+    <rdf:rest rdf:nodeID="A335"/>
+    <rdf:first rdf:nodeID="A336"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A337">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-trp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-trp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A338"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cax-eqc2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cax-eqc2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A339"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A340">
+    <rdf:rest rdf:nodeID="A341"/>
+    <rdf:first rdf:nodeID="A342"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A343">
+    <sp:object rdf:nodeID="A344"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:subject rdf:nodeID="A280"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A345">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A329"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A346">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A328"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A347">
+    <rdf:rest rdf:nodeID="A348"/>
+    <rdf:first rdf:nodeID="A349"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-npa2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-npa2</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-npa2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A350"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A351">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-eqc</rdfs:comment>
+    <sp:templates rdf:nodeID="A352"/>
+    <sp:where rdf:nodeID="A353"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A354">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A174"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:rest rdf:nodeID="A355"/>
+    <rdf:first rdf:nodeID="A331"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A187">
+    <rdf:rest rdf:nodeID="A356"/>
+    <rdf:first rdf:nodeID="A357"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A301">
+    <rdf:rest rdf:nodeID="A258"/>
+    <rdf:first rdf:nodeID="A332"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-rng">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-rng</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A358"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A359">
+    <rdf:rest rdf:nodeID="A360"/>
+    <rdf:first rdf:nodeID="A333"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A275">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-avf2</rdfs:comment>
+    <sp:templates rdf:nodeID="A229"/>
+    <sp:where rdf:nodeID="A334"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A361">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A337"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A362">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cax-sco</rdfs:comment>
+    <sp:templates rdf:nodeID="A276"/>
+    <sp:where rdf:nodeID="A340"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-irp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-irp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A363"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A364">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_ci"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A344">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A142">
+    <rdf:rest rdf:nodeID="A365"/>
+    <rdf:first rdf:nodeID="A354"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A366">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_s2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A353">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A367"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A368">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A357">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-key</rdfs:comment>
+    <sp:templates rdf:nodeID="A369"/>
+    <sp:where rdf:nodeID="A359"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A370">
+    <sp:object>Shared instance of disjoint classes</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A268"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A300">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+    <sp:subject rdf:nodeID="A280"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A143">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A174"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A367">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A371">
+    <rdf:rest rdf:nodeID="A346"/>
+    <rdf:first rdf:nodeID="A366"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-cls">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-cls</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A372"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A341">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A295"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A373">
+    <rdf:rest rdf:nodeID="A345"/>
+    <rdf:first rdf:nodeID="A364"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A374">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-ref">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-ref</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A375"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A376">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_cl"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A356">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A271"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A355">
+    <rdf:rest rdf:nodeID="A287"/>
+    <rdf:first rdf:nodeID="A368"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A294">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A370"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-rep-p">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-rep-p</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A377"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A260">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A378">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#unionOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A352">
+    <rdf:rest rdf:nodeID="A379"/>
+    <rdf:first rdf:nodeID="A380"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-rep-o">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-rep-o</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A381"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A382">
+    <sp:object>Negative Property Assertion</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A133"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-npa1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-npa1</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-npa1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A383"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A158">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-int2</rdfs:comment>
+    <sp:templates rdf:nodeID="A384"/>
+    <sp:where rdf:nodeID="A272"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A381">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-rep-o</rdfs:comment>
+    <sp:templates rdf:nodeID="A385"/>
+    <sp:where rdf:nodeID="A347"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A342">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A299">
+    <rdf:rest rdf:nodeID="A386"/>
+    <rdf:first rdf:nodeID="A343"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cax-eqc1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cax-eqc1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A387"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A302">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-rep-s</rdfs:comment>
+    <sp:templates rdf:nodeID="A324"/>
+    <sp:where rdf:nodeID="A371"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-hv">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-hv</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A388"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A389">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#disjointWith"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A390">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A391">
+    <rdf:rest rdf:nodeID="A392"/>
+    <rdf:first rdf:nodeID="A393"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A394">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A395"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A380">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A388">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-hv</rdfs:comment>
+    <sp:templates rdf:nodeID="A396"/>
+    <sp:where rdf:nodeID="A397"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A398">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A399">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-symp</rdfs:comment>
+    <sp:templates rdf:nodeID="A400"/>
+    <sp:where rdf:nodeID="A401"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A338">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-trp</rdfs:comment>
+    <sp:templates rdf:nodeID="A402"/>
+    <sp:where rdf:nodeID="A403"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A387">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cax-eqc1</rdfs:comment>
+    <sp:templates rdf:nodeID="A404"/>
+    <sp:where rdf:nodeID="A405"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A406">
+    <sp:object rdf:nodeID="A407"/>
+    <sp:predicate rdf:nodeID="A408"/>
+    <sp:subject rdf:nodeID="A409"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A410">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A167">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-diff2</rdfs:comment>
+    <sp:templates rdf:nodeID="A107"/>
+    <sp:where rdf:nodeID="A411"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A412">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A374"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A413">
+    <rdf:rest rdf:nodeID="A414"/>
+    <rdf:first rdf:nodeID="A389"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A415">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A379">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A416"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A372">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-cls</rdfs:comment>
+    <sp:templates rdf:nodeID="A417"/>
+    <sp:where rdf:nodeID="A394"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A122">
+    <rdf:rest rdf:nodeID="A418"/>
+    <rdf:first rdf:nodeID="A398"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A419">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A420">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A406"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A405">
+    <rdf:rest rdf:nodeID="A421"/>
+    <rdf:first rdf:nodeID="A422"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A411">
+    <rdf:rest rdf:nodeID="A423"/>
+    <rdf:first rdf:nodeID="A424"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A425">
+    <rdf:rest rdf:nodeID="A426"/>
+    <rdf:first rdf:nodeID="A410"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <rdf:rest rdf:nodeID="A427"/>
+    <rdf:first rdf:nodeID="A428"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A429">
+    <rdf:rest rdf:nodeID="A391"/>
+    <rdf:first rdf:nodeID="A415"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A386">
+    <rdf:rest rdf:nodeID="A430"/>
+    <rdf:first rdf:nodeID="A431"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A432">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A433">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A434">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A435">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_i"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#hasValue"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A436">
+    <sp:object>Irreflexive property</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A174"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A416">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A437">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A438"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A439">
+    <rdf:rest rdf:nodeID="A440"/>
+    <rdf:first rdf:nodeID="A441"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A407">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lt</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A442">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A443">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A444"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A424">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A431">
+    <sp:object rdf:nodeID="A64"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+    <sp:subject rdf:nodeID="A344"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A401">
+    <rdf:rest rdf:nodeID="A445"/>
+    <rdf:first rdf:nodeID="A432"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A446">
+    <rdf:rest rdf:nodeID="A447"/>
+    <rdf:first rdf:nodeID="A448"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A449">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-ifp</rdfs:comment>
+    <sp:templates rdf:nodeID="A146"/>
+    <sp:where rdf:nodeID="A429"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A397">
+    <rdf:rest rdf:nodeID="A439"/>
+    <rdf:first rdf:nodeID="A435"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A418">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A442"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A414">
+    <rdf:rest rdf:nodeID="A361"/>
+    <rdf:first rdf:nodeID="A433"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A450">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A390"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A451">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-adp</rdfs:comment>
+    <sp:templates rdf:nodeID="A452"/>
+    <sp:where rdf:nodeID="A453"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A365">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A436"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A438">
+    <sp:object>Negative Property Assertion</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A191"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A454">
+    <sp:object rdf:nodeID="A407"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#targetValue"/>
+    <sp:subject rdf:nodeID="A455"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A336">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A426">
+    <rdf:rest rdf:nodeID="A456"/>
+    <rdf:first rdf:nodeID="A457"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A458">
+    <sp:expression rdf:nodeID="A459"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A453">
+    <rdf:rest rdf:nodeID="A460"/>
+    <rdf:first rdf:nodeID="A461"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A377">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-rep-p</rdfs:comment>
+    <sp:templates rdf:nodeID="A412"/>
+    <sp:where rdf:nodeID="A462"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-int">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-int</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A463"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A464">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A465">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-inv1</rdfs:comment>
+    <sp:templates rdf:nodeID="A254"/>
+    <sp:where rdf:nodeID="A446"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A466">
+    <sp:object rdf:nodeID="A327"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A467">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A468"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A469">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A470">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A305">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A471"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A472">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A473">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A474">
+    <rdf:rest rdf:nodeID="A420"/>
+    <rdf:first rdf:nodeID="A454"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A281">
+    <rdf:rest rdf:nodeID="A44"/>
+    <rdf:first rdf:nodeID="A475"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_c3">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c3</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_c1">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c1</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A461">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_z"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A462">
+    <rdf:rest rdf:nodeID="A450"/>
+    <rdf:first rdf:nodeID="A434"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A476">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A445">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A464"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A327">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A306">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A247"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A468">
+    <sp:expression rdf:nodeID="A323"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A303">
+    <rdf:rest rdf:nodeID="A477"/>
+    <rdf:first rdf:nodeID="A443"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A73">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A473"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A478">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A479"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cax-sco">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cax-sco</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A362"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A408">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_c2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A480">
+    <sp:object rdf:nodeID="A481"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:nodeID="A231"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cax-adc">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cax-adc</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A314"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A475">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A482">
+    <rdf:rest rdf:nodeID="A326"/>
+    <rdf:first rdf:nodeID="A470"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-eqc">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-eqc</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A351"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A417">
+    <rdf:rest rdf:nodeID="A483"/>
+    <rdf:first rdf:nodeID="A476"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A392">
+    <rdf:rest rdf:nodeID="A467"/>
+    <rdf:first rdf:nodeID="A484"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A485">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A404">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A419"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A486">
+    <sp:object rdf:nodeID="A408"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#assertionProperty"/>
+    <sp:subject rdf:nodeID="A455"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A487">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A290">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A488">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxqc1</rdfs:comment>
+    <sp:templates rdf:nodeID="A489"/>
+    <sp:where rdf:nodeID="A425"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A484">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A422">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A490">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-eqp2</rdfs:comment>
+    <sp:templates rdf:nodeID="A136"/>
+    <sp:where rdf:nodeID="A482"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:rest rdf:nodeID="A491"/>
+    <rdf:first rdf:nodeID="A492"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-adp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-adp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A451"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A395">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A160">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_o"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A400">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A485"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <rdf:rest rdf:nodeID="A308"/>
+    <rdf:first rdf:nodeID="A466"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A393">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A487"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A289">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A472"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A421">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A469"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A471">
+    <sp:object>Qualified max cardinality 0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A247"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A493">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A494">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A495"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_o2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">o2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A496">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A497"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A498">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A499"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A500">
+    <rdf:rest rdf:nodeID="A501"/>
+    <rdf:first rdf:nodeID="A502"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A503">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A504"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A505">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxqc3</rdfs:comment>
+    <sp:templates rdf:nodeID="A81"/>
+    <sp:where rdf:nodeID="A506"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A507">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A508">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A509">
+    <rdf:rest rdf:nodeID="A510"/>
+    <rdf:first rdf:nodeID="A511"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-pdw">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-pdw</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A155"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A495">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A512">
+    <rdf:rest rdf:nodeID="A513"/>
+    <rdf:first rdf:nodeID="A496"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A140">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-uni</rdfs:comment>
+    <sp:templates rdf:nodeID="A514"/>
+    <sp:where rdf:nodeID="A500"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A499">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_yi"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A245">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A515"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A515">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A516">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A517"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A231">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A511">
+    <sp:object rdf:nodeID="A518"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A285"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxc1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxc1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A223"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A430">
+    <rdf:rest rdf:nodeID="A519"/>
+    <rdf:first rdf:nodeID="A520"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A214">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A521"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A522">
+    <rdf:rest rdf:nodeID="A523"/>
+    <rdf:first rdf:nodeID="A524"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A525">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-uni</rdfs:comment>
+    <sp:templates rdf:nodeID="A313"/>
+    <sp:where rdf:nodeID="A526"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A527">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A528">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A444"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A517">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A529">
+    <rdf:rest rdf:nodeID="A182"/>
+    <rdf:first rdf:nodeID="A176"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A530">
+    <sp:object rdf:nodeID="A518"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+    <sp:subject rdf:nodeID="A286"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A360">
+    <rdf:rest rdf:nodeID="A531"/>
+    <rdf:first rdf:nodeID="A532"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A533">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A497"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A521">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A513">
+    <rdf:rest rdf:nodeID="A534"/>
+    <rdf:first rdf:nodeID="A533"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A526">
+    <rdf:rest rdf:nodeID="A373"/>
+    <rdf:first rdf:nodeID="A378"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A535">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A493"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A536">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A506">
+    <rdf:rest rdf:nodeID="A537"/>
+    <rdf:first rdf:nodeID="A527"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A518">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">first</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A477">
+    <rdf:rest rdf:nodeID="A538"/>
+    <rdf:first rdf:nodeID="A528"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A532">
+    <sp:object rdf:nodeID="A177"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A539"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A519">
+    <rdf:rest rdf:nodeID="A218"/>
+    <rdf:first rdf:nodeID="A540"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A172">
+    <sp:object rdf:nodeID="A228"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A191"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A541">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A403">
+    <rdf:rest rdf:nodeID="A542"/>
+    <rdf:first rdf:nodeID="A543"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A544">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A253">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cax-dw</rdfs:comment>
+    <sp:templates rdf:nodeID="A545"/>
+    <sp:where rdf:nodeID="A413"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A546">
+    <rdf:rest rdf:nodeID="A547"/>
+    <rdf:first rdf:nodeID="A548"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_ci">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ci</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A539">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A510">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A549"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-ifp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-ifp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A449"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-inv2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-inv2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A248"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A550">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-svf2</rdfs:comment>
+    <sp:templates rdf:nodeID="A551"/>
+    <sp:where rdf:nodeID="A552"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A553">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A554">
+    <rdf:rest rdf:nodeID="A555"/>
+    <rdf:first rdf:nodeID="A556"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A557">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A524">
+    <sp:expression rdf:nodeID="A558"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A548">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#oneOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A383">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-npa1</rdfs:comment>
+    <sp:templates rdf:nodeID="A211"/>
+    <sp:where rdf:nodeID="A31"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A543">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A559">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A560"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A520">
+    <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:subject rdf:nodeID="A344"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-rng1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-rng1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A561"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A531">
+    <rdf:rest rdf:nodeID="A562"/>
+    <rdf:first rdf:nodeID="A563"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A552">
+    <rdf:rest rdf:nodeID="A564"/>
+    <rdf:first rdf:nodeID="A565"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A537">
+    <rdf:rest rdf:nodeID="A566"/>
+    <rdf:first rdf:nodeID="A557"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A556">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A567">
+    <rdf:rest rdf:nodeID="A568"/>
+    <rdf:first rdf:nodeID="A480"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A560">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A215">
+    <rdf:rest rdf:nodeID="A494"/>
+    <rdf:first rdf:nodeID="A569"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A542">
+    <rdf:rest rdf:nodeID="A503"/>
+    <rdf:first rdf:nodeID="A570"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A571">
+    <sp:object rdf:nodeID="A227"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A191"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A572">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_z"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A555">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A573"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A197">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A547">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A574"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A575">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A576"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-spo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-spo</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A577"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A459">
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A563">
+    <sp:object rdf:nodeID="A177"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A578"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A285">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A217">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-rng2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-rng2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A72"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A202">
+    <rdf:rest rdf:nodeID="A567"/>
+    <rdf:first rdf:nodeID="A579"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A580">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A581"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A570">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A483">
+    <rdf:rest rdf:nodeID="A582"/>
+    <rdf:first rdf:nodeID="A583"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A584">
+    <rdf:rest rdf:nodeID="A522"/>
+    <rdf:first rdf:nodeID="A541"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A574">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_yi"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A573">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A171">
+    <rdf:rest rdf:nodeID="A437"/>
+    <rdf:first rdf:nodeID="A571"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A540">
+    <sp:object rdf:nodeID="A197"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#index"/>
+    <sp:subject rdf:nodeID="A30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A569">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A423">
+    <rdf:rest rdf:nodeID="A251"/>
+    <rdf:first rdf:nodeID="A458"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A576">
+    <sp:object>Violates owl:differentFrom</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A585"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-inv1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-inv1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A465"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A578">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A549">
+    <sp:expression rdf:nodeID="A284"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A249">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A586"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_cl">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cl</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A178">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A581">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A579">
+    <sp:object rdf:nodeID="A553"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:nodeID="A231"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A587">
+    <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:subject rdf:nodeID="A588"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A589">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A590"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A591">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A592">
+    <sp:object rdf:nodeID="A409"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A133"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A583">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A551">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A593"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A594">
+    <rdf:rest rdf:nodeID="A575"/>
+    <rdf:first rdf:nodeID="A595"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A596">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A597">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A598">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A163"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A577">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-spo</rdfs:comment>
+    <sp:templates rdf:nodeID="A599"/>
+    <sp:where rdf:nodeID="A600"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A601">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_ci"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A602">
+    <rdf:rest rdf:nodeID="A75"/>
+    <rdf:first rdf:nodeID="A587"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A590">
+    <sp:expression rdf:nodeID="A603"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A604">
+    <rdf:rest rdf:nodeID="A605"/>
+    <rdf:first rdf:nodeID="A606"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A463">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-int</rdfs:comment>
+    <sp:templates rdf:nodeID="A607"/>
+    <sp:where rdf:nodeID="A104"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_v"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A582">
+    <rdf:rest rdf:nodeID="A608"/>
+    <rdf:first rdf:nodeID="A609"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A348">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A596"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A593">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A595">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A585"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A460">
+    <rdf:rest rdf:nodeID="A584"/>
+    <rdf:first rdf:nodeID="A572"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A384">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A601"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A610">
+    <rdf:rest rdf:nodeID="A611"/>
+    <rdf:first rdf:nodeID="A612"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A600">
+    <rdf:rest rdf:nodeID="A613"/>
+    <rdf:first rdf:nodeID="A614"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A117">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-spo1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-spo1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A213"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A606">
+    <sp:object rdf:nodeID="A408"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A133"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-dom2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-dom2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A615"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A292">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A616"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A617">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A618"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A619">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A620">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A621">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A457">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A609">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A622">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A623"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A614">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A624">
+    <rdf:rest rdf:nodeID="A594"/>
+    <rdf:first rdf:nodeID="A625"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A626">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o2"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_s"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A627">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The second instance</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg3"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A603">
+    <sp:arg1 rdf:nodeID="A270"/>
+    <sp:arg2 rdf:nodeID="A628"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#eq"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A629">
+    <sp:object rdf:nodeID="A117"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+    <sp:subject rdf:nodeID="A588"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A605">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A382"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A630">
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A616">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_v"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A631">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-oo</rdfs:comment>
+    <sp:templates rdf:nodeID="A498"/>
+    <sp:where rdf:nodeID="A546"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A625">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A585"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A623">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A316">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A621"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A396">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A591"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A608">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A632"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A613">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A633"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A634">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first instance</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A385">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A626"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A456">
+    <rdf:rest rdf:nodeID="A610"/>
+    <rdf:first rdf:nodeID="A597"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A635">
+    <sp:object>owl:maxCardinality of 0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A497"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A125">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A636"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A637">
+    <rdf:rest rdf:nodeID="A602"/>
+    <rdf:first rdf:nodeID="A629"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A286">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A638">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A444"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A309">
+    <rdf:rest rdf:nodeID="A589"/>
+    <rdf:first rdf:nodeID="A639"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A279">
+    <rdf:rest rdf:nodeID="A113"/>
+    <rdf:first rdf:nodeID="A640"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A641">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A585"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A185">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A633">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p3"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A632">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A534">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A635"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-dom1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-dom1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A278"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A636">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A642">
+    <rdf:rest rdf:nodeID="A509"/>
+    <rdf:first rdf:nodeID="A530"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A588">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?3</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A538">
+    <rdf:rest rdf:nodeID="A643"/>
+    <rdf:first rdf:nodeID="A638"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A599">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A62"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A640">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxc2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxc2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A54"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A644">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-eqp1</rdfs:comment>
+    <sp:templates rdf:nodeID="A535"/>
+    <sp:where rdf:nodeID="A645"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A646">
+    <sp:object rdf:nodeID="A588"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:subject rdf:nodeID="A197"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#keyViolationExists">
+    <rdfs:comment>A helper function of the prp-key axiom.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">key violation exists</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Functions"/>
+    <spin:body rdf:nodeID="A24"/>
+    <spin:constraint rdf:nodeID="A627"/>
+    <spin:constraint rdf:nodeID="A634"/>
+    <spin:constraint rdf:nodeID="A52"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Function"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A647">
+    <rdf:rest rdf:nodeID="A98"/>
+    <rdf:first rdf:nodeID="A82"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_s2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A628">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A648">
+    <sp:object>Antisymmetric property</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A444"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A649">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A612">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A349">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_o2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-oo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-oo</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A631"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A650">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-svf1</rdfs:comment>
+    <sp:templates rdf:nodeID="A478"/>
+    <sp:where rdf:nodeID="A647"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A219">
+    <rdf:rest rdf:nodeID="A637"/>
+    <rdf:first rdf:nodeID="A646"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <rdf:rest rdf:nodeID="A604"/>
+    <rdf:first rdf:nodeID="A592"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A639">
+    <sp:object rdf:nodeID="A628"/>
+    <sp:predicate rdf:nodeID="A327"/>
+    <sp:subject rdf:resource="http://spinrdf.org/spin#_arg3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A643">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A648"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A320">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A645">
+    <rdf:rest rdf:nodeID="A516"/>
+    <rdf:first rdf:nodeID="A507"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A184">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A649"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A611">
+    <rdf:rest rdf:nodeID="A651"/>
+    <rdf:first rdf:nodeID="A652"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A653">
+    <rdf:rest rdf:nodeID="A624"/>
+    <rdf:first rdf:nodeID="A641"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A654">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#equivalentProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A296">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-avf1</rdfs:comment>
+    <sp:templates rdf:nodeID="A598"/>
+    <sp:where rdf:nodeID="A655"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A656">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A259"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A440">
+    <rdf:rest rdf:nodeID="A657"/>
+    <rdf:first rdf:nodeID="A658"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A226">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">i2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A545">
+    <rdf:rest rdf:nodeID="A293"/>
+    <rdf:first rdf:nodeID="A325"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-uni">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-uni</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A525"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A659">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#differentFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A660">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A661">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A662"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A315">
+    <rdf:rest rdf:nodeID="A131"/>
+    <rdf:first rdf:nodeID="A101"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A663">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A135"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A664">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A558">
+    <sp:arg1 rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:arg2 rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A665">
+    <sp:object rdf:nodeID="A116"/>
+    <sp:predicate rdf:nodeID="A53"/>
+    <sp:subject rdf:nodeID="A40"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A230">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A441">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A666">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A654"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A667">
+    <rdf:rest rdf:nodeID="A668"/>
+    <rdf:first rdf:nodeID="A669"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A489">
+    <rdf:rest rdf:nodeID="A670"/>
+    <rdf:first rdf:nodeID="A656"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-op">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-op</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A256"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A671">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A659"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A672">
+    <rdf:rest rdf:nodeID="A673"/>
+    <rdf:first rdf:nodeID="A674"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A675">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A523">
+    <rdf:rest rdf:nodeID="A676"/>
+    <rdf:first rdf:nodeID="A677"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-sco</rdfs:comment>
+    <sp:templates rdf:nodeID="A164"/>
+    <sp:where rdf:nodeID="A220"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A678">
+    <sp:object rdf:nodeID="A481"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A669">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A673">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A679"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A680">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A681">
+    <sp:expression rdf:nodeID="A682"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A683">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A684">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A619"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-svf2</rdfs:comment>
+    <sp:templates rdf:nodeID="A685"/>
+    <sp:where rdf:nodeID="A686"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A674">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A116">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u3</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A687">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A678"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A668">
+    <rdf:rest rdf:nodeID="A150"/>
+    <rdf:first rdf:nodeID="A688"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A655">
+    <rdf:rest rdf:nodeID="A689"/>
+    <rdf:first rdf:nodeID="A683"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A679">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A690">
+    <rdf:rest rdf:nodeID="A671"/>
+    <rdf:first rdf:nodeID="A680"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A651">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A684"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A562">
+    <rdf:rest rdf:nodeID="A691"/>
+    <rdf:first rdf:nodeID="A681"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A686">
+    <rdf:rest rdf:nodeID="A692"/>
+    <rdf:first rdf:nodeID="A693"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-fp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-fp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A124"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A662">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A694">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A665"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A652">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A695">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A696">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A620"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A688">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A697">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-sym</rdfs:comment>
+    <sp:templates rdf:nodeID="A180"/>
+    <sp:where rdf:nodeID="A153"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A409">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">i</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A698">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A699"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_s">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A700">
+    <rdf:rest rdf:nodeID="A617"/>
+    <rdf:first rdf:nodeID="A701"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A702">
+    <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A703"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A704">
+    <sp:object rdf:nodeID="A553"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A693">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A705"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A706">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_z"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A689">
+    <rdf:rest rdf:nodeID="A707"/>
+    <rdf:first rdf:nodeID="A695"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A708">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A479">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A321">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-dp</rdfs:comment>
+    <sp:templates rdf:nodeID="A709"/>
+    <sp:where rdf:nodeID="A698"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A455">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A710">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A711"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A712">
+    <rdf:rest rdf:nodeID="A687"/>
+    <rdf:first rdf:nodeID="A704"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A713">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A692">
+    <rdf:rest rdf:nodeID="A714"/>
+    <rdf:first rdf:nodeID="A715"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A452">
+    <rdf:rest rdf:nodeID="A716"/>
+    <rdf:first rdf:nodeID="A717"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A447">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A238"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-eqp1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-eqp1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A644"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A657">
+    <rdf:rest rdf:nodeID="A696"/>
+    <rdf:first rdf:nodeID="A708"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A718">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_p">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A618">
+    <sp:expression rdf:nodeID="A630"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A711">
+    <sp:object>Instance of owl:Nothing</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A703"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A719">
+    <sp:arg1 rdf:nodeID="A553"/>
+    <sp:arg2 rdf:nodeID="A481"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A715">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A677">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A709">
+    <rdf:rest rdf:nodeID="A666"/>
+    <rdf:first rdf:nodeID="A718"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A358">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-rng</rdfs:comment>
+    <sp:templates rdf:nodeID="A720"/>
+    <sp:where rdf:nodeID="A721"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A491">
+    <rdf:rest rdf:nodeID="A661"/>
+    <rdf:first rdf:nodeID="A675"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A209">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A448">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#inverseOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-eqp2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-eqp2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A490"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A707">
+    <rdf:rest rdf:nodeID="A554"/>
+    <rdf:first rdf:nodeID="A536"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A658">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_i"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#hasValue"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_o">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">o</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A568">
+    <rdf:rest rdf:nodeID="A712"/>
+    <rdf:first rdf:nodeID="A722"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A714">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A723"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A701">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y2"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A724">
+    <rdf:rest rdf:nodeID="A474"/>
+    <rdf:first rdf:nodeID="A486"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A375">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-ref</rdfs:comment>
+    <sp:templates rdf:nodeID="A87"/>
+    <sp:where rdf:nodeID="A663"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A699">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A676">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A706"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A492">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A208">
+    <rdf:rest rdf:nodeID="A672"/>
+    <rdf:first rdf:nodeID="A660"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A725">
+    <rdf:rest rdf:nodeID="A726"/>
+    <rdf:first rdf:nodeID="A727"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A716">
+    <rdf:rest rdf:nodeID="A92"/>
+    <rdf:first rdf:nodeID="A728"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A729">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A722">
+    <sp:expression rdf:nodeID="A719"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A730">
+    <rdf:rest rdf:nodeID="A731"/>
+    <rdf:first rdf:nodeID="A732"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxqc4">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxqc4</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A102"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A733">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A561">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-rng1</rdfs:comment>
+    <sp:templates rdf:nodeID="A734"/>
+    <sp:where rdf:nodeID="A735"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:rest rdf:nodeID="A307"/>
+    <rdf:first rdf:nodeID="A322"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A736">
+    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A723">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_v"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A737">
+    <sp:arg1 rdf:nodeID="A175"/>
+    <sp:arg2 rdf:nodeID="A539"/>
+    <sp:arg3 rdf:nodeID="A578"/>
+    <rdf:type rdf:resource="#keyViolationExists"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A738">
+    <rdf:rest rdf:nodeID="A642"/>
+    <rdf:first rdf:nodeID="A739"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A740">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_z"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <sp:object rdf:nodeID="A228"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sourceIndividual"/>
+    <sp:subject rdf:nodeID="A741"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A350">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-npa2</rdfs:comment>
+    <sp:templates rdf:nodeID="A118"/>
+    <sp:where rdf:nodeID="A742"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A743">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_cl"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A481">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c2</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A728">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A132"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A744">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A745">
+    <rdf:rest rdf:nodeID="A257"/>
+    <rdf:first rdf:nodeID="A729"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A732">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A703"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A721">
+    <rdf:rest rdf:nodeID="A746"/>
+    <rdf:first rdf:nodeID="A733"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A685">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A747"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A748">
+    <rdf:rest rdf:nodeID="A749"/>
+    <rdf:first rdf:nodeID="A736"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_v">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A586">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A369">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A750"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A739">
+    <sp:object rdf:nodeID="A286"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#intersectionOf"/>
+    <sp:subject rdf:nodeID="A320"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A741">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A402">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A740"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-svf2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-svf2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A550"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A751">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A717">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A132"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A752">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#allValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A137">
+    <rdf:rest rdf:nodeID="A700"/>
+    <rdf:first rdf:nodeID="A713"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A564">
+    <rdf:rest rdf:nodeID="A725"/>
+    <rdf:first rdf:nodeID="A744"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A607">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A743"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_u">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A753">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-maxqc2</rdfs:comment>
+    <sp:templates rdf:nodeID="A233"/>
+    <sp:where rdf:nodeID="A748"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A747">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A754">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A755">
+    <sp:object>Violation of owl:AllDifferent</sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <sp:subject rdf:nodeID="A127"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A750">
+    <sp:object rdf:nodeID="A578"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sameAs"/>
+    <sp:subject rdf:nodeID="A539"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A756">
+    <sp:object rdf:nodeID="A409"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#sourceIndividual"/>
+    <sp:subject rdf:nodeID="A455"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#scm-svf1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL scm-svf1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A650"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A757">
+    <rdf:rest rdf:nodeID="A559"/>
+    <rdf:first rdf:nodeID="A544"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A228">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">i1</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A746">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A751"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A565">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A139">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_cl"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A705">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_u"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A758">
+    <rdf:rest rdf:nodeID="A745"/>
+    <rdf:first rdf:nodeID="A752"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A731">
+    <rdf:rest rdf:nodeID="A710"/>
+    <rdf:first rdf:nodeID="A702"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A735">
+    <rdf:rest rdf:nodeID="A759"/>
+    <rdf:first rdf:nodeID="A754"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A112">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-spo2-2</rdfs:comment>
+    <sp:templates rdf:nodeID="A694"/>
+    <sp:where rdf:nodeID="A78"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A186">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cls-int1</rdfs:comment>
+    <sp:templates rdf:nodeID="A264"/>
+    <sp:where rdf:nodeID="A738"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-eqp</rdfs:comment>
+    <sp:templates rdf:nodeID="A18"/>
+    <sp:where rdf:nodeID="A65"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A760">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationPath"/>
+    <sp:subject rdf:nodeID="A259"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A742">
+    <rdf:rest rdf:nodeID="A724"/>
+    <rdf:first rdf:nodeID="A756"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A339">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cax-eqc2</rdfs:comment>
+    <sp:templates rdf:nodeID="A580"/>
+    <sp:where rdf:nodeID="A757"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <rdf:type rdf:resource="http://spinrdf.org/spin#LibraryOntology"/>
+    <rdfs:comment>A collection of rules specified by the OWL RL specification in SPIN format. The rules have been encoded as SPIN templates and can be attached to a root class (such as owl:Thing) to archieve OWL inferencing on ontologies that import this file.</rdfs:comment>
+    <owl:imports rdf:resource="http://spinrdf.org/spin"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.9.2</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <rdf:rest rdf:nodeID="A761"/>
+    <rdf:first rdf:nodeID="A762"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_x2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x2</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A763">
+    <sp:object rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onClass"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A764">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p1"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A765">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#eq-sym">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL eq-sym</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A697"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A762">
+    <sp:object rdf:nodeID="A227"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#assertionProperty"/>
+    <sp:subject rdf:nodeID="A741"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A246">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eq-diff1</rdfs:comment>
+    <sp:templates rdf:nodeID="A653"/>
+    <sp:where rdf:nodeID="A690"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A766">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_cl"/>
+    <sp:predicate rdf:resource="http://jena.hpl.hp.com/ARQ/list#member"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A224">
+    <rdf:rest rdf:nodeID="A512"/>
+    <rdf:first rdf:nodeID="A767"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A768">
+    <rdf:rest rdf:nodeID="A769"/>
+    <rdf:first rdf:nodeID="A770"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A428">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y1"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A127"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A771">
+    <rdf:rest rdf:nodeID="A194"/>
+    <rdf:first rdf:nodeID="A760"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A682">
+    <sp:arg1 rdf:nodeID="A539"/>
+    <sp:arg2 rdf:nodeID="A578"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#ne"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A734">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A772"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A773">
+    <rdf:rest rdf:nodeID="A529"/>
+    <rdf:first rdf:nodeID="A763"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A759">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A774"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_x1">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x1</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_z">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A335">
+    <rdf:rest rdf:nodeID="A758"/>
+    <rdf:first rdf:nodeID="A764"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A720">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A765"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#prp-symp">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL prp-symp</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A399"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A775">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A767">
+    <sp:object rdf:resource="http://spinrdf.org/spin#ConstraintViolation"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:nodeID="A497"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A427">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A755"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A615">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scm-dom2</rdfs:comment>
+    <sp:templates rdf:nodeID="A319"/>
+    <sp:where rdf:nodeID="A768"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A774">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A227">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A514">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A376"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A776">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_u"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/spin#violationRoot"/>
+    <sp:subject rdf:nodeID="A259"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A777">
+    <sp:expression rdf:nodeID="A778"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Filter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_y">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-hv1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-hv1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A14"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A779">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxqc2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxqc2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A753"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A780">
+    <rdf:rest rdf:nodeID="A255"/>
+    <rdf:first rdf:nodeID="A508"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A726">
+    <rdf:rest rdf:nodeID="A622"/>
+    <rdf:first rdf:nodeID="A775"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A504">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_z"/>
+    <sp:predicate rdf:resource="http://spinrdf.org/sp#_p"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_y"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A502">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_x"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#unionOf"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxqc1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxqc1</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A488"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A670">
+    <rdf:rest rdf:nodeID="A771"/>
+    <rdf:first rdf:nodeID="A776"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A691">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A777"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A761">
+    <rdf:rest rdf:nodeID="A243"/>
+    <rdf:first rdf:nodeID="A781"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A769">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A330"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A749">
+    <rdf:rest rdf:nodeID="A773"/>
+    <rdf:first rdf:nodeID="A779"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://spinrdf.org/sp#_x">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</sp:varName>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A566">
+    <rdf:rest rdf:nodeID="A667"/>
+    <rdf:first rdf:nodeID="A664"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-hv2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-hv2</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A244"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cls-maxqc3">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OWL RL cls-maxqc3</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+    <spin:body rdf:nodeID="A505"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#Template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A128">
+    <sp:templates rdf:nodeID="A730"/>
+    <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A363">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prp-irp</rdfs:comment>
+    <sp:templates rdf:nodeID="A222"/>
+    <sp:where rdf:nodeID="A780"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#Construct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A727">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_y"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A501">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A766"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A778">
+    <sp:arg1 rdf:nodeID="A737"/>
+    <rdf:type rdf:resource="http://spinrdf.org/sp#not"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A772">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c2"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A781">
+    <sp:object rdf:nodeID="A226"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2002/07/owl#targetIndividual"/>
+    <sp:subject rdf:nodeID="A741"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A770">
+    <sp:object rdf:resource="http://spinrdf.org/sp#_c"/>
+    <sp:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+    <sp:subject rdf:resource="http://spinrdf.org/sp#_p2"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

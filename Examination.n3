@@ -1,0 +1,611 @@
+# Saved by TopBraid on Thu Mar 17 09:55:40 CDT 2011
+# baseURI: http://mdacc.org/exam
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/Archive
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://mdacc.org/Sample
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://spinrdf.org/spin
+# imports: http://mdacc.org/Drug
+# imports: http://spinrdf.org/spl
+
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix exam:    <http://mdacc.org/exam#> .
+@prefix fn:      <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix sample:  <http://mdacc.org/Sample#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/exam>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://mdacc.org/Archive> , <http://mdacc.org/Sample> , foaf: , <http://mdacc.org/Drug> , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://spinrdf.org/spin> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+exam:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+exam:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Birth1_PatientEvent
+      rdf:type exam:BirthPatientEvent ;
+      time-entry:before exam:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+exam:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+exam:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type exam:ChemotherapyPatientEvent .
+
+exam:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type exam:ChemotherapyPatientEvent .
+
+exam:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type exam:ChemotherapyPatientEvent .
+
+exam:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+exam:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+exam:DeathPatient1_PatientEvent
+      rdf:type exam:DeathPatientEvent ;
+      time-entry:ends exam:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+exam:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:DiseaseProgressionExam
+      rdf:type owl:Class ;
+      rdfs:comment "An examination specifically to determine the progression of disease. This is a TCGA specific concept, currently. Since the concept is local to TCGA, the disease in context is obviously cancer."^^xsd:string ;
+      rdfs:subClassOf exam:Examination ;
+      dc:creator foaf:JimLomax .
+
+exam:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+exam:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+exam:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:TemporalEvent .
+
+exam:EasternOncologyScore
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:ExaminationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty exam:score ;
+                owl:someValuesFrom xsd:integer
+              ] .
+
+exam:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Examination
+      rdf:type owl:Class ;
+      rdfs:comment "An appraisal or evaluation of a patient's condition by a physician or registered nurse, based on clinical and laboratory data, medical history, and the patient's account of symptoms."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , exam:ExaminationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:MedicalExaminationLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+exam:ExaminationId
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:ExaminationPackage ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty exam:examinationIdOf ;
+                owl:someValuesFrom owl:Thing
+              ] .
+
+exam:ExaminationPackage
+      rdf:type owl:Class ;
+      rdfs:comment "Contains those entities involved with the evaluation of a patient's condition by a clinician, based on clinical and laboratory data, medical history, and the patient's account of symptoms."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+exam:ExaminationProgressionDeterminedByNote
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:ExaminationPackage .
+
+exam:Example_Examination
+      rdf:type exam:Examination ;
+      label:barcode label:Example_BCRExaminationBarcode ;
+      exam:easternOncologyScore
+              exam:Score_4_ExaminationEasternCancerOncologyGroupScore ;
+      exam:karnofskyScore exam:Score_60_ExaminationKarnofskyPerformanceStatus ;
+      exam:performanceTiming
+              exam:Preoperative_PerformanceTiming ;
+      exam:progression "false"^^xsd:boolean ;
+      exam:progressionSource
+              exam:Pathology_ProgressionSource .
+
+exam:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf exam:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+exam:FurtherSurgery_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:FurtherSurgery_ProgressionSourceLabel .
+
+exam:ImagingStudy_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:ImagingStudy_ProgressionSourceLabel .
+
+exam:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              exam:DurationDescription_30Days .
+
+exam:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              exam:Patient1Birth_Instant .
+
+exam:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              exam:DurationDescription_30Days .
+
+exam:KarnofskyPerformanceScore
+      rdf:type owl:Class ;
+      rdfs:comment "Karnofsky Performance Status (KPS) is a standard way of measuring the ability of cancer patients to perform ordinary tasks. The scores range from 0 to 100, with a higher score indicating a better ability to carry out daily activities. KPS may be used to determine a patient's prognosis, to measure changes in functioning, or to decide if a patient could be included in a clinical trial."^^xsd:string ;
+      rdfs:subClassOf exam:ExaminationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty exam:score ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      dc:creator foaf:JimLomax .
+
+exam:Lab_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:Laboratory_ProgressionSourceLabel .
+
+exam:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+exam:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+exam:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith exam:TherapeuticProcedurePatientEvent , exam:DeathPatientEvent , exam:SurgicalProcedurePatientEvent , exam:BirthPatientEvent .
+
+exam:MedicalAppointment_PatientEvent
+      rdf:type exam:MedicalAppointmentPatientEvent .
+
+exam:MolecularMarker_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:MolecularMarker_ProgressionSourceLabel .
+
+exam:Nucleus
+      rdf:type mage:CellularComponent .
+
+exam:Ontology_1
+      rdf:type owl:Ontology .
+
+exam:Pathology_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:Pathology_ProgressionSourceLabel .
+
+exam:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+exam:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+exam:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf exam:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:PerformanceTiming
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , exam:ExaminationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:PerformanceTimingLabel
+              ] .
+
+exam:PhysicalExamination_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:PhysicalExamination_ProgressionSourceLabel .
+
+exam:PostAdjuvant_PerformanceTiming
+      rdf:type exam:PerformanceTiming ;
+      skos-xl:prefLabel label:PostAdjuvant_PerformanceTimingLabel .
+
+exam:PreAdjuvant_PerformanceTiming
+      rdf:type exam:PerformanceTiming ;
+      skos-xl:prefLabel label:PreAdjuvant_PerformanceTimingLabel .
+
+exam:Preoperative_PerformanceTiming
+      rdf:type exam:PerformanceTiming ;
+      skos-xl:prefLabel label:Preoperative_PerformanceTimingLabel .
+
+exam:ProgressionSource
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , exam:ExaminationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ProgressionSourceLabel
+              ] .
+
+exam:Proteasome
+      rdf:type mage:CellularComponent .
+
+exam:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+exam:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+exam:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Radiation_ProgressionSource
+      rdf:type exam:ProgressionSource ;
+      skos-xl:prefLabel label:Radiation_ProgressionSourceLabel .
+
+exam:Resource_2
+      rdf:type rdfs:Resource .
+
+exam:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+exam:Score_0_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 0 .
+
+exam:Score_0_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 0 .
+
+exam:Score_100_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 100 .
+
+exam:Score_10_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 10 .
+
+exam:Score_1_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 1 .
+
+exam:Score_20_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 20 .
+
+exam:Score_2_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 2 .
+
+exam:Score_30_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 30 .
+
+exam:Score_3_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 3 .
+
+exam:Score_40_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 40 .
+
+exam:Score_4_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 4 .
+
+exam:Score_50_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 50 .
+
+exam:Score_5_ExaminationEasternCancerOncologyGroupScore
+      rdf:type exam:EasternOncologyScore ;
+      exam:score 5 .
+
+exam:Score_60_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 60 .
+
+exam:Score_70_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 70 .
+
+exam:Score_80_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 80 .
+
+exam:Score_90_ExaminationKarnofskyPerformanceStatus
+      rdf:type exam:KarnofskyPerformanceScore ;
+      exam:score 90 .
+
+exam:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+exam:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf exam:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+exam:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              exam:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+exam:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              exam:TherapeuticProcedureList1_Item_Radiation1 .
+
+exam:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+exam:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf exam:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+exam:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              exam:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              exam:TherapeuticProcedureList1_Item_Radiation1 .
+
+exam:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+exam:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf exam:hasAccessionNumber .
+
+exam:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+exam:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+exam:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+exam:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+exam:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+exam:easternOncologyScore
+      rdf:type owl:ObjectProperty ;
+      rdfs:range exam:EasternOncologyScore .
+
+exam:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:examinationIdOf
+      rdf:type owl:ObjectProperty .
+
+exam:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf exam:hasGenomicSequenceId ;
+      owl:inverseOf exam:accessionNumberOf .
+
+exam:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+exam:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+exam:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+exam:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:karnofskyScore
+      rdf:type owl:ObjectProperty ;
+      rdfs:range exam:KarnofskyPerformanceScore .
+
+exam:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:performanceTiming
+      rdf:type owl:ObjectProperty ;
+      rdfs:range exam:PerformanceTiming .
+
+exam:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+exam:progression
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:boolean .
+
+exam:progressionSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:range exam:ProgressionSource .
+
+exam:score
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:integer .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

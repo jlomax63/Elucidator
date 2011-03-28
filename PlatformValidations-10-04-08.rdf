@@ -1,0 +1,74 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rs="http://www.w3.org/2001/sw/DataAccess/tests/result-set#">
+  <rs:ResultSet>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationHumanHap550"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationAgilentG4502A_07_2"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationhuex-1_0-st-v2"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationhg-cgh-244a"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationAgilentG4502A_07_1"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:resultVariable>object</rs:resultVariable>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationilluminadnamethylation_oma002_cpi"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:resultVariable>subject</rs:resultVariable>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationilluminadnamethylation_oma003_cpi"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationabi"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationWHG-4x44K_G4112F"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationH-miRNA_8x15K"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+    <rs:solution rdf:parseType="Resource">
+      <rs:binding rdf:parseType="Resource">
+        <rs:value rdf:resource="http://mdanderson.org/tcga#PlatformValidationgenome_wide_snp_6"/>
+        <rs:variable>subject</rs:variable>
+      </rs:binding>
+    </rs:solution>
+  </rs:ResultSet>
+</rdf:RDF>

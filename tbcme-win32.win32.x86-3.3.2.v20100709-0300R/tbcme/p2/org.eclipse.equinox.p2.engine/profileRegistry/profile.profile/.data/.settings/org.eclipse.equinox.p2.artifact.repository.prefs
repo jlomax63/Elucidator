@@ -1,0 +1,14 @@
+#Fri Jul 09 04:05:00 PDT 2010
+repositories/http\:__download.eclipse.org_releases_galileo/count=2
+repositories/http\:__community.polarion.com_projects_subversive_download_eclipse_2.0_update-site/enabled=true
+repositories/http\:__download.eclipse.org_releases_galileo/nickname=Galileo - eclipse
+repositories/http\:__download.eclipse.org_releases_galileo/enabled=true
+repositories/http\:__www.topquadrant.com_products_updates_3.3/nickname=TopBraid Composer
+repositories/http\:__www.topquadrant.com_products_updates_3.3/uri=http\://www.topquadrant.com/products/updates/3.3/
+repositories/http\:__download.eclipse.org_releases_galileo/uri=http\://download.eclipse.org/releases/galileo
+repositories/http\:__www.topquadrant.com_products_updates_3.3/enabled=true
+repositories/http\:__community.polarion.com_projects_subversive_download_eclipse_2.0_update-site/uri=http\://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/
+repositories/http\:__community.polarion.com_projects_subversive_download_eclipse_2.0_update-site/count=2
+eclipse.preferences.version=1
+repositories/http\:__www.topquadrant.com_products_updates_3.3/count=2
+repositories/http\:__community.polarion.com_projects_subversive_download_eclipse_2.0_update-site/nickname=Polarion subversive for SVN

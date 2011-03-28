@@ -1,0 +1,449 @@
+# Saved by TopBraid on Thu Mar 03 08:40:35 CST 2011
+# baseURI: http://mdacc.org/Skills
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://mdacc.org/Label
+# imports: http://spinrdf.org/spl
+
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix organization:  <http://mdacc.org/Organization#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skills:  <http://mdacc.org/Skills#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Skills>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://spinrdf.org/spl> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+skills:ABIOrg
+      rdf:type skills:Skill .
+
+skills:AffymetrixOrg
+      rdf:type skills:Skill .
+
+skills:AgilentOrg
+      rdf:type skills:Skill .
+
+skills:AllegroGraph_SemanticDataStore
+      rdf:type skills:SemanticDataStore .
+
+skills:Batch1UploadComplete
+      rdf:type time-entry:Instant .
+
+skills:BaylorOrg
+      rdf:type skills:Skill .
+
+skills:BroadOrg
+      rdf:type skills:Skill .
+
+skills:CALGBOrg
+      rdf:type skills:Skill .
+
+skills:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription .
+
+skills:CollectionSiteID_CALGB
+      rdf:type skills:DataStore ;
+      dc:identifier "03"^^xsd:string .
+
+skills:CollectionSiteID_CellLines
+      rdf:type skills:DataStore ;
+      dc:identifier "07"^^xsd:string .
+
+skills:CollectionSiteID_DukeBrainBank
+      rdf:type skills:DataStore ;
+      dc:identifier "12"^^xsd:string .
+
+skills:CollectionSiteID_GynecologicOncology
+      rdf:type skills:DataStore ;
+      dc:identifier "04"^^xsd:string .
+
+skills:CollectionSiteID_HenryFord
+      rdf:type skills:DataStore ;
+      dc:identifier "06"^^xsd:string .
+
+skills:CollectionSiteID_Intgen
+      rdf:type skills:DataStore ;
+      dc:identifier "01"^^xsd:string .
+
+skills:CollectionSiteID_MDABrainBank
+      rdf:type skills:DataStore ;
+      dc:identifier "02"^^xsd:string .
+
+skills:CollectionSiteID_MDALungBank
+      rdf:type skills:DataStore ;
+      dc:identifier "11"^^xsd:string .
+
+skills:CollectionSiteID_MDAOvarianBank
+      rdf:type skills:DataStore ;
+      dc:identifier "10"^^xsd:string .
+
+skills:CollectionSiteID_NCI
+      rdf:type skills:DataStore ;
+      dc:identifier "05"^^xsd:string .
+
+skills:CollectionSiteID_UCSFBrain
+      rdf:type skills:DataStore ;
+      dc:identifier "08"^^xsd:string .
+
+skills:CollectionSiteID_UCSFOvarian
+      rdf:type skills:DataStore ;
+      dc:identifier "09"^^xsd:string .
+
+skills:ComputerScienceSkill
+      rdf:type owl:Class ;
+      rdfs:subClassOf skills:Skill .
+
+skills:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+skills:DataStore
+      rdf:type skills:SkillsPackage , owl:Class ;
+      rdfs:subClassOf skills:ComputerScienceSkill ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:positiveInteger
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      dc:creator foaf:JimLomax .
+
+skills:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+skills:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription .
+
+skills:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+skills:GynecologicOncologyOrg
+      rdf:type skills:Skill .
+
+skills:HGNCOrg
+      rdf:type skills:Skill .
+
+skills:HarvardOrg
+      rdf:type skills:Skill .
+
+skills:HudsonAlphaOrg
+      rdf:type skills:Skill .
+
+skills:IlluminaOrg
+      rdf:type skills:Skill .
+
+skills:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent .
+
+skills:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair .
+
+skills:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval .
+
+skills:IntgenOrg
+      rdf:type skills:Skill .
+
+skills:Java_ProgrammingLanguage
+      rdf:type skills:ProgrammingLanguage .
+
+skills:Javascript_ProgrammingLanguage
+      rdf:type skills:ProgrammingLanguage .
+
+skills:JohnsHopkinsOrg
+      rdf:type skills:Skill .
+
+skills:Language
+      rdf:type owl:Class ;
+      rdfs:subClassOf skills:Skill ;
+      dc:creator foaf:JimLomax .
+
+skills:LawrenceLabOrg
+      rdf:type skills:Skill .
+
+skills:MDA-BCBOrg
+      rdf:type skills:Skill .
+
+skills:MDA-RISOrg
+      rdf:type skills:Skill .
+
+skills:MDAOrg
+      rdf:type skills:Skill ;
+      skills:organization skills:MDA-BCBOrg , skills:MDA-RISOrg .
+
+skills:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+skills:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+skills:NCIOrg
+      rdf:type skills:Skill .
+
+skills:Nucleus
+      rdf:type mage:CellularComponent .
+
+skills:Ontology_1
+      rdf:type owl:Ontology .
+
+skills:Oracle_RelationalDataStore
+      rdf:type skills:RelationalDataStore .
+
+skills:Patient1Birth_Instant
+      rdf:type time-entry:Instant .
+
+skills:Patient1Death_Instant
+      rdf:type time-entry:Instant .
+
+skills:ProgrammingLanguage
+      rdf:type owl:Class ;
+      rdfs:subClassOf skills:ComputerScienceSkill , skills:Language ;
+      dc:creator foaf:JimLomax .
+
+skills:Proteasome
+      rdf:type mage:CellularComponent .
+
+skills:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+skills:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+skills:Python_ProgrammingLanguage
+      rdf:type skills:ProgrammingLanguage .
+
+skills:RISOrg
+      rdf:type skills:Skill .
+
+skills:RelationalDataStore
+      rdf:type owl:Class ;
+      rdfs:subClassOf skills:DataStore .
+
+skills:Resource_2
+      rdf:type rdfs:Resource .
+
+skills:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+skills:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+skills:SemanticDataStore
+      rdf:type owl:Class ;
+      rdfs:subClassOf skills:DataStore .
+
+skills:Skill
+      rdf:type owl:Class ;
+      rdfs:comment "An organization is a group of persons organized for some end or work (dictionary.com). Organizations can be assembled from subdivisions, which are also organizations. Organizations are named, but a unique Organziation may have several known names or synonyms, depending on the refering source. Each organization (and recognizable subdivision as organization) will have a unique domain name. The organization's domain name does not necessarily represent the domain component of a URL."^^xsd:string ;
+      rdfs:subClassOf foaf:Organization , skills:SkillsPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#OrganizationLabel>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+skills:SkillsPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+skills:SloanKetteringOrg
+      rdf:type skills:Skill .
+
+skills:SpokenLanguage
+      rdf:type owl:Class ;
+      rdfs:comment "A BCR is a TCGA-specific workflow entity. The BCR is responsible for collecting and processing biological samples from TCGA Collection Sites. "^^xsd:string , "The Biospecimen Core Resource (BCR) receives tissues and clinical metadata from Collection Sites"^^xsd:string , "The BCR provides each TCGA  Data Coordination Center(DCC) with biospecimen analytes (DNA and RNA) and their corresponding sample identifiers. The BCR also transfers the clinical metadata and IDs tothe TCGA Data Coordination Center (DCC)."^^xsd:string , "We suspect that Collection Sites send their samples to a BCR that is geographically close, however this has not been confirmed."^^xsd:string ;
+      rdfs:subClassOf skills:Language ;
+      dc:creator foaf:JimLomax .
+
+skills:StanfordOrg
+      rdf:type skills:Skill .
+
+skills:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+skills:TheDataCoordinatingCenter
+      rdf:type skills:Language .
+
+skills:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+skills:UCSFOrg
+      rdf:type skills:Skill .
+
+skills:UniversityOfNorthCarolinaAtChapelHillOrg
+      rdf:type skills:Skill .
+
+skills:WashingtonUniversityOrg
+      rdf:type skills:Skill .
+
+skills:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skills:hasAccessionNumber .
+
+skills:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+skills:collectionSite
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Collection Site  into the ontology"^^xsd:string ;
+      owl:inverseOf skills:collectionSiteOf .
+
+skills:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:collectionSiteOf
+      rdf:type owl:ObjectProperty .
+
+skills:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+skills:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+skills:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+skills:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+skills:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:genomicCenter
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Genomic Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf skills:organization ;
+      owl:inverseOf skills:genomicCenterOf .
+
+skills:genomicCenterOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skills:organizationOf .
+
+skills:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skills:hasGenomicSequenceId ;
+      owl:inverseOf skills:accessionNumberOf .
+
+skills:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+skills:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+skills:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+skills:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:organization
+      rdf:type owl:ObjectProperty ;
+      rdfs:range skills:Skill ;
+      owl:inverseOf skills:organizationOf .
+
+skills:organizationDomain
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf skills:organizationDomainOf .
+
+skills:organizationDomainOf
+      rdf:type owl:ObjectProperty .
+
+skills:organizationOf
+      rdf:type owl:ObjectProperty .
+
+skills:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+skills:platingCenter
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accptance of Plating Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf skills:organization .
+
+skills:vendor
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skills:organization ;
+      owl:inverseOf skills:vendorOf .
+
+skills:vendorOf
+      rdf:type owl:ObjectProperty .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

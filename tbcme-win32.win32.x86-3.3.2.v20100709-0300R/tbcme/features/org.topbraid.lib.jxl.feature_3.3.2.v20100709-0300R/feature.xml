@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.jxl.feature"
+      label="org.topbraid.lib.jxl.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant Inc.">
+
+   <description>
+      JExcel library and dependent functionality in TopBraid.
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+   </copyright>
+
+   <license>
+      About This Content
+March 2010
+End User License Agreement
+TopQuadrant makes available all content in this Eclipse Feature
+(“Content”).
+Unless otherwise indicated below, the Content is provided to
+you under the terms and conditions of the End User License Agreement
+(“EULA”). This EULA sets forth the terms applicable to use and
+licensing by the customer (“Customer”) of software provided by
+TopQuadrant, Inc. (“TopQuadrant”). It is important that you read
+this document before installing or using the software provided
+by TopQuadrant (the “Software”) and any associated documentation
+or materials provided by TopQuadrant (“Documentation”). A copy
+of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then
+Customer is not licensed to use the Software, and you must destroy
+any downloaded copies of the Software in your or Customer‘s possession
+or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf
+to download and print a copy of this EULA for your records.
+Third Party Content
+The Content includes items that have been sourced from third
+parties as set out below.
+Java Excel API
+The plug-in is accompanied by software developed at: http://jexcelapi.sourceforge.net/
+The binary code of Java Excel API v2.6.8 (“JExcel”) is included
+without modification in the following file(s):
+* /org.topbraid.lib.jxl/lib/jxl.jar
+Your use of JExcel is subject to the terms and conditions of
+the GNU Lesser General Public License (LGPL) published by the
+Free Software Foundation. A copy of the license can be found
+in /org.topbraid.lib.jxl/about_files/jexcel.LGPL-2.1.txt and is also available at http://www.gnu.org/licenses/lgpl-2.1.txt.
+The source for the JExcel is included without modification in
+the following archive as required by the license terms:
+* /org.topbraid.lib.jxl/lib.src/jexcelapi_2_6_8.zip
+   </license>
+
+   <plugin
+         id="org.topbraid.lib.jxl"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.spreadsheets"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.tables"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraidcomposer.spreadsheets"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraidcomposer.tables"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+</feature>

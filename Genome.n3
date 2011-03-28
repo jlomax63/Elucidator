@@ -1,0 +1,1054 @@
+# Saved by TopBraid on Tue Jan 18 14:08:56 CST 2011
+# baseURI: http://mdacc.org/Genome
+# imports: http://mdacc.org/Organization
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+# imports: http://mdacc.org/Label
+
+@prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix fn:      <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix genome:  <http://mdacc.org/Genome#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix p3:      <http://my.com/file3#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Genome>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Organization> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+genome:Adenine
+      rdf:type genome:DNABase .
+
+genome:Allele
+      rdf:type owl:Class ;
+      rdfs:comment "An allele is a dna sequence that represents a variation of a gene."^^xsd:string ;
+      rdfs:subClassOf genome:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:variationOf ;
+                owl:someValuesFrom genome:Gene
+              ] .
+
+genome:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+genome:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Birth1_PatientEvent
+      rdf:type genome:BirthPatientEvent ;
+      time-entry:before genome:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+genome:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+genome:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type genome:ChemotherapyPatientEvent .
+
+genome:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type genome:ChemotherapyPatientEvent .
+
+genome:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type genome:ChemotherapyPatientEvent .
+
+genome:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+genome:Chromosome
+      rdf:type owl:Class ;
+      rdfs:comment "Highly organized structure of DNA and protein found in the nucleus of cells"^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:chromosomeArm ;
+                owl:someValuesFrom genome:ChromosomeArm
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#ChromosomeLabel>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:ChromosomeArm
+      rdf:type owl:Class ;
+      rdfs:comment """Chromsomes have two \"arms\" separated by a centromere. The centromere looks like a pinched region of the chromosome. Each chromosome has a Q Arm and a P Arm; the P arm is always shorter (less base pairs) than the Q arm.
+
+Chromosome Arm is part of a vocabulary used to specify locations of gene on a  genome."""^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#ChromosomeArmLabel>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:ChromosomeBand
+      rdf:type owl:Class ;
+      rdfs:comment "A chromosome arm is composed of one to many bands. Bands are transverse regions of a chromosomal arm made visible by differential staining techniques. Chromosomal bands are labeled in ascending numerical order outward from the centromere to the telomere (for a particular chromosome arm)."^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:chromosomeBandNumber ;
+                owl:someValuesFrom genome:ChromosomeBandNumber
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasParent ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (genome:ChromosomeArm genome:ChromosomeBand)
+                        ]
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:ChromosomeBandNumber
+      rdf:type owl:Class ;
+      rdfs:comment "Chromosome bands are numbered in ascending numeric order outwards from the centromere to the telomere (implicit context of a specific chromosome arm)."^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasNumber ;
+                owl:someValuesFrom xsd:unsignedInt
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:CpGSite
+      rdf:type owl:Class ;
+      rdfs:comment "Region of DNA where a cytosine nucleotide occurs next to a guanine nucleotide in the linear sequence of bases along its length, as opposed to a cytosine base-pairing with a guanine between opposite strands. Methylation of CpG sites within  promoters of genes maydisable the gene, which in cases can lead to cancer. Also, hypomethylation of CpG sites has been associated with the over-expression of oncogenes within cancer cells"^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasCpgSiteId ;
+                owl:someValuesFrom genome:CpGSiteID
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:CpGSiteID
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasCpgSiteId ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty genome:hasCpgSiteId
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:CytogenicLocation
+      rdf:type owl:Class ;
+      rdfs:comment "Cytogenic locations are locations within a chromosome denoted by chromsome (band and/or sub-band, arm and chromosome number)"^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasChromosomeBand ;
+                owl:someValuesFrom genome:ChromosomeBand
+              ] ;
+      dc:contributor foaf:JimLomax .
+
+genome:Cytosine
+      rdf:type genome:DNABase .
+
+genome:DNABase
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:abbreviatedForm ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:name ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty genome:name
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty genome:abbreviatedForm
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+genome:DNASequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:GenomicSequence ;
+      dc:creator foaf:JimLomax .
+
+genome:DeathPatient1_PatientEvent
+      rdf:type genome:DeathPatientEvent ;
+      time-entry:ends genome:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+genome:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+genome:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+genome:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:TemporalEvent .
+
+genome:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf genome:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf genome:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+genome:Gene
+      rdf:type owl:Class ;
+      rdfs:comment "A gene, proposed or already vetted through an established sequence database. Genes are typically identified by a gene symbol or gene name"^^xsd:string ;
+      rdfs:subClassOf genome:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasChromosome ;
+                owl:someValuesFrom genome:Chromosome
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasGeneId ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (<http://mdacc.org/Label#GeneLabel> genome:GeneSymbol)
+                        ]
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:GeneSymbol
+      rdf:type owl:Class ;
+      rdfs:comment "A symbol to define a gene. Gene symbols, by convention,  are defined by HGNC, the HUGO Gene Nomenclature Committe. The  reference source for gene symbol should be HGNC, which is an Organization, however  non-Organziations are allowed to compensate for other sources."^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasGenomicSequenceReferenceSource ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (genome:GenomicSequenceSourceReference <http://mdacc.org/Organization#Organization>)
+                        ]
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:Genome
+      rdf:type owl:Class ;
+      rdfs:comment "Identifies the genome cellular region (obviously with the nuclear region, specific to the whole DNA or the organism)"^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:genomeBuild ;
+                owl:someValuesFrom genome:GenomeBuild
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:GenomeBuild
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:GenomePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+genome:GenomicSequence
+      rdf:type owl:Class ;
+      rdfs:comment "A genomic sequence is not necessarily a gene, therefore it cannot necessarily be identified by a gene name or gene symbol. Instead a systematic name (generated by the sequencing project following standard naming conventions or a  user crafted id (generically called GenomicSequceId) is used."^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasSequence ;
+                owl:someValuesFrom genome:OrderedDNABase
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom <http://mdacc.org/Label#GenomicSequenceLabel>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:GenomicSequenceID
+      rdf:type owl:Class ;
+      rdfs:comment "Genomic sequence  identifier; Genomic Sequence IDs are not unique identifiers, they are identifiers specific to a  soure such as a gene database."^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasGenomicSequenceReferenceSource ;
+                owl:someValuesFrom genome:GenomicSequenceSourceReference
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:GenomicSequenceSourceReference
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:GenomePackage ;
+      dc:creator foaf:JimLomax .
+
+genome:Guanine
+      rdf:type genome:DNABase .
+
+genome:IlluminaCpGSiteID
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:CpGSiteID ;
+      dc:creator foaf:JimLomax .
+
+genome:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              genome:DurationDescription_30Days .
+
+genome:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              genome:Patient1Birth_Instant .
+
+genome:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              genome:DurationDescription_30Days .
+
+genome:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+genome:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+genome:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf genome:PatientEvent ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:isPlanned ;
+                owl:someValuesFrom xsd:boolean
+              ] ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith genome:DeathPatientEvent , genome:BirthPatientEvent , genome:SurgicalProcedurePatientEvent , genome:TherapeuticProcedurePatientEvent .
+
+genome:MedicalAppointment_PatientEvent
+      rdf:type genome:MedicalAppointmentPatientEvent .
+
+genome:MethylationProbe
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:Probe ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:methylated ;
+                owl:someValuesFrom xsd:boolean
+              ] .
+
+genome:MolecularLocation
+      rdf:type owl:Class ;
+      rdfs:comment "A molecular location is a location on a chromosome measured in base pairs from the origin of the chromosome (optionally but often, an endingbase pair number is specified)"^^xsd:string ;
+      rdfs:subClassOf genome:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:startingBasePairNumber ;
+                owl:someValuesFrom xsd:nonNegativeInteger
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:NonCodingRegion
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DNASequence ;
+      dc:creator foaf:JimLomax .
+
+genome:Nucleus
+      rdf:type mage:CellularComponent .
+
+genome:Ontology_1
+      rdf:type owl:Ontology .
+
+genome:OrderedDNABase
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DNABase ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasNumber ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:PChromosomeArm
+      rdf:type genome:ChromosomeArm .
+
+genome:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+genome:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+genome:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf genome:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Probe
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:hasTargetSequence ;
+                owl:someValuesFrom genome:DNASequence
+              ] .
+
+genome:Proteasome
+      rdf:type mage:CellularComponent .
+
+genome:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+genome:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+genome:QChromosomeArm
+      rdf:type genome:ChromosomeArm .
+
+genome:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Resource_2
+      rdf:type rdfs:Resource .
+
+genome:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+genome:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+genome:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf genome:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:TaggedDNASequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DNASequence .
+
+genome:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf genome:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:Telomere
+      rdf:type owl:Class ;
+      rdfs:subClassOf genome:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty genome:chromosomeArm ;
+                owl:someValuesFrom genome:ChromosomeArm
+              ] ;
+      dc:creator foaf:JimLomax .
+
+genome:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+genome:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:TestGeneSymbol
+      rdf:type genome:GeneSymbol ;
+      dc:identifier "Test"^^xsd:string .
+
+genome:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              genome:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+genome:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              genome:TherapeuticProcedureList1_Item_Radiation1 .
+
+genome:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+genome:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf genome:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+genome:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              genome:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              genome:TherapeuticProcedureList1_Item_Radiation1 .
+
+genome:Thymine
+      rdf:type genome:DNABase .
+
+genome:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+genome:abbreviatedForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Property that established a term to abbreviation of term relationship between skos-xl Labels."^^xsd:string ;
+      rdfs:subPropertyOf skos-xl:labelRelation ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf genome:fullForm .
+
+genome:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasAccessionNumber .
+
+genome:allelicProbeAOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:probeSequenceOf .
+
+genome:allelicProbeBOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:probeSequenceOf .
+
+genome:archiveDownloadName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:archiveListingName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+genome:basis
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The subject uses the object as its basis (for self-construction)"^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf genome:basisOf .
+
+genome:basisOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The subject is the basis of the predicate."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+genome:cellularDifferentiation
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The property creates a relationship between the subject, which detects/notes/observes an occurence of cellular differentiation of the object. The object in this case is scientifically determined to a Cell."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+genome:cellularOrigin
+      rdf:type owl:ObjectProperty .
+
+genome:chromosomeArm
+      rdf:type owl:ObjectProperty .
+
+genome:chromosomeArmName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:chromosomeBandNumber
+      rdf:type owl:ObjectProperty .
+
+genome:chromosomeBandOf
+      rdf:type owl:ObjectProperty .
+
+genome:chromosomeNumber
+      rdf:type owl:ObjectProperty .
+
+genome:chromosomeOf
+      rdf:type owl:ObjectProperty .
+
+genome:code
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range rdfs:Literal .
+
+genome:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+genome:collectionSiteName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:cpgSiteIdOf
+      rdf:type owl:ObjectProperty .
+
+genome:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+genome:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+genome:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+genome:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+genome:endingBasePairNumber
+      rdf:type owl:DatatypeProperty .
+
+genome:eosinophilInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+genome:exhibitsMorphology
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The subject exhibits a morphology, a structure and/or composition,  resembling the predicate. In a biological context this means that the subjects resembles the object in terms of its biological structure and composition."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+genome:exhibitsTumorMorphology
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The diomain exhibits structural or compositional similarities to the range, which is a tumor."^^xsd:string ;
+      rdfs:subPropertyOf genome:exhibitsMorphology ;
+      dc:creator foaf:JimLomax .
+
+genome:fullForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skos-xl:labelRelation .
+
+genome:geneIdOf
+      rdf:type owl:ObjectProperty .
+
+genome:geneSymbolOf
+      rdf:type owl:ObjectProperty .
+
+genome:genomeBuild
+      rdf:type owl:ObjectProperty .
+
+genome:genomicSequenceIdOf
+      rdf:type owl:ObjectProperty .
+
+genome:genomicSequenceSourceReferenceOf
+      rdf:type owl:ObjectProperty .
+
+genome:granulocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasGenomicSequenceId ;
+      owl:inverseOf genome:accessionNumberOf .
+
+genome:hasAllelicProbeA
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasProbeSequence ;
+      owl:inverseOf genome:allelicProbeAOf .
+
+genome:hasAllelicProbeB
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasProbeSequence ;
+      owl:inverseOf genome:allelicProbeBOf .
+
+genome:hasApproval
+      rdf:type owl:AnnotationProperty .
+
+genome:hasArchiveName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+genome:hasChromosome
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:chromosomeOf .
+
+genome:hasChromosomeBand
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:chromosomeBandOf .
+
+genome:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf genome:cpgSiteIdOf .
+
+genome:hasGeneId
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:geneIdOf .
+
+genome:hasGeneSymbol
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:geneSymbolOf .
+
+genome:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      owl:inverseOf genome:genomicSequenceIdOf .
+
+genome:hasGenomicSequenceReferenceSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A property that describes a genomic sequence's source reference (such as NCBI's refseq sequence database)"^^xsd:string ;
+      owl:inverseOf genome:genomicSequenceSourceReferenceOf .
+
+genome:hasNextBase
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:nextBaseOf .
+
+genome:hasNumber
+      rdf:type rdf:Property .
+
+genome:hasOrder
+      rdf:type rdf:Property .
+
+genome:hasParent
+      rdf:type owl:TransitiveProperty ;
+      owl:inverseOf genome:parentOf .
+
+genome:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+genome:hasProbe
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:probeOf .
+
+genome:hasProbeSequence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasSequence ;
+      owl:inverseOf genome:probeSequenceOf .
+
+genome:hasSequence
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:sequenceOf .
+
+genome:hasTargetSequence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasSequence ;
+      owl:inverseOf genome:targetSequenceOf .
+
+genome:has_chromosome_subband
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:hasChromosomeBand .
+
+genome:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+genome:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+genome:inflammationInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:isPlanned
+      rdf:type owl:DatatypeProperty .
+
+genome:isPrimary
+      rdf:type owl:DatatypeProperty .
+
+genome:lymphocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:methylated
+      rdf:type owl:DatatypeProperty .
+
+genome:molecularLocationOf
+      rdf:type owl:ObjectProperty .
+
+genome:monocyteInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:name
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf rdfs:label .
+
+genome:necrosisPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:neutrophilInfiltrationPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:nextBaseOf
+      rdf:type owl:ObjectProperty .
+
+genome:normalCellsPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:organizationName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:parentOf
+      rdf:type owl:TransitiveProperty .
+
+genome:patient
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string .
+
+genome:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+genome:percentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:quantity .
+
+genome:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+genome:probeOf
+      rdf:type owl:ObjectProperty .
+
+genome:probeSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:sequenceOf .
+
+genome:projectName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:name .
+
+genome:proliferatingCellsQuantity
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:quantity ;
+      dc:creator foaf:JimLomax .
+
+genome:quantity
+      rdf:type rdf:Property ;
+      rdfs:comment "The quantity property related a subject with literal value interpreted as its quantity according to some unit of measurement."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+genome:sequence
+      rdf:type rdf:Property .
+
+genome:sequenceOf
+      rdf:type owl:ObjectProperty .
+
+genome:shape
+      rdf:type rdf:Property .
+
+genome:specifier
+      rdf:type rdf:Property ;
+      rdfs:range foaf:Agent .
+
+genome:startingBasePairNumber
+      rdf:type owl:DatatypeProperty .
+
+genome:targetSequenceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf genome:sequenceOf .
+
+genome:transformationOf
+      rdf:type owl:ObjectProperty .
+
+genome:transformedBy
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf genome:transformationOf .
+
+genome:tumorCellsPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:tumorNucleiPercentage
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:percentage ;
+      dc:creator foaf:JimLomax .
+
+genome:variationOf
+      rdf:type rdf:Property .
+
+genome:weight
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf genome:quantity ;
+      dc:creator foaf:JimLomax .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

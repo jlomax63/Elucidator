@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:tcga="http://mdanderson.org/tcga#"
+>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#LabelingPackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#LabelingPackage"/>
+    <tcga:hasName>LabelingPackage1</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/JimLomax">
+    <foaf:firstName>Jim</foaf:firstName>
+    <foaf:surname>Lomax</foaf:surname>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#PlatformName">
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#StringName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#HG-CGH-415K_G4124A">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#PlatformName"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#StringName"/>
+    <tcga:hasName>HG-CGH-415K_G4124A</tcga:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="an1">
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#hasName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#LabelingPackage">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <tcga:hasName rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#StringName">
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#LabelingPackage"/>
+    <rdfs:subClassOf rdf:nodeID="an1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#hasName">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>
+

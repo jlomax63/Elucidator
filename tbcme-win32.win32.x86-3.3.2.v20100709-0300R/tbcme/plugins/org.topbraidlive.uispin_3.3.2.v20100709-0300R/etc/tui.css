@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 8px;
+	font-family: sans-serif;
+	color: black;
+	background: white;
+}
+
+.tuiLabel {
+}
+
+.tuiLink {
+}
+                  
+.tuiCommentBox { 
+    font-size: small;
+}
+
+td.HeaderCell {
+	padding-top: 16px;
+}
+
+span.HeaderText {
+	font-weight: bold;
+	color: #005A9C;
+}
+
+table.resultSetTable {
+	border-width: thin;
+	border-color: gray;
+	border-style: solid;
+	border-collapse: collapse;
+	border-spacing: 2px;
+}
+
+th.resultSetTable {
+	font-size: 92%;
+	padding: 0.2em;
+	border: 1px dotted;
+}
+
+th, td {
+	font-family: sans-serif;
+	vertical-align: top;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+table {
+	margin: 0px;
+	padding: 0px;
+}	
+
+table.ValueTable {
+	margin: 0px;
+	margin-bottom: 8px;
+	border-collapse: collapse;
+}
+
+.ValueWidget {
+	font-size: 92%;
+} 
+
+td.tuiWidgetLabelCell {
+	font-weight: bold;
+	text-align: right;
+	padding-right: 8px;
+	padding-top: 2px;
+	width: 160px;
+} 
+
+td.tuiWidgetValueCell {
+	padding: 0px;
+	margin: 0px;
+} 
+
+td.tuiWidgetValuesCell {
+	padding: 0px;
+	margin: 0px;
+} 
+
+.ValueWidgetTitle {
+	text-align: right;
+	font-weight: bold;
+	color: black;
+} 

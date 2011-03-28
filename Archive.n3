@@ -1,0 +1,856 @@
+# Saved by TopBraid on Wed Feb 23 17:23:17 CST 2011
+# baseURI: http://mdacc.org/Archive
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/Microarray
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+# imports: http://mdacc.org/Label
+
+@prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix archive:  <http://mdacc.org/Archive#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix fn:      <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Archive>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://mdacc.org/Microarray> , <http://spinrdf.org/spl> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+archive:AliquotQuantityUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:Units .
+
+archive:Archive
+      rdf:type owl:Class ;
+      rdfs:comment "An archive is a collection of archive listings with respect to an originating source, which can be considered a Project. An Archive is viewed as a single processable entity, the  Archive Listings within are processed according to rules that govern their inherent structure and relationships to other Archive Listings. Archives are versioned per release; versions are labeled in any number of ways but are only consistently labeled within a particular archive source (or project). An Archive has a creation date, however we have not added pre  processing instructions to extract the creation date; currently it is artificially set. An Archive has a name for easy retrieval; archive names are first class entities to support owl:sameAs synonomy and SWRL rules to enforce naming conventions, if any."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:project ;
+                owl:someValuesFrom archive:Project
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf ([ rdf:type owl:Restriction ;
+                            owl:onProperty archive:archiveVersion ;
+                            owl:someValuesFrom label:ArchiveVersionLabel
+                          ] archive:ArchiveVersion)
+              ] ;
+      dc:creator foaf:JimLomax ;
+      dc:date "2010-04-16"^^xsd:string .
+
+archive:ArchiveDownload
+      rdf:type owl:Class ;
+      rdfs:comment "An Archive Download is a collection of Archive Artifacts downloaded in a particular time frame, contiguously. An ArchiveDownload is a slice of an Archive. The slice may be a time-dependent download of files (some time range) or any other facet. Archive Downloads are created on a specified date and named for easy identification"^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveDownloadLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:createdOn ;
+                owl:someValuesFrom xsd:dateTime
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ArchiveDownload_1
+      rdf:type archive:ArchiveDownload .
+
+archive:ArchiveFileType
+      rdf:type owl:Class ;
+      rdfs:comment "Archive File Type is used to support a classification scheme for listings in an Archive. Archive File Types are first class entities to support a flexible type hierarchy and a transitive relationship within the hierarchy using a designated parent-child inverse property set."^^xsd:string ;
+      rdfs:subClassOf archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveFileTypeLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ArchiveListing
+      rdf:type owl:Class ;
+      rdfs:comment "Any listing of an Archive. Each listing has a name for user identification purposes. Each listing has an access level to support protection of sensitive information. In the context of TCGA (which is the current iteration), each listing is associated with an Archive, which has a version. A listing may be associated to an archive download, however listings can also exist outside of an archive download context. This is the case when files are downloaded directly from the TCGA portal outside of the scheduled downloads. One of the most important aspects of the listing is its type. We have added a hierarchical typing mechanism which is transitive along a parent-child type hierarchy. Also, each listing has a last modified date to indicate when its contents were last changed. This is important in establishing a provenance model for archive components. Although we do not yet have the infrastructure to capture any other provenance information about listings we can at least verify temporal changes."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty archive:accessLevel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:archive ;
+                owl:someValuesFrom archive:Archive
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:locatedBy ;
+                owl:someValuesFrom archive:FileLocation
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveListingLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:fileType ;
+                owl:someValuesFrom archive:ArchiveFileType
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:accessLevel ;
+                owl:someValuesFrom archive:ArchiveListingAccessLevel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ArchiveListingAccessLevel
+      rdf:type owl:Class ;
+      rdfs:comment "Archive Listings have a hierarchy of access levels to protect sensitive data."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:AccessLevelLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ArchivePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+archive:ArchiveVersion
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:versionNumber ;
+                owl:someValuesFrom xsd:int
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:versionSeries ;
+                owl:someValuesFrom xsd:int
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:versionRevision ;
+                owl:someValuesFrom xsd:int
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:project ;
+                owl:someValuesFrom archive:Project
+              ] ;
+      label:designNote "This is a TCGA specific entity"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:Archive_1
+      rdf:type archive:Archive .
+
+archive:ArrayDataArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Array Data is collected per sample."^^xsd:string , "Array Data is an Archive Artifact containing the results set of applying protocol listed  in the SampleDataRelationship Artifact to a  corresponding sample in the SampleDataRelationship Artifact. "^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty <http://mdacc.org/Microarray#datatype> ;
+                owl:someValuesFrom <http://mdacc.org/Microarray#PlatformDatatype>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty <http://mdacc.org/Microarray#platform>
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty <http://mdacc.org/Microarray#platform> ;
+                owl:someValuesFrom <http://mdacc.org/Microarray#Platform>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ArrayDesignArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Artifact containing the design of a microarray. Each microarry is designed by a genomic processing center; two centers could design the same microarray very differently for different purposes. The design is specific to one micoarray. The microarray itself is represented as a Platform."^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty <http://mdacc.org/Organization#genomicCenter> ;
+                owl:someValuesFrom <http://mdacc.org/Organization#Organization>
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+archive:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+archive:CompressedArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact that has been processed by a compression alogorithm. These artifacts must first be decompressed before they can be asserted to be another type of artifact. Often Compressed artifacts will be a collection of artifacts themselves, this is often the way tissue imagery is packaged."^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:compressionAlgorithm ;
+                owl:someValuesFrom archive:CompressionAlgorithm
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:CompressionAlgorithm
+      rdf:type owl:Class ;
+      rdfs:comment "Any compression algorithm; application to files, images, etc."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:CompressionAlgorithmLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ComputationalArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact in the Archive containing information that can (or will be) processed by an algorithm (some existing function somewhere)"^^xsd:string ;
+      rdfs:subClassOf archive:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+archive:ConcentrationUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:Units .
+
+archive:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+archive:DOC
+      rdf:type archive:DocumentFormat .
+
+archive:DisplayArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact of an Archive whose contents do not require further processing; they can be displayed as-is."^^xsd:string ;
+      rdfs:subClassOf archive:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+archive:DocumentAtrifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any text-based document that is meant to be viewed (and possible edited) but is not subject to computation to derive the information it contains."^^xsd:string ;
+      rdfs:subClassOf archive:DisplayArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:DocumentFormat
+      rdf:type owl:Class ;
+      rdfs:comment "Document storage format"^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:DocumentFormatLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:DosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:Units ;
+      dc:creator foaf:JimLomax .
+
+archive:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+archive:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+archive:ExampleProtocol_FileLocation
+      rdf:type archive:FileLocation ;
+      archive:file "https://atlas.intgen.org/protocolLocation.txt"^^xsd:string ;
+      dc:identifier "https://atlas.intgen.org/protocolLocation.txt"^^xsd:string .
+
+archive:FileLocation
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:directory ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:file ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:FileLocationLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax ;
+      dc:date "2010-04-16"^^xsd:string .
+
+archive:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+archive:GelImageExample_FileLocation
+      rdf:type archive:FileLocation ;
+      archive:file "https://atlas.intgen.org/bcr-data/Molecular Analyte Data/"^^xsd:string ;
+      dc:identifier "https://atlas.intgen.org/bcr-data/Molecular Analyte Data/"^^xsd:string .
+
+archive:Gray_DosageUnits
+      rdf:type archive:RadiationDosageUnits .
+
+archive:IlluminaHumanMethylation27ArrayDesign
+      rdf:type owl:Class ;
+      rdfs:comment "Specific array design for Illumina's Human Methylation 27 microarray"^^xsd:string ;
+      rdfs:subClassOf archive:ArrayDesignArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:ImageArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any image-based Archive Artifiact that is meant to be viewed (and possible edited) but is not subject to computation to derive the information it contains."^^xsd:string ;
+      rdfs:subClassOf archive:DisplayArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:imageFormat ;
+                owl:someValuesFrom archive:ImageFormat
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:ImageFormat
+      rdf:type owl:Class ;
+      rdfs:comment "Storage format for an electronic image. Storage formats are produced by image compression algorithms."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ImageFormatLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              archive:DurationDescription_30Days .
+
+archive:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              archive:Patient1Birth_Instant .
+
+archive:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              archive:DurationDescription_30Days .
+
+archive:InvestigationDesignArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Artifact describing the \"metadata: and design premises of an investigation (experiment). The strucutre of the artifact will depend on many factors, including the umbrella project that the investigation may be comprising, however the artifact typically includes information about the investigation's protocols and the primary investigator. ID is a general concept applicable to any investigation description, and not restricted to microarray investigations"^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:JPG
+      rdf:type archive:ImageFormat .
+
+archive:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+archive:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+archive:ManifestArchiveFileType
+      rdf:type archive:ArchiveFileType .
+
+archive:ManifestArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "A Manifest contains a list of all Artifacts contained in the Archive."^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:Milliliter_VolumeUnits
+      rdf:type archive:VolumeUnits .
+
+archive:Molarity_ConcentrationUnits
+      rdf:type archive:ConcentrationUnits .
+
+archive:Nucleus
+      rdf:type mage:CellularComponent .
+
+archive:ObsoleteArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any ArchiveArtifact thatis no longer relevant to the Archive but is listed for completion or historical purposes. An Obsolote ArchiveArtifact's contents are not subject to any computation and are not intended to be viewed."^^xsd:string ;
+      rdfs:subClassOf archive:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+archive:Ontology_1
+      rdf:type owl:Ontology .
+
+archive:PDF
+      rdf:type archive:DocumentFormat .
+
+archive:PNG
+      rdf:type archive:ImageFormat .
+
+archive:PPT
+      rdf:type archive:DocumentFormat .
+
+archive:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+archive:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+archive:Pill_DosageUnits
+      rdf:type archive:DosageUnits .
+
+archive:Pounds_WeightUnits
+      rdf:type archive:WeightUnits .
+
+archive:Project
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept , foaf:Project , archive:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ProjectLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:Proteasome
+      rdf:type mage:CellularComponent .
+
+archive:ProtectedArchiveListingAccessLevel
+      rdf:type archive:ArchiveListingAccessLevel ;
+      rdfs:comment "Protected access  indicates that only those that are approved through some authentication method may access an entity assigned this access level."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+archive:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+archive:PublicArchiveAccessLevel
+      rdf:type archive:ArchiveListingAccessLevel ;
+      rdfs:comment "Public access indicates that anyone can access the data contained in entity assigned this access level"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:RadiationDosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:DosageUnits ;
+      dc:creator foaf:JimLomax .
+
+archive:RawArchiveFileType
+      rdf:type archive:ArchiveFileType .
+
+archive:RawArrayData
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:ArrayDataArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:ReadMe
+      rdf:type owl:Class ;
+      rdfs:comment "An informational ArchiveArtifact  whose purpose is to describe features of the Archive, as well as any known issues."^^xsd:string ;
+      rdfs:subClassOf archive:DocumentAtrifact ;
+      dc:creator foaf:JimLomax .
+
+archive:Resource_2
+      rdf:type rdfs:Resource .
+
+archive:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+archive:SampleDataRelationshipArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "A SampleDataRelationship Archive Artifact contains a collection of biological samples and the process applied to those samples to generate expected results. The structure of this Archive Artifact is dependent on many factors including the project, microarray vendor,  platform, and version"^^xsd:string , "Note: this is only an intial iteration. The SDRF contains more imformation that tissue samples but for now we are only interested in representing and processing that information."^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty archive:project ;
+                owl:someValuesFrom archive:Project
+              ] ;
+      dc:creator foaf:JimLomax .
+
+archive:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+archive:TCGACollectionSite
+      rdf:type owl:Class ;
+      rdfs:comment "A Collecion Site is a physical location acting as the upstream provider of biological material.  Collection Centers do have specific processes, inputs and output. A Collection Site may be affiliated with one or more organizations, but they are not organizations themselves."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      dc:creator foaf:JimLomax .
+
+archive:TCGACollectionSite_CALGB
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_CellLines
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_DukeBrainBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_GynecologicOncology
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_HenryFord
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_Intgen
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_MDABrainBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_MDALungBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_MDAOvarianBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_NCI
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_UCSFBrainBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGACollectionSite_UCSFOvarianBank
+      rdf:type archive:TCGACollectionSite .
+
+archive:TCGAProject
+      rdf:type archive:Project .
+
+archive:TIF
+      rdf:type archive:ImageFormat .
+
+archive:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+archive:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+archive:Units
+      rdf:type owl:Class ;
+      rdfs:comment "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
+      dc:creator foaf:JimLomax .
+
+archive:VolumeUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:Units .
+
+archive:WeightUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf archive:Units .
+
+archive:XMLTechnologyArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any file that is XML related: XML, XSD, XSLT, etc."^^xsd:string ;
+      rdfs:subClassOf archive:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+archive:accessLevel
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to an access level (security one possible interpretation)."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf archive:accessLevelOf .
+
+archive:accessLevelOf
+      rdf:type owl:ObjectProperty .
+
+archive:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf archive:hasAccessionNumber .
+
+archive:archive
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to an Archive."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf archive:archiveOf .
+
+archive:archiveDownload
+      rdf:type owl:ObjectProperty .
+
+archive:archiveDownloadOf
+      rdf:type owl:ObjectProperty .
+
+archive:archiveOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the archive to the object; inverse of the predicate, \"archive\"."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:archiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to an archive version"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:archiveVersionOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates an archive version to the object; inverse of the predicate \"archive version\"."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf archive:archiveVersion .
+
+archive:collectionSite
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Collection Site  into the ontology"^^xsd:string ;
+      owl:inverseOf archive:collectionSiteOf .
+
+archive:collectionSiteDomain
+      rdf:type rdf:Property .
+
+archive:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:collectionSiteOf
+      rdf:type owl:ObjectProperty .
+
+archive:compressionAlgorithm
+      rdf:type rdf:Property .
+
+archive:createdOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf archive:dateTimeInstant .
+
+archive:creationDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf archive:dateTimeInstant .
+
+archive:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+archive:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+archive:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+archive:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+archive:dateTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Any entity in the ontology having a dateTime"^^xsd:string .
+
+archive:dateTimeInstant
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range time-entry:InstantThing ;
+      rdfs:subPropertyOf archive:dateTimeThing .
+
+archive:dateTimeThing
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range time-entry:TemporalThing ;
+      rdfs:subPropertyOf archive:dateTime .
+
+archive:descriptionOf
+      rdf:type rdf:Property .
+
+archive:directory
+      rdf:type owl:DatatypeProperty .
+
+archive:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:file
+      rdf:type owl:DatatypeProperty .
+
+archive:fileLocation
+      rdf:type owl:ObjectProperty .
+
+archive:fileType
+      rdf:type owl:TransitiveProperty ;
+      rdfs:comment "Relates the subject to a file type."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf archive:fileTypeOf .
+
+archive:fileTypeOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the file type to the object; inverse of the predicate \"file type\"."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:gelImageFileLocation
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf archive:fileLocation .
+
+archive:genomicCenterOf
+      rdf:type owl:ObjectProperty .
+
+archive:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf archive:hasGenomicSequenceId ;
+      owl:inverseOf archive:accessionNumberOf .
+
+archive:hasCollectionSite
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Collection Site  into the ontology"^^xsd:string ;
+      owl:inverseOf archive:collectionSiteOf .
+
+archive:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:hasPatient
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string .
+
+archive:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+archive:hasProject
+      rdf:type owl:ObjectProperty .
+
+archive:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+archive:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:imageFormat
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf archive:imageFormatOF .
+
+archive:imageFormatOF
+      rdf:type owl:ObjectProperty .
+
+archive:imageSource
+      rdf:type rdf:Property ;
+      rdfs:domain archive:ImageArtifact .
+
+archive:lastModifiedDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf archive:dateTimeInstant .
+
+archive:lastUpdatedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf archive:dateTimeInstant .
+
+archive:locatedBy
+      rdf:type rdf:Property ;
+      rdfs:range archive:FileLocation .
+
+archive:name
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "temporary measure until skos labeling is inserted into RDF generation"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+archive:project
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to a project"^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf archive:projectOf .
+
+archive:projectOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the project to the object; inverse of the predicate \"project\"."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+archive:uploadCompletedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was uploaded."^^xsd:string ;
+      rdfs:subPropertyOf archive:dateTimeInstant .
+
+archive:validPlatformDatatypeOf
+      rdf:type owl:ObjectProperty .
+
+archive:versionNumber
+      rdf:type owl:DatatypeProperty ;
+      dc:creator foaf:JimLomax .
+
+archive:versionRevision
+      rdf:type owl:DatatypeProperty ;
+      dc:creator foaf:JimLomax .
+
+archive:versionSeries
+      rdf:type owl:DatatypeProperty ;
+      dc:creator foaf:JimLomax .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

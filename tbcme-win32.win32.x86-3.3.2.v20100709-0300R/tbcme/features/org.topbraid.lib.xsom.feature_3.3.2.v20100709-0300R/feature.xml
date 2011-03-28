@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.xsom.feature"
+      label="org.topbraid.lib.xsom.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant, Inc.">
+
+   <description>
+      XSOM library and dependent functionality in TopBraid
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+Copyright (c) 2001, Thai Open Source Software Center Ltd, Sun Microsystems.
+   </copyright>
+
+   <license>
+      About This Content
+
+March 2010
+End User License Agreement
+
+TopQuadrant makes available all content in this Eclipse Feature (“Content”). Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the End User License Agreement (“EULA”). This EULA sets forth the terms applicable to use and licensing by the customer (“Customer”) of software provided by TopQuadrant, Inc. (“TopQuadrant”). It is important that you read this document before installing or using the software provided by TopQuadrant (the “Software”) and any associated documentation or materials provided by TopQuadrant (“Documentation”). A copy of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then Customer is not licensed to use the Software, and you must destroy any downloaded copies of the Software in your or Customer‘s possession or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf to download and print a copy of this EULA for your records.
+
+Third Party Content
+
+The Content includes items that have been sourced from third parties as set out below.
+XML Schema Object Model (XSOM)
+
+The plug-in is accompanied by software developed at https://xsom.dev.java.net/ The subset of the binary code of XML Schema Object Model (“XSOM”) is included without modification in the following file(s):
+
+    * /org.topbraid.lib.xsom/lib/xsom.jar
+    * /org.topbraid.lib.xsom/lib/relaxngDatatype.jar
+
+Your use of XSOM is subject to the terms and conditions of the COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0. A copy of the license can be found in /org.topbraid.lib.xsom/about_files/xsom.LICENSE.txt and is also available at http://www.sun.com/cddl/cddl.html.
+
+Your use of relaxngDatatype.jar is covered by a BSD-like license that can be found in about_files/copying-thaiOpensource.txt and is also available at https://xsom.dev.java.net/lib/copying-relaxngDatatype.txt.
+
+The source for the XSOM is included without modification in the following archive:
+
+    * /org.topbraid.lib.xsomlib.src/xsom-src.zip
+   </license>
+
+   <plugin
+         id="org.topbraid.lib.xsom"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraidcomposer.xml"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+</feature>

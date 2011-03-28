@@ -1,0 +1,17 @@
+instructions.configure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:http${#58}//download.eclipse.org/releases/galileo,name:Galileo - eclipse);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:http${#58}//download.eclipse.org/releases/galileo,name:Galileo - eclipse);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:http${#58}//community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/,name:Polarion subversive for SVN);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:http${#58}//community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/,name:Polarion subversive for SVN);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:http${#58}//www.topquadrant.com/products/updates/3.3/,name:TopBraid Composer);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:http${#58}//www.topquadrant.com/products/updates/3.3/,name:TopBraid Composer);
+
+
+instructions.unconfigure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:0,location:http${#58}//download.eclipse.org/releases/galileo);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:1,location:http${#58}//download.eclipse.org/releases/galileo);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:0,location:http${#58}//community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:1,location:http${#58}//community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:0,location:http${#58}//www.topquadrant.com/products/updates/3.3/);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:1,location:http${#58}//www.topquadrant.com/products/updates/3.3/);
+

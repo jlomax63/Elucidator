@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://hipaa.gov/personalidentifiers#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://hipaa.gov/personalidentifiers">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="HIPAAAddress">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAddress - A conceptual representation of the class of data elements considered as Address Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="HIPAAPersonalIdentifier"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAASSN">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAASSN - A conceptual representation of the class data elements considered as Social Security Number (SSN) Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#HIPAAPersonalIdentifier"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#HIPAAPersonalIdentifier">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAPersonalIdentifier - A conceptual representation of the class of data elements considered as Personal Identifiers according to HIPAA.</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HIPAADeidentifiedData"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAHealthPlanUserID">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAHealthPlanUserID - A conceptual representation of the class of data elements considered as Health Plan User ID Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAMRN">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAMRN - A conceptual representation of the class of data elements considered as Medical Record Number (MRN) Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAADOB">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAADOB - A conceptual representation of the class of data elements considered as Date Of Birth (DOB) Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAFullName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAFullName - A conceptual representation of the class of data elements considered as Full Name Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAImage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAImage - A conceptual representation of the class of data elements considered as Image Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAEmailAddress">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAEmailAddress - A conceptual representation of the class of data elements considered as E-mail Address Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:about="#HIPAADeidentifiedData">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAADeidentifiedData - A conceptual representation of the class of data elements NOT considered as Personal Identifiers according to HIPAA.</rdfs:comment>
+    <owl:disjointWith rdf:resource="#HIPAAPersonalIdentifier"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAVisitDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAVisitDate - A conceptual representation of the class of data elements considered as (patient) Visit Date Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HIPAAPhoneNumber">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HIPAAAPhoneNumber - A conceptual representation of the class of data elements considered as Phone Number Personal Identifiers according to HIPAA.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#HIPAAPersonalIdentifier"/>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

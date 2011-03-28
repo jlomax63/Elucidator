@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:sparql="http://www.topbraidcomposer.org/owl/2006/09/sparql.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.topbraidcomposer.org/owl/2006/09/sparql.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.0.0</owl:versionInfo>
+    <rdfs:comment>This ontology has now been deprecated in favor of SPIN. It provided a mechanism to attach SPARQL queries into ontologies. Using the sparql:query property, developers could attach queries to resources in their RDF/OWL models. All values of sparql:query were be added to TopBraid's query library so that they can be managed and executed together. There was also a sparql:Query class that makes it possible to attach metadata to individual queries.</rdfs:comment>
+    <owl:imports rdf:resource="http://spinrdf.org/spin"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Query">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label>Query</rdfs:label>
+    <rdfs:comment>A resource that wraps a sparql:query string and allows developers to attach metadata such as query name and author. Each Query must have exactly one sparql:query value (this is not enforced with an OWL restriction because query is an annotation property).</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DeprecatedClass"/>
+  </owl:Class>
+  <owl:DeprecatedProperty rdf:ID="constructor">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#constructor"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >constructor</rdfs:label>
+    <rdfs:comment>Deprecated in favor of spin:constructor. Can be attached to classes, holding SPARQL CONSTRUCT expressions. If an instance of the associated class is created, its constructor will be executed and the constructed triples inferred or asserted. The variable ?this is pre-bound to the instance that was created.</rdfs:comment>
+  </owl:DeprecatedProperty>
+  <owl:DeprecatedProperty rdf:ID="query">
+    <rdfs:subPropertyOf rdf:resource="http://spinrdf.org/spin#query"/>
+    <rdfs:label>query</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deprecated: please use spin:query instead. This property could be used to place SPARQL queries inside an RDF or OWL model. If a value of this property is a well-formed SPARQL query (possibly ommitting namespace prefixes), then TopBraid Composer will be able to maintain them in the SPARQL Library view.</rdfs:comment>
+  </owl:DeprecatedProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

@@ -1,0 +1,3505 @@
+# Saved by TopBraid on Mon Apr 19 09:06:59 CDT 2010
+# baseURI: http://mdacc.org/TCGAArchive
+# imports: http://swan.mindinformatics.org/ontologies/1.2/pav/
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://www.mindswap.org/2003/owl/foaf
+# imports: http://mged.sourceforge.net/ontologies/MGEDOntology.owl
+# imports: http://swan.mindinformatics.org/ontologies/1.2/reification.owl
+# imports: http://spinrdf.org/spin
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix p3:      <http://my.com/file3#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/TCGAArchive>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.mindswap.org/2003/owl/foaf> , dc: , <http://mged.sourceforge.net/ontologies/MGEDOntology.owl> , pav: , <file:/C:/Documents%20and%20Settings/JWLomax/TBCMEWorkspace/TopBraid/TBC/PlatformValidations-10-04-08.rdf> , <http://spinrdf.org/spin> , <http://swan.mindinformatics.org/ontologies/1.2/reification.owl> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+tcga:ABI
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Applied Biosystems Sequence Data"^^xsd:string .
+
+tcga:ABIDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "appliedbiosystems.com"^^xsd:string .
+
+tcga:ABIID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "abi"^^xsd:string .
+
+tcga:ABIOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:ABIDomain ;
+      tcga:has_organization_name
+              tcga:AppliedBioSystems .
+
+tcga:ABIPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:ABIID ;
+      tcga:has_vendor tcga:ABIOrg ;
+      mage:has_platform_name
+              tcga:ABI .
+
+tcga:ABIValidation
+      rdf:type tcga:PlatformValidation ;
+      tcga:has_valid_platform_datatype
+              tcga:Mutation , tcga:TraceRel ;
+      mage:has_name "ABIPlatformValidation"^^xsd:string ;
+      mage:has_platform_name
+              tcga:ABIPlatform .
+
+tcga:ADN
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "DNA"^^xsd:string .
+
+tcga:ARN
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "ARN"^^xsd:string .
+
+tcga:Activity
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_description ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:Actor
+      rdf:type owl:Class ;
+      rdfs:comment "Standard definition of an Actor in a Use Case. An actor interacts with an application through the specification included in the Use Case"^^xsd:string ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_responsibiliy ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:AddressRole
+      rdf:type owl:Class ;
+      rdfs:comment "The functional role of an address. For example: home, office, receiving, shipping, OfficeOfRegistrar. We are still exploring whehter or not this is the best representation, however MAGE does not account for this concept so we must add it to the model in some form."^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:Adenine
+      rdf:type tcga:DNABase ;
+      mage:has_name "Adenine"^^xsd:string .
+
+tcga:Affy
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:Affymetrix ;
+      mage:has_name "Affymetrix"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Affy-HT_HG-U133A-1.2.0-ADFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/broad.mit.edu/ht_hg-u133a/transcriptome/broad.mit.edu_GBM.HT_HG-U133A.1.2.0/broad.mit.edu_GBM.HT_HG-U133A.1.adf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Affy-HT_HG-U133A-1.2.0-DataFile1>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/broad.mit.edu/ht_hg-u133a/transcriptome/broad.mit.edu_GBM.HT_HG-U133A.1.2.0/5500024030700072107989.A09.CEL"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Affy-HT_HG-U133A-1.2.0-IDFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/broad.mit.edu/ht_hg-u133a/transcriptome/broad.mit.edu_GBM.HT_HG-U133A.1.2.0/broad.mit.edu_GBM.HT_HG-U133A.1.idf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Affy-HT_HG-U133A-1.2.0-SDRFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/broad.mit.edu/ht_hg-u133a/transcriptome/broad.mit.edu_GBM.HT_HG-U133A.1.2.0/broad.mit.edu_GBM.HT_HG-U133A.1.sdrf.txt"^^xsd:string .
+
+tcga:Affymetrix
+      rdf:type tcga:OrganizationName ;
+      mage:has_URI tcga:AffymetrixURI ;
+      mage:has_name "Affymetrix"^^xsd:string .
+
+tcga:AffymetrixDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "affymetrix.com"^^xsd:string .
+
+tcga:AffymetrixOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:AffymetrixDomain ;
+      tcga:has_organization_name
+              tcga:Affymetrix .
+
+tcga:AffymetrixURI
+      rdf:type tcga:URI ;
+      tcga:has_string_representation
+              "www.affymetrix.com/"^^xsd:string .
+
+tcga:Agilent
+      rdf:type tcga:OrganizationName ;
+      mage:has_URI tcga:AgilentURI ;
+      mage:has_name "Agilent"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Agilent-HG-CGH-244A-3.5.0-ADFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.3.5.0/hms.harvard.edu_GBM.HG-CGH-244A.3.adf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Agilent-HG-CGH-244A-3.5.0-Data1File>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.3.5.0/hms.harvard.edu_GBM.HG-CGH-244A.3.data.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Agilent-HG-CGH-244A-3.5.0-IDFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.3.5.0/hms.harvard.edu_GBM.HG-CGH-244A.3.idf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Agilent-HG-CGH-244A-3.5.0-SDRFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/hms.harvard.edu/hg-cgh-244a/cna/hms.harvard.edu_GBM.HG-CGH-244A.3.5.0/hms.harvard.edu_GBM.HG-CGH-244A.3.idf.txt"^^xsd:string .
+
+tcga:AgilentDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "agilent.com"^^xsd:string .
+
+tcga:AgilentOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:AgilentDomain ;
+      tcga:has_organization_name
+              tcga:Agilent .
+
+tcga:AgilentURI
+      rdf:type tcga:URI ;
+      tcga:has_string_representation
+              "www.agilent.com"^^xsd:string .
+
+tcga:Aliquot
+      rdf:type owl:Class ;
+      rdfs:comment "Represents the biological processing concept of an Aliquot. There is still some debate as to how best represent this concept. An Aliquot is a Bio Material generally of one genomic type, such as RNA or DNA. The conventional labeling of an Aliquot embeds the labels of all other source Bio Materials from which it was derived, such as a tissue or cell line."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_raw_source
+              ] ;
+      tcga:has_Term tcga:Alícuota .
+
+tcga:Alícuota
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "alícuota"^^xsd:string .
+
+tcga:Application
+      rdf:type owl:Class ;
+      rdfs:comment "Any application for which a Use Case is written. Note this can take on any context, not just an application that is under development or enhancement."^^xsd:string ;
+      rdfs:subClassOf tcga:Actor ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_language ;
+                owl:someValuesFrom tcga:Language
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:AppliedBioSystems
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "Applied Biosystems"^^xsd:string .
+
+tcga:Archive
+      rdf:type owl:Class ;
+      rdfs:comment "An archive is a collection of Archive Listings. An Archive is viewed as a single processable entity, the Artifacts within are processed according to rules that govern their inherent structure and relationships to other Artifacts. Archives are versioned per release; versions are labeled in any number of ways but are only consistently labeled within a particular archive source (or project)"^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive_version ;
+                owl:someValuesFrom tcga:ArchiveVersion
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive_name ;
+                owl:someValuesFrom tcga:ArchiveName
+              ] ;
+      dc:creator foaf:JimLomax ;
+      dc:date "2010-04-16"^^xsd:string .
+
+tcga:ArchiveDownload
+      rdf:type owl:Class ;
+      rdfs:comment "An Archive Download is a collection of Archive Artifacts downloaded in a particular time frame, contiguously. An ArchiveDownload is a slice of an Archive. The slice may be a time-dependent download of files (some time range) or any other facet. Archive Downloads are created on a specified date."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_creation_date ;
+                owl:someValuesFrom xsd:dateTime
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive_download_name ;
+                owl:someValuesFrom tcga:ArchiveDownloadName
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchiveDownloadName
+      rdf:type owl:Class ;
+      rdfs:comment "The name of a archive download"^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchiveFileType
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchiveListing
+      rdf:type owl:Class ;
+      rdfs:comment "Any listing  included in the Archive (member of)."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf ([ rdf:type owl:Restriction ;
+                            owl:onProperty tcga:has_location ;
+                            owl:someValuesFrom tcga:URI
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty tcga:has_location ;
+                            owl:someValuesFrom tcga:FileLocation
+                          ])
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_last_modified_date ;
+                owl:someValuesFrom tcga:ModificationDateTime
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive_listing_name ;
+                owl:someValuesFrom tcga:ArchiveListingName
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive ;
+                owl:someValuesFrom tcga:Archive
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_archive_download ;
+                owl:someValuesFrom tcga:ArchiveDownload
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_file_type ;
+                owl:someValuesFrom tcga:ArchiveFileType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchiveListingName
+      rdf:type owl:Class ;
+      rdfs:comment "The name of an archive lsiting."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchiveName
+      rdf:type owl:Class ;
+      rdfs:comment "The name of an archive."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArchivePackage
+      rdf:type owl:Class ;
+      rdfs:comment "Contains the entities that are involved with archival and packing of genomic data for electronic distribution."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax ;
+      dc:date "2010-04-16"^^xsd:string .
+
+tcga:ArchiveVersion
+      rdf:type owl:Class ;
+      rdfs:comment "Archive Versions are labels to indicate some versioned release of an Archive. Versioning is cannot be classified as any particular datatype according to any particular scheme, thus a concept was created to add a layer of indirection between the concept and its  implementation."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArrayData
+      rdf:type owl:Class ;
+      rdfs:comment "Array Data is an Archive Artifact containing the results set ofr applying processes in the SampleDataRelationship Artifact to the corresponding samples in the SampleDataRelationship Artifact."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_platform
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform ;
+                owl:someValuesFrom tcga:Platform
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_genomic_center ;
+                owl:someValuesFrom tcga:Organization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cancer ;
+                owl:someValuesFrom tcga:Cancer
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArrayDesign
+      rdf:type owl:Class ;
+      rdfs:comment "Artifact containing the design of a microarray. The specific structure of an array design is dependent (at least) on the microarray vendor, platform and version."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_platform
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_genomic_center ;
+                owl:someValuesFrom mage:Organization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform ;
+                owl:someValuesFrom tcga:Platform
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ArrayDesignPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:BCR
+      rdf:type mage:Roles ;
+      mage:has_name "TCGA Biological Collection Resource"^^xsd:string .
+
+tcga:Baylor
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:BaylorCollegeOfMedicine ;
+      mage:has_name "Baylor"^^xsd:string .
+
+tcga:BaylorCollegeOfMedicine
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:Baylor ;
+      mage:has_name "Baylor College of Medicine"^^xsd:string ;
+      owl:sameAs tcga:Baylor .
+
+tcga:BaylorDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "hgsc.bcm.edu"^^xsd:string .
+
+tcga:BaylorOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:BaylorDomain ;
+      tcga:has_organization_name
+              tcga:Baylor .
+
+tcga:BerkeleyLab
+      rdf:type tcga:OrganizationName ;
+      rdfs:label "tcga:LawrenceBerkeleyNationalLab"^^xsd:string ;
+      mage:has_name "Lawrence Berkeley National Laboratory"^^xsd:string .
+
+tcga:BioMaterial
+      rdf:type owl:Class ;
+      rdfs:comment "TCGA specific representation of BioMaterial that incorporates the base characteristics of MAGE while allowing subclasses that are frequently used, specific material types."^^xsd:string ;
+      rdfs:subClassOf mage:BioMaterial ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_material_source ;
+                owl:someValuesFrom tcga:MaterialSource
+              ] .
+
+tcga:BiologicalCollectionResource
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:Organization ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_bcr_name ;
+                owl:someValuesFrom tcga:OrganizationName
+              ] .
+
+tcga:Broad
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:BroadInstituteOfMITAndHavard ;
+      mage:has_name "Broad Institute of MIT and Harvard"^^xsd:string .
+
+tcga:BroadDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "broad.mit.edu"^^xsd:string .
+
+tcga:BroadInstituteOfMITAndHavard
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:Broad ;
+      mage:has_name "Broad Institute of MIT and Harvard"^^xsd:string .
+
+tcga:BroadOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:BroadDomain ;
+      tcga:has_organization_name
+              tcga:Broad .
+
+tcga:CALGB
+      rdf:type tcga:TCGACollectionSiteName .
+
+tcga:CALGBDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "calgb.org"^^xsd:string .
+
+tcga:CALGBOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:CALGBDomain ;
+      tcga:has_organization_name
+              tcga:CALGB .
+
+tcga:CGCC
+      rdf:type mage:Roles ;
+      mage:has_name "TCGA Cancer Genomic Characterization Center"^^xsd:string .
+
+tcga:CNA
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Copy Number Analysis"^^xsd:string .
+
+tcga:Cancer
+      rdf:type owl:Class ;
+      rdfs:comment "The concept of Cancer. This could to reference a taxonomy of cancer types however, the question of which taxonomy is currently under discussion."^^xsd:string ;
+      rdfs:subClassOf tcga:CancerPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cancer_name ;
+                owl:someValuesFrom tcga:CancerName
+              ] ;
+      tcga:has_usecase tcga:ShowAllCancerTypesAvailable ;
+      dc:creator foaf:JimLomax .
+
+tcga:CancerName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:CancerPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:Name
+              ] ;
+      tcga:has_usecase tcga:ShowAllCancerTypesAvailable ;
+      dc:creator foaf:JimLomax .
+
+tcga:CancerPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:Cell
+      rdf:type owl:Class ;
+      rdfs:comment "This is an alternative perspective of a Cell; a class that allows further extension (and variation) of Cell outside of a MAGE or TCGA perspective. This class is equivalent to the MAGE BioMaterial class that has a has_type property with a MAGE MaterialType of Cell."^^xsd:string ;
+      rdfs:subClassOf tcga:BioMaterial ;
+      tcga:has_Term tcga:Célula ;
+      mage:has_type mage:cell ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:hasValue mage:cell ;
+                owl:onProperty mage:has_type
+              ] .
+
+tcga:CellLineSample
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom tcga:Cancer ;
+                owl:onProperty tcga:has_cancer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_cancer
+              ] .
+
+tcga:CellLines
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "07"^^xsd:string ;
+      mage:has_name "Cell Lines"^^xsd:string .
+
+tcga:CellLysate
+      rdf:type owl:Class ;
+      rdfs:comment "This is an alternative perspective of a CellLysate; a class that allows further extension (and variation) of CellLysate outside of a MAGE or TCGA perspective. This class is equivalent to the MAGE BioMaterial class that has a has_type property with a MAGE MaterialType of CellLysate."^^xsd:string ;
+      rdfs:subClassOf tcga:BioMaterial ;
+      tcga:has_Term tcga:LisadoDeCélulas ;
+      mage:has_type mage:cell_lysate ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:hasValue mage:cell_lysate ;
+                owl:onProperty mage:has_type
+              ] .
+
+tcga:CellNucleus
+      rdf:type tcga:CellularRegion ;
+      rdfs:comment "Identifies a cell nucleus as a source. (Nucleus is a name aleardy taken)"^^xsd:string ;
+      tcga:has_Term tcga:NúcleoDeLaCélula .
+
+tcga:CellularRegion
+      rdf:type owl:Class ;
+      rdfs:comment "Controlled vocabulary representing the possible source  from which the biological material  can be obtained; cytoplasmic, genomic, nuclear, organellar, etc"^^xsd:string ;
+      rdfs:subClassOf tcga:MaterialSource ;
+      tcga:has_Term tcga:RegiónCelular .
+
+tcga:CentroDeGenómica
+      rdf:type tcga:Term ;
+      tcga:has_Term tcga:CentroDeGenómica ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "centro de genómica"^^xsd:string .
+
+tcga:Channel
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_channel_type ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (tcga:ChannelType xsd:string)
+                        ]
+              ] .
+
+tcga:ChannelType
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:ChannelType_Green
+      rdf:type tcga:ChannelType .
+
+tcga:ChannelType_Red
+      rdf:type tcga:ChannelType .
+
+tcga:Chromosome
+      rdf:type owl:Class ;
+      rdfs:comment "Highly organized structure of DNA and protein found in the nucleus of cells"^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_number ;
+                owl:someValuesFrom tcga:ChromosomeNumber
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_arm ;
+                owl:someValuesFrom tcga:ChromosomeArm
+              ] .
+
+tcga:ChromosomeArm
+      rdf:type owl:Class ;
+      rdfs:comment """Chromsomes have two \"arms\" separated by a centromere. The centromere looks like a pinched region of the chromosome. Each chromosome has a Q Arm and a P Arm; the P arm is always shorter (less base pairs) than the Q arm.
+
+Chromosome Arm is part of a vocabulary used to specify locations of gene on a  genome."""^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_arm_name ;
+                owl:someValuesFrom tcga:ChromosomeArmName
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome ;
+                owl:someValuesFrom tcga:Chromosome
+              ] .
+
+tcga:ChromosomeArmName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:ChromosomeArmName_P
+      rdf:type tcga:ChromosomeArmName ;
+      mage:has_name "P"^^xsd:string .
+
+tcga:ChromosomeArmName_Q
+      rdf:type tcga:ChromosomeArmName ;
+      mage:has_name "Q"^^xsd:string .
+
+tcga:ChromosomeBand
+      rdf:type owl:Class ;
+      rdfs:comment "A chromosome arm is composed of one to many bands. Bands are transverse regions of a chromosomal arm made visible by differential staining techniques. Chromosomal bands are labeled in ascending numerical order outward from the centromere to the telomere (for a particular chromosome arm)."^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_band_number ;
+                owl:someValuesFrom tcga:ChromosomeBandNumber
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_parent ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (tcga:ChromosomeArm tcga:ChromosomeBand)
+                        ]
+              ] .
+
+tcga:ChromosomeBandNumber
+      rdf:type owl:Class ;
+      rdfs:comment "Chromosome bands are numbered in ascending numeric order outwards from the centromere to the telomere (implicit context of a specific chromosome arm)."^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_number ;
+                owl:someValuesFrom xsd:unsignedInt
+              ] .
+
+tcga:ChromosomeNumber
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_number ;
+                owl:someValuesFrom xsd:integer
+              ] .
+
+tcga:Citoplasma
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "citoplasma"^^xsd:string .
+
+tcga:Clinical
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Clinical data type"^^xsd:string .
+
+tcga:ClinicalPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:CollectionSiteID_CALGB
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "03"^^xsd:string .
+
+tcga:CollectionSiteID_CellLines
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "07"^^xsd:string .
+
+tcga:CollectionSiteID_DukeBrainBank
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "12"^^xsd:string .
+
+tcga:CollectionSiteID_GynecologicOncology
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "04"^^xsd:string .
+
+tcga:CollectionSiteID_HenryFord
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "06"^^xsd:string .
+
+tcga:CollectionSiteID_Intgen
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "01"^^xsd:string .
+
+tcga:CollectionSiteID_MDABrainBank
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "02"^^xsd:string .
+
+tcga:CollectionSiteID_MDALungBank
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "11"^^xsd:string .
+
+tcga:CollectionSiteID_MDAOvarianBank
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "10"^^xsd:string .
+
+tcga:CollectionSiteID_NCI
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "05"^^xsd:string .
+
+tcga:CollectionSiteID_UCSFBrain
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "08"^^xsd:string .
+
+tcga:CollectionSiteID_UCSFOvarian
+      rdf:type tcga:TCGACollectionSiteID ;
+      dc:identifier "09"^^xsd:string .
+
+tcga:Compound
+      rdf:type owl:Class ;
+      rdfs:comment "The concept of a chemical compound. This is most likely redundant with MAGE:Compound, as listed in the Experiment Package under ExperimentalFactorDategory:Compund. However, this should most likely point off to chemical compound taxonomy."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      tcga:has_Term tcga:Compuesto .
+
+tcga:Compressed
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact that has been processed by a compression alogorithm. These artifacts must first be decompressed before they can be asserted to be another type of artifact. Often Compressed artifacts will be a collection of artifacts themselves, this is often the way tissue imagery is packaged."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+tcga:Compuesto
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "compuesto"^^xsd:string .
+
+tcga:ComputationalArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact in the Archive containing information that can (or will be) processed by an algorithm (some existing function somewhere)"^^xsd:string ;
+      rdfs:subClassOf tcga:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+tcga:CountAllCancerNames
+      rdf:type tcga:SPARQLQuery ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables ([ rdf:type sp:Count ;
+                            sp:expression _:b1
+                          ]) ;
+                sp:where ([ sp:object tcga:Cancer ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b2
+                          ] [ sp:object _:b3 ;
+                            sp:predicate tcga:has_cancer_name ;
+                            sp:subject _:b2
+                          ] [ sp:object _:b1 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b3
+                          ])
+              ] .
+
+tcga:CountAllPlatformDatatypeNames
+      rdf:type tcga:SPARQLQuery ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables ([ rdf:type sp:Count ;
+                            sp:expression _:b4
+                          ]) ;
+                sp:where ([ sp:object tcga:PlatformDatatype ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b5
+                          ] [ sp:object _:b4 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b5
+                          ])
+              ] .
+
+tcga:CountRawDataListings
+      rdf:type tcga:SPARQLQuery ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables ([ rdf:type sp:Count ;
+                            sp:expression _:b6
+                          ]) ;
+                sp:where ([ sp:object tcga:ArchiveListing ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b6
+                          ] [ sp:object _:b7 ;
+                            sp:predicate tcga:has_file_type ;
+                            sp:subject _:b6
+                          ] [ sp:object "raw-data" ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b7
+                          ])
+              ] .
+
+tcga:CpGPSiteID
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:CpGPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cpg_site_id ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      tcga:createdDate "2009-12-20"^^xsd:string ;
+      tcga:design_rationale
+              "There is not currently a industry standard  identification scheme for CpG sites. We need an extensible mechanism to specify CpGSites with the ability to add SPIN and SWRL when construction details emerge."^^xsd:string ;
+      tcga:science_background
+              "Methylation contributing to epigenetic inheritance can occur either through DNA methylation or protein methylation. DNA methylation in vertebrates typically occurs at CpG sites (cytosine-phosphate-guanine sites; that is, where a cytosine is directly followed by a guanine in the DNA sequence); this methylation results in the conversion of the cytosine to 5-methylcytosine. The formation of Me-CpG is catalyzed by the enzyme DNA methyltransferase. The bulk of mammalian DNA has about 40% of CpG sites methylated but there are certain areas, known as CpG islands which are GC rich (made up of about 65% CG residues) where none are methylated. These are associated with the promoters of 56% of mammalian genes, including all ubiquitously expressed genes. 1-2% of the human genome are CpG clusters and there is an inverse relationship between CpG methylation and transcriptional activity."^^xsd:string ;
+      dc:creator "Jim Lomax"^^xsd:string .
+
+tcga:CpGPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:CpGSite
+      rdf:type owl:Class ;
+      rdfs:comment "Region of DNA where a cytosine nucleotide occurs next to a guanine nucleotide in the linear sequence of bases along its length, as opposed to a cytosine base-pairing with a guanine between opposite strands. Methylation of CpG sites within  promoters of genes maydisable the gene, which in cases can lead to cancer. Also, hypomethylation of CpG sites has been associated with the over-expression of oncogenes within cancer cells"^^xsd:string ;
+      rdfs:subClassOf tcga:CpGPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cpg_site_id ;
+                owl:someValuesFrom tcga:CpGPSiteID
+              ] .
+
+tcga:CreationDateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DateTime .
+
+tcga:CytogenicLocation
+      rdf:type owl:Class ;
+      rdfs:comment "Cytogenic locations are locations within a chromosome denoted by chromsome (band and/or sub-band, arm and chromosome number)"^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_band ;
+                owl:someValuesFrom tcga:ChromosomeBand
+              ] .
+
+tcga:Cytoplasm
+      rdf:type tcga:CellularRegion ;
+      rdfs:comment "Identifies the cytoplasmic cellular region."^^xsd:string ;
+      tcga:has_Term tcga:Citoplasma .
+
+tcga:Cytosine
+      rdf:type tcga:DNABase .
+
+tcga:Cáncer
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "cáncer"^^xsd:string .
+
+tcga:Célula
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "célula"^^xsd:string .
+
+tcga:DCC
+      rdf:type mage:Roles ;
+      mage:has_name "TCGA Data Coordination Center"^^xsd:string .
+
+tcga:DNA
+      rdf:type owl:Class ;
+      rdfs:label "This is an alternative perspective of DNA; a class that allows further extension (and variation) of DNA outside of a MAGE or TCGA perspective. This class is equivalent to the MAGE BioMaterial class that has a has_type property with a MAGE MaterialType of DNA."^^xsd:string ;
+      rdfs:subClassOf tcga:BioMaterial ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_material_source
+              ] ;
+      tcga:has_Term tcga:ADN ;
+      mage:has_type mage:DNA ;
+      mage:synonym "Deoxyribonucleic acid"^^xsd:string ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:hasValue mage:DNA ;
+                owl:onProperty mage:has_type
+              ] .
+
+tcga:DNABase
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_abbreviation ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:DNAMethylation
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "DNA Methylation"^^xsd:string .
+
+tcga:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay ;
+      mage:has_image_format
+              mage:PNG .
+
+tcga:DNASequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_sequence ;
+                owl:someValuesFrom tcga:OrderedDNABase
+              ] .
+
+tcga:DOC
+      rdf:type tcga:DocumentFormat ;
+      mage:has_name "MS Word Document Format"^^xsd:string .
+
+tcga:DataCurator
+      rdf:type tcga:Actor ;
+      tcga:has_responsibiliy
+              "Analyze data source"^^xsd:string , "Ensure integrity of data source"^^xsd:string ;
+      mage:has_name "Data Curator"^^xsd:string ;
+      dc:contributor foaf:JimLomax ;
+      dc:description "A data curator is responsible for ensuring the integrity of a data source."^^xsd:string .
+
+tcga:DatasetExists
+      rdf:type tcga:PreCondition ;
+      tcga:has_description
+              "A facet  must exist before it can be selected."^^xsd:string ;
+      mage:has_name "Dataset Exists"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:DateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:TemporalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_date_time ;
+                owl:someValuesFrom xsd:dateTime
+              ] .
+
+tcga:Developer
+      rdf:type tcga:Actor ;
+      tcga:has_responsibiliy
+              "Develop software "^^xsd:string ;
+      mage:has_name "Software Developer"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:DisplayArtifact
+      rdf:type owl:Class ;
+      rdfs:comment "Any artifact of an Archive whose contents do not require further processing; they can be displayed as-is."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+tcga:Document
+      rdf:type owl:Class ;
+      rdfs:comment "Any text-based document that is meant to be viewed (and possible edited) but is not subject to computation to derive the information it contains."^^xsd:string ;
+      rdfs:subClassOf tcga:DisplayArtifact ;
+      dc:creator foaf:JimLomax .
+
+tcga:DocumentFormat
+      rdf:type owl:Class ;
+      rdfs:comment "Document storage format"^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:DukeBrainBank
+      rdf:type tcga:TCGACollectionSiteName , tcga:OrganizationName ;
+      mage:has_ID "12"^^xsd:string ;
+      mage:has_name "Duke University Brain Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:DukeBrainBankDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "adrc.mc.duke.edu"^^xsd:string .
+
+tcga:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+tcga:English
+      rdf:type tcga:Language .
+
+tcga:Exon
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Exon expression"^^xsd:string .
+
+tcga:FacetExists
+      rdf:type tcga:PreCondition ;
+      tcga:has_description
+              "A facet  must exist before it can be selected."^^xsd:string ;
+      mage:has_name "Facet Exists"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:FileLocation
+      rdf:type owl:Class ;
+      rdfs:comment "File Location; pathname prefixed filename"^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_file ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_directory ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+tcga:GBMName
+      rdf:type tcga:CancerName ;
+      mage:has_name "Glioblastoma"^^xsd:string .
+
+tcga:GSC
+      rdf:type mage:Roles ;
+      mage:has_name "TCGA Genomic Sequencing Center"^^xsd:string .
+
+tcga:Gen
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "gen"^^xsd:string .
+
+tcga:Gene
+      rdf:type owl:Class ;
+      rdfs:comment "A gene, proposed or already vetted through an established sequence database."^^xsd:string ;
+      rdfs:subClassOf tcga:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome ;
+                owl:someValuesFrom tcga:Chromosome
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_gene_source_reference ;
+                owl:someValuesFrom tcga:GeneSourceReference
+              ] ;
+      tcga:has_Term tcga:Gen .
+
+tcga:GeneID
+      rdf:type owl:Class ;
+      rdfs:comment "Gene identifier; Gene IDs are not unique identifiers, they are identifiers specific to a reference soure such as a gene database."^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_gene_source_reference ;
+                owl:someValuesFrom tcga:GeneSourceReference
+              ] ;
+      tcga:design_rationale
+              "Gene IDs are unique to specific gene reference source, such as a database or other collection mechansim. We are not sure of the representation of the actual gene identifier or their corresponding reference source. That said, we will model the information to be as general as possible while providing the structure to start specifying instances."^^xsd:string ;
+      dc:creator "Jim Lomax"^^xsd:string .
+
+tcga:GenePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:GeneSourceReference
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:GeneSymbol
+      rdf:type owl:Class ;
+      rdfs:comment "A symbol to define a gene."^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_gene_source_reference ;
+                owl:someValuesFrom tcga:GeneSourceReference
+              ] .
+
+tcga:Genoma
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "genoma"^^xsd:string .
+
+tcga:Genome
+      rdf:type owl:Class , tcga:CellularRegion ;
+      rdfs:comment "Identifies the genome cellular region (obviously with the nuclear region, specific to the whole DNA or the organism)"^^xsd:string ;
+      rdfs:subClassOf tcga:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_genome_build ;
+                owl:someValuesFrom tcga:GenomeBuild
+              ] ;
+      tcga:has_Term tcga:Genoma .
+
+tcga:GenomeBuild
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenomePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:GenomeCenterAtWashingtonUniversity
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "The Genome Center at Washington University"^^xsd:string .
+
+tcga:GenomePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:GenomicCharacterizationCenter
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenomicProcessingCenter ;
+      dc:creator foaf:JimLomax .
+
+tcga:GenomicProcessingCenter
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:Organization ;
+      dc:creator foaf:JimLomax .
+
+tcga:GenomicSequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_sequence ;
+                owl:someValuesFrom
+                        [ rdf:type owl:Class ;
+                          owl:unionOf (tcga:OrderedDNABase xsd:string)
+                        ]
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:Name
+              ] .
+
+tcga:GenomicSequencingCenter
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:GenomicProcessingCenter ;
+      dc:creator foaf:JimLomax .
+
+tcga:Glioblastoma
+      rdf:type tcga:Cancer ;
+      tcga:has_cancer_name
+              tcga:GBMName .
+
+tcga:GlioblastomaBioSample1
+      rdf:type mage:BioSample ;
+      mage:has_ID "001111"^^xsd:string ;
+      mage:has_been_treated
+              tcga:cy3PreWashTreatment1 ;
+      mage:has_biomaterial_characteristics
+              mage:male , mage:fresh_sample , mage:postmortem , tcga:MDAndersonBrainBankRepository ;
+      mage:has_type mage:DNA .
+
+tcga:GlioblastomaBioSource1
+      rdf:type mage:BioSource ;
+      mage:has_ID "001111"^^xsd:string ;
+      mage:has_biomaterial_characteristics
+              mage:male , mage:fresh_sample , mage:postmortem , tcga:MDAndersonBrainBankRepository ;
+      mage:has_type mage:DNA .
+
+tcga:Guanine
+      rdf:type tcga:DNABase .
+
+tcga:GynecologicOncology
+      rdf:type tcga:TCGACollectionSiteName .
+
+tcga:GynecologicOncologyOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:GynocologicOncologyDomain ;
+      tcga:has_organization_name
+              tcga:GynecologicOncology .
+
+tcga:GynocologicOncologyDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "gog.org"^^xsd:string .
+
+tcga:Harvard
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "Harvard"^^xsd:string .
+
+tcga:HarvardDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "hms.harvard.edu"^^xsd:string .
+
+tcga:HarvardOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:HarvardDomain ;
+      tcga:has_organization_name
+              tcga:Harvard .
+
+tcga:HenryFordHospital
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "06"^^xsd:string ;
+      mage:has_name "Henry Ford Hospital"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:HmiRNA8x15K
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent 8 x 15K Human miRNA-specific microarray"^^xsd:string .
+
+tcga:HmiRNA8x15KID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "h-miRNA_8x15K"^^xsd:string .
+
+tcga:HmiRNA8x15KIDv2
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "h-miRNA_8x15Kv2"^^xsd:string .
+
+tcga:HmiRNA8x15KPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:HmiRNA8x15KID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:HmiRNA8x15K .
+
+tcga:HmiRNA8x15KPlatformv2
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:HmiRNA8x15KIDv2 ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:HmiRNA8x15Kv2 .
+
+tcga:HmiRNA8x15Kv2
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent 8 x 15K v2 Human miRNA-specific microarray"^^xsd:string .
+
+tcga:Hudson
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "Hudson Alpha Institute"^^xsd:string .
+
+tcga:HudsonAlphaDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "hudsonalpha.org"^^xsd:string .
+
+tcga:HudsonAlphaInstitute
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:Hudson ;
+      mage:has_name "Hudson Alpha Institute"^^xsd:string .
+
+tcga:HudsonAlphaOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:HudsonAlphaDomain ;
+      tcga:has_organization_name
+              tcga:HudsonAlphaInstitute .
+
+tcga:Human1mduo
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Illumina Infinium HD Human1M-Duo"^^xsd:string .
+
+tcga:Human1mduoID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "human1mduo"^^xsd:string .
+
+tcga:Human1mduoPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:Human1mduoID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:Human1mduo .
+
+tcga:HumanHap550
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Illumina 550K Infinium HumanHap550 SNP Chip"^^xsd:string .
+
+tcga:HumanHap550ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "humanHap550"^^xsd:string .
+
+tcga:HumanHap550Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:HumanHap550ID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:HumanHap550 .
+
+tcga:Illumina
+      rdf:type tcga:OrganizationName ;
+      mage:has_URI tcga:IlluminaURI ;
+      mage:has_name "Illumina"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Illumina-DNAMethylation_OMA002_CPI.1.0.0-ADFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/jhu-usc.edu/illuminadnamethylation_oma002_cpi/methylation/jhu-usc.edu_GBM.IlluminaDNAMethylation_OMA002_CPI.1.0.0-adf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Illumina-DNAMethylation_OMA002_CPI.1.0.0-DataFile1>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/jhu-usc.edu/illuminadnamethylation_oma002_cpi/methylation/jhu-usc.edu_GBM.IlluminaDNAMethylation_OMA002_CPI.1.0.0-data1.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Illumina-DNAMethylation_OMA002_CPI.1.0.0-IDFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/jhu-usc.edu/illuminadnamethylation_oma002_cpi/methylation/jhu-usc.edu_GBM.IlluminaDNAMethylation_OMA002_CPI.1.0.0-idf.txt"^^xsd:string .
+
+<http://mdacc.org/TCGAArchive#Illumina-DNAMethylation_OMA002_CPI.1.0.0-SDRFFile>
+      rdf:type tcga:FileLocation ;
+      tcga:has_location "/usr/local/data/data03/tcga01/anonsite/tcga/tumor/gbm/cgcc/jhu-usc.edu/illuminadnamethylation_oma002_cpi/methylation/jhu-usc.edu_GBM.IlluminaDNAMethylation_OMA002_CPI.1.0.0-sdrf.txt"^^xsd:string .
+
+tcga:IlluminaCpGSiteID
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:CpGPSiteID ;
+      tcga:design_rationale
+              "Illumina has a specific way to uniquely identify CpG site IDs.  Rules to verify integrity of Illumina CpGSites will be added."^^xsd:string ;
+      dc:creator "Jim Lomax"^^xsd:string .
+
+tcga:IlluminaDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "illumina.com"^^xsd:string .
+
+tcga:IlluminaHumanMethylation27ArrayDesign
+      rdf:type owl:Class ;
+      rdfs:comment "Specific array design for Illumina's Human Methylation 27 microarray"^^xsd:string ;
+      rdfs:subClassOf tcga:ArrayDesignPackage , tcga:ArrayDesign ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_design_element ;
+                owl:someValuesFrom tcga:IlluminaHumanMethylation27ArrayDesignElement
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:IlluminaHumanMethylation27ArrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:ArrayDesignPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_genome_build ;
+                owl:someValuesFrom tcga:GenomeBuild
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_next_base ;
+                owl:someValuesFrom tcga:DNABase
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_number ;
+                owl:someValuesFrom xsd:int
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_allelic_probe_a ;
+                owl:someValuesFrom tcga:DNASequence
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cpg_site_id ;
+                owl:someValuesFrom tcga:IlluminaCpGSiteID
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_allelic_probe_b ;
+                owl:someValuesFrom tcga:DNASequence
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_target_sequence ;
+                owl:someValuesFrom tcga:DNASequence
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_gene_symbol ;
+                owl:someValuesFrom tcga:GeneSymbol
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_molecular_location ;
+                owl:someValuesFrom tcga:MolecularLocation
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_gene_id ;
+                owl:someValuesFrom tcga:GeneID
+              ] .
+
+tcga:IlluminaOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:IlluminaDomain ;
+      tcga:has_organization_name
+              tcga:Illumina .
+
+tcga:IlluminaURI
+      rdf:type tcga:URI ;
+      tcga:has_string_representation
+              "www.affymetrix.com"^^xsd:string .
+
+tcga:Image
+      rdf:type owl:Class ;
+      rdfs:comment "Any image-based Archive Artifiact that is meant to be viewed (and possible edited) but is not subject to computation to derive the information it contains."^^xsd:string ;
+      rdfs:subClassOf tcga:DisplayArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_image_format ;
+                owl:someValuesFrom tcga:ImageFormat
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ImageCompressionAlgorithm
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      dc:creator foaf:JimLomax .
+
+tcga:ImageFormat
+      rdf:type owl:Class ;
+      rdfs:comment "Storage format for an electronic image. Storage formats are produced by image compression algorithms."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchivePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:InternationalGenomicsConsortium
+      rdf:type tcga:OrganizationName , tcga:TCGACollectionSiteName ;
+      mage:has_name "International Genomics Consortium"^^xsd:string .
+
+tcga:IntgenDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "intgen.org"^^xsd:string .
+
+tcga:IntgenOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:IntgenDomain ;
+      tcga:has_organization_name
+              tcga:InternationalGenomicsConsortium .
+
+tcga:InvestigationDesign
+      rdf:type owl:Class ;
+      rdfs:comment "Artifact describing the \"metadata: and design premises of an investigation (experiment). The strucutre of the artifact will depend on many factors, including the umbrella project that the investigation may be comprising, however the artifact typically includes information about the investigation's protocols and the primary investigator. ID is a general concept applicable to any investigation description, and not restricted to microarray investigations"^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_platform
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform ;
+                owl:someValuesFrom tcga:Platform
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:JPG
+      rdf:type tcga:ImageFormat ;
+      mage:has_name "JPG"^^xsd:string , "JPEG"^^xsd:string , "jpg"^^xsd:string , "jpeg"^^xsd:string .
+
+tcga:Java
+      rdf:type tcga:ProgrammingLanguage .
+
+tcga:JohnsHopkinUniversity
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:JohnsHopkins ;
+      mage:has_name "Johns Hopkins University"^^xsd:string .
+
+tcga:JohnsHopkins
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "Johns Hopkins University"^^xsd:string .
+
+tcga:JohnsHopkinsDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "jhu-usc.edu"^^xsd:string .
+
+tcga:JohnsHopkinsOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:JohnsHopkinsDomain ;
+      tcga:has_organization_name
+              tcga:JohnsHopkinUniversity .
+
+tcga:LOH
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Loss Of Heterozygosity"^^xsd:string .
+
+tcga:LabeledExtractGlioblastoma1
+      rdf:type mage:LabeledExtract ;
+      tcga:has_bio_material
+              tcga:GlioblastomaBioSample1 ;
+      mage:has_been_treated
+              tcga:cy3LabelingTreatment1 ;
+      mage:has_compound mage:Cy3 ;
+      mage:has_type mage:DNA .
+
+tcga:Language
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:LawrenceBerkeleyNationalLab
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:BerkeleyLab ;
+      mage:has_name "Lawrence Berkeley National Laboratory"^^xsd:string .
+
+tcga:LawrenceDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "lbl.gov"^^xsd:string .
+
+tcga:LawrenceLabOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:LawrenceDomain ;
+      tcga:has_organization_name
+              tcga:LawrenceBerkeleyNationalLab .
+
+tcga:LisadoDeCélulas
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "liasdo del células"^^xsd:string .
+
+tcga:LungCancerTissueBankCALGB
+      rdf:type tcga:OrganizationName ;
+      mage:has_ID "03"^^xsd:string ;
+      mage:has_name "Lung Cancer Tissue Bank of CALGB"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:MDA
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "MD Anderson Cancer Center"^^xsd:string .
+
+tcga:MDADomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "mdanderson.org"^^xsd:string .
+
+tcga:MDAOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:MDADomain ;
+      tcga:has_organization_name
+              tcga:MDA .
+
+tcga:MDAndersonBrainBank
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "01"^^xsd:string ;
+      mage:has_URI tcga:MDAndersonURI ;
+      mage:has_address "1515 Holcombe Blvd Houston, TX 77030"^^xsd:string ;
+      mage:has_email "mail@mdanderson.org	"^^xsd:string ;
+      mage:has_name "MD Anderson  Brain Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+tcga:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider ;
+      mage:has_biosource_type
+              mage:fresh_sample ;
+      mage:has_donor tcga:MDAndersonBrainBank ;
+      mage:has_owner tcga:MDAndersonBrainBankOwner .
+
+tcga:MDAndersonLungBank
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_name "MD Anderson Lung Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:MDAndersonOvarianBank
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "10"^^xsd:string ;
+      mage:has_name "MD Anderson Ovarian Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:MDAndersonURI
+      rdf:type tcga:URI ;
+      tcga:has_string_representation
+              "www.mdanderson.org"^^xsd:string .
+
+tcga:Manifest
+      rdf:type owl:Class ;
+      rdfs:comment "A Manifest contains a list of all Artifacts contained in the Archive."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+tcga:MaterialDeOrigen
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish .
+
+tcga:MaterialSource
+      rdf:type owl:Class ;
+      rdfs:subClassOf mage:BioMaterialPackage ;
+      tcga:has_Term tcga:MaterialDeOrigen .
+
+tcga:MemorialSloanKetteringCancerCenter
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:SloanKettering ;
+      mage:has_name "Memorial Sloan Kettering Cancer Center"^^xsd:string .
+
+tcga:MethylationMicroarrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayDesignElement .
+
+tcga:Microarray
+      rdf:type owl:Class ;
+      rdfs:comment "Represents the physical microarray. The class is designed to hold the row(x) and column(y) dimensions, if available."^^xsd:string ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_y_dimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom xsd:integer ;
+                owl:onProperty tcga:has_y_dimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_x_dimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom xsd:integer ;
+                owl:onProperty tcga:has_x_dimension
+              ] .
+
+tcga:MicroarrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage .
+
+tcga:MicroarrayPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:ModificationDateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DateTime .
+
+tcga:MolecularLocation
+      rdf:type owl:Class ;
+      rdfs:comment "A molecular location is a location on a chromosome measured in base pairs from the origin of the chromosome"^^xsd:string ;
+      rdfs:subClassOf tcga:GenePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_base_pair_number ;
+                owl:someValuesFrom xsd:nonNegativeInteger
+              ] .
+
+tcga:Mutation
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Mutation"^^xsd:string .
+
+tcga:NCBI
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "National Center for Bioinformatics"^^xsd:string .
+
+tcga:NCI
+      rdf:type tcga:OrganizationName , tcga:TCGACollectionSiteName ;
+      mage:has_name "National Cancer Institute"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:NCIDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "cancer.gov"^^xsd:string .
+
+tcga:NCIOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:NCIDomain ;
+      tcga:has_organization_name
+              tcga:NCI .
+
+tcga:NonCodingRegion
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DNASequence .
+
+tcga:NormalSample
+      rdf:type rdfs:Class ;
+      owl:differentFrom tcga:CellLineSample , tcga:TumorSample .
+
+tcga:Nucleus
+      rdf:type mage:CellularComponent .
+
+tcga:NúcleoDeLaCélula
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "núcleo de la célula"^^xsd:string .
+
+tcga:OVName
+      rdf:type tcga:CancerName ;
+      mage:has_name "Ovarian"^^xsd:string .
+
+tcga:Obsolete
+      rdf:type owl:Class ;
+      rdfs:comment "Any ArchiveArtifact thatis no longer relevant to the Archive but is listed for completion or historical purposes. An Obsolote ArchiveArtifact's contents are not subject to any computation and are not intended to be viewed."^^xsd:string ;
+      rdfs:subClassOf tcga:ArchiveListing ;
+      dc:creator foaf:JimLomax .
+
+tcga:OrderedActivity
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_order ;
+                owl:someValuesFrom xsd:int
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_activity ;
+                owl:someValuesFrom tcga:Activity
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:OrderedDNABase
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DNABase ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_order ;
+                owl:someValuesFrom xsd:integer
+              ] .
+
+tcga:Organelle
+      rdf:type tcga:CellularRegion ;
+      rdfs:comment "Identifies an organelle source, in general, as a class. No specific organelle is identified but the this class may  be extended to handle specific organelles."^^xsd:string ;
+      tcga:has_Term tcga:Organelo .
+
+tcga:Organelo
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish .
+
+tcga:Organism
+      rdf:type owl:Class ;
+      rdfs:comment "Idenitifes a source as coming from the organism without being specific. The thought here is that there are bio materials such as tissues, blood, semen and whole organs. Obviously this could be extended or refer to an existing taxonomy."^^xsd:string ;
+      rdfs:subClassOf tcga:MaterialSource ;
+      tcga:has_Term tcga:Organismo .
+
+tcga:Organismo
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "organismo "^^xsd:string .
+
+tcga:Organization
+      rdf:type owl:Class ;
+      rdfs:subClassOf foaf:Organization , tcga:OrganizationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_organization_domain ;
+                owl:someValuesFrom tcga:OrganizationDomain
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_organization_name ;
+                owl:someValuesFrom tcga:OrganizationName
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:OrganizationDomain
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:OrganizationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:OrganizationName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:OrganizationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:OrganizationPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+tcga:Ovarian
+      rdf:type tcga:Cancer ;
+      tcga:has_cancer_name
+              tcga:OVName .
+
+tcga:PDF
+      rdf:type tcga:DocumentFormat ;
+      mage:has_name "Adobe PDF"^^xsd:string .
+
+tcga:PNG
+      rdf:type tcga:ImageFormat .
+
+tcga:PPT
+      rdf:type tcga:DocumentFormat ;
+      mage:has_name "MS Powerpoint"^^xsd:string .
+
+tcga:Patient
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_patient_ID ;
+                owl:someValuesFrom tcga:PatientID
+              ] .
+
+tcga:PatientID
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:Platform
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_vendor ;
+                owl:someValuesFrom mage:Organization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform_identifier ;
+                owl:someValuesFrom tcga:PlatformIdentifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_platform_name ;
+                owl:someValuesFrom tcga:PlatformName
+              ] .
+
+tcga:PlatformDatatype
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:PlatformIdentifier
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:PlatformName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:PlatformValidation
+      rdf:type owl:Class ;
+      rdfs:comment "A Platform Validation contains information to help in validating a platform instance. Each instance of Platform Validation is metadata associated with a particular class of Platform. Each platform can process one or more Platform Datatype"^^xsd:string ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_valid_platform_datatype ;
+                owl:someValuesFrom tcga:PlatformDatatype
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform_identifier ;
+                owl:someValuesFrom tcga:PlatformIdentifier
+              ] .
+
+tcga:PlatformVersion
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:PlatingCenter
+      rdf:type owl:Class ;
+      rdfs:comment "A Plating Center is a specific type of Organization.  Plating Centers do have specific processes, inputs and outputswhich is justification for subclassing them from Organization"^^xsd:string ;
+      rdfs:subClassOf tcga:OrganizationPackage .
+
+tcga:Portion
+      rdf:type owl:Class ;
+      rdfs:comment "A portion is a physical subdivision of a sample. Samples are potioned for multiple assays."^^xsd:string ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_portion_ID ;
+                owl:someValuesFrom tcga:PortionID
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:PortionID
+      rdf:type owl:Class ;
+      rdfs:comment "Unique identifier for the portion within its defining context."^^xsd:string ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:PostCondition
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_description ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:PreCondition
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_description ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:ProgrammingLanguage
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:Language .
+
+tcga:Project
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:ProjectPackage , foaf:Project .
+
+tcga:ProjectName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:ProjectPackage .
+
+tcga:ProjectPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:Proteasome
+      rdf:type mage:CellularComponent .
+
+tcga:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+tcga:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+tcga:ProvenancePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:Python
+      rdf:type tcga:ProgrammingLanguage .
+
+tcga:RNA
+      rdf:type owl:Class ;
+      rdfs:comment "This is an alternative perspective of RNA; a class that allows further extension (and variation) of RNA outside of a MAGE or TCGA perspective. This class is equivalent to the MAGE BioMaterial class that has a has_type property with a MAGE MaterialType of RNA."^^xsd:string ;
+      rdfs:subClassOf tcga:BioMaterial ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_material_source
+              ] ;
+      mage:has_type mage:RNA ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:hasValue mage:RNA ;
+                owl:onProperty mage:has_type
+              ] .
+
+tcga:ReadMe
+      rdf:type owl:Class ;
+      rdfs:comment "An informational ArchiveArtifact  whose purpose is to describe features of the Archive, as well as any known issues."^^xsd:string ;
+      rdfs:subClassOf tcga:Document ;
+      dc:creator foaf:JimLomax .
+
+tcga:RegiónCelular
+      rdf:type tcga:Term ;
+      tcga:has_language tcga:Spanish .
+
+tcga:Researcher
+      rdf:type tcga:Actor ;
+      tcga:has_responsibiliy
+              "Design experiments"^^xsd:string , "Create hypothesis"^^xsd:string , "Analyze experiement results"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+tcga:SNP
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Single Nucleotide Polymorphism"^^xsd:string .
+
+tcga:SPARQLPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:SPARQLQuery
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:SPARQLPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty spin:query ;
+                owl:someValuesFrom sp:Query
+              ] ;
+      dc:creator "foaf:JimLomax"^^xsd:string .
+
+tcga:SampleDataRelationship
+      rdf:type owl:Class ;
+      rdfs:comment "A SampleDataRelationship Archive Artifact contains a collection of biological samples and the process applied to those samples to generate expected results. The structure of this Archive Artifact is dependent on many factors including the project, microarray vendor,  platform, and version"^^xsd:string , "Note: this is only an intial iteration. The SDRF contains more imformation that tissue samples but for now we are only interested in representing and processing that information."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform_datatype ;
+                owl:someValuesFrom tcga:PlatformDatatype
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_cancer ;
+                owl:someValuesFrom tcga:Cancer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_project ;
+                owl:someValuesFrom tcga:Project
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_tissue_sample ;
+                owl:someValuesFrom tcga:TissueSample
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_platform ;
+                owl:someValuesFrom tcga:Platform
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:SamplePackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+tcga:SelectAllCancerNames
+      rdf:type tcga:SPARQLQuery ;
+      dc:creator "foaf:JimLomax"^^xsd:string ;
+      dc:date "2010-04-16"^^xsd:string ;
+      dc:description "Determines all cancer names referenced in the current dataset. When executing this query it is important to understand the context of the dataset. The query does not return all available cancer names, only those that exist in the dataset."^^xsd:string ;
+      dc:title "Select All Cancer Names"^^xsd:string ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables (_:b8) ;
+                sp:where ([ sp:object tcga:Cancer ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b10 ;
+                            sp:predicate tcga:has_cancer_name ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b8 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b10
+                          ])
+              ] .
+
+tcga:SelectAllPlatformDatatypeNames
+      rdf:type tcga:SPARQLQuery ;
+      dc:creator "foaf:JimLomax"^^xsd:string ;
+      dc:date "2010-04-16"^^xsd:string ;
+      dc:description "Determines all platform datatype names referenced in the current dataset. When executing this query it is important to understand the context of the dataset. The query does not return all available platform datatypes names, only those that exist in the dataset."^^xsd:string ;
+      dc:title "Select All PlatformDatatype Names"^^xsd:string ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables (_:b11) ;
+                sp:where ([ sp:object tcga:PlatformDatatype ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b12
+                          ] [ sp:object _:b11 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b12
+                          ])
+              ] .
+
+tcga:SelectAllPlatformNames
+      rdf:type tcga:SPARQLQuery ;
+      dc:creator "foaf:JimLomax"^^xsd:string ;
+      dc:date "2010-04-16"^^xsd:string ;
+      dc:description "Determines all platforms referenced in the current dataset. When executing this query it is important to understand the context of the dataset. The query does not return all available platforms, only those that exist in the dataset."^^xsd:string ;
+      dc:title "Select All Platform Names"^^xsd:string ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables (_:b13) ;
+                sp:where ([ sp:object tcga:Platform ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b14
+                          ] [ sp:object _:b15 ;
+                            sp:predicate mage:has_platform_name ;
+                            sp:subject _:b14
+                          ] [ sp:object _:b13 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b15
+                          ])
+              ] .
+
+tcga:SelectAllPlatforms
+      rdf:type tcga:SPARQLQuery ;
+      dc:creator "foaf:JimLomax"^^xsd:string ;
+      dc:date "2010-04-16"^^xsd:string ;
+      dc:description "Determines all platforms referenced in the current dataset. When executing this query it is important to understand the context of the dataset. The query does not return all available platforms, only those that exist in the dataset."^^xsd:string ;
+      dc:title "Select All Platform"^^xsd:string ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables (_:b16 _:b17 _:b18) ;
+                sp:where ([ sp:object tcga:Platform ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b19
+                          ] [ sp:object _:b20 ;
+                            sp:predicate mage:has_platform_name ;
+                            sp:subject _:b19
+                          ] [ sp:object _:b16 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b20
+                          ] [ sp:object _:b21 ;
+                            sp:predicate tcga:has_platform_identifier ;
+                            sp:subject _:b19
+                          ] [ sp:object _:b17 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b21
+                          ] [ sp:object _:b22 ;
+                            sp:predicate tcga:has_vendor ;
+                            sp:subject _:b19
+                          ] [ sp:object _:b23 ;
+                            sp:predicate tcga:has_organization_name ;
+                            sp:subject _:b22
+                          ] [ sp:object _:b18 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b23
+                          ])
+              ] .
+
+tcga:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+tcga:SelectDataset
+      rdf:type tcga:Activity .
+
+tcga:SelectDatasetFacet
+      rdf:type tcga:Activity ;
+      tcga:has_description
+              "The actor selects a facet of a dataset. The facet is a property that is defined for all members of a specified dataset."^^xsd:string ;
+      mage:has_name "Select Facet"^^xsd:string .
+
+tcga:SelectRawDataListings
+      rdf:type tcga:SPARQLQuery ;
+      spin:query
+              [ rdf:type sp:Select ;
+                sp:resultVariables (_:b24 _:b25 _:b26 _:b27) ;
+                sp:where ([ sp:object tcga:ArchiveListing ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b28
+                          ] [ sp:object _:b29 ;
+                            sp:predicate tcga:has_location ;
+                            sp:subject _:b28
+                          ] [ sp:object _:b24 ;
+                            sp:predicate tcga:has_file ;
+                            sp:subject _:b29
+                          ] [ sp:object _:b30 ;
+                            sp:predicate tcga:has_datatype ;
+                            sp:subject _:b28
+                          ] [ sp:object _:b26 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b30
+                          ] [ sp:object _:b31 ;
+                            sp:predicate tcga:has_file_type ;
+                            sp:subject _:b28
+                          ] [ sp:object "raw-data" ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b31
+                          ] [ sp:object _:b32 ;
+                            sp:predicate tcga:has_platform ;
+                            sp:subject _:b28
+                          ] [ sp:object _:b33 ;
+                            sp:predicate tcga:has_platform_identifier ;
+                            sp:subject _:b32
+                          ] [ sp:object _:b27 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b33
+                          ] [ sp:object _:b34 ;
+                            sp:predicate tcga:has_cancer ;
+                            sp:subject _:b28
+                          ] [ sp:object _:b35 ;
+                            sp:predicate tcga:has_cancer_name ;
+                            sp:subject _:b34
+                          ] [ sp:object _:b25 ;
+                            sp:predicate mage:has_name ;
+                            sp:subject _:b35
+                          ])
+              ] .
+
+tcga:ShowAllCancerTypesAvailable
+      rdf:type tcga:UseCase ;
+      tcga:has_activity tcga:SelectDatasetFacet , tcga:SelectDataset ;
+      tcga:has_actor tcga:Researcher , tcga:DataCurator ;
+      tcga:has_application
+              tcga:TCGADownloadStatisticsApplication ;
+      tcga:has_description
+              "A Data Curator would like to slice a dataset by cancer type to see if expected cancer types appear. This expectation of cancer types may be set when the Data Curator receives asynchronous information from upstream data source administrators indicating data with new cancer types is about to or has been released. As new types of cancer data are added, it is important for the Data Curator to notify downstream consumers. Downstream consumers occassionally wait for specific types of cancer data before they can begin their experiments."^^xsd:string , "A Researcher has created an experiment to test a hypothesis in cancer research. Reseachers use data from  particular types of cancer to test their  hypothesis. The researcher queries the application to see what type of cancers are available in the system. The researcher may select any granularity of data to search: a particluar data file, an Archive Download or the entire inventory. The assumption  is that the researcher will determine from the results, if the target cancer types are available.  This gives the Reseacher information  to quickly asses whether to investigate the application's data further."^^xsd:string ;
+      tcga:has_precondition
+              tcga:DatasetExists , tcga:FacetExists ;
+      tcga:has_query tcga:SelectAllCancerNames .
+
+tcga:Sintetizado
+      rdf:type tcga:Term ;
+      mage:has_text "sintetizado"^^xsd:string .
+
+tcga:SloanDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "mskcc.org"^^xsd:string .
+
+tcga:SloanKettering
+      rdf:type tcga:OrganizationName ;
+      rdfs:seeAlso tcga:MemorialSloanKetteringCancerCenter ;
+      mage:has_name "Memorial Sloan Kettering Cancer Center"^^xsd:string .
+
+tcga:SloanKetteringOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:SloanDomain ;
+      tcga:has_organization_name
+              tcga:MemorialSloanKetteringCancerCenter .
+
+tcga:SondaDeADN
+      rdf:type tcga:Term ;
+      tcga:has_Term tcga:SondaDeADN ;
+      tcga:has_language tcga:Spanish ;
+      mage:has_text "sonda de ADN"^^xsd:string .
+
+tcga:Spanish
+      rdf:type tcga:Language .
+
+tcga:Stanford
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "Standford University"^^xsd:string .
+
+tcga:StanfordDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "stanford.edu"^^xsd:string .
+
+tcga:StanfordOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:StanfordDomain ;
+      tcga:has_organization_name
+              tcga:Stanford .
+
+tcga:Synthesized
+      rdf:type owl:Class ;
+      rdfs:comment "Idenifies a source that is not a component of an organism; the source is an external entity that synthesizes the target in question."^^xsd:string ;
+      rdfs:subClassOf tcga:MaterialSource ;
+      tcga:has_Term tcga:Sintetizado .
+
+tcga:TCGACollectionSite
+      rdf:type owl:Class ;
+      rdfs:comment "A Collecion Site is a physical location acting as the upstream provider of biological material.  Collection Centers do have specific processes, inputs and output. A Collection Site may be affiliated with one or more organizations, but they are not organizations themselves."^^xsd:string ;
+      rdfs:subClassOf tcga:OrganizationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_collection_site_id ;
+                owl:someValuesFrom tcga:TCGACollectionSiteID
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_collection_site_name ;
+                owl:someValuesFrom tcga:TCGACollectionSiteName
+              ] ;
+      dc:creator foaf:JimLomax .
+
+tcga:TCGACollectionSiteID
+      rdf:type owl:Class , tcga:OrganizationPackage ;
+      rdfs:subClassOf tcga:OrganizationPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:positiveInteger
+              ] .
+
+tcga:TCGACollectionSiteName
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:OrganizationPackage .
+
+tcga:TCGACollectionSite_CALGB
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_CALGB ;
+      tcga:has_collection_site_name
+              tcga:CALGB .
+
+tcga:TCGACollectionSite_CellLines
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_CellLines ;
+      tcga:has_collection_site_name
+              tcga:CellLines .
+
+tcga:TCGACollectionSite_DukeBrainBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:DukeBrainBank ;
+      tcga:has_collection_site_name
+              tcga:CollectionSiteID_DukeBrainBank .
+
+tcga:TCGACollectionSite_GynecologicOncology
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_GynecologicOncology ;
+      tcga:has_collection_site_name
+              tcga:GynecologicOncology .
+
+tcga:TCGACollectionSite_HenryFord
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_HenryFord ;
+      tcga:has_collection_site_name
+              tcga:HenryFordHospital .
+
+tcga:TCGACollectionSite_Intgen
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_Intgen ;
+      tcga:has_collection_site_name
+              tcga:InternationalGenomicsConsortium .
+
+tcga:TCGACollectionSite_MDABrainBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_MDABrainBank ;
+      tcga:has_collection_site_name
+              tcga:MDAndersonBrainBank ;
+      tcga:has_organization
+              tcga:MDAOrg .
+
+tcga:TCGACollectionSite_MDALungBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_MDALungBank ;
+      tcga:has_collection_site_name
+              tcga:MDAndersonLungBank ;
+      tcga:has_organization
+              tcga:MDAOrg .
+
+tcga:TCGACollectionSite_MDAOvarianBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_MDAOvarianBank ;
+      tcga:has_collection_site_name
+              tcga:MDAndersonOvarianBank ;
+      tcga:has_organization
+              tcga:MDAOrg .
+
+tcga:TCGACollectionSite_NCI
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_NCI ;
+      tcga:has_collection_site_name
+              tcga:NCI .
+
+tcga:TCGACollectionSite_UCSFBrainBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_UCSFBrain ;
+      tcga:has_collection_site_name
+              tcga:UCSFBrainBank ;
+      tcga:has_organization
+              tcga:UCSFOrg .
+
+tcga:TCGACollectionSite_UCSFOvarianBank
+      rdf:type tcga:TCGACollectionSite ;
+      tcga:has_collection_site_id
+              tcga:CollectionSiteID_UCSFOvarian ;
+      tcga:has_collection_site_name
+              tcga:UCSFOvarianBank ;
+      tcga:has_organization
+              tcga:UCSFOrg .
+
+tcga:TCGADownloadStatisticsApplication
+      rdf:type tcga:Application ;
+      tcga:has_language tcga:Python ;
+      mage:has_name "TCGA Download Statistics"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:TCGAInventoryStatisticsApplication
+      rdf:type tcga:Application ;
+      tcga:has_language tcga:Python ;
+      mage:has_name "TCGA Inventory Statistics"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:TIF
+      rdf:type tcga:ImageFormat ;
+      mage:has_name "TIF"^^xsd:string .
+
+tcga:Telomere
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:DNASequence ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_chromosome_arm ;
+                owl:someValuesFrom tcga:ChromosomeArm
+              ] .
+
+tcga:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+tcga:TemporalPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+tcga:Term
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_quality_control ;
+                owl:someValuesFrom owl:Thing
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom tcga:Language ;
+                owl:onProperty tcga:has_language
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_text ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_language
+              ] .
+
+tcga:Thymine
+      rdf:type tcga:DNABase .
+
+tcga:TissueSample
+      rdf:type owl:Class ;
+      rdfs:comment "A tissue sample is a biological sample from a tumor. The sample is physically collected from a Collection Site. The sample originates from a Patient. The sample and collection of the sample from the patient are done in the context of a specific project, such as TCGA. The sample may be associated with only one patient, but the sample may be associated with many Projects. A smaple by its nature must have one Portion; the Portion is the physical containment of the sample."^^xsd:string ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_collection_site ;
+                owl:someValuesFrom tcga:TCGACollectionSite
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_genomic_center ;
+                owl:someValuesFrom tcga:GenomicProcessingCenter
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_patient ;
+                owl:someValuesFrom tcga:Patient
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_project ;
+                owl:someValuesFrom tcga:Project
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty tcga:has_patient
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_tissue_sample_ID ;
+                owl:someValuesFrom tcga:TissueSampleID
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_portion ;
+                owl:someValuesFrom tcga:Portion
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_tissue_type ;
+                owl:someValuesFrom tcga:TissueType
+              ] .
+
+tcga:TissueSampleID
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement ;
+      owl:distinctMembers (tcga:CellLineSample) , (tcga:TumorSample) , (tcga:NormalSample) .
+
+tcga:TissueType
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:SamplePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty mage:has_name ;
+                owl:someValuesFrom xsd:string
+              ] .
+
+tcga:TopBraidApplication
+      rdf:type tcga:Application ;
+      tcga:has_language tcga:Java ;
+      mage:has_name "Top Braid Composer Maestro"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+tcga:TraceRel
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Trace Gene Sample Relationship"^^xsd:string .
+
+tcga:Transcriptome
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "Transcriptome (gene) expression"^^xsd:string .
+
+tcga:Treatment
+      rdf:type owl:Class ;
+      rdfs:comment "The TCGA subclass of MAGE's Treatment that adds explicit properties for the intrinsic input and output bio materials involved in any Treatment"^^xsd:string ;
+      rdfs:subClassOf mage:Treatment ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_input_material ;
+                owl:someValuesFrom mage:BioMaterial
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_output_material ;
+                owl:someValuesFrom mage:BioMaterial
+              ] .
+
+tcga:TumorSample
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty tcga:has_cancer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom tcga:Cancer ;
+                owl:onProperty tcga:has_cancer
+              ] .
+
+tcga:UCSF
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "University Of California at San Francisco"^^xsd:string .
+
+tcga:UCSFBrainBank
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "08"^^xsd:string ;
+      mage:has_name "University Of California San Francisco Brain Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:UCSFDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "ucsf.edu"^^xsd:string .
+
+tcga:UCSFOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:UCSFDomain ;
+      tcga:has_organization_name
+              tcga:UCSF .
+
+tcga:UCSFOvarianBank
+      rdf:type tcga:TCGACollectionSiteName ;
+      mage:has_ID "09"^^xsd:string ;
+      mage:has_name "University Of California San Francisco Ovarian Bank"^^xsd:string ;
+      mage:has_type tcga:BCR .
+
+tcga:UNC
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "University Of North Carolina at Chapel Hill"^^xsd:string .
+
+tcga:UNCDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "unc.edu"^^xsd:string .
+
+tcga:URI
+      rdf:type owl:Class ;
+      rdfs:subClassOf mage:URI ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_string_representation ;
+                owl:someValuesFrom xsd:anyURI
+              ] .
+
+tcga:UniveristyOfNorthCarolina
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "University Of North Carolina at Chapel Hill"^^xsd:string .
+
+tcga:UniversityOfNorthCarolinaAtChapelHillOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:UNCDomain ;
+      tcga:has_organization_name
+              tcga:UniveristyOfNorthCarolina .
+
+tcga:UseCase
+      rdf:type owl:Class ;
+      rdfs:subClassOf tcga:UseCasePackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_actor ;
+                owl:someValuesFrom tcga:Actor
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_description ;
+                owl:someValuesFrom xsd:string
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_activity ;
+                owl:someValuesFrom tcga:Activity
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty tcga:has_application ;
+                owl:someValuesFrom tcga:Application
+              ] .
+
+tcga:UseCasePackage
+      rdf:type owl:Class ;
+      rdfs:comment "Organizational construct for Use Case related classes."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+tcga:WHG-4x44K_G4112F
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Not sure what the name is"^^xsd:string .
+
+tcga:WHG-4x44K_G4112FID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "whg-4x44K_G4112F"^^xsd:string .
+
+tcga:WHG-4x44K_G4112FPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:WHG-4x44K_G4112FID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:WHG-4x44K_G4112F .
+
+tcga:WashUDomain
+      rdf:type tcga:OrganizationDomain ;
+      mage:has_name "genome.wustl.edu"^^xsd:string .
+
+tcga:WashingtonUniversity
+      rdf:type tcga:OrganizationName ;
+      mage:has_name "The Genome Center at Washington University"^^xsd:string .
+
+tcga:WashingtonUniversityOrg
+      rdf:type tcga:Organization ;
+      tcga:has_organization_domain
+              tcga:WashUDomain ;
+      tcga:has_organization_name
+              tcga:GenomeCenterAtWashingtonUniversity .
+
+tcga:XMLTechnology
+      rdf:type owl:Class ;
+      rdfs:comment "Any file that is XML related: XML, XSD, XSLT, etc."^^xsd:string ;
+      rdfs:subClassOf tcga:ComputationalArtifact ;
+      dc:creator foaf:JimLomax .
+
+tcga:approver
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:contributor .
+
+tcga:cghg4447a
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent Comparative Genomic Hydribization 4447a"^^xsd:string .
+
+tcga:cghg4447aID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "cgh-1x1m_g4447a"^^xsd:string .
+
+tcga:cghg4447aPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:cghg4447aID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:cghg4447a .
+
+tcga:createdDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+tcga:cy3LabelingProtocol1
+      rdf:type mage:Protocol ;
+      mage:has_type mage:labeling .
+
+tcga:cy3LabelingTreatment1
+      rdf:type mage:Treatment ;
+      mage:has_action mage:labeling ;
+      mage:has_order "1"^^xsd:string ;
+      mage:has_protocol tcga:cy3LabelingProtocol1 .
+
+tcga:cy3PreWashProtocol1
+      rdf:type mage:Protocol ;
+      mage:has_type mage:wash .
+
+tcga:cy3PreWashTreatment1
+      rdf:type mage:Treatment ;
+      mage:has_action mage:wash ;
+      mage:has_protocol tcga:cy3PreWashProtocol1 .
+
+tcga:design_rationale
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:description .
+
+tcga:g4502a071
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent 244K Custom Gene Expression G4502A-07-1"^^xsd:string .
+
+tcga:g4502a071ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "agilentG4502A_07_1"^^xsd:string .
+
+tcga:g4502a071Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:g4502a071ID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:g4502a071 .
+
+tcga:g4502a072
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent 244K Custom Gene Expression G4502A-07-2"^^xsd:string .
+
+tcga:g4502a072ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "agilentG4502A_07_2"^^xsd:string .
+
+tcga:g4502a072Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:g4502a072ID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:g4502a072 .
+
+tcga:g4502a073
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent 244K Custom Gene Expression G4502A-07-3"^^xsd:string .
+
+tcga:g4502a073ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "agilentG4502A_07_3"^^xsd:string .
+
+tcga:g4502a073Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:g4502a073ID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:g4502a073 .
+
+tcga:genome_wide_snp6
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Affymetrix Genome-Wide Human SNP Array 6.0"^^xsd:string .
+
+tcga:genome_wide_snp6Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:genome_wide_snp_6ID ;
+      tcga:has_vendor tcga:AffymetrixOrg ;
+      mage:has_platform_name
+              tcga:genome_wide_snp6 .
+
+tcga:genome_wide_snp_6ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "genome_wide_snp_6"^^xsd:string .
+
+tcga:genome_wide_snp_6PlatformValidation
+      rdf:type tcga:PlatformValidation ;
+      tcga:has_valid_platform_datatype
+              tcga:CNA , tcga:SNP , tcga:LOH ;
+      mage:has_name "genome_wide_snp_6 Platform Validation"^^xsd:string ;
+      mage:has_platform_name
+              tcga:genome_wide_snp6Platform .
+
+tcga:has_Term
+      rdf:type owl:ObjectProperty .
+
+tcga:has_abbreviation
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_activity
+      rdf:type owl:ObjectProperty .
+
+tcga:has_actor
+      rdf:type owl:ObjectProperty .
+
+tcga:has_address
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Under discussion. We feel there will be a need to have this property for classes that will have Addresses."^^xsd:string .
+
+tcga:has_address_role
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Address Role into the ontology"^^xsd:string .
+
+tcga:has_aliquot
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Aliquot into the ontology"^^xsd:string ;
+      rdfs:range tcga:Aliquot .
+
+tcga:has_aliquot_barcode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Aliquot into the ontology. Aliquot Barcodes have a specific text representation that can be described by a regular expression."^^xsd:string .
+
+tcga:has_allelic_probe_a
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_probe_sequence .
+
+tcga:has_allelic_probe_b
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_probe_sequence .
+
+tcga:has_application
+      rdf:type owl:ObjectProperty .
+
+tcga:has_archive
+      rdf:type owl:ObjectProperty .
+
+tcga:has_archive_download
+      rdf:type owl:ObjectProperty .
+
+tcga:has_archive_download_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_archive_listing_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_archive_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_archive_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+tcga:has_base_pair_number
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_bcr_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf tcga:has_organization_name .
+
+tcga:has_bio_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on use case  for a class having a TCGA:BioMaterial"^^xsd:string ;
+      rdfs:range mage:BioMaterial .
+
+tcga:has_cancer
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Cancer into the ontology"^^xsd:string ;
+      rdfs:range tcga:Cancer .
+
+tcga:has_cancer_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Cancer into the ontology"^^xsd:string .
+
+tcga:has_channel_type
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome_arm
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome_arm_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_chromosome_band
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome_band_number
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome_number
+      rdf:type owl:ObjectProperty .
+
+tcga:has_chromosome_subband
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf tcga:has_chromosome_band .
+
+tcga:has_collection_site
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Collection Site  into the ontology"^^xsd:string .
+
+tcga:has_collection_site_id
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+tcga:has_collection_site_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_cpg_site_id
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+tcga:has_creation_date
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf tcga:has_date_time .
+
+tcga:has_cytogenic_location
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_location .
+
+tcga:has_date_time
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Any entity in the ontology having a dateTime"^^xsd:string .
+
+tcga:has_description
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_design_element
+      rdf:type owl:ObjectProperty .
+
+tcga:has_directory
+      rdf:type owl:ObjectProperty .
+
+tcga:has_file
+      rdf:type owl:ObjectProperty .
+
+tcga:has_file_type
+      rdf:type rdf:Property .
+
+tcga:has_gene_id
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+tcga:has_gene_source_reference
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A property that describes a gene's reference source (such as NCBI's refseq sequence database)"^^xsd:string .
+
+tcga:has_gene_symbol
+      rdf:type owl:ObjectProperty .
+
+tcga:has_genome_build
+      rdf:type owl:ObjectProperty .
+
+tcga:has_genomic_center
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Genomic Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf tcga:has_organization .
+
+tcga:has_genomic_center_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Genomic Center into the ontology. Genomic Center IDs have a specific format."^^xsd:string ;
+      rdfs:range xsd:integer .
+
+tcga:has_goal
+      rdf:type owl:ObjectProperty .
+
+tcga:has_image_format
+      rdf:type owl:ObjectProperty .
+
+tcga:has_input_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "We are discussing creating this property as it seems apprporitate for a Treatment. However, we are still trying to discern what MAGE is trying to represent in  their Treatment class. A Treatment should transform an input material to an output material but there is no mention of a material in the MAGE Treatment."^^xsd:string ;
+      owl:inverseOf tcga:has_output_material .
+
+tcga:has_labeling_compound
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A labeling compound is typically used on a bio material that will subsequently undergo image processing to extract a feature indentified by the labeled compound. There is a has_compund property in MAGE but we may add this as a subclass of that property for those classes that would only allow LabelingCompounds."^^xsd:string .
+
+tcga:has_language
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Property indicating that the class has a language dimension. The assumption is that the language dimension is not the language of the class."^^xsd:string .
+
+tcga:has_last_modified_date
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf tcga:has_date_time .
+
+tcga:has_location
+      rdf:type rdf:Property .
+
+tcga:has_material_source
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "We will need to add this to the ontology so that classes that are Bio Material (or subclasses) can specify where the material was obtained. Still under discussion."^^xsd:string .
+
+tcga:has_molecular_location
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_location .
+
+tcga:has_next_base
+      rdf:type owl:ObjectProperty .
+
+tcga:has_order
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_organization
+      rdf:type owl:ObjectProperty .
+
+tcga:has_organization_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Still under investigation but it seems to be missing from the MAGE ontology"^^xsd:string .
+
+tcga:has_organization_domain
+      rdf:type owl:ObjectProperty .
+
+tcga:has_organization_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_output_material
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting a new definition of Treatment, see has_input_material Property"^^xsd:string ;
+      owl:inverseOf tcga:has_input_material .
+
+tcga:has_parent
+      rdf:type owl:ObjectProperty .
+
+tcga:has_patient
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string .
+
+tcga:has_patient_ID
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Patient into the ontology, this will be addressed when we add clinical aspects."^^xsd:string .
+
+tcga:has_plate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepatnce of Plate into the ontology"^^xsd:string .
+
+tcga:has_plate_ID
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Plate into the ontology"^^xsd:string .
+
+tcga:has_platform
+      rdf:type rdf:Property .
+
+tcga:has_platform_datatype
+      rdf:type rdf:Property .
+
+tcga:has_platform_identifier
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+tcga:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+tcga:has_plating_center
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accptance of Plating Center into the ontology"^^xsd:string ;
+      rdfs:subPropertyOf tcga:has_organization .
+
+tcga:has_plating_center_ID
+      rdf:type rdf:Property , owl:DatatypeProperty ;
+      rdfs:comment "Contingent on acceptance of Plating Center into the ontology"^^xsd:string .
+
+tcga:has_portion
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology (which also depends on accepting Vial)"^^xsd:string .
+
+tcga:has_portion_ID
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Portion into the ontology"^^xsd:string .
+
+tcga:has_postcondition
+      rdf:type owl:ObjectProperty .
+
+tcga:has_precondition
+      rdf:type owl:ObjectProperty .
+
+tcga:has_probe_sequence
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_sequence .
+
+tcga:has_project
+      rdf:type owl:ObjectProperty .
+
+tcga:has_project_name
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_name .
+
+tcga:has_quality_control
+      rdf:type owl:ObjectProperty .
+
+tcga:has_query
+      rdf:type owl:ObjectProperty .
+
+tcga:has_raw_source
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting Aliquot into the ontology. In TCGA parlance, an Aliguot would have exactly one raw source from which it was derived orginally and that raw source would be a BioMaterial"^^xsd:string .
+
+tcga:has_responsibiliy
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_sequence
+      rdf:type rdf:Property .
+
+tcga:has_string_representation
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_target_sequence
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf tcga:has_sequence .
+
+tcga:has_tissue_sample
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting TissueSample into the ontology"^^xsd:string .
+
+tcga:has_tissue_sample_ID
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on acceptance of Tissue Sample into the ontology. Generaly TissueSample IDs embed information about what Organization supplied the sample and often a Patient ID."^^xsd:string .
+
+tcga:has_tissue_type
+      rdf:type owl:ObjectProperty .
+
+tcga:has_usecase
+      rdf:type owl:ObjectProperty .
+
+tcga:has_valid_platform_datatype
+      rdf:type rdf:Property .
+
+tcga:has_vendor
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf tcga:has_organization .
+
+tcga:has_vial
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Contingent on accepting Vial into the ontology"^^xsd:string .
+
+tcga:has_vial_ID
+      rdf:type owl:DatatypeProperty .
+
+tcga:has_x_dimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having an x dimemsion"^^xsd:string .
+
+tcga:has_y_dimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having a Y dimension"^^xsd:string .
+
+tcga:hg-cgh-244a
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Agilent Human Genome CGH Microarray 244A"^^xsd:string .
+
+tcga:hg-cgh-244aID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "hg-cgh-244a"^^xsd:string .
+
+tcga:hg-cgh-244aPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:hg-cgh-244aID ;
+      tcga:has_vendor tcga:AgilentOrg ;
+      mage:has_platform_name
+              tcga:hg-cgh-244a .
+
+tcga:hthgu133a
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Affymetrix HT Human Genome U133 Array Plate Set"^^xsd:string .
+
+tcga:hthgu133aID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "ht_hg-u133a"^^xsd:string .
+
+tcga:hthgu133aPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:hthgu133aID ;
+      tcga:has_vendor tcga:AffymetrixOrg ;
+      mage:has_platform_name
+              tcga:hthgu133a .
+
+tcga:huex-1_0-st-v2
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Human Exon 1.0 ST Array"^^xsd:string .
+
+tcga:huex-1_0-st-v2ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "huex-1_0-st-v2"^^xsd:string .
+
+tcga:huex-1_0-st-v2Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:huex-1_0-st-v2ID ;
+      tcga:has_vendor tcga:AffymetrixOrg ;
+      mage:has_platform_name
+              tcga:huex-1_0-st-v2 .
+
+tcga:huex10stv2Validation
+      rdf:type tcga:PlatformValidation ;
+      tcga:has_valid_platform_datatype
+              tcga:Exon , tcga:Transcriptome ;
+      mage:has_name "huex-1_0-st-v2 Platform Validation"^^xsd:string ;
+      mage:has_platform_name
+              tcga:huex-1_0-st-v2Platform .
+
+tcga:humanmethylation27
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Infinium Human Methylation 27 Bead Chip"^^xsd:string .
+
+tcga:humanmethylation27ID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "humanmethylation27"^^xsd:string .
+
+tcga:humanmethylation27Platform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:humanmethylation27ID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:humanmethylation27 .
+
+tcga:illuminadnamethylation_oma002_cpi
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Illumina DNA Methylation OMA002 Cancer Panel I"^^xsd:string .
+
+tcga:illuminadnamethylation_oma002_cpiID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "illuminadnamethylation_oma002_cpi"^^xsd:string .
+
+tcga:illuminadnamethylation_oma002_cpiPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:illuminadnamethylation_oma002_cpiID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:illuminadnamethylation_oma002_cpi .
+
+tcga:illuminadnamethylation_oma003_cpi
+      rdf:type tcga:PlatformName ;
+      mage:has_name "Illumina DNA Methylation OMA003 Cancer Panel I"^^xsd:string .
+
+tcga:illuminadnamethylation_oma003_cpiID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "illuminadnamethylation_oma003_cpi"^^xsd:string .
+
+tcga:illuminadnamethylation_oma003_cpiPlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:illuminadnamethylation_oma003_cpiID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:illuminadnamethylation_oma003_cpi .
+
+tcga:illuminaga_mrna_dge
+      rdf:type tcga:PlatformName ;
+      mage:has_name "llumina Genome Analyzer 2 Platform"^^xsd:string .
+
+tcga:illuminaga_mrna_dgeID
+      rdf:type tcga:PlatformIdentifier ;
+      mage:has_name "illuminaga_mrna_dge"^^xsd:string .
+
+tcga:illuminaga_mrna_dgePlatform
+      rdf:type tcga:Platform ;
+      tcga:has_platform_identifier
+              tcga:illuminaga_mrna_dgeID ;
+      tcga:has_vendor tcga:IlluminaOrg ;
+      mage:has_platform_name
+              tcga:illuminaga_mrna_dge .
+
+tcga:miRNA
+      rdf:type tcga:PlatformDatatype ;
+      mage:has_name "miRNA expression"^^xsd:string .
+
+tcga:raw-dataArchiveFileType
+      rdf:type tcga:ArchiveFileType .
+
+tcga:science_background
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:description .
+
+tcga:vendor
+      rdf:type mage:Roles ;
+      rdfs:comment "The role of vendor is curently distinct from hardware or software manufacture, it is intended to represent any vendor that supplies hardware, software or consulting services in any combination. We may eventually discard its usage or classify then draw equivalnces elsewhere within the ontology"^^xsd:string .
+
+mage:BioMaterial
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+mage:BioSample
+      rdf:type owl:Class ;
+      rdfs:subClassOf mage:BioMaterial .
+
+mage:BioSource
+      rdf:type owl:Class ;
+      rdfs:subClassOf mage:BioMaterial .
+
+mage:LabeledExtract
+      rdf:type owl:Class ;
+      rdfs:subClassOf mage:BioMaterial .
+
+mage:has_number
+      rdf:type owl:DatatypeProperty .
+
+mage:has_ordered_basepair
+      rdf:type owl:ObjectProperty .
+
+mage:has_platform_name
+      rdf:type owl:ObjectProperty .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+_:b7  sp:varName "filetypeClass"^^xsd:string .
+
+_:b6  sp:varName "archiveListing"^^xsd:string .
+
+_:b25
+      sp:varName "cancerName"^^xsd:string .
+
+_:b35
+      sp:varName "cancerNameClass"^^xsd:string .
+
+_:b34
+      sp:varName "cancerClass"^^xsd:string .
+
+_:b27
+      sp:varName "platformID"^^xsd:string .
+
+_:b33
+      sp:varName "platformIdClass"^^xsd:string .
+
+_:b32
+      sp:varName "platformClass"^^xsd:string .
+
+_:b31
+      sp:varName "filetypeClass"^^xsd:string .
+
+_:b26
+      sp:varName "datatypeName"^^xsd:string .
+
+_:b30
+      sp:varName "datatypeClass"^^xsd:string .
+
+_:b24
+      sp:varName "fileName"^^xsd:string .
+
+_:b29
+      sp:varName "fileLocationClass"^^xsd:string .
+
+_:b28
+      sp:varName "archiveListing"^^xsd:string .
+
+_:b13
+      sp:varName "platformName"^^xsd:string .
+
+_:b15
+      sp:varName "platformNameClass"^^xsd:string .
+
+_:b14
+      sp:varName "platformClass"^^xsd:string .
+
+_:b18
+      sp:varName "platformVendorName"^^xsd:string .
+
+_:b23
+      sp:varName "platformVendorNameClass"^^xsd:string .
+
+_:b22
+      sp:varName "platformVendorClass"^^xsd:string .
+
+_:b17
+      sp:varName "platformID"^^xsd:string .
+
+_:b21
+      sp:varName "platformIDClass"^^xsd:string .
+
+_:b16
+      sp:varName "platformName"^^xsd:string .
+
+_:b20
+      sp:varName "platformNameClass"^^xsd:string .
+
+_:b19
+      sp:varName "platformClass"^^xsd:string .
+
+_:b4  sp:varName "datatype"^^xsd:string .
+
+_:b5  sp:varName "datatypeClass"^^xsd:string .
+
+_:b11
+      sp:varName "datatype"^^xsd:string .
+
+_:b12
+      sp:varName "datatypeClass"^^xsd:string .
+
+_:b1  sp:varName "cancerName"^^xsd:string .
+
+_:b3  sp:varName "cancerNameClass"^^xsd:string .
+
+_:b2  sp:varName "cancerClass"^^xsd:string .
+
+_:b8  sp:varName "cancerName"^^xsd:string .
+
+_:b10
+      sp:varName "cancerNameClass"^^xsd:string .
+
+_:b9  sp:varName "cancerClass"^^xsd:string .

@@ -1,0 +1,69 @@
+# Saved by TopBraid on Mon Feb 04 15:49:17 PST 2008
+# baseURI: null
+
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix inference:  <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix visual:  <http://www.topbraid.org/2007/01/visual.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix daml:    <http://www.daml.org/2001/03/daml+oil#> .
+@prefix forms:   <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix composite:  <http://www.topbraid.org/2007/05/composite.owl#> .
+
+<http://xmlns.com/foaf/0.1/Person>
+      forms:keyProperties (<http://xmlns.com/foaf/0.1/mbox> <http://xmlns.com/foaf/0.1/name>) .
+
+[]    a       forms:Form ;
+      rdfs:label "Resource Form" ;
+      forms:parentOf
+              [ a       forms:Section ;
+                rdfs:label "Properties" ;
+                forms:childIndex "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                forms:parentOf
+                        [ a       forms:PropertyWidgetGroup ;
+                          forms:childIndex "0" ;
+                          forms:predicateType rdf:Property
+                        ]
+              ] ;
+      forms:parentOf
+              [ a       forms:Panel ;
+                forms:childIndex "0"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                forms:numColumns "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                forms:parentOf
+                        [ a       forms:Panel ;
+                          forms:childIndex "0"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                          forms:parentOf
+                                  [ a       forms:PropertyWidget ;
+                                    forms:childIndex "0"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                                    forms:predicate <http://xmlns.com/foaf/0.1/name>
+                                  ] ;
+                          forms:parentOf
+                                  [ a       forms:PropertyWidget ;
+                                    forms:childIndex "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                                    forms:predicate <http://xmlns.com/foaf/0.1/mbox>
+                                  ] ;
+                          forms:parentOf
+                                  [ a       forms:PropertyWidget ;
+                                    forms:childIndex "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                                    forms:predicate <http://xmlns.com/foaf/0.1/birthday>
+                                  ] ;
+                          forms:parentOf
+                                  [ a       forms:PropertyWidget ;
+                                    forms:childIndex "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                                    forms:predicate <http://xmlns.com/foaf/0.1/gender>
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ a       forms:Panel ;
+                          forms:childIndex "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                          forms:parentOf
+                                  [ a       forms:PropertyWidget ;
+                                    forms:autoExpand "false"^^<http://www.w3.org/2001/XMLSchema#string> ;
+                                    forms:childIndex "0"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                                    forms:predicate <http://xmlns.com/foaf/0.1/img>
+                                  ]
+                        ]
+              ] ;
+      forms:subjectType <http://xmlns.com/foaf/0.1/Person> ;
+      forms:useDomain "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+      forms:useLabels "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .

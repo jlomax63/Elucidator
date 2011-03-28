@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config transient="false">
+	<site enabled="true" updateable="true" policy="USER-EXCLUDE" url="platform:/base/">
+		<feature id="org.topbraidcomposer.maestro" plugin-identifier="org.topbraidcomposer.maestro.splash" url="features/org.topbraidcomposer.maestro_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.xsom.feature" url="features/org.topbraid.lib.xsom.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraidcomposer.maestro.misc" url="features/org.topbraidcomposer.maestro.misc_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.pellet.feature" url="features/org.topbraid.lib.pellet.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.owlim.feature" url="features/org.topbraid.lib.owlim.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.saxon.feature" url="features/org.topbraid.lib.saxon.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.jxl.feature" url="features/org.topbraid.lib.jxl.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+		<feature id="org.topbraid.lib.d2rq.feature" url="features/org.topbraid.lib.d2rq.feature_3.3.2.v20100709-0300R/" version="3.3.2.v20100709-0300R">
+		</feature>
+	</site>
+</config>

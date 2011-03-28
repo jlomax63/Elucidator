@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:html="http://uispin.org/html#"
+    xmlns:ui.ui="http://uispin.org/ui.ui#"
+    xmlns:spin.ui="http://spinrdf.org/spin.ui#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:let="http://uispin.org/let#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://uispin.org/ui.ui">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.1.0</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UISPIN views to render UISPIN class definitions.</rdfs:comment>
+    <owl:imports rdf:resource="http://uispin.org/tui"/>
+    <owl:imports rdf:resource="http://spinrdf.org/spin.ui"/>
+  </owl:Ontology>
+  <rdf:Description rdf:about="http://uispin.org/ui#NodeClass">
+    <ui:instanceView>
+      <html:Div>
+        <ui:child>
+          <ui:if>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >3</ui:childIndex>
+            <ui:child>
+              <html:Pre>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:text>
+                      <ui:label>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >prototype</sp:varName>
+                        </sp:arg1>
+                      </ui:label>
+                    </ui:text>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </ui:TextNode>
+                </ui:child>
+                <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >query</html:class>
+              </html:Pre>
+            </ui:child>
+            <ui:child>
+              <html:H3>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Prototype</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+              </html:H3>
+            </ui:child>
+            <ui:condition>
+              <sp:bound>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >prototype</sp:varName>
+                </sp:arg1>
+              </sp:bound>
+            </ui:condition>
+          </ui:if>
+        </ui:child>
+        <ui:child>
+          <spin.ui:ArgumentsList>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</ui:childIndex>
+            <spin.ui:module rdf:resource="http://spinrdf.org/spin#_this"/>
+          </spin.ui:ArgumentsList>
+        </ui:child>
+        <ui:child>
+          <html:Div>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >1</ui:childIndex>
+            <ui:child>
+              <ui:TextNode>
+                <ui:text>
+                  <spl:object>
+                    <sp:arg2 rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+                    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </spl:object>
+                </ui:text>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </ui:TextNode>
+            </ui:child>
+          </html:Div>
+        </ui:child>
+        <ui:child>
+          <html:H2>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <ui:child>
+              <ui:TextNode>
+                <ui:text>
+                  <ui:encodeNode>
+                    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </ui:encodeNode>
+                </ui:text>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </ui:TextNode>
+            </ui:child>
+          </html:H2>
+        </ui:child>
+        <let:prototype>
+          <spl:object>
+            <sp:arg2 rdf:resource="http://uispin.org/ui#prototype"/>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+          </spl:object>
+        </let:prototype>
+      </html:Div>
+    </ui:instanceView>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

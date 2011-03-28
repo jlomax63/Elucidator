@@ -1,0 +1,1569 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:svg="http://uispin.org/svg#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xlink="http://www.w3.org/1999/xlink#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spl="http://spinrdf.org/spl#"
+  xml:base="http://uispin.org/svg" > 
+  <rdf:Description rdf:nodeID="A0">
+    <spl:predicate rdf:resource="#y1"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of the start of the line. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#alphabetic">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alphabetic</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#fill-rule">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fill-rule</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#role">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">role</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#y">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#g2">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g2</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#glyph-name">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glyph-name</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#rotate">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rotate</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The definition of the outline of a shape. See Path data. An empty attribute value (d="") disables rendering of the element. The lacuna value is the empty string.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Image">
+    <spin:constraint rdf:nodeID="A2"/>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <spin:constraint rdf:nodeID="A3"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'image' element indicates that the contents of an image are to be rendered into a given rectangle within the current user coordinate system.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A4"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#ImageElement"/>
+    <spin:constraint rdf:nodeID="A5"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Image</rdfs:label>
+    <spin:constraint rdf:nodeID="A6"/>
+    <spin:constraint rdf:nodeID="A7"/>
+    <spin:constraint rdf:nodeID="A8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#target">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">target</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <spl:predicate rdf:resource="#ry"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis radius of the ellipse. A negative value is unsupported. A value of zero disables rendering of the element. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#units-per-em">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">units-per-em</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cx">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cx</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#transform">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transform</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#vector-effect">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vector-effect</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">See http://www.w3.org/TR/SVGTiny12/coords.html#PreserveAspectRatioAttribute</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#preserveAspectRatio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-right">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-right</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-up">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-up</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#gradientUnits">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gradient units</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#x">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#mediaSize">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">media size</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#pointer-events">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pointer-events</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#timelineBegin">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">timeline begin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#handler">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">handler</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#overline-position">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overline-position</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#g1">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">g1</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#focusHighlight">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">focus highlight</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#strikethrough-thickness">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">strikethrough-thickness</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#line-increment">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">line-increment</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The authoring length of the path, in user units. This value is used to calibrate the user agent's own distance-along-a-path calculations with that of the author. The user agent shall scale all distance-along-a-path computations by the ratio of 'pathLength' to the user agent's own computed value for total path length. 'pathLength' potentially affects calculations for motion animation and various stroke operations.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#pathLength"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#lang">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lang</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An IRI reference to the image. An invalid IRI reference is an unsupported value. An empty attribute value (xlink:href="") disables rendering of the element. The lacuna value is the empty string.</rdfs:comment>
+    <spl:predicate rdf:resource="http://www.w3.org/1999/xlink#href"/>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Font-face">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Font-face</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#FontFaceElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'font-face' element is an XML structure which corresponds directly to the @font-face facility in CSS2. It can be used to describe the characteristics of any font, SVG font or otherwise.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cy">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cy</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <spl:predicate rdf:resource="#cx"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of the center of the circle. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dur">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dur</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#offset">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">offset</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ideographic">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ideographic</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#class">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Font">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Font</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#FontElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'font' element defines an SVG font.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <spl:predicate rdf:resource="#cy"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of the center of the circle. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#u2">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u2</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#version">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Path">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Path</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A10"/>
+    <spin:constraint rdf:nodeID="A1"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/paths.html#PathElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paths represent the outline of a shape which can be filled or stroked.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Svg">
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#SVGElement"/>
+    <spin:constraint rdf:nodeID="A13"/>
+    <spin:constraint rdf:nodeID="A14"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An SVG document fragment consists of any number of SVG elements contained within an 'svg' element, including the 'svg' element.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A15"/>
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+    <spin:constraint rdf:nodeID="A16"/>
+    <spin:constraint rdf:nodeID="A17"/>
+    <spin:constraint rdf:nodeID="A18"/>
+    <spin:constraint rdf:nodeID="A19"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVG</rdfs:label>
+    <spin:constraint rdf:nodeID="A20"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A21"/>
+    <spin:constraint rdf:nodeID="A22"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#image-rendering">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">image-rendering</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#show">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">show</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#overlay">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overlay</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#strikethrough-position">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">strikethrough-position</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hanging">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hanging</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ContainerElements">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of the various SVG container elements.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Container elements</rdfs:label>
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <spl:predicate rdf:resource="#height"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The intrinsic height of the SVG document fragment.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <spl:predicate rdf:resource="#width"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The width of the rectangular region.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SolidColor">
+    <rdfs:subClassOf rdf:resource="#PaintingElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/painting.html#SolidColorElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'solidColor' element is a paint server that provides a single color with opacity.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solid color</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#y2">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y2</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of the side of the rectangle which has the smaller y-axis coordinate value in the current user coordinate system. The lacuna value is '0'.</rdfs:comment>
+    <spl:predicate rdf:resource="#y"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-width">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-width</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Stop">
+    <rdfs:subClassOf rdf:resource="#PaintingElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/painting.html#StopElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ramp of colors to use on a gradient is defined by the 'stop' elements that are child elements to either the 'linearGradient' element or the 'radialGradient' element.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stop</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-dasharray">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-dasharray</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AnimateMotion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animate motion</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#AnimateMotionElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'animateMotion' element causes its target element to move along a motion path.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#u1">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">u1</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <spl:predicate rdf:resource="#r"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The radius of the circle. A negative value is unsupported. A value of zero disables rendering of the element. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#buffered-rendering">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">buffered-rendering</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AnimationElements">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animation element</rdfs:label>
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract superclass of the various SVG animation elements.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Controls the initialization of the timeline for the document.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#timelineBegin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Glyph">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glyph</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#GlyphElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'glyph' element defines the graphics for a given glyph.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <spl:predicate rdf:resource="#x2"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of the end of the line. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#x-height">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x-height</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#accumulate">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accumulate</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#LinearGradient">
+    <rdfs:subClassOf rdf:resource="#PaintingElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/painting.html#LinearGradientElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linear gradients are defined by a 'linearGradient' element.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linear gradient</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MultimediaElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multimedia elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of SVG multimedia elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#y1">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y1</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RadialGradient">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radial gradient</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/painting.html#RadialGradientElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radial gradients are defined by a 'radialGradient' element.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#PaintingElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This attribute specifies a unique identifier for the element. Because of wider use and compatibility with legacy content and existing user agents (including authoring tools), it is recommended that content intended for use in a Web browser environment use 'id' instead of 'xml:id'.</rdfs:comment>
+    <spl:predicate rdf:resource="#id"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#attributeName">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attribute name</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#origin">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">origin</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#repeatCount">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repeat count</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <spl:predicate rdf:resource="#x"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of one corner of the rectangular region.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#transformBehavior">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transform behavior</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#G">
+    <rdfs:subClassOf rdf:resource="#ContainerElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#GElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'g' element is a container element for grouping together related graphics elements.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-down-right">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-down-right</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#rev">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rev</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#descent">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">descent</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <owl:imports rdf:resource="http://uispin.org/css"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://uispin.org/ui"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A vocabulary to represent Scalable Vector Graphics (SVG) in UISPIN RDF documents. This version supports SVG Tiny 1.2.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1.1</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#color-rendering">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color-rendering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#bbox">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bbox</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AnimateTransform">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animate transform</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#AnimateTransformElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'animateTransform' element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#actuate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">actuate</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Polyline">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polyline</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#PolylineElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'polyline' element defines a set of connected straight line segments.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#stemv">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stemv</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ascent">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ascent</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#viewBox">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">view box</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#opacity">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#rel">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rel</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#A">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVG provides an 'a' element, analogous to HTML's 'a' element, to indicate links (also known as hyperlinks or Web links)</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/linking.html#AElement"/>
+    <rdfs:subClassOf rdf:resource="#ContainerElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#viewport-fill">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viewport-fill</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#rx">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rx</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#syncMaster">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sync master</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#d">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#font-stretch">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">font-stretch</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Defs">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'defs' element is a container element for referenced elements.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#DefsElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#preserveAspectRatio">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preserve aspect ratio</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#solid-opacity">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solid-opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Discard">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discard</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#DiscardElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'discard' element allows authors to specify the time at which particular elements are to be discarded, thereby reducing the resources required by an SVG user agent.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#display-align">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">display-align</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-opacity">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#syncBehaviorDefault">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sync behavior default</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-up-left">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-up-left</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#panose-1">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">panose-1</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Audio">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audio</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/multimedia.html#AudioElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'audio' element specifies an audio file which is to be rendered to provide synchronized audio.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MultimediaElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Metadata">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metadata</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/metadata.html#MetadataElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metadata which is included with SVG content should be specified within 'metadata' elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#DescriptiveElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Tspan">
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/text.html#TSpanElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Within a text content block element, graphic and font properties can be adjusted by including a 'tspan' element.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tspan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#propagate">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">propagate</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ry">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ry</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Video">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Video</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/multimedia.html#VideoElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'video' element specifies a video file which is to be rendered to provide synchronized video.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#MultimediaElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-miterlimit">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-miterlimit</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#stemh">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stemh</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#content">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">content</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Elements">
+    <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A27"/>
+    <spin:constraint rdf:nodeID="A28"/>
+    <spin:constraint rdf:nodeID="A26"/>
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of all SVG elements. Defines common attributes such as id and class.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVG Elements</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#min">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">min</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the default scripting language for the given document. This attribute sets the default scripting language for all the instances of script in the document fragment. This language must be used for all scripts that do not specify their own scripting language. The &lt;content-type&gt; value specifies a media type, per Multipart Internet Mail Extensions: (MIME) Part Two: Media Types [RFC2046]. The lacuna value is "application/ecmascript".</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#contentScriptType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DescriptiveElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descriptive elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of descriptive SVG elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Mpath">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mpath</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#MpathElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'mpath' element is used to reference an existing 'path' element for use as a motion animation path.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-up-right">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-up-right</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AnimateColor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animate color</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'animateColor' element specifies a color transition over time.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#AnimateColorElement"/>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Missing-glyph">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Missing-glyph</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#MissingGlyphElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'missing-glyph' element defines a graphic to use if there is an attempt to draw a glyph from a given font and the given glyph has not been defined.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Hkern">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hkern</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#KernElements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'hkern' element defines kerning pairs for horizontally-oriented pairs of glyphs.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#r">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#snapshotTime">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snapshot time</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#baseProfile">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">base profile</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#syncToleranceDefault">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sync tolerance default</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#audio-level">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">audio-level</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#requiredExtensions">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">required extensions</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#pathLength">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path length</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-dashoffset">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-dashoffset</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#additive">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">additive</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-prev">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-prev</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <spl:predicate rdf:resource="#y2"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of the end of the line. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#to">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GraphicsElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Graphics elements</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <spl:predicate rdf:resource="#cy"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of the center of the ellipse. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#zoomAndPan">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zoom and pan</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#externalResourcesRequired">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external resources required</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">See http://www.w3.org/TR/SVGTiny12/coords.html#PreserveAspectRatioAttribute</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#preserveAspectRatio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#arabic-form">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arabic-form</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#keySplines">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">key splines</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#width">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">width</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Circle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'circle' element defines a circle based on a center point and a radius.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#CircleElement"/>
+    <spin:constraint rdf:nodeID="A24"/>
+    <spin:constraint rdf:nodeID="A12"/>
+    <spin:constraint rdf:nodeID="A11"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Circle</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#syncTolerance">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sync tolerance</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#observer">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observer</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <spl:predicate rdf:resource="#x"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If a single &lt;coordinate&gt; is provided, then the value represents the new absolute X coordinate for the current text position for rendering the glyphs that correspond to the first character within this element or any of its descendants.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#viewport-fill-opacity">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viewport-fill-opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#solid-color">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solid-color</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#horiz-origin-x">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horiz-origin-x</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">See http://www.w3.org/TR/SVGTiny12/interact.html#ZoomAndPanAttribute</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#zoomAndPan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates a moment in time which is most relevant for a still-image of the animated SVG content. This time may be used as a hint to the SVG user agent for rendering a still-image of an animated SVG document, such as a preview. A value of 'none' means that no 'snapshotTime' is available. See example 05_22 for an example of using the 'snapshotTime' attribute.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#snapshotTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#typeof">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">typeof</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#fontFamily">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">font family</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#fill">
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fill</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#calcMode">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calc mode</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Switch">
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#SwitchElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'switch' element is a container element that can be used to select one of its child elements to process based on their conditional processing attributes.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#StructuralElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structural elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of the SCG structural elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#unicode">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unicode</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Tbreak">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tbreak</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/text.html#tbreakElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'tbreak' element is an empty element that forcibly breaks the current line of text, even if the current line of text is empty (i.e. multiple consecutive 'tbreak' elements each cause a line break.)</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#bandwidth">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bandwidth</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Font-face-src">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Font-face-src</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#FontFaceSrcElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'font-face-src' element, together with the 'font-face-uri' elements described further down correspond to the 'src' descriptor within an @font-face rule.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#underline-thickness">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underline-thickness</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stop-color">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stop-color</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#type">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <spl:predicate rdf:resource="#y"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The y-axis coordinate of one corner of the rectangular region.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Animation">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/multimedia.html#AnimationElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'animation' elements specifies an SVG document providing synchronized animated vector graphics.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#systemLanguage">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">system language</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-down">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-down</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#keyPoints">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">key points</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-left">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-left</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#accent-height">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accent-height</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <spl:predicate rdf:resource="#rx"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis radius of the ellipse. A negative value is unsupported. A value of zero disables rendering of the element. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Attribute">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribute</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#type">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#attributeType">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attribute type</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#begin">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">begin</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Text">
+    <spin:constraint rdf:nodeID="A31"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'text' element defines a graphics element consisting of text.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A33"/>
+    <spin:constraint rdf:nodeID="A34"/>
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/text.html#TextElement"/>
+    <spin:constraint rdf:nodeID="A35"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A36"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stop-opacity">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stop-opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#resource">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">resource</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#slope">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slope</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Title">
+    <rdfs:subClassOf rdf:resource="#DescriptiveElements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Each container element or graphics element in an SVG document may contain one or more of each of the 'title' and 'desc' descriptive elements, which together comprise a sort of heading and summary of the containing element.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#TitleAndDescriptionElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#restart">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restart</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#underline-position">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underline-position</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#text-rendering">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text-rendering</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#from">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">from</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hint about the expected Internet Media Type of the raster image. Implementations may choose to not fetch images of formats that they do not support. Note that if an Internet Media type returned by the server, the server metadata is authoritative over the type attribute. See Metadata hints in specifications in the Authoritative Metadata TAG finding ([MIME-RESPECT], section 5). To ensure that a user agent only downloads media in formats that it supports, thus optimizing download time and bandwidth usage, authors are encouraged to use 'requiredFormats', instead of 'type'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Listener">
+    <rdfs:subClassOf rdf:resource="#ScriptingElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/script.html#ListenerElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'listener' element from XML Events [XML-EVENTS] must be supported.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Listener</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#about">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">about</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#id">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">id</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#requiredFonts">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">required fonts</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#shape-rendering">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shape-rendering</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The height of the rectangle. A negative value is unsupported. A value of zero disables rendering of the element. The lacuna value is '0'.</rdfs:comment>
+    <spl:predicate rdf:resource="#height"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#requiredFormats">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">required formats</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#phase">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phase</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#overline-thickness">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overline-thickness</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Handler">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handler</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/script.html#HandlerElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'handler' element is similar to the 'script' element: its contents, either included inline or referenced, is code that is to be executed by a scripting engine used by user agent.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#ScriptingElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TextElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of the SVG text elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#color">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Polygon">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polygon</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#PolygonElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'polygon' element defines a closed shape consisting of a set of connected straight line segments.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#points">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">points</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Script">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Script</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/script.html#ScriptElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 'script' element may either contain or point to executable content (e.g., ECMAScript or Java JAR file).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#ScriptingElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-linecap">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-linecap</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <spl:predicate rdf:resource="#rx"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For rounded rectangles, the x-axis radius of the ellipse used to round off the corners of the rectangle. A negative value is unsupported. See the notes below about what happens if the attribute is not specified.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Desc">
+    <rdfs:subClassOf rdf:resource="#DescriptiveElements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Desc</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#TitleAndDescriptionElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#datatype">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datatype</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Use">
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#UseElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any 'g' or graphics element is potentially a template object that can be re-used (i.e. "instantiated") in the SVG document via a 'use' element, thus creating an instance tree.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#k">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">k</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Prefetch">
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/struct.html#PrefetchElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVG Tiny 1.2 adds functionality to allow content developers to suggest prefetching content from the server before it is needed to improve the rendering performance of the document.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prefetch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-down-left">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-down-left</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#arcrole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arcrole</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#keyTimes">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">key times</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#attributes">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base property to group all SVG attributes.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attributes</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This attribute indicates the supplemental rotation about the alignment-point that must be applied to the glyphs corresponding to characters within this element according to the following rules:</rdfs:comment>
+    <spl:predicate rdf:resource="#rotate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#initialVisibility">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">initial visibility</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Line">
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#LineElement"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A29"/>
+    <spin:constraint rdf:nodeID="A0"/>
+    <spin:constraint rdf:nodeID="A25"/>
+    <spin:constraint rdf:nodeID="A39"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Line</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'line' element defines a line segment that starts at one point and ends at another.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of the side of the rectangle which has the smaller x-axis coordinate value in the current user coordinate system. The lacuna value is '0'.</rdfs:comment>
+    <spl:predicate rdf:resource="#x"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#mediaCharacterEncoding">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">media character encoding</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <spl:predicate rdf:resource="#height"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The height of the rectangular region.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Animate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Animate</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#AnimateElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'animate' element is used to animate a single attribute or property over time.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#FontElements">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Font elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of SVG font elements.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#horiz-adv-x">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horiz-adv-x</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#text-anchor">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text-anchor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nav-next">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nav-next</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#repeatDur">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repeat dur</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <spl:predicate rdf:resource="#x1"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of the start of the line. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether it is possible to seek backwards in the document. In earlier versions of SVG there was no need to put restrictions on the direction of seeking but with the newly introduced facilities for long-running documents (e.g. the 'discard' element) there is sometimes a need to restrict this.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#playbackOrder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#mathematical">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mathematical</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#cap-height">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cap-height</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#mediaTime">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">media time</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Rect">
+    <spin:constraint rdf:nodeID="A37"/>
+    <spin:constraint rdf:nodeID="A41"/>
+    <spin:constraint rdf:nodeID="A42"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <spin:constraint rdf:nodeID="A40"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#RectElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'rect' element defines a rectangle which is axis-aligned with the current user coordinate system.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+    <spin:constraint rdf:nodeID="A23"/>
+    <spin:constraint rdf:nodeID="A38"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rect</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <spl:predicate rdf:resource="#y"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The corresponding list of absolute Y coordinates for the glyphs corresponding to the characters within this element. The processing rules for the 'y' attribute parallel the processing rules for the 'x' attribute.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#defaultAction">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">default action</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#property">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">property</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This attribute indicates whether the text can be edited. See the definition of the 'editable' attribute.</rdfs:comment>
+    <spl:predicate rdf:resource="#editable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#widths">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">widths</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#role">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">role</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The width of the rectangle. A negative value is unsupported. A value of zero disables rendering of the element. The lacuna value is '0'.</rdfs:comment>
+    <spl:predicate rdf:resource="#width"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#editable">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">editable</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#playbackOrder">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">playback order</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#stroke-linejoin">
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke-linejoin</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#end">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">end</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the SVG language version to which this document fragment conforms.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#version"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assigns one or more class names to an element.</rdfs:comment>
+    <spl:predicate rdf:resource="#class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#by">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">by</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <spl:predicate rdf:resource="#cx"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The x-axis coordinate of the center of the ellipse. The lacuna value is '0'.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#x1">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x1</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Font-face-uri">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Font-face-uri</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/fonts.html#FontFaceUriElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'font-face-uri' element is used within a 'font-face-src' element to reference a font defined inside or outside of the current SVG document.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FontElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#values">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">values</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#requiredFeatures">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">required features</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <spl:predicate rdf:resource="http://uispin.org/ui#text"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The text string.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes the minimum SVG language profile that the author believes is necessary to correctly render the content. See rules for baseProfile processing for further instructions.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <spl:predicate rdf:resource="#baseProfile"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Set">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Set</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/animate.html#SetElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'set' element provides a simple means of just setting the value of an attribute for a specified duration.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#AnimationElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#title">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uispin.org/css#fill-opacity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fill-opacity</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/css#properties"/>
+    <rdf:type rdf:resource="http://uispin.org/ui#StyleProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PaintingElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Painting elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of SVG painting elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <spl:predicate rdf:resource="#ry"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">For rounded rectangles, the y-axis radius of the ellipse used to round off the corners of the rectangle. A negative value is unsupported. See the notes below about what happens if the attribute is not specified.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'content' attribute provides a plain text value that may be suitable for humans, or may be machine-readable, or both, depending on the context.</rdfs:comment>
+    <spl:predicate rdf:resource="#content"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#unicode-range">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unicode-range</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#x2">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x2</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TextArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text area</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/text.html#TextAreaElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'textArea' element allows simplistic wrapping of text content within a given region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#TextElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ForeignObject">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foreign object</rdfs:label>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/extend.html#ForeignObjectElement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'foreignObject' element is an extensibility point which allows user agents to offer graphical rendering features beyond those which are defined within this specification.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#StructuralElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#focusable">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">focusable</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#contentScriptType">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">content script type</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Ellipse">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 'ellipse' element defines an ellipse which is axis-aligned with the current user coordinate system based on a center point and two radii.</rdfs:comment>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/SVGTiny12/shapes.html#EllipseElement"/>
+    <spin:constraint rdf:nodeID="A9"/>
+    <spin:constraint rdf:nodeID="A32"/>
+    <spin:constraint rdf:nodeID="A30"/>
+    <spin:constraint rdf:nodeID="A43"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ellipse</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#GraphicsElements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/xlink#href">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">href</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#mediaContentEncodings">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">media content encodings</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ScriptingElements">
+    <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ui:abstract>
+    <rdf:type rdf:resource="http://uispin.org/ui#NodeClass"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scripting elements</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract base class of SVG scripting elements.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#max">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">max</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <spl:predicate rdf:resource="#width"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The intrinsic width of the SVG document fragment. Together with the 'height', 'viewBox' and 'preserveAspectRatio' attributes it defines the intrinsic aspect ratio and (unless both width and height are percentages) the intrinsic size of the svg element. See The initial viewport.</rdfs:comment>
+    <rdf:type rdf:resource="http://spinrdf.org/spl#Argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#syncBehavior">
+    <rdf:type rdf:resource="#Attribute"/>
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sync behavior</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="#height">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">height</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#path">
+    <rdfs:subPropertyOf rdf:resource="#attributes"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path</rdfs:label>
+    <rdf:type rdf:resource="#Attribute"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

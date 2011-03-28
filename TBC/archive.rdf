@@ -1,0 +1,137 @@
+Archive:toXML() started
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:mage="http://mdanderson.org/mage#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:tcga="http://mdanderson.org/tcga#"
+>
+  <rdf:Description rdf:nodeID="av1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveVersion"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#hasArchiveVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_creation_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdanderson.org/tcga#ArchiveName"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#Archive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="a3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CreationDateTime2009-10-013-45AM">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#CreationDateTime"/>
+    <tcga:has_date_time>2009-10-01 3:45AM</tcga:has_date_time>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="an1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="av1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_date_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/JimLomax">
+    <foaf:surname>Lomax</foaf:surname>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:firstName>Jim</foaf:firstName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#hasArchiveVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdanderson.org/tcga#archiveVersionOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://mdanderson.org/mage#has_version"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchiveVersion1-1-0">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveVersion"/>
+    <mage:has_name>1.1.0</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="an1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/mage#has_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/mage#has_date_time">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage1">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchivePackage"/>
+    <mage:has_name>ArchivePackage1</mage:has_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#archive-test-nameArchive">
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#Archive"/>
+    <tcga:has_version rdf:resource="http://mdanderson.org/tcga#ArchiveVersion1-1-0"/>
+    <mage:has_name rdf:resource="http://mdanderson.org/tcga#archive-test-name"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <tcga:has_creation_date rdf:resource="http://mdanderson.org/tcga#CreationDateTime2009-10-013-45AM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#archive-test-name">
+    <mage:has_name>archive-test-name</mage:has_name>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#ArchiveName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#CreationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#DateTime"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#DateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="dt1"/>
+    <rdfs:subClassOf rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TemporalPackage1">
+    <mage:has_name>TemporalPackage1</mage:has_name>
+    <rdf:type rdf:resource="http://mdanderson.org/tcga#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#archiveVersionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#ArchivePackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#has_creation_date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://mdanderson.org/tcga#has_date_time"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdanderson.org/tcga#TemporalPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+</rdf:RDF>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:ss="http://www.topbraidcomposer.org/owl/2006/08/spreadsheets.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.topbraidcomposer.org/owl/2006/08/spreadsheets.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A generic ontology to describe spreadsheets (in particular for formats like Excel).</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Workbook"/>
+  <owl:Class rdf:ID="Sheet"/>
+  <owl:Class rdf:ID="Cell"/>
+  <owl:ObjectProperty rdf:ID="hyperlink">
+    <rdfs:domain rdf:resource="#Cell"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="workbook">
+    <rdfs:range rdf:resource="#Workbook"/>
+    <rdfs:domain rdf:resource="#Sheet"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="cellType">
+    <rdfs:domain rdf:resource="#Cell"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="cell">
+    <rdfs:range rdf:resource="#Cell"/>
+    <rdfs:domain rdf:resource="#Sheet"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:ID="cellContents">
+    <rdfs:domain rdf:resource="#Cell"/>
+  </rdf:Property>
+  <owl:DatatypeProperty rdf:ID="column">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Cell"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hidden">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Cell"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="row">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Cell"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="sheetIndex">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Sheet"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

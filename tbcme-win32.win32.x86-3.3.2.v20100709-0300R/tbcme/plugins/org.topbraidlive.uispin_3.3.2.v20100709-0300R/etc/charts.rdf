@@ -1,0 +1,2544 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:html="http://uispin.org/html#"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:letrs="http://uispin.org/letrs#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:smf="http://topbraid.org/sparqlmotionfunctions#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:spr="http://spinrdf.org/spr#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:let="http://uispin.org/let#"
+    xmlns:spl="http://spinrdf.org/spl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:charts="http://uispin.org/charts#"
+  xml:base="http://uispin.org/charts">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.3.1</owl:versionInfo>
+    <owl:imports rdf:resource="http://uispin.org/html"/>
+  </owl:Ontology>
+  <rdfs:Class rdf:ID="ParameterProperty">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Parameter property</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:ID="minRange">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:ID="properties"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min range</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="label">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >label</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#properties"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="height">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >height</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#properties"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="width">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >width</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#properties"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="argsResultSet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >args result set</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/ui#resultSet"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="#properties">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >charts properties</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="baseURL">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >base URL</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="horizontal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >horizontal</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="maxRange">
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max range</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="parameterName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >parameter name</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Can be used to mark UISPIN argument properties so that they are mapped against URL arguments.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ParameterProperty"/>
+  </rdf:Property>
+  <owl:FunctionalProperty rdf:ID="gradientStart">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gradient start</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="gradientEnd">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gradient end</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#properties"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </owl:FunctionalProperty>
+  <ui:NodeClass rdf:ID="MapChart">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#label"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >An optional label of the Map chart.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="ChartElement">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chart element</rdfs:label>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abstract base class to group together the various kinds of officially supported charts elements. There are other element classes here but these are meant for internal use only.</rdfs:comment>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Map chart</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Displays a world map with selected countries colored to reflect individual values. The map is driven by a SPARQL query that has the country codes as first column and the values as second column.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#gradientStart"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The start gradient encoded as hexadecimal number, e.g. FF0000 for red.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >FF0000</spl:defaultValue>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#gradientEnd"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The end gradient encoded as hexadecimal number, e.g. FF0000 for red.</rdfs:comment>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >0000FF</spl:defaultValue>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype>
+      <charts:GoogleChartImg>
+        <charts:chco>
+          <fn:concat>
+            <sp:arg1>BEBEBE,</sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >gradientStart</sp:varName>
+            </sp:arg2>
+            <sp:arg3>,</sp:arg3>
+            <sp:arg4 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >gradientEnd</sp:varName>
+            </sp:arg4>
+          </fn:concat>
+        </charts:chco>
+        <charts:chd>
+          <charts:dataList>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >resultSet</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >1</sp:arg2>
+          </charts:dataList>
+        </charts:chd>
+        <charts:chld>
+          <spr:aggregateCol>
+            <sp:arg1>
+              <spr:Aggregator rdf:ID="UppercaseStringList">
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Creates a list of uppercase strings with no separator.</rdfs:comment>
+                <spr:startValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                ></spr:startValue>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Uppercase string list</rdfs:label>
+                <spr:stepFunction>
+                  <spin:Function rdf:ID="UppercaseStringListAggregatorStepFunction">
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Uppercase string list aggregator step function</rdfs:label>
+                    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#AggregatorStepFunctions"/>
+                    <spin:body>
+                      <sp:Select>
+                        <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <sp:resultVariables rdf:parseType="Collection">
+                          <smf:if>
+                            <sp:arg1>
+                              <sp:gt>
+                                <sp:arg1>
+                                  <fn:string-length>
+                                    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                  </fn:string-length>
+                                </sp:arg1>
+                                <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                >0</sp:arg2>
+                              </sp:gt>
+                            </sp:arg1>
+                            <sp:arg2>
+                              <fn:concat>
+                                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                <sp:arg2>
+                                  <fn:upper-case>
+                                    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                                  </fn:upper-case>
+                                </sp:arg2>
+                              </fn:concat>
+                            </sp:arg2>
+                            <sp:arg3>
+                              <fn:upper-case>
+                                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                              </fn:upper-case>
+                            </sp:arg3>
+                          </smf:if>
+                        </sp:resultVariables>
+                      </sp:Select>
+                    </spin:body>
+                  </spin:Function>
+                </spr:stepFunction>
+              </spr:Aggregator>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >resultSet</sp:varName>
+            </sp:arg2>
+            <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:arg3>
+          </spr:aggregateCol>
+        </charts:chld>
+        <charts:chs>
+          <charts:wxh>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >width</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >height</sp:varName>
+            </sp:arg2>
+          </charts:wxh>
+        </charts:chs>
+        <charts:cht rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >t</charts:cht>
+        <charts:chtm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >world</charts:chtm>
+        <charts:chtt rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >label</sp:varName>
+        </charts:chtt>
+      </charts:GoogleChartImg>
+    </ui:prototype>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <ui:clientSideData rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:clientSideData>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The query delivering the value for each country. This must be a SELECT query that has two result variables: the first is the country code (e.g. "de" for Germany" and the second is the numeric value.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Map">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A (dynamic) Map, usually implements as Google Map. The map is driven by a SPARQL SELECT query delivering lat and long values, and (optionally) icons and links to resources. If links are provided then the summary resource view of the target resource will be shown in the popup windows.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A string of the format "lat,long" defining the center of the map.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="center">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >center</rdfs:label>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >center</charts:parameterName>
+            <rdfs:subPropertyOf>
+              <charts:ParameterProperty rdf:ID="parameterProperties">
+                <rdfs:subPropertyOf rdf:resource="#properties"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >parameter properties</rdfs:label>
+              </charts:ParameterProperty>
+            </rdfs:subPropertyOf>
+          </charts:ParameterProperty>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Map</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A SELECT query that defines the position and behavior of the markers on the map. The query must return the variables ?lat and ?long to contain the coordinate of the marker. Optionally, the variable ?link can point to a resource. If ?link is provided, the map will display a summary resource view for the resources. Finally, the variable ?icon can be returned to specify the icon to be used for the markers.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype>
+      <html:Div>
+        <let:id>
+          <ui:uniqueId/>
+        </let:id>
+        <ui:child>
+          <html:Div>
+            <html:id rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >id</sp:varName>
+            </html:id>
+            <let:cent>
+              <smf:if>
+                <sp:arg1>
+                  <sp:bound>
+                    <sp:arg1>
+                      <rdf:Description rdf:nodeID="A0">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >center</sp:varName>
+                      </rdf:Description>
+                    </sp:arg1>
+                  </sp:bound>
+                </sp:arg1>
+                <sp:arg2 rdf:nodeID="A0"/>
+                <sp:arg3>
+                  <charts:findCenter>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >resultSet</sp:varName>
+                    </sp:arg1>
+                  </charts:findCenter>
+                </sp:arg3>
+              </smf:if>
+            </let:cent>
+            <html:style>
+              <fn:concat>
+                <sp:arg1>width: </sp:arg1>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >width</sp:varName>
+                </sp:arg2>
+                <sp:arg3>px; height: </sp:arg3>
+                <sp:arg4 rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >height</sp:varName>
+                </sp:arg4>
+                <sp:arg5>px</sp:arg5>
+              </fn:concat>
+            </html:style>
+            <ui:child>
+              <html:Script>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</ui:childIndex>
+                    <ui:text rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >id</sp:varName>
+                    </ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >var map = new GMap2(document.getElementById("</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >6</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >);
+map.setUIToDefault();</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <html:type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >text/javascript</html:type>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >5</ui:childIndex>
+                    <ui:text>
+                      <smf:if>
+                        <sp:arg1>
+                          <sp:bound>
+                            <sp:arg1>
+                              <rdf:Description rdf:nodeID="A1">
+                                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >zoom</sp:varName>
+                              </rdf:Description>
+                            </sp:arg1>
+                          </sp:bound>
+                        </sp:arg1>
+                        <sp:arg2 rdf:nodeID="A1"/>
+                        <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >13</sp:arg3>
+                      </smf:if>
+                    </ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >3</ui:childIndex>
+                    <ui:text rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >cent</sp:varName>
+                    </ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:child>
+                  <ui:forEach>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >1</ui:childIndex>
+                        <ui:text rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >lat</sp:varName>
+                        </ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >7</ui:childIndex>
+                        <ui:text rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >i</sp:varName>
+                        </ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:indexVar rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >i</ui:indexVar>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >2</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >, </ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >4</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >);
+var options = {};</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >12</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >);</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >8</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        > = new GMarker(pos, options);</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >3</ui:childIndex>
+                        <ui:text rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >long</sp:varName>
+                        </ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >6</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >var marker</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >7</ui:childIndex>
+                    <ui:child>
+                      <ui:if>
+                        <ui:condition>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >icon</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </ui:condition>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >var customIcon = new GIcon(G_DEFAULT_ICON);
+customIcon.image = "</ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >1</ui:childIndex>
+                            <ui:text>
+                              <xsd:string>
+                                <sp:arg1 rdf:parseType="Resource">
+                                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >icon</sp:varName>
+                                </sp:arg1>
+                              </xsd:string>
+                            </ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >2</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >";
+options = { icon:customIcon };</ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >5</ui:childIndex>
+                      </ui:if>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >10</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >map.addOverlay(marker</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:resultSet rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >resultSet</sp:varName>
+                    </ui:resultSet>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >11</ui:childIndex>
+                        <ui:text rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >i</sp:varName>
+                        </ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                    <ui:child>
+                      <ui:if>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >9</ui:childIndex>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >4</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >");
+var copy = dom.childNodes[1].cloneNode(true);
+marker</ui:text>          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >6</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >.openInfoWindow(copy);
+  });</ui:text>           </ui:TextNode>
+                        </ui:child>
+                        <ui:condition>
+                          <sp:bound>
+                            <sp:arg1 rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >link</sp:varName>
+                            </sp:arg1>
+                          </sp:bound>
+                        </ui:condition>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >GEvent.addListener(marker</ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >5</ui:childIndex>
+                            <ui:text rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >i</sp:varName>
+                            </ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >3</ui:childIndex>
+                            <ui:text>
+                              <charts:idForResource>
+                                <sp:arg1 rdf:parseType="Resource">
+                                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >link</sp:varName>
+                                </sp:arg1>
+                              </charts:idForResource>
+                            </ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >1</ui:childIndex>
+                            <ui:text rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >i</sp:varName>
+                            </ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                        <ui:child>
+                          <ui:TextNode>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >2</ui:childIndex>
+                            <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >, "click", function() {
+var dom = document.getElementById("</ui:text>
+                          </ui:TextNode>
+                        </ui:child>
+                      </ui:if>
+                    </ui:child>
+                    <ui:child>
+                      <ui:TextNode>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</ui:childIndex>
+                        <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >var pos = new GLatLng(</ui:text>
+                      </ui:TextNode>
+                    </ui:child>
+                  </ui:forEach>
+                </ui:child>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >2</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >"));
+map.setCenter(new GLatLng(</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >4</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >), </ui:text>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </html:Script>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </html:Div>
+        </ui:child>
+        <ui:child>
+          <ui:CommentNode>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            > Prepare child nodes so that they can be cloned into pop-ups </rdfs:comment>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >1</ui:childIndex>
+          </ui:CommentNode>
+        </ui:child>
+        <ui:child>
+          <ui:forEach>
+            <ui:resultSet rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >resultSet</sp:varName>
+            </ui:resultSet>
+            <ui:child>
+              <ui:if>
+                <ui:condition>
+                  <sp:bound>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >link</sp:varName>
+                    </sp:arg1>
+                  </sp:bound>
+                </ui:condition>
+                <ui:child>
+                  <html:Div>
+                    <html:id>
+                      <charts:idForResource>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >link</sp:varName>
+                        </sp:arg1>
+                      </charts:idForResource>
+                    </html:id>
+                    <html:style rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >display: none</html:style>
+                    <ui:child>
+                      <html:Div>
+                        <html:style rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >max-width:400px; max-height:150px; overflow:hidden</html:style>
+                        <ui:child>
+                          <ui:resourceView>
+                            <ui:matchIds rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >summary</ui:matchIds>
+                            <ui:resource rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >link</sp:varName>
+                            </ui:resource>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</ui:childIndex>
+                          </ui:resourceView>
+                        </ui:child>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</ui:childIndex>
+                      </html:Div>
+                    </ui:child>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </html:Div>
+                </ui:child>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </ui:if>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</ui:childIndex>
+          </ui:forEach>
+        </ui:child>
+      </html:Div>
+    </ui:prototype>
+    <ui:headIncludes>
+      <ui:let>
+        <ui:child>
+          <html:Script>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <html:src>
+              <fn:concat>
+                <sp:arg2 rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >key</sp:varName>
+                </sp:arg2>
+                <sp:arg1>http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=</sp:arg1>
+              </fn:concat>
+            </html:src>
+          </html:Script>
+        </ui:child>
+        <let:key>
+          <ui:systemPreference>
+            <sp:arg1>GoogleMapsAPIKey</sp:arg1>
+          </ui:systemPreference>
+        </let:key>
+      </ui:let>
+    </ui:headIncludes>
+    <rdfs:subClassOf rdf:resource="#ChartElement"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The zoom level of the map.</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >13</spl:defaultValue>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="zoom">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >zoom</rdfs:label>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >zoom</charts:parameterName>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+          </charts:ParameterProperty>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#width"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The width of the map in pixels.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Div"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#height"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The height of the map in pixels.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="BarChart">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bar chart</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The (optional) label of the chart.</rdfs:comment>
+        <spl:predicate rdf:resource="#label"/>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype>
+      <charts:GoogleChartImg>
+        <charts:chd>
+          <charts:dataList>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >resultSet</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:arg2>
+          </charts:dataList>
+        </charts:chd>
+        <charts:chs>
+          <charts:wxh>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >width</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >height</sp:varName>
+            </sp:arg2>
+          </charts:wxh>
+        </charts:chs>
+        <charts:cht>
+          <smf:if>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >horizontal</sp:varName>
+            </sp:arg1>
+            <sp:arg2>bhs</sp:arg2>
+            <sp:arg3>bvs</sp:arg3>
+          </smf:if>
+        </charts:cht>
+        <charts:chtt rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >label</sp:varName>
+        </charts:chtt>
+        <charts:chxl>
+          <sp:Select>
+            <sp:where rdf:parseType="Collection">
+              <sp:Filter>
+                <sp:expression>
+                  <sp:gt>
+                    <sp:arg1>
+                      <spr:colCount>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A2">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >resultSet</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </spr:colCount>
+                    </sp:arg1>
+                    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</sp:arg2>
+                  </sp:gt>
+                </sp:expression>
+              </sp:Filter>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A3">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >aggr</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1>
+                      <rdf:Description rdf:nodeID="A4">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >horizontal</sp:varName>
+                      </rdf:Description>
+                    </sp:arg1>
+                    <sp:arg2>
+                      <spr:Aggregator rdf:ID="InvLineSeparatedLabelList">
+                        <spr:startValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        ></spr:startValue>
+                        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Inv line separated label list</rdfs:label>
+                        <spr:stepFunction>
+                          <spin:Function rdf:ID="InvLineSeparatedLabelListAggregatorStepFunction">
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Inv line separated label list aggregator step function</rdfs:label>
+                            <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                            <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#AggregatorStepFunctions"/>
+                            <spin:body>
+                              <sp:Select>
+                                <sp:where rdf:parseType="Collection">
+                                  <sp:Let>
+                                    <sp:variable>
+                                      <rdf:Description rdf:nodeID="A5">
+                                        <sp:varName rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >label</sp:varName>
+                                      </rdf:Description>
+                                    </sp:variable>
+                                    <sp:expression>
+                                      <ui:label>
+                                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                                      </ui:label>
+                                    </sp:expression>
+                                  </sp:Let>
+                                  <sp:Let>
+                                    <sp:variable>
+                                      <rdf:Description rdf:nodeID="A6">
+                                        <sp:varName rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >result</sp:varName>
+                                      </rdf:Description>
+                                    </sp:variable>
+                                    <sp:expression>
+                                      <smf:if>
+                                        <sp:arg1>
+                                          <sp:gt>
+                                            <sp:arg1>
+                                              <fn:string-length>
+                                                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                              </fn:string-length>
+                                            </sp:arg1>
+                                            <sp:arg2 rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >0</sp:arg2>
+                                          </sp:gt>
+                                        </sp:arg1>
+                                        <sp:arg2>
+                                          <fn:concat>
+                                            <sp:arg1 rdf:nodeID="A5"/>
+                                            <sp:arg2>|</sp:arg2>
+                                            <sp:arg3 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                          </fn:concat>
+                                        </sp:arg2>
+                                        <sp:arg3 rdf:nodeID="A5"/>
+                                      </smf:if>
+                                    </sp:expression>
+                                  </sp:Let>
+                                </sp:where>
+                                <sp:resultVariables rdf:parseType="Collection">
+                                  <rdf:Description rdf:nodeID="A6"/>
+                                </sp:resultVariables>
+                              </sp:Select>
+                            </spin:body>
+                          </spin:Function>
+                        </spr:stepFunction>
+                      </spr:Aggregator>
+                    </sp:arg2>
+                    <sp:arg3>
+                      <spr:Aggregator rdf:ID="LineSeparatedLabelList">
+                        <spr:startValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        ></spr:startValue>
+                        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Line separated label list</rdfs:label>
+                        <spr:stepFunction>
+                          <spin:Function rdf:ID="LineSeparatedLabelListAggregatorStepFunction">
+                            <spin:body>
+                              <sp:Select>
+                                <sp:where rdf:parseType="Collection">
+                                  <sp:Let>
+                                    <sp:variable>
+                                      <rdf:Description rdf:nodeID="A7">
+                                        <sp:varName rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >label</sp:varName>
+                                      </rdf:Description>
+                                    </sp:variable>
+                                    <sp:expression>
+                                      <ui:label>
+                                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+                                      </ui:label>
+                                    </sp:expression>
+                                  </sp:Let>
+                                  <sp:Let>
+                                    <sp:variable>
+                                      <rdf:Description rdf:nodeID="A8">
+                                        <sp:varName rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >result</sp:varName>
+                                      </rdf:Description>
+                                    </sp:variable>
+                                    <sp:expression>
+                                      <smf:if>
+                                        <sp:arg2>
+                                          <fn:concat>
+                                            <sp:arg3 rdf:nodeID="A7"/>
+                                            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                            <sp:arg2>|</sp:arg2>
+                                          </fn:concat>
+                                        </sp:arg2>
+                                        <sp:arg3 rdf:nodeID="A7"/>
+                                        <sp:arg1>
+                                          <sp:gt>
+                                            <sp:arg1>
+                                              <fn:string-length>
+                                                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                                              </fn:string-length>
+                                            </sp:arg1>
+                                            <sp:arg2 rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >0</sp:arg2>
+                                          </sp:gt>
+                                        </sp:arg1>
+                                      </smf:if>
+                                    </sp:expression>
+                                  </sp:Let>
+                                </sp:where>
+                                <sp:resultVariables rdf:parseType="Collection">
+                                  <rdf:Description rdf:nodeID="A8"/>
+                                </sp:resultVariables>
+                              </sp:Select>
+                            </spin:body>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Line separated label list aggregator step function</rdfs:label>
+                            <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#AggregatorStepFunctions"/>
+                            <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                          </spin:Function>
+                        </spr:stepFunction>
+                      </spr:Aggregator>
+                    </sp:arg3>
+                  </smf:if>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A9">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >labels</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <spr:aggregateCol>
+                    <sp:arg1 rdf:nodeID="A3"/>
+                    <sp:arg2 rdf:nodeID="A2"/>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</sp:arg3>
+                  </spr:aggregateCol>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A10">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >index</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1 rdf:nodeID="A4"/>
+                    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</sp:arg2>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</sp:arg3>
+                  </smf:if>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A11">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >result</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <fn:concat>
+                    <sp:arg1 rdf:nodeID="A10"/>
+                    <sp:arg2>:|</sp:arg2>
+                    <sp:arg3 rdf:nodeID="A9"/>
+                  </fn:concat>
+                </sp:expression>
+              </sp:Let>
+            </sp:where>
+            <sp:resultVariables rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="A11"/>
+            </sp:resultVariables>
+          </sp:Select>
+        </charts:chxl>
+        <charts:chxr>
+          <sp:Select>
+            <sp:where rdf:parseType="Collection">
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A12">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >min</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A13">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >minRange</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                    <sp:arg2 rdf:nodeID="A13"/>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</sp:arg3>
+                  </smf:if>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A14">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >max</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1>
+                      <sp:bound>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A15">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >maxRange</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </sp:bound>
+                    </sp:arg1>
+                    <sp:arg2 rdf:nodeID="A15"/>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >100</sp:arg3>
+                  </smf:if>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A16">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >index</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <smf:if>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >horizontal</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</sp:arg2>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</sp:arg3>
+                  </smf:if>
+                </sp:expression>
+              </sp:Let>
+              <sp:Let>
+                <sp:variable>
+                  <rdf:Description rdf:nodeID="A17">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >result</sp:varName>
+                  </rdf:Description>
+                </sp:variable>
+                <sp:expression>
+                  <fn:concat>
+                    <sp:arg1 rdf:nodeID="A16"/>
+                    <sp:arg2>,</sp:arg2>
+                    <sp:arg3 rdf:nodeID="A12"/>
+                    <sp:arg4>,</sp:arg4>
+                    <sp:arg5 rdf:nodeID="A14"/>
+                  </fn:concat>
+                </sp:expression>
+              </sp:Let>
+            </sp:where>
+            <sp:resultVariables rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="A17"/>
+            </sp:resultVariables>
+          </sp:Select>
+        </charts:chxr>
+        <charts:chxt rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >x,y</charts:chxt>
+      </charts:GoogleChartImg>
+    </ui:prototype>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#minRange"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The minimum range on the axis.</rdfs:comment>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0</spl:defaultValue>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#horizontal"/>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</spl:defaultValue>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Specifies whether the bars shall be laid out horizontal or vertical (default).</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ChartElement"/>
+    <spin:constraint>
+      <spl:Argument>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The SELECT query delivering the values (first result variable) and the labels (second result variable). The values must be normalized to the range of 0-100.</rdfs:comment>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The maximum range of the axis.</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >100</spl:defaultValue>
+        <spl:predicate rdf:resource="#maxRange"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A horizontal or vertical bar chart, displaying data derived from a SPARQL SELECT query.</rdfs:comment>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="PieChart">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The (optional) label of the chart.</rdfs:comment>
+        <spl:predicate rdf:resource="#label"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The SELECT query delivering the values (first result variable) and the labels (second result variable).</rdfs:comment>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pie chart</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <rdfs:subClassOf rdf:resource="#ChartElement"/>
+    <ui:prototype>
+      <ui:let>
+        <let:sum>
+          <sp:Select>
+            <sp:where rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject>
+                  <rdf:Description rdf:nodeID="A18">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >?0</sp:varName>
+                  </rdf:Description>
+                </sp:subject>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >resultSet</sp:varName>
+                </sp:object>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:subject rdf:nodeID="A18"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+                <sp:object>
+                  <rdf:Description rdf:nodeID="A19">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >?1</sp:varName>
+                  </rdf:Description>
+                </sp:object>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:subject rdf:nodeID="A19"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+                <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:object>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:subject rdf:nodeID="A19"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+                <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+              <rdf:Description>
+                <sp:subject rdf:nodeID="A18"/>
+                <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >v</sp:varName>
+                </sp:object>
+              </rdf:Description>
+            </sp:where>
+            <sp:resultVariables rdf:parseType="Collection">
+              <sp:Sum>
+                <sp:expression rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >v</sp:varName>
+                </sp:expression>
+              </sp:Sum>
+            </sp:resultVariables>
+          </sp:Select>
+        </let:sum>
+        <ui:child>
+          <ui:let>
+            <letrs:normalized>
+              <sp:Select>
+                <sp:where rdf:parseType="Collection">
+                  <rdf:Description>
+                    <sp:subject>
+                      <rdf:Description rdf:nodeID="A20">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >?0</sp:varName>
+                      </rdf:Description>
+                    </sp:subject>
+                    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+                    <sp:object rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >resultSet</sp:varName>
+                    </sp:object>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:subject rdf:nodeID="A20"/>
+                    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+                    <sp:object>
+                      <rdf:Description rdf:nodeID="A21">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >?1</sp:varName>
+                      </rdf:Description>
+                    </sp:object>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:subject rdf:nodeID="A21"/>
+                    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+                    <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</sp:object>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:subject rdf:nodeID="A21"/>
+                    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+                    <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                  <rdf:Description>
+                    <sp:subject rdf:nodeID="A20"/>
+                    <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+                    <sp:object>
+                      <rdf:Description rdf:nodeID="A22">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >v</sp:varName>
+                      </rdf:Description>
+                    </sp:object>
+                  </rdf:Description>
+                  <sp:Let>
+                    <sp:variable>
+                      <rdf:Description rdf:nodeID="A23">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >norm</sp:varName>
+                      </rdf:Description>
+                    </sp:variable>
+                    <sp:expression>
+                      <sp:mul>
+                        <sp:arg1>
+                          <sp:divide>
+                            <sp:arg1>
+                              <xsd:float>
+                                <sp:arg1 rdf:nodeID="A22"/>
+                              </xsd:float>
+                            </sp:arg1>
+                            <sp:arg2 rdf:parseType="Resource">
+                              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >sum</sp:varName>
+                            </sp:arg2>
+                          </sp:divide>
+                        </sp:arg1>
+                        <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >100</sp:arg2>
+                      </sp:mul>
+                    </sp:expression>
+                  </sp:Let>
+                </sp:where>
+                <sp:resultVariables rdf:parseType="Collection">
+                  <rdf:Description rdf:nodeID="A23"/>
+                </sp:resultVariables>
+              </sp:Select>
+            </letrs:normalized>
+            <ui:child>
+              <charts:GoogleChartImg>
+                <charts:chd>
+                  <charts:dataList>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >normalized</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</sp:arg2>
+                  </charts:dataList>
+                </charts:chd>
+                <charts:chl>
+                  <spr:aggregateCol>
+                    <sp:arg1 rdf:resource="#LineSeparatedLabelList"/>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >resultSet</sp:varName>
+                    </sp:arg2>
+                    <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</sp:arg3>
+                  </spr:aggregateCol>
+                </charts:chl>
+                <charts:chs>
+                  <charts:wxh>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >width</sp:varName>
+                    </sp:arg1>
+                    <sp:arg2 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >height</sp:varName>
+                    </sp:arg2>
+                  </charts:wxh>
+                </charts:chs>
+                <charts:cht rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >p3</charts:cht>
+                <charts:chtt rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >label</sp:varName>
+                </charts:chtt>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </charts:GoogleChartImg>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </ui:let>
+        </ui:child>
+      </ui:let>
+    </ui:prototype>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="StaticMap">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A SPARQL SELECT query that delivers lat (column 0), long (column 1) to be used as markers on the map. Currently only the first row of this will be used for display, i.e. only one marker is supported.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="#ChartElement"/>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Static map</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A map that is rendered into a static image (for easier printing).</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#center"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >(required if markers not present) defines the center of the map, equidistant from all edges of the map. This parameter takes a location as either a comma-separated {latitude,longitude} pair (e.g. "40.714728,-73.998672") or a string address (e.g. "city hall, new york, ny") identifying a unique location on the face of the earth.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#zoom"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >(required if markers not present) defines the zoom level of the map, which determines the magnification level of the map. This parameter takes a numerical value corresponding to the zoom level of the region desired.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype>
+      <charts:GoogleStaticMapImg>
+        <charts:markers>
+          <fn:concat>
+            <sp:arg1>|</sp:arg1>
+            <sp:arg2>
+              <spr:cell>
+                <sp:arg1>
+                  <rdf:Description rdf:nodeID="A24">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >resultSet</sp:varName>
+                  </rdf:Description>
+                </sp:arg1>
+                <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:arg2>
+                <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:arg3>
+              </spr:cell>
+            </sp:arg2>
+            <sp:arg3>,</sp:arg3>
+            <sp:arg4>
+              <spr:cell>
+                <sp:arg1 rdf:nodeID="A24"/>
+                <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:arg2>
+                <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</sp:arg3>
+              </spr:cell>
+            </sp:arg4>
+          </fn:concat>
+        </charts:markers>
+        <charts:sensor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</charts:sensor>
+        <charts:size>
+          <charts:wxh>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >width</sp:varName>
+            </sp:arg1>
+            <sp:arg2 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >height</sp:varName>
+            </sp:arg2>
+          </charts:wxh>
+        </charts:size>
+      </charts:GoogleStaticMapImg>
+    </ui:prototype>
+  </ui:NodeClass>
+  <rdf:Description rdf:nodeID="A25">
+    <sp:object>
+      <rdf:Description rdf:nodeID="A26">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >?1</sp:varName>
+      </rdf:Description>
+    </sp:object>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:subject>
+      <rdf:Description rdf:nodeID="A27">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >?0</sp:varName>
+      </rdf:Description>
+    </sp:subject>
+  </rdf:Description>
+  <fn:concat rdf:nodeID="A28">
+    <sp:arg2>
+      <xsd:string>
+        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+      </xsd:string>
+    </sp:arg2>
+    <sp:arg1>id-</sp:arg1>
+  </fn:concat>
+  <rdf:Description rdf:nodeID="A29">
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Let>
+        <sp:variable>
+          <rdf:Description rdf:nodeID="A30">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >r</sp:varName>
+          </rdf:Description>
+        </sp:variable>
+        <sp:expression>
+          <fn:concat>
+            <sp:arg1>
+              <rdf:Description rdf:nodeID="A31">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >lat</sp:varName>
+              </rdf:Description>
+            </sp:arg1>
+            <sp:arg2>,</sp:arg2>
+            <sp:arg3>
+              <rdf:Description rdf:nodeID="A32">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >long</sp:varName>
+              </rdf:Description>
+            </sp:arg3>
+          </fn:concat>
+        </sp:expression>
+      </sp:Let>
+    </rdf:rest>
+    <rdf:first>
+      <sp:Let>
+        <sp:variable rdf:nodeID="A32"/>
+        <sp:expression>
+          <sp:divide>
+            <sp:arg1>
+              <sp:add>
+                <sp:arg1>
+                  <xsd:float>
+                    <sp:arg1>
+                      <rdf:Description rdf:nodeID="A33">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >maxLong</sp:varName>
+                      </rdf:Description>
+                    </sp:arg1>
+                  </xsd:float>
+                </sp:arg1>
+                <sp:arg2>
+                  <xsd:float>
+                    <sp:arg1>
+                      <rdf:Description rdf:nodeID="A34">
+                        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >minLong</sp:varName>
+                      </rdf:Description>
+                    </sp:arg1>
+                  </xsd:float>
+                </sp:arg2>
+              </sp:add>
+            </sp:arg1>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</sp:arg2>
+          </sp:divide>
+        </sp:expression>
+      </sp:Let>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Max rdf:nodeID="A35">
+    <sp:expression rdf:parseType="Resource">
+      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >x</sp:varName>
+    </sp:expression>
+  </sp:Max>
+  <sp:Select rdf:nodeID="A36">
+    <sp:resultVariables rdf:parseType="Collection">
+      <sp:Min>
+        <sp:expression rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >x</sp:varName>
+        </sp:expression>
+      </sp:Min>
+    </sp:resultVariables>
+    <sp:where rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:object rdf:resource="http://spinrdf.org/spin#_arg1"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:subject>
+          <rdf:Description rdf:nodeID="A37">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >?0</sp:varName>
+          </rdf:Description>
+        </sp:subject>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object>
+          <rdf:Description rdf:nodeID="A38">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >?1</sp:varName>
+          </rdf:Description>
+        </sp:object>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <sp:subject rdf:nodeID="A37"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object rdf:resource="http://spinrdf.org/spin#_arg2"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:subject rdf:nodeID="A38"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <sp:subject rdf:nodeID="A38"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >x</sp:varName>
+        </sp:object>
+        <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+        <sp:subject rdf:nodeID="A37"/>
+      </rdf:Description>
+    </sp:where>
+  </sp:Select>
+  <sp:divide rdf:nodeID="A39">
+    <sp:arg1>
+      <sp:add>
+        <sp:arg1>
+          <xsd:float>
+            <sp:arg1>
+              <rdf:Description rdf:nodeID="A40">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >maxLat</sp:varName>
+              </rdf:Description>
+            </sp:arg1>
+          </xsd:float>
+        </sp:arg1>
+        <sp:arg2>
+          <xsd:float>
+            <sp:arg1>
+              <rdf:Description rdf:nodeID="A41">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >minLat</sp:varName>
+              </rdf:Description>
+            </sp:arg1>
+          </xsd:float>
+        </sp:arg2>
+      </sp:add>
+    </sp:arg1>
+    <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</sp:arg2>
+  </sp:divide>
+  <spl:Argument rdf:nodeID="A42">
+    <spl:predicate>
+      <charts:ParameterProperty rdf:ID="cht">
+        <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+        <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >cht</charts:parameterName>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >cht</rdfs:label>
+      </charts:ParameterProperty>
+    </spl:predicate>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spl:Argument>
+  <charts:ParameterProperty rdf:ID="chbh">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chbh</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chbh</charts:parameterName>
+  </charts:ParameterProperty>
+  <sp:Let rdf:nodeID="A43">
+    <sp:variable rdf:nodeID="A40"/>
+    <sp:expression>
+      <charts:maxColValue>
+        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+        <sp:arg2>
+          <rdf:Description rdf:nodeID="A44">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >latCol</sp:varName>
+          </rdf:Description>
+        </sp:arg2>
+      </charts:maxColValue>
+    </sp:expression>
+  </sp:Let>
+  <sp:Filter rdf:nodeID="A45">
+    <sp:expression>
+      <sp:eq>
+        <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+        <sp:arg1>
+          <spr:colName>
+            <sp:arg2>
+              <rdf:Description rdf:nodeID="A46">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >index</sp:varName>
+              </rdf:Description>
+            </sp:arg2>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+          </spr:colName>
+        </sp:arg1>
+      </sp:eq>
+    </sp:expression>
+  </sp:Filter>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:rest rdf:nodeID="A29"/>
+    <rdf:first>
+      <sp:Let>
+        <sp:variable rdf:nodeID="A31"/>
+        <sp:expression rdf:nodeID="A39"/>
+      </sp:Let>
+    </rdf:first>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A48">
+    <spl:predicate>
+      <charts:ParameterProperty rdf:ID="chco">
+        <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >chco</charts:parameterName>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >chco</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+      </charts:ParameterProperty>
+    </spl:predicate>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A49">
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The height</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A50">
+    <spl:predicate rdf:resource="#zoom"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <rdf:Description rdf:nodeID="A52">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >a</sp:varName>
+      </rdf:Description>
+    </rdf:first>
+  </rdf:Description>
+  <charts:ParameterProperty rdf:ID="chd">
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chd</charts:parameterName>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chd</rdfs:label>
+  </charts:ParameterProperty>
+  <sp:Select rdf:nodeID="A53">
+    <sp:resultVariables rdf:parseType="Collection">
+      <sp:Max rdf:nodeID="A35"/>
+    </sp:resultVariables>
+    <sp:where rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:object rdf:resource="http://spinrdf.org/spin#_arg1"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:subject rdf:nodeID="A27"/>
+      </rdf:Description>
+      <rdf:Description rdf:nodeID="A25"/>
+      <rdf:Description>
+        <sp:object rdf:resource="http://spinrdf.org/spin#_arg2"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:subject rdf:nodeID="A26"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <sp:subject rdf:nodeID="A26"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >x</sp:varName>
+        </sp:object>
+        <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+        <sp:subject rdf:nodeID="A27"/>
+      </rdf:Description>
+    </sp:where>
+  </sp:Select>
+  <spin:Function rdf:ID="dataList">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data list</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creates a list of data items in the Google Charts format.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The SPR result set to iterate over.</rdfs:comment>
+        <spl:valueType rdf:resource="http://spinrdf.org/spr#Table"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <spl:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</spl:defaultValue>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The column to iterate over.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:body>
+      <sp:Select>
+        <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <sp:resultVariables rdf:parseType="Collection">
+          <fn:concat>
+            <sp:arg1>t:</sp:arg1>
+            <sp:arg2>
+              <spr:aggregateCol>
+                <sp:arg1 rdf:resource="http://uispin.org/ui#CommaSeparatedLabelList"/>
+                <sp:arg2 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+                <sp:arg3 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+              </spr:aggregateCol>
+            </sp:arg2>
+          </fn:concat>
+        </sp:resultVariables>
+      </sp:Select>
+    </spin:body>
+  </spin:Function>
+  <charts:ParameterProperty rdf:ID="chld">
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chld</charts:parameterName>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >chld</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+  </charts:ParameterProperty>
+  <rdf:Description rdf:nodeID="A54">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <sp:NamedGraph>
+        <sp:elements rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A55">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >argName</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="#parameterName"/>
+            <sp:subject>
+              <rdf:Description rdf:nodeID="A56">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >arg</sp:varName>
+              </rdf:Description>
+            </sp:subject>
+          </rdf:Description>
+          <sp:Let>
+            <sp:expression>
+              <fn:concat>
+                <sp:arg3>
+                  <rdf:Description rdf:nodeID="A57">
+                    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >object</sp:varName>
+                  </rdf:Description>
+                </sp:arg3>
+                <sp:arg2>=</sp:arg2>
+                <sp:arg1 rdf:nodeID="A55"/>
+              </fn:concat>
+            </sp:expression>
+            <sp:variable rdf:nodeID="A52"/>
+          </sp:Let>
+        </sp:elements>
+        <sp:graphNameNode rdf:resource="http://uispin.org/ui#graph"/>
+      </sp:NamedGraph>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <rdf:rest rdf:nodeID="A54"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:object rdf:nodeID="A57"/>
+      <sp:predicate rdf:resource="http://uispin.org/ui#arg"/>
+      <sp:subject rdf:nodeID="A56"/>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Select rdf:nodeID="A59">
+    <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <sp:resultVariables rdf:parseType="Collection">
+      <fn:concat>
+        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+        <sp:arg2>x</sp:arg2>
+        <sp:arg3 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+      </fn:concat>
+    </sp:resultVariables>
+  </sp:Select>
+  <ui:NodeClass rdf:ID="GoogleChartImg">
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chs">
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chs</charts:parameterName>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Chart size (for Google Charts).</rdfs:comment>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chs</rdfs:label>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chxr">
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxr</charts:parameterName>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxr</rdfs:label>
+          </charts:ParameterProperty>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Implementation class for the various chart types that are mapped to Google Charts API by default. The arguments will be automatically translated into URL parameter lists using the delegate charts:URLParameterImg.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Google Chart img</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chxt">
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxt</rdfs:label>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxt</charts:parameterName>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint rdf:nodeID="A42"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chts">
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chts</charts:parameterName>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chts</rdfs:label>
+          </charts:ParameterProperty>
+        </spl:predicate>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chl">
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chl</charts:parameterName>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Chart labels (for Google Charts).</rdfs:comment>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chl</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#chld"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chxl">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxl</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chxl</charts:parameterName>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chtt">
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Chart title of Google Charts.</rdfs:comment>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chtt</charts:parameterName>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chtt</rdfs:label>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chp">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chp</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chp</charts:parameterName>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype>
+      <charts:URLParameterImg>
+        <charts:baseURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://chart.apis.google.com/chart?</charts:baseURL>
+      </charts:URLParameterImg>
+    </ui:prototype>
+    <spin:constraint rdf:nodeID="A48"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate>
+          <charts:ParameterProperty rdf:ID="chtm">
+            <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chtm</charts:parameterName>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >chtm</rdfs:label>
+            <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+          </charts:ParameterProperty>
+        </spl:predicate>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#chbh"/>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#chd"/>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <spl:Argument rdf:nodeID="A60">
+    <spl:valueType rdf:resource="http://spinrdf.org/spr#Table"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The result set to operate on.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A61">
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A47"/>
+      <rdf:first>
+        <sp:Let>
+          <sp:variable rdf:nodeID="A33"/>
+          <sp:expression>
+            <charts:maxColValue>
+              <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+              <sp:arg2>
+                <rdf:Description rdf:nodeID="A62">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >longCol</sp:varName>
+                </rdf:Description>
+              </sp:arg2>
+            </charts:maxColValue>
+          </sp:expression>
+        </sp:Let>
+      </rdf:first>
+    </rdf:rest>
+    <rdf:first>
+      <sp:Let>
+        <sp:variable rdf:nodeID="A34"/>
+        <sp:expression>
+          <charts:minColValue>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+            <sp:arg2 rdf:nodeID="A62"/>
+          </charts:minColValue>
+        </sp:expression>
+      </sp:Let>
+    </rdf:first>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A63">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The name of the result variable to get.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A64">
+    <rdf:first rdf:nodeID="A43"/>
+    <rdf:rest rdf:nodeID="A61"/>
+  </rdf:Description>
+  <charts:minColValue rdf:nodeID="A65">
+    <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    <sp:arg2 rdf:nodeID="A44"/>
+  </charts:minColValue>
+  <rdf:Description rdf:nodeID="A66">
+    <rdf:first>
+      <sp:Let>
+        <sp:variable rdf:nodeID="A62"/>
+        <sp:expression>
+          <charts:findCol>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+            <sp:arg2>long</sp:arg2>
+          </charts:findCol>
+        </sp:expression>
+      </sp:Let>
+    </rdf:first>
+    <rdf:rest rdf:parseType="Resource">
+      <rdf:first>
+        <sp:Let>
+          <sp:variable rdf:nodeID="A41"/>
+          <sp:expression rdf:nodeID="A65"/>
+        </sp:Let>
+      </rdf:first>
+      <rdf:rest rdf:nodeID="A64"/>
+    </rdf:rest>
+  </rdf:Description>
+  <charts:ParameterProperty rdf:ID="sensor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sensor</rdfs:label>
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sensor</charts:parameterName>
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+  </charts:ParameterProperty>
+  <rdf:Description rdf:nodeID="A67">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >baseURL</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <rdf:first>
+      <sp:Let>
+        <sp:variable rdf:nodeID="A44"/>
+        <sp:expression>
+          <charts:findCol>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+            <sp:arg2>lat</sp:arg2>
+          </charts:findCol>
+        </sp:expression>
+      </sp:Let>
+    </rdf:first>
+    <rdf:rest rdf:nodeID="A66"/>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A69">
+    <spl:predicate>
+      <charts:ParameterProperty rdf:ID="format">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >format</rdfs:label>
+        <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >format</charts:parameterName>
+        <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+      </charts:ParameterProperty>
+    </spl:predicate>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A70">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <smf:if>
+        <sp:arg3 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+        <sp:arg2>
+          <fn:concat>
+            <sp:arg3 rdf:resource="http://spinrdf.org/spin#_arg2"/>
+            <sp:arg2>&amp;</sp:arg2>
+            <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+          </fn:concat>
+        </sp:arg2>
+        <sp:arg1>
+          <sp:gt>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:arg2>
+            <sp:arg1>
+              <fn:string-length>
+                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_arg1"/>
+              </fn:string-length>
+            </sp:arg1>
+          </sp:gt>
+        </sp:arg1>
+      </smf:if>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Select rdf:nodeID="A71">
+    <sp:where rdf:nodeID="A68"/>
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A30"/>
+    </sp:resultVariables>
+  </sp:Select>
+  <spl:Argument rdf:nodeID="A72">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The index of the column.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+  </spl:Argument>
+  <rdf:Description rdf:nodeID="A73">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >argString</sp:varName>
+  </rdf:Description>
+  <charts:ParameterProperty rdf:ID="size">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >size</rdfs:label>
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >size</charts:parameterName>
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+  </charts:ParameterProperty>
+  <sp:Select rdf:nodeID="A74">
+    <sp:resultVariables rdf:parseType="Collection">
+      <fn:concat rdf:nodeID="A28"/>
+    </sp:resultVariables>
+    <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </sp:Select>
+  <sp:Select rdf:nodeID="A75">
+    <sp:resultVariables rdf:nodeID="A70"/>
+    <sp:where rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </sp:Select>
+  <charts:ParameterProperty rdf:ID="maptype">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maptype</rdfs:label>
+    <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maptype</charts:parameterName>
+    <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+  </charts:ParameterProperty>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:parseType="Collection">
+      <sp:Filter rdf:nodeID="A45"/>
+    </rdf:rest>
+    <rdf:first rdf:parseType="Resource">
+      <sp:object rdf:nodeID="A46"/>
+      <sp:predicate rdf:resource="http://spinrdf.org/spr#colIndices"/>
+      <sp:subject rdf:resource="http://spinrdf.org/spin#_arg1"/>
+    </rdf:first>
+  </rdf:Description>
+  <spin:Function rdf:ID="idForResource">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spin:body rdf:nodeID="A74"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The resource to get the id for.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Generates a (unique) ID that can be used to identify nodes in a DOM tree from a given resource (?arg1).</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >id for resource</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+  </spin:Function>
+  <sp:Select rdf:nodeID="A77">
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A46"/>
+    </sp:resultVariables>
+    <sp:where rdf:nodeID="A76"/>
+  </sp:Select>
+  <spl:Argument rdf:nodeID="A78">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <spl:predicate rdf:resource="#sensor"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A79">
+    <spl:valueType rdf:resource="http://spinrdf.org/spr#Table"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The spr:Table to operate on. Must declare result variables ?lat and ?long.</rdfs:comment>
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A80">
+    <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The result set to operate on.</rdfs:comment>
+    <spl:valueType rdf:resource="http://spinrdf.org/spr#Table"/>
+  </spl:Argument>
+  <spin:Function rdf:ID="AmpSeparatedListAggregatorStepFunction">
+    <spin:body rdf:nodeID="A75"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Amp separated list aggregator step function</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#AggregatorStepFunctions"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </spin:Function>
+  <sp:Select rdf:nodeID="A81">
+    <sp:orderBy rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A55"/>
+    </sp:orderBy>
+    <sp:resultVariables rdf:nodeID="A51"/>
+    <sp:where rdf:nodeID="A58"/>
+  </sp:Select>
+  <fn:concat rdf:nodeID="A82">
+    <sp:arg2 rdf:nodeID="A73"/>
+    <sp:arg1 rdf:nodeID="A67"/>
+  </fn:concat>
+  <spl:Argument rdf:nodeID="A83">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The size of the map.</rdfs:comment>
+    <spl:predicate rdf:resource="#size"/>
+  </spl:Argument>
+  <charts:URLParameterImg rdf:nodeID="A84">
+    <charts:baseURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://maps.google.com/maps/api/staticmap?</charts:baseURL>
+  </charts:URLParameterImg>
+  <spl:Argument rdf:nodeID="A85">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spl:predicate rdf:resource="#maptype"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A86">
+    <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <spl:predicate>
+      <charts:ParameterProperty rdf:ID="markers">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >markers</rdfs:label>
+        <charts:parameterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >markers</charts:parameterName>
+        <rdfs:subPropertyOf rdf:resource="#parameterProperties"/>
+      </charts:ParameterProperty>
+    </spl:predicate>
+  </spl:Argument>
+  <spin:Function rdf:ID="maxColValue">
+    <spin:body rdf:nodeID="A53"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg2"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The index of the column.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint rdf:nodeID="A80"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >max col value</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Iterates over an SPR result set to find the maximum value of a given column.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#Functions"/>
+  </spin:Function>
+  <rdf:Description rdf:nodeID="A87">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >args</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A88">
+    <spl:predicate rdf:resource="#center"/>
+  </spl:Argument>
+  <html:Img rdf:nodeID="A89">
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+    <html:src rdf:nodeID="A82"/>
+  </html:Img>
+  <ui:NodeClass rdf:ID="GoogleStaticMapImg">
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <spin:constraint rdf:nodeID="A85"/>
+    <spin:constraint rdf:nodeID="A88"/>
+    <spin:constraint rdf:nodeID="A78"/>
+    <ui:prototype rdf:nodeID="A84"/>
+    <spin:constraint rdf:nodeID="A69"/>
+    <spin:constraint rdf:nodeID="A50"/>
+    <spin:constraint rdf:nodeID="A83"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Google static map img</rdfs:label>
+    <spin:constraint rdf:nodeID="A86"/>
+  </ui:NodeClass>
+  <ui:let rdf:nodeID="A90">
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+    <ui:child rdf:nodeID="A89"/>
+    <let:argString>
+      <spr:aggregateCol>
+        <sp:arg3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</sp:arg3>
+        <sp:arg2 rdf:nodeID="A87"/>
+        <sp:arg1>
+          <spr:Aggregator rdf:ID="AmpSeparatedList">
+            <spr:stepFunction rdf:resource="#AmpSeparatedListAggregatorStepFunction"/>
+            <spr:startValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            ></spr:startValue>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Amp separated list</rdfs:label>
+          </spr:Aggregator>
+        </sp:arg1>
+      </spr:aggregateCol>
+    </let:argString>
+  </ui:let>
+  <spin:Function rdf:ID="minColValue">
+    <spin:body rdf:nodeID="A36"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <spin:constraint rdf:nodeID="A72"/>
+    <spin:constraint rdf:nodeID="A60"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Iterates over an SPR result set to find the minimum value of a given column.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >min col value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#Functions"/>
+  </spin:Function>
+  <ui:let rdf:nodeID="A91">
+    <ui:child rdf:nodeID="A90"/>
+    <letrs:args rdf:nodeID="A81"/>
+  </ui:let>
+  <ui:NodeClass rdf:ID="URLParameterImg">
+    <ui:prototype rdf:nodeID="A91"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class provides an infrastructure to set REST-style parameters from the arguments that have a charts:parameterName. Users just need to set the values for those arguments, e.g. as done by charts:PieChart.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://uispin.org/html#Img"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The base URL including the ? at the end.</rdfs:comment>
+        <spl:predicate rdf:resource="#baseURL"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >URL parameter image</rdfs:label>
+  </ui:NodeClass>
+  <spin:Function rdf:ID="findCol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Finds a column with a given name.</rdfs:comment>
+    <spin:body rdf:nodeID="A77"/>
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <spin:constraint rdf:nodeID="A63"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://spinrdf.org/spr#Table"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The spr:Table to get a column index of.</rdfs:comment>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spr#Functions"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >find col</rdfs:label>
+  </spin:Function>
+  <spin:Function rdf:ID="wxh">
+    <spin:constraint rdf:nodeID="A49"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Creates a string to encode width by height for various Google APIs, e.g. 440x220.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >wxh</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://spinrdf.org/sp#arg1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The width</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body rdf:nodeID="A59"/>
+  </spin:Function>
+  <spin:Function rdf:ID="findCenter">
+    <spin:returnType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spl#StringFunctions"/>
+    <spin:constraint rdf:nodeID="A79"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Takes a Google Maps result set as argument and gets min and max values of lat and long properties.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >find center</rdfs:label>
+    <spin:body rdf:nodeID="A71"/>
+  </spin:Function>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

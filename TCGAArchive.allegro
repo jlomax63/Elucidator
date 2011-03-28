@@ -1,0 +1,22 @@
+#AllegroGraph metadata for TopBraid
+#Wed Apr 28 11:28:45 CDT 2010
+Prefix-tcga=http\://mdacc.org/TCGAArchive\#
+Directory=C\:\\AllegroGraphFSE33
+Prefix-sp=http\://spinrdf.org/sp\#
+Prefix-nco=http\://www.semanticdesktop.org/ontologies/2007/03/22/nco\#
+Name=ag1
+Prefix-dc=http\://purl.org/dc/elements/1.1/
+Prefix-reification=http\://swan.mindinformatics.org/ontologies/1.2/reification/
+Prefix-xsd=http\://www.w3.org/2001/XMLSchema\#
+Prefix-p3=http\://my.com/file3\#
+BaseURI=http\://mdacc.org/TCGAArchive
+Prefix-pav=http\://swan.mindinformatics.org/ontologies/1.2/pav/
+Prefix-foaf=http\://xmlns.com/foaf/0.1/
+Prefix-spin=http\://spinrdf.org/spin\#
+Prefix-rdfs=http\://www.w3.org/2000/01/rdf-schema\#
+Prefix-owl=http\://www.w3.org/2002/07/owl\#
+Port=4567
+Host=localhost
+Prefix-mage=http\://mged.sourceforge.net/ontologies/MGEDOntology.owl\#
+Prefix-rdf=http\://www.w3.org/1999/02/22-rdf-syntax-ns\#
+Prefix-wordnet=http\://xmlns.com/wordnet/1.6/

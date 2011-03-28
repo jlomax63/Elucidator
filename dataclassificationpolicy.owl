@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://utmdacc.org/dataclassificationpolicy#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://utmdacc.org/dataclassificationpolicy">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="DataClassificationPublic">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DataClassificationRestrictedConfidential"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DataClassificationInternalUse"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="DataClassificationConfidential"/>
+    </owl:disjointWith>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1 - PUBLIC</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DEFINITION:  Information obtained from the public domain or released to the public through authorized channels.  All data not classified in one of the three categories below, falls into the public designation by default.
+CRITERIA:  Negligible adverse impact to the institution, its patients, or employees resulting from confidentiality, integrity, or availability of the data being compromised.
+RATING:  1 - User Authentication is not required.
+MINIMUM RETENTION PERIOD:  60 days.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UTMDACCDataClassificationPolicy"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#UTMDACCDataClassificationPolicy">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Version 2.5.1 - November 19, 2008</owl:versionInfo>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DATA CLASSIFICATION GUIDELINES AND RATINGS</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >All M. D. Anderson information is classified according to this Data Classification Guidelines and Ratings. An owner of Information Resources has the responsibility to assess and classify the information. An owner is the designated person responsible for carrying out the program that uses the resources. Use these criteria to determine which data classification is appropriate for a particular information or infrastructure system The classification of the data should then determine the extent to which the data needs to be controlled/secured and is also indicative of its value to M. D. Anderson. For more detail information, please refer to the Information Security Department’s Information Security Guidelines.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DataClassificationConfidential">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >3 - Confidential</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DEFINITION:  Information that, if compromised, would have a significant financial impact to M. D. Anderson, and violate federal or state law or the terms of confidentiality provisions in M. D. Anderson contracts.  Information that should be accessed only by a limited group of people. All data sets that contain Protected Health Information (PHI) receive this classification level, at a minimum.
+CRITERIA:  Adverse impact to the institution, its patients, or employees resulting from confidentiality, integrity, or availability of the data being compromised.
+RATING:  3 - User Authenication is required.
+MINIMUM RETENTION PERIOD:  PHI for 6 years.  Non-PHI for 1 year.  Payment Card Data for 1 year and 3 months online.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#UTMDACCDataClassificationPolicy"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DataClassificationRestrictedConfidential">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >4 - RESTRICTED CONFIDENTIAL</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DEFINITION:  Restricted Confidential builds upon the Confidential classification by addressing special access needs of a subset of PHI, such as mental health data.  Restricted Confidential information should be accessed only by specific authorized people.  Only the owner of the data may designate information sets as Restricted Confidential or grant access to this data.
+CRITERIA:  Significant adverse impact to the institution, its patients, or employees resulting from confidentiality, integrity, or availability of the data being compromised.
+Rating:  4 - User Authenication is required.
+MINIMUM RETENTION PERIOD:  PHI for 6 years.  Non-PHI for 1 year.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#UTMDACCDataClassificationPolicy"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DataClassificationInternalUse">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2 - INTERNAL USE</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DEFINITION:  Information intended to be generally releasable and used within M. D.  Anderson, but should not be released to the general public.
+CRITERIA:  Minimal adverse implact to the institution, its patients, or employees resulting from confidentiality, integrity, or availability of the data being compromised.
+RATING:  2 - MDACC Network Authentication is required.  Further authentication is not required but may be implemented.
+MINIMUM RETENTION PERIOD:  60 days.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#UTMDACCDataClassificationPolicy"/>
+  </owl:Class>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

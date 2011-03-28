@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.d2rq.feature"
+      label="org.topbraid.lib.d2rq.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant, Inc.">
+
+   <description>
+      Custom D2RQ and dependent functionality in TopBraid
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+   </copyright>
+
+   <license>
+      About This Content
+
+March 2010
+End User License Agreement
+
+TopQuadrant makes available all content in this Eclipse Feature (“Content”). Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the End User License Agreement (“EULA”). This EULA sets forth the terms applicable to use and licensing by the customer (“Customer”) of software provided by TopQuadrant, Inc. (“TopQuadrant”). It is important that you read this document before installing or using the software provided by TopQuadrant (the “Software”) and any associated documentation or materials provided by TopQuadrant (“Documentation”). A copy of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then Customer is not licensed to use the Software, and you must destroy any downloaded copies of the Software in your or Customer‘s possession or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf to download and print a copy of this EULA for your records.
+
+Third Party Content
+
+The Content includes items that have been sourced from third parties as set out below.
+D2RQ
+
+The plug-in is accompanied by D2RQ software developed by Prof. Dr. Chris Bizer of Web-based Systems Group, Freie Universität, Berlin (the “Owner”).
+
+Use of D2RQ has been granted to TopQuadrant by the owner under a special license agreement. Your use of the software is subject to these terms and conditions. A copy of the license can be found in /org.topbraid.lib.d2rq/about_files/d2rq.LICENSE.txt and is also available at http://www.topquadrant.com/docs/legal/D2RQ_V0.7_TQlicense.pdf.
+
+The modified source for the D2RQ is included in the folder(s) listed below:
+
+    * /org.topbraid.lib.d2rq/src-d2rq
+   </license>
+
+   <plugin
+         id="org.topbraid.d2rq"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.lib.d2rq"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraidcomposer.d2rq"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,1593 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:html="http://uispin.org/html#"
+    xmlns:css="http://uispin.org/css#"
+    xmlns:ui="http://uispin.org/ui#"
+    xmlns:letrs="http://uispin.org/letrs#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:tui="http://uispin.org/tui#"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:spr="http://spinrdf.org/spr#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:let="http://uispin.org/let#"
+    xmlns:spl="http://spinrdf.org/spl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://uispin.org/tui">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A collection of generic UISPIN components, especially for displaying resources and their properties.</rdfs:comment>
+    <owl:imports rdf:resource="http://uispin.org/html"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.5.1</owl:versionInfo>
+  </owl:Ontology>
+  <rdf:Property rdf:ID="icon">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:ID="systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >icon</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="predicate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >predicate</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range>
+      <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
+        <ui:instanceView>
+          <html:Div>
+            <ui:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >summary</ui:id>
+            <ui:child>
+              <tui:SummaryHeader>
+                <tui:node rdf:resource="http://spinrdf.org/spin#_this"/>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </tui:SummaryHeader>
+            </ui:child>
+            <ui:child>
+              <tui:ObjectPathList>
+                <tui:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+              </tui:ObjectPathList>
+            </ui:child>
+            <ui:child>
+              <tui:ObjectPathList>
+                <tui:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >2</ui:childIndex>
+              </tui:ObjectPathList>
+            </ui:child>
+            <ui:child>
+              <tui:CommentBox>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >3</ui:childIndex>
+              </tui:CommentBox>
+            </ui:child>
+          </html:Div>
+        </ui:instanceView>
+      </rdf:Description>
+    </rdfs:range>
+  </rdf:Property>
+  <rdf:Property rdf:ID="node">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >node</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+  </rdf:Property>
+  <rdf:Property rdf:ID="subject">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >subject</rdfs:label>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range>
+      <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource">
+        <ui:instanceView>
+          <ui:let>
+            <ui:child>
+              <ui:if>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:text>
+                      <ui:label>
+                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+                      </ui:label>
+                    </ui:text>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </ui:TextNode>
+                </ui:child>
+                <ui:condition>
+                  <sp:not>
+                    <sp:arg1 rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >iri</sp:varName>
+                    </sp:arg1>
+                  </sp:not>
+                </ui:condition>
+              </ui:if>
+            </ui:child>
+            <ui:child>
+              <ui:if>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+                <ui:child>
+                  <tui:Link>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <tui:node rdf:resource="http://spinrdf.org/spin#_this"/>
+                  </tui:Link>
+                </ui:child>
+                <ui:condition rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >iri</sp:varName>
+                </ui:condition>
+              </ui:if>
+            </ui:child>
+            <ui:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >label</ui:id>
+            <let:iri>
+              <sp:isIRI>
+                <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+              </sp:isIRI>
+            </let:iri>
+          </ui:let>
+        </ui:instanceView>
+        <ui:instanceView>
+          <html:Div>
+            <ui:child>
+              <tui:CommentBox>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+              </tui:CommentBox>
+            </ui:child>
+            <ui:child>
+              <tui:SummaryHeader>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+                <tui:node rdf:resource="http://spinrdf.org/spin#_this"/>
+              </tui:SummaryHeader>
+            </ui:child>
+            <ui:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >summary</ui:id>
+          </html:Div>
+        </ui:instanceView>
+        <ui:instanceView>
+          <html:Div>
+            <ui:child>
+              <tui:SubjectPathWidgetGroup>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >6</ui:childIndex>
+                <tui:predicateSet>
+                  <sp:Select>
+                    <sp:orderBy rdf:parseType="Collection">
+                      <ui:label>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A0">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >p</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </ui:label>
+                    </sp:orderBy>
+                    <sp:resultVariables rdf:parseType="Collection">
+                      <rdf:Description rdf:nodeID="A0"/>
+                    </sp:resultVariables>
+                    <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</sp:distinct>
+                    <sp:where rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:object rdf:resource="http://spinrdf.org/spin#_this"/>
+                        <sp:predicate rdf:nodeID="A0"/>
+                        <sp:subject>
+                          <rdf:Description rdf:nodeID="A1">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >s</sp:varName>
+                          </rdf:Description>
+                        </sp:subject>
+                      </rdf:Description>
+                      <sp:Filter>
+                        <sp:expression>
+                          <sp:isIRI>
+                            <sp:arg1 rdf:nodeID="A1"/>
+                          </sp:isIRI>
+                        </sp:expression>
+                      </sp:Filter>
+                    </sp:where>
+                  </sp:Select>
+                </tui:predicateSet>
+                <tui:object rdf:resource="http://spinrdf.org/spin#_this"/>
+              </tui:SubjectPathWidgetGroup>
+            </ui:child>
+            <ui:child>
+              <html:H3>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >5</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Incoming References</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+              </html:H3>
+            </ui:child>
+            <ui:child>
+              <tui:ObjectPathWidgetGroup>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >4</ui:childIndex>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <tui:predicateSet>
+                  <sp:Select>
+                    <sp:orderBy rdf:parseType="Collection">
+                      <ui:label>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A2">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >p</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </ui:label>
+                    </sp:orderBy>
+                    <sp:resultVariables rdf:parseType="Collection">
+                      <rdf:Description rdf:nodeID="A2"/>
+                    </sp:resultVariables>
+                    <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</sp:distinct>
+                    <sp:where rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >o</sp:varName>
+                        </sp:object>
+                        <sp:predicate rdf:nodeID="A2"/>
+                        <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                      </rdf:Description>
+                      <sp:Filter>
+                        <sp:expression>
+                          <sp:not>
+                            <sp:arg1>
+                              <spl:instanceOf>
+                                <sp:arg2 rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+                                <sp:arg1 rdf:nodeID="A2"/>
+                              </spl:instanceOf>
+                            </sp:arg1>
+                          </sp:not>
+                        </sp:expression>
+                      </sp:Filter>
+                    </sp:where>
+                  </sp:Select>
+                </tui:predicateSet>
+              </tui:ObjectPathWidgetGroup>
+            </ui:child>
+            <ui:child>
+              <html:H3>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >3</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Other Properties</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+              </html:H3>
+            </ui:child>
+            <ui:child>
+              <tui:ObjectPathWidgetGroup>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >2</ui:childIndex>
+                <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                <tui:predicateSet>
+                  <sp:Select>
+                    <sp:orderBy rdf:parseType="Collection">
+                      <ui:label>
+                        <sp:arg1>
+                          <rdf:Description rdf:nodeID="A3">
+                            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >p</sp:varName>
+                          </rdf:Description>
+                        </sp:arg1>
+                      </ui:label>
+                    </sp:orderBy>
+                    <sp:resultVariables rdf:parseType="Collection">
+                      <rdf:Description rdf:nodeID="A3"/>
+                    </sp:resultVariables>
+                    <sp:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                    >true</sp:distinct>
+                    <sp:where rdf:parseType="Collection">
+                      <rdf:Description>
+                        <sp:object rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >o</sp:varName>
+                        </sp:object>
+                        <sp:predicate rdf:nodeID="A3"/>
+                        <sp:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+                      </rdf:Description>
+                      <sp:Filter>
+                        <sp:expression>
+                          <spl:instanceOf>
+                            <sp:arg2 rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+                            <sp:arg1 rdf:nodeID="A3"/>
+                          </spl:instanceOf>
+                        </sp:expression>
+                      </sp:Filter>
+                    </sp:where>
+                  </sp:Select>
+                </tui:predicateSet>
+              </tui:ObjectPathWidgetGroup>
+            </ui:child>
+            <ui:child>
+              <html:H3>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                    <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Annotation Properties</ui:text>
+                  </ui:TextNode>
+                </ui:child>
+              </html:H3>
+            </ui:child>
+            <ui:child>
+              <html:H2>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+                <ui:child>
+                  <ui:TextNode>
+                    <ui:text>
+                      <ui:label>
+                        <sp:arg1 rdf:resource="http://spinrdf.org/spin#_this"/>
+                      </ui:label>
+                    </ui:text>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </ui:TextNode>
+                </ui:child>
+              </html:H2>
+            </ui:child>
+          </html:Div>
+        </ui:instanceView>
+      </rdf:Description>
+    </rdfs:range>
+  </rdf:Property>
+  <rdf:Property rdf:ID="resource">
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="#systemProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >resource</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="predicateSet">
+    <rdfs:subPropertyOf rdf:resource="http://uispin.org/ui#resultSet"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >predicate set</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="#systemProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >system property</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:ID="object">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >object</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="#systemProperty"/>
+  </rdf:Property>
+  <rdf:Property rdf:ID="path">
+    <rdfs:subPropertyOf rdf:resource="#systemProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >path</rdfs:label>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Class">
+    <ui:instanceView>
+      <html:Div>
+        <ui:child>
+          <tui:CommentBox>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</ui:childIndex>
+            <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+          </tui:CommentBox>
+        </ui:child>
+        <ui:child>
+          <tui:ObjectPathList>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >1</ui:childIndex>
+            <tui:subject rdf:resource="http://spinrdf.org/spin#_this"/>
+            <tui:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+          </tui:ObjectPathList>
+        </ui:child>
+        <ui:child>
+          <tui:SummaryHeader>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <tui:node rdf:resource="http://spinrdf.org/spin#_this"/>
+          </tui:SummaryHeader>
+        </ui:child>
+        <ui:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >summary</ui:id>
+      </html:Div>
+    </ui:instanceView>
+  </rdf:Description>
+  <spin:SelectTemplate rdf:ID="GetURISubjects">
+    <spin:body>
+      <sp:Select>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject>
+              <rdf:Description rdf:nodeID="A4">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >subject</sp:varName>
+              </rdf:Description>
+            </sp:subject>
+            <sp:predicate rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:predicate>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >object</sp:varName>
+            </sp:object>
+          </rdf:Description>
+          <sp:Filter>
+            <sp:expression>
+              <sp:isIRI>
+                <sp:arg1 rdf:nodeID="A4"/>
+              </sp:isIRI>
+            </sp:expression>
+          </sp:Filter>
+        </sp:where>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A4"/>
+        </sp:resultVariables>
+        <sp:orderBy rdf:parseType="Collection">
+          <ui:label>
+            <sp:arg1 rdf:nodeID="A4"/>
+          </ui:label>
+        </sp:orderBy>
+      </sp:Select>
+    </spin:body>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#predicate"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The predicate to get the subjects of.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#object"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The object to get the subjects for.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#SelectTemplates"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Get URI subjects</rdfs:label>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Get URI subjects of {?predicate} at {?object}</spin:labelTemplate>
+  </spin:SelectTemplate>
+  <spin:SelectTemplate rdf:ID="GetObjects">
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#SelectTemplates"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Get objects</rdfs:label>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#subject"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The subject to get the objects of.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#predicate"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The predicate to get the objects of.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:body>
+      <sp:Select>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:subject rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >subject</sp:varName>
+            </sp:subject>
+            <sp:predicate rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:predicate>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A5">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >object</sp:varName>
+              </rdf:Description>
+            </sp:object>
+          </rdf:Description>
+        </sp:where>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A5"/>
+        </sp:resultVariables>
+        <sp:orderBy rdf:parseType="Collection">
+          <ui:label>
+            <sp:arg1 rdf:nodeID="A5"/>
+          </ui:label>
+        </sp:orderBy>
+      </sp:Select>
+    </spin:body>
+    <spin:labelTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Get objects of {?predicate} at {?subject}</spin:labelTemplate>
+  </spin:SelectTemplate>
+  <xsd:string rdf:nodeID="A6">
+    <sp:arg1 rdf:parseType="Resource">
+      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >node</sp:varName>
+    </sp:arg1>
+  </xsd:string>
+  <xsd:string rdf:nodeID="A7">
+    <sp:arg1 rdf:parseType="Resource">
+      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >icon</sp:varName>
+    </sp:arg1>
+  </xsd:string>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <rdf:Description rdf:nodeID="A9">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >object</sp:varName>
+      </rdf:Description>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <sp:subject>
+      <rdf:Description rdf:nodeID="A11">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >?0</sp:varName>
+      </rdf:Description>
+    </sp:subject>
+    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+    <sp:object>
+      <rdf:Description rdf:nodeID="A12">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >?1</sp:varName>
+      </rdf:Description>
+    </sp:object>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rs</sp:varName>
+  </rdf:Description>
+  <sp:isIRI rdf:nodeID="A14">
+    <sp:arg1>
+      <rdf:Description rdf:nodeID="A15">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >node</sp:varName>
+      </rdf:Description>
+    </sp:arg1>
+  </sp:isIRI>
+  <rdf:Description rdf:nodeID="A16">
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject>
+          <rdf:Description rdf:nodeID="A17">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >?1</sp:varName>
+          </rdf:Description>
+        </sp:subject>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</sp:object>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:subject rdf:nodeID="A17"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:subject>
+          <rdf:Description rdf:nodeID="A18">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >?0</sp:varName>
+          </rdf:Description>
+        </sp:subject>
+        <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+        <sp:object>
+          <rdf:Description rdf:nodeID="A19">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >value</sp:varName>
+          </rdf:Description>
+        </sp:object>
+      </rdf:Description>
+    </rdf:rest>
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject rdf:nodeID="A18"/>
+      <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+      <sp:object rdf:nodeID="A17"/>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >index</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>
+      <ui:label>
+        <sp:arg1>
+          <rdf:Description rdf:nodeID="A22">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >object</sp:varName>
+          </rdf:Description>
+        </sp:arg1>
+      </ui:label>
+    </rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:parseType="Resource">
+      <sp:subject>
+        <rdf:Description rdf:nodeID="A24">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >?0</sp:varName>
+        </rdf:Description>
+      </sp:subject>
+      <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+      <sp:object>
+        <rdf:Description rdf:nodeID="A25">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicate</sp:varName>
+        </rdf:Description>
+      </sp:object>
+    </rdf:first>
+  </rdf:Description>
+  <sp:Select rdf:nodeID="A26">
+    <sp:where rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A16"/>
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:nodeID="A18"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >resultSet</sp:varName>
+        </sp:object>
+      </rdf:first>
+    </sp:where>
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A19"/>
+    </sp:resultVariables>
+  </sp:Select>
+  <rdf:Description rdf:nodeID="A27">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >predicate</sp:varName>
+  </rdf:Description>
+  <html:B rdf:nodeID="A28">
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+    <ui:child>
+      <ui:TextNode>
+        <ui:text>
+          <ui:label>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicate</sp:varName>
+            </sp:arg1>
+          </ui:label>
+        </ui:text>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+      </ui:TextNode>
+    </ui:child>
+  </html:B>
+  <ui:label rdf:nodeID="A29">
+    <sp:arg1>
+      <rdf:Description rdf:nodeID="A30">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >subject</sp:varName>
+      </rdf:Description>
+    </sp:arg1>
+  </ui:label>
+  <sp:Select rdf:nodeID="A31">
+    <sp:where rdf:parseType="Resource">
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:nodeID="A24"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicateSet</sp:varName>
+        </sp:object>
+      </rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:parseType="Resource">
+          <sp:subject rdf:nodeID="A24"/>
+          <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+          <sp:object>
+            <rdf:Description rdf:nodeID="A32">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >?1</sp:varName>
+            </rdf:Description>
+          </sp:object>
+        </rdf:first>
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:parseType="Resource">
+            <sp:subject rdf:nodeID="A32"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+            <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:object>
+          </rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:parseType="Resource">
+              <sp:subject rdf:nodeID="A32"/>
+              <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+              <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:first>
+            <rdf:rest rdf:nodeID="A23"/>
+          </rdf:rest>
+        </rdf:rest>
+      </rdf:rest>
+    </sp:where>
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A25"/>
+    </sp:resultVariables>
+  </sp:Select>
+  <ui:let rdf:nodeID="A33">
+    <let:comment>
+      <spl:object>
+        <sp:arg1 rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >subject</sp:varName>
+        </sp:arg1>
+        <sp:arg2 rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+      </spl:object>
+    </let:comment>
+    <ui:child>
+      <ui:if>
+        <ui:condition>
+          <sp:bound>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >comment</sp:varName>
+            </sp:arg1>
+          </sp:bound>
+        </ui:condition>
+        <ui:child>
+          <html:Div>
+            <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >tuiCommentBox</html:class>
+            <ui:child>
+              <ui:TextNode>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+                <ui:text rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >comment</sp:varName>
+                </ui:text>
+              </ui:TextNode>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </html:Div>
+        </ui:child>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+      </ui:if>
+    </ui:child>
+  </ui:let>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:subject rdf:nodeID="A12"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</sp:object>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:subject rdf:nodeID="A12"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:Description>
+      <rdf:Description>
+        <sp:subject rdf:nodeID="A11"/>
+        <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+        <sp:object>
+          <rdf:Description rdf:nodeID="A35">
+            <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >node</sp:varName>
+          </rdf:Description>
+        </sp:object>
+      </rdf:Description>
+    </rdf:rest>
+    <rdf:first rdf:nodeID="A10"/>
+  </rdf:Description>
+  <sp:Select rdf:nodeID="A36">
+    <sp:where rdf:parseType="Resource">
+      <rdf:rest rdf:nodeID="A34"/>
+      <rdf:first rdf:parseType="Resource">
+        <sp:subject rdf:nodeID="A11"/>
+        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <sp:object rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >resultSet</sp:varName>
+        </sp:object>
+      </rdf:first>
+    </sp:where>
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A35"/>
+    </sp:resultVariables>
+  </sp:Select>
+  <spl:Argument rdf:nodeID="A37">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The URI resource to display. Blank nodes or literals are not permitted. Use tui:Label to disambiguate.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="#node"/>
+  </spl:Argument>
+  <ui:forEach rdf:nodeID="A38">
+    <ui:resultSet rdf:nodeID="A31"/>
+    <ui:child>
+      <tui:ObjectPathWidget>
+        <tui:predicate rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicate</sp:varName>
+        </tui:predicate>
+        <tui:subject rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >subject</sp:varName>
+        </tui:subject>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+      </tui:ObjectPathWidget>
+    </ui:child>
+  </ui:forEach>
+  <rdf:Description rdf:nodeID="A39">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >object</sp:varName>
+  </rdf:Description>
+  <sp:Select rdf:nodeID="A40">
+    <sp:orderBy rdf:parseType="Collection">
+      <ui:label>
+        <sp:arg1 rdf:nodeID="A9"/>
+      </ui:label>
+    </sp:orderBy>
+    <sp:resultVariables rdf:nodeID="A8"/>
+    <sp:where rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:object rdf:nodeID="A9"/>
+        <sp:predicate rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicate</sp:varName>
+        </sp:predicate>
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >subject</sp:varName>
+        </sp:subject>
+      </rdf:Description>
+    </sp:where>
+  </sp:Select>
+  <ui:NodeClass rdf:ID="LabelList">
+    <rdfs:subClassOf>
+      <ui:NodeClass rdf:ID="Elements">
+        <rdfs:subClassOf rdf:resource="http://uispin.org/ui#Element"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >TUI Elements</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abstract base class to group together the various TUI elements.</rdfs:comment>
+        <ui:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</ui:abstract>
+      </ui:NodeClass>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Label list</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A comma-separated list of values from a given result set. The individual values will be rendered into tui:Labels.</rdfs:comment>
+    <ui:prototype>
+      <ui:forEach>
+        <ui:indexVar rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >index</ui:indexVar>
+        <ui:resultSet rdf:nodeID="A36"/>
+        <ui:child>
+          <ui:if>
+            <ui:condition>
+              <sp:gt>
+                <sp:arg1 rdf:nodeID="A20"/>
+                <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</sp:arg2>
+              </sp:gt>
+            </ui:condition>
+            <ui:child>
+              <ui:TextNode>
+                <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >, </ui:text>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </ui:TextNode>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </ui:if>
+        </ui:child>
+        <ui:child>
+          <tui:Label>
+            <tui:node rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >node</sp:varName>
+            </tui:node>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >1</ui:childIndex>
+          </tui:Label>
+        </ui:child>
+      </ui:forEach>
+    </ui:prototype>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The SELECT query delivering the nodes to display in its first column.</rdfs:comment>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+      </spl:Argument>
+    </spin:constraint>
+  </ui:NodeClass>
+  <spl:Argument rdf:nodeID="A41">
+    <spl:predicate rdf:resource="#node"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The resource to render.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <ui:NodeClass rdf:ID="PathWidget">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The URL to an (optional) icon to display to the left of the path name.</rdfs:comment>
+        <spl:optional rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</spl:optional>
+        <spl:predicate rdf:resource="#icon"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="http://uispin.org/ui#resultSet"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The SELECT query getting the values.</rdfs:comment>
+        <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+      </spl:Argument>
+    </spin:constraint>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The property to display the values of.</rdfs:comment>
+        <spl:predicate rdf:resource="#path"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A table with two columns: The name of the property (path) on the left, and the values on the right. The table is driven by a SPARQL SELECT query (ui:resultSet).</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Path widget</rdfs:label>
+    <ui:prototype>
+      <html:Table>
+        <ui:child>
+          <html:Tr>
+            <ui:child>
+              <html:Td>
+                <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >tuiWidgetLabelCell</html:class>
+                <ui:child>
+                  <ui:if>
+                    <ui:condition>
+                      <sp:bound>
+                        <sp:arg1 rdf:parseType="Resource">
+                          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >icon</sp:varName>
+                        </sp:arg1>
+                      </sp:bound>
+                    </ui:condition>
+                    <ui:child>
+                      <html:Img>
+                        <html:src rdf:nodeID="A7"/>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</ui:childIndex>
+                      </html:Img>
+                    </ui:child>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </ui:if>
+                </ui:child>
+                <ui:child>
+                  <tui:Link>
+                    <tui:node rdf:parseType="Resource">
+                      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >path</sp:varName>
+                    </tui:node>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >1</ui:childIndex>
+                  </tui:Link>
+                </ui:child>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </html:Td>
+            </ui:child>
+            <ui:child>
+              <html:Td>
+                <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >tuiWidgetValuesCell</html:class>
+                <ui:child>
+                  <html:Table>
+                    <ui:child>
+                      <ui:forEach>
+                        <ui:resultSet rdf:nodeID="A26"/>
+                        <ui:child>
+                          <html:Tr>
+                            <ui:child>
+                              <html:Td>
+                                <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >tuiWidgetValueCell</html:class>
+                                <ui:child>
+                                  <tui:Label>
+                                    <tui:node rdf:parseType="Resource">
+                                      <sp:varName rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >value</sp:varName>
+                                    </tui:node>
+                                    <ui:childIndex rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                    >0</ui:childIndex>
+                                  </tui:Label>
+                                </ui:child>
+                                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                >0</ui:childIndex>
+                              </html:Td>
+                            </ui:child>
+                            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >0</ui:childIndex>
+                          </html:Tr>
+                        </ui:child>
+                        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</ui:childIndex>
+                      </ui:forEach>
+                    </ui:child>
+                    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >0</ui:childIndex>
+                  </html:Table>
+                </ui:child>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+              </html:Td>
+            </ui:child>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </html:Tr>
+        </ui:child>
+      </html:Table>
+    </ui:prototype>
+  </ui:NodeClass>
+  <sp:Select rdf:nodeID="A42">
+    <sp:orderBy rdf:nodeID="A21"/>
+    <sp:resultVariables rdf:parseType="Collection">
+      <rdf:Description rdf:nodeID="A22"/>
+    </sp:resultVariables>
+    <sp:where rdf:parseType="Collection">
+      <rdf:Description>
+        <sp:object rdf:nodeID="A22"/>
+        <sp:predicate rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicate</sp:varName>
+        </sp:predicate>
+        <sp:subject rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >subject</sp:varName>
+        </sp:subject>
+      </rdf:Description>
+    </sp:where>
+  </sp:Select>
+  <rdf:Description rdf:nodeID="A43">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >predicate</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >node</sp:varName>
+  </rdf:Description>
+  <html:A rdf:nodeID="A45">
+    <html:href>
+      <ui:link>
+        <sp:arg1 rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >node</sp:varName>
+        </sp:arg1>
+      </ui:link>
+    </html:href>
+    <ui:child>
+      <ui:TextNode>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <ui:text>
+          <ui:label>
+            <sp:arg1 rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >node</sp:varName>
+            </sp:arg1>
+          </ui:label>
+        </ui:text>
+      </ui:TextNode>
+    </ui:child>
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+  </html:A>
+  <ui:let rdf:nodeID="A46">
+    <ui:child>
+      <tui:PathWidget>
+        <tui:icon rdf:resource="http://uispin.org/icons/SubjectPath.gif"/>
+        <tui:path rdf:nodeID="A27"/>
+        <ui:resultSet>
+          <sp:Select>
+            <sp:where rdf:parseType="Collection">
+              <rdf:Description>
+                <sp:subject rdf:nodeID="A30"/>
+                <sp:predicate rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >predicate</sp:varName>
+                </sp:predicate>
+                <sp:object rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >object</sp:varName>
+                </sp:object>
+              </rdf:Description>
+              <sp:Filter>
+                <sp:expression>
+                  <sp:isIRI>
+                    <sp:arg1 rdf:nodeID="A30"/>
+                  </sp:isIRI>
+                </sp:expression>
+              </sp:Filter>
+            </sp:where>
+            <sp:resultVariables rdf:parseType="Collection">
+              <rdf:Description rdf:nodeID="A30"/>
+            </sp:resultVariables>
+            <sp:orderBy rdf:parseType="Collection">
+              <ui:label rdf:nodeID="A29"/>
+            </sp:orderBy>
+          </sp:Select>
+        </ui:resultSet>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+      </tui:PathWidget>
+    </ui:child>
+  </ui:let>
+  <spr:rowCount rdf:nodeID="A47">
+    <sp:arg1 rdf:nodeID="A13"/>
+  </spr:rowCount>
+  <ui:let rdf:nodeID="A48">
+    <ui:child>
+      <ui:if>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <ui:child>
+          <html:Div>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <ui:child>
+              <tui:LabelList>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >2</ui:childIndex>
+                <ui:resultSet rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >rs</sp:varName>
+                </ui:resultSet>
+              </tui:LabelList>
+            </ui:child>
+            <ui:child>
+              <ui:TextNode>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >1</ui:childIndex>
+                <ui:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >: </ui:text>
+              </ui:TextNode>
+            </ui:child>
+            <ui:child rdf:nodeID="A28"/>
+          </html:Div>
+        </ui:child>
+        <ui:condition>
+          <sp:gt>
+            <sp:arg2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:arg2>
+            <sp:arg1 rdf:nodeID="A47"/>
+          </sp:gt>
+        </ui:condition>
+      </ui:if>
+    </ui:child>
+    <letrs:rs rdf:nodeID="A42"/>
+  </ui:let>
+  <html:Div rdf:nodeID="A49">
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+    <ui:child>
+      <html:B>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <ui:child>
+          <ui:TextNode>
+            <ui:text>
+              <ui:label>
+                <sp:arg1 rdf:parseType="Resource">
+                  <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >node</sp:varName>
+                </sp:arg1>
+              </ui:label>
+            </ui:text>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+          </ui:TextNode>
+        </ui:child>
+      </html:B>
+    </ui:child>
+  </html:Div>
+  <html:Span rdf:nodeID="A50">
+    <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tuiLink</html:class>
+    <ui:child rdf:nodeID="A45"/>
+  </html:Span>
+  <ui:TextNode rdf:nodeID="A51">
+    <ui:text rdf:nodeID="A44"/>
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+  </ui:TextNode>
+  <sp:or rdf:nodeID="A52">
+    <sp:arg2>
+      <sp:isBlank>
+        <sp:arg1 rdf:nodeID="A15"/>
+      </sp:isBlank>
+    </sp:arg2>
+    <sp:arg1 rdf:nodeID="A14"/>
+  </sp:or>
+  <rdf:Description rdf:nodeID="A53">
+    <sp:object>
+      <rdf:Description rdf:nodeID="A54">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >predicate</sp:varName>
+      </rdf:Description>
+    </sp:object>
+    <sp:predicate rdf:resource="http://spinrdf.org/spr#colCells"/>
+    <sp:subject>
+      <rdf:Description rdf:nodeID="A55">
+        <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >?0</sp:varName>
+      </rdf:Description>
+    </sp:subject>
+  </rdf:Description>
+  <sp:isIRI rdf:nodeID="A56">
+    <sp:arg1 rdf:parseType="Resource">
+      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >node</sp:varName>
+    </sp:arg1>
+  </sp:isIRI>
+  <html:Div rdf:nodeID="A57">
+    <ui:child>
+      <tui:ObjectPathList>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >3</ui:childIndex>
+        <tui:subject rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >node</sp:varName>
+        </tui:subject>
+        <tui:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+      </tui:ObjectPathList>
+    </ui:child>
+    <ui:child>
+      <html:Hr>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >2</ui:childIndex>
+        <html:style rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >height:1px; border:0px; color:#666; background:#666</html:style>
+      </html:Hr>
+    </ui:child>
+    <ui:child>
+      <ui:if>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</ui:childIndex>
+        <ui:child>
+          <html:Div>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <ui:child>
+              <ui:TextNode>
+                <ui:text rdf:nodeID="A6"/>
+                <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >0</ui:childIndex>
+              </ui:TextNode>
+            </ui:child>
+            <css:font-size rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >small</css:font-size>
+          </html:Div>
+        </ui:child>
+        <ui:condition rdf:nodeID="A56"/>
+      </ui:if>
+    </ui:child>
+    <ui:child rdf:nodeID="A49"/>
+  </html:Div>
+  <ui:forEach rdf:nodeID="A58">
+    <ui:child>
+      <tui:SubjectPathWidget>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <tui:predicate rdf:parseType="Resource">
+          <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >predicate</sp:varName>
+        </tui:predicate>
+        <tui:object rdf:nodeID="A39"/>
+      </tui:SubjectPathWidget>
+    </ui:child>
+    <ui:resultSet>
+      <sp:Select>
+        <sp:resultVariables rdf:parseType="Collection">
+          <rdf:Description rdf:nodeID="A54"/>
+        </sp:resultVariables>
+        <sp:where rdf:parseType="Collection">
+          <rdf:Description>
+            <sp:object rdf:parseType="Resource">
+              <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >predicateSet</sp:varName>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+            <sp:subject rdf:nodeID="A55"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object>
+              <rdf:Description rdf:nodeID="A59">
+                <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >?1</sp:varName>
+              </rdf:Description>
+            </sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+            <sp:subject rdf:nodeID="A55"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</sp:object>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+            <sp:subject rdf:nodeID="A59"/>
+          </rdf:Description>
+          <rdf:Description>
+            <sp:object rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+            <sp:subject rdf:nodeID="A59"/>
+          </rdf:Description>
+          <rdf:Description rdf:nodeID="A53"/>
+        </sp:where>
+      </sp:Select>
+    </ui:resultSet>
+  </ui:forEach>
+  <spl:Argument rdf:nodeID="A60">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The object of the widgets.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="#object"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A61">
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The predicate to get the values of.</rdfs:comment>
+    <spl:predicate rdf:resource="#predicate"/>
+  </spl:Argument>
+  <ui:let rdf:nodeID="A62">
+    <ui:child>
+      <tui:PathWidget>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <ui:resultSet rdf:nodeID="A40"/>
+        <tui:path rdf:nodeID="A43"/>
+      </tui:PathWidget>
+    </ui:child>
+  </ui:let>
+  <spl:Argument rdf:nodeID="A63">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The object to display the values of.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <spl:predicate rdf:resource="#object"/>
+  </spl:Argument>
+  <ui:resourceView rdf:nodeID="A64">
+    <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >0</ui:childIndex>
+    <ui:resource rdf:parseType="Resource">
+      <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >node</sp:varName>
+    </ui:resource>
+    <ui:matchIds rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >label</ui:matchIds>
+  </ui:resourceView>
+  <rdf:Description rdf:nodeID="A65">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >node</sp:varName>
+  </rdf:Description>
+  <spl:Argument rdf:nodeID="A66">
+    <spl:predicate rdf:resource="#subject"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The subject to display the values of.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <ui:let rdf:nodeID="A67">
+    <ui:child>
+      <ui:if>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</ui:childIndex>
+        <ui:child rdf:nodeID="A64"/>
+        <ui:condition rdf:nodeID="A52"/>
+      </ui:if>
+    </ui:child>
+    <ui:child>
+      <ui:if>
+        <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >0</ui:childIndex>
+        <ui:child>
+          <html:Span>
+            <ui:childIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</ui:childIndex>
+            <ui:child rdf:nodeID="A51"/>
+            <html:class rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >tuiLabel</html:class>
+          </html:Span>
+        </ui:child>
+        <ui:condition>
+          <sp:isLiteral>
+            <sp:arg1 rdf:nodeID="A65"/>
+          </sp:isLiteral>
+        </ui:condition>
+      </ui:if>
+    </ui:child>
+  </ui:let>
+  <spl:Argument rdf:nodeID="A68">
+    <spl:predicate rdf:resource="#predicate"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The predicate to display.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A69">
+    <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A SELECT query delivering the predicates to display.</rdfs:comment>
+    <spl:predicate rdf:resource="#predicateSet"/>
+  </spl:Argument>
+  <spl:Argument rdf:nodeID="A70">
+    <spl:predicate rdf:resource="#subject"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The subject of the widgets.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <ui:NodeClass rdf:ID="ObjectPathList">
+    <ui:prototype rdf:nodeID="A48"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object path list</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A div showing the label of a property (tui:predicate) and then all values of the property at a given subject (tui:subject). If no values are present, nothing is displayed.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A66"/>
+    <spin:constraint rdf:nodeID="A68"/>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="CommentBox">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A boxed area containing the rdfs:comment of a given resource (tui:subject).</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The subject to display the comment of.</rdfs:comment>
+        <spl:predicate rdf:resource="#subject"/>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Comment box</rdfs:label>
+    <ui:prototype rdf:nodeID="A33"/>
+  </ui:NodeClass>
+  <spl:Argument rdf:nodeID="A71">
+    <spl:predicate rdf:resource="#subject"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The subject to display the values of.</rdfs:comment>
+    <spl:valueType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </spl:Argument>
+  <ui:NodeClass rdf:ID="ObjectPathWidgetGroup">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object path widget group</rdfs:label>
+    <spin:constraint rdf:nodeID="A69"/>
+    <spin:constraint rdf:nodeID="A70"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A collection of tui:ObjectPathWidgets on a given subject (tui:subject) where the properties are selected by a SELECT query (tui:predicateSet).</rdfs:comment>
+    <ui:prototype rdf:nodeID="A38"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Label">
+    <ui:prototype rdf:nodeID="A67"/>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#node"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The RDF node to display.</rdfs:comment>
+      </spl:Argument>
+    </spin:constraint>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Displays an arbitrary RDF node. If the node is a resource, then this will use the configured resource display with id="label" (e.g., the tui:Link). Literals will be rendered as a simple text node.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Label</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="SubjectPathWidget">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Subject path widget</rdfs:label>
+    <spin:constraint rdf:nodeID="A63"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A tabular widget with two columns: the property name on the left, and the incoming references via a given property at a given object to the right.</rdfs:comment>
+    <spin:constraint>
+      <spl:Argument>
+        <spl:predicate rdf:resource="#predicate"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The predicate to get the values of.</rdfs:comment>
+        <spl:valueType rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+      </spl:Argument>
+    </spin:constraint>
+    <ui:prototype rdf:nodeID="A46"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="Link">
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A simple hyperlink to a resource, using the display label of the resource as text.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Link</rdfs:label>
+    <spin:constraint rdf:nodeID="A37"/>
+    <ui:prototype rdf:nodeID="A50"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="ObjectPathWidget">
+    <ui:prototype rdf:nodeID="A62"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A tabular widget with two columns: the property name on the left, and the values of the property at a given subject to the right.</rdfs:comment>
+    <spin:constraint rdf:nodeID="A71"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Object path widget</rdfs:label>
+    <spin:constraint rdf:nodeID="A61"/>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </ui:NodeClass>
+  <ui:NodeClass rdf:ID="SummaryHeader">
+    <ui:prototype rdf:nodeID="A57"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Summary header</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A div that displays the label, type and URI of a given resource (tui:node).</rdfs:comment>
+    <spin:constraint rdf:nodeID="A41"/>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+  </ui:NodeClass>
+  <spl:Argument rdf:nodeID="A72">
+    <spl:predicate rdf:resource="#predicateSet"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A SELECT query delivering the predicates to display.</rdfs:comment>
+    <spl:valueType rdf:resource="http://spinrdf.org/sp#Select"/>
+  </spl:Argument>
+  <ui:NodeClass rdf:ID="SubjectPathWidgetGroup">
+    <ui:prototype rdf:nodeID="A58"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A collection of tui:SubjectPathWidgets on a given object (tui:object) where the properties are selected by a SELECT query (tui:predicateSet).</rdfs:comment>
+    <spin:constraint rdf:nodeID="A72"/>
+    <spin:constraint rdf:nodeID="A60"/>
+    <rdfs:subClassOf rdf:resource="#Elements"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Subject path widget group</rdfs:label>
+  </ui:NodeClass>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

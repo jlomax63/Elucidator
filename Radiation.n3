@@ -1,0 +1,474 @@
+# Saved by TopBraid on Tue Jan 18 14:53:26 CST 2011
+# baseURI: http://mdacc.org/Radiation
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+# imports: http://mdacc.org/Label
+
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix radiation:  <http://mdacc.org/Radiation#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Radiation>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+radiation:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+radiation:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:Birth1_PatientEvent
+      rdf:type radiation:BirthPatientEvent ;
+      time-entry:before radiation:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+radiation:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+radiation:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type radiation:ChemotherapyPatientEvent .
+
+radiation:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type radiation:ChemotherapyPatientEvent .
+
+radiation:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type radiation:ChemotherapyPatientEvent .
+
+radiation:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+radiation:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:DNAMethylationBioAssayAffymetrix
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#PhysicalBioAssay> .
+
+radiation:DeathPatient1_PatientEvent
+      rdf:type radiation:DeathPatientEvent ;
+      time-entry:ends radiation:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+radiation:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:DukeBrainBankOwner
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Person> .
+
+radiation:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+radiation:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:TemporalEvent .
+
+radiation:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf radiation:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:ExternalBeamRadiationTherapy
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation therapy that uses a machine to aim high-energy rays at the cancer."^^xsd:string ;
+      rdfs:subClassOf radiation:RadiationTherapy ;
+      dc:creator foaf:JimLomax .
+
+radiation:ExternalBeamRadiationTherapy1_TherapeuticProcedure
+      rdf:type radiation:ExternalBeamRadiationTherapy .
+
+radiation:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+radiation:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              radiation:DurationDescription_30Days .
+
+radiation:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              radiation:Patient1Birth_Instant .
+
+radiation:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              radiation:DurationDescription_30Days .
+
+radiation:MDAndersonBrainBankOwner
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Person> .
+
+radiation:MDAndersonBrainBankRepository
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#BioSourceProvider> .
+
+radiation:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith radiation:BirthPatientEvent , radiation:DeathPatientEvent , radiation:SurgicalProcedurePatientEvent , radiation:TherapeuticProcedurePatientEvent .
+
+radiation:MedicalAppointment_PatientEvent
+      rdf:type radiation:MedicalAppointmentPatientEvent .
+
+radiation:Nucleus
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+radiation:Ontology_1
+      rdf:type owl:Ontology .
+
+radiation:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+radiation:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+radiation:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf radiation:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:Proteasome
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+radiation:ProteinDimer
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+radiation:ProteinTrimer
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+radiation:RadiationAnatomicTreatmentSite
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationBCRBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationNumFractions
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+radiation:RadiationRegimenIndication
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationRegimenIndicationNote
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationTherapy
+      rdf:type owl:Class ;
+      rdfs:comment "The use of high-energy radiation from x-rays, gamma rays, neutrons, and other sources to kill cancer cells and shrink tumors. Radiation may come from a machine outside the body (external-beam radiation therapy) or from materials called radioisotopes. Radioisotopes produce radiation and can be placed in or near the tumor or in the area near cancer cells. This type of radiation treatment is called internal radiation therapy, implant radiation, interstitial radiation, or brachytherapy. Systemic radiation therapy uses a radioactive substance, such as a radiolabeled monoclonal antibody, that circulates throughout the body."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedure ;
+      dc:creator foaf:JimLomax .
+
+radiation:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:RadiationTreatmentEnd
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationTreatmentOngoing
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationTreatmentStart
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationType
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationTypeNote
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadiationUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:RadiationPackage .
+
+radiation:RadioIsotopeTherapy
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation therapy that uses a machine to aim high-energy rays at the cancer."^^xsd:string ;
+      rdfs:subClassOf radiation:RadiationTherapy ;
+      dc:creator foaf:JimLomax .
+
+radiation:Resource_2
+      rdf:type rdfs:Resource .
+
+radiation:RoughEndoplasmicReticulum
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#CellularComponent> .
+
+radiation:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+radiation:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf radiation:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf radiation:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+radiation:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:TherapeuticProcedure
+      rdf:type owl:Class ;
+      rdfs:comment "The action or administration of therapeutic agents to produce an effect that is intended to alter the course of a pathologic process."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+radiation:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              radiation:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+radiation:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              radiation:TherapeuticProcedureList1_Item_Radiation1 .
+
+radiation:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem ;
+      collections:itemContent
+              radiation:ExternalBeamRadiationTherapy1_TherapeuticProcedure .
+
+radiation:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf radiation:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+radiation:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              radiation:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              radiation:TherapeuticProcedureList1_Item_Radiation1 .
+
+radiation:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+radiation:abbreviatedForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Property that established a term to abbreviation of term relationship between skos-xl Labels."^^xsd:string ;
+      rdfs:subPropertyOf skos-xl:labelRelation ;
+      dc:creator foaf:JimLomax ;
+      owl:inverseOf radiation:fullForm .
+
+radiation:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf radiation:hasAccessionNumber .
+
+radiation:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+radiation:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:cy3LabelingProtocol1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Protocol> .
+
+radiation:cy3LabelingTreatment1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Treatment> .
+
+radiation:cy3PreWashProtocol1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Protocol> .
+
+radiation:cy3PreWashTreatment1
+      rdf:type <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#Treatment> .
+
+radiation:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:fullForm
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf skos-xl:labelRelation .
+
+radiation:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf radiation:hasGenomicSequenceId ;
+      owl:inverseOf radiation:accessionNumberOf .
+
+radiation:hasApproval
+      rdf:type owl:AnnotationProperty .
+
+radiation:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#has_version> .
+
+radiation:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+radiation:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#has_version> .
+
+radiation:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+radiation:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+<http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Affiliation_1>
+      rdf:type <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Affiliation> .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

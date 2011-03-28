@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:jena="http://www.topbraid.org/2007/02/jena.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.topbraid.org/2007/02/jena.owl">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:AnnotationProperty rdf:ID="rule">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An annotation property that can be used to store Jena rules as strings together with an RDF/OWL ontology. Values of this property will be automatically detected by the TopBraid Rules View to populate the list of available rules.</rdfs:comment>
+  </owl:AnnotationProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

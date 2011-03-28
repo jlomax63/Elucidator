@@ -1,0 +1,675 @@
+# Saved by TopBraid on Wed Feb 23 17:34:23 CST 2011
+# baseURI: http://mdacc.org/Temporal
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://mdacc.org/Label
+
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix temporal:  <http://mdacc.org/Temporal#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Microarray#Platform>
+      rdfs:comment "The difference between the Microarray and Platform is that the Platform is associated with a specific vendor and design."^^xsd:string .
+
+<http://mdacc.org/Temporal>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://mdacc.org/Label> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+temporal:AliquotExample_ShipmentDateTime
+      rdf:type temporal:ShipmentDateTime ;
+      temporal:dateTime "2/10/2010"^^xsd:string .
+
+temporal:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+temporal:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Birth1_PatientEvent
+      rdf:type temporal:BirthPatientEvent ;
+      time-entry:before temporal:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+temporal:BirthDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date (time) the subject was born."^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      label:correspondsTo label:BirthDate_NCIURI ;
+      dc:creator foaf:JimLomax .
+
+temporal:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+temporal:CancerProgressionDiagnosis1_PatientEvent
+      rdf:type temporal:CancerProgressionDiagnosisPatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-05-29T20:15:20.198"^^xsd:dateTime .
+
+temporal:CancerProgressionDiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Diagnosis: cancer worsening over time."^^xsd:string ;
+      rdfs:subClassOf temporal:DiagnosisPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type temporal:ChemotherapyPatientEvent ;
+      temporal:dateTime "02-01-2010"^^xsd:string .
+
+temporal:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type temporal:ChemotherapyPatientEvent ;
+      temporal:dateTime "03-01-2010"^^xsd:string .
+
+temporal:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type temporal:ChemotherapyPatientEvent .
+
+temporal:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+temporal:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:CollectionDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date (time) the subject was collected (in particular a tissue sample)"^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:CreationDateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+temporal:DateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:TemporalPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty temporal:dateTime ;
+                owl:someValuesFrom xsd:dateTime
+              ] ;
+      dc:creator foaf:JimLomax .
+
+temporal:DeathDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date (time) the subject died."^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      label:correspondsTo label:DeathDate_NCIURI ;
+      dc:creator foaf:JimLomax .
+
+temporal:DeathPatient1_PatientEvent
+      rdf:type temporal:DeathPatientEvent ;
+      time-entry:ends temporal:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+temporal:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:DiagnosisPatient1_PatientEvent
+      rdf:type temporal:DiagnosisPatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-03-05T00:56:50.76"^^xsd:dateTime .
+
+temporal:DiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation."^^xsd:string ;
+      rdfs:subClassOf skos:Concept , temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:DrugTreatment1_EndDateTime
+      rdf:type temporal:EndDateTime ;
+      temporal:dateTime "2/2/2011"^^xsd:string .
+
+temporal:DrugTreatment1_StartDateTime
+      rdf:type temporal:StartDateTime ;
+      temporal:dateTime "10/10/2010"^^xsd:string .
+
+temporal:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+temporal:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+temporal:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:TemporalEvent .
+
+temporal:EndDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date/time something ends."^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf temporal:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:FollowUpDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date (time) the subject has/had a follow up appointment."^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      label:designNote "There is no corresponding concept in Bio Portal"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+temporal:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "An event, during which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+temporal:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              temporal:DurationDescription_30Days .
+
+temporal:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              temporal:Patient1Birth_Instant .
+
+temporal:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              temporal:DurationDescription_30Days .
+
+temporal:June20_2010_CreationDateTime
+      rdf:type temporal:CreationDateTime ;
+      temporal:dateTime "June 20 2010"^^xsd:string .
+
+temporal:June20_2010_InitialDiagnosis_DateTime
+      rdf:type temporal:DateTime ;
+      temporal:dateTime "June 20 2010"^^xsd:string .
+
+temporal:June21_2010_CollectionDateTime
+      rdf:type temporal:DateTime ;
+      temporal:dateTime "6/21/2010"^^xsd:string .
+
+temporal:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+temporal:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+temporal:May13_2010_CreationDateTime
+      rdf:type temporal:DateTime ;
+      temporal:dateTime "5/13/2010"^^xsd:string .
+
+temporal:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith temporal:TherapeuticProcedurePatientEvent , temporal:BirthPatientEvent , temporal:SurgicalProcedurePatientEvent , temporal:DeathPatientEvent , temporal:DiagnosisPatientEvent .
+
+temporal:MedicalAppointment_PatientEvent
+      rdf:type temporal:MedicalAppointmentPatientEvent .
+
+temporal:ModificationDateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:Nucleus
+      rdf:type mage:CellularComponent .
+
+temporal:Ontology_1
+      rdf:type owl:Ontology .
+
+temporal:PathologicalDiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:DiagnosisPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+temporal:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+temporal:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf temporal:TemporalEvent ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty temporal:eventSource ;
+                owl:someValuesFrom owl:Thing
+              ] ;
+      dc:creator foaf:JimLomax .
+
+temporal:Proteasome
+      rdf:type mage:CellularComponent .
+
+temporal:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+temporal:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+temporal:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Resource_2
+      rdf:type rdfs:Resource .
+
+temporal:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+temporal:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+temporal:ShipmentDateTime
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf temporal:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:StartDateTime
+      rdf:type owl:Class ;
+      rdfs:comment "The date/time something begins."^^xsd:string ;
+      rdfs:subClassOf temporal:DateTime ;
+      dc:creator foaf:JimLomax .
+
+temporal:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+temporal:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent , temporal:TemporalPackage ;
+      dc:creator foaf:JimLomax .
+
+temporal:TemporalPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+temporal:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf temporal:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+temporal:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+temporal:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf temporal:hasAccessionNumber .
+
+temporal:activeDatatype
+      rdf:type rdf:Property .
+
+temporal:anaplasia
+      rdf:type rdf:Property .
+
+temporal:birth
+      rdf:type owl:ObjectProperty .
+
+temporal:bornOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it was born."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:code
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range rdfs:Literal .
+
+temporal:collectedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it was collected."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:designNote "This property is used in relating Tissue Samples to the date on which they were collected (created)(excised)"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:collectionSiteDomain
+      rdf:type rdf:Property .
+
+temporal:collectsIntensityValuesFrom
+      rdf:type rdf:Property .
+
+temporal:createdDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+temporal:createdOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf temporal:dateTime .
+
+temporal:creationDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was created."^^xsd:string ;
+      rdfs:subPropertyOf temporal:dateTimeInstant .
+
+temporal:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+temporal:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+temporal:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+temporal:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+temporal:dateTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Any entity in the ontology having a dateTime"^^xsd:string .
+
+temporal:dateTimeInstant
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range time-entry:InstantThing ;
+      rdfs:subPropertyOf temporal:dateTimeThing .
+
+temporal:dateTimeThing
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range time-entry:TemporalThing ;
+      rdfs:subPropertyOf temporal:dateTime .
+
+temporal:death
+      rdf:type owl:ObjectProperty .
+
+temporal:descriptionOf
+      rdf:type rdf:Property .
+
+temporal:diedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it died."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:endedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it ended."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:event
+      rdf:type owl:ObjectProperty .
+
+temporal:eventSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The source \"object\" of an event; the entity or nature of the action."^^xsd:string .
+
+temporal:eventTarget
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The target \"object\" of an event; the target of the action."^^xsd:string .
+
+temporal:followedUpOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it was followed up."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf temporal:hasGenomicSequenceId ;
+      owl:inverseOf temporal:accessionNumberOf .
+
+temporal:hasApproval
+      rdf:type owl:AnnotationProperty .
+
+temporal:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+temporal:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+temporal:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+temporal:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+temporal:lastModifiedDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf temporal:dateTimeInstant .
+
+temporal:lastUpdatedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf temporal:dateTimeInstant .
+
+temporal:modifiedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it was modified."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:numberOfDaysToCollection
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Relates the subject (obviously a TissueSample) to the number of days between a basis time and its collection."^^xsd:string ;
+      rdfs:domain <http://mdacc.org/Sample#TissueSample> ;
+      rdfs:range xsd:int ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:designNote "The number of days from the basis time until the collection."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:numberOfDaysToTherapyEnd
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:int ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:numberOfDaysToTherapyStart
+      rdf:type owl:DatatypeProperty ;
+      rdfs:range xsd:int ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:shippedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it shipped."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:startedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to the date on which it was modified."^^xsd:string ;
+      rdfs:range temporal:DateTime ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+temporal:timeBetweenClampingAndFreezing
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Relates the subject (obviously a Tissue Sample) to the time between its clamping and freezing."^^xsd:string ;
+      rdfs:domain <http://mdacc.org/Sample#TissueSample> ;
+      rdfs:range xsd:int ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:designNote "The number of days ? hours ? between the clamping and freezing of the sample."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:domainQuestion
+              "We are not sure if the time units captured for this atrtibute are days, or if any units are specified in the data,  since we have not seen real data."^^xsd:string .
+
+temporal:timeBetweenExcisionAndFreezing
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Relates the subject (obviously a Tissue Sample) to the time between its excision and freezing."^^xsd:string ;
+      rdfs:domain <http://mdacc.org/Sample#TissueSample> ;
+      rdfs:range xsd:int ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:designNote "The number of days ? hours ? between the excision and freezing of the sample."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:domainQuestion
+              "We are not sure if the time units captured for this atrtibute are days, or if any units are specified in the data,  since we have not seen real data."^^xsd:string .
+
+temporal:updatedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+temporal:uploadCompletedOn
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The date an entity was uploaded."^^xsd:string ;
+      rdfs:subPropertyOf temporal:dateTimeInstant .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+time-entry:TemporalThing
+      rdfs:subClassOf temporal:TemporalPackage .
+
+time-entry:TemporalUnit
+      rdfs:subClassOf temporal:TemporalPackage .
+
+<http://www.isi.edu/~pan/damltime/timezone-ont.owl#TimeZone>
+      rdfs:subClassOf temporal:TemporalPackage .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

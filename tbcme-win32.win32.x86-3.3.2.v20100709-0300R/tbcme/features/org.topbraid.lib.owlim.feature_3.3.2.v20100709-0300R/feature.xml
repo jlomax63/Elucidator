@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.topbraid.lib.owlim.feature"
+      label="org.topbraid.lib.owlim.feature"
+      version="3.3.2.v20100709-0300R"
+      provider-name="TopQuadrant, Inc.">
+
+   <description>
+      OWLIM library and dependent functionality in TopBraid.
+   </description>
+
+   <copyright>
+      (c) All rights reserved to TopQuadrant, Inc.
+   </copyright>
+
+   <license>
+      About This Content
+March 2010
+End User License Agreement
+TopQuadrant makes available all content in this Eclipse Feature (“Content”).
+Unless otherwise indicated below, the Content is provided to
+you under the terms and conditions of the End User License Agreement
+(“EULA”). This EULA sets forth the terms applicable to use and
+licensing by the customer (“Customer”) of software provided by
+TopQuadrant, Inc. (“TopQuadrant”). It is important that you read
+this document before installing or using the software provided
+by TopQuadrant (the “Software”) and any associated documentation
+or materials provided by TopQuadrant (“Documentation”). A copy
+of the EULA is available at http://www.topquadrant.com/docs/legal/EULA.pdf.
+If you do not “accept” this EULA on behalf of Customer, then
+Customer is not licensed to use the Software, and you must destroy
+any downloaded copies of the Software in your or Customer‘s possession
+or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf
+to download and print a copy of this EULA for your records.
+
+Third Party Content
+The Content includes items that have been sourced from third
+parties as set out below.
+SwiftOWLIM Semantic Repository
+The plug-in is accompanied by software developed by the Ontotext
+Lab, Sirma Group Corp. The binary code of SwiftOWLIM Semantic
+Repository v2.9.1 (“SwiftOWLIM”) is included without modification
+in the following file(s):
+* /org.topbraid.lib.owlim/lib/owlim-2.9.1.jar
+* /org.topbraid.lib.owlim/lib/tree-2.9.1.jar
+Your use of SwiftOWLIM is subject to the terms and conditions
+of the GNU Lesser General Public License (LGPL) published by
+the Free Software Foundation. A copy of the license can be found
+in /org.topbraid.lib.owlim/about_files/swiftowlim.LICENSE.txt
+and is also available at http://www.ontotext.com/owlim/OWLIMLicenceAgreement.html.
+The source for the SwiftOWLIM is included without modification
+in the following archive as required by the license terms:
+* /org.topbraid.lib.owlim/lib.src/owlim-2.9.1.zip
+   </license>
+
+   <plugin
+         id="org.topbraid.lib.owlim"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.owlim"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraidcomposer.owlim"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+   <plugin
+         id="org.topbraid.lib.sesame"
+         download-size="0"
+         install-size="0"
+         version="3.3.2.v20100709-0300R"
+         unpack="false"/>
+
+</feature>

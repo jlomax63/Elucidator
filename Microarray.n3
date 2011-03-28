@@ -1,0 +1,854 @@
+# Saved by TopBraid on Sat Mar 26 09:10:59 CDT 2011
+# baseURI: http://mdacc.org/Microarray
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/Organization
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix microarray:  <http://mdacc.org/Microarray#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix organization:  <http://mdacc.org/Organization#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix p3:      <http://my.com/file3#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Microarray>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Organization> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+microarray:ABIID_PlatformIdentifier
+      rdf:type microarray:PlatformIdentifier ;
+      dc:identifier "abi"^^xsd:string .
+
+microarray:ABIValidation
+      rdf:type microarray:PlatformValidation ;
+      microarray:platformName
+              microarray:ABI_Platform .
+
+microarray:ABI_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:ABIID_PlatformIdentifier .
+
+microarray:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+microarray:CGHg4447a_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:cghg4447aID .
+
+microarray:CNAPlatformDatatype
+      rdf:type microarray:PlatformDatatype .
+
+microarray:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+microarray:ControlFeature
+      rdf:type owl:Class ;
+      rdfs:comment "Certain features of a microarray are not read for data extraction puposes in the conventional sense. Control features are used to regulate or provide quality control to the process of extracting feature values."^^xsd:string ;
+      rdfs:subClassOf microarray:Feature ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:controlType ;
+                owl:someValuesFrom microarray:ControlType
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:controlFeatureType ;
+                owl:someValuesFrom microarray:ControlFeatureType
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:ControlFeatureType
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ControlFeatureTypeLabel
+              ] .
+
+microarray:ControlType
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ControlTypeLabel
+              ] .
+
+microarray:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+microarray:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+microarray:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+microarray:Example_Well
+      rdf:type microarray:Well ;
+      label:creator foaf:JimLomax ;
+      microarray:wellNumber
+              "12"^^xsd:string .
+
+microarray:Feature
+      rdf:type owl:Class ;
+      rdfs:comment "A feature is an associative relationship between a microarray spot (location) and the probe contained on the spot."^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:yDimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:microarray ;
+                owl:someValuesFrom microarray:Microarray
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:xDimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:yDimension ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:xDimension ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:Feature_1
+      rdf:type microarray:Feature .
+
+microarray:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+microarray:G4502a071_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:g4502a071ID .
+
+microarray:G4502a072_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:g4502a072ID .
+
+microarray:G4502a073_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:g4502a073ID .
+
+microarray:GenomeWideSNP6_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:genome_wide_snp_6ID .
+
+microarray:HG-CGH-244a_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:hg-cgh-244aID .
+
+microarray:HmiRNA8x15KID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:HmiRNA8x15KIDv2
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:HmiRNA8x15K_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:HmiRNA8x15KID ;
+      organization:vendor organization:Agilent_Organization .
+
+microarray:HmiRNA8x15Kv2_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:HmiRNA8x15KIDv2 .
+
+microarray:Human1mduoID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:Human1mduo_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:Human1mduoID .
+
+microarray:HumanHap550ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:HumanHap550_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:HumanHap550ID .
+
+microarray:IlluminaHumanMethylation27ArrayDesign
+      rdf:type owl:Class ;
+      rdfs:comment "Specific array design for Illumina's Human Methylation 27 microarray"^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      dc:creator foaf:JimLomax .
+
+microarray:IlluminaHumanMethylation27ArrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MethylationMicroarrayDesignElement ;
+      dc:creator foaf:JimLomax .
+
+microarray:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              microarray:DurationDescription_30Days .
+
+microarray:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              microarray:Patient1Birth_Instant .
+
+microarray:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              microarray:DurationDescription_30Days .
+
+microarray:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+microarray:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+microarray:MethylationMicroarrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayDesignElement ;
+      dc:creator foaf:JimLomax .
+
+microarray:Microarray
+      rdf:type owl:Class ;
+      rdfs:comment "A Microarray can be instantiated, however it's instances are microarrays that are general in nature; they have no vendor or design association. More concrete micorarrays with vendor and design associations are known as Platforms"^^xsd:string , "Represents a generalized,  physical microarray."^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom xsd:integer ;
+                owl:onProperty microarray:yMax
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:MicroarrayLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty microarray:xMax
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom xsd:integer ;
+                owl:onProperty microarray:xMax
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:microarrayIdentifier ;
+                owl:someValuesFrom microarray:MicroarrayIdentifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty microarray:yMax
+              ] ;
+      microarray:designNote
+              "The Microarray class is designed to hold the row(x) and column(y) dimensions, if available."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+microarray:MicroarrayDesignElement
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      dc:creator foaf:JimLomax .
+
+microarray:MicroarrayIdentifier
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:MicroarrayPackage
+      rdf:type owl:Class ;
+      rdfs:comment "Microarray Package is the organizational entity containing all entities that are related to structural aspects of microarrays."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      dc:creator foaf:JimLomax .
+
+microarray:NegativeControlType
+      rdf:type microarray:ControlType ;
+      dc:identifier "-1"^^xsd:string .
+
+microarray:Nucleus
+      rdf:type mage:CellularComponent .
+
+microarray:Ontology_1
+      rdf:type owl:Ontology .
+
+microarray:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+microarray:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+microarray:Platform
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:Microarray ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:spot ;
+                owl:someValuesFrom microarray:Spot
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:platformIdentifier ;
+                owl:someValuesFrom microarray:PlatformIdentifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:datatype ;
+                owl:someValuesFrom microarray:PlatformDatatype
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:shape ;
+                owl:someValuesFrom microarray:Shape
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:PlatformLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty organization:vendor ;
+                owl:someValuesFrom organization:Organization
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:Platform454_Platform
+      rdf:type microarray:Platform ;
+      microarray:microarrayIdentifier
+              microarray:Platform454_PlatformIdentifier ;
+      organization:vendor organization:Roche_Organization ;
+      skos-xl:prefLabel label:Platform454_PlatformLabel .
+
+microarray:Platform454_PlatformIdentifier
+      rdf:type microarray:PlatformIdentifier ;
+      dc:identifier "454"^^xsd:string .
+
+microarray:PlatformDatatype
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:PlatformDatatypeLabel
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:PlatformIdentifier
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:PlatformValidation
+      rdf:type owl:Class ;
+      rdfs:comment "A Platform Validation contains information to help in validating a platform instance. Each instance of Platform Validation is metadata associated with a particular class of Platform. Each platform can process one or more Platform Datatype"^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:validPlatformDatatype ;
+                owl:someValuesFrom microarray:PlatformDatatype
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:platformIdentifier ;
+                owl:someValuesFrom microarray:PlatformIdentifier
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:name ;
+                owl:someValuesFrom rdfs:Literal
+              ] ;
+      dc:creator foaf:JimLomax .
+
+microarray:PositiveControlType
+      rdf:type microarray:ControlType ;
+      dc:identifier "1"^^xsd:string .
+
+microarray:Proteasome
+      rdf:type mage:CellularComponent .
+
+microarray:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+microarray:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+microarray:Rectangle
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:Shape ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:yDimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:xDimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:xDimension ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:yDimension ;
+                owl:someValuesFrom xsd:integer
+              ] .
+
+microarray:Resource_2
+      rdf:type rdfs:Resource .
+
+microarray:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+microarray:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+microarray:Shape
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      dc:creator foaf:JimLomax .
+
+microarray:Spot
+      rdf:type owl:Class ;
+      rdfs:subClassOf microarray:MicroarrayPackage ;
+      dc:creator foaf:JimLomax .
+
+microarray:StructuralControlFeatureType
+      rdf:type microarray:ControlFeatureType .
+
+microarray:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+microarray:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              microarray:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+microarray:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              microarray:TherapeuticProcedureList1_Item_Radiation1 .
+
+microarray:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+microarray:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              microarray:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              microarray:TherapeuticProcedureList1_Item_Radiation1 .
+
+microarray:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+microarray:WHG-4x44K_G4112FID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:WHG-4x44K_G4112F_Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:WHG-4x44K_G4112FID .
+
+microarray:Well
+      rdf:type owl:Class ;
+      rdfs:comment "A Well is a logical and physical division of a Microplate; it is a physical container for a small amount of substance to be analyzed"^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:WellLabel
+              ] ;
+      microarray:designNote
+              "An instance of Well can be labeled differently to support multiple perspectives of the same Well (ordinarily for different purposes), therefore a SKOS labeling system will be employed."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+microarray:WellNumber
+      rdf:type owl:Class ;
+      rdfs:comment "A WellNumber is a unique identification for a Well in the context of its container. For TCGA data the parent will be a Microplate."^^xsd:string ;
+      rdfs:subClassOf microarray:MicroarrayPackage , skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+microarray:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:hasAccessionNumber .
+
+microarray:activeDatatype
+      rdf:type rdf:Property .
+
+microarray:archiveDownloadName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:archiveListingName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:cghg4447aID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:channelType
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf microarray:channelTypeOf .
+
+microarray:channelTypeOf
+      rdf:type owl:ObjectProperty .
+
+microarray:chromosomeArmName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:collectionSiteName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:collectsIntensityValuesFrom
+      rdf:type rdf:Property .
+
+microarray:controlFeatureType
+      rdf:type rdf:Property ;
+      owl:inverseOf microarray:controlFeatureTypeOf .
+
+microarray:controlFeatureTypeOf
+      rdf:type owl:ObjectProperty .
+
+microarray:controlType
+      rdf:type rdf:Property .
+
+microarray:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+microarray:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+microarray:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+microarray:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+microarray:datatype
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf microarray:datatypeOf .
+
+microarray:datatypeOf
+      rdf:type owl:ObjectProperty .
+
+microarray:designElementOf
+      rdf:type owl:ObjectProperty .
+
+microarray:designNote
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf rdfs:comment .
+
+microarray:domainQuestion
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf rdfs:comment .
+
+microarray:g4502a071ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:g4502a072ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:g4502a073ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:genome_wide_snp_6ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:genome_wide_snp_6PlatformValidation
+      rdf:type microarray:PlatformValidation ;
+      microarray:platformName
+              microarray:GenomeWideSNP6_Platform .
+
+microarray:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:hasGenomicSequenceId ;
+      owl:inverseOf microarray:accessionNumberOf .
+
+microarray:hasArchiveName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+microarray:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+microarray:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+microarray:hasName
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf rdfs:label ;
+      owl:equivalentProperty
+              microarray:name .
+
+microarray:hasPlatform
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf microarray:platformOf .
+
+microarray:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+microarray:hg-cgh-244aID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:hthgu133aID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:hthgu133aPlatform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:hthgu133aID .
+
+microarray:huex-1_0-st-v2ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:huex-1_0-st-v2Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:huex-1_0-st-v2ID .
+
+microarray:huex10stv2Validation
+      rdf:type microarray:PlatformValidation ;
+      microarray:platformName
+              microarray:huex-1_0-st-v2Platform .
+
+microarray:humanmethylation27ID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:humanmethylation27Platform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:humanmethylation27ID .
+
+microarray:illuminadnamethylation_oma002_cpiID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:illuminadnamethylation_oma002_cpiPlatform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:illuminadnamethylation_oma002_cpiID .
+
+microarray:illuminadnamethylation_oma003_cpiID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:illuminadnamethylation_oma003_cpiPlatform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:illuminadnamethylation_oma003_cpiID .
+
+microarray:illuminaga_mrna_dgeID
+      rdf:type microarray:PlatformIdentifier .
+
+microarray:illuminaga_mrna_dgePlatform
+      rdf:type microarray:Platform ;
+      microarray:platformIdentifier
+              microarray:illuminaga_mrna_dgeID .
+
+microarray:microarray
+      rdf:type owl:ObjectProperty .
+
+microarray:microarrayIdentifier
+      rdf:type owl:ObjectProperty .
+
+microarray:name
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf rdfs:label .
+
+microarray:number
+      rdf:type rdf:Property .
+
+microarray:order
+      rdf:type rdf:Property .
+
+microarray:organizationName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:platform
+      rdf:type owl:ObjectProperty ;
+      rdfs:range microarray:Platform ;
+      label:creator foaf:JimLomax ;
+      label:designNote "Relates the subject to a microarray platform."^^xsd:string ;
+      owl:equivalentProperty
+              microarray:hasPlatform ;
+      owl:inverseOf microarray:platformOf .
+
+microarray:platformDatatypeOf
+      rdf:type owl:ObjectProperty .
+
+microarray:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:range microarray:PlatformIdentifier ;
+      rdfs:subPropertyOf dc:identifier .
+
+microarray:platformName
+      rdf:type owl:ObjectProperty .
+
+microarray:platformOf
+      rdf:type owl:ObjectProperty .
+
+microarray:projectName
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf microarray:name .
+
+microarray:sequence
+      rdf:type rdf:Property .
+
+microarray:shape
+      rdf:type rdf:Property .
+
+microarray:specifier
+      rdf:type rdf:Property ;
+      rdfs:range foaf:Agent .
+
+microarray:spot
+      rdf:type rdf:Property .
+
+microarray:validPlatformDatatype
+      rdf:type owl:ObjectProperty ;
+      owl:inverseOf microarray:validPlatformDatatypeOf .
+
+microarray:validPlatformDatatypeOf
+      rdf:type owl:ObjectProperty .
+
+microarray:value
+      rdf:type owl:DatatypeProperty .
+
+microarray:well
+      rdf:type rdf:Property ;
+      rdfs:comment "A property indicating that the subject has an association to a Well; this may be a subclass of a more generalizable property, physicalSubdivision"^^xsd:string ;
+      rdfs:range microarray:Well ;
+      dc:creator foaf:JimLomax .
+
+microarray:wellNumber
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property indicating that the subject has an association to a Well; this may be a subclass of a more generalizable property, physicalSubdivision"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+microarray:xDimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having an x dimemsion"^^xsd:string .
+
+microarray:xMax
+      rdf:type owl:DatatypeProperty .
+
+microarray:yDimension
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A property for any physical object having a Y dimension"^^xsd:string .
+
+microarray:yMax
+      rdf:type owl:DatatypeProperty .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

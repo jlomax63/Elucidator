@@ -1,0 +1,491 @@
+# Saved by TopBraid on Wed Feb 23 12:02:05 CST 2011
+# baseURI: http://mdacc.org/Drug
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/Clinical
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: file:///C:/Documents%20and%20Settings/jwlomax/TBCMEWorkspace/TopBraid/TBC/skos-xl.rdf
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://spinrdf.org/spl
+
+@prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix drug:    <http://mdacc.org/Drug#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reification:  <http://swan.mindinformatics.org/ontologies/1.2/reification/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mdacc.org/Clinical#TwoPills_Dosage>
+      skos-xl:prefLabel label:Pill_UnitsLabel .
+
+<http://mdacc.org/Drug>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <file:///C:/Documents%20and%20Settings/jwlomax/TBCMEWorkspace/TopBraid/TBC/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Clinical> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+drug:Anti-necplatens_ChemotherapyDrug
+      rdf:type drug:ChemotherapyDrug ;
+      label:barcode label:Example_BCRDrugBarcode ;
+      skos-xl:prefLabel label:Anti-necplatens_ChemotherapyDrugLabel .
+
+drug:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+drug:BiospecimenCollection
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Birth1_PatientEvent
+      rdf:type drug:BirthPatientEvent ;
+      time-entry:before drug:DeathPatient1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+drug:BirthPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+drug:Chemotherapy1Patient1Event1_PatientEvent
+      rdf:type drug:ChemotherapyPatientEvent .
+
+drug:Chemotherapy1Patient1Event2_PatientEvent
+      rdf:type drug:ChemotherapyPatientEvent .
+
+drug:Chemotherapy2Patient1Event1_PatientEvent
+      rdf:type drug:ChemotherapyPatientEvent .
+
+drug:ChemotherapyDrug
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:Drug .
+
+drug:ChemotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
+      dc:contributor foaf:JimLomax .
+
+drug:Clamping
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DurationTemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+drug:DeathPatient1_PatientEvent
+      rdf:type drug:DeathPatientEvent ;
+      time-entry:ends drug:Birth1_PatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+drug:DeathPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Dexamethasone_EndocrineTherapyDrug
+      rdf:type drug:EndocrineTherapyDrug ;
+      skos-xl:prefLabel label:Dexamethasone_EndocrineTherapyDrugLabel .
+
+drug:Dosage
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:Drug
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage , <http://mdacc.org/Clinical#TherapeuticAgent> .
+
+drug:DrugBCRBarcode
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugCategory
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugName
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugPackage
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+drug:DrugRegimen
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugRegimenIndication
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugRegimenIndicationNote
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugRouteOfAdministration
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugRouteOfAdministrationNote
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:DrugPackage , drug:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:DrugTreatmentCycles
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugTreatmentEnd
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugTreatmentInitialCourse
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DrugTreatmentStart
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:DrugPackage .
+
+drug:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+drug:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+drug:DurationTemporalEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:TemporalEvent .
+
+drug:EndocrineTherapyDrug
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:Drug .
+
+drug:EndocrineTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Example_ChemotherapyDrug
+      rdf:type drug:ChemotherapyDrug .
+
+drug:ExcisionSurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
+      rdfs:subClassOf drug:SurgicalProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:FollowUpPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:FollowupAppointmentEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:MedicalAppointmentPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Freezing
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+drug:GliadelBCNU_ChemotherapyDrug
+      rdf:type drug:ChemotherapyDrug ;
+      skos-xl:prefLabel label:GliadelBCNU_ChemotherapyDrugLabel .
+
+drug:ImmunotherapyDrug
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:Drug .
+
+drug:ImmunotherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              drug:DurationDescription_30Days .
+
+drug:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              drug:Patient1Birth_Instant .
+
+drug:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              drug:DurationDescription_30Days .
+
+drug:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+drug:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+drug:MedicalAppointmentPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax ;
+      owl:disjointWith drug:BirthPatientEvent , drug:SurgicalProcedurePatientEvent , drug:DeathPatientEvent , drug:TherapeuticProcedurePatientEvent .
+
+drug:MedicalAppointment_PatientEvent
+      rdf:type drug:MedicalAppointmentPatientEvent .
+
+drug:Nucleus
+      rdf:type mage:CellularComponent .
+
+drug:Ontology_1
+      rdf:type owl:Ontology .
+
+drug:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+drug:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+drug:PatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
+      rdfs:subClassOf drug:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Proteasome
+      rdf:type mage:CellularComponent .
+
+drug:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+drug:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+drug:RadiationTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Resource_2
+      rdf:type rdfs:Resource .
+
+drug:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+drug:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+drug:ShipmentSent
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:TemporalEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:SurgicalProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:TargetedMolecularTherapyDrug
+      rdf:type owl:Class ;
+      rdfs:subClassOf drug:Drug .
+
+drug:TargetedMolecularTherapyPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
+      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:Taxomifen_ChemotherapyDrug
+      rdf:type drug:ChemotherapyDrug ;
+      skos-xl:prefLabel label:Tamoxifen_ChemotherapyDrugLabel .
+
+drug:Temozolomide_ChemotherapyDrug
+      rdf:type drug:ChemotherapyDrug ;
+      skos-xl:prefLabel label:Temozolomide_ChemotherapyDrugLabel .
+
+drug:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+drug:TemporalEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
+      rdfs:subClassOf time-entry:InstantEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              drug:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+drug:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              drug:TherapeuticProcedureList1_Item_Radiation1 .
+
+drug:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+drug:TherapeuticProcedurePatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
+      rdfs:subClassOf drug:PatientEvent ;
+      dc:creator foaf:JimLomax .
+
+drug:TherpaeuticProcedureList1
+      rdf:type collections:List ;
+      collections:firstItem
+              drug:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              drug:TherapeuticProcedureList1_Item_Radiation1 .
+
+drug:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+drug:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf drug:hasAccessionNumber .
+
+drug:barcode
+      rdf:type owl:FunctionalProperty ;
+      rdfs:comment "Barcode is a functional property since any object with a barcode must be guaranteed that a barcode is unique."^^xsd:string ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+drug:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+drug:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+drug:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+drug:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+drug:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf drug:hasGenomicSequenceId ;
+      owl:inverseOf drug:accessionNumberOf .
+
+drug:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+drug:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+drug:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+drug:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+drug:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradhepRaju
+      rdf:type foaf:Person .

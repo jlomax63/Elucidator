@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  
+  * html body {
+    height: 1100px;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  
+
+  
+    
+    .writely-callout-data {
+      display: none;
+    }
+    
+
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Times New Roman;
+      font-size: 12.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Times New Roman;
+  
+  font-size: 12.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>EULA</title>
+
+</head>
+
+<body 
+    
+    >
+    
+    
+    
+<div>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>&nbsp;</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=5>End User License Agreement (EULA)</font></b></span>
+  </p>
+  <h2 style=MARGIN:0pt>
+    <span style=FONT-FAMILY:Arial><b><font size=2>IMPORTANT NOTICE --PLEASE READ CAREFULLY </font></b></span>
+  </h2>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><b><font size=2>This End User License Agreement (“EULA”) sets forth the terms applicable to use and licensing by the customer (“Customer”) of software provided by TopQuadrant, Inc. (“TopQuadrant”).&nbsp; It is important that you read this document before installing or using the software provided by TopQuadrant (the “Software”) and any associated documentation or materials provided by TopQuadrant (“Documentation”).&nbsp; By clicking the “I accept” and “Next” buttons below, or by installing, or otherwise using, the Software, you acknowledge and agree that you are binding Customer to the terms of this EULA.&nbsp;&nbsp; </font></b></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><b><font size=2>If you do not “accept” this EULA on behalf of Customer, then Customer is not licensed to use the Software, and you must destroy any downloaded copies of the Software in your or Customer’s possession or control. Please go to the TopQuadrant website at http://www.topquadrant.com/docs/legal/EULA.pdf to download and print a copy of this EULA for your records.</font></b></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>1. GRANT OF LICENSE. </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>TopQuadrant grants Customer a non-exclusive, non-transferable (except as provided in Section 16), limited license to use the Software.&nbsp; The license is an object code license, except that TopQuadrant may provide to Customer certain limited portions of the source code for the sole purpose of allowing Customer to prepare certain customizations to the Software using the source code (such source code, the “Licensed Source Code”). </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>2. RESTRICTIONS.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 36pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Installation; Users.&nbsp; </font></u></span><span style=FONT-FAMILY:Arial><font size=2>If the Software is designated by TopQuadrant as a “client-side product,” then Customer may install and use the Software on a maximum of two computers; provided, however, that (i) one computer is Customer’s primary computer (e.g., an office computer) and one computer is Customer’s secondary computer (e.g., a laptop or home computer) and (ii) the Software is not simultaneously used on both computers.&nbsp; If the Software is designated by TopQuadrant as a “server-side product,” then the Software may be used by the number of users set forth in the Order Documents (as defined in Section 17(g)).&nbsp; If the Software is used pursuant to a development license, then the Software may be used only for development and testing (and not in a production environment).&nbsp;&nbsp;&nbsp;&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 36pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Reverse Engineering.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; Customer shall not, nor shall it permit others to, reverse engineer, decompile, disassemble or otherwise attempt to discover the source code (other than the Licensed Source Code), underlying ideas, underlying user interface techniques or algorithms of the Software by any means whatsoever, directly or indirectly, or disclose any of the foregoing, except to the extent Customer may be expressly permitted to decompile under applicable law in the European Union, if it is essential to do so in order to achieve operability of the Software with another software program, and Customer has first requested TopQuadrant to provide the information necessary to achieve such operability and TopQuadrant has not made the information available.&nbsp; TopQuadrant has the right to impose reasonable conditions and to request a reasonable fee before providing the information. </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 36pt">
+    <span style=FONT-FAMILY:Arial><font size=2>c.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Other Restrictions.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; Customer may not loan, rent, lease, sublicense, distribute, transfer, assign, or otherwise convey or provide access to all or any portion or any derivative works of the Software to any third party (including any affiliate or any outsourced service provider) except to the limited extent set forth in Section 16.&nbsp; Customer may not copy the Software in any manner except as set forth in Section 3.&nbsp; Customer may not create Modifications (as defined in Section 5) to the Software, except for Modifications made to Licensed Source Code to enable the preparation of customizations or to develop plug-ins (“Permitted Modifications”).&nbsp; Customer may not, directly or indirectly, (i) encumber or suffer to exist any lien or security interest on its license rights in the Software, or (ii) use the Software in any computer environment not specified in the Agreement, in any unintended or unapproved manner, or in any manner that violates applicable laws or regulations, including U.S. and foreign export control laws and regulations.&nbsp; The Software and Documentation were privately developed and are licensed to U.S. government end users only as commercial items.&nbsp; Use, duplication or disclosure by the U.S. Government or a U.S. Government contractor or subcontractor is subject to the restrictions set forth in this EULA and as provided in FAR 12.211 and 12.212 (48 C.F.R. §12.211 and 12.212) or DFARS 227. 7202 (48 C.F.R. §227-7202) as applicable.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>3. COPIES.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>Customer may make one archival copy of the Software, provided Customer’s archival copy is not installed or used on any computer and further provided that the copy shall bear the original and unmodified copyright, patent and other intellectual property markings that appear on or in the Software.&nbsp; Customer may not transfer the rights to an archival copy unless Customer transfers all rights in the Software as provided under Section 16.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>4. KEY CODES AND UPGRADES.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>The Software can only be used after acquisition by Customer of a key code that will enable Customer to activate the Software.&nbsp; Customer may not re-license, reproduce or distribute any key code except with the express advance written permission of TopQuadrant.&nbsp; Upon receipt of a Software upgrade, Customer may receive a new key code to activate the upgraded version.&nbsp; TopQuadrant’s provision of a new key code does not constitute the granting of a second license to the Software, in that Customer may not use the upgraded version in addition to the prior version of the Software that is being replaced.&nbsp; Customer’s use of the upgraded version terminates its license to use the prior version of the Software. </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>5. OWNERSHIP OF INTELLECTUAL PROPERTY</font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 36pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Ownership.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; TopQuadrant and its suppliers retain all right, title and interest in and to the Software, the Documentation, any images, photographs, animation, videos, audio, music, text and “applets” incorporated into the Software, and all copies thereof, as well as to all modifications to the Software, whether created by Supplier or any other person or entity, including all corrections, revisions, bug fixes, workarounds, translations, adaptations, derivative works, customizations, configurations, updates, upgrades, new releases, new versions, improvements, and enhancements thereof (“Modifications”), and all copyrights, trade secrets, patent rights, trademarks, service marks, trade dress, and any other intellectual property rights embodied therein or associated therewith (together, “TopQuadrant Rights”).&nbsp; Notwithstanding the foregoing, all models and other work product created by Customer using the Software, and all plug-ins developed by the Customer, shall be owned by Customer.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 36pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Reservation.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; All rights not specifically granted to Customer in this EULA are reserved by TopQuadrant.&nbsp; Customer will take all reasonable measures to protect, and will not take any action which could prejudice or impair TopQuadrant’s rights in, and will not challenge or contest the validity of, or TopQuadrant’s complete and exclusive ownership of, the TopQuadrant Rights.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>6. PAYMENT.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>All license fees applicable to the Software will be invoiced and paid pursuant to the terms of the Agreement.&nbsp; Any consulting, development, installation, integration, training, support, or other professional services provided to Customer will be charged at TopQuadrant’s then-prevailing hourly rates, plus reimbursement of reasonable expenses, and invoiced in arrears on a monthly basis.&nbsp; Payment shall be due within 30 days after the date of the invoice.&nbsp; Any amount due that is not timely paid shall bear interest at the rate of 1.5% (or a lesser amount as may be the maximum permitted by law) per month or portion thereof that the amount remains unpaid after the due date.&nbsp; Customer shall reimburse TopQuadrant’s reasonable attorneys’ fees and other costs incurred by TopQuadrant in collecting any amount due to TopQuadrant.&nbsp; All amounts payable to TopQuadrant are exclusive of all federal, state, local, national, and international taxes.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>7. LIMITED WARRANTY.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>TopQuadrant warrants to Customer that the Software will perform substantially in accordance with the Documentation for a period of 90 days from the date of receipt.&nbsp; TopQuadrant’s and its suppliers’ entire liability and Customer’s sole and exclusive remedy for breach of the above warranty shall be, at TopQuadrant’s option, either (i) return of the price paid, if any, or (ii) repair or replacement of the nonconforming Software.&nbsp; TopQuadrant does not warrant that Customer will experience no down-time or data loss in connection with the Software, that the operation of the Software will be uninterrupted or error free, or that all Software errors will be corrected.&nbsp; Moreover, the above warranty shall not apply to (and TopQuadrant shall have no obligation with respect to): (1) any Software that has been modified or altered by any party other than TopQuadrant; (2) use of the Software with any equipment or software not recommended by TopQuadrant (see </font></span><span style="COLOR:#0000ff; FONT-FAMILY:Arial"><u><font size=2>http://www.topquadrant.com/docs/legal/supported_platforms.pdf</font></u></span><span style=FONT-FAMILY:Arial><font size=2>) or approved in advance by TopQuadrant; (3) noncompliance with Documentation, improper operation, or mismanagement of the Software; or (4) electrical failures or surges, poor circuitry, or other accidents or causes not within the reasonable control of TopQuadrant.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>8. DISCLAIMER OF OTHER WARRANTIES.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>OTHER THAN THE WARRANTY SET FORTH IN SECTION 7, TOPQUADRANT AND ITS SUPPLIERS MAKE NO WARRANTIES OR REPRESENTATIONS, EXPRESS OR IMPLIED, WHETHER BY STATUTE, COMMON LAW, CUSTOM, USAGE OR OTHERWISE, AS TO ANY MATTERS, INCLUDING THE PERFORMANCE OR RESULTS CUSTOMER MAY OBTAIN BY USING THE SOFTWARE.&nbsp;&nbsp; TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TOPQUADRANT AND ITS SUPPLIERS DISCLAIM ALL OTHER WARRANTIES WITH REGARD TO THE SOFTWARE, WHETHER EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, INFORMATIONAL CONTENT OR ACCURACY, QUIET ENJOYMENT, TITLE AND NONINFRINGEMENT.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>9. Limitation of Liability.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF A REMEDY FAILS ITS ESSENTIAL PURPOSE, IN NO EVENT SHALL TOPQUADRANT OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING DAMAGES FOR LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF TOPQUADRANT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.&nbsp; IN ANY CASE, TOPQUADRANT’S ENTIRE LIABILITY UNDER ANY PROVISION OF THE AGREEMENT OR THIS EULA SHALL BE LIMITED TO THE LESSER OF CUSTOMER’S ACTUAL DAMAGES OR THE AMOUNT ACTUALLY PAID BY CUSTOMER FOR THE SOFTWARE.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>10. THIRD-PARTY AND OPEN SOURCE PROGRAMS.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>One or more third-party proprietary or open source programs or services may be embodied in, bundled with, or otherwise provided by TopQuadrant to Customer in connection with the Software.&nbsp; If third-party proprietary programs are acquired by Customer from TopQuadrant for a separate fee from the license fees applicable to the Software, the third-party license terms applicable to that third-party program shall be applicable to Customer’s use thereof and TopQuadrant shall, as its sole liability in connection therewith, reasonably cooperate with Customer in communicating with that third-party vendor regarding warranty or other issues.&nbsp; Further, although a third-party program or service may be embedded in the Software, in certain cases TopQuadrant may require Customer to obtain its own copy of such program or its own account or subscription for such service, to continue use of the Software.&nbsp; Customer acknowledges that open source programs are distributed under the terms of the open source license applicable to each such program, and only such license, with no additional license conditions.&nbsp; Where required by the applicable license, the source code for each open source program distributed by TopQuadrant can be accessed by Customer via TopQuadrant’s website.&nbsp; Any rights associated with any open source program apply to that program only and not to any other programs owned by TopQuadrant or its licensors even if distributed together with the open source program.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>11. PRIVACY MATTERS.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>TopQuadrant’s Privacy Policy is incorporated into this EULA and is available for download at http://www.topquadrant.com/docs/legal/privacy.pdf. By Customer’s acceptance of the terms of this EULA or use of the Software, Customer authorizes the collection, use and disclosure of information collected by TopQuadrant for the purposes provided for in this EULA and/or the Privacy Policy as revised from time to time.&nbsp; European users understand and consent to the processing of personal information in the United States for the purposes described herein.&nbsp; TopQuadrant has the right in its sole discretion to amend its Privacy Policy at any time. </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>12. TERM AND TERMINATION.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>The Agreement (including this EULA) may be terminated (a) by Customer’s giving TopQuadrant written notice of termination or (b) by TopQuadrant’s giving Customer written notice of termination if Customer commits a breach of the Agreement and fails to cure the breach within ten days after notice from TopQuadrant.&nbsp; Upon termination, Customer must cease all use of the Software, destroy all copies then in Customer’s possession or control and take any other actions as TopQuadrant may reasonably request to ensure that no copies of the Software remain in Customer’s possession or control.&nbsp; The terms and conditions set forth in Sections 2, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, and 17 shall survive termination as applicable.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>13. SUPPORT AND MAINTENANCE.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>Subject to timely payment by Customer of the applicable maintenance and support fees under the Agreement or any applicable Maintenance and Support Agreement, TopQuadrant shall provide maintenance and support services in accordance with its standard maintenance and support terms for such services.&nbsp; For Client Products, such as TopBraid Composer, TopQuadrant’s standard support terms are as set forth at </font></span><span style="COLOR:#0000ff; FONT-FAMILY:Arial"><u><font size=2>http://www.topquadrant.com/docs/legal/TBC_tsm.pdf</font></u></span><span style="COLOR:#000000; FONT-FAMILY:'Lucida Grande'"><font size=2>. </font></span><span style=FONT-FAMILY:Arial><font size=2>For all Server Products, TopQuadrant’s standard support terms are set forth in its standard Maintenance and Support Agreement </font></span><span style="COLOR:#0000ff; FONT-FAMILY:Arial"><u><font size=2>http://www.topquadrant.com/docs/legal/TBL_tsm.pdf </font></u></span><span style=FONT-FAMILY:Arial><font size=2>to be entered into between TopQuadrant and Customer at initiation of the license.&nbsp; TopQuadrant reserves the right to change the nature and scope of its standard maintenance and support services upon reasonable notice to Customer.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>14. INDEMNIFICATION.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 54pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>By TopQuadrant.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; TopQuadrant shall indemnify and defend Customer against any claims by a third party not affiliated with Customer that the Software infringes such party’s registered or issued U.S. patents or copyrights, or misappropriates its trade secrets, and shall pay the amount of any resulting adverse final judgment or settlement to which TopQuadrant consents; provided, however, that Customer provides TopQuadrant with prompt notice of the claim, allows TopQuadrant to assume the defense or settlement of the claim in its sole discretion, and provides reasonable assistance to TopQuadrant upon request in resolving the matter.&nbsp; In the event of infringement or misappropriation, TopQuadrant may replace, in whole or in part, the Software with a substantially compatible and comparable product, modify the Software to avoid the infringement or misappropriation, or procure for Customer the right to continue using the Software.&nbsp; TopQuadrant will have no liability under this Section arising from or relating to: (i) use of the Software after TopQuadrant has notified Customer to discontinue its use due to an infringement or misappropriation claim; (ii) the combination, operation, or use of the Software with technology or other materials not supplied by TopQuadrant, if the claim would have been avoided by use of other technology or other materials; or (iii) alteration of the Software or use of a version of the Software that has been superseded by a newer version, if the infringement would have been avoided by use of a current unaltered version which TopQuadrant has provided or made available to Customer.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 54pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>By Customer.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; Customer shall indemnify and defend TopQuadrant against any claims against TopQuadrant, and shall pay the amount of any resulting damages, arising from or in connection with (i) Customer’s breach of the Agreement,&nbsp; (ii) Customer’s use of the Software (subject, however, to TopQuadrant’s indemnification obligations under Section 14(a)), or (iii) Customer’s Modifications to the Software (regardless of whether the Modifications are Permitted Modifications).&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>15. CONFIDENTIALITY.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>General Obligations.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; For a period of three years following disclosure or exposure (or, in the case of trade secrets as defined under applicable law, for so long beyond the three-year period as the information continues to be a trade secret as so defined), Customer shall maintain confidentiality with respect to, and refrain from using other than as provided in the Agreement, any proprietary, confidential, or trade secret information of TopQuadrant acquired by Customer, including the design, functionality, structure, organization, code, and operation of, and pricing for, the Software, and proprietary information contained in the Software or Documentation.&nbsp; Customer shall use confidentiality agreements and other similar measures with, and to be fully responsible for, any parties who obtain any TopQuadrant confidential information through Customer, including any of Customer’s employees, former employees, contractors, and former contractors. </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Obligations Relating to Licensed Source Code.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; In addition to the reasonable efforts that at all times Customer must make to maintain confidentiality with respect to all of TopQuadrant’s proprietary, confidential, and trade secret information, the following specific procedures must be utilized in the protection of any portions of the Licensed Source Code:&nbsp; (i) Customer shall ensure that all access to the Licensed Source Code is password protected and that the passwords conform to the reasonable requirements of TopQuadrant, including requirements regarding the format of passwords and the frequency with which the passwords must be changed. (ii) Customer shall not provide any access to the Licensed Source Code to contractors or other outside parties without TopQuadrant’s prior written authorization. (iii) Customer shall ensure that all copies of Licensed Source Code are identified by number or other manner such that each copy may be reasonably monitored, tracked and secured by Customer or TopQuadrant.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>16. ASSIGNMENT.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style=FONT-FAMILY:Arial><font size=2>The Agreement shall inure to the benefit of and be binding upon the parties, their successors, and assigns.&nbsp; The Agreement may not be assigned by Customer without the prior written consent of TopQuadrant; provided, however, that Customer may assign the Agreement to a purchaser of all or substantially all of Customer’s assets upon the advance written approval of TopQuadrant not to be unreasonably withheld or delayed, if (a) Customer also transfers the Software, the Documentation, and all other software or hardware bundled or pre-installed with the Software, including all copies, updates and prior versions, to such purchaser; (b) Customer retains no copies, including archival copies, of the Software or Documentation; (c) the purchaser secures a personalized key code from TopQuadrant; and (d) the purchaser accepts the terms and conditions of the Agreement.</font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>17. GENERAL PROVISIONS.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Governing Law; Venue.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; The Agreement shall be governed by and construed in accordance with the laws of the Commonwealth of Virginia, USA (excluding its conflict of laws principles and the U.N. Convention on Contracts for the International Sale of Goods).&nbsp; Customer expressly agrees that exclusive jurisdiction for any claim or dispute with TopQuadrant or relating in any way to Customer’s use of the Software resides in the federal or state courts of Virginia, and Customer further agrees and expressly consents to the exercise of personal jurisdiction in the federal or state courts of Virginia in connection with any such dispute or claim.</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Force Majeure.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; If TopQuadrant is delayed in or prevented from performing any obligation under the Agreement due to causes or events beyond its control, including any act of God, fire, riot, legal action, hardware/equipment breakdown or failure, non-TopQuadrant software failure, present or future law, governmental order, rule or regulation, such delay or nonperformance shall be excused and the time for performance shall be extended or rescheduled on mutually agreeable terms.</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>c.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Audit Rights.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; TopQuadrant may conduct an audit of Customer’s usage of the Software and compliance with this EULA annually, and Customer shall provide to TopQuadrant all reasonable access in connection with the audit, including access to its systems, premises, and employees.&nbsp; Audits shall be conducted so as to minimize interference with Customer’s use of the Software and its normal business operations.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>d.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Compliance.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; Customer shall notify Customer’s employees who may have access to the Software of the restrictions contained in this EULA and ensure their compliance with these restrictions.&nbsp; Customer agrees to bear full responsibility for the actions of its employees or other parties who obtain access to the Software through Customer.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>e.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Notices.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; Any notice or other communication given under the Agreement shall be in writing and shall have been properly given by either party to the other if sent by certified or registered mail, return receipt requested, or by overnight courier to the address shown on TopQuadrant’s website for TopQuadrant and the address shown in TopQuadrant’s records for Customer, or such other address as the parties may designate by notice given in the manner set forth above.&nbsp;&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>f.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Interpretation.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; All Section numbers in this EULA refer to Sections of this EULA, unless otherwise specifically stated.&nbsp; Any of the terms defined in this Agreement may be used in the singular or the plural.&nbsp; In this Agreement, unless otherwise specifically stated, “hereof,” “herein,” “hereto,” “hereunder” and the like mean and refer to this EULA as a whole and not merely to the specific section, paragraph or clause in which the word appears; “including” means including without limitation; and words importing any gender include the neuter and the other genders.&nbsp; The title of this EULA and the headings of the Sections of this EULA are for reference purposes only and shall not be used in construing or interpreting this EULA.</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 60pt">
+    <span style=FONT-FAMILY:Arial><font size=2>g.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Entire Agreement; Amendment; Etc. </font></u></span><span style=FONT-FAMILY:Arial><font size=2> As used in this EULA, the term “Agreement” means (i) this EULA, (ii) TopQuadrant’s order schedule, TopQuadrant’s support and maintenance agreement, or any other document or documents agreed in writing by TopQuadrant and evidencing TopQuadrant’s and Customer’s agreement regarding the TopQuadrant software products to be licensed to Customer, the license fees, the number of licensed users (in the case of server-side products), and any other products or services to be provided by TopQuadrant (the “Order Documents”), (ii) any documents or agreements referenced in this EULA, and (iii) any amendments to any of the foregoing.&nbsp; The Agreement contains the entire agreement and understanding of the parties with respect to the matters addressed in the Agreement, and supersedes all prior written and oral understandings of the parties with respect to those matters.&nbsp; The Agreement may be amended only by a document in writing signed by both parties.&nbsp; If, for any reason, any provision of the Agreement is held invalid or otherwise unenforceable, such invalidity or unenforceability shall not affect the remainder of the Agreement, and the Agreement shall continue in full force and effect to the fullest extent allowed by law.&nbsp; The failure of either party at any time to require performance of any provision hereof shall in no manner affect such party’s right at a later time to enforce the same or any other term of the Agreement.&nbsp; </font></span>
+  </p>
+  <h1 style="MARGIN:0pt 0pt 3pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>18. PRE-RELEASE</font></b></span><span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>,</font></b></span><span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3> EVALUATION </font></b></span><span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>AND FREE EDITION </font></b></span><span style="COLOR:#214f94; FONT-FAMILY:Helvetica"><b><font size=3>SOFTWARE.&nbsp; </font></b></span>
+  </h1>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>a.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Application.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; If Customer is licensing from TopQuadrant a pre-commercial release or beta version of Software (“Pre-release Software”), or is using the Software on an evaluation or demonstration basis (“Evaluation Software”), </font></span><span style=FONT-FAMILY:Arial><font size=2>or is licensing from TopQuadrant a free edition of Software (“Free Edition Software”), </font></span><span style=FONT-FAMILY:Arial><font size=2>then the terms of this Section 18 shall apply.&nbsp; If any provision of this Section 18 conflicts with any other term or condition in this EULA, this Section 18 shall supersede and control over such other term with respect to Pre-release</font></span><span style=FONT-FAMILY:Arial><font size=2> Software,</font></span><span style=FONT-FAMILY:Arial><font size=2> Evaluation Software</font></span><span style=FONT-FAMILY:Arial><font size=2> and/or Free Edition Software</font></span><span style=FONT-FAMILY:Arial><font size=2>, but only to the extent necessary to resolve the conflict.&nbsp; Notwithstanding the foregoing, if Customer has been provided Pre-release Software</font></span><span style=FONT-FAMILY:Arial><font size=2>,</font></span><span style=FONT-FAMILY:Arial><font size=2> Evaluation Software</font></span><span style=FONT-FAMILY:Arial><font size=2>, or Free Edition Software</font></span><span style=FONT-FAMILY:Arial><font size=2> pursuant to a separate written agreement, Customer’s use of the Software is governed by that agreement. </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>b.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Pre-release Software.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; The Pre-release Software is a pre-release version and may contain bugs, errors and other problems that could cause system or other failures and data loss.&nbsp; The Pre-release Software does not represent a final product, and a final product that is the same as, similar to, or compatible with, the Pre-release Software may not be introduced or made available in the future.&nbsp; Any research or development that Customer performs regarding the Pre-release Software or any product associated with the Pre-release Software is done entirely at Customer’s own risk.&nbsp; During the term of Customer’s use of the Pre-release Software, Customer will, upon request by TopQuadrant, provide feedback to TopQuadrant regarding testing and use of the Pre-release Software, including error or bug reports.&nbsp; Customer shall not be entitled to use Pre-release Software in live, production environments.&nbsp; All use shall be strictly for non-commercial, internal, non-production purposes.</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>c.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Evaluation Software.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; If the Evaluation Software has a time-out feature, then the Software will cease operation at the conclusion of the designated evaluation period.&nbsp; Upon the expiration date, Customer’s license will expire unless otherwise extended.&nbsp; Access to any files created with the Evaluation Software is entirely at Customer’s risk.&nbsp; Customer shall not be entitled to use Evaluation Software in live, production environments.&nbsp; All use shall be strictly for non-commercial, internal, non-production purposes.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>d.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Free Edition Software.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; </font></span><span style=FONT-FAMILY:Arial><font size=2>Free Edition Software does not have the same functionality or features as commercial versions of </font></span><span style=FONT-FAMILY:Arial><font size=2>the </font></span><span style=FONT-FAMILY:Arial><font size=2>Software.&nbsp; TopQuadrant does not provide support and maintenance with respect to Free Edition Software</font></span><span style=FONT-FAMILY:Arial><font size=2>.&nbsp; I</font></span><span style=FONT-FAMILY:Arial><font size=2>f Customer </font></span><span style=FONT-FAMILY:Arial><font size=2>has questions </font></span><span style=FONT-FAMILY:Arial><font size=2>regarding the use of Free Edition Software, TopQuadrant may elect, in its sole discretion, to </font></span><span style=FONT-FAMILY:Arial><font size=2>respond to the questions, but Customer’s use of any advice provided by TopQuadrant is at Customer’s own risk.&nbsp; </font></span><span style=FONT-FAMILY:Arial><font size=2>All use of Free Edition Software shall be strictly for non-commercial, internal, non-production purposes.&nbsp; Customer may not sublicense or otherwise distribute, or allow others to use, Free Edition Software.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>e.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Disclaimer of Warranties; Limitation of Liability.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; PRE-RELEASE </font></span><span style=FONT-FAMILY:Arial><font size=2>SOFTWARE, </font></span><span style=FONT-FAMILY:Arial><font size=2>EVALUATION SOFTWARE </font></span><span style=FONT-FAMILY:Arial><font size=2>AND/OR FREE EDITION SOFTWARE </font></span><span style=FONT-FAMILY:Arial><font size=2>IS PROVIDED TO CUSTOMER “AS-IS,” AND TOPQUADRANT AND ITS SUPPLIERS MAKE NO WARRANTIES OR REPRESENTATIONS, EXPRESS OR IMPLIED, WHETHER BY STATUTE, COMMON LAW, CUSTOM, USAGE OR OTHERWISE, AS TO ANY MATTERS, INCLUDING THE PERFORMANCE OR RESULTS CUSTOMER MAY OBTAIN BY USING THE PRE-RELEASE </font></span><span style=FONT-FAMILY:Arial><font size=2>SOFTWARE, </font></span><span style=FONT-FAMILY:Arial><font size=2>EVALUATION SOFTWARE</font></span><span style=FONT-FAMILY:Arial><font size=2> AND/OR FREE EDITION SOFTWARE</font></span><span style=FONT-FAMILY:Arial><font size=2>.&nbsp; TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TOPQUADRANT AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES WITH REGARD TO THE </font></span><span style=FONT-FAMILY:Arial><font size=2>PRE-RELEASE SOFTWARE, EVALUATION SOFTWARE AND/OR FREE EDITION SOFTWARE AND INFORMATION PROVIDED TO CUSTOMER WITH RESPECT TO SUCH PRODUCTS, </font></span><span style=FONT-FAMILY:Arial><font size=2>WHETHER EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, INFORMATIONAL CONTENT OR ACCURACY, QUIET ENJOYMENT, TITLE AND NONINFRINGEMENT.&nbsp;&nbsp; WHERE LEGALLY LIABILITY CANNOT BE EXCLUDED, BUT IT MAY BE LIMITED, TOPQUADRANT’S LIABILITY AND THAT OF ITS SUPPLIERS SHALL BE LIMITED TO THE SUM OF $50 IN TOTAL.&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt 57pt">
+    <span style=FONT-FAMILY:Arial><font size=2>f.</font></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=FONT-FAMILY:Arial><u><font size=2>Remedy.</font></u></span><span style=FONT-FAMILY:Arial><font size=2>&nbsp; </font></span><span style=FONT-FAMILY:Arial><font size=2>Customer’s sole REMEDY in the event of any dissatisfaction is to cease using the Pre-release Software,&nbsp; Evaluation Software, </font></span><span style=FONT-FAMILY:Arial><font size=2>and/or Free Edition Software and </font></span><span style=FONT-FAMILY:Arial><font size=2>erase all copies of same from Customer’s computers and memory storage devices, and return to TopQuadrant all copies of </font></span><span style=FONT-FAMILY:Arial><font size=2>those products</font></span><span style=FONT-FAMILY:Arial><font size=2> and any associated documentation.&nbsp;&nbsp; </font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt; TEXT-ALIGN:center">
+    <span style="COLOR:#214f94; FONT-FAMILY:Arial"><font size=1>&nbsp;</font></span>
+  </p>
+  <p style="MARGIN:0pt 0pt 6pt">
+    <span style="COLOR:#214f94; FONT-FAMILY:Arial"><font size=1>12127048v.2</font></span>
+  </p>
+</div>
+<br></body>
+</html>
