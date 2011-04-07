@@ -1,4 +1,4 @@
-# Saved by TopBraid on Sat Mar 26 08:48:54 CDT 2011
+# Saved by TopBraid on Wed Mar 30 13:04:39 CDT 2011
 # baseURI: http://mdacc.org/Organization
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: http://xmlns.com/foaf/0.1/
@@ -1399,6 +1399,19 @@ organization:DataCoordinatingCenter
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       owl:equivalentClass organization:DCC .
+
+organization:DictionaryDotCom_Organization
+      rdf:type organization:Organization ;
+      organization:organizationDomain
+              organization:DictionaryDotCom_OrganizationDomain ;
+      skos-xl:prefLabel label:DictionaryDotCom_OrganizationLabel .
+
+organization:DictionaryDotCom_OrganizationDomain
+      rdf:type organization:OrganizationDomain ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:name "dictionary.com"^^xsd:string .
 
 organization:DukeBrainBankOwner
       rdf:type mage:Person .
