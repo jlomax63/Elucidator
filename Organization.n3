@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Mar 30 13:04:39 CDT 2011
+# Saved by TopBraid on Thu Apr 21 11:10:09 CDT 2011
 # baseURI: http://mdacc.org/Organization
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: http://xmlns.com/foaf/0.1/
@@ -36,7 +36,7 @@ organization:ABIDomain
 organization:ABSBlokhin_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -106,7 +106,7 @@ organization:ABSIUPUI_CESC_TissueSourceSite
 organization:ABSIUPUI_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -121,7 +121,7 @@ organization:ABSIUPUI_KIRC_TissueSourceSite
 organization:ABSIUPUI_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -307,7 +307,7 @@ organization:Asterand_CESC_TissueSourceSite
 organization:Asterand_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -367,7 +367,7 @@ organization:Asterand_HNSC_TissueSourceSite
 organization:Asterand_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -382,7 +382,7 @@ organization:Asterand_KIRC_TissueSourceSite
 organization:Asterand_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -793,7 +793,7 @@ organization:CHIPenroseHospitalColorado_GBM_TissueSourceSite
 organization:CHIPenroseHospitalColorado_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -808,7 +808,7 @@ organization:CHIPenroseHospitalColorado_KIRC_TissueSourceSite
 organization:CHIPenroseHospitalColorado_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1031,7 +1031,7 @@ organization:ChristianaHealthcare_BRCA_TissueSourceSite
 organization:ChristianaHealthcare_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1061,7 +1061,7 @@ organization:ChristianaHealthcare_GBM_TissueSourceSite
 organization:ChristianaHealthcare_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1076,7 +1076,7 @@ organization:ChristianaHealthcare_KIRC_TissueSourceSite
 organization:ChristianaHealthcare_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1266,7 +1266,7 @@ organization:Cureline_BRCA_TissueSourceSite
 organization:Cureline_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1290,7 +1290,7 @@ organization:Cureline_HNSC_TissueSourceSite
 organization:Cureline_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1567,7 +1567,7 @@ organization:Essen_SKCM_TissueSourceSite
 organization:FoxChaseCancerCenter_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1580,7 +1580,7 @@ organization:FoxChaseCancerCenter_KIRC_TissueSourceSite
 organization:FoxChaseCancerCenter_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1760,7 +1760,7 @@ organization:GreaterPolandCancerCentre_BRCA_TissueSourceSite
 organization:GreaterPolandCancerCentre_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1896,7 +1896,7 @@ organization:HarvardMedicalSchool_OrganizationDomain
 organization:HarvardUniversity_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1908,7 +1908,7 @@ organization:HarvardUniversity_COAD_TissueSourceSite
 organization:HarvardUniversity_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2024,7 +2024,7 @@ organization:ILSBio_BRCA_TissueSourceSite
 organization:ILSBio_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2039,7 +2039,7 @@ organization:ILSBio_COAD_TissueSourceSite
 organization:ILSBio_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2214,7 +2214,7 @@ organization:Indivumed_BRCA_TissueSourceSite
 organization:Indivumed_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2374,7 +2374,7 @@ organization:InternationalGenomicsConsortium_CESC_TissueSourceSite
 organization:InternationalGenomicsConsortium_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2419,7 +2419,7 @@ organization:InternationalGenomicsConsortium_GBM_TissueSourceSite
 organization:InternationalGenomicsConsortium_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2436,7 +2436,7 @@ organization:InternationalGenomicsConsortium_KIRC_TissueSourceSite
 organization:InternationalGenomicsConsortium_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2821,7 +2821,7 @@ organization:MDA_HNSC_TissueSourceSite
 organization:MDA_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3000,7 +3000,7 @@ organization:MayoClinicRochester_GBM_TissueSourceSite
 organization:MayoClinicRochester_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3015,7 +3015,7 @@ organization:MayoClinicRochester_KIRC_TissueSourceSite
 organization:MayoClinicRochester_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3210,7 +3210,7 @@ organization:MemorialSloanKetteringCancerCenter_BRCA_TissueSourceSite
 organization:MemorialSloanKetteringCancerCenter_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3241,7 +3241,7 @@ organization:MemorialSloanKetteringCancerCenter_GDAC
 organization:MemorialSloanKetteringCancerCenter_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3256,7 +3256,7 @@ organization:MemorialSloanKetteringCancerCenter_KIRC_TissueSourceSite
 organization:MemorialSloanKetteringCancerCenter_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3440,7 +3440,7 @@ organization:NCH_CESC_TissueSourceSite
 organization:NCH_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3485,7 +3485,7 @@ organization:NCH_HNSC_TissueSourceSite
 organization:NCH_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3500,7 +3500,7 @@ organization:NCH_KIRC_TissueSourceSite
 organization:NCH_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3722,7 +3722,7 @@ organization:NCH_UCEC_TissueSourceSite
 organization:NCIUrologicOncologyBranch_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3737,7 +3737,7 @@ organization:NCIUrologicOncologyBranch_KIRC_TissueSourceSite
 organization:NCIUrologicOncologyBranch_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3830,7 +3830,7 @@ organization:OntarioInstituteForCancerResearch_CESC_TissueSourceSite
 organization:OntarioInstituteForCancerResearch_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4086,7 +4086,7 @@ organization:RoswellParkCancerInstitute_BRCA_TissueSourceSite
 organization:RoswellParkCancerInstitute_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4131,7 +4131,7 @@ organization:RoswellParkCancerInstitute_GBM_TissueSourceSite
 organization:RoswellParkCancerInstitute_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4146,7 +4146,7 @@ organization:RoswellParkCancerInstitute_KIRC_TissueSourceSite
 organization:RoswellParkCancerInstitute_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4370,7 +4370,7 @@ organization:StJospehsHospitalPhoenix_GBM_TissueSourceSite
 organization:StJospehsMedicalCenterMaryland_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4430,7 +4430,7 @@ organization:StJospehsMedicalCenterMaryland_HNSC_TissueSourceSite
 organization:StJospehsMedicalCenterMaryland_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4445,7 +4445,7 @@ organization:StJospehsMedicalCenterMaryland_KIRC_TissueSourceSite
 organization:StJospehsMedicalCenterMaryland_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4715,7 +4715,7 @@ organization:TGen_CESC_TissueSourceSite
 organization:TGen_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4760,7 +4760,7 @@ organization:TGen_HNSC_TissueSourceSite
 organization:TGen_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4775,7 +4775,7 @@ organization:TGen_KIRC_TissueSourceSite
 organization:TGen_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4850,7 +4850,7 @@ organization:TGen_LIHC_TissueSourceSite
 organization:TGen_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:LymphomicTumor_LymphomicTumor ;
+              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5067,13 +5067,13 @@ organization:TissueSourceSiteID
       rdfs:subClassOf organization:OrganizationPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom xsd:positiveInteger
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty dc:identifier
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:positiveInteger
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -5391,7 +5391,7 @@ organization:UniversityOfMiami_OrganizationDomain
 organization:UniversityOfMichigan_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5531,7 +5531,7 @@ organization:UniversityOfNorthCarolina_CESC_TissueSourceSite
 organization:UniversityOfNorthCarolina_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5569,7 +5569,7 @@ organization:UniversityOfNorthCarolina_HNSC_TissueSourceSite
 organization:UniversityOfNorthCarolina_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5584,7 +5584,7 @@ organization:UniversityOfNorthCarolina_KIRC_TissueSourceSite
 organization:UniversityOfNorthCarolina_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5789,7 +5789,7 @@ organization:UniversityOfPittsburg_CESC_TissueSourceSite
 organization:UniversityOfPittsburg_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5819,7 +5819,7 @@ organization:UniversityOfPittsburg_HNSC_TissueSourceSite
 organization:UniversityOfPittsburg_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:RenaCelllClearCellCarcinoma_KidneyTumor ;
+              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5834,7 +5834,7 @@ organization:UniversityOfPittsburg_KIRC_TissueSourceSite
 organization:UniversityOfPittsburg_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:PapillaryRenaCelllCarcinoma_KidneyCancer ;
+              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6109,7 +6109,7 @@ organization:WalterReed_OrganizationDomain
 organization:WashingtonUniversitySchoolOfMedicine_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
       clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonCancer ;
+              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;

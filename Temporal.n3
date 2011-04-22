@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Feb 23 17:34:23 CST 2011
+# Saved by TopBraid on Fri Apr 08 08:00:54 CDT 2011
 # baseURI: http://mdacc.org/Temporal
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
@@ -59,7 +59,7 @@ temporal:BirthDateTime
       rdf:type owl:Class ;
       rdfs:comment "The date (time) the subject was born."^^xsd:string ;
       rdfs:subClassOf temporal:DateTime ;
-      label:correspondsTo label:BirthDate_NCIURI ;
+      label:correspondsTo label:BirthDate_NCI_URI ;
       dc:creator foaf:JimLomax .
 
 temporal:BirthPatientEvent
@@ -401,12 +401,6 @@ temporal:accessionNumberOf
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf temporal:hasAccessionNumber .
 
-temporal:activeDatatype
-      rdf:type rdf:Property .
-
-temporal:anaplasia
-      rdf:type rdf:Property .
-
 temporal:birth
       rdf:type owl:ObjectProperty .
 
@@ -430,12 +424,6 @@ temporal:collectedOn
       label:creator foaf:JimLomax ;
       label:designNote "This property is used in relating Tissue Samples to the date on which they were collected (created)(excised)"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
-
-temporal:collectionSiteDomain
-      rdf:type rdf:Property .
-
-temporal:collectsIntensityValuesFrom
-      rdf:type rdf:Property .
 
 temporal:createdDate
       rdf:type owl:AnnotationProperty ;
@@ -479,9 +467,6 @@ temporal:dateTimeThing
 
 temporal:death
       rdf:type owl:ObjectProperty .
-
-temporal:descriptionOf
-      rdf:type rdf:Property .
 
 temporal:diedOn
       rdf:type owl:ObjectProperty ;
