@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:label="http://mdacc.org/Label#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#"
+   xmlns:temporal="http://mdacc.org/Temporal#"
+>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveDownload">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#CreationDateTime2010-03-24">
+    <temporal:dateTime>2010-03-24</temporal:dateTime>
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#CreationDateTime"/>
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#DateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#DateTime">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+    <rdfs:subClassOf rdf:nodeID="dt1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TemporalPackage">
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ArchiveDownloadLabel">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a1">
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ArchiveDownloadLabel"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#TemporalPackage">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#dateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#CreationDateTime">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#LabelingPackage1">
+    <label:hasName>LabelingPackage1</label:hasName>
+    <rdf:type rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#LabelingPackage">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <label:hasName rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchiveDownloadLabel">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/JimLomax">
+    <foaf:surname>Lomax</foaf:surname>
+    <foaf:firstName>Jim</foaf:firstName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a2">
+    <owl:onProperty rdf:resource="http://mdacc.org/Temporal#creationDate"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Temporal#CreationDateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGAInventoryDownload2010-03-24ArchiveDownloadLabel">
+    <skos-xl:literalForm>TCGAInventoryDownload2010-03-24</skos-xl:literalForm>
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveDownloadLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload">
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGAInventoryDownload2010-03-24ArchiveDownloadLabel"/>
+    <temporal:creationDate rdf:resource="http://mdacc.org/Temporal#CreationDateTime2010-03-24"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveDownload"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#creationDate">
+    <rdfs:subPropertyOf rdf:resource="http://mdacc.org/Temporal#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchivePackage">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dt1">
+    <owl:onProperty rdf:resource="http://mdacc.org/Temporal#dateTime"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+</rdf:RDF>

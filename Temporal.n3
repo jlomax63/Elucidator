@@ -1,4 +1,4 @@
-# Saved by TopBraid on Fri Apr 08 08:00:54 CDT 2011
+# Saved by TopBraid on Wed May 18 15:08:54 CDT 2011
 # baseURI: http://mdacc.org/Temporal
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
@@ -7,6 +7,7 @@
 # imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
 # imports: http://mdacc.org/Label
 
+@prefix clinical:  <http://mdacc.org/Clinical#> .
 @prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
@@ -49,12 +50,6 @@ temporal:BiospecimenCollection
       rdfs:subClassOf temporal:TemporalEvent ;
       dc:creator foaf:JimLomax .
 
-temporal:Birth1_PatientEvent
-      rdf:type temporal:BirthPatientEvent ;
-      time-entry:before temporal:DeathPatient1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "1980-10-01T00:39:39.232"^^xsd:dateTime .
-
 temporal:BirthDateTime
       rdf:type owl:Class ;
       rdfs:comment "The date (time) the subject was born."^^xsd:string ;
@@ -83,17 +78,6 @@ temporal:CancerProgressionDiagnosisPatientEvent
       rdfs:comment "Diagnosis: cancer worsening over time."^^xsd:string ;
       rdfs:subClassOf temporal:DiagnosisPatientEvent ;
       dc:creator foaf:JimLomax .
-
-temporal:Chemotherapy1Patient1Event1_PatientEvent
-      rdf:type temporal:ChemotherapyPatientEvent ;
-      temporal:dateTime "02-01-2010"^^xsd:string .
-
-temporal:Chemotherapy1Patient1Event2_PatientEvent
-      rdf:type temporal:ChemotherapyPatientEvent ;
-      temporal:dateTime "03-01-2010"^^xsd:string .
-
-temporal:Chemotherapy2Patient1Event1_PatientEvent
-      rdf:type temporal:ChemotherapyPatientEvent .
 
 temporal:ChemotherapyPatientEvent
       rdf:type owl:Class ;
@@ -134,19 +118,17 @@ temporal:DeathDateTime
       rdf:type owl:Class ;
       rdfs:comment "The date (time) the subject died."^^xsd:string ;
       rdfs:subClassOf temporal:DateTime ;
-      label:correspondsTo label:DeathDate_NCIURI ;
+      label:correspondsTo label:DeathDate_NCI_URI ;
       dc:creator foaf:JimLomax .
-
-temporal:DeathPatient1_PatientEvent
-      rdf:type temporal:DeathPatientEvent ;
-      time-entry:ends temporal:Birth1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "2010-09-08T17:26:07.835"^^xsd:dateTime .
 
 temporal:DeathPatientEvent
       rdf:type owl:Class ;
       rdfs:subClassOf temporal:PatientEvent ;
       dc:creator foaf:JimLomax .
+
+temporal:Dec_10_1955_BirthDateTime
+      rdf:type temporal:BirthDateTime ;
+      temporal:dateTime "12/10/1955"^^xsd:string .
 
 temporal:DiagnosisPatient1_PatientEvent
       rdf:type temporal:DiagnosisPatientEvent ;
@@ -195,6 +177,36 @@ temporal:EndocrineTherapyPatientEvent
       rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
       rdfs:subClassOf temporal:TherapeuticProcedurePatientEvent ;
       dc:creator foaf:JimLomax .
+
+temporal:Example_BirthPatientEvent
+      rdf:type temporal:BirthPatientEvent ;
+      time-entry:before temporal:Example_DeathPatientEvent ;
+      time-entry:inCalendarClockDataType
+              "1980-10-01T00:39:39.232"^^xsd:dateTime .
+
+temporal:Example_DeathPatientEvent
+      rdf:type temporal:DeathPatientEvent ;
+      time-entry:ends temporal:Example_BirthPatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-09-08T17:26:07.835"^^xsd:dateTime .
+
+temporal:Example_GrowthHormone_EndocrineTherapyPatientEvent
+      rdf:type temporal:EndocrineTherapyPatientEvent ;
+      temporal:dateTime "11-11-2003"^^xsd:string ;
+      temporal:eventSource
+              clinical:GrowthHormone_EndocrineTherapy .
+
+temporal:Example_Taxomifen_ChemotherapyPatientEvent
+      rdf:type temporal:ChemotherapyPatientEvent ;
+      temporal:dateTime "02-01-2010"^^xsd:string ;
+      temporal:eventSource
+              clinical:Taxomifen_Chemotherapy .
+
+temporal:Example_Temozolomide_ChemotherapyPatientEvent
+      rdf:type temporal:ChemotherapyPatientEvent ;
+      temporal:dateTime "03-21-2010"^^xsd:string ;
+      temporal:eventSource
+              clinical:Temozolomide_Chemotherapy .
 
 temporal:ExcisionSurgicalProcedurePatientEvent
       rdf:type owl:Class ;
@@ -250,6 +262,10 @@ temporal:Interval_StartStopChemoRegular
       time-entry:durationDescriptionOf
               temporal:DurationDescription_30Days .
 
+temporal:Jan_30_2005_FollowUpDateTime
+      rdf:type temporal:FollowUpDateTime ;
+      temporal:dateTime "1/30/2005"^^xsd:string .
+
 temporal:June20_2010_CreationDateTime
       rdf:type temporal:CreationDateTime ;
       temporal:dateTime "June 20 2010"^^xsd:string .
@@ -289,6 +305,10 @@ temporal:ModificationDateTime
 
 temporal:Nucleus
       rdf:type mage:CellularComponent .
+
+temporal:Oct_23_2005_DeathDateTime
+      rdf:type temporal:DeathDateTime ;
+      temporal:dateTime "10/23/2005"^^xsd:string .
 
 temporal:Ontology_1
       rdf:type owl:Ontology .
@@ -391,6 +411,11 @@ temporal:TherapeuticProcedurePatientEvent
       rdf:type owl:Class ;
       rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
       rdfs:subClassOf temporal:PatientEvent ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty temporal:eventSource ;
+                owl:someValuesFrom clinical:TherapeuticProcedure
+              ] ;
       dc:creator foaf:JimLomax .
 
 temporal:TissueSamplesDisjoint

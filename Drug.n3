@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Feb 23 12:02:05 CST 2011
+# Saved by TopBraid on Wed May 18 14:58:38 CDT 2011
 # baseURI: http://mdacc.org/Drug
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://mdacc.org/Clinical
@@ -47,65 +47,18 @@ drug:Batch1UploadComplete
       time-entry:inCalendarClockDataType
               "2010-11-02T00:23:08.7"^^xsd:dateTime .
 
-drug:BiospecimenCollection
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
-drug:Birth1_PatientEvent
-      rdf:type drug:BirthPatientEvent ;
-      time-entry:before drug:DeathPatient1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "1980-10-01T00:39:39.232"^^xsd:dateTime .
-
-drug:BirthPatientEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:CalendarClockDescription_29OfMonth
       rdf:type time-entry:CalendarClockDescription ;
       time-entry:day "---29"^^xsd:gDay ;
       time-entry:dayOfWeekField
               "0"^^xsd:nonNegativeInteger .
 
-drug:Chemotherapy1Patient1Event1_PatientEvent
-      rdf:type drug:ChemotherapyPatientEvent .
-
-drug:Chemotherapy1Patient1Event2_PatientEvent
-      rdf:type drug:ChemotherapyPatientEvent .
-
-drug:Chemotherapy2Patient1Event1_PatientEvent
-      rdf:type drug:ChemotherapyPatientEvent .
-
 drug:ChemotherapyDrug
       rdf:type owl:Class ;
       rdfs:subClassOf drug:Drug .
 
-drug:ChemotherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
-      dc:contributor foaf:JimLomax .
-
-drug:Clamping
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:DurationTemporalEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:DNAMethylationBioAssayAffymetrix
       rdf:type mage:PhysicalBioAssay .
-
-drug:DeathPatient1_PatientEvent
-      rdf:type drug:DeathPatientEvent ;
-      time-entry:ends drug:Birth1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "2010-09-08T17:26:07.835"^^xsd:dateTime .
-
-drug:DeathPatientEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:Dexamethasone_EndocrineTherapyDrug
       rdf:type drug:EndocrineTherapyDrug ;
@@ -117,7 +70,12 @@ drug:Dosage
 
 drug:Drug
       rdf:type owl:Class ;
-      rdfs:subClassOf drug:DrugPackage , <http://mdacc.org/Clinical#TherapeuticAgent> .
+      rdfs:subClassOf drug:DrugPackage , <http://mdacc.org/Clinical#TherapeuticAgent> ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:DrugLabel
+              ] .
 
 drug:DrugBCRBarcode
       rdf:type owl:Class ;
@@ -158,7 +116,7 @@ drug:DrugRouteOfAdministrationNote
 drug:DrugTherapyPatientEvent
       rdf:type owl:Class ;
       rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:DrugPackage , drug:TherapeuticProcedurePatientEvent ;
+      rdfs:subClassOf drug:DrugPackage ;
       dc:creator foaf:JimLomax .
 
 drug:DrugTreatmentCycles
@@ -184,44 +142,12 @@ drug:DurationDescription_30Days
       rdf:type time-entry:DurationDescription ;
       time-entry:days "30"^^xsd:decimal .
 
-drug:DurationTemporalEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:TemporalEvent .
-
 drug:EndocrineTherapyDrug
       rdf:type owl:Class ;
       rdfs:subClassOf drug:Drug .
 
-drug:EndocrineTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:Example_ChemotherapyDrug
       rdf:type drug:ChemotherapyDrug .
-
-drug:ExcisionSurgicalProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
-      rdfs:subClassOf drug:SurgicalProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
-
-drug:FollowUpPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
-drug:FollowupAppointmentEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:MedicalAppointmentPatientEvent ;
-      dc:creator foaf:JimLomax .
-
-drug:Freezing
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:TemporalEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:Functions_1
       rdf:type spin:Function ;
@@ -231,15 +157,12 @@ drug:GliadelBCNU_ChemotherapyDrug
       rdf:type drug:ChemotherapyDrug ;
       skos-xl:prefLabel label:GliadelBCNU_ChemotherapyDrugLabel .
 
+drug:GrowthHormone_EndocrineTherapyDrug
+      rdf:type drug:EndocrineTherapyDrug .
+
 drug:ImmunotherapyDrug
       rdf:type owl:Class ;
       rdfs:subClassOf drug:Drug .
-
-drug:ImmunotherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:InstantEvent_StartRegularChemo
       rdf:type time-entry:InstantEvent ;
@@ -262,16 +185,6 @@ drug:MDAndersonBrainBankOwner
 drug:MDAndersonBrainBankRepository
       rdf:type mage:BioSourceProvider .
 
-drug:MedicalAppointmentPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax ;
-      owl:disjointWith drug:BirthPatientEvent , drug:SurgicalProcedurePatientEvent , drug:DeathPatientEvent , drug:TherapeuticProcedurePatientEvent .
-
-drug:MedicalAppointment_PatientEvent
-      rdf:type drug:MedicalAppointmentPatientEvent .
-
 drug:Nucleus
       rdf:type mage:CellularComponent .
 
@@ -288,12 +201,6 @@ drug:Patient1Death_Instant
       time-entry:inCalendarClockDataType
               "2010-11-01T17:38:09.188"^^xsd:dateTime .
 
-drug:PatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
-      rdfs:subClassOf drug:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:Proteasome
       rdf:type mage:CellularComponent .
 
@@ -302,12 +209,6 @@ drug:ProteinDimer
 
 drug:ProteinTrimer
       rdf:type mage:CellularComponent .
-
-drug:RadiationTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:Resource_2
       rdf:type rdfs:Resource .
@@ -319,26 +220,9 @@ drug:SelectBioMaterials
       rdf:type rdfs:Class ;
       rdfs:subClassOf sp:Select .
 
-drug:ShipmentSent
-      rdf:type owl:Class ;
-      rdfs:subClassOf drug:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
-drug:SurgicalProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:TargetedMolecularTherapyDrug
       rdf:type owl:Class ;
       rdfs:subClassOf drug:Drug .
-
-drug:TargetedMolecularTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf drug:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:Taxomifen_ChemotherapyDrug
       rdf:type drug:ChemotherapyDrug ;
@@ -352,12 +236,6 @@ drug:Template
       rdf:type spin:SelectTemplate ;
       rdfs:subClassOf spin:SelectTemplates .
 
-drug:TemporalEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
-      rdfs:subClassOf time-entry:InstantEvent ;
-      dc:creator foaf:JimLomax .
-
 drug:TherapeuticProcedureList1_Item_Chemotherapy1
       rdf:type collections:ListItem ;
       collections:nextItem
@@ -370,12 +248,6 @@ drug:TherapeuticProcedureList1_Item_Chemotherpay2
 
 drug:TherapeuticProcedureList1_Item_Radiation1
       rdf:type collections:ListItem .
-
-drug:TherapeuticProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
-      rdfs:subClassOf drug:PatientEvent ;
-      dc:creator foaf:JimLomax .
 
 drug:TherpaeuticProcedureList1
       rdf:type collections:List ;
@@ -435,21 +307,12 @@ drug:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-drug:hasPatientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier ;
-      dc:creator foaf:JimLomax .
-
 drug:has_platform_version
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf mage:has_version .
 
 drug:ietfTag
       rdf:type rdf:Property ;
-      rdfs:subPropertyOf dc:identifier .
-
-drug:patientId
-      rdf:type owl:FunctionalProperty ;
       rdfs:subPropertyOf dc:identifier .
 
 drug:platformIdentifier

@@ -1,4 +1,4 @@
-# Saved by TopBraid on Thu Apr 21 11:10:09 CDT 2011
+# Saved by TopBraid on Wed May 18 10:29:35 CDT 2011
 # baseURI: http://mdacc.org/Organization
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: http://xmlns.com/foaf/0.1/
@@ -5067,13 +5067,13 @@ organization:TissueSourceSiteID
       rdfs:subClassOf organization:OrganizationPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty dc:identifier
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:positiveInteger
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom xsd:positiveInteger
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -6298,10 +6298,6 @@ organization:cy3PreWashProtocol1
 organization:cy3PreWashTreatment1
       rdf:type mage:Treatment .
 
-organization:examinationId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier .
-
 organization:genomicDataProcessor
       rdf:type owl:ObjectProperty ;
       rdfs:comment "Contingent on acceptance of Genomic Center into the ontology"^^xsd:string , "The subject utilizies the object as a processor of it's genomic data."^^xsd:string ;
@@ -6336,11 +6332,6 @@ organization:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-organization:hasPatientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier ;
-      dc:creator foaf:JimLomax .
-
 organization:has_platform_version
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf mage:has_version .
@@ -6367,10 +6358,6 @@ organization:organizationDomainOf
 
 organization:organizationOf
       rdf:type owl:ObjectProperty .
-
-organization:patientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier .
 
 organization:platformIdentifier
       rdf:type owl:FunctionalProperty ;

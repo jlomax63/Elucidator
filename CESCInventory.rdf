@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:archive="http://mdacc.org/Archive#"
+   xmlns:clinical="http://mdacc.org/Clinical#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:label="http://mdacc.org/Label#"
+   xmlns:microarray="http://mdacc.org/Microarray#"
+   xmlns:organization="http://mdacc.org/Organization#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#"
+   xmlns:temporal="http://mdacc.org/Temporal#"
+>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#organizationDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/TCGAArchive#organizationDomainOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#LabelingPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <label:hasName>LabelingPackage1</label:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#OrganizationName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#prefLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#versionNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534-seg-data-txtArchiveListingName"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchiveDownloadLabel">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#ModificationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Temporal#DateTime"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA88-1001-0ArchiveLabel">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveLabel"/>
+    <skos-xl:literalForm>TCGA88.1001.0</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#PlatformName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/TCGAArchive#LabelingPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#LabelingPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <label:hasName rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#ClinicalPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/Clinical#ClinicalPackage"/>
+    <clinical:hasName>ClinicalPackage1</clinical:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550-seg-data-txtArchiveListingName"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#datatypeOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#PlatformName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="org2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Organization#OrganizationDomain"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Organization#organizationDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Microarray#PlatformIdentifier"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Microarray#platformIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveFileType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="aft1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0README_DCC-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0README_DCC-txtArchiveListingName"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#readmeArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0README_DCC-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#versionRevision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#CreationDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#interpreted-dataArchiveListingFileTypeName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingFileTypeName"/>
+    <skos-xl:literalForm>interpreted-data</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#lastUpdatedOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#versionSeries">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ArchiveLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archiveDownload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#archiveDownloadOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#interpreted-dataArchiveFileType">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveFileType"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#interpreted-dataArchiveListingFileTypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#hasArchiveVersion">
+    <rdfs:subPropertyOf rdf:resource="http://mdacc.org/TCGAArchive#has_version"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#dateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#Project"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0README_DCC-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0README_DCC.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#file"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#CancerName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#platformIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#CreationDateTime2010-03-24">
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#CreationDateTime"/>
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#DateTime"/>
+    <temporal:dateTime>2010-03-24</temporal:dateTime>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Microarray#PlatformDatatype"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#ArchiveListingAccessLevel"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#accessLevel"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Microarray#datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#platformOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#BroadInstituteofMITandHarvardOrganizationName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#OrganizationName"/>
+    <skos-xl:literalForm>Broad Institute of MIT and Harvard</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414-seg-data-txtArchiveListingName"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#snpPlatformDatatypeName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#PlatformDatatypeName"/>
+    <skos-xl:literalForm>snp</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#DateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+    <rdfs:subClassOf rdf:nodeID="dt1"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#readmeArchiveFileType">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveFileType"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#readmeArchiveListingFileTypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archiveDownloadOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E05_735414.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#ClinicalPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveVersion88-1001-0">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveVersion"/>
+    <archive:name>88.1001.0</archive:name>
+    <archive:versionSeries>0</archive:versionSeries>
+    <archive:versionRevision>1001</archive:versionRevision>
+    <archive:versionNumber>88</archive:versionNumber>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#MicroarrayPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#CreationDateTime2009-01-01">
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#CreationDateTime"/>
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#DateTime"/>
+    <temporal:dateTime>2009-01-01</temporal:dateTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="org1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#OrganizationName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Organization#hasName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#UnknownOrganizationDomain">
+    <rdf:type rdf:resource="http://mdacc.org/Organization#OrganizationDomain"/>
+    <organization:hasName>Unknown</organization:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGAProject">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#Project"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGAProjectLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ArchiveDownloadLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#ArchiveVersion"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#archiveVersion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platid1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400-seg-data-txtFileLocation"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Temporal#ModificationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Temporal#lastUpdatedOn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544-seg-data-txtFileLocation"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TemporalPackage">
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#TemporalPackage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#genomicCenter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Organization#genomicCenterOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#ArchiveLabel">
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#cancerOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#organizationDomainOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ArchiveDownloadLabel"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ArchiveLabel"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Microarray#PlatformDatatype"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Microarray#datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#manifestArchiveListingFileTypeName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingFileTypeName"/>
+    <skos-xl:literalForm>manifest</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ProjectLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchivePackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#OrganizationPackage1">
+    <rdf:type rdf:resource="http://mdacc.org/Organization#OrganizationPackage"/>
+    <organization:hasName>OrganizationPackage1</organization:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0MANIFEST-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0MANIFEST-txtArchiveListingName"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#manifestArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0MANIFEST-txtFileLocation"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#CervicalSquamousCellCarcinomaCancerName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#CancerName"/>
+    <skos-xl:literalForm>Cervical Squamous Cell Carcinoma</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="an1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#ModificationDateTime2011-03-28">
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#ModificationDateTime"/>
+    <rdf:type rdf:resource="http://mdacc.org/Temporal#DateTime"/>
+    <temporal:dateTime>2011-03-28</temporal:dateTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E06_735544.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#manifestArchiveFileType">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveFileType"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#manifestArchiveListingFileTypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveDownload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0MANIFEST-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0MANIFEST.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="a2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Temporal#CreationDateTime"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Temporal#creationDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#broad-mit-eduOrganizationDomain">
+    <rdf:type rdf:resource="http://mdacc.org/Organization#OrganizationDomain"/>
+    <organization:hasName>broad.mit.edu</organization:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveListingAccessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="aln1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482-seg-data-txtArchiveListingName"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E04_735482-seg-data-txtFileLocation"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E08_735534.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#ArchiveDownload"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#archiveDownload"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#CancerIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="cancerid1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Clinical#ClinicalPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="aft1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ArchiveListingFileTypeName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520-seg-data-txtArchiveListingName"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#hasCancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#AffymetrixOrganizationName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#OrganizationName"/>
+    <skos-xl:literalForm>Affymetrix</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532-seg-data-txtArchiveListingName"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA88-1001-0Archive">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#Archive"/>
+    <temporal:creationDate rdf:resource="http://mdacc.org/Temporal#CreationDateTime2009-01-01"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA88-1001-0ArchiveLabel"/>
+    <archive:archiveVersion rdf:resource="http://mdacc.org/Archive#ArchiveVersion88-1001-0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#fileTypeOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#accessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#accessLevelOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="platdt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Microarray#PlatformDatatypeName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGAInventoryDownload2010-03-24ArchiveDownloadLabel">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveDownloadLabel"/>
+    <skos-xl:literalForm>TCGAInventoryDownload2010-03-24</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#projectOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#Platform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="plat4"/>
+    <rdfs:subClassOf rdf:nodeID="plat2"/>
+    <rdfs:subClassOf rdf:nodeID="plat3"/>
+    <rdfs:subClassOf rdf:nodeID="plat1"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Microarray#MicroarrayPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="dt1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Temporal#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#OrganizationPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#archiveOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#directory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C05_735520.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#PlatformDatatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="platdt1"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Microarray#MicroarrayPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization">
+    <rdf:type rdf:resource="http://mdacc.org/Organization#Organization"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#BroadInstituteofMITandHarvardOrganizationName"/>
+    <organization:organizationDomain rdf:resource="http://mdacc.org/Organization#broad-mit-eduOrganizationDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E07_735532.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#genomicCenterOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#OrganizationDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Organization#OrganizationPackage"/>
+    <rdfs:subClassOf rdf:nodeID="org1"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/TCGAArchive#AffymetrixGenome-WideHumanSNPArray6-0PlatformName">
+    <rdf:type rdf:resource="http://mdacc.org/TCGAArchive#PlatformName"/>
+    <skos-xl:literalForm>Affymetrix Genome-Wide Human SNP Array 6.0</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538-seg-data-txtArchiveListingName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingName"/>
+    <skos-xl:literalForm>TCGA/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_H01_735538.seg.data.txt</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#accessLevelOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#projectOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0MANIFEST-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>MANIFEST.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cancerid1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pr1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ProjectLabel"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C03_735408-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="floc1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#directory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#FileLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="floc2"/>
+    <rdfs:subClassOf rdf:nodeID="floc1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#cancer">
+    <owl:inverseOf rdf:resource="http://mdacc.org/Clinical#cancerOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer">
+    <rdf:type rdf:resource="http://mdacc.org/Clinical#Cancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#CervicalSquamousCellCarcinomaCancerName"/>
+    <clinical:cancerId rdf:resource="http://mdacc.org/Clinical#cescCancerIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#TemporalPackage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#fileType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#fileTypeOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ArchiveListingFileTypeName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#ArchiveListingName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archiveVersionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#Project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="pr1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archiveVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Archive#archiveVersionOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#locatedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462-seg-data-txtArchiveListingName"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C04_735462-seg-data-txtFileLocation"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="aln1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#archiveListingLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/JimLomax">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <foaf:firstName>Jim</foaf:firstName>
+    <foaf:surname>Lomax</foaf:surname>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#genome_wide_snp_6PlatformIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/Microarray#PlatformIdentifier"/>
+    <dc:identifier>genome_wide_snp_6</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#Archive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="a2"/>
+    <rdfs:subClassOf rdf:nodeID="a4"/>
+    <rdfs:subClassOf rdf:nodeID="a1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="a3"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Label#ArchiveListingLabel"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveDownload"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGAInventoryDownload2010-03-24ArchiveDownloadLabel"/>
+    <temporal:creationDate rdf:resource="http://mdacc.org/Temporal#CreationDateTime2010-03-24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#cancerId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#PlatformDatatypeName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Label#LabelingPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#TCGAProjectLabel">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ProjectLabel"/>
+    <skos-xl:literalForm>TCGA</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E02_735550.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#file">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#vendor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Organization#vendorOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0README_DCC-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>README_DCC.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#cancerName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#publicArchiveListingAccessLevel">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListingAccessLevel"/>
+    <archive:name>public</archive:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_A07_735458.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform">
+    <rdf:type rdf:resource="http://mdacc.org/Microarray#Platform"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/TCGAArchive#AffymetrixGenome-WideHumanSNPArray6-0PlatformName"/>
+    <microarray:platformIdentifier rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6PlatformIdentifier"/>
+    <organization:vendor rdf:resource="http://mdacc.org/Organization#AffymetrixOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#vendorOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#snpPlatformDatatype">
+    <rdf:type rdf:resource="http://mdacc.org/Microarray#PlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#snpPlatformDatatypeName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#PlatformIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="platid1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Microarray#MicroarrayPackage"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#archiveOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="plat3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Organization#Organization"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Organization#vendor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="can1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/TCGAArchive#CancerName"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#prefLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Label#readmeArchiveListingFileTypeName">
+    <rdf:type rdf:resource="http://mdacc.org/Label#ArchiveListingFileTypeName"/>
+    <skos-xl:literalForm>readme</skos-xl:literalForm>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#platform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Microarray#platformOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#ArchiveListing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="al3"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Archive#ArchivePackage"/>
+    <rdfs:subClassOf rdf:nodeID="al5"/>
+    <rdfs:subClassOf rdf:nodeID="al6"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:nodeID="al2"/>
+    <rdfs:subClassOf rdf:nodeID="al7"/>
+    <rdfs:subClassOf rdf:nodeID="al1"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400-seg-data-txtFileLocation">
+    <rdf:type rdf:resource="http://mdacc.org/Archive#FileLocation"/>
+    <archive:directory>/usr/local/data/data03/tcga01/anonsite/tcga/tumor/cesc/cgcc/broad.mit.edu/genome_wide_snp_6/snp/broad.mit.edu_CESC.Genome_Wide_SNP_6.Level_3.88.1001.0</archive:directory>
+    <archive:file>AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_C07_735400.seg.data.txt</archive:file>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="an1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466-seg-data-txtArchiveListing">
+    <clinical:cancer rdf:resource="http://mdacc.org/Clinical#CervicalSquamousCellCarcinomaCancer"/>
+    <archive:archive rdf:resource="http://mdacc.org/Archive#TCGA88-1001-0Archive"/>
+    <organization:genomicCenter rdf:resource="http://mdacc.org/Organization#BroadInstituteofMITandHarvardOrganization"/>
+    <temporal:lastUpdatedOn rdf:resource="http://mdacc.org/Temporal#ModificationDateTime2011-03-28"/>
+    <archive:fileType rdf:resource="http://mdacc.org/Archive#interpreted-dataArchiveFileType"/>
+    <microarray:datatype rdf:resource="http://mdacc.org/Microarray#snpPlatformDatatype"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#TCGA-usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466-seg-data-txtArchiveListingName"/>
+    <archive:accessLevel rdf:resource="http://mdacc.org/Archive#publicArchiveListingAccessLevel"/>
+    <rdf:type rdf:resource="http://mdacc.org/Archive#ArchiveListing"/>
+    <archive:project rdf:resource="http://mdacc.org/Archive#TCGAProject"/>
+    <archive:archiveDownload rdf:resource="http://mdacc.org/Archive#TCGAInventoryDownload2010-03-24ArchiveDownload"/>
+    <archive:locatedBy rdf:resource="http://mdacc.org/Archive#usr-local-data-data03-tcga01-anonsite-tcga-tumor-cesc-cgcc-broad-mit-edu-genome_wide_snp_6-snp-broad-mit-edu_CESC-Genome_Wide_SNP_6-Level_3-88-1001-0AMAZE_p_TCGASNP_b86_87_88_N_GenomeWideSNP_6_E03_735466-seg-data-txtFileLocation"/>
+    <microarray:platform rdf:resource="http://mdacc.org/Microarray#genome_wide_snp_6snpPlatform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#cescCancerIdentifier">
+    <rdf:type rdf:resource="http://mdacc.org/Clinical#CancerIdentifier"/>
+    <dc:identifier>cesc</dc:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Organization#OrganizationPackage"/>
+    <rdfs:subClassOf rdf:nodeID="org1"/>
+    <rdfs:subClassOf rdf:nodeID="org2"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="al6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://mdacc.org/Archive#Archive"/>
+    <owl:onProperty rdf:resource="http://mdacc.org/Archive#archive"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Clinical#Cancer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="can1"/>
+    <rdfs:subClassOf rdf:resource="http://mdacc.org/Clinical#ClinicalPackage"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc:creator rdf:resource="http://xmlns.com/foaf/0.1/JimLomax"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Temporal#creationDate">
+    <rdfs:subPropertyOf rdf:resource="http://mdacc.org/Temporal#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Archive#locatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Organization#AffymetrixOrganization">
+    <rdf:type rdf:resource="http://mdacc.org/Organization#Organization"/>
+    <skos-xl:prefLabel rdf:resource="http://mdacc.org/Label#AffymetrixOrganizationName"/>
+    <organization:organizationDomain rdf:resource="http://mdacc.org/Organization#UnknownOrganizationDomain"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mdacc.org/Microarray#datatype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://mdacc.org/Microarray#datatypeOf"/>
+  </rdf:Description>
+</rdf:RDF>

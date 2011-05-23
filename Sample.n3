@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Feb 23 17:34:44 CST 2011
+# Saved by TopBraid on Sun May 22 11:20:23 CDT 2011
 # baseURI: http://mdacc.org/Sample
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://mdacc.org/Clinical
@@ -37,6 +37,9 @@ clincal:excisedFrom
 
 clincal:finding
       label:creator foaf:JimLomax .
+
+clincal:hadCancer
+      rdfs:range xsd:boolean .
 
 clincal:verificationByBCR
       rdf:type owl:DatatypeProperty ;
@@ -82,13 +85,13 @@ sample:AliquotAmount
       rdfs:subClassOf sample:SamplePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty sample:quantity ;
-                owl:someValuesFrom rdfs:Literal
+                owl:onProperty sample:units ;
+                owl:someValuesFrom sample:AliquotQuantityUnits
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty sample:units ;
-                owl:someValuesFrom sample:AliquotQuantityUnits
+                owl:onProperty sample:quantity ;
+                owl:someValuesFrom rdfs:Literal
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -112,7 +115,9 @@ sample:Analyte
       rdf:type owl:Class ;
       rdfs:comment "A substance or chemical constituent determined (identified) from an analytical procedure. The substance can  refer to a solute in solvent or one substance in the presence of a hetergeneous mixture of substances."^^xsd:string , "For example in blood glucose testing, the analyte is glucose."^^xsd:string , "In TCGA context, an Analyte is created from (exactly) one Portion"^^xsd:string ;
       rdfs:subClassOf skos:Concept , sample:SamplePackage ;
-      dc:creator foaf:JimLomax .
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
 
 sample:BCRAliquotBarcode1_AliquotId
       rdf:type sample:AliquotId .
@@ -123,9 +128,28 @@ sample:Batch1UploadComplete
               "2010-11-02T00:23:08.7"^^xsd:dateTime .
 
 sample:BloodDerivedNormal_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:BloodDerivedSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:BloodDerivedNormal_SampleTypeLabel .
+
+sample:BloodDerivedSampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleType ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:Blood
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:designNote "The sample has been collected from blood. The inference is that the blood contains the cancerous cells and the patient has leukemia."^^xsd:string , "There is no corresponding concept in BioPortal"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
 
 sample:BloodDerivedTissueSample
       rdf:type owl:Class ;
@@ -147,6 +171,20 @@ sample:BuccalCellLineControlTissueSample
               ] ;
       dc:creator foaf:JimLomax .
 
+sample:BuccalCellNormalSampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleType ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:BuccalMucosa
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample has been collected from from swabbing the inside of the cheek (buccal mucosa)."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
 sample:BuccalCellNormalTissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf sample:TissueSample ;
@@ -158,7 +196,12 @@ sample:BuccalCellNormalTissueSample
       dc:creator foaf:JimLomax .
 
 sample:BuccalCellNormal_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:BuccalCellNormalSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:BuccalMucosa_Mucosa ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:BuccalCellNormal_SampleTypeLabel .
 
@@ -182,9 +225,30 @@ sample:CalendarClockDescription_29OfMonth
       time-entry:dayOfWeekField
               "0"^^xsd:nonNegativeInteger .
 
+sample:CellLineControlSampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleType ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:CellLine
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:CellLine_NCI_URI ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:CellLine_NCI_Definition ;
+      label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample has been specifically grown from a cell line."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
 sample:CellLineControl_SampleType
-      rdf:type sample:SampleType ;
-      dc:creator foaf:JimLomax ;
+      rdf:type sample:CellLineControlSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:CellLine_NCI_URI ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:CellLine_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:prefLabel label:CellLineControl_SampleTypeLabel .
 
 sample:Concentration
@@ -210,6 +274,20 @@ sample:DNAAnalyte2_DNAAnalyte
 sample:DNAMethylationBioAssayAffymetrix
       rdf:type mage:PhysicalBioAssay .
 
+sample:DNASampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleType ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:DNA
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample is DNA based."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
 sample:DNATissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf sample:TissueSample ;
@@ -221,7 +299,14 @@ sample:DNATissueSample
       dc:creator foaf:JimLomax .
 
 sample:DNA_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:DNASampleType ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:DNA_NCI_URI ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:definedBy label:DNA_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:DNA_SampleTypeLabel .
 
@@ -260,8 +345,17 @@ sample:EBVImmortalizedNormalAnalyte
 sample:EBVImmortalizedNormalAnalyte1_EBVImmortalizedNormalAnalyte
       rdf:type sample:EBVImmortalizedNormalAnalyte .
 
+sample:EBVImmortalizedNormalSampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:CellLineControlSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:designNote "The sample has been created from a cell line immortalized by EBV."^^xsd:string , "There is no corresponding concept in BioPortal"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
 sample:EBVImmortalizedNormal_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:EBVImmortalizedNormalSampleType ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:EBVImmortalizedNormal_SampleTypeLabel .
 
@@ -287,7 +381,7 @@ sample:Example_Aliquot
       clincal:concentration
               clincal:ThreeM_Concentration ;
       clincal:volume clincal:AliquotExample_Volume ;
-      label:barcode label:Aliquot1_BCRAliquotBarcode ;
+      label:barcode label:Example_BCRAliquotBarcode ;
       temporal:shippedOn temporal:AliquotExample_ShipmentDateTime .
 
 sample:Example_Analyte
@@ -300,7 +394,7 @@ sample:Example_Analyte
       clincal:purityMeasurement
               clincal:Example_Absorbance260To280Nm ;
       clincal:volume clincal:AnalyteExample_Volume ;
-      label:barcode label:Analyte1_BCRAnalyteBarcode ;
+      label:barcode label:Example_BCRAnalyteBarcode ;
       microarray:well microarray:Example_Well ;
       sample:aliquot sample:Example_Aliquot .
 
@@ -315,7 +409,7 @@ sample:Example_GBMTumorPathology
               clincal:Brain_BrainAnatomicSite ;
       clincal:gemistocytePresent
               "true"^^xsd:boolean ;
-      clincal:indicator clincal:GlialFibrillaryAcideicProtein_Indicator , clincal:MindBomb1Protein_Indicator ;
+      clincal:indicator clincal:GlialFibrillaryAcideicProtein_Protein , clincal:MindBomb1_Protein ;
       clincal:leptomeningialInvolvement
               "true"^^xsd:boolean ;
       clincal:nuclearGrade
@@ -349,6 +443,8 @@ sample:Example_OvarianTumorPathology
               clincal:Ovary_OvaryAnatomicSite ;
       clincal:nuclearGrade
               clincal:Example_NuclearGrade ;
+      clincal:venousInvasion
+              "true"^^xsd:boolean ;
       sample:histologicalType
               clincal:OvarianTumor_OvarianTumor ;
       sample:tissueSample sample:Example_TissueSample .
@@ -359,7 +455,8 @@ sample:Example_Portion
       clincal:weight clincal:Example_InitialWeight ;
       label:barcode label:Example_BCRPortionBarcode ;
       sample:analyte sample:Example_Analyte ;
-      temporal:createdOn temporal:May13_2010_CreationDateTime .
+      temporal:createdOn temporal:May13_2010_CreationDateTime ;
+      dc:identifier sample:Example_PortionID .
 
 sample:Example_PortionID
       rdf:type sample:PortionID ;
@@ -390,6 +487,8 @@ sample:Example_SampleShortestDimension
 
 sample:Example_TissueSample
       rdf:type sample:TissueSample ;
+      clincal:anatomicLocation
+              clincal:Bladder_BladderAnatomicSite ;
       clincal:currentWeight
               clincal:Example_CurrentWeight ;
       clincal:excisedFrom clincal:Bladder_BladderAnatomicSite ;
@@ -397,12 +496,14 @@ sample:Example_TissueSample
               clincal:Example_InitialWeight ;
       clincal:purityMeasurement
               clincal:Example_Absorbance260To280Nm ;
-      clincal:stage clincal:ExampleStage1_BladderCancerTumorStage ;
-      label:barcode label:Sample1_BCRSampleBarcode ;
+      clincal:stage clincal:Example_Stage1_BladderCancerTumorStage ;
+      clincal:tumorGrade clincal:G1_G1TumorGrade ;
+      label:barcode label:Example_BCRSampleBarcode ;
       label:creator foaf:JimLomax ;
       sample:analyte sample:Example_Analyte ;
+      sample:histologicalType
+              clincal:BladderUrothelialPapillaryCarcinoma_BladderTumor ;
       sample:octEmbedded sample:Example_OctEmbedded ;
-      sample:patient clincal:ExamplePatient_Patient ;
       sample:portion sample:Example_Portion ;
       sample:sampleDimension
               sample:Example_SampleShortestDimension , sample:Example_SampleLongestDimension , sample:Example_SampleIntermediateDimension ;
@@ -411,7 +512,7 @@ sample:Example_TissueSample
               sample:ExampleTissueSampleID ;
       sample:tissueType sample:ExampleTissueType ;
       sample:tumorPathology
-              sample:Example_TumorPathology , sample:Example_GBMTumorPathology ;
+              sample:Example_TumorPathology ;
       temporal:collectedOn
               temporal:June21_2010_CollectionDateTime ;
       temporal:numberOfDaysToCollection
@@ -487,13 +588,18 @@ sample:GenomePlexAmplifiedDNATissueSample
       rdfs:subClassOf sample:TissueSample ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:hasValue sample:GenomePlexAmplified_DNASampleType ;
+                owl:hasValue sample:GenomePlexAmplifiedDNA_SampleType ;
                 owl:onProperty sample:sampleType
               ] ;
       dc:creator foaf:JimLomax .
 
-sample:GenomePlexAmplified_DNASampleType
-      rdf:type sample:SampleType ;
+sample:GenomePlexAmplifiedDNA_SampleType
+      rdf:type sample:DNASampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:GenomePlexAmplifiedDNA_SampleTypeLabel .
 
@@ -603,7 +709,7 @@ sample:Portion
       rdfs:subClassOf sample:SamplePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty sample:hasPortionID ;
+                owl:onProperty dc:identifier ;
                 owl:someValuesFrom sample:PortionID
               ] ;
       dc:creator foaf:JimLomax .
@@ -637,7 +743,12 @@ sample:PrimaryBloodDerivedTissueSample
       dc:creator foaf:JimLomax .
 
 sample:PrimaryBloodDervivedCancer_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:BloodDerivedSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:PrimaryBloodDerivedCancer_SampleTypeLabel .
 
@@ -689,6 +800,20 @@ sample:RNAAnalyte
       dc:creator foaf:JimLomax ;
       owl:disjointWith sample:EBVImmortalizedNormalAnalyte , sample:DNAAnalyte , sample:GenomePlexAmplifiedDNAAnalyte , sample:RepliGDNAAnalyte .
 
+sample:RNASampleType
+      rdf:type owl:Class ;
+      rdfs:subClassOf sample:SampleType ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:RNA
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample is RNA based."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
 sample:RNATissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf sample:TissueSample ;
@@ -700,7 +825,7 @@ sample:RNATissueSample
       dc:creator foaf:JimLomax .
 
 sample:RNA_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:RNASampleType ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:RNA_SampleTypeLabel .
 
@@ -726,7 +851,12 @@ sample:RecurrentBloodDerivedCancerTissueSample
       dc:creator foaf:JimLomax .
 
 sample:RecurrentBloodDerivedCancer_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:BloodDerivedSampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:RecurrentBloodDerivedCancer_SampleTypeLabel .
 
@@ -772,7 +902,12 @@ sample:RepliGDNATissueSample
       dc:creator foaf:JimLomax .
 
 sample:RepliGDNA_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:DNASampleType ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      sample:biologicalSource
+              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:RepliGDNA_SampleTypeLabel .
 
@@ -840,6 +975,14 @@ sample:SampleType
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:SampleTypeLabel
               ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:biologicalSource ;
+                owl:someValuesFrom clincal:BioMaterial
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax .
 
 sample:SelectBioMaterials
@@ -907,13 +1050,18 @@ sample:TissueSample
       rdfs:subClassOf clincal:Biospecimen , skos:Concept , sample:SamplePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty sample:portion ;
-                owl:someValuesFrom sample:Portion
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty sample:tissueType
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:onProperty label:barcode ;
                 owl:someValuesFrom label:BCRSampleBarcode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sample:portion ;
+                owl:someValuesFrom sample:Portion
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -924,11 +1072,6 @@ sample:TissueSample
               [ rdf:type owl:Restriction ;
                 owl:cardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty sample:patient
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:int ;
-                owl:onProperty sample:tissueType
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -972,7 +1115,7 @@ sample:TotalRNATissueSample
       dc:creator foaf:JimLomax .
 
 sample:TotalRNA_SampleType
-      rdf:type sample:SampleType ;
+      rdf:type sample:RNASampleType ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:TotalRNA_SampleTypeLabel .
 
@@ -1069,6 +1212,19 @@ sample:analyte
       rdf:type owl:ObjectProperty ;
       rdfs:range sample:Analyte .
 
+sample:biologicalSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates the subject to its biological source."^^xsd:string ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      owl:inverseOf sample:biologicalSourceOf .
+
+sample:biologicalSourceOf
+      rdf:type owl:ObjectProperty ;
+      dc:type "dfg"^^xsd:string .
+
 sample:collectionSiteId
       rdf:type owl:FunctionalProperty ;
       rdfs:subPropertyOf dc:identifier .
@@ -1085,19 +1241,9 @@ sample:cy3PreWashProtocol1
 sample:cy3PreWashTreatment1
       rdf:type mage:Treatment .
 
-sample:eosinophilInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
 sample:examinationId
       rdf:type owl:FunctionalProperty ;
       rdfs:subPropertyOf dc:identifier .
-
-sample:granulocyteInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
 
 sample:hasAccessionNumber
       rdf:type owl:ObjectProperty ;
@@ -1134,36 +1280,6 @@ sample:histologicalType
       rdf:type owl:ObjectProperty ;
       rdfs:range clincal:TumorType ;
       label:creator foaf:JimLomax .
-
-sample:inflammationInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:lymphocyteInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:monocyteInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:necrosisPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:neutrophilInfiltrationPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:normalCellsPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
 
 sample:normalTumorGenotypeMatch
       rdf:type owl:DatatypeProperty ;
@@ -1204,10 +1320,6 @@ sample:pcrAmplicationSuccessful
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
-
-sample:percentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:quantity .
 
 sample:place
       rdf:type owl:ObjectProperty ;
@@ -1298,16 +1410,6 @@ sample:tissueType
 
 sample:tissueTypeOf
       rdf:type owl:ObjectProperty .
-
-sample:tumorCellsPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
-
-sample:tumorNucleiPercentage
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf sample:percentage ;
-      dc:creator foaf:JimLomax .
 
 sample:tumorPathology
       rdf:type owl:ObjectProperty ;

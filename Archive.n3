@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Feb 23 17:23:17 CST 2011
+# Saved by TopBraid on Wed May 18 10:23:01 CDT 2011
 # baseURI: http://mdacc.org/Archive
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://mdacc.org/Microarray
@@ -45,13 +45,13 @@ archive:Archive
       rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:ArchiveLabel
+                owl:onProperty archive:project ;
+                owl:someValuesFrom archive:Project
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:project ;
-                owl:someValuesFrom archive:Project
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveLabel
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Class ;
@@ -69,13 +69,13 @@ archive:ArchiveDownload
       rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:ArchiveDownloadLabel
+                owl:onProperty archive:createdOn ;
+                owl:someValuesFrom xsd:dateTime
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:createdOn ;
-                owl:someValuesFrom xsd:dateTime
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveDownloadLabel
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -99,8 +99,13 @@ archive:ArchiveListing
       rdfs:subClassOf skos:Concept , archive:ArchivePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:nonNegativeInteger ;
-                owl:onProperty archive:accessLevel
+                owl:onProperty archive:accessLevel ;
+                owl:someValuesFrom archive:ArchiveListingAccessLevel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ArchiveListingLabel
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -114,18 +119,13 @@ archive:ArchiveListing
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:ArchiveListingLabel
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
                 owl:onProperty archive:fileType ;
                 owl:someValuesFrom archive:ArchiveFileType
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:accessLevel ;
-                owl:someValuesFrom archive:ArchiveListingAccessLevel
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty archive:accessLevel
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -154,12 +154,12 @@ archive:ArchiveVersion
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:versionSeries ;
+                owl:onProperty archive:versionRevision ;
                 owl:someValuesFrom xsd:int
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:versionRevision ;
+                owl:onProperty archive:versionSeries ;
                 owl:someValuesFrom xsd:int
               ] ;
       rdfs:subClassOf
@@ -179,13 +179,13 @@ archive:ArrayDataArtifact
       rdfs:subClassOf archive:ComputationalArtifact ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty <http://mdacc.org/Microarray#datatype> ;
-                owl:someValuesFrom <http://mdacc.org/Microarray#PlatformDatatype>
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty <http://mdacc.org/Microarray#platform>
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:int ;
-                owl:onProperty <http://mdacc.org/Microarray#platform>
+                owl:onProperty <http://mdacc.org/Microarray#datatype> ;
+                owl:someValuesFrom <http://mdacc.org/Microarray#PlatformDatatype>
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -304,8 +304,8 @@ archive:FileLocation
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty archive:file ;
-                owl:someValuesFrom rdfs:Literal
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:string
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -314,8 +314,8 @@ archive:FileLocation
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom xsd:string
+                owl:onProperty archive:file ;
+                owl:someValuesFrom rdfs:Literal
               ] ;
       dc:creator foaf:JimLomax ;
       dc:date "2010-04-16"^^xsd:string .
@@ -734,15 +734,6 @@ archive:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-archive:hasPatient
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "Contingent on the acceptance of the Patient class into the ontology"^^xsd:string .
-
-archive:hasPatientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier ;
-      dc:creator foaf:JimLomax .
-
 archive:hasProject
       rdf:type owl:ObjectProperty .
 
@@ -781,10 +772,6 @@ archive:name
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "temporary measure until skos labeling is inserted into RDF generation"^^xsd:string ;
       dc:creator foaf:JimLomax .
-
-archive:patientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier .
 
 archive:platformIdentifier
       rdf:type owl:FunctionalProperty ;

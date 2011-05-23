@@ -1,4 +1,4 @@
-# Saved by TopBraid on Fri Apr 22 17:07:21 CDT 2011
+# Saved by TopBraid on Mon May 23 15:05:15 CDT 2011
 # baseURI: http://mdacc.org/Label
 # imports: http://mdacc.org/Clinical
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
@@ -254,6 +254,10 @@ label:Adenocarcinoma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Adenocarcinoma"^^xsd:string .
 
+label:Adenocarcinoma_TumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Adenocarcinoma"^^xsd:string .
+
 label:Adipocyte_BioMaterialLabel
       rdf:type label:BioMaterialLabel ;
       label:architect foaf:MoSanyang ;
@@ -280,6 +284,23 @@ label:Adipocyte_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Adipocyte"^^xsd:string .
+
+label:AdiposeTissue_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Adipose Tissue"^^xsd:string .
+
+label:AdiposeTissue_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A specialized form of connective tissue consisting primarily of adipocytes (fat cells), surrounded by a meshwork of collagen fibers."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:AdiposeTissue_NCI_URI
       rdf:type label:URI ;
@@ -395,10 +416,6 @@ label:Aliquot
 label:Aliquot1_Aliquot
       rdf:type label:Aliquot .
 
-label:Aliquot1_BCRAliquotBarcode
-      rdf:type label:BCRAliquotBarcode ;
-      dc:identifier "tcga-sample-aliquot-barcode-123"^^xsd:string .
-
 label:AliquotId
       rdf:type owl:Class ;
       rdfs:comment "Aliquot Id is a concept for uniquely identifying an Aliquot.  "^^xsd:string ;
@@ -485,13 +502,19 @@ label:Analyte1_AnalyteLabel
       rdf:type label:AnalyteLabel ;
       skos-xl:literalForm "Analyte 1"^^xsd:string .
 
-label:Analyte1_BCRAnalyteBarcode
-      rdf:type label:BCRAnalyteBarcode .
-
 label:AnalyteLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
+
+label:Analyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Fat-storing cells found mostly in the abdominal cavity and subcutaneous tissue."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:Analyte_SNOMED_URI
       rdf:type label:URI ;
@@ -537,6 +560,11 @@ label:AnaplasticAstrocytoma_NCI_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
+label:AnaplasticAstrocytoma_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Anaplastic_Astrocytoma"^^xsd:string .
+
 label:AnaplasticAstrocytoma_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
@@ -573,13 +601,28 @@ label:AnatomicSite_1
 label:AnatomicSite_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "3/31/2011"^^xsd:string ;
-      label:description "An organization is a group of persons organized for some end or work ."^^xsd:string ;
+      label:description "Named locations of or within the body."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:AnatomicSite_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Anatomic_Structure_System_or_Substance"^^xsd:string .
+
+label:AnatomicStructureLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf label:LabelingPackage , skos-xl:Label .
+
+label:AnatomicStructure_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/9/2011"^^xsd:string ;
+      label:description "A particular complex anatomical part of a living thing."^^xsd:string ;
+      dc:source foaf:JimLomax .
+
+label:AnatomicStructure_SNOMED_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/91723000"^^xsd:string .
 
 label:AngiosarcomaLabel
       rdf:type owl:Class ;
@@ -622,6 +665,14 @@ label:Anonymous_Spanish_AccessLevellLabel
 label:Anti-necplatens_ChemotherapyDrugLabel
       rdf:type label:ChemotherapyDrugLabel ;
       skos-xl:literalForm "Anti necplatens"^^xsd:string .
+
+label:AntigenKI67_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Antigen KI-67"^^xsd:string .
 
 label:AppendixAdenocarcinoma_AppendixTumorLabel
       rdf:type label:AppendixTumorLabel ;
@@ -787,9 +838,6 @@ label:ArchiveDownload1_ArchiveDownloadLabel
       rdf:type label:ArchiveDownloadLabel ;
       skos-xl:literalForm "Archive Download 1 "^^xsd:string .
 
-label:ArchiveDownload1_Barcode
-      rdf:type label:Barcode .
-
 label:ArchiveDownload2_ArchiveDownloadLabel
       rdf:type label:ArchiveDownloadLabel ;
       skos-xl:literalForm "Archive Download 2"^^xsd:string .
@@ -908,6 +956,23 @@ label:Asian_RaceLabel
 label:Asterand_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Asterand"^^xsd:string .
+
+label:Astrocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Astrocyte"^^xsd:string .
+
+label:Astrocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The largest and most numerous neuroglial cells in the brain and spinal cord. Astrocytes are irregularly shaped with many long processes, including those with \"end feet\" which form the glial (limiting) membrane and directly and indirectly contribute to the blood brain barrier. They regulate the extracellular ionic and chemical environment, and \"reactive astrocytes\" (along with microglia) respond to injury. Astrocytes have high- affinity transmitter uptake systems, voltage-dependent and transmitter-gated ion channels, and can release transmitter, but their role in signaling (as in many other functions) is not well understood"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:Astrocyte_NCI_URI
       rdf:type label:URI ;
@@ -1036,9 +1101,30 @@ label:BCRSurgeryBarcode
       rdfs:subClassOf label:Barcode ;
       dc:creator foaf:JimLomax .
 
+label:BCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "B Cell"^^xsd:string .
+
 label:BCell_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D001402"^^xsd:string .
+
+label:BCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Immunologically important lymphocyte that is not thymus-dependent, is either short-lived and naive or long-lived and of memory phenotype, and resembles the bursa-derived lymphocyte of birds in that it is responsible for the production of immunoglobulins."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BCell_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#B-Lymphocyte"^^xsd:string .
 
 label:BI_Abbr_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -1107,13 +1193,13 @@ label:Batch
       rdfs:subClassOf skos:Concept ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:BatchLabel
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom rdfs:Literal
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom rdfs:Literal
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:BatchLabel
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -1345,6 +1431,10 @@ label:BladderTumorLabel
       rdfs:subClassOf label:TumorLabel ;
       label:creator foaf:JimLomax .
 
+label:BladderTumor_BladderTumorLabel
+      rdf:type label:BladderTumorLabel ;
+      skos-xl:literalForm "Bladder Tumor"^^xsd:string .
+
 label:BladderTumor_JWL_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -1429,13 +1519,50 @@ label:Bladder_NCI_Definition
       label:description "The distensible sac-like organ that functions as a reservoir of urine, collecting from the kidneys and eliminating via the urethra."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
+label:BloodCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Blood Cell"^^xsd:string .
+
+label:BloodCell_MEDDICT_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Any cell or formed element of the blood."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BloodCell_SNOMED_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/19/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/63370004"^^xsd:string .
+
 label:BloodDerivedNormal_SampleTypeLabel
       rdf:type label:SampleTypeLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Blood Derived Normal"^^xsd:string .
 
 label:BloodDerivedTissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf label:TissueSample .
+
+label:BloodSample_SampleTypeLabel
+      rdf:type label:SampleTypeLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Blood Sample"^^xsd:string .
 
 label:BloodVesselAnatomicSite_JWL_Definition
       rdf:type label:Definition ;
@@ -1446,8 +1573,8 @@ label:BloodVesselAnatomicSite_JWL_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source foaf:JimLomax .
 
-label:BloodVessel_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:BloodVessel_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/8/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -1470,6 +1597,31 @@ label:BloodVessel_NCI_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Blood_Vessel"^^xsd:string .
+
+label:Blood_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Blood"^^xsd:string .
+
+label:Blood_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A liquid tissue; its major function is to transport oxygen throughout the body. It also supplies the tissues with nutrients, removes waste products, and contains various components of the immune system defending the body against infection. Several hormones also travel in the blood."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Blood_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Blood"^^xsd:string .
 
 label:Bottom_SideLabel
       rdf:type label:SideLabel ;
@@ -1499,7 +1651,7 @@ label:BrainCancer_BrainCancerDiseaseLabel
       rdf:type label:BrainCancerDiseaseLabel ;
       skos-xl:literalForm "Brain Cancer"^^xsd:string .
 
-label:BrainCancer_NCIURI
+label:BrainCancer_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Malignant_Brain_Neoplasm"^^xsd:string .
@@ -1531,6 +1683,10 @@ label:BrainTumorLabel
       rdfs:subClassOf label:TumorLabel ;
       label:creator foaf:JimLomax .
 
+label:BrainTumor_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Brain Tumor"^^xsd:string .
+
 label:BrainTumor_JWL_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -1539,6 +1695,20 @@ label:BrainTumor_JWL_Definition
       label:description "Concept to contain all tumor types anatomically located in the  brain."^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source foaf:JimLomax .
+
+label:BrainTumor_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A benign or malignant neoplasm that arises from or metastasizes to the brain."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:BrainTumor_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Brain_Neoplasm"^^xsd:string .
 
 label:Brain_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
@@ -1620,6 +1790,26 @@ label:BreastCarcinoma_NCI_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Breast_Carcinoma"^^xsd:string .
 
+label:BreastDuct_AnatomicSiteLabel
+      rdf:type label:AnatomicSiteLabel ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Breast Duct"^^xsd:string .
+
+label:BreastDuct_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:description "A thin tube in the breast that carries milk from the breast lobules to the nipple"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BreastDuct_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Breast_Duct"^^xsd:string .
+
 label:BreastDuctalCarcinoma_BreastTumorLabel
       rdf:type label:BreastTumorLabel ;
       skos-xl:literalForm "Breast Ductal Carcinoma"^^xsd:string .
@@ -1682,6 +1872,26 @@ label:BreastInvasiveCarcinoma_NCI_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Invasive_Breast_Carcinoma"^^xsd:string .
 
+label:BreastLobe_AnatomicSiteLabel
+      rdf:type label:AnatomicSiteLabel ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Breast Lobe"^^xsd:string .
+
+label:BreastLobe_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:description "A section of the breast that contains the lobules (the glands that make milk)"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BreastLobe_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Breast_Lobe"^^xsd:string .
+
 label:BreastLobularCarcinoma_BreastTumorLabel
       rdf:type label:BreastTumorLabel ;
       skos-xl:literalForm "Breast Lobular Carcinoma"^^xsd:string .
@@ -1740,16 +1950,16 @@ label:Breast_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Breast"^^xsd:string .
 
-label:Breast_NCIURI
-      rdf:type label:URI ;
-      label:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Breast"^^xsd:string .
-
 label:Breast_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "3/31/2011"^^xsd:string ;
       label:description "One of two hemispheric projections of variable size situated in the subcutaneous layer over the pectoralis major muscle on either side of the chest."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Breast_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Breast"^^xsd:string .
 
 label:BroadInstituteOfMITAndHavard_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -1789,12 +1999,55 @@ label:BuccalCellNormal_SampleTypeLabel
       rdf:type label:SampleTypeLabel ;
       skos-xl:literalForm "Buccal Cell Normal"^^xsd:string .
 
+label:BuccalCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Buccal Cell"^^xsd:string .
+
+label:BuccalCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "TBD"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:domainQuestion
+              "BioPortal down at this time"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BuccalCell_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:domainQuestion
+              "BioPortal down at this time"^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Basal_Cell"^^xsd:string .
+
 label:BuccalCell_PMAURI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://www.bioontology.org/pma.owl#PMA_1964"^^xsd:string .
 
-label:BuccalMucosa_NCIURI
+label:BuccalMucosa_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Buccal Mucosa"^^xsd:string .
+
+label:BuccalMucosa_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "3/31/2011"^^xsd:string ;
+      label:description "The mucosal membranes located on the inside of the cheek, in the buccal cavity."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:BuccalMucosa_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Buccal_Mucosa"^^xsd:string .
@@ -1891,6 +2144,12 @@ label:CancerProgression_NCIURI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cancer_Progression"^^xsd:string .
 
+label:Cancer_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/23/2011"^^xsd:string ;
+      label:description "A term for diseases in which abnormal cells divide without control. Cancer cells can invade nearby tissues and can spread through the bloodstream and lymphatic system to other parts of the body."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
 label:Cancer_SNOMEDURI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
@@ -1930,6 +2189,10 @@ label:Carcinoma_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Carcinoma"^^xsd:string .
 
+label:Carcinoma_TumorLabel
+      rdf:type label:TumorLabel ;
+      skos-xl:literalForm "Carcinoma"^^xsd:string .
+
 label:CaseWestern_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Case Western"^^xsd:string .
@@ -1938,9 +2201,39 @@ label:CedarsSinai_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Cedars Sinai"^^xsd:string .
 
+label:CellInvasion_FindingLabel
+      rdf:type label:FindingLabel ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:literalForm "Cell Invasion"^^xsd:string .
+
 label:CellLineControl_SampleTypeLabel
       rdf:type label:SampleTypeLabel ;
       skos-xl:literalForm "Cell Line Control"^^xsd:string .
+
+label:CellLine_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Cell Line"^^xsd:string .
+
+label:CellLine_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A permanently established cell culture that will proliferate indefinitely given appropriate fresh medium and space."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:CellLine_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cell_Line"^^xsd:string .
 
 label:CellLines_TCGACollectionSiteLabel
       rdf:type label:TCGACollectionSiteLabel ;
@@ -1948,8 +2241,37 @@ label:CellLines_TCGACollectionSiteLabel
               "While this is listed as an official YCGA collection site, it does not make any sense and should be investigated."^^xsd:string ;
       skos-xl:literalForm "Cell Lines"^^xsd:string .
 
-label:Cell_NCIURI
+label:CellLysate_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Cell Lysate"^^xsd:string .
+
+label:CellLysate_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The cellular debris and fluid produced by lysis of a cell."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Cell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The smallest units of living structure capable of independent existence, composed of a membrane-enclosed mass of protoplasm and containing a nucleus or nucleoid."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Cell_NCI_URI
       rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cell"^^xsd:string .
 
@@ -2083,6 +2405,20 @@ label:CervicalTumor_JWL_Definition
       label:description "Concept to contain all tumor types anatomically located in the cervix."^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source foaf:JimLomax .
+
+label:CervicalTumor_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Abnormal growth in the cervix, which can be benign (non cancerous) or malignant (cancerous )"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:CervicalTumor_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cervical_Neoplasm"^^xsd:string .
 
 label:CervixAnatomicSite_JWL_Definition
       rdf:type label:Definition ;
@@ -2328,6 +2664,15 @@ label:ColonCancer_ColonCancerDiseaseLabel
               label:ColonAdenocarcinoma_AbbrTCGA_ColonTumorLabel ;
       skos-xl:literalForm "Colon Cancer"^^xsd:string .
 
+label:ColonCancer_MEDRA_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10009944"^^xsd:string .
+
+label:ColonCarcinoma_ColonTumorLabel
+      rdf:type label:ColonTumorLabel ;
+      skos-xl:literalForm "Colon Carcinoma"^^xsd:string .
+
 label:ColonCarcinoma_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "4/17/2011"^^xsd:string ;
@@ -2479,8 +2824,8 @@ label:ConjunctivaAnatomicSite_JWL_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source foaf:JimLomax .
 
-label:Conjunctiva_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:Conjunctiva_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/14/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -2526,13 +2871,42 @@ label:ConjunctivalMelanoma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Conjunctival_Melanoma"^^xsd:string .
 
+label:ConnectiveTissueCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Connective Tissue Cell"^^xsd:string .
+
 label:ConnectiveTissueCell_MESHURI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D003239"^^xsd:string .
 
-label:ConnectiveTissue_MESHURI
+label:ConnectiveTissue_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Connective Tissue"^^xsd:string .
+
+label:ConnectiveTissue_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D003238"^^xsd:string .
+
+label:ConnectiveTissue_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The supporting or framework tissue of the animal body, formed of fibrous and ground substance with more or less numerous cells of various kinds; it is derived from the mesenchyme, and this in turn from the mesoderm; the varieties of connective tissue are: areolar or loose; adipose; dense, regular or irregular, white fibrous; elastic; mucous; and lymphoid tissue; cartilage; and bone; the blood and lymph may be regarded as connective tissues the ground substance of which is a liquid."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:ConnectiveTissue_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Connective_Tissue"^^xsd:string .
 
 label:ControlFeatureType
       rdf:type owl:Class ;
@@ -2621,13 +2995,7 @@ label:Cureline_OrganizationLabel
 
 label:CutaneousMelanoma_MelanomaLabel
       rdf:type label:MelanomaLabel ;
-      label:correspondsTo label:CutaneousMelanoma_NCIURI ;
       skos-xl:literalForm "Cutaneous Melanoma"^^xsd:string .
-
-label:CutaneousMelanoma_NCIURI
-      rdf:type label:URI ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cutaneous_Melanoma"^^xsd:string .
 
 label:CutaneousMelanoma_NCI_Definition
       rdf:type label:Definition ;
@@ -2673,11 +3041,6 @@ label:Cáncer
 label:Célula
       rdf:type label:Term .
 
-label:DIffuseAstrocytoma_NCI_URI
-      rdf:type label:URI ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Diffuse_Astrocytoma"^^xsd:string .
-
 label:DNAAnalyte
       rdf:type owl:Class ;
       rdfs:comment "The analyte in question is DNA"^^xsd:string ;
@@ -2712,7 +3075,24 @@ label:DNATissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf label:TissueSample .
 
-label:DNA_NCIURI
+label:DNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "DNA"^^xsd:string .
+
+label:DNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A long linear double-stranded polymer formed from nucleotides attached to a deoxyribose backbone and found in the nucleus of a cell; associated with the transmission of genetic information."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:DNA_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Deoxyribonucleic_Acid"^^xsd:string .
 
@@ -2746,12 +3126,12 @@ label:Dead_VitalStatusLabel
       dc:creator foaf:JimLomax ;
       skos-xl:literalForm "Dead"^^xsd:string .
 
-label:DeathDate_NCIURI
+label:DeathDate_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Date_of_Death"^^xsd:string .
 
-label:Death_NCIURI
+label:Death_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Death"^^xsd:string .
 
@@ -2786,13 +3166,13 @@ label:Definition
       rdfs:subClassOf label:LabelingPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:source ;
-                owl:someValuesFrom foaf:Agent
+                owl:onProperty label:description ;
+                owl:someValuesFrom xsd:string
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty label:description ;
-                owl:someValuesFrom xsd:string
+                owl:onProperty dc:source ;
+                owl:someValuesFrom foaf:Agent
               ] .
 
 label:DefinitionOrigin
@@ -2812,8 +3192,18 @@ label:DefinitionOriginLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:DefinitionOrigin .
 
-label:Dermis_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:DeoxyribonucleicAcid_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:abbreviatedForm
+              label:DNA_BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Deoxyribonucleic Acid"^^xsd:string .
+
+label:Dermis_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/13/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -2882,7 +3272,16 @@ label:DiagnosisPatientEvent
       rdfs:subClassOf skos:Concept ;
       dc:creator foaf:JimLomax .
 
-label:Diagnosis_NCIURI
+label:Diagnosis_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/18/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Diagnosis_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Diagnosis"^^xsd:string .
 
@@ -2903,7 +3302,7 @@ label:DiagnosticProcedureLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:DiagnosticProcedure_NCIURI
+label:DiagnosticProcedure_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Diagnostic_Procedure"^^xsd:string .
 
@@ -2925,7 +3324,7 @@ label:DiffuseAnaplasia_AnaplasiaLabel
       dc:creator foaf:JimLomax ;
       skos-xl:literalForm "Diffuse Anaplasia"^^xsd:string .
 
-label:DiffuseAnaplasia_SNOMEDURI
+label:DiffuseAnaplasia_SNOMED_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/405955004"^^xsd:string .
 
@@ -2952,17 +3351,17 @@ label:DiffuseAstrocytoma_NCI_URI
 
 label:DiffuseLargeBCellLymphoma_AbbrTCGA_LymphocyticTumorLabel
       rdf:type label:LymphomicTumorLabel ;
-      label:correspondsTo label:DiffuseLargeBCellLymphoma_NCIURI ;
+      label:correspondsTo label:DiffuseLargeBCellLymphoma_NCI_URI ;
       skos-xl:literalForm "DLBC"^^xsd:string .
 
 label:DiffuseLargeBCellLymphoma_LymphocyticTumorLabel
       rdf:type label:LymphomicTumorLabel ;
       label:abbreviatedForm
               label:DiffuseLargeBCellLymphoma_AbbrTCGA_LymphocyticTumorLabel ;
-      label:correspondsTo label:DiffuseLargeBCellLymphoma_NCIURI ;
+      label:correspondsTo label:DiffuseLargeBCellLymphoma_NCI_URI ;
       skos-xl:literalForm "Diffuse Large B Cell Lymphoma"^^xsd:string .
 
-label:DiffuseLargeBCellLymphoma_NCIURI
+label:DiffuseLargeBCellLymphoma_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Diffuse_Large_B-Cell_Lymphoma"^^xsd:string .
@@ -2978,7 +3377,7 @@ label:DiseaseMarker
       rdfs:subClassOf label:Biomarker ;
       dc:creator foaf:JimLomax .
 
-label:DiseaseMarker_NCIURI
+label:DiseaseMarker_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Disease_Marker"^^xsd:string .
@@ -2989,7 +3388,7 @@ label:DiseaseOutcome
       rdfs:subClassOf label:Outcome ;
       dc:creator foaf:JimLomax .
 
-label:DiseaseOutcome_NCIURI
+label:DiseaseOutcome_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Disease_Outcome"^^xsd:string .
@@ -3001,7 +3400,7 @@ label:DiseaseProgressionExam
       label:designNote "The Disease Progression Exam used in TCGA context is still an Examination, however its scope is much more constrained by the nature of the disease covered and the methods for determining the disease's progression"^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:Disease_NCIURI
+label:Disease_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Diseases_and_Disorders"^^xsd:string .
@@ -3059,7 +3458,7 @@ label:DosageUnits
       rdfs:subClassOf label:Units ;
       dc:creator foaf:JimLomax .
 
-label:Dosage_SNOMEDURI
+label:Dosage_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/260911001"^^xsd:string .
@@ -3078,7 +3477,7 @@ label:DrugTherapy
       rdfs:subClassOf label:TherapeuticProcedure ;
       dc:creator foaf:JimLomax .
 
-label:DrugTherapy_SNOMEDURI
+label:DrugTherapy_SNOMED_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/416608005"^^xsd:string .
 
@@ -3106,7 +3505,7 @@ label:Duke_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Duke"^^xsd:string .
 
-label:DuraMater_NCIURI
+label:DuraMater_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Dura_Mater"^^xsd:string .
@@ -3254,6 +3653,10 @@ label:EnsureTCGADataIntegrity_GoalLabel
       rdf:type label:GoalLabel ;
       skos-xl:literalForm "Ensure TCGA Data Integrity"^^xsd:string .
 
+label:EpendymalTumor_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Ependymal Tumor"^^xsd:string .
+
 label:EpendymalTumor_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -3271,6 +3674,14 @@ label:EpendymalTumor_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ependymal_Tumor"^^xsd:string .
 
+label:Ependymocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Ependymocyte"^^xsd:string .
+
 label:Ependymocyte_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -3283,6 +3694,10 @@ label:Ependymocyte_NCI_Definition
 label:Ependymocyte_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ependymocyte"^^xsd:string .
+
+label:Ependymoma_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Ependymoma"^^xsd:string .
 
 label:Ependymoma_NCI_Definition
       rdf:type label:Definition ;
@@ -3297,8 +3712,8 @@ label:Ependymoma_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ependymoma"^^xsd:string .
 
-label:Epidermis_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:Epidermis_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/13/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -3330,7 +3745,7 @@ label:EpithelialCell_BioMaterialLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Epithelial Cell"^^xsd:string .
 
-label:EpithelialCell_MESHURI
+label:EpithelialCell_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D004847"^^xsd:string .
 
@@ -3368,8 +3783,8 @@ label:EpithelialTumor_TumorLabel
       rdf:type label:TumorLabel ;
       skos-xl:literalForm "Epithelial Tumor"^^xsd:string .
 
-label:Epithelium_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:Epithelium_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/16/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -3405,13 +3820,30 @@ label:EpsteinBarrVirusLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
+label:EpsteinBarrVirus_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Epstein Barr Virus"^^xsd:string .
+
 label:EpsteinBarrVirus_EpsteinBarrVirusLabel
       rdf:type label:EpsteinBarrVirusLabel ;
       label:abbreviatedForm
               label:EBV_EpsteinBarrVirusLabel ;
       skos-xl:literalForm "Epstein Barr Virus"^^xsd:string .
 
-label:EpsteinBarrVirus_NCIURI
+label:EpsteinBarrVirus_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A species of Herpetoviridae that is responsible for infectious mononucleosis (glandular fever). Discovered in 1964, this virus has been associated with Burkitt's lymphoma in South African children and with nasopharyngeal carcinoma in Asian populations."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:EpsteinBarrVirus_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Epstein-Barr_Virus"^^xsd:string .
 
@@ -3456,6 +3888,23 @@ label:EsophagealAdenocarcinoma_PDQ_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/PDQ/CDR0000039913"^^xsd:string .
+
+label:EsophagealCancerDiseaseLabel
+      rdf:type owl:Class ;
+      rdfs:subClassOf label:DiseaseLabel ;
+      label:creator foaf:JimLomax .
+
+label:EsophagealCancer_EsophagealCancerDiseaseLabel
+      rdf:type label:EsophagealCancerDiseaseLabel ;
+      skos-xl:literalForm "Esophageal Cancer"^^xsd:string .
+
+label:EsophagealCancer_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/23/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10015362"^^xsd:string .
 
 label:EsophagealCarcinoma_NCI_Definition
       rdf:type label:Definition ;
@@ -3568,7 +4017,7 @@ label:EthnicityLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Ethnicity_SNOMEDURI
+label:Ethnicity_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/372148003"^^xsd:string .
@@ -3596,7 +4045,7 @@ label:Examination2_MedicalExaminationLabel
       rdf:type label:MedicalExaminationLabel ;
       skos-xl:literalForm "Medical Examination 2"^^xsd:string .
 
-label:Examination_NCIURI
+label:Examination_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Examination"^^xsd:string .
@@ -3610,6 +4059,16 @@ label:ExampleTissueSample
 
 label:ExampleTissueType
       rdf:type label:TissueType .
+
+label:Example_ArchiveDownload_Barcode
+      rdf:type label:Barcode .
+
+label:Example_BCRAliquotBarcode
+      rdf:type label:BCRAliquotBarcode ;
+      dc:identifier "tcga-sample-aliquot-barcode-123"^^xsd:string .
+
+label:Example_BCRAnalyteBarcode
+      rdf:type label:BCRAnalyteBarcode .
 
 label:Example_BCRDrugBarcode
       rdf:type label:BCRDrugBarcode ;
@@ -3630,6 +4089,13 @@ label:Example_BCRPortionBarcode
 label:Example_BCRRadiationBarcode
       rdf:type label:BCRRadiationBarcode ;
       dc:identifier "example-radiation-barcode-123"^^xsd:string .
+
+label:Example_BCRSampleBarcode
+      rdf:type label:BCRSampleBarcode ;
+      dc:identifier "tcga-sample-barcode-123"^^xsd:string .
+
+label:Example_BCRSlideBarcode
+      rdf:type label:BCRSlideBarcode .
 
 label:Example_BCRSurgeryBarcode
       rdf:type label:BCRSurgeryBarcode ;
@@ -3661,7 +4127,7 @@ label:ExcisionSurgicalProcedure
       label:designNote "in TCGA, a Surgical Excision is performed to extract a tumor due to the single-focused cancer domain."^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:Excision_NCIURI
+label:Excision_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Excision"^^xsd:string .
@@ -3690,7 +4156,7 @@ label:ExternalBeamRadiationTherapy
 label:ExternalBeamRadiationTherapy1_TherapeuticProcedure
       rdf:type label:ExternalBeamRadiationTherapy .
 
-label:ExternalBeamRadiationTherapy_NCIURI
+label:ExternalBeamRadiationTherapy_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#External_Beam_Radiation"^^xsd:string .
 
@@ -3749,11 +4215,19 @@ label:Female_GenderLabel
               label:F_GenderLabel ;
       skos-xl:literalForm "Female"^^xsd:string .
 
-label:Female_NCIURI
+label:Female_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female"^^xsd:string .
 
-label:Fibroblast_MESHURI
+label:Fibroblast_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Fibroblast"^^xsd:string .
+
+label:Fibroblast_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D005347"^^xsd:string .
 
@@ -3779,7 +4253,16 @@ label:FindingLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Finding_NCIURI
+label:Finding_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/18/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Objective evidence of disease perceptible to the examining physician (sign) and subjective evidence of disease perceived by the patien"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Finding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Finding"^^xsd:string .
@@ -3809,7 +4292,7 @@ label:FocalAnaplasia_AnaplasiaLabel
       rdf:type label:AnaplasiaLabel ;
       skos-xl:literalForm "Focal Anaplasia"^^xsd:string .
 
-label:FocalAnaplasia_SNOMEDURI
+label:FocalAnaplasia_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/405954000"^^xsd:string .
@@ -3823,7 +4306,7 @@ label:FollicularThyroidCancer_ThyroidCancerDiseaseLabel
       rdf:type label:ThyroidCancerDiseaseLabel ;
       skos-xl:literalForm "Follicular Thyroid Cancer"^^xsd:string .
 
-label:FollowUp_NCIURI
+label:FollowUp_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Follow-up"^^xsd:string .
@@ -3967,7 +4450,16 @@ label:GFAP_IndicatorLabel
       rdf:type label:IndicatorLabel ;
       skos-xl:literalForm "GFAP"^^xsd:string .
 
-label:GFAP_NCIURI
+label:GFAP_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Glial fibrillary acidic protein (432 aa, ~50 kDa) is encoded by the human GFAP gene. This protein may be involved in both neuronal maintenance and astrocyte morphology and motility."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:GFAP_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Glial_Fibrillary_Acidic_Protein"^^xsd:string .
 
@@ -4037,7 +4529,7 @@ label:GelElectrophoresis
       rdfs:subClassOf label:LabProcedure ;
       dc:creator foaf:JimLomax .
 
-label:GelElectrophoresis_NCIURI
+label:GelElectrophoresis_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gel_Electrophoresis"^^xsd:string .
 
@@ -4048,12 +4540,38 @@ label:Gemistocyte
       label:designNote "Gemistocyte may become an instance of cancer progression inidcator and an instance of astrocyte."^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:Gemistocyte_NCIURI
+label:Gemistocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Gemistocyte"^^xsd:string .
+
+label:Gemistocyte_JWL_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A gemistocyte is a swollen, reactive astrocyte."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:Gemistocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A pathologic astrocyte in which the cell body swells and contains glial filaments and an eccentric nucleus; seen particularly in demyelinating and neoplastic conditions."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:Gemistocyte_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gemistocytic_Neoplastic_Astrocyte"^^xsd:string .
 
-label:GemistocyticAstrocytoma_NCIURI
+label:GemistocyticAstrocytoma_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gemistocytic_Astrocytoma"^^xsd:string .
@@ -4167,6 +4685,10 @@ label:GenomicSequencingCenter
       rdfs:subClassOf label:GenomicProcessingCenter ;
       dc:creator foaf:JimLomax .
 
+label:GiantCellGlioblastoma_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Giant Cell Glioblastoma"^^xsd:string .
+
 label:GiantCellGlioblastoma_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -4240,8 +4762,8 @@ label:Gland_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gland"^^xsd:string .
 
-label:GlandularEpithelium_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:GlandularEpithelium_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/16/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -4261,21 +4783,38 @@ label:GliadelBCNU_ChemotherapyDrugLabel
       rdf:type label:ChemotherapyDrugLabel ;
       skos-xl:literalForm "Gliadel BCNU"^^xsd:string .
 
+label:GlialCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Glial Cell"^^xsd:string .
+
+label:GlialCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The non-neuronal cells of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu, participate in the blood-brain and blood-retina barriers, form the myelin insulation of nervous pathways, guide neuronal migration during development, and exchange metabolites with neurons. Neuroglia have high-affinity transmitter uptake systems, voltage-dependent and transmitter-gated ion channels, and can release transmitters, but their role in signaling (as in many other functions) is unclear."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
 label:GlialCell_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Glial_Cell"^^xsd:string .
 
-label:GlialFibrillaryAcideicProtein_Indicator
-      rdf:type label:TumorMarker , label:CancerProgressionIndicator ;
-      skos-xl:altLabel label:GFAP_IndicatorLabel ;
-      skos-xl:prefLabel label:GlialFibrillaryAcideicProtein_IndicatorLabel .
-
-label:GlialFibrillaryAcideicProtein_IndicatorLabel
-      rdf:type label:IndicatorLabel ;
+label:GlialFibrillaryAcideicProtein_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
       label:abbreviatedForm
               label:GFAP_IndicatorLabel ;
       skos-xl:literalForm "Glial Fibrilary Acideic Protein"^^xsd:string .
+
+label:GlialFibrillaryAcideicProtein_Indicator
+      rdf:type label:TumorMarker , label:CancerProgressionIndicator ;
+      skos-xl:altLabel label:GFAP_IndicatorLabel ;
+      skos-xl:prefLabel label:GlialFibrillaryAcideicProtein_BioMaterialLabel .
 
 label:GlioblastomaDiseaseLabel
       rdf:type owl:Class ;
@@ -4292,7 +4831,7 @@ label:GlioblastomaMulitforme_BrainTumorLabel
               label:GlioblastomaMulitforme_AbbrTCGA_BrainTumorLabel ;
       skos-xl:literalForm "Glioblastoma Multiforme"^^xsd:string .
 
-label:Glioblastoma_GlioblastomaDiseaseLabel
+label:Glioblastoma_BrainTumorLabel
       rdf:type label:BrainTumorLabel ;
       skos-xl:literalForm "Glioblastoma"^^xsd:string .
 
@@ -4305,7 +4844,7 @@ label:Glioblastoma_NCI_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:Glioblastoma_SNOMEDURI
+label:Glioblastoma_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/63634009"^^xsd:string .
@@ -4331,6 +4870,10 @@ label:Glioma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neuroglial_Tumor"^^xsd:string .
 
+label:Gliosarcoma_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Gliosarcoma"^^xsd:string .
+
 label:Gliosarcoma_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -4345,7 +4888,7 @@ label:Gliosarcoma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Gliosarcoma"^^xsd:string .
 
-label:Gliosarcoma_SNOMEDURI
+label:Gliosarcoma_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/35262004"^^xsd:string .
@@ -4369,7 +4912,24 @@ label:GoalLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label .
 
-label:Granulocyte_NCIURI
+label:Granulocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Granulocyte"^^xsd:string .
+
+label:Granulocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A leucocyte with conspicuous cytoplasmic granules. In humans the granulocytes are also classified as polymorphonuclear leucocytes and are subdivided according to the staining properties of the granules into eosinophils, basophils and neutrophils"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
+label:Granulocyte_NCI_URI
       rdf:type label:URI ;
       rdfs:comment "A leucocyte with conspicuous cytoplasmic granules. In humans the granulocytes are also classified as polymorphonuclear leucocytes and are subdivided according to the staining properties of the granules into eosinophils, basophils and neutrophils."^^xsd:string ;
       dc:creator foaf:JimLomax ;
@@ -4396,6 +4956,10 @@ label:Green_English_ChannelLabel
 label:Green_English_ColorLabel
       rdf:type label:ColorLabel ;
       skos-xl:literalForm "green"@en .
+
+label:GrowthHormone_EndocrineTherapyDrugLabel
+      rdf:type label:EndocrineTherapyDrugLabel ;
+      skos-xl:literalForm "Growth Hormone"^^xsd:string .
 
 label:Gums_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
@@ -4476,6 +5040,31 @@ label:Harvard_Abbr_OrganizationLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Harvard"^^xsd:string .
 
+label:HeLa_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "HeLa Cell Line"^^xsd:string .
+
+label:HeLa_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "HeLa cells were developed from cervix adenocarcinoma of a 31-year-old Black female. The cells are positive for keratin by immunoperoxidase staining. HeLa cells have been reported to contain human papilloma virus 18 (HPV-18) sequences. P53 expression was reported to be low, and normal levels of pRB (retinoblastoma suppressor) were found. Four typical HeLa marker chromosomes have been reported. M1 is a rearranged long arm and centromere of chromosome 1 and the long arm of chromosome 3. M2 is a combination of short arm of chromosome 3 and long arm of chromosome 5. M3 is an isochromosome of the short arm of chromosome 5. M4 consists of the long arm of chromosome 11 and an arm of chromosome 19. HeLa Marker Chromosomes: One copy of Ml, one copy of M2, four-five copies of M3, and two copies of M4 as revealed by G-banding patterns."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:HeLa_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/11/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#HeLa"^^xsd:string .
+
 label:HeadAnatomicSite_JWL_Definition
       rdf:type label:Definition ;
       label:createdDate "3/31/2011"^^xsd:string ;
@@ -4490,6 +5079,11 @@ label:HeadAndNeckCancerDiseaseLabel
 label:HeadAndNeckCancer_HeadAndNeckDiseaseLabel
       rdf:type label:HeadAndNeckCancerDiseaseLabel ;
       skos-xl:literalForm "Head And Neck Cancer"^^xsd:string .
+
+label:HeadAndNeckCancer_MEDRA_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10067821"^^xsd:string .
 
 label:HeadAndNeckCarcinoma_HeadAndNeckTumorLabel
       rdf:type label:HeadAndNeckTumorLabel ;
@@ -4556,11 +5150,6 @@ label:HeadAndNeckTumor_NCI_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:HeadAndNeckTumor_NCI_URI
-      rdf:type label:URI ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Head_and_Neck_Neoplasm"^^xsd:string .
-
 label:Head_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Head"^^xsd:string .
@@ -4583,6 +5172,22 @@ label:HebrewLanguage
       rdf:type label:NaturalLanguage ;
       label:ietfTag "HE"^^xsd:string ;
       label:name "Hebrew"^^xsd:string .
+
+label:Hematocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Hematocyte"^^xsd:string .
+
+label:Hemocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Hemocyte"^^xsd:string .
 
 label:HenryFordHospital_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -4706,6 +5311,15 @@ label:Histiocyte_BioMaterialLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Histiocyte"^^xsd:string .
 
+label:Histiocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A macrophage present in connective tissue."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
 label:Histiocyte_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
@@ -4723,7 +5337,7 @@ label:HistologicGrade
       label:designNote "Histological grade instances may be known by different names so a skos labeling system will be employed."^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:HistologicGrade_NCIURI
+label:HistologicGrade_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Histopathologic_Grade"^^xsd:string .
@@ -4745,7 +5359,7 @@ label:HistologicTypeLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:HistologicType_NCIURI
+label:HistologicType_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Histologic_Type"^^xsd:string .
@@ -4769,7 +5383,7 @@ label:HmiRNA8x15Kv2_PlatformLabel
       rdf:type label:PlatformLabel ;
       skos-xl:literalForm "HmiRNA8x15Kv2"^^xsd:string .
 
-label:HormoneTherapy_NCIURI
+label:HormoneTherapy_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/416608005"^^xsd:string .
 
@@ -4863,12 +5477,12 @@ label:IlluminaOrg
       rdf:type label:Organization ;
       skos-xl:prefLabel label:Illumina_OrganizationLabel .
 
-label:IlluminaURI
-      rdf:type label:URI .
-
 label:Illumina_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Illumina"^^xsd:string .
+
+label:Illumina_URI
+      rdf:type label:URI .
 
 label:ImageArtifact
       rdf:type owl:Class ;
@@ -4901,9 +5515,30 @@ label:Immortalization
       rdfs:subClassOf label:LabProcedure ;
       dc:creator foaf:JimLomax .
 
-label:Immortalization_NCIURI
+label:Immortalization_LabProcedureLabel
+      rdf:type label:LabProcedureLabel ;
+      skos-xl:literalForm "Immortalization"^^xsd:string .
+
+label:Immortalization_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Laboratory methods used to generate cells that are able to reproduce indefinitely."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Immortalization_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Immortalization"^^xsd:string .
+
+label:ImmortalizedBCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Immortalized B Cell"^^xsd:string .
 
 label:Immuno1_TherapeuticAgentLabel_1
       rdf:type label:TherapeuticAgentLabel ;
@@ -4915,7 +5550,7 @@ label:Immunotherapy
       rdfs:subClassOf label:TherapeuticProcedure ;
       dc:creator foaf:JimLomax .
 
-label:Immunotherapy_NCIURI
+label:Immunotherapy_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Immunotherapy"^^xsd:string .
 
@@ -4944,7 +5579,7 @@ label:IndicatorLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Indicator_NCIURI
+label:Indicator_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Indicator"^^xsd:string .
@@ -4961,7 +5596,7 @@ label:InferiorParathyroid_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Inferior Parathyroid Gland"^^xsd:string .
 
-label:InferiorParathyroid_NCIURI
+label:InferiorParathyroid_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/12/2011"^^xsd:string ;
@@ -5005,6 +5640,23 @@ label:InnerEarTumor_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Inner_Ear_Neoplasm"^^xsd:string .
 
+label:InnerEar_AnatomicSiteLabel
+      rdf:type label:AnatomicSiteLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "The portion of the ear located within the temporal bone that is involved in both hearing and balance and includes the semicircular canals, vestibule, and cochlea. "^^xsd:string .
+
+label:InnerEar_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The portion of the ear located within the temporal bone that is involved in both hearing and balance and includes the semicircular canals, vestibule, and cochlea"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source foaf:JimLomax .
+
 label:InstantEvent_StartRegularChemo
       rdf:type time-entry:InstantEvent .
 
@@ -5023,6 +5675,10 @@ label:InstituteForSystemsBiology_OrganizationLabel
 label:InstitutoNeurologicoCarloBesta_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Instituto Neurologico Carlo Besta"^^xsd:string .
+
+label:Insulin_EndocrineTherapyDrugLabel
+      rdf:type label:EndocrineTherapyDrugLabel ;
+      skos-xl:literalForm "Insulin"^^xsd:string .
 
 label:IntGenBCR
       rdf:type label:BCR ;
@@ -5110,6 +5766,25 @@ label:Intravenous_TherapeuticAgentDeliveryLabel
               label:Intravenous_Abbr_TherapeuticAgentDeliveryLabel ;
       skos-xl:literalForm "Intravenous"^^xsd:string .
 
+label:Invasion_FindingLabel
+      rdf:type label:FindingLabel ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:literalForm "Invasion"^^xsd:string .
+
+label:Invasion_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The movement of one cell type into an area normally occupied by a different cell type."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Invasion_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cell_Invasion"^^xsd:string .
+
 label:InvasiveBladderCancer_BladderCancerDiseaseLabel
       rdf:type label:BladderCancerDiseaseLabel ;
       skos-xl:literalForm "Invasive Bladder Cancer"^^xsd:string .
@@ -5168,7 +5843,7 @@ label:JohnsHopkinsUniversity_OrganizationLabel
               label:JHU_OrganizationLabel ;
       skos-xl:literalForm "Johns Hopkins University"^^xsd:string .
 
-label:KarnofskyPerformanceStatus_NCIURI
+label:KarnofskyPerformanceStatus_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Karnofsky_Performance_Status"^^xsd:string .
@@ -5187,6 +5862,15 @@ label:KidneyCancerDiseaseLabel
 label:KidneyCancer_KidneyDiseaseLabel
       rdf:type label:KidneyCancerDiseaseLabel ;
       skos-xl:literalForm "Kidney Cancer"^^xsd:string .
+
+label:KidneyCancer_MEDRA_URI
+      rdf:type label:URI ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10023400"^^xsd:string .
 
 label:KidneyTumorLabel
       rdf:type owl:Class ;
@@ -5293,13 +5977,13 @@ label:Language
       rdfs:subClassOf label:LabelingPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty label:name ;
-                owl:someValuesFrom rdfs:Literal
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty label:name
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty label:name
+                owl:onProperty label:name ;
+                owl:someValuesFrom rdfs:Literal
               ] .
 
 label:LarynxAnatomicSite_JWL_Definition
@@ -5365,16 +6049,16 @@ label:LeftBreast_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Left Breast"^^xsd:string .
 
-label:LeftBreast_NCIURI
-      rdf:type label:URI ;
-      label:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Breast"^^xsd:string .
-
 label:LeftBreast_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "4/1/2011"^^xsd:string ;
       label:description "The hemispheric projection, including the mammary gland, located on the anterior portion of the chest, lateral to the midline, on the side of the body to the west when facing north."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:LeftBreast_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Breast"^^xsd:string .
 
 label:LeftCerebralHemisphere_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
@@ -5386,7 +6070,7 @@ label:LeftCerebralHemisphere_FMA_Definition
       label:description "Left cerebral hemisphere is one of two bilateral, largely symmetrical organ subdivisions within the telencephalon which contain the cerebral cortex and cerebral white matter."^^xsd:string ;
       dc:source label:FoundationalModelOfAnatomy_DefinitionOrigin .
 
-label:LeftCerebralHemisphere_NCIURI
+label:LeftCerebralHemisphere_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Cerebral_Hemisphere"^^xsd:string .
@@ -5450,12 +6134,12 @@ label:LeftKidney_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Left Kidney"^^xsd:string .
 
-label:LeftKidney_NCIURI
+label:LeftKidney_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Kidney"^^xsd:string .
 
-label:LeftLiverLobe_NCIURI
+label:LeftLiverLobe_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Lobe_of_the_Liver"^^xsd:string .
@@ -5468,18 +6152,18 @@ label:LeftLung_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Left Lung"^^xsd:string .
 
-label:LeftLung_NCIURI
-      rdf:type label:URI ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Lung"^^xsd:string .
-
 label:LeftLung_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "4/1/2011"^^xsd:string ;
       label:description "The 2-lobed lung located on the left side of the body."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:LeftOvary_NCIURI
+label:LeftLung_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Left_Lung"^^xsd:string .
+
+label:LeftOvary_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5504,7 +6188,6 @@ label:Left_SideLabel
 
 label:LentigoMalignaMelanoma_MelanomaLabel
       rdf:type label:MelanomaLabel ;
-      label:correspondsTo label:CutaneousMelanoma_NCIURI ;
       skos-xl:literalForm "Lentigo Maligna  Melanoma"^^xsd:string .
 
 label:LentigoMalignaMelanoma_NCI_Definition
@@ -5524,17 +6207,34 @@ label:LentigoMalignaMelanoma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lentigo_Maligna_Melanoma"^^xsd:string .
 
-label:Leptomeninges_NCIURI
+label:Leptomeninges_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The two innermost layers of tissue that cover the brain and spinal cord, the arachnoid mater and the pia mater."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Leptomeninges_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Leptomeninges"^^xsd:string .
+
+label:LeptomeningialInvolvedTumor_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Leptomeningially Involved Tumor"^^xsd:string .
 
 label:LeukemiaDiseaseLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:DiseaseLabel ;
       label:creator foaf:JimLomax .
 
-label:Leukemia_NCIURI
+label:Leukemia_LeukemiaDiseaseLabel
+      rdf:type label:LeukemiaDiseaseLabel ;
+      skos-xl:literalForm "Leukemia"^^xsd:string .
+
+label:Leukemia_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Leukemia"^^xsd:string .
@@ -5544,11 +6244,33 @@ label:LeukemicTumorLabel
       rdfs:subClassOf label:TumorLabel ;
       dc:creator foaf:JimLomax .
 
-label:Leukocyte_MESHURI
+label:Leukocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Leukocyte"^^xsd:string .
+
+label:Leukocyte_MESH_URI
       rdf:type label:URI ;
       rdfs:comment "White blood cells. These include granular leukocytes (BASOPHILS; EOSINOPHILS; and NEUTROPHILS) as well as non-granular leukocytes (LYMPHOCYTES and MONOCYTES)."^^xsd:string ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D007962"^^xsd:string .
+
+label:Leukocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Blood cells that are devoid of hemoglobin, capable of ameboid motion and phagocytosis, and act as the principal components of the immune system."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Leukocyte_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Leukocyte"^^xsd:string .
 
 label:Level1Data_English_ArchiveListingLabel
       rdf:type label:ArchiveFileTypeLabel ;
@@ -5592,7 +6314,7 @@ label:Liposarcoma_LiposarcomaTumorLabel
       rdf:type label:LiposarcomaTumorLabel ;
       skos-xl:literalForm "Liposarcoma"^^xsd:string .
 
-label:Liposarcoma_NCIURI
+label:Liposarcoma_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Liposarcoma"^^xsd:string .
@@ -5622,7 +6344,12 @@ label:LiverCancer_LiverDiseaseLabel
       rdf:type label:LiverCancerDiseaseLabel ;
       skos-xl:literalForm "Liver Cancer"^^xsd:string .
 
-label:LiverLobe_NCIURI
+label:LiverCancer_MEDRA_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10024720"^^xsd:string .
+
+label:LiverLobe_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
@@ -5772,6 +6499,11 @@ label:LungCancer_LungDiseaseLabel
       rdf:type label:LungCancerDiseaseLabel ;
       skos-xl:literalForm "Lung Cancer"^^xsd:string .
 
+label:LungCancer_MEDRA_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10025044"^^xsd:string .
+
 label:LungCarcinoma_LungTumorLabel
       rdf:type label:LungTumorLabel ;
       skos-xl:literalForm "Lung Carcinoma"^^xsd:string .
@@ -5831,22 +6563,41 @@ label:Lung_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Lung"^^xsd:string .
 
-label:Lung_NCIURI
-      rdf:type label:URI ;
-      label:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lung"^^xsd:string .
-
 label:Lung_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "4/1/2011"^^xsd:string ;
       label:description "One of a pair of viscera occupying the pulmonary cavities of the thorax, the organs of respiration in which aeration of the blood takes place. As a rule, the right lung is slightly larger than the left and is divided into three lobes (an upper, a middle, and a lower or basal), while the left has two lobes (an upper and a lower or basal). Each lung is irregularly conical in shape, presenting a blunt upper extremity (the apex), a concave base following the curve of the diaphragm, an outer convex surface (costal surface), an inner or mediastinal surface (mediastinal surface), a thin and sharp anterior border, and a thick and rounded posterior border."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:Lymphocyte_MESHURI
+label:Lung_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lung"^^xsd:string .
+
+label:Lymphocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Lymphocyte"^^xsd:string .
+
+label:Lymphocyte_MESH_URI
       rdf:type label:URI ;
       rdfs:comment "White blood cells formed in the body's lymphoid tissue. The nucleus is round or ovoid with coarse, irregularly clumped chromatin while the cytoplasm is typically pale blue with azurophilic (if any) granules. Most lymphocytes can be classified as either T or B (with subpopulations of each), or NATURAL KILLER CELLS."^^xsd:string ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D007962"^^xsd:string .
+
+label:Lymphocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:description "White blood cells formed in the body's lymphoid tissue. The nucleus is round or ovoid with coarse, irregularly clumped chromatin while the cytoplasm is typically pale blue with azurophilic (if any) granules. Most lymphocytes can be classified as either T or B (with subpopulations of each); those with characteristics of neither major class are called null cells"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Lymphocyte_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lymphocyte"^^xsd:string .
 
 label:LymphocyticCancerDiseaseLabel
       rdf:type owl:Class ;
@@ -5857,12 +6608,12 @@ label:LymphocyticNeoplasm_LymphocyticCancerDiseaseLabel
       rdf:type label:LymphocyticCancerDiseaseLabel ;
       skos-xl:literalForm "Lymphocytic Neoplasm"^^xsd:string .
 
-label:LymphocyticNeoplasm_NCIURI
+label:LymphocyticNeoplasm_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lymphocytic_Neoplasm"^^xsd:string .
 
-label:LymphoidCancer_NCIURI
+label:LymphoidCancer_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax .
 
@@ -5871,7 +6622,15 @@ label:LymphomicTumorLabel
       rdfs:subClassOf label:TumorLabel ;
       dc:creator foaf:JimLomax .
 
-label:Lysate_NCIURI
+label:Lymphoocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Lymphocyte"^^xsd:string .
+
+label:Lysate_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Lysate"^^xsd:string .
 
@@ -6117,9 +6876,26 @@ label:MESH_URISource
       rdf:type label:URISource ;
       dc:identifier "MeSH"^^xsd:string .
 
-label:MIB1_MESHURI
+label:MIB1_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/C513496"^^xsd:string .
+
+label:MIB1_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "MIB-1 or Antigen KI-67 protein (3256 aa, ~359 kDa) is encoded by the human MKI67 gene. This protein is required for cell proliferation."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:MIB1_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Proliferation-Related-Ki-67_Antigen"^^xsd:string .
 
 label:MSDOC_English_DocumentFormatLabel
       rdf:type label:DocumentFormatLabel ;
@@ -6145,9 +6921,26 @@ label:M_UnitsLabel
       rdf:type label:UnitsLabel ;
       skos-xl:literalForm "Molarity"^^xsd:string .
 
-label:Macrophage_MESHURI
+label:Macrophage_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Macrophage"^^xsd:string .
+
+label:Macrophage_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D008264"^^xsd:string .
+
+label:Macrophage_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/5/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A type of white blood cell that surrounds and kills microorganisms, removes dead cells, and stimulates the action of other immune system cells"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:Male_Gender
       rdf:type label:Gender ;
@@ -6160,11 +6953,20 @@ label:Male_GenderLabel
               label:M_GenderLabel ;
       skos-xl:literalForm "Male"^^xsd:string .
 
-label:Male_NCIURI
+label:Male_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male"^^xsd:string .
 
-label:MalignantTumor_NCIURI
+label:MalignantTumor_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A tumor composed of atypical neoplastic, often pleomorphic cells that invade other tissues. Malignant neoplasms often metastasize to distant anatomic sites and may recur after excision. The most common malignant neoplasms are carcinomas (adenocarcinomas or squamous cell carcinomas), Hodgkin and non-Hodgkin lymphomas, leukemias, melanomas, and sarcomas."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:MalignantTumor_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Malignant_Neoplasm"^^xsd:string .
@@ -6175,6 +6977,11 @@ label:Malignant_MetastaticIndicationLabel
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Malignant"^^xsd:string .
+
+label:Malignant_TumorLabel
+      rdf:type label:MelanomaLabel ;
+      label:correspondsTo label:Melanoma_NCI_URI ;
+      skos-xl:literalForm " Malignant Tumor"^^xsd:string .
 
 label:ManifestArchiveFileType
       rdf:type label:ArchiveFileType ;
@@ -6203,9 +7010,30 @@ label:Manifest_Spanish_ArchiveListingLabel
       rdf:type label:ArchiveFileTypeLabel ;
       skos-xl:literalForm "manifiesto"@es .
 
-label:MastCell_MESHURI
+label:MastCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Mast Cell"^^xsd:string .
+
+label:MastCell_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D008407"^^xsd:string .
+
+label:MastCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Mast cells are hematopoietic tissue cells that contain coarse, basophilic, metachromatic granules. They are believed to contain heparin and histamine and derive from hematopoietic progenitor cells."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:MastCell_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Mast_Cell"^^xsd:string .
 
 label:MaterialDeOrigen
       rdf:type label:Term .
@@ -6238,6 +7066,10 @@ label:MedullaryThyroidCancer_MEDRA_URI
 label:MedullaryThyroidCancer_ThyroidCancerDiseaseLabel
       rdf:type label:ThyroidCancerDiseaseLabel ;
       skos-xl:literalForm "Medullary Thyroid Cancer"^^xsd:string .
+
+label:Medulloblastoma_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Medulloblastoma"^^xsd:string .
 
 label:Medulloblastoma_NCI_Definition
       rdf:type label:Definition ;
@@ -6312,7 +7144,7 @@ label:Melanoma_SkinTumorLabel
       rdf:type label:SkinTumorLabel ;
       skos-xl:literalForm "Skin Tumor"^^xsd:string .
 
-label:Membrane_NCIURI
+label:Membrane_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Membrane"^^xsd:string .
@@ -6326,7 +7158,7 @@ label:MemorialSloanKetteringCancerCenter_OrganizationLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Memorial Sloan Kettering Cancer Center"^^xsd:string .
 
-label:Meninges_NCIURI
+label:Meninges_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meninges"^^xsd:string .
@@ -6352,6 +7184,25 @@ label:Meningioma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meningioma"^^xsd:string .
 
+label:MeningothelialCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Meningothelial Cell"^^xsd:string .
+
+label:MeningothelialCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "TBD"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      label:domainQuestion
+              "Have not found a good definition for this concept"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
 label:MeningothelialCell_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
@@ -6359,6 +7210,10 @@ label:MeningothelialCell_NCI_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Meningothelial_Cell"^^xsd:string .
+
+label:MetastaticAppendicealEpithelialTumor_AppendixTumorLabel
+      rdf:type label:AppendixTumorLabel ;
+      skos-xl:literalForm "Metastatic Appendiceal Epithelial Tumor"^^xsd:string .
 
 label:MetastaticBladderCancer_BladderCancerDiseaseLabel
       rdf:type label:BladderCancerDiseaseLabel ;
@@ -6435,7 +7290,7 @@ label:Microplate_MicroplateLabel
       rdf:type label:MicroplateLabel ;
       skos-xl:literalForm "Microplate"^^xsd:string .
 
-label:Microplate_NCIURI
+label:Microplate_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Microplate"^^xsd:string .
@@ -6460,6 +7315,14 @@ label:Millilter_UnitsLabel
 
 label:MindBomb1Protein_Indicator
       rdf:type label:TumorMarker , label:CancerProgressionIndicator .
+
+label:MindBomb1_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Mind Bomb 1"^^xsd:string .
 
 label:ModelClosureGoal
       rdf:type label:Goal ;
@@ -6534,10 +7397,6 @@ label:Mouth_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Mouth"^^xsd:string .
 
-label:Mouth_MESHURI
-      rdf:type label:URI ;
-      dc:identifier "http://purl.bioontology.org/ontology/MSH/D009055"^^xsd:string .
-
 label:Mouth_MESH_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -6546,6 +7405,10 @@ label:Mouth_MESH_Definition
       label:description "Slitlike space in the oral cavity, bounded externally by the lips and cheek, and internally by the gingiva and teeth."^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:MESH_DefinitionOrigin .
+
+label:Mouth_MESH_URI
+      rdf:type label:URI ;
+      dc:identifier "http://purl.bioontology.org/ontology/MSH/D009055"^^xsd:string .
 
 label:Mucosa_NCI_URI
       rdf:type label:URI ;
@@ -6565,17 +7428,72 @@ label:MucosalMelanoma_PDQ_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/PDQ/CDR0000598632"^^xsd:string .
 
-label:MuscleCell_MESHURI
+label:MuscleCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Muscle Cell"^^xsd:string .
+
+label:MuscleCell_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D032342"^^xsd:string .
 
-label:MuscleTissue_MESHURI
+label:MuscleCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A connective tissue cell with the ability to convert chemical energy into mechanical energy via a contractile apparatus. As part of the contractile apparatus, the proteins actin and myosin form parallel myofilaments. The interaction of actin and myosin mediates muscle cell contraction in response to stimulation of the excitable cell membrane."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:MESH_DefinitionOrigin .
+
+label:MuscleCell_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Muscle_Cell"^^xsd:string .
+
+label:MuscleTissue_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Muscle Tissue"^^xsd:string .
+
+label:MuscleTissue_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D009132"^^xsd:string .
+
+label:MuscleTissue_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Tissue responsible for the body movements and the shape and size changes of interna organs. Muscle tissue is composed of specialized contractile cells. There are two types of muscle tissue recognized:striated and smooth muscle. The striated muscle tissue is further subdivided into skeletal, visceral striated, and cardiac muscle."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:MESH_DefinitionOrigin .
+
+label:MuscleTissue_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Muscle_Tissue"^^xsd:string .
 
 label:Mutation_PlatformDatatypeLabel
       rdf:type label:PlatformDatatypeLabel ;
       skos-xl:literalForm "Mutation"^^xsd:string .
+
+label:Myeloma_MyelomaLabel
+      rdf:type label:TumorLabel ;
+      skos-xl:literalForm " Myeloma"^^xsd:string .
+
+label:Myeloma_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A bone marrow-based plasma cell neoplasm characterized by a serum monoclonal protein and skeletal destruction with osteolytic lesions, pathological fractures, bone pain, hypercalcemia, and anemia. Clinical variants include non-secretory myeloma, smoldering myeloma, indolent myeloma, and plasma cell leukemia. (WHO, 2001)"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
 
 label:NCH_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -6694,7 +7612,7 @@ label:NativeHawaiianOrOtherPacificIslander_RaceLabel
       dc:creator foaf:JimLomax ;
       skos-xl:literalForm "Native Hawaiian Or Other Pacific Islander"^^xsd:string .
 
-label:NativeHawaiianPacificIslander_NCIURI
+label:NativeHawaiianPacificIslander_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Native_Hawaiian_or_Other_Pacific_Islander"^^xsd:string .
@@ -6718,13 +7636,6 @@ label:Neck_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Neck"^^xsd:string .
 
-label:Neck_NCIURI
-      rdf:type label:URI ;
-      label:architect foaf:MoSanyang ;
-      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neck"^^xsd:string .
-
 label:Neck_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -6733,6 +7644,13 @@ label:Neck_NCI_Definition
       label:description "The region that connects the head to the rest of the body."^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Neck_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neck"^^xsd:string .
 
 label:NegativeControlType
       rdf:type label:ControlType ;
@@ -6743,7 +7661,7 @@ label:NegativeControlTypeName
       rdf:type label:ControlTypeLabel ;
       skos-xl:literalForm "Negative Control"^^xsd:string .
 
-label:NeoplasmRecurrence_MEDRAURI
+label:NeoplasmRecurrence_MEDRA_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/MDR/10038594"^^xsd:string .
@@ -6765,9 +7683,67 @@ label:NeoplasticGrowth_NCIURI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neoplastic_Growth_or_Spread"^^xsd:string .
 
-label:NerveTissue_MESHURI
+label:NerveCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Nerve Cell"^^xsd:string .
+
+label:NerveCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Any of the conducting cells of the nervous system. A typical neuron consists of a cell body, containing the nucleus and the surrounding cytoplasm (perikaryon); several short radiating processes (dendrites); and one long process (the axon), which terminates in twiglike branches (telodendrons) and may have branches (collaterals) projecting along its course."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:NerveCell_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neuron"^^xsd:string .
+
+label:NerveTissue_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Nerve Tissue"^^xsd:string .
+
+label:NerveTissue_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D009417"^^xsd:string .
+
+label:NerveTissue_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The tissue that generates and conducts electrical signals in the body. It contains the neurons."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:NerveTissue_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Nervous_Tissue"^^xsd:string .
+
+label:NeurilemmaCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Neurilemma Cell"^^xsd:string .
+
+label:NeurilemmalCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Neurilemmal Cell"^^xsd:string .
 
 label:NeuroendocrineCell_BioMaterialLabel
       rdf:type label:BioMaterialLabel ;
@@ -6794,7 +7770,7 @@ label:NeuroendocrineCell_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Neuroendocrine_Cell"^^xsd:string .
 
-label:Neuron_MESHURI
+label:Neuron_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D009474"^^xsd:string .
 
@@ -6804,7 +7780,6 @@ label:NoChange_OutcomeLabel
 
 label:NodularCutaneousMelanoma_MelanomaLabel
       rdf:type label:MelanomaLabel ;
-      label:correspondsTo label:CutaneousMelanoma_NCIURI ;
       skos-xl:literalForm "Nodular Cutaneous Melanoma"^^xsd:string .
 
 label:NodularCutaneousMelanoma_NCI_Definition
@@ -6896,7 +7871,7 @@ label:NuclearGrade_NCIURI
 label:Nucleus
       rdf:type mage:CellularComponent .
 
-label:NumberOfFractions_SNOMEDURI
+label:NumberOfFractions_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/SNOMEDCT/228862004"^^xsd:string .
@@ -6932,6 +7907,14 @@ label:OcularMelanoma_NCI_URI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ocular_Melanoma"^^xsd:string .
 
+label:Oligodendrocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Oligodendrocyte"^^xsd:string .
+
 label:Oligodendrocyte_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -6944,6 +7927,10 @@ label:Oligodendrocyte_NCI_Definition
 label:Oligodendrocyte_NCI_URI
       rdf:type label:URI ;
       dc:identifier " http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Oligodendroglia_Cell"^^xsd:string .
+
+label:Oligodendroglioma_BrainTumorLabel
+      rdf:type label:BrainTumorLabel ;
+      skos-xl:literalForm "Oligodendroglioma"^^xsd:string .
 
 label:Oligodendroglioma_NCI_Definition
       rdf:type label:Definition ;
@@ -6973,8 +7960,8 @@ label:OmentumAnatomicSite_JWL_Definition
       label:description "Concept to contain all anatomic sites that are physically related to the omentum; omentum and all anatomic components thereof."^^xsd:string ;
       dc:source foaf:JimLomax .
 
-label:Omentum_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:Omentum_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -7517,7 +8504,7 @@ label:PathologicDistantMetastasisTNMFinding
       rdfs:subClassOf label:PathologicTNMFinding ;
       dc:creator foaf:JimLomax .
 
-label:PathologicDistantMetastasisTNMFinding_NCIURI
+label:PathologicDistantMetastasisTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pathologic_Distant_Metastasis_TNM_Finding"^^xsd:string .
@@ -7528,7 +8515,7 @@ label:PathologicPrimaryTumorTNMFinding
       rdfs:subClassOf label:PathologicTNMFinding ;
       dc:creator foaf:JimLomax .
 
-label:PathologicPrimaryTumorTNMFinding_NCIURI
+label:PathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pathologic_Primary_Tumor_TNM_Finding"^^xsd:string .
@@ -7539,7 +8526,7 @@ label:PathologicRegionalLymphNodesTNMFinding
       rdfs:subClassOf label:PathologicTNMFinding ;
       dc:creator foaf:JimLomax .
 
-label:PathologicRegionalLymphNodesTNMFinding_NCIURI
+label:PathologicRegionalLymphNodesTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pathologic_Regional_Lymph_Nodes_TNM_Finding"^^xsd:string .
@@ -7633,13 +8620,13 @@ label:PatientId
       rdfs:comment "Patient Id is a concept for uniquely identifying a Patient. The consumable label for a Patient Id may vary across  domain interpretations. This is the case with The Cancer Genome Atlas, where patients are identified in a clinical context by a \"BCRPatientBarcode\".  To allow for variations in  consumable labels for the concept, the  SKOS-XL framework is used; SKOS-XL in particular for its extensions that allow relationships  to exist between labels. To aid in data integration a Patient Id will be defined  by a union of known concepts that logically map to the concept of Patient Id."^^xsd:string ;
       rdfs:subClassOf skos:Concept ;
       rdfs:subClassOf
-              [ rdf:type owl:Class ;
-                owl:unionOf (label:Barcode label:BCRPatientBarcode)
-              ] ;
-      rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:PatientIdLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Class ;
+                owl:unionOf (label:Barcode label:BCRPatientBarcode)
               ] ;
       owl:equivalentClass label:BCRPatientBarcode .
 
@@ -7662,6 +8649,11 @@ label:PenileCancerDiseaseLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:DiseaseLabel ;
       label:creator foaf:JimLomax .
+
+label:PenileCancer_MEDRA_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://purl.bioontology.org/ontology/MDR/10034299"^^xsd:string .
 
 label:PenileCancer_PenileCancerDiseaseLabel
       rdf:type label:PenileCancerDiseaseLabel ;
@@ -7706,8 +8698,8 @@ label:PerformanceTimingLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Peritoneum_AnatomicSiteLabel
-      rdf:type label:AnatomicSiteLabel ;
+label:Peritoneum_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/15/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
@@ -7727,9 +8719,31 @@ label:Peritoneum_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Peritoneum"^^xsd:string .
 
+label:Phagocyte_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Phagocyte"^^xsd:string .
+
 label:Phagocyte_MESH_URI
       rdf:type label:URI ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D010586"^^xsd:string .
+
+label:Phagocyte_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A type of immune cell that can surround and kill microorganisms, ingest foreign material, and remove dead cells. It can also boost immune responses. Monocytes, macrophages, and neutrophils are phagocytes. A phagocyte is a type of white blood cell"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Phagocyte_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Phagocytic_Cell"^^xsd:string .
 
 label:PharynxAnatomicSite_JWL_Definition
       rdf:type label:Definition ;
@@ -7789,12 +8803,43 @@ label:PilocyticAstrocytoma_BrainTumorLabel
       rdf:type label:BrainTumorLabel ;
       skos-xl:literalForm "Pilocytic Astrocytoma"^^xsd:string .
 
+label:PilocyticAstrocytoma_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/12/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A WHO grade I, relatively circumscribed, slowly growing, often cystic astrocytoma occurring in children and young adults. Histologically it is characterized by a biphasic pattern with compacted bipolar cells associated with Rosenthal fibers and multipolar cells associated with microcysts and eosinophilic bodies/hyaline droplets."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:PilocyticAstrocytoma_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Pilocytic_Astrocytoma"^^xsd:string .
+
 label:PlasmaCellMyeloma_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Plasma_Cell_Myeloma"^^xsd:string .
 
-label:PlasmaCell_NCIURI
+label:PlasmaCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/10/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Plasma Cell"^^xsd:string .
+
+label:PlasmaCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/13/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A type of white blood cell that produces antibodies."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:PlasmaCell_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Plasma_Cell"^^xsd:string .
 
@@ -8067,6 +9112,15 @@ label:ProteinLabel
 label:ProteinTrimer
       rdf:type mage:CellularComponent .
 
+label:Protein_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
 label:Protein_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
@@ -8107,7 +9161,7 @@ label:ProtocolLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Protocol_NCIURI
+label:Protocol_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Protocol_Generic_Term"^^xsd:string .
@@ -8191,7 +9245,21 @@ label:RNATissueSample
       rdf:type owl:Class ;
       rdfs:subClassOf label:TissueSample .
 
-label:RNA_NCIURI
+label:RNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "RNA"^^xsd:string .
+
+label:RNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:description "Single-stranded long chain of nucleotides containing ribose. It is the end product of DNA transcription by the enzyme RNA polymerase. It is essential in protein synthesis."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:RNA_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ribonucleic_Acid"^^xsd:string .
 
@@ -8217,7 +9285,7 @@ label:RaceLabel
       label:designNote "Race Label was created to accomdate different naming conventions for members of the concept. In particular, TCGA labels Race members in one way, however, we have not determined that this is standard by any means. A SKOS labeling framework for Race has been employed to help buffer against what is perceived as a plethora of naming schemes. While we continue to look to the US Census as a guiding entity for establishing standard naming for Race, we are not convinced it has done so or ever will"^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:Race_NCIURI
+label:Race_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Race"^^xsd:string .
@@ -8254,9 +9322,8 @@ label:RadiationDosageUnits
       rdfs:subClassOf label:DosageUnits ;
       dc:creator foaf:JimLomax .
 
-label:RadiationDosage_MESHURI
+label:RadiationDosage_MESH_URI
       rdf:type label:URI ;
-      rdfs:comment "The amount of radiation energy that is deposited in a unit mass of material, such as tissues of plants or animal. In RADIOTHERAPY, radiation dosage is expressed in gray units (Gy). In RADIOLOGIC HEALTH, the dosage is expressed by the product of absorbed dose (Gy) and quality factor (a function of linear energy transfer), and is called radiation dose equivalent in sievert units (Sv)."^^xsd:string ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D011829"^^xsd:string .
 
 label:RadiationLabel
@@ -8269,7 +9336,7 @@ label:RadiationTherapy
       rdfs:subClassOf label:TherapeuticProcedure ;
       dc:creator foaf:JimLomax .
 
-label:RadiationTherapy_NCIURI
+label:RadiationTherapy_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Radiation_Therapy"^^xsd:string .
 
@@ -8711,7 +9778,7 @@ label:RightKidney_NCIURI
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Right_Kidney"^^xsd:string .
 
-label:RightLiverLobe_NCIURI
+label:RightLiverLobe_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Right_Lobe_of_the_Liver"^^xsd:string .
@@ -8724,18 +9791,18 @@ label:RightLung_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Right Lung"^^xsd:string .
 
-label:RightLung_NCIURI
-      rdf:type label:URI ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Right_Lung"^^xsd:string .
-
 label:RightLung_NCI_Definition
       rdf:type label:Definition ;
       label:createdDate "4/1/2011"^^xsd:string ;
       label:description "The 2-lobed lung located on the right side of the body."^^xsd:string ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:RightOvary_NCIURI
+label:RightLung_NCI_URI
+      rdf:type label:URI ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Right_Lung"^^xsd:string .
+
+label:RightOvary_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/5/2011"^^xsd:string ;
@@ -8831,10 +9898,6 @@ label:SalivaryGland_NCI_URI
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Salivary_Gland"^^xsd:string .
-
-label:Sample1_BCRSampleBarcode
-      rdf:type label:BCRSampleBarcode ;
-      dc:identifier "tcga-sample-barcode-123"^^xsd:string .
 
 label:SampleDataRelationshipArtifact
       rdf:type owl:Class ;
@@ -8963,7 +10026,32 @@ label:SampleType_TotalRNA
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:TotalRNA_SampleTypeLabel .
 
-label:ScientificEquipment_NCIURI
+label:SchwannCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Schwann Cell"^^xsd:string .
+
+label:SchwannCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Neuroglial cells of the peripheral nervous system which form the insulating myelin sheaths of peripheral axons."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:SchwannCell_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Schwann_Cell"^^xsd:string .
+
+label:ScientificEquipment_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Scientific_Equipment"^^xsd:string .
@@ -9053,7 +10141,7 @@ label:SerousCavity_NCI_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
-label:SerousCavity_SNOMEDURI
+label:SerousCavity_SNOMED_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ihtsdo.org/snomedct/anatomy#304404008"^^xsd:string .
@@ -9080,7 +10168,7 @@ label:SideLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:Side_NCIURI
+label:Side_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Side"^^xsd:string .
@@ -9181,7 +10269,6 @@ label:SkinCutaneousMelanoma_MelanomaLabel
       rdf:type label:MelanomaLabel ;
       label:abbreviatedForm
               label:SkinCutaneousMelanoma_AbbrTCGA_MelanomaLabel ;
-      label:correspondsTo label:CutaneousMelanoma_NCIURI ;
       skos-xl:literalForm "Skin Cutaneous Melanoma"^^xsd:string .
 
 label:SkinNeuroendocrineCarcinoma_NCI_Definition
@@ -9282,9 +10369,6 @@ label:Slide
       rdfs:subClassOf skos:Concept ;
       dc:creator foaf:JimLomax .
 
-label:Slide1_BCRSlideBarcode
-      rdf:type label:BCRSlideBarcode .
-
 label:Slide1_Slide
       rdf:type label:Slide .
 
@@ -9359,6 +10443,23 @@ label:SquamousCell_BioMaterialLabel
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Squamous Cell"^^xsd:string .
+
+label:SquamousCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "Flat cells that look like fish scales under a microscope. These cells cover internal and external surfaces of the body"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:SquamousCell_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/20/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Squamous_Cell"^^xsd:string .
 
 label:StJosephsHospitalPhoenix_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -9732,7 +10833,6 @@ label:StructuralControlFeature_ControlFeatureTypeLabel
 label:SuperficialSpreadingCutaneousMelanoma_MelanomaLabel
       rdf:type label:MelanomaLabel ;
       label:architect foaf:MoSanyang ;
-      label:correspondsTo label:CutaneousMelanoma_NCIURI ;
       label:createdDate "4/13/2011"^^xsd:string ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -9782,7 +10882,7 @@ label:SurgicalProcedureLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:SurgicalProcedure_NCIURI
+label:SurgicalProcedure_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Surgical_Procedure"^^xsd:string .
 
@@ -9886,9 +10986,33 @@ label:TCGAProject
       skos-xl:altLabel label:TheCancerGenomeAtlas_ProjectLabel ;
       skos-xl:prefLabel label:TCGA_ProjectLabel .
 
+label:TCGA_DefinitionOrigin
+      rdf:type label:DefinitionOrigin .
+
 label:TCGA_ProjectLabel
       rdf:type label:ProjectLabel ;
       skos-xl:literalForm "TCGA"^^xsd:string .
+
+label:TCell_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "T Cell"^^xsd:string .
+
+label:TCell_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A lymphocyte derived from a pre T-lymphocyte in the thymus and stored in secondary lymphoid organs, bone marrow, and lymph nodes. It circulates in the bloodstream and the lymphatic system, where it searches for and attacks particular foreign or abnormal cells. A mature T lymphocyte has T cell receptors and other surface proteins on its cell surface."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:TCell_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#T-Lymphocyte"^^xsd:string .
 
 label:TGen_OrganizationLabel
       rdf:type label:OrganizationLabel ;
@@ -9897,22 +11021,22 @@ label:TGen_OrganizationLabel
 label:TIF
       rdf:type label:ImageFormat .
 
-label:TLymphocyte_NCIURI
+label:TLymphocyte_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#T-Lymphocyte"^^xsd:string .
 
-label:TNMFinding_NCIURI
+label:TNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Cancer_TNM_Finding"^^xsd:string .
 
-label:TNMOvarianNeoplasmStaging_NCIURI
+label:TNMOvarianNeoplasmStaging_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#TNM_Ovary_Neoplasm_Staging"^^xsd:string .
 
-label:TNMStagingSystem_NCIURI
+label:TNMStagingSystem_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#TNM"^^xsd:string .
@@ -9927,7 +11051,7 @@ label:TargetedMolecularTherapy
       rdfs:subClassOf label:TherapeuticProcedure ;
       dc:creator foaf:JimLomax .
 
-label:TargetedMolecularTherapy_NCIURI
+label:TargetedMolecularTherapy_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Targeted_Molecular_Therapy"^^xsd:string .
 
@@ -9967,14 +11091,6 @@ label:Testicle_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Testicle"^^xsd:string .
 
-label:Testicle_NCIURI
-      rdf:type label:URI ;
-      label:architect foaf:MoSanyang ;
-      label:createdDate "4/6/2011"^^xsd:string ;
-      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      dc:creator foaf:JimLomax ;
-      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Testis"^^xsd:string .
-
 label:Testicle_NCI_Definition
       rdf:type label:Definition ;
       label:architect foaf:MoSanyang ;
@@ -9984,19 +11100,27 @@ label:Testicle_NCI_Definition
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       dc:source label:NCIThesaurus_DefinitionOrigin .
 
+label:Testicle_NCI_URI
+      rdf:type label:URI ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/6/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Testis"^^xsd:string .
+
 label:TesticularCancerDiseaseLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:DiseaseLabel ;
       dc:creator foaf:JimLomax .
 
-label:TesticularCancer_MEDRAURI
+label:TesticularCancer_MEDRA_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/MDR/10043302"^^xsd:string .
 
 label:TesticularCancer_TesticularCancerDiseaseLabel
       rdf:type label:TesticularCancerDiseaseLabel ;
-      label:correspondsTo label:TesticularCancer_MEDRAURI ;
+      label:correspondsTo label:TesticularCancer_MEDRA_URI ;
       skos-xl:literalForm "Testicular Cancer"^^xsd:string .
 
 label:TesticularTumorLabel
@@ -10073,12 +11197,12 @@ label:TherapeuticProcedureOutcome
       rdfs:subClassOf label:Outcome ;
       dc:creator foaf:JimLomax .
 
-label:TherapeuticProcedureOutcome_NCIURI
+label:TherapeuticProcedureOutcome_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Outcomes_of_Therapy"^^xsd:string .
 
-label:TherapeuticProcedure_NCIURI
+label:TherapeuticProcedure_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Therapeutic_Procedure"^^xsd:string .
 
@@ -10236,7 +11360,7 @@ label:TissueSampleLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:TissueSample_NCIURI
+label:TissueSample_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tissue_Sample"^^xsd:string .
@@ -10250,16 +11374,33 @@ label:TissueType
       rdfs:subClassOf skos:Concept ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty label:name ;
-                owl:someValuesFrom rdfs:Literal
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:SampleTypeLabel
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:SampleTypeLabel
+                owl:onProperty label:name ;
+                owl:someValuesFrom rdfs:Literal
               ] .
 
-label:Tissue_NCIURI
+label:Tissue_AnatomicStructureLabel
+      rdf:type label:AnatomicStructureLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Tissue"^^xsd:string .
+
+label:Tissue_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "An anatomical structure consisting of similarly specialized cells and intercellular matrix, aggregated according to genetically determined spatial relationships, performing a specific function."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Tissue_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tissue"^^xsd:string .
 
@@ -10391,7 +11532,7 @@ label:Trigone_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Trigone"^^xsd:string .
 
-label:Trigone_NCIURI
+label:Trigone_NCI_URI
       rdf:type label:URI ;
       label:architect foaf:MoSanyang ;
       label:createdDate "4/6/2011"^^xsd:string ;
@@ -10415,6 +11556,25 @@ label:TrigonumVesicae_AnatomicSiteLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "Trigonum Vesicae"^^xsd:string .
 
+label:TumorCellInvasion_FindingLabel
+      rdf:type label:FindingLabel ;
+      dc:creator foaf:JimLomax ;
+      skos-xl:literalForm "Tumor Cell Invasion"^^xsd:string .
+
+label:TumorCellInvasion_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "The local spread of tumor cells of a malignant neoplasm through infiltration or destruction of adjacent tissue; for epithelial neoplasms, invasion signifies infiltration beneath the epithelial basement membrane."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:TumorCellInvasion_NCI_URI
+      rdf:type label:URI ;
+      label:creator foaf:JimLomax ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tumor_Cell_Invasion"^^xsd:string .
+
 label:TumorGradeLabel
       rdf:type owl:Class ;
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
@@ -10436,7 +11596,7 @@ label:TumorMarkerLabel
       rdfs:subClassOf label:LabelingPackage , skos-xl:Label ;
       dc:creator foaf:JimLomax .
 
-label:TumorMarker_NCIURI
+label:TumorMarker_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Tumor_Marker"^^xsd:string .
@@ -10508,13 +11668,13 @@ label:URI
       rdfs:subClassOf label:LabelingPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom xsd:anyURI
+                owl:onProperty dc:source ;
+                owl:someValuesFrom label:URISource
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:source ;
-                owl:someValuesFrom label:URISource
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:anyURI
               ] .
 
 label:URISource
@@ -10667,13 +11827,13 @@ label:UseCase
       rdfs:subClassOf skos:Concept ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:UseCaseLabel
+                owl:onProperty label:description ;
+                owl:someValuesFrom xsd:string
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty label:description ;
-                owl:someValuesFrom xsd:string
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:UseCaseLabel
               ] .
 
 label:UseCaseLabel
@@ -10757,7 +11917,16 @@ label:Uterus_AnatomicSiteLabel
       rdf:type label:AnatomicSiteLabel ;
       skos-xl:literalForm "Uterus"^^xsd:string .
 
-label:Uterus_NCIURI
+label:Uterus_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/19/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A hollow, thick-walled, muscular organ located within the pelvic cavity of a woman. Within the uterus the fertilized egg implants and the fetus develops during pregnancy."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Uterus_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Uterus"^^xsd:string .
@@ -10788,7 +11957,24 @@ label:Vanderbuilt_OrganizationLabel
       rdf:type label:OrganizationLabel ;
       skos-xl:literalForm "Vanderbuilt University"^^xsd:string .
 
-label:Virus_NCIURI
+label:Virus_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "Virus"^^xsd:string .
+
+label:Virus_NCI_Definition
+      rdf:type label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:description "A term for a group of infectious agents which with few exceptions are capable of passing through fine filters that retain most bacteria, are usually not visible through the light microscope, lack independent metabolism, and are incapable of growth or reproduction apart from living cells."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:Virus_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Virus"^^xsd:string .
 
@@ -10810,7 +11996,7 @@ label:VitalStatusLabel
       label:designNote "Vital Status Label was created to accomdate different naming conventions for members of the concept. In particular, TCGA labels the Vital Status member, Living_VitalStatus as \"Living\" where as internal sources label it as \"Alive\".  There is a chance of other representations of Vital Status members beyond TCGA and internal source as the institution may and probably will intetgrate with other sources of clniical information."^^xsd:string ;
       dc:creator foaf:JimLomax .
 
-label:VitalStatus_NCIURI
+label:VitalStatus_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Vital_Status"^^xsd:string .
@@ -10884,7 +12070,7 @@ label:WeightUnits
       rdf:type owl:Class ;
       rdfs:subClassOf label:Units .
 
-label:Weight_NCIURI
+label:Weight_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Weight"^^xsd:string .
@@ -10924,12 +12110,12 @@ label:WhiteAdipocyte_BioMaterialLabel
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
       skos-xl:literalForm "White Adipocyte"^^xsd:string .
 
-label:WhiteAdipocyte_MESHURI
+label:WhiteAdipocyte_MESH_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://purl.bioontology.org/ontology/MSH/D052438"^^xsd:string .
 
-label:WhiteRace_NCIURI
+label:WhiteRace_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White"^^xsd:string .
@@ -11159,12 +12345,6 @@ label:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-label:hasPatientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier ;
-      label:designNote "hasPatientId is synonymous with the property patientId; eventually hasPatientId should be removed."^^xsd:string , "hasPatientId is functional since any object using PatientId must be guaranteed that it will have a unique PatientId; a Patient can only have on PatientId."^^xsd:string ;
-      dc:creator foaf:JimLomax .
-
 label:has_platform_version
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf mage:has_version .
@@ -11226,9 +12406,41 @@ label:illuminaga_mrna_dge_1
       rdf:type label:PlatformLabel ;
       skos-xl:literalForm "llumina Genome Analyzer 2 Platform"^^xsd:string .
 
-label:mRNA_NCIURI
+label:mRNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "mRNA"^^xsd:string .
+
+label:mRNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:description "A type of RNA found in cells. Messenger RNA molecules carry the genetic information needed to make proteins. They carry the information from the DNA in the nucleus of the cell to the cytoplasm where the proteins are made."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:mRNA_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Messenger_RNA"^^xsd:string .
+
+label:miRNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "miRNA"^^xsd:string .
+
+label:miRNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:description "A sequence of single-stranded RNA which is typically 20-25 nucleotides in length and may regulate the expression of other genes. miRNAs are RNA genes which are transcribed from DNA, but are not translated into proteins."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:miRNA_NCI_URI
+      rdf:type label:URI ;
+      dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#MicroRNA"^^xsd:string .
 
 label:name
       rdf:type rdf:Property ;
@@ -11393,52 +12605,66 @@ label:pt2cStagePathologicPrimaryTumorTNMFinding_NCIURI
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT2c_Stage_Finding"^^xsd:string .
 
-label:pt3StagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt3StagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT3_Stage_Finding"^^xsd:string .
 
-label:pt3aStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt3aStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT3a_Stage_Finding"^^xsd:string .
 
-label:pt3bStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt3bStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT3b_Stage_Finding"^^xsd:string .
 
-label:pt3cStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt3cStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT3c_Stage_Finding"^^xsd:string .
 
-label:pt4StagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt4StagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT4_Stage_Finding"^^xsd:string .
 
-label:pt4aStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt4aStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT4a_Stage_Finding"^^xsd:string .
 
-label:pt4bStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt4bStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT4b_Stage_Finding"^^xsd:string .
 
-label:pt4cStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt4cStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT4c_Stage_Finding"^^xsd:string .
 
-label:pt4dStagePathologicPrimaryTumorTNMFinding_NCIURI
+label:pt4dStagePathologicPrimaryTumorTNMFinding_NCI_URI
       rdf:type label:URI ;
       dc:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#pT4d_Stage_Finding"^^xsd:string .
 
-label:rRNA_NCIURI
+label:rRNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "rRNA"^^xsd:string .
+
+label:rRNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:description "Class of RNA molecules that do not contain protein-coding sequence information. These RNAs constitute the majority of the cellular RNA (~ 80%); they associate with multiple proteins into a macromolecular complex termed ribosomes, in which mRNA-directed protein synthesis occurs. The three eukaryotic rRNAs are named 28S, 18S, and 5S rRNA."^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:rRNA_NCI_URI
       rdf:type label:URI ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Ribosomal_RNA"^^xsd:string .
 
@@ -11446,7 +12672,21 @@ label:sciencBbackground
       rdf:type owl:AnnotationProperty ;
       rdfs:subPropertyOf dc:description .
 
-label:tRNA_NCIURI
+label:tRNA_BioMaterialLabel
+      rdf:type label:BioMaterialLabel ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:literalForm "tRNA"^^xsd:string .
+
+label:tRNA_NCI_Definition
+      rdf:type label:Definition ;
+      label:createdDate "5/22/2011"^^xsd:string ;
+      label:description "A class of RNA having structures with triplet nucleotide sequences that are complementary to the triplet nucleotide coding sequences of mRNA. The role of tRNAs in protein synthesis is to bond with amino acids and transfer them to the ribosomes, where proteins are assembled according to the genetic code carried by mRNA"^^xsd:string ;
+      dc:source label:NCIThesaurus_DefinitionOrigin .
+
+label:tRNA_NCI_URI
       rdf:type label:URI ;
       label:creator foaf:JimLomax ;
       dc:identifier "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Transfer_RNA"^^xsd:string .

@@ -1,4 +1,4 @@
-# Saved by TopBraid on Thu Mar 17 09:55:40 CDT 2011
+# Saved by TopBraid on Wed May 18 10:19:11 CDT 2011
 # baseURI: http://mdacc.org/exam
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://mdacc.org/Archive
@@ -41,72 +41,19 @@ exam:Batch1UploadComplete
       time-entry:inCalendarClockDataType
               "2010-11-02T00:23:08.7"^^xsd:dateTime .
 
-exam:BiospecimenCollection
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:Birth1_PatientEvent
-      rdf:type exam:BirthPatientEvent ;
-      time-entry:before exam:DeathPatient1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "1980-10-01T00:39:39.232"^^xsd:dateTime .
-
-exam:BirthPatientEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
 exam:CalendarClockDescription_29OfMonth
       rdf:type time-entry:CalendarClockDescription ;
       time-entry:day "---29"^^xsd:gDay ;
       time-entry:dayOfWeekField
               "0"^^xsd:nonNegativeInteger .
 
-exam:Chemotherapy1Patient1Event1_PatientEvent
-      rdf:type exam:ChemotherapyPatientEvent .
-
-exam:Chemotherapy1Patient1Event2_PatientEvent
-      rdf:type exam:ChemotherapyPatientEvent .
-
-exam:Chemotherapy2Patient1Event1_PatientEvent
-      rdf:type exam:ChemotherapyPatientEvent .
-
-exam:ChemotherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Chemotherapy as applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
-      dc:contributor foaf:JimLomax .
-
-exam:Clamping
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:DurationTemporalEvent ;
-      dc:creator foaf:JimLomax .
-
 exam:DNAMethylationBioAssayAffymetrix
       rdf:type mage:PhysicalBioAssay .
-
-exam:DeathPatient1_PatientEvent
-      rdf:type exam:DeathPatientEvent ;
-      time-entry:ends exam:Birth1_PatientEvent ;
-      time-entry:inCalendarClockDataType
-              "2010-09-08T17:26:07.835"^^xsd:dateTime .
-
-exam:DeathPatientEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:DiseaseProgressionExam
       rdf:type owl:Class ;
       rdfs:comment "An examination specifically to determine the progression of disease. This is a TCGA specific concept, currently. Since the concept is local to TCGA, the disease in context is obviously cancer."^^xsd:string ;
       rdfs:subClassOf exam:Examination ;
-      dc:creator foaf:JimLomax .
-
-exam:DrugTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Administration of medication to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
       dc:creator foaf:JimLomax .
 
 exam:DukeBrainBankOwner
@@ -116,10 +63,6 @@ exam:DurationDescription_30Days
       rdf:type time-entry:DurationDescription ;
       time-entry:days "30"^^xsd:decimal .
 
-exam:DurationTemporalEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:TemporalEvent .
-
 exam:EasternOncologyScore
       rdf:type owl:Class ;
       rdfs:subClassOf exam:ExaminationPackage ;
@@ -128,12 +71,6 @@ exam:EasternOncologyScore
                 owl:onProperty exam:score ;
                 owl:someValuesFrom xsd:integer
               ] .
-
-exam:EndocrineTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Adminstration of Endocrine Therapy to Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:Examination
       rdf:type owl:Class ;
@@ -177,28 +114,6 @@ exam:Example_Examination
       exam:progressionSource
               exam:Pathology_ProgressionSource .
 
-exam:ExcisionSurgicalProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Removal of tissue or part or all of an organ by surgery."^^xsd:string ;
-      rdfs:subClassOf exam:SurgicalProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:FollowUpPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done."^^xsd:string ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:FollowupAppointmentEvent
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:MedicalAppointmentPatientEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:Freezing
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
 exam:Functions_1
       rdf:type spin:Function ;
       rdfs:subClassOf spin:Functions .
@@ -210,12 +125,6 @@ exam:FurtherSurgery_ProgressionSource
 exam:ImagingStudy_ProgressionSource
       rdf:type exam:ProgressionSource ;
       skos-xl:prefLabel label:ImagingStudy_ProgressionSourceLabel .
-
-exam:ImmunotherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Administration of Immunotherapy to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:InstantEvent_StartRegularChemo
       rdf:type time-entry:InstantEvent ;
@@ -253,16 +162,6 @@ exam:MDAndersonBrainBankOwner
 exam:MDAndersonBrainBankRepository
       rdf:type mage:BioSourceProvider .
 
-exam:MedicalAppointmentPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "A planned Act for a specific time, place and medical purpose."^^xsd:string ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax ;
-      owl:disjointWith exam:TherapeuticProcedurePatientEvent , exam:DeathPatientEvent , exam:SurgicalProcedurePatientEvent , exam:BirthPatientEvent .
-
-exam:MedicalAppointment_PatientEvent
-      rdf:type exam:MedicalAppointmentPatientEvent .
-
 exam:MolecularMarker_ProgressionSource
       rdf:type exam:ProgressionSource ;
       skos-xl:prefLabel label:MolecularMarker_ProgressionSourceLabel .
@@ -286,12 +185,6 @@ exam:Patient1Death_Instant
       rdf:type time-entry:Instant ;
       time-entry:inCalendarClockDataType
               "2010-11-01T17:38:09.188"^^xsd:dateTime .
-
-exam:PatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "There is no corresponding concept in Bioportal"^^xsd:string , "Any action *on* a patient that occurs with a specific date."^^xsd:string ;
-      rdfs:subClassOf exam:TemporalEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:PerformanceTiming
       rdf:type owl:Class ;
@@ -335,12 +228,6 @@ exam:ProteinDimer
 
 exam:ProteinTrimer
       rdf:type mage:CellularComponent .
-
-exam:RadiationTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Radiation Therapy as applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:Radiation_ProgressionSource
       rdf:type exam:ProgressionSource ;
@@ -424,32 +311,9 @@ exam:SelectBioMaterials
       rdf:type rdfs:Class ;
       rdfs:subClassOf sp:Select .
 
-exam:ShipmentSent
-      rdf:type owl:Class ;
-      rdfs:subClassOf exam:TemporalEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:SurgicalProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "The capturing of specific surgery in context of a patient. A surgical procudure does not necessarily have the context of a patient, it could be a context-free process used a reference."^^xsd:string ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax .
-
-exam:TargetedMolecularTherapyPatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Target Molecular Therapy applied to a Patient, temporally."^^xsd:string ;
-      rdfs:subClassOf exam:TherapeuticProcedurePatientEvent ;
-      dc:creator foaf:JimLomax .
-
 exam:Template
       rdf:type spin:SelectTemplate ;
       rdfs:subClassOf spin:SelectTemplates .
-
-exam:TemporalEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Faceted taxonomy of time based entities."^^xsd:string ;
-      rdfs:subClassOf time-entry:InstantEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:TherapeuticProcedureList1_Item_Chemotherapy1
       rdf:type collections:ListItem ;
@@ -463,12 +327,6 @@ exam:TherapeuticProcedureList1_Item_Chemotherpay2
 
 exam:TherapeuticProcedureList1_Item_Radiation1
       rdf:type collections:ListItem .
-
-exam:TherapeuticProcedurePatientEvent
-      rdf:type owl:Class ;
-      rdfs:comment "Administration of a therapeutic procedure to a patient. A TherapeuticProcedurePatientEvent differs from a Therapeutic Procedure, in that a TherapeuticProcedure is simply existential and not applied to a patient, temporally. "^^xsd:string ;
-      rdfs:subClassOf exam:PatientEvent ;
-      dc:creator foaf:JimLomax .
 
 exam:TherpaeuticProcedureList1
       rdf:type collections:List ;
@@ -535,11 +393,6 @@ exam:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-exam:hasPatientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier ;
-      dc:creator foaf:JimLomax .
-
 exam:has_platform_version
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf mage:has_version .
@@ -551,10 +404,6 @@ exam:ietfTag
 exam:karnofskyScore
       rdf:type owl:ObjectProperty ;
       rdfs:range exam:KarnofskyPerformanceScore .
-
-exam:patientId
-      rdf:type owl:FunctionalProperty ;
-      rdfs:subPropertyOf dc:identifier .
 
 exam:performanceTiming
       rdf:type owl:ObjectProperty ;
