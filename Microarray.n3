@@ -1,4 +1,4 @@
-# Saved by TopBraid on Sat Mar 26 09:10:59 CDT 2011
+# Saved by TopBraid on Thu Jun 09 11:50:12 CDT 2011
 # baseURI: http://mdacc.org/Microarray
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://mdacc.org/Organization
@@ -72,13 +72,13 @@ microarray:ControlFeature
       rdfs:subClassOf microarray:Feature ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:controlType ;
-                owl:someValuesFrom microarray:ControlType
+                owl:onProperty microarray:controlFeatureType ;
+                owl:someValuesFrom microarray:ControlFeatureType
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:controlFeatureType ;
-                owl:someValuesFrom microarray:ControlFeatureType
+                owl:onProperty microarray:controlType ;
+                owl:someValuesFrom microarray:ControlType
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -101,10 +101,7 @@ microarray:ControlType
               ] .
 
 microarray:DNAMethylationBioAssayAffymetrix
-      rdf:type mage:PhysicalBioAssay .
-
-microarray:DukeBrainBankOwner
-      rdf:type mage:Person .
+      rdf:type owl:Thing .
 
 microarray:DurationDescription_30Days
       rdf:type time-entry:DurationDescription ;
@@ -122,8 +119,13 @@ microarray:Feature
       rdfs:subClassOf microarray:MicroarrayPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty microarray:yDimension
+                owl:onProperty microarray:yDimension ;
+                owl:someValuesFrom xsd:integer
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:xDimension ;
+                owl:someValuesFrom xsd:integer
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -133,17 +135,12 @@ microarray:Feature
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:yDimension
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:int ;
                 owl:onProperty microarray:xDimension
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:yDimension ;
-                owl:someValuesFrom xsd:integer
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:xDimension ;
-                owl:someValuesFrom xsd:integer
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -238,12 +235,6 @@ microarray:Interval_StartStopChemoRegular
       time-entry:durationDescriptionOf
               microarray:DurationDescription_30Days .
 
-microarray:MDAndersonBrainBankOwner
-      rdf:type mage:Person .
-
-microarray:MDAndersonBrainBankRepository
-      rdf:type mage:BioSourceProvider .
-
 microarray:MethylationMicroarrayDesignElement
       rdf:type owl:Class ;
       rdfs:subClassOf microarray:MicroarrayDesignElement ;
@@ -256,21 +247,11 @@ microarray:Microarray
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:allValuesFrom xsd:integer ;
-                owl:onProperty microarray:yMax
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:MicroarrayLabel
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty microarray:xMax
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:allValuesFrom xsd:integer ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty microarray:xMax
               ] ;
       rdfs:subClassOf
@@ -283,8 +264,16 @@ microarray:Microarray
                 owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
                 owl:onProperty microarray:yMax
               ] ;
-      microarray:designNote
-              "The Microarray class is designed to hold the row(x) and column(y) dimensions, if available."^^xsd:string ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:MicroarrayLabel
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom xsd:integer ;
+                owl:onProperty microarray:yMax
+              ] ;
       dc:creator foaf:JimLomax .
 
 microarray:MicroarrayDesignElement
@@ -317,9 +306,6 @@ microarray:NegativeControlType
       rdf:type microarray:ControlType ;
       dc:identifier "-1"^^xsd:string .
 
-microarray:Nucleus
-      rdf:type mage:CellularComponent .
-
 microarray:Ontology_1
       rdf:type owl:Ontology .
 
@@ -338,13 +324,8 @@ microarray:Platform
       rdfs:subClassOf microarray:Microarray ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:spot ;
-                owl:someValuesFrom microarray:Spot
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:platformIdentifier ;
-                owl:someValuesFrom microarray:PlatformIdentifier
+                owl:onProperty microarray:shape ;
+                owl:someValuesFrom microarray:Shape
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -353,18 +334,23 @@ microarray:Platform
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:shape ;
-                owl:someValuesFrom microarray:Shape
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:PlatformLabel
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:spot ;
+                owl:someValuesFrom microarray:Spot
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
                 owl:onProperty organization:vendor ;
                 owl:someValuesFrom organization:Organization
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty microarray:platformIdentifier ;
+                owl:someValuesFrom microarray:PlatformIdentifier
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -410,13 +396,13 @@ microarray:PlatformValidation
       rdfs:subClassOf microarray:MicroarrayPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:validPlatformDatatype ;
-                owl:someValuesFrom microarray:PlatformDatatype
+                owl:onProperty microarray:platformIdentifier ;
+                owl:someValuesFrom microarray:PlatformIdentifier
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:platformIdentifier ;
-                owl:someValuesFrom microarray:PlatformIdentifier
+                owl:onProperty microarray:validPlatformDatatype ;
+                owl:someValuesFrom microarray:PlatformDatatype
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -429,22 +415,13 @@ microarray:PositiveControlType
       rdf:type microarray:ControlType ;
       dc:identifier "1"^^xsd:string .
 
-microarray:Proteasome
-      rdf:type mage:CellularComponent .
-
-microarray:ProteinDimer
-      rdf:type mage:CellularComponent .
-
-microarray:ProteinTrimer
-      rdf:type mage:CellularComponent .
-
 microarray:Rectangle
       rdf:type owl:Class ;
       rdfs:subClassOf microarray:Shape ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty microarray:yDimension
+                owl:onProperty microarray:xDimension ;
+                owl:someValuesFrom xsd:integer
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -453,20 +430,17 @@ microarray:Rectangle
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:xDimension ;
+                owl:onProperty microarray:yDimension ;
                 owl:someValuesFrom xsd:integer
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty microarray:yDimension ;
-                owl:someValuesFrom xsd:integer
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty microarray:yDimension
               ] .
 
 microarray:Resource_2
       rdf:type rdfs:Resource .
-
-microarray:RoughEndoplasmicReticulum
-      rdf:type mage:CellularComponent .
 
 microarray:SelectBioMaterials
       rdf:type rdfs:Class ;
@@ -530,8 +504,6 @@ microarray:Well
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:WellLabel
               ] ;
-      microarray:designNote
-              "An instance of Well can be labeled differently to support multiple perspectives of the same Well (ordinarily for different purposes), therefore a SKOS labeling system will be employed."^^xsd:string ;
       dc:creator foaf:JimLomax .
 
 microarray:WellNumber
@@ -551,10 +523,6 @@ microarray:archiveDownloadName
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf microarray:name .
 
-microarray:archiveListingName
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf microarray:name .
-
 microarray:cghg4447aID
       rdf:type microarray:PlatformIdentifier .
 
@@ -566,10 +534,6 @@ microarray:channelTypeOf
       rdf:type owl:ObjectProperty .
 
 microarray:chromosomeArmName
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf microarray:name .
-
-microarray:collectionSiteName
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf microarray:name .
 
@@ -586,18 +550,6 @@ microarray:controlFeatureTypeOf
 microarray:controlType
       rdf:type rdf:Property .
 
-microarray:cy3LabelingProtocol1
-      rdf:type mage:Protocol .
-
-microarray:cy3LabelingTreatment1
-      rdf:type mage:Treatment .
-
-microarray:cy3PreWashProtocol1
-      rdf:type mage:Protocol .
-
-microarray:cy3PreWashTreatment1
-      rdf:type mage:Treatment .
-
 microarray:datatype
       rdf:type owl:ObjectProperty ;
       owl:inverseOf microarray:datatypeOf .
@@ -607,14 +559,6 @@ microarray:datatypeOf
 
 microarray:designElementOf
       rdf:type owl:ObjectProperty .
-
-microarray:designNote
-      rdf:type owl:AnnotationProperty ;
-      rdfs:subPropertyOf rdfs:comment .
-
-microarray:domainQuestion
-      rdf:type owl:AnnotationProperty ;
-      rdfs:subPropertyOf rdfs:comment .
 
 microarray:g4502a071ID
       rdf:type microarray:PlatformIdentifier .
@@ -638,13 +582,8 @@ microarray:hasAccessionNumber
       rdfs:subPropertyOf microarray:hasGenomicSequenceId ;
       owl:inverseOf microarray:accessionNumberOf .
 
-microarray:hasArchiveName
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf microarray:name .
-
 microarray:hasArchiveVersion
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf mage:has_version .
+      rdf:type owl:ObjectProperty .
 
 microarray:hasCpgSiteId
       rdf:type owl:ObjectProperty ;
@@ -654,19 +593,12 @@ microarray:hasGenomicSequenceId
       rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf dc:identifier .
 
-microarray:hasName
-      rdf:type rdf:Property ;
-      rdfs:subPropertyOf rdfs:label ;
-      owl:equivalentProperty
-              microarray:name .
-
 microarray:hasPlatform
       rdf:type owl:ObjectProperty ;
       owl:inverseOf microarray:platformOf .
 
 microarray:has_platform_version
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf mage:has_version .
+      rdf:type owl:ObjectProperty .
 
 microarray:hg-cgh-244aID
       rdf:type microarray:PlatformIdentifier .
@@ -740,10 +672,6 @@ microarray:number
 microarray:order
       rdf:type rdf:Property .
 
-microarray:organizationName
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf microarray:name .
-
 microarray:platform
       rdf:type owl:ObjectProperty ;
       rdfs:range microarray:Platform ;
@@ -766,10 +694,6 @@ microarray:platformName
 
 microarray:platformOf
       rdf:type owl:ObjectProperty .
-
-microarray:projectName
-      rdf:type owl:ObjectProperty ;
-      rdfs:subPropertyOf microarray:name .
 
 microarray:sequence
       rdf:type rdf:Property .

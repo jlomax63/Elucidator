@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed May 18 15:08:54 CDT 2011
+# Saved by TopBraid on Wed Jun 08 16:34:22 CDT 2011
 # baseURI: http://mdacc.org/Temporal
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
 # imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
@@ -101,6 +101,14 @@ temporal:CreationDateTime
       rdfs:subClassOf temporal:DateTime ;
       dc:creator foaf:JimLomax .
 
+temporal:DNAAmplification1_EndDateTime
+      rdf:type temporal:EndDateTime ;
+      temporal:dateTime "2/2/2011"^^xsd:string .
+
+temporal:DNAAmplification1_StartDateTime
+      rdf:type temporal:StartDateTime ;
+      temporal:dateTime "10/10/2010"^^xsd:string .
+
 temporal:DNAMethylationBioAssayAffymetrix
       rdf:type mage:PhysicalBioAssay .
 
@@ -194,19 +202,19 @@ temporal:Example_GrowthHormone_EndocrineTherapyPatientEvent
       rdf:type temporal:EndocrineTherapyPatientEvent ;
       temporal:dateTime "11-11-2003"^^xsd:string ;
       temporal:eventSource
-              clinical:GrowthHormone_EndocrineTherapy .
+              <http://mdacc.org/Measurement#GrowthHormone_EndocrineTherapy> .
 
 temporal:Example_Taxomifen_ChemotherapyPatientEvent
       rdf:type temporal:ChemotherapyPatientEvent ;
       temporal:dateTime "02-01-2010"^^xsd:string ;
       temporal:eventSource
-              clinical:Taxomifen_Chemotherapy .
+              <http://mdacc.org/Measurement#Taxomifen_175_Chemotherapy> .
 
 temporal:Example_Temozolomide_ChemotherapyPatientEvent
       rdf:type temporal:ChemotherapyPatientEvent ;
       temporal:dateTime "03-21-2010"^^xsd:string ;
       temporal:eventSource
-              clinical:Temozolomide_Chemotherapy .
+              <http://mdacc.org/Measurement#Temozolomide_175_Chemotherapy> .
 
 temporal:ExcisionSurgicalProcedurePatientEvent
       rdf:type owl:Class ;
@@ -313,6 +321,22 @@ temporal:Oct_23_2005_DeathDateTime
 temporal:Ontology_1
       rdf:type owl:Ontology .
 
+temporal:PCR1_EndDateTime
+      rdf:type temporal:EndDateTime ;
+      temporal:dateTime "3/21/2011"^^xsd:string .
+
+temporal:PCR1_StartDateTime
+      rdf:type temporal:StartDateTime ;
+      temporal:dateTime "9/17/2010"^^xsd:string .
+
+temporal:PCR2_EndDateTime
+      rdf:type temporal:EndDateTime ;
+      temporal:dateTime "3/27/2011"^^xsd:string .
+
+temporal:PCR2_StartDateTime
+      rdf:type temporal:StartDateTime ;
+      temporal:dateTime "1/17/2010"^^xsd:string .
+
 temporal:PathologicalDiagnosisPatientEvent
       rdf:type owl:Class ;
       rdfs:subClassOf temporal:DiagnosisPatientEvent ;
@@ -414,7 +438,7 @@ temporal:TherapeuticProcedurePatientEvent
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:onProperty temporal:eventSource ;
-                owl:someValuesFrom clinical:TherapeuticProcedure
+                owl:someValuesFrom <http://mdacc.org/Measurement#TherapeuticProcedure>
               ] ;
       dc:creator foaf:JimLomax .
 

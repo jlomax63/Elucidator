@@ -1,11 +1,11 @@
-# Saved by TopBraid on Wed May 18 14:58:38 CDT 2011
+# Saved by TopBraid on Wed Jun 08 16:34:18 CDT 2011
 # baseURI: http://mdacc.org/Drug
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
-# imports: http://mdacc.org/Clinical
 # imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: file:///C:/Documents%20and%20Settings/jwlomax/TBCMEWorkspace/TopBraid/TBC/skos-xl.rdf
 # imports: http://xmlns.com/foaf/0.1/
+# imports: http://mdacc.org/Measurement
 # imports: http://spinrdf.org/spl
 
 @prefix Thesaurus:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
@@ -29,12 +29,9 @@
 @prefix wordnet:  <http://xmlns.com/wordnet/1.6/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-<http://mdacc.org/Clinical#TwoPills_Dosage>
-      skos-xl:prefLabel label:Pill_UnitsLabel .
-
 <http://mdacc.org/Drug>
       rdf:type owl:Ontology ;
-      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <file:///C:/Documents%20and%20Settings/jwlomax/TBCMEWorkspace/TopBraid/TBC/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Clinical> ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://mdacc.org/Measurement> , <file:///C:/Documents%20and%20Settings/jwlomax/TBCMEWorkspace/TopBraid/TBC/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> ;
       owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
 
 drug:Anti-necplatens_ChemotherapyDrug
@@ -55,7 +52,11 @@ drug:CalendarClockDescription_29OfMonth
 
 drug:ChemotherapyDrug
       rdf:type owl:Class ;
-      rdfs:subClassOf drug:Drug .
+      rdfs:subClassOf drug:Drug ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/2/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradhepRaju , foaf:DawitGebremichael .
 
 drug:DNAMethylationBioAssayAffymetrix
       rdf:type mage:PhysicalBioAssay .
@@ -70,12 +71,18 @@ drug:Dosage
 
 drug:Drug
       rdf:type owl:Class ;
-      rdfs:subClassOf drug:DrugPackage , <http://mdacc.org/Clinical#TherapeuticAgent> ;
+      rdfs:subClassOf <http://mdacc.org/Measurement#TherapeuticAgent> , drug:DrugPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:DrugLabel
-              ] .
+              ] ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Drug_NCI_URI ;
+      label:createdDate "6/2/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:Drug_NCI_Definition ;
+      label:developer foaf:PradhepRaju , foaf:DawitGebremichael .
 
 drug:DrugBCRBarcode
       rdf:type owl:Class ;
@@ -318,6 +325,9 @@ drug:ietfTag
 drug:platformIdentifier
       rdf:type owl:FunctionalProperty ;
       rdfs:subPropertyOf dc:identifier .
+
+<http://mdacc.org/Measurement#TwoPills_Dosage>
+      skos-xl:prefLabel label:Pill_UnitsLabel .
 
 dc:approvedDate
       rdf:type owl:AnnotationProperty ;

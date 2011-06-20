@@ -1,10 +1,10 @@
-# Saved by TopBraid on Sun May 22 11:20:23 CDT 2011
+# Saved by TopBraid on Wed Jun 08 17:06:22 CDT 2011
 # baseURI: http://mdacc.org/Sample
 # imports: http://www.isi.edu/~pan/damltime/time-entry.owl
-# imports: http://mdacc.org/Clinical
 # imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: http://xmlns.com/foaf/0.1/
+# imports: http://mdacc.org/Measurement
 # imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
 # imports: http://spinrdf.org/spl
 
@@ -15,6 +15,7 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix label:   <http://mdacc.org/Label#> .
 @prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix measurement:  <http://mdacc.org/Measurement#> .
 @prefix microarray:  <http://mdacc.org/Microarray#> .
 @prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
@@ -30,24 +31,9 @@
 @prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-clincal:excisedFrom
-      rdf:type owl:ObjectProperty ;
-      rdfs:range clincal:AnatomicSite ;
-      label:creator foaf:JimLomax .
-
-clincal:finding
-      label:creator foaf:JimLomax .
-
-clincal:hadCancer
-      rdfs:range xsd:boolean .
-
-clincal:verificationByBCR
-      rdf:type owl:DatatypeProperty ;
-      rdfs:range xsd:boolean .
-
 <http://mdacc.org/Sample>
       rdf:type owl:Ontology ;
-      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> , <http://mdacc.org/Clinical> ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://mdacc.org/Measurement> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , foaf: , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://spinrdf.org/spl> ;
       owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
 
 sample:Absorbance260Nm
@@ -132,19 +118,12 @@ sample:BloodDerivedNormal_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/10/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:BloodDerivedNormal_SampleTypeLabel .
 
 sample:BloodDerivedSampleType
       rdf:type owl:Class ;
       rdfs:subClassOf sample:SampleType ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:Blood
-              ] ;
       label:architect foaf:MoSanyang ;
       label:createdDate "5/9/2011"^^xsd:string ;
       label:designNote "The sample has been collected from blood. The inference is that the blood contains the cancerous cells and the patient has leukemia."^^xsd:string , "There is no corresponding concept in BioPortal"^^xsd:string ;
@@ -174,11 +153,6 @@ sample:BuccalCellLineControlTissueSample
 sample:BuccalCellNormalSampleType
       rdf:type owl:Class ;
       rdfs:subClassOf sample:SampleType ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:BuccalMucosa
-              ] ;
       label:architect foaf:MoSanyang ;
       label:createdDate "5/9/2011"^^xsd:string ;
       label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample has been collected from from swabbing the inside of the cheek (buccal mucosa)."^^xsd:string ;
@@ -200,8 +174,6 @@ sample:BuccalCellNormal_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/11/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:BuccalMucosa_Mucosa ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:BuccalCellNormal_SampleTypeLabel .
 
@@ -228,11 +200,6 @@ sample:CalendarClockDescription_29OfMonth
 sample:CellLineControlSampleType
       rdf:type owl:Class ;
       rdfs:subClassOf sample:SampleType ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:CellLine
-              ] ;
       label:architect foaf:MoSanyang ;
       label:correspondsTo label:CellLine_NCI_URI ;
       label:createdDate "5/9/2011"^^xsd:string ;
@@ -277,11 +244,6 @@ sample:DNAMethylationBioAssayAffymetrix
 sample:DNASampleType
       rdf:type owl:Class ;
       rdfs:subClassOf sample:SampleType ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:DNA
-              ] ;
       label:architect foaf:MoSanyang ;
       label:createdDate "5/9/2011"^^xsd:string ;
       label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample is DNA based."^^xsd:string ;
@@ -305,8 +267,6 @@ sample:DNA_SampleType
       label:createdDate "5/11/2011"^^xsd:string ;
       label:definedBy label:DNA_NCI_Definition ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:DNA_SampleTypeLabel .
 
@@ -378,23 +338,22 @@ sample:ExampleTissueType
 
 sample:Example_Aliquot
       rdf:type sample:Aliquot ;
-      clincal:concentration
-              clincal:ThreeM_Concentration ;
-      clincal:volume clincal:AliquotExample_Volume ;
       label:barcode label:Example_BCRAliquotBarcode ;
+      measurement:concentration
+              measurement:ThreeM_Concentration ;
+      measurement:volume measurement:AliquotExample_Volume ;
       temporal:shippedOn temporal:AliquotExample_ShipmentDateTime .
 
 sample:Example_Analyte
       rdf:type sample:Analyte ;
       archive:gelImageFileLocation
               archive:GelImageExample_FileLocation ;
-      clincal:concentration
-              clincal:TenM_Concentration ;
-      clincal:protocol clincal:aDNAPreparation_Protocol ;
-      clincal:purityMeasurement
-              clincal:Example_Absorbance260To280Nm ;
-      clincal:volume clincal:AnalyteExample_Volume ;
       label:barcode label:Example_BCRAnalyteBarcode ;
+      measurement:concentration
+              measurement:TenM_Concentration ;
+      measurement:purityMeasurement
+              measurement:Example_Absorbance260To280Nm ;
+      measurement:volume measurement:AnalyteExample_Volume ;
       microarray:well microarray:Example_Well ;
       sample:aliquot sample:Example_Aliquot .
 
@@ -405,29 +364,10 @@ sample:Example_DNAAnalyte
 
 sample:Example_GBMTumorPathology
       rdf:type sample:GBMTumorPathology ;
-      clincal:anatomicLocation
-              clincal:Brain_BrainAnatomicSite ;
-      clincal:gemistocytePresent
-              "true"^^xsd:boolean ;
-      clincal:indicator clincal:GlialFibrillaryAcideicProtein_Protein , clincal:MindBomb1_Protein ;
-      clincal:leptomeningialInvolvement
-              "true"^^xsd:boolean ;
-      clincal:nuclearGrade
-              clincal:Example_NuclearGrade ;
-      clincal:oligodendroglialComponent
-              "false"^^xsd:boolean ;
-      sample:histologicalType
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       sample:tissueSample sample:Example_TissueSample .
 
 sample:Example_LungTumorPathology
       rdf:type sample:LungTumorPathology ;
-      clincal:anatomicLocation
-              clincal:Lung_LungAnatomicSite ;
-      clincal:nuclearGrade
-              clincal:Example_NuclearGrade ;
-      sample:histologicalType
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       sample:tissueSample sample:Example_TissueSample .
 
 sample:Example_OctEmbedded
@@ -439,21 +379,13 @@ sample:Example_OctEmbedded
 
 sample:Example_OvarianTumorPathology
       rdf:type sample:OvarianTumorPathology ;
-      clincal:anatomicLocation
-              clincal:Ovary_OvaryAnatomicSite ;
-      clincal:nuclearGrade
-              clincal:Example_NuclearGrade ;
-      clincal:venousInvasion
-              "true"^^xsd:boolean ;
-      sample:histologicalType
-              clincal:OvarianTumor_OvarianTumor ;
       sample:tissueSample sample:Example_TissueSample .
 
 sample:Example_Portion
       rdf:type sample:Portion ;
-      clincal:volume clincal:PortionExample_Volume ;
-      clincal:weight clincal:Example_InitialWeight ;
       label:barcode label:Example_BCRPortionBarcode ;
+      measurement:volume measurement:PortionExample_Volume ;
+      measurement:weight measurement:Example_InitialWeight ;
       sample:analyte sample:Example_Analyte ;
       temporal:createdOn temporal:May13_2010_CreationDateTime ;
       dc:identifier sample:Example_PortionID .
@@ -469,40 +401,33 @@ sample:Example_RNAAnalyte
 
 sample:Example_SampleIntermediateDimension
       rdf:type sample:SampleIntermediateDimension ;
-      clincal:units clincal:Centimeter_LengthUnits ;
-      clincal:value "6.2"^^xsd:string ;
-      label:creator foaf:JimLomax .
+      label:creator foaf:JimLomax ;
+      measurement:units measurement:Centimeter_LengthUnits ;
+      measurement:value "6.2"^^xsd:string .
 
 sample:Example_SampleLongestDimension
       rdf:type sample:SampleLongestDimension ;
-      clincal:units clincal:Centimeter_LengthUnits ;
-      clincal:value "10.2"^^xsd:string ;
-      label:creator foaf:JimLomax .
+      label:creator foaf:JimLomax ;
+      measurement:units measurement:Centimeter_LengthUnits ;
+      measurement:value "10.2"^^xsd:string .
 
 sample:Example_SampleShortestDimension
       rdf:type sample:SampleShortestDimension ;
-      clincal:units clincal:Centimeter_LengthUnits ;
-      clincal:value "2.2"^^xsd:string ;
-      label:creator foaf:JimLomax .
+      label:creator foaf:JimLomax ;
+      measurement:units measurement:Centimeter_LengthUnits ;
+      measurement:value "2.2"^^xsd:string .
 
 sample:Example_TissueSample
       rdf:type sample:TissueSample ;
-      clincal:anatomicLocation
-              clincal:Bladder_BladderAnatomicSite ;
-      clincal:currentWeight
-              clincal:Example_CurrentWeight ;
-      clincal:excisedFrom clincal:Bladder_BladderAnatomicSite ;
-      clincal:initialWeight
-              clincal:Example_InitialWeight ;
-      clincal:purityMeasurement
-              clincal:Example_Absorbance260To280Nm ;
-      clincal:stage clincal:Example_Stage1_BladderCancerTumorStage ;
-      clincal:tumorGrade clincal:G1_G1TumorGrade ;
       label:barcode label:Example_BCRSampleBarcode ;
       label:creator foaf:JimLomax ;
+      measurement:currentWeight
+              measurement:Example_CurrentWeight ;
+      measurement:initialWeight
+              measurement:Example_InitialWeight ;
+      measurement:purityMeasurement
+              measurement:Example_Absorbance260To280Nm ;
       sample:analyte sample:Example_Analyte ;
-      sample:histologicalType
-              clincal:BladderUrothelialPapillaryCarcinoma_BladderTumor ;
       sample:octEmbedded sample:Example_OctEmbedded ;
       sample:portion sample:Example_Portion ;
       sample:sampleDimension
@@ -524,24 +449,10 @@ sample:Example_TissueSample
 
 sample:Example_TumorPathology
       rdf:type sample:TumorPathology ;
-      clincal:lymphaticInvasion
-              "true"^^xsd:boolean ;
-      clincal:marginsInvolved
-              "false"^^xsd:boolean ;
-      clincal:metastaticIndication
-              clincal:Malignant_MetastaticIndication ;
-      clincal:numberOfLymphNodesExamined
+      measurement:numberOfLymphNodesExamined
               "12"^^xsd:string ;
-      clincal:numberOfLymphNodesExaminedPositive
+      measurement:numberOfLymphNodesExaminedPositive
               "11"^^xsd:string ;
-      clincal:numberOfRegionalLymphNodesExamined
-              10 ;
-      clincal:numberOfRegionalLymphNodesExaminedPositive
-              3 ;
-      clincal:venousInvasion
-              "false"^^xsd:boolean ;
-      clincal:verificationByBCR
-              "false"^^xsd:boolean ;
       sample:tissueSample sample:Example_TissueSample .
 
 sample:Example_Weight
@@ -566,12 +477,7 @@ sample:Functions_1
 
 sample:GBMTumorPathology
       rdf:type owl:Class ;
-      rdfs:subClassOf sample:TumorPathology ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty clincal:anatomicLocation ;
-                owl:someValuesFrom clincal:BrainAnatomicSite
-              ] .
+      rdfs:subClassOf sample:TumorPathology .
 
 sample:GenomePlexAmplifiedDNAAnalyte
       rdf:type owl:Class ;
@@ -598,8 +504,6 @@ sample:GenomePlexAmplifiedDNA_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/11/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:GenomePlexAmplifiedDNA_SampleTypeLabel .
 
@@ -630,12 +534,7 @@ sample:LiquidN2Vapor_FreezingMethod
 
 sample:LungTumorPathology
       rdf:type owl:Class ;
-      rdfs:subClassOf sample:TumorPathology ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty clincal:anatomicLocation ;
-                owl:someValuesFrom clincal:LungAnatomicSite
-              ] .
+      rdfs:subClassOf sample:TumorPathology .
 
 sample:MDAndersonBrainBankOwner
       rdf:type mage:Person .
@@ -677,12 +576,7 @@ sample:Ontology_1
 
 sample:OvarianTumorPathology
       rdf:type owl:Class ;
-      rdfs:subClassOf sample:TumorPathology ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty clincal:anatomicLocation ;
-                owl:someValuesFrom clincal:LungAnatomicSite
-              ] .
+      rdfs:subClassOf sample:TumorPathology .
 
 sample:Patient1Birth_Instant
       rdf:type time-entry:Instant ;
@@ -693,12 +587,6 @@ sample:Patient1Death_Instant
       rdf:type time-entry:Instant ;
       time-entry:inCalendarClockDataType
               "2010-11-01T17:38:09.188"^^xsd:dateTime .
-
-sample:Patient1_PatientId
-      rdf:type clincal:PatientId .
-
-sample:Patient2_PatientId
-      rdf:type clincal:PatientId .
 
 sample:Pill_DosageUnits
       rdf:type sample:DosageUnits .
@@ -747,8 +635,6 @@ sample:PrimaryBloodDervivedCancer_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/11/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:PrimaryBloodDerivedCancer_SampleTypeLabel .
 
@@ -803,11 +689,6 @@ sample:RNAAnalyte
 sample:RNASampleType
       rdf:type owl:Class ;
       rdfs:subClassOf sample:SampleType ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:RNA
-              ] ;
       label:architect foaf:MoSanyang ;
       label:createdDate "5/9/2011"^^xsd:string ;
       label:designNote "There is no corresponding concept in BioPortal"^^xsd:string , "The sample is RNA based."^^xsd:string ;
@@ -855,8 +736,6 @@ sample:RecurrentBloodDerivedCancer_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/11/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:Blood_Blood ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:RecurrentBloodDerivedCancer_SampleTypeLabel .
 
@@ -906,8 +785,6 @@ sample:RepliGDNA_SampleType
       label:architect foaf:MoSanyang ;
       label:createdDate "5/11/2011"^^xsd:string ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
-      sample:biologicalSource
-              clincal:DNA_DNA ;
       dc:creator foaf:JimLomax ;
       skos-xl:prefLabel label:RepliGDNA_SampleTypeLabel .
 
@@ -974,11 +851,6 @@ sample:SampleType
               [ rdf:type owl:Restriction ;
                 owl:onProperty skos-xl:prefLabel ;
                 owl:someValuesFrom label:SampleTypeLabel
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty sample:biologicalSource ;
-                owl:someValuesFrom clincal:BioMaterial
               ] ;
       label:architect foaf:MoSanyang ;
       label:createdDate "5/9/2011"^^xsd:string ;
@@ -1047,17 +919,7 @@ sample:TimeBetweenSampleExcisionAndFreezing
 sample:TissueSample
       rdf:type owl:Class ;
       rdfs:comment "A tissue sample is the product of an excision."^^xsd:string , "A tissue sample in the context of TCGA  is a biological sample from a tumor."^^xsd:string ;
-      rdfs:subClassOf clincal:Biospecimen , skos:Concept , sample:SamplePackage ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:cardinality "1"^^xsd:int ;
-                owl:onProperty sample:tissueType
-              ] ;
-      rdfs:subClassOf
-              [ rdf:type owl:Restriction ;
-                owl:onProperty label:barcode ;
-                owl:someValuesFrom label:BCRSampleBarcode
-              ] ;
+      rdfs:subClassOf skos:Concept , sample:SamplePackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
                 owl:onProperty sample:portion ;
@@ -1067,6 +929,16 @@ sample:TissueSample
               [ rdf:type owl:Restriction ;
                 owl:onProperty sample:tissueType ;
                 owl:someValuesFrom sample:TissueType
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty label:barcode ;
+                owl:someValuesFrom label:BCRSampleBarcode
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:cardinality "1"^^xsd:int ;
+                owl:onProperty sample:tissueType
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
@@ -1278,7 +1150,6 @@ sample:has_platform_version
 
 sample:histologicalType
       rdf:type owl:ObjectProperty ;
-      rdfs:range clincal:TumorType ;
       label:creator foaf:JimLomax .
 
 sample:normalTumorGenotypeMatch

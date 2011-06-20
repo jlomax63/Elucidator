@@ -1,0 +1,1016 @@
+# Saved by TopBraid on Mon Jun 20 14:03:02 CDT 2011
+# baseURI: http://mdacc.org/Measurement
+# imports: http://mdacc.org/Organization
+# imports: http://www.isi.edu/~pan/damltime/time-entry.owl
+# imports: http://mdacc.org/exam
+# imports: http://mdacc.org/Archive
+# imports: http://swan.mindinformatics.org/ontologies/1.2/collections.owl
+# imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://mdacc.org/Temporal
+# imports: http://xmlns.com/foaf/0.1/
+# imports: http://mdacc.org/Sample
+# imports: http://mdacc.org/Drug
+# imports: http://www.w3.org/TR/skos-reference/skos-xl.rdf
+# imports: http://spinrdf.org/spl
+
+@prefix archive:  <http://mdacc.org/Archive#> .
+@prefix clinical:  <http://mdacc.org/Clinical#> .
+@prefix collections:  <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix drug:    <http://mdacc.org/Drug#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix label:   <http://mdacc.org/Label#> .
+@prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix measurement:  <http://mdacc.org/Measurement#> .
+@prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix organization:  <http://mdacc.org/Organization#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix pav:     <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sample:  <http://mdacc.org/Sample#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-xl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix tcga:    <http://mdacc.org/TCGAArchive#> .
+@prefix temporal:  <http://mdacc.org/Temporal#> .
+@prefix time-entry:  <http://www.isi.edu/~pan/damltime/time-entry.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+drug:Example_ChemotherapyDrug
+      skos-xl:prefLabel label:Tamoxifen_ChemotherapyDrugLabel .
+
+label:actionItem
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf rdfs:comment .
+
+label:approver
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/24/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:DawitGebremichael , foaf:MoSanyang .
+
+label:architect
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/24/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+label:author
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:creator ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+label:correspondsTo
+      rdf:type owl:ObjectProperty ;
+      rdfs:range label:URI .
+
+label:creator
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/25/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+label:definedBy
+      rdfs:range label:Definition ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/26/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:designNote "An example: A PathologicTNMFinding is definedBy a TNMDiseaseStagingSystem"^^xsd:string , "The subject is defined by the object."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+label:description
+      rdf:type owl:ObjectProperty .
+
+label:developer
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/24/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+<http://mdacc.org/Measurement>
+      rdf:type owl:Ontology ;
+      owl:imports <http://www.w3.org/2009/08/skos-reference/skos.rdf> , <http://mdacc.org/Archive> , <http://mdacc.org/exam> , <http://www.w3.org/TR/skos-reference/skos-xl.rdf> , <http://mdacc.org/Sample> , foaf: , <http://mdacc.org/Drug> , <http://mdacc.org/Temporal> , <http://swan.mindinformatics.org/ontologies/1.2/collections.owl> , <http://www.isi.edu/~pan/damltime/time-entry.owl> , <http://mdacc.org/Organization> , <http://spinrdf.org/spl> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+measurement:AU_AbsorbanceUnits
+      rdf:type measurement:AbsorbanceUnit ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:Absorbance260To280Nm
+      rdf:type owl:Class ;
+      rdfs:comment "There is no corresponding entity in the BioPortal for 260-280 nm absorbance value."^^xsd:string , "This ratio reveals the purity of nucleic acids. The A260A280 ratio is a quality assurance test on an analyte, post-extraction. The ratio will indicate the purity of the analyte."^^xsd:string ;
+      rdfs:subClassOf measurement:PurityMeasurment ;
+      dc:creator foaf:JimLomax .
+
+measurement:AbsorbanceAt260Nm
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:AbsorbanceAt260NM_NCI_URI ;
+      label:createdDate "6/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:AbsorbanceAt260NM_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:AbsorbanceAt280Nm
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:AbsorbanceAt280NM_NCI_URI ;
+      label:createdDate "6/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:AbsorbanceAt280NM_NCI_Definition ;
+      label:designNote "In nucleic acid chemistry, the ratio of absorbance of 280nm frequency light to the absorbance of 260nm frequency light is related to nucleic acid purity."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:AbsorbanceUnit
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:AliquotExample_Volume
+      rdf:type measurement:Volume ;
+      measurement:units measurement:Milliliter_VolumeUnits ;
+      measurement:value "1.0"^^xsd:string .
+
+measurement:AliquotQuantity
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity measurement of an aliquot; perspectives may vary on how quantities are represented, particularly units of measurement."^^xsd:string ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:designNote "There is no corresponding concept in BioPortal"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:AliquotQuantityUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:AnalyteExample_Volume
+      rdf:type measurement:Volume ;
+      measurement:units measurement:Milliliter_VolumeUnits ;
+      measurement:value "1.0"^^xsd:string .
+
+measurement:BarcodeImage1_BarcodeImage
+      rdf:type archive:BarcodeImage ;
+      dc:identifier "123456"^^xsd:string .
+
+measurement:Batch1UploadComplete
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-02T00:23:08.7"^^xsd:dateTime .
+
+measurement:CalendarClockDescription_29OfMonth
+      rdf:type time-entry:CalendarClockDescription ;
+      time-entry:day "---29"^^xsd:gDay ;
+      time-entry:dayOfWeekField
+              "0"^^xsd:nonNegativeInteger .
+
+measurement:CancerProgressionDiagnosis1_PatientEvent
+      rdf:type measurement:CancerProgressionDiagnosisPatientEvent ;
+      time-entry:inCalendarClockDataType
+              "2010-05-29T20:15:20.198"^^xsd:dateTime .
+
+measurement:CancerProgressionDiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "Diagnosis: cancer worsening over time."^^xsd:string ;
+      rdfs:subClassOf measurement:DiagnosisPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+measurement:Candela_LightUnits
+      rdf:type measurement:LightUnits ;
+      skos-xl:prefLabel label:Centimeter_UnitsLabel .
+
+measurement:Centimeter_LengthUnits
+      rdf:type measurement:LengthUnits ;
+      skos-xl:prefLabel label:Centimeter_UnitsLabel .
+
+measurement:ClinicalProcurementStatus_Completed
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The data resource is available, has been requested and received."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Completed"^^xsd:string .
+
+measurement:ClinicalProcurementStatus_Discrepancy
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The name of the data resource has been received but is validity is in question."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Discrepancy"^^xsd:string .
+
+measurement:ClinicalProcurementStatus_NotApplicable
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The name of the data resource was not found."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Not Applicable"^^xsd:string .
+
+measurement:ClinicalProcurementStatus_NotAvailable
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The name of the data resource was not found and it will never be found (TCGA quote)."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Not Available"^^xsd:string .
+
+measurement:ClinicalProcurementStatus_NotRequested
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The data resource was not requested."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Not Requested"^^xsd:string .
+
+measurement:ClinicalProcurementStatus_Pending
+      rdf:type archive:ClinicalProcurementStatus ;
+      rdfs:comment "The name of the data resource has not yet been received but it is expected."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      dc:identifier "Pending"^^xsd:string .
+
+measurement:Concentration
+      rdf:type owl:Class ;
+      rdfs:comment "The quantity of a substance per volume or unit of weight."^^xsd:string ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Concentration_NCI_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:MoSanyang ;
+      label:designNote "This concept directly corresponds to the Concentration concept in BioPortal"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:ConcentrationLabel
+              ] .
+
+measurement:ConcentrationUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:DNAMethylationBioAssayAffymetrix
+      rdf:type mage:PhysicalBioAssay .
+
+measurement:DiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:comment "The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+measurement:Dosage
+      rdf:type owl:Class ;
+      rdfs:comment "A quantity of an agent (such as substance or energy) administered, taken, or absorbed at one time."^^xsd:string ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:correspondsTo label:Dosage_SNOMED_URI , label:Dosage_NCI_URI ;
+      label:definedBy label:Dosage_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept directly corresponds to the Dosage concept in SNOMED."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:DosageLabel
+              ] .
+
+measurement:DosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      dc:creator foaf:JimLomax .
+
+measurement:DrugDosage
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Dosage ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
+measurement:DrugDosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:DosageUnits ;
+      dc:creator foaf:JimLomax .
+
+measurement:DukeBrainBankOwner
+      rdf:type mage:Person .
+
+measurement:DurationDescription_30Days
+      rdf:type time-entry:DurationDescription ;
+      time-entry:days "30"^^xsd:decimal .
+
+measurement:EpsteinBarrVirus
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:EpsteinBarrVirusLabel
+              ] ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:EpsteinBarrVirus_NCI_URI ;
+      label:createdDate "5/23/2011"^^xsd:string ;
+      label:definedBy label:EpsteinBarrVirus_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
+measurement:EpsteinBarrVirus_EpsteinBarrVirus
+      rdf:type measurement:EpsteinBarrVirus ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:EpsteinBarrVirus_NCI_URI ;
+      label:createdDate "5/21/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:EpsteinBarrVirus_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:EpsteinBarrVirus_BioMaterialLabel .
+
+measurement:Example_Absorbance260Nm
+      rdf:type measurement:AbsorbanceAt260Nm ;
+      measurement:units measurement:Candela_LightUnits ;
+      measurement:value "34.5"^^xsd:float .
+
+measurement:Example_Absorbance260To280Nm
+      rdf:type measurement:Absorbance260To280Nm ;
+      measurement:value "2"^^xsd:string .
+
+measurement:Example_Absorbance280Nm
+      rdf:type measurement:AbsorbanceAt280Nm ;
+      measurement:units measurement:Candela_LightUnits ;
+      measurement:value "32"^^xsd:float .
+
+measurement:Example_AliquotQuantity
+      rdf:type measurement:AliquotQuantity ;
+      measurement:units measurement:Milliliter_VolumeUnits ;
+      measurement:value "2"^^xsd:float .
+
+measurement:Example_BladderCancer_DiagnosisPatientEvent
+      rdf:type temporal:DiagnosisPatientEvent ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "5/18/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      time-entry:inCalendarClockDataType
+              "2010-03-05T00:56:50.76"^^xsd:dateTime .
+
+measurement:Example_CurrentWeight
+      rdf:type measurement:Weight ;
+      measurement:units measurement:Grams_WeightUnits ;
+      measurement:value "1.0"^^xsd:string .
+
+measurement:Example_InitialWeight
+      rdf:type measurement:Weight ;
+      measurement:units measurement:Grams_WeightUnits ;
+      measurement:value "1.2"^^xsd:string .
+
+measurement:Example_Slide
+      rdf:type measurement:Slide ;
+      label:approver foaf:LathaRamdas ;
+      label:barcode label:Example_BCRSlideBarcode ;
+      label:correspondsTo label:Slide_NCI_URI ;
+      label:definedBy label:Slide_NCI_Definition .
+
+measurement:Example_Weight
+      rdf:type measurement:Weight ;
+      measurement:units measurement:Pounds_WeightUnits ;
+      measurement:value "10.1"^^xsd:string .
+
+measurement:Functions_1
+      rdf:type spin:Function ;
+      rdfs:subClassOf spin:Functions .
+
+measurement:GBMSlide
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Slide ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:Grams_WeightUnits
+      rdf:type measurement:WeightUnits ;
+      measurement:value "Grams"^^xsd:string .
+
+measurement:Gray44_RadiationDosage
+      rdf:type measurement:RadiationDosage ;
+      measurement:units measurement:Gray_DosageUnits ;
+      measurement:value "44"^^xsd:string .
+
+measurement:Gray_DosageUnits
+      rdf:type measurement:RadiationDosageUnits ;
+      skos-xl:prefLabel label:Gray_UnitsLabel .
+
+measurement:HistologicGradingSystem
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:HistologicGradingSystemLabel
+              ] ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+measurement:ImageFormat
+      rdf:type owl:Class ;
+      rdfs:comment "Storage format for an electronic image. Storage formats are produced by image compression algorithms."^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+measurement:InstantEvent_StartRegularChemo
+      rdf:type time-entry:InstantEvent ;
+      time-entry:durationDescriptionOf
+              measurement:DurationDescription_30Days .
+
+measurement:InstantThingPair_1
+      rdf:type time-entry:InstantThingPair ;
+      time-entry:firstInstantThing
+              measurement:Patient1Birth_Instant .
+
+measurement:Interval_StartStopChemoRegular
+      rdf:type time-entry:Interval ;
+      time-entry:durationDescriptionOf
+              measurement:DurationDescription_30Days .
+
+measurement:JPG
+      rdf:type measurement:ImageFormat .
+
+measurement:LengthUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:creator foaf:JimLomax .
+
+measurement:LightUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:LungSlide
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Slide ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:MDAndersonBrainBankOwner
+      rdf:type mage:Person .
+
+measurement:MDAndersonBrainBankRepository
+      rdf:type mage:BioSourceProvider .
+
+measurement:MeasurementPackage
+      rdf:type owl:Class ;
+      rdfs:comment "The Clinical Package is a organizational entity for containing the classes and properties that are most relevant to the observation and treatment of patients."^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      label:architect foaf:MoSanyang ;
+      label:createdDate "4/1/2011"^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
+measurement:MgM2_175_Dosage
+      rdf:type measurement:DrugDosage ;
+      measurement:units measurement:MgM2_DosageUnits ;
+      measurement:value "175"^^xsd:string .
+
+measurement:MgM2_DosageUnits
+      rdf:type measurement:DrugDosageUnits ;
+      rdfs:comment "Also known as body surface area units. (milligrams per meters squared)"^^xsd:string ;
+      skos-xl:prefLabel label:MgM2_UnitsLabel .
+
+measurement:Mg_DosageUnits
+      rdf:type measurement:DrugDosageUnits ;
+      skos-xl:prefLabel label:Miligram_Abbr_UnitsLabel .
+
+measurement:Milliliter_VolumeUnits
+      rdf:type measurement:VolumeUnits ;
+      skos-xl:prefLabel label:Millilter_UnitsLabel .
+
+measurement:Molarity_ConcentrationUnits
+      rdf:type measurement:ConcentrationUnits ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Molarity_NCI_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:Molarity_NCI_Definition ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      skos-xl:prefLabel label:Molarity_UnitsLabel .
+
+measurement:NuclearGradingSystem
+      rdf:type owl:Class ;
+      rdfs:subClassOf skos:Concept ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:NuclearGradingSystemLabel
+              ] ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+measurement:Nucleus
+      rdf:type mage:CellularComponent .
+
+measurement:OneM_Concentration
+      rdf:type measurement:Quantity ;
+      measurement:units measurement:Molarity_ConcentrationUnits ;
+      measurement:value "1"^^xsd:string .
+
+measurement:OnePointFiveM_Concentration
+      rdf:type measurement:Concentration ;
+      measurement:units measurement:Molarity_ConcentrationUnits ;
+      measurement:value "1.5"^^xsd:string .
+
+measurement:Ontology_1
+      rdf:type owl:Ontology .
+
+measurement:OvarianSlide
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Slide ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:PNG
+      rdf:type measurement:ImageFormat .
+
+measurement:PathologicalDiagnosisPatientEvent
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:DiagnosisPatientEvent ;
+      dc:creator foaf:JimLomax .
+
+measurement:Patient1Birth_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "1999-10-12T10:38:32"^^xsd:dateTime .
+
+measurement:Patient1Death_Instant
+      rdf:type time-entry:Instant ;
+      time-entry:inCalendarClockDataType
+              "2010-11-01T17:38:09.188"^^xsd:dateTime .
+
+measurement:Pill_DosageUnits
+      rdf:type measurement:DrugDosageUnits ;
+      measurement:value "Pill"^^xsd:string .
+
+measurement:PortionExample_Volume
+      rdf:type measurement:Volume ;
+      measurement:units measurement:Milliliter_VolumeUnits ;
+      measurement:value "1.0"^^xsd:string .
+
+measurement:Pounds_WeightUnits
+      rdf:type measurement:WeightUnits ;
+      measurement:value "Pounds"^^xsd:string .
+
+measurement:Proteasome
+      rdf:type mage:CellularComponent .
+
+measurement:ProteinDimer
+      rdf:type mage:CellularComponent .
+
+measurement:ProteinTrimer
+      rdf:type mage:CellularComponent .
+
+measurement:PurityMeasurment
+      rdf:type owl:Class ;
+      rdfs:comment "Measures the purity of a substance."^^xsd:string ;
+      rdfs:subClassOf measurement:Ratio ;
+      label:designNote "This concept does not corresponds toany concept in BioPortal"^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+measurement:Quantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:MeasurementPackage , skos:Concept ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Quantity_NCI_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:Quantity_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "If something has a numeric value and units, its a quantity"^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:QuantityLabel
+              ] ;
+      owl:equivalentClass
+              [ rdf:type owl:Class ;
+                owl:intersectionOf ([ rdf:type owl:Restriction ;
+                            owl:onProperty measurement:value ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] [ rdf:type owl:Restriction ;
+                            owl:onProperty measurement:units ;
+                            owl:someValuesFrom measurement:Units
+                          ])
+              ] .
+
+measurement:RadiationDosage
+      rdf:type owl:Class ;
+      rdfs:comment "The amount of radiation energy that is deposited in a unit mass of material, such as tissues of plants or animal. In radiotherapy, radiation dosage is expressed in gray units (Gy). In radiologic health, the dosage is expressed by the product of absorbed dose (Gy) and quality factor (a function of linear energy transfer), and is called radiation dose equivalent in sievert units (Sv)."^^xsd:string ;
+      rdfs:subClassOf measurement:Dosage ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:RadiationDosage_MESH_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:RadiationDosageUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:DosageUnits ;
+      dc:creator foaf:JimLomax .
+
+measurement:Ratio
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:MeasurementPackage , skos:Concept ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Ratio_NCI_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:Ratio_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael .
+
+measurement:Resource_2
+      rdf:type rdfs:Resource .
+
+measurement:RoughEndoplasmicReticulum
+      rdf:type mage:CellularComponent .
+
+measurement:SelectBioMaterials
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf sp:Select .
+
+measurement:SideLabel
+      rdf:type skos-xl:Label .
+
+measurement:Slide
+      rdf:type owl:Class ;
+      rdfs:comment "A flat rectangular piece of glass on which specimens can be mounted for microscopic study."^^xsd:string , "We need a term for the slide analysis results, this concept will hold the quantitative values associated with each slide interpretation. For now I will leave this concept alone and add the slide result properties"^^xsd:string ;
+      rdfs:subClassOf skos:Concept ;
+      label:approver foaf:LathaRamdas ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Slide_NCI_URI ;
+      label:createdDate "6/7/2011"^^xsd:string ;
+      label:definedBy label:Slide_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept is directly related to the Slide concept in NCI Thesaurus."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      dc:creator foaf:JimLomax .
+
+measurement:TIF
+      rdf:type measurement:ImageFormat .
+
+measurement:Template
+      rdf:type spin:SelectTemplate ;
+      rdfs:subClassOf spin:SelectTemplates .
+
+measurement:TenM_Concentration
+      rdf:type measurement:Concentration ;
+      measurement:units measurement:Molarity_ConcentrationUnits ;
+      measurement:value "10"^^xsd:string .
+
+measurement:TherapeuticProcedureList1_Item_Chemotherapy1
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              measurement:TherapeuticProcedureList1_Item_Chemotherpay2 .
+
+measurement:TherapeuticProcedureList1_Item_Chemotherpay2
+      rdf:type collections:ListItem ;
+      collections:nextItem
+              measurement:TherapeuticProcedureList1_Item_Radiation1 .
+
+measurement:TherapeuticProcedureList1_Item_Radiation1
+      rdf:type collections:ListItem .
+
+measurement:TherpaeuticProcedures1_Collection
+      rdf:type collections:List ;
+      collections:firstItem
+              measurement:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              measurement:TherapeuticProcedureList1_Item_Radiation1 .
+
+measurement:TherpaeuticProcedures1_Collection_1
+      rdf:type collections:List ;
+      collections:firstItem
+              measurement:TherapeuticProcedureList1_Item_Chemotherapy1 ;
+      collections:lastItem
+              measurement:TherapeuticProcedureList1_Item_Radiation1 .
+
+measurement:ThreeM_Concentration
+      rdf:type measurement:Concentration ;
+      measurement:units measurement:Molarity_ConcentrationUnits ;
+      measurement:value "3"^^xsd:string .
+
+measurement:TissueSamplesDisjoint
+      rdf:type rdfs:Class ;
+      rdfs:subClassOf rdf:Statement .
+
+measurement:TwentyThreeGray_RadiationDosage
+      rdf:type measurement:RadiationDosage ;
+      measurement:units measurement:Gray_DosageUnits ;
+      measurement:value "23"^^xsd:string .
+
+measurement:TwoPills_Dosage
+      rdf:type measurement:DrugDosage ;
+      measurement:units measurement:Pill_DosageUnits ;
+      measurement:value "2"^^xsd:string .
+
+measurement:UnitOfMeasure
+      rdf:type owl:Class ;
+      rdfs:comment "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."^^xsd:string ;
+      rdfs:subClassOf measurement:MeasurementPackage , skos:Concept ;
+      dc:creator foaf:JimLomax .
+
+measurement:Units
+      rdf:type owl:Class ;
+      rdfs:comment "A named quantity in terms of which other quantities are measured or specified, used as a standard measurement of like kinds."^^xsd:string ;
+      rdfs:subClassOf measurement:MeasurementPackage , skos:Concept ;
+      label:correspondsTo label:Unit_NCI_URI ;
+      label:definedBy label:Units_NCI_Definition ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass measurement:UnitOfMeasure ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:UnitsLabel
+              ] .
+
+measurement:Volume
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:architect foaf:MoSanyang ;
+      label:correspondsTo label:Volume_NCI_URI ;
+      label:createdDate "6/20/2011"^^xsd:string ;
+      label:creator foaf:JimLomax ;
+      label:definedBy label:Volume_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:VolumeLabel
+              ] .
+
+measurement:VolumeUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:creator foaf:JimLomax .
+
+measurement:Weight
+      rdf:type owl:Class ;
+      rdfs:comment "The vertical force exerted by a mass as a result of gravity"^^xsd:string ;
+      rdfs:subClassOf measurement:Quantity ;
+      label:correspondsTo label:Weight_NCI_URI ;
+      label:definedBy label:Weight_NCI_Definition ;
+      label:designNote "This concept is extensible."^^xsd:string , "This concept is directly related to the Weight concept in NCI Thesaurus."^^xsd:string , "This concept may have instances of it's own or may be a superclass for concept refinements."^^xsd:string ;
+      dc:creator foaf:JimLomax ;
+      owl:equivalentClass
+              [ rdf:type owl:Restriction ;
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:WeightLabel
+              ] .
+
+measurement:WeightUnits
+      rdf:type owl:Class ;
+      rdfs:subClassOf measurement:Units ;
+      label:creator foaf:JimLomax .
+
+measurement:accessionNumberOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf measurement:hasAccessionNumber .
+
+measurement:amount
+      rdf:type owl:ObjectProperty .
+
+measurement:collectionSiteId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:concentration
+      rdf:type owl:ObjectProperty ;
+      rdfs:range measurement:Concentration ;
+      rdfs:subPropertyOf measurement:amount .
+
+measurement:currentWeight
+      rdf:type rdf:Property ;
+      rdfs:range measurement:Weight ;
+      rdfs:subPropertyOf measurement:weight ;
+      dc:creator foaf:JimLomax .
+
+measurement:cy3LabelingProtocol1
+      rdf:type mage:Protocol .
+
+measurement:cy3LabelingTreatment1
+      rdf:type mage:Treatment .
+
+measurement:cy3PreWashProtocol1
+      rdf:type mage:Protocol .
+
+measurement:cy3PreWashTreatment1
+      rdf:type mage:Treatment .
+
+measurement:dosage
+      rdf:type owl:ObjectProperty ;
+      rdfs:range measurement:Dosage ;
+      rdfs:subPropertyOf measurement:amount .
+
+measurement:eosinophilInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:examinationId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:granulocyteInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:hasAccessionNumber
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf measurement:hasGenomicSequenceId ;
+      owl:inverseOf measurement:accessionNumberOf .
+
+measurement:hasArchiveVersion
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+measurement:hasCpgSiteId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:hasGenomicSequenceId
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:hasPatientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      dc:creator foaf:JimLomax .
+
+measurement:has_platform_version
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf mage:has_version .
+
+measurement:ietfTag
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:inflammationInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:initialWeight
+      rdf:type rdf:Property ;
+      rdfs:range measurement:Weight ;
+      rdfs:subPropertyOf measurement:weight ;
+      dc:creator foaf:JimLomax .
+
+measurement:lymphocyteInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:monocyteInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:necrosisPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:neutrophilInfiltrationPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:normalCellsPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:seeAlso measurement:Example_Slide ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:patientId
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier ;
+      label:creator foaf:JimLomax ;
+      label:designNote "A subject can only have one patient id to maintain patientId uniqueness."^^xsd:string .
+
+measurement:percentage
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf measurement:quantity .
+
+measurement:platformIdentifier
+      rdf:type owl:FunctionalProperty ;
+      rdfs:subPropertyOf dc:identifier .
+
+measurement:proliferatingCellsQuantity
+      rdf:type rdf:Property ;
+      rdfs:subPropertyOf measurement:quantity ;
+      dc:creator foaf:JimLomax .
+
+measurement:purityMeasurement
+      rdf:type rdf:Property ;
+      rdfs:range measurement:PurityMeasurment ;
+      rdfs:subPropertyOf measurement:quantity ;
+      label:creator foaf:JimLomax .
+
+measurement:quantity
+      rdf:type rdf:Property ;
+      rdfs:comment "The quantity property related a subject with literal value interpreted as its quantity according to some unit of measurement."^^xsd:string ;
+      dc:creator foaf:JimLomax .
+
+measurement:tumorCellsPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:tumorNucleiPercentage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf measurement:percentage ;
+      dc:creator foaf:JimLomax .
+
+measurement:units
+      rdf:type owl:ObjectProperty ;
+      rdfs:range measurement:Units .
+
+measurement:value
+      rdf:type owl:DatatypeProperty .
+
+measurement:volume
+      rdf:type owl:ObjectProperty ;
+      rdfs:range measurement:Volume ;
+      rdfs:subPropertyOf measurement:amount .
+
+measurement:weight
+      rdf:type rdf:Property ;
+      rdfs:range measurement:Weight ;
+      rdfs:subPropertyOf measurement:quantity ;
+      dc:creator foaf:JimLomax .
+
+organization:biologicalCollectionResource
+      rdf:type owl:ObjectProperty ;
+      rdfs:range organization:BiologicalCollectionResource .
+
+tcga:10ml_AliquotAmount
+      measurement:quantity
+              "10"^^xsd:string .
+
+dc:approvedDate
+      rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf dc:date .
+
+dc:creator
+      rdfs:range foaf:Person .
+
+nco:Affiliation_1
+      rdf:type nco:Affiliation .
+
+foaf:DawitGebremichael
+      rdf:type foaf:Person .
+
+foaf:JimLomax
+      rdf:type foaf:Person ;
+      foaf:firstName "Jim"^^xsd:string ;
+      foaf:surname "Lomax"^^xsd:string .
+
+foaf:LathaRamdas
+      rdf:type foaf:Person ;
+      foaf:family_name "Ramdas"^^xsd:string ;
+      foaf:firstName "Latha"^^xsd:string .
+
+foaf:MoSanyang
+      rdf:type foaf:Person ;
+      foaf:family_name "Sanyang"^^xsd:string ;
+      foaf:firstName "Mo"^^xsd:string .
+
+foaf:ParsaMirhaji
+      rdf:type foaf:Person .
+
+foaf:PradheepRaju
+      rdf:type foaf:Person .

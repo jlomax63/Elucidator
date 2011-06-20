@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed May 18 10:29:35 CDT 2011
+# Saved by TopBraid on Sat Jun 18 14:00:15 CDT 2011
 # baseURI: http://mdacc.org/Organization
 # imports: http://www.w3.org/2009/08/skos-reference/skos.rdf
 # imports: http://xmlns.com/foaf/0.1/
@@ -12,6 +12,7 @@
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix label:   <http://mdacc.org/Label#> .
 @prefix mage:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix measurement:  <http://mdacc.org/Measurement#> .
 @prefix nco:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
 @prefix organization:  <http://mdacc.org/Organization#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
@@ -35,8 +36,6 @@ organization:ABIDomain
 
 organization:ABSBlokhin_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -60,8 +59,6 @@ organization:ABSBlokhin_OrganizationDomain
 
 organization:ABSIUPUI_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -75,8 +72,6 @@ organization:ABSIUPUI_BLCA_TissueSourceSite
 
 organization:ABSIUPUI_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -90,8 +85,6 @@ organization:ABSIUPUI_BRCA_TissueSourceSite
 
 organization:ABSIUPUI_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -105,8 +98,6 @@ organization:ABSIUPUI_CESC_TissueSourceSite
 
 organization:ABSIUPUI_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -120,8 +111,6 @@ organization:ABSIUPUI_KIRC_TissueSourceSite
 
 organization:ABSIUPUI_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -135,8 +124,6 @@ organization:ABSIUPUI_KIRP_TissueSourceSite
 
 organization:ABSIUPUI_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -160,8 +147,6 @@ organization:ABSIUPUI_OrganizationDomain
 
 organization:ABSIUPUI_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -175,8 +160,6 @@ organization:ABSIUPUI_SKCM_TissueSourceSite
 
 organization:ABSIUPUI_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -190,8 +173,6 @@ organization:ABSIUPUI_THCA_TissueSourceSite
 
 organization:ABSIUPUI_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -230,8 +211,6 @@ organization:Agilent_OrganizationDomain
 
 organization:AlbertaHealthServices_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -261,8 +240,6 @@ organization:AppliedBiosystems_Organization
 
 organization:Asterand_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -276,8 +253,6 @@ organization:Asterand_BLCA_TissueSourceSite
 
 organization:Asterand_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -291,8 +266,6 @@ organization:Asterand_BRCA_TissueSourceSite
 
 organization:Asterand_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -306,8 +279,6 @@ organization:Asterand_CESC_TissueSourceSite
 
 organization:Asterand_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -321,8 +292,6 @@ organization:Asterand_COAD_TissueSourceSite
 
 organization:Asterand_DLBC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -336,8 +305,6 @@ organization:Asterand_DLBC_TissueSourceSite
 
 organization:Asterand_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -351,8 +318,6 @@ organization:Asterand_GBM_TissueSourceSite
 
 organization:Asterand_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -366,8 +331,6 @@ organization:Asterand_HNSC_TissueSourceSite
 
 organization:Asterand_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -381,8 +344,6 @@ organization:Asterand_KIRC_TissueSourceSite
 
 organization:Asterand_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -396,8 +357,6 @@ organization:Asterand_KIRP_TissueSourceSite
 
 organization:Asterand_LAML_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:AcuteMyeloidLeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -411,8 +370,6 @@ organization:Asterand_LAML_TissueSourceSite
 
 organization:Asterand_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -426,8 +383,6 @@ organization:Asterand_LGG_TissueSourceSite
 
 organization:Asterand_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -441,8 +396,6 @@ organization:Asterand_LUAD_TissueSourceSite
 
 organization:Asterand_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -466,8 +419,6 @@ organization:Asterand_OrganizationDomain
 
 organization:Asterand_PAAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PancreaticAdenocarcinoma_PancreaticTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -481,8 +432,6 @@ organization:Asterand_PAAD_TissueSourceSite
 
 organization:Asterand_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -496,8 +445,6 @@ organization:Asterand_PRAD_TissueSourceSite
 
 organization:Asterand_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -511,8 +458,6 @@ organization:Asterand_READ_TissueSourceSite
 
 organization:Asterand_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -526,8 +471,6 @@ organization:Asterand_SKCM_TissueSourceSite
 
 organization:Asterand_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -541,8 +484,6 @@ organization:Asterand_STAD_TissueSourceSite
 
 organization:Asterand_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -556,8 +497,6 @@ organization:Asterand_THCA_TissueSourceSite
 
 organization:Asterand_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -571,8 +510,6 @@ organization:Asterand_UCEC_TissueSourceSite
 
 organization:BCCancerAgency_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -586,8 +523,6 @@ organization:BCCancerAgency_LNNH_TissueSourceSite
 
 organization:BCCancerAgency_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -617,8 +552,6 @@ organization:BCR
 
 organization:BLNBaylor_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -642,8 +575,6 @@ organization:BLNBaylor_OrganizationDomain
 
 organization:BLNUTSouthwesternMedicalCenter_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -667,8 +598,6 @@ organization:BLNUTSouthwesternMedicalCenter_OrganizationDomain
 
 organization:BLNUniversityOfChicago_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -692,8 +621,6 @@ organization:BLNUniversityOfChicago_OrganizationDomain
 
 organization:BLNUniversityOfMiami_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -777,8 +704,6 @@ organization:BroadInstituteOfMITandHarvard_OrganizationDomain
 
 organization:CHIPenroseHospitalColorado_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -792,8 +717,6 @@ organization:CHIPenroseHospitalColorado_GBM_TissueSourceSite
 
 organization:CHIPenroseHospitalColorado_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -807,8 +730,6 @@ organization:CHIPenroseHospitalColorado_KIRC_TissueSourceSite
 
 organization:CHIPenroseHospitalColorado_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -822,8 +743,6 @@ organization:CHIPenroseHospitalColorado_KIRP_TissueSourceSite
 
 organization:CHIPenroseHospitalColorado_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -837,8 +756,6 @@ organization:CHIPenroseHospitalColorado_LUAD_TissueSourceSite
 
 organization:CHIPenroseHospitalColorado_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -862,8 +779,6 @@ organization:CHIPenroseHospitalColorado_OrganizationDomain
 
 organization:CHIPenroseHospitalColorado_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -890,8 +805,6 @@ organization:CancerAndLeukemiaGroupB_OrganizationDomain
 
 organization:CaseWesern_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -905,8 +818,6 @@ organization:CaseWesern_GBM_TissueSourceSite
 
 organization:CaseWesern_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -930,8 +841,6 @@ organization:CaseWestern_OrganizationDomain
 
 organization:CedarsSinai_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -945,8 +854,6 @@ organization:CedarsSinai_CESC_TissueSourceSite
 
 organization:CedarsSinai_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -960,8 +867,6 @@ organization:CedarsSinai_GBM_TissueSourceSite
 
 organization:CedarsSinai_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -985,8 +890,6 @@ organization:CedarsSinai_OrganizationDomain
 
 organization:CedarsSinai_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1000,8 +903,6 @@ organization:CedarsSinai_UCEC_TissueSourceSite
 
 organization:ChristianaHealthcare_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1015,8 +916,6 @@ organization:ChristianaHealthcare_BLCA_TissueSourceSite
 
 organization:ChristianaHealthcare_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1030,8 +929,6 @@ organization:ChristianaHealthcare_BRCA_TissueSourceSite
 
 organization:ChristianaHealthcare_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1045,8 +942,6 @@ organization:ChristianaHealthcare_COAD_TissueSourceSite
 
 organization:ChristianaHealthcare_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1060,8 +955,6 @@ organization:ChristianaHealthcare_GBM_TissueSourceSite
 
 organization:ChristianaHealthcare_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1075,8 +968,6 @@ organization:ChristianaHealthcare_KIRC_TissueSourceSite
 
 organization:ChristianaHealthcare_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1090,8 +981,6 @@ organization:ChristianaHealthcare_KIRP_TissueSourceSite
 
 organization:ChristianaHealthcare_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1105,8 +994,6 @@ organization:ChristianaHealthcare_LIHC_TissueSourceSite
 
 organization:ChristianaHealthcare_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1120,8 +1007,6 @@ organization:ChristianaHealthcare_LUAD_TissueSourceSite
 
 organization:ChristianaHealthcare_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1135,8 +1020,6 @@ organization:ChristianaHealthcare_LUSC_TissueSourceSite
 
 organization:ChristianaHealthcare_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1160,8 +1043,6 @@ organization:ChristianaHealthcare_OrganizationDomain
 
 organization:ChristianaHealthcare_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1175,8 +1056,6 @@ organization:ChristianaHealthcare_READ_TissueSourceSite
 
 organization:ChristianaHealthcare_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1190,8 +1069,6 @@ organization:ChristianaHealthcare_STAD_TissueSourceSite
 
 organization:ChristianaHealthcare_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1205,56 +1082,54 @@ organization:ChristianaHealthcare_UCEC_TissueSourceSite
 
 organization:CollectionSiteID_CALGB
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "03"^^xsd:string .
+      dc:identifier 03 .
 
 organization:CollectionSiteID_CellLines
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "07"^^xsd:string .
+      dc:identifier 07 .
 
 organization:CollectionSiteID_DukeBrainBank
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "12"^^xsd:string .
+      dc:identifier 12 .
 
 organization:CollectionSiteID_GynecologicOncology
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "04"^^xsd:string .
+      dc:identifier 04 .
 
 organization:CollectionSiteID_HenryFord
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "06"^^xsd:string .
+      dc:identifier 06 .
 
 organization:CollectionSiteID_Intgen
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "01"^^xsd:string .
+      dc:identifier 01 .
 
 organization:CollectionSiteID_MDABrainBank
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "02"^^xsd:string .
+      dc:identifier 02 .
 
 organization:CollectionSiteID_MDALungBank
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "11"^^xsd:string .
+      dc:identifier 11 .
 
 organization:CollectionSiteID_MDAOvarianBank
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "10"^^xsd:string .
+      dc:identifier 10 .
 
 organization:CollectionSiteID_NCI
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "05"^^xsd:string .
+      dc:identifier 05 .
 
 organization:CollectionSiteID_UCSFBrain
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "08"^^xsd:string .
+      dc:identifier 08 .
 
 organization:CollectionSiteID_UCSFOvarian
       rdf:type organization:TissueSourceSiteID ;
-      dc:identifier "09"^^xsd:string .
+      dc:identifier 09 .
 
 organization:Cureline_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1265,8 +1140,6 @@ organization:Cureline_BRCA_TissueSourceSite
 
 organization:Cureline_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1277,8 +1150,6 @@ organization:Cureline_COAD_TissueSourceSite
 
 organization:Cureline_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1289,8 +1160,6 @@ organization:Cureline_HNSC_TissueSourceSite
 
 organization:Cureline_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1301,8 +1170,6 @@ organization:Cureline_KIRC_TissueSourceSite
 
 organization:Cureline_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1313,8 +1180,6 @@ organization:Cureline_LUAD_TissueSourceSite
 
 organization:Cureline_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1335,8 +1200,6 @@ organization:Cureline_OrganizationDomain
 
 organization:Cureline_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1347,8 +1210,6 @@ organization:Cureline_READ_TissueSourceSite
 
 organization:Cureline_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1359,8 +1220,6 @@ organization:Cureline_SKCM_TissueSourceSite
 
 organization:Cureline_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1371,8 +1230,6 @@ organization:Cureline_STAD_TissueSourceSite
 
 organization:Cureline_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1428,8 +1285,6 @@ organization:DukeUniversity_OrganizationDomain
 
 organization:Duke_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1443,8 +1298,6 @@ organization:Duke_BRCA_TissueSourceSite
 
 organization:Duke_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1460,8 +1313,6 @@ organization:Duke_GBM_TissueSourceSite
 
 organization:Duke_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1477,8 +1328,6 @@ organization:Duke_LGG_TissueSourceSite
 
 organization:Duke_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1492,8 +1341,6 @@ organization:Duke_OV_TissueSourceSite
 
 organization:Duke_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1520,8 +1367,6 @@ organization:EmoryUniversity_OrganizationDomain
 
 organization:Emory_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1551,8 +1396,6 @@ organization:Essen_OrganizationDomain
 
 organization:Essen_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1566,8 +1409,6 @@ organization:Essen_SKCM_TissueSourceSite
 
 organization:FoxChaseCancerCenter_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1579,8 +1420,6 @@ organization:FoxChaseCancerCenter_KIRC_TissueSourceSite
 
 organization:FoxChaseCancerCenter_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1594,8 +1433,6 @@ organization:FoxChaseCancerCenter_KIRP_TissueSourceSite
 
 organization:FoxChaseCancerCenter_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1609,8 +1446,6 @@ organization:FoxChaseCancerCenter_LUAD_TissueSourceSite
 
 organization:FoxChaseCancerCenter_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1624,8 +1459,6 @@ organization:FoxChaseCancerCenter_LUSC_TissueSourceSite
 
 organization:FoxChaseCancerCenter_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -1747,8 +1580,6 @@ organization:GreaterPolandCancerCenter_OrganizationDomain
 
 organization:GreaterPolandCancerCentre_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1759,8 +1590,6 @@ organization:GreaterPolandCancerCentre_BRCA_TissueSourceSite
 
 organization:GreaterPolandCancerCentre_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1771,8 +1600,6 @@ organization:GreaterPolandCancerCentre_COAD_TissueSourceSite
 
 organization:GreaterPolandCancerCentre_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1789,8 +1616,6 @@ organization:GreaterPolandCancerCentre_Organization
 
 organization:GreaterPolandCancerCentre_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1801,8 +1626,6 @@ organization:GreaterPolandCancerCentre_READ_TissueSourceSite
 
 organization:GreaterPolandCancerCentre_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1813,8 +1636,6 @@ organization:GreaterPolandCancerCentre_SKCM_TissueSourceSite
 
 organization:GreaterPolandCancerCentre_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1831,8 +1652,6 @@ organization:GynecologicOncologyGroup_Organization
 
 organization:GynecologicOncology_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -1843,8 +1662,6 @@ organization:GynecologicOncology_CESC_TissueSourceSite
 
 organization:GynecologicOncology_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -1857,8 +1674,6 @@ organization:GynecologicOncology_OV_TissueSourceSite
 
 organization:GynecologicOncology_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -1895,8 +1710,6 @@ organization:HarvardMedicalSchool_OrganizationDomain
 
 organization:HarvardUniversity_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1907,8 +1720,6 @@ organization:HarvardUniversity_COAD_TissueSourceSite
 
 organization:HarvardUniversity_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1919,8 +1730,6 @@ organization:HarvardUniversity_KIRC_TissueSourceSite
 
 organization:HarvardUniversity_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1941,8 +1750,6 @@ organization:HarvardUniversity_OrganizationDomain
 
 organization:HarvardUniversity_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1953,8 +1760,6 @@ organization:HarvardUniversity_READ_TissueSourceSite
 
 organization:HenryFordHospital_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -1967,8 +1772,6 @@ organization:HenryFordHospital_GBM_TissueSourceSite
 
 organization:HenryFordHospital_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -1993,8 +1796,6 @@ organization:HudsonAlphaInstituteForBiotechnology_OrganizationDomain
 
 organization:ILSBio_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2008,8 +1809,6 @@ organization:ILSBio_BLCA_TissueSourceSite
 
 organization:ILSBio_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2023,8 +1822,6 @@ organization:ILSBio_BRCA_TissueSourceSite
 
 organization:ILSBio_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2038,8 +1835,6 @@ organization:ILSBio_COAD_TissueSourceSite
 
 organization:ILSBio_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2053,8 +1848,6 @@ organization:ILSBio_KIRC_TissueSourceSite
 
 organization:ILSBio_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2068,8 +1861,6 @@ organization:ILSBio_LIHC_TissueSourceSite
 
 organization:ILSBio_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2083,8 +1874,6 @@ organization:ILSBio_LUAD_TissueSourceSite
 
 organization:ILSBio_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2108,8 +1897,6 @@ organization:ILSBio_OrganizationDomain
 
 organization:ILSBio_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2123,8 +1910,6 @@ organization:ILSBio_READ_TissueSourceSite
 
 organization:ILSBio_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2138,8 +1923,6 @@ organization:ILSBio_STAD_TissueSourceSite
 
 organization:ILSBio_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2162,8 +1945,6 @@ organization:Illumina_OrganizationDomain
 
 organization:ImperialCollege_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2187,8 +1968,6 @@ organization:ImperialCollege_OrganizationDomain
 
 organization:Indivumed_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -2199,8 +1978,6 @@ organization:Indivumed_BLCA_TissueSourceSite
 
 organization:Indivumed_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -2213,8 +1990,6 @@ organization:Indivumed_BRCA_TissueSourceSite
 
 organization:Indivumed_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2225,8 +2000,6 @@ organization:Indivumed_COAD_TissueSourceSite
 
 organization:Indivumed_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -2239,8 +2012,6 @@ organization:Indivumed_LUAD_TissueSourceSite
 
 organization:Indivumed_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2255,8 +2026,6 @@ organization:Indivumed_Organization
 
 organization:Indivumed_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2267,8 +2036,6 @@ organization:Indivumed_PRAD_TissueSourceSite
 
 organization:Indivumed_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2279,8 +2046,6 @@ organization:Indivumed_READ_TissueSourceSite
 
 organization:Indivumed_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2309,8 +2074,6 @@ organization:InstituteForSystemsBiology_OrganizationDomain
 
 organization:InstitutoNeurologicoCarloBesta_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2343,8 +2106,6 @@ organization:InternationalGenomicsConsortium_BCR
 
 organization:InternationalGenomicsConsortium_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2358,8 +2119,6 @@ organization:InternationalGenomicsConsortium_BRCA_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2373,8 +2132,6 @@ organization:InternationalGenomicsConsortium_CESC_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2388,8 +2145,6 @@ organization:InternationalGenomicsConsortium_COAD_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_DLBC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2403,8 +2158,6 @@ organization:InternationalGenomicsConsortium_DLBC_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2418,8 +2171,6 @@ organization:InternationalGenomicsConsortium_GBM_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2435,8 +2186,6 @@ organization:InternationalGenomicsConsortium_KIRC_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2452,8 +2201,6 @@ organization:InternationalGenomicsConsortium_KIRP_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2467,8 +2214,6 @@ organization:InternationalGenomicsConsortium_LGG_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2482,8 +2227,6 @@ organization:InternationalGenomicsConsortium_LIHC_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2497,8 +2240,6 @@ organization:InternationalGenomicsConsortium_LUAD_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2512,8 +2253,6 @@ organization:InternationalGenomicsConsortium_LUSC_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2535,8 +2274,6 @@ organization:InternationalGenomicsConsortium_Organization
 
 organization:InternationalGenomicsConsortium_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2550,8 +2287,6 @@ organization:InternationalGenomicsConsortium_READ_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_SALD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DedifferentiatedLiposarcoma_Liposarcoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2565,8 +2300,6 @@ organization:InternationalGenomicsConsortium_SALD_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2580,8 +2313,6 @@ organization:InternationalGenomicsConsortium_SKCM_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2595,8 +2326,6 @@ organization:InternationalGenomicsConsortium_STAD_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2610,8 +2339,6 @@ organization:InternationalGenomicsConsortium_THCA_TissueSourceSite
 
 organization:InternationalGenomicsConsortium_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2643,8 +2370,6 @@ organization:JohnsHopkinsUniversityOfSouthernCalifornia_OrganizationDomain
 
 organization:JohnsHopkinsUniversity_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2655,8 +2380,6 @@ organization:JohnsHopkinsUniversity_HNSC_TissueSourceSite
 
 organization:JohnsHopkinsUniversity_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2667,8 +2390,6 @@ organization:JohnsHopkinsUniversity_LUAD_TissueSourceSite
 
 organization:JohnsHopkinsUniversity_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2689,8 +2410,6 @@ organization:JohnsHopkinsUniversity_OrganizationDomain
 
 organization:JohnsHopkinsUniversity_PAAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PancreaticAdenocarcinoma_PancreaticTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:organization
@@ -2701,8 +2420,6 @@ organization:JohnsHopkinsUniversity_PAAD_TissueSourceSite
 
 organization:JohnsHopkinsUniversity_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       organization:biologicalDataCollector
               organization:NCH_BiologicalCollectionResource ;
       organization:organization
@@ -2733,8 +2450,6 @@ organization:LawrenceBerkeleyNationalLaboratory_OrganizationDomain
 
 organization:LungCancerTissueBankOfCALGB_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       organization:biologicalDataCollector
               organization:InternationalGenomicConsortium_BiologicalCollectionResource ;
       organization:collectionSiteId
@@ -2758,8 +2473,6 @@ organization:MDA-RIS_OrganizationDomain
 
 organization:MDA_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2773,8 +2486,6 @@ organization:MDA_BLCA_TissueSourceSite
 
 organization:MDA_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2788,8 +2499,6 @@ organization:MDA_BRCA_TissueSourceSite
 
 organization:MDA_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2805,8 +2514,6 @@ organization:MDA_GBM_TissueSourceSite
 
 organization:MDA_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2820,8 +2527,6 @@ organization:MDA_HNSC_TissueSourceSite
 
 organization:MDA_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2835,8 +2540,6 @@ organization:MDA_KIRC_TissueSourceSite
 
 organization:MDA_LAML_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:AcuteMyeloidLeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2850,8 +2553,6 @@ organization:MDA_LAML_TissueSourceSite
 
 organization:MDA_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2865,8 +2566,6 @@ organization:MDA_LUSC_TissueSourceSite
 
 organization:MDA_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2880,8 +2579,6 @@ organization:MDA_OV_TissueSourceSite
 
 organization:MDA_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2895,8 +2592,6 @@ organization:MDA_SKCM_TissueSourceSite
 
 organization:MDA_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2910,8 +2605,6 @@ organization:MDA_THCA_TissueSourceSite
 
 organization:MDA_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2969,8 +2662,6 @@ organization:MDAnderson_OrganizationDomain
 
 organization:MayoClinicRochester_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2984,8 +2675,6 @@ organization:MayoClinicRochester_BRCA_TissueSourceSite
 
 organization:MayoClinicRochester_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -2999,8 +2688,6 @@ organization:MayoClinicRochester_GBM_TissueSourceSite
 
 organization:MayoClinicRochester_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3014,8 +2701,6 @@ organization:MayoClinicRochester_KIRC_TissueSourceSite
 
 organization:MayoClinicRochester_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3029,8 +2714,6 @@ organization:MayoClinicRochester_KIRP_TissueSourceSite
 
 organization:MayoClinicRochester_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3044,8 +2727,6 @@ organization:MayoClinicRochester_LGG_TissueSourceSite
 
 organization:MayoClinicRochester_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3059,8 +2740,6 @@ organization:MayoClinicRochester_LIHC_TissueSourceSite
 
 organization:MayoClinicRochester_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3074,8 +2753,6 @@ organization:MayoClinicRochester_LUSC_TissueSourceSite
 
 organization:MayoClinicRochester_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3099,8 +2776,6 @@ organization:MayoClinicRochester_OrganizationDomain
 
 organization:MayoClinicRochester_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3114,8 +2789,6 @@ organization:MayoClinicRochester_UCEC_TissueSourceSite
 
 organization:MedicalCollegeOfGeorgia_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3139,8 +2812,6 @@ organization:MedicalCollegeOfGeorgia_OrganizationDomain
 
 organization:MedicalCollegeOfGeorgia_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3154,8 +2825,6 @@ organization:MedicalCollegeOfGeorgia_THCA_TissueSourceSite
 
 organization:MedicalCollegeOfWisconsin_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3179,8 +2848,6 @@ organization:MedicalCollegeOfWisconsin_OrganizationDomain
 
 organization:MemorialSloanKetteringCancerCenter_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3194,8 +2861,6 @@ organization:MemorialSloanKetteringCancerCenter_BLCA_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3209,8 +2874,6 @@ organization:MemorialSloanKetteringCancerCenter_BRCA_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3240,8 +2903,6 @@ organization:MemorialSloanKetteringCancerCenter_GDAC
 
 organization:MemorialSloanKetteringCancerCenter_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3255,8 +2916,6 @@ organization:MemorialSloanKetteringCancerCenter_KIRC_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3270,8 +2929,6 @@ organization:MemorialSloanKetteringCancerCenter_KIRP_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3285,8 +2942,6 @@ organization:MemorialSloanKetteringCancerCenter_LUAD_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3300,8 +2955,6 @@ organization:MemorialSloanKetteringCancerCenter_LUSC_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3325,8 +2978,6 @@ organization:MemorialSloanKetteringCancerCenter_OrganizationDomain
 
 organization:MemorialSloanKetteringCancerCenter_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3340,8 +2991,6 @@ organization:MemorialSloanKetteringCancerCenter_READ_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_SALD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DedifferentiatedLiposarcoma_Liposarcoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3355,8 +3004,6 @@ organization:MemorialSloanKetteringCancerCenter_SALD_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3370,8 +3017,6 @@ organization:MemorialSloanKetteringCancerCenter_THCA_TissueSourceSite
 
 organization:MemorialSloanKetteringCancerCenter_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3403,8 +3048,6 @@ organization:NCH_BCR
 
 organization:NCH_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3424,8 +3067,6 @@ organization:NCH_BiologicalCollectionResource
 
 organization:NCH_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3439,8 +3080,6 @@ organization:NCH_CESC_TissueSourceSite
 
 organization:NCH_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3454,8 +3093,6 @@ organization:NCH_COAD_TissueSourceSite
 
 organization:NCH_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3469,8 +3106,6 @@ organization:NCH_GBM_TissueSourceSite
 
 organization:NCH_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3484,8 +3119,6 @@ organization:NCH_HNSC_TissueSourceSite
 
 organization:NCH_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3499,8 +3132,6 @@ organization:NCH_KIRC_TissueSourceSite
 
 organization:NCH_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3514,8 +3145,6 @@ organization:NCH_KIRP_TissueSourceSite
 
 organization:NCH_LAML_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:AcuteMyeloidLeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3529,8 +3158,6 @@ organization:NCH_LAML_TissueSourceSite
 
 organization:NCH_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3544,8 +3171,6 @@ organization:NCH_LGG_TissueSourceSite
 
 organization:NCH_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3559,8 +3184,6 @@ organization:NCH_LIHC_TissueSourceSite
 
 organization:NCH_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3574,8 +3197,6 @@ organization:NCH_LNNH_TissueSourceSite
 
 organization:NCH_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3589,8 +3210,6 @@ organization:NCH_LUAD_TissueSourceSite
 
 organization:NCH_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3604,8 +3223,6 @@ organization:NCH_LUSC_TissueSourceSite
 
 organization:NCH_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3631,8 +3248,6 @@ organization:NCH_OrganizationDomain
 
 organization:NCH_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3646,8 +3261,6 @@ organization:NCH_PRAD_TissueSourceSite
 
 organization:NCH_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3661,8 +3274,6 @@ organization:NCH_READ_TissueSourceSite
 
 organization:NCH_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3676,8 +3287,6 @@ organization:NCH_SKCM_TissueSourceSite
 
 organization:NCH_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3691,8 +3300,6 @@ organization:NCH_STAD_TissueSourceSite
 
 organization:NCH_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3706,8 +3313,6 @@ organization:NCH_THCA_TissueSourceSite
 
 organization:NCH_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3721,8 +3326,6 @@ organization:NCH_UCEC_TissueSourceSite
 
 organization:NCIUrologicOncologyBranch_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3736,8 +3339,6 @@ organization:NCIUrologicOncologyBranch_KIRC_TissueSourceSite
 
 organization:NCIUrologicOncologyBranch_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3774,8 +3375,6 @@ organization:Nucleus
 
 organization:OntarioInstituteForCancerResearchOttowa_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3789,8 +3388,6 @@ organization:OntarioInstituteForCancerResearchOttowa_LUAD_TissueSourceSite
 
 organization:OntarioInstituteForCancerResearchOttowa_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3814,8 +3411,6 @@ organization:OntarioInstituteForCancerResearchOttowa_OrganizationDomain
 
 organization:OntarioInstituteForCancerResearch_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3829,8 +3424,6 @@ organization:OntarioInstituteForCancerResearch_CESC_TissueSourceSite
 
 organization:OntarioInstituteForCancerResearch_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3844,8 +3437,6 @@ organization:OntarioInstituteForCancerResearch_COAD_TissueSourceSite
 
 organization:OntarioInstituteForCancerResearch_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3869,8 +3460,6 @@ organization:OntarioInstituteForCancerResearch_OrganizationDomain
 
 organization:OntarioInstituteForCancerResearch_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3884,8 +3473,6 @@ organization:OntarioInstituteForCancerResearch_READ_TissueSourceSite
 
 organization:OntarioInstituteForCancerResearch_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3947,8 +3534,6 @@ organization:PlatingCenter
 
 organization:PrinceCharlesHospital_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3962,8 +3547,6 @@ organization:PrinceCharlesHospital_LUAD_TissueSourceSite
 
 organization:PrinceCharlesHospital_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -3987,8 +3570,6 @@ organization:PrinceCharlesHospital_OrganizationDomain
 
 organization:PrincessMargaretHospital_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4002,8 +3583,6 @@ organization:PrincessMargaretHospital_LUAD_TissueSourceSite
 
 organization:PrincessMargaretHospital_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4055,8 +3634,6 @@ organization:Roche_OrganizationDomain
 
 organization:RoswellParkCancerInstitute_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4070,8 +3647,6 @@ organization:RoswellParkCancerInstitute_BLCA_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4085,8 +3660,6 @@ organization:RoswellParkCancerInstitute_BRCA_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4100,8 +3673,6 @@ organization:RoswellParkCancerInstitute_COAD_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_DLBC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4115,8 +3686,6 @@ organization:RoswellParkCancerInstitute_DLBC_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4130,8 +3699,6 @@ organization:RoswellParkCancerInstitute_GBM_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4145,8 +3712,6 @@ organization:RoswellParkCancerInstitute_KIRC_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4160,8 +3725,6 @@ organization:RoswellParkCancerInstitute_KIRP_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4175,8 +3738,6 @@ organization:RoswellParkCancerInstitute_LUAD_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4190,8 +3751,6 @@ organization:RoswellParkCancerInstitute_LUSC_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4215,8 +3774,6 @@ organization:RoswellParkCancerInstitute_OrganizationDomain
 
 organization:RoswellParkCancerInstitute_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4230,8 +3787,6 @@ organization:RoswellParkCancerInstitute_PRAD_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4245,8 +3800,6 @@ organization:RoswellParkCancerInstitute_READ_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4260,8 +3813,6 @@ organization:RoswellParkCancerInstitute_SKCM_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4275,8 +3826,6 @@ organization:RoswellParkCancerInstitute_THCA_TissueSourceSite
 
 organization:RoswellParkCancerInstitute_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4309,8 +3858,6 @@ organization:SelectBioMaterials
 
 organization:SingHealth_DLBC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4354,8 +3901,6 @@ organization:StJosephsMedicalCenterMaryland_OrganizationDomain
 
 organization:StJospehsHospitalPhoenix_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4369,8 +3914,6 @@ organization:StJospehsHospitalPhoenix_GBM_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4384,8 +3927,6 @@ organization:StJospehsMedicalCenterMaryland_COAD_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_DLBC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4399,8 +3940,6 @@ organization:StJospehsMedicalCenterMaryland_DLBC_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4414,8 +3953,6 @@ organization:StJospehsMedicalCenterMaryland_GBM_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4429,8 +3966,6 @@ organization:StJospehsMedicalCenterMaryland_HNSC_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4444,8 +3979,6 @@ organization:StJospehsMedicalCenterMaryland_KIRC_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4459,8 +3992,6 @@ organization:StJospehsMedicalCenterMaryland_KIRP_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4474,8 +4005,6 @@ organization:StJospehsMedicalCenterMaryland_LGG_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4489,8 +4018,6 @@ organization:StJospehsMedicalCenterMaryland_LIHC_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4504,8 +4031,6 @@ organization:StJospehsMedicalCenterMaryland_LUAD_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4519,8 +4044,6 @@ organization:StJospehsMedicalCenterMaryland_LUSC_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4534,8 +4057,6 @@ organization:StJospehsMedicalCenterMaryland_OV_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4549,8 +4070,6 @@ organization:StJospehsMedicalCenterMaryland_PRAD_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4564,8 +4083,6 @@ organization:StJospehsMedicalCenterMaryland_READ_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4579,8 +4096,6 @@ organization:StJospehsMedicalCenterMaryland_STAD_TissueSourceSite
 
 organization:StJospehsMedicalCenterMaryland_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4603,8 +4118,6 @@ organization:StanfordUniversity_Organization
 
 organization:SwedishNeurosciencesInstitute_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4618,8 +4131,6 @@ organization:SwedishNeurosciencesInstitute_GBM_TissueSourceSite
 
 organization:SwedishNeurosciencesInstitute_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4684,8 +4195,6 @@ organization:TCGACollectionSite_UCSFOvarianBank
 
 organization:TGen_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4699,8 +4208,6 @@ organization:TGen_BRCA_TissueSourceSite
 
 organization:TGen_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4714,8 +4221,6 @@ organization:TGen_CESC_TissueSourceSite
 
 organization:TGen_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4729,8 +4234,6 @@ organization:TGen_COAD_TissueSourceSite
 
 organization:TGen_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4744,8 +4247,6 @@ organization:TGen_GBM_TissueSourceSite
 
 organization:TGen_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4759,8 +4260,6 @@ organization:TGen_HNSC_TissueSourceSite
 
 organization:TGen_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4774,8 +4273,6 @@ organization:TGen_KIRC_TissueSourceSite
 
 organization:TGen_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4789,8 +4286,6 @@ organization:TGen_KIRP_TissueSourceSite
 
 organization:TGen_LAML_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4804,8 +4299,6 @@ organization:TGen_LAML_TissueSourceSite
 
 organization:TGen_LCLL_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4819,8 +4312,6 @@ organization:TGen_LCLL_TissueSourceSite
 
 organization:TGen_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4834,8 +4325,6 @@ organization:TGen_LGG_TissueSourceSite
 
 organization:TGen_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4849,8 +4338,6 @@ organization:TGen_LIHC_TissueSourceSite
 
 organization:TGen_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4862,8 +4349,6 @@ organization:TGen_LNNH_TissueSourceSite
 
 organization:TGen_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4877,8 +4362,6 @@ organization:TGen_LUAD_TissueSourceSite
 
 organization:TGen_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4892,8 +4375,6 @@ organization:TGen_LUSC_TissueSourceSite
 
 organization:TGen_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4907,8 +4388,6 @@ organization:TGen_OV_TissueSourceSite
 
 organization:TGen_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4922,8 +4401,6 @@ organization:TGen_PRAD_TissueSourceSite
 
 organization:TGen_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4937,8 +4414,6 @@ organization:TGen_READ_TissueSourceSite
 
 organization:TGen_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4952,8 +4427,6 @@ organization:TGen_SKCM_TissueSourceSite
 
 organization:TGen_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4967,8 +4440,6 @@ organization:TGen_STAD_TissueSourceSite
 
 organization:TGen_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -4982,8 +4453,6 @@ organization:TGen_THCA_TissueSourceSite
 
 organization:TGen_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5004,8 +4473,6 @@ organization:TheDataCoordinatingCenter
 
 organization:ThomasJeffersonUniversity_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5019,8 +4486,6 @@ organization:ThomasJeffersonUniversity_GBM_TissueSourceSite
 
 organization:ThomasJeffersonUniversity_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5052,13 +4517,13 @@ organization:TissueSourceSite
       rdfs:subClassOf organization:Organization ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty organization:collectionSiteId ;
-                owl:someValuesFrom organization:TissueSourceSiteID
+                owl:onProperty skos-xl:prefLabel ;
+                owl:someValuesFrom label:TCGACollectionSiteLabel
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty skos-xl:prefLabel ;
-                owl:someValuesFrom label:TCGACollectionSiteLabel
+                owl:onProperty organization:collectionSiteId ;
+                owl:someValuesFrom organization:TissueSourceSiteID
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -5067,13 +4532,13 @@ organization:TissueSourceSiteID
       rdfs:subClassOf organization:OrganizationPackage ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:onProperty dc:identifier ;
-                owl:someValuesFrom xsd:positiveInteger
+                owl:maxCardinality "1"^^xsd:int ;
+                owl:onProperty dc:identifier
               ] ;
       rdfs:subClassOf
               [ rdf:type owl:Restriction ;
-                owl:maxCardinality "1"^^xsd:int ;
-                owl:onProperty dc:identifier
+                owl:onProperty dc:identifier ;
+                owl:someValuesFrom xsd:positiveInteger
               ] ;
       dc:creator foaf:JimLomax .
 
@@ -5089,8 +4554,6 @@ organization:TorontoWesternHospital_OrganizationDomain
 
 organization:TorontoWesternHospital_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5108,8 +4571,6 @@ organization:TranslationalGenomicsResearchInstitute_Organization
 
 organization:UniversityHealthNetworkToronto_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5123,8 +4584,6 @@ organization:UniversityHealthNetworkToronto_CESC_TissueSourceSite
 
 organization:UniversityHealthNetworkToronto_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5148,8 +4607,6 @@ organization:UniversityHealthNetworkToronto_OrganizationDomain
 
 organization:UniversityHealthNetworkToronto_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5163,8 +4620,6 @@ organization:UniversityHealthNetworkToronto_THCA_TissueSourceSite
 
 organization:UniversityHealthNetworkToronto_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5178,8 +4633,6 @@ organization:UniversityHealthNetworkToronto_UCEC_TissueSourceSite
 
 organization:UniversityOfBarcelona_DBLC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5193,8 +4646,6 @@ organization:UniversityOfBarcelona_DBLC_TissueSourceSite
 
 organization:UniversityOfBarcelona_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5232,8 +4683,6 @@ organization:UniversityOfCaliforniaAtSantaCruz_GDAC
 
 organization:UniversityOfCaliforniaSanFrancisco_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5247,8 +4696,6 @@ organization:UniversityOfCaliforniaSanFrancisco_BRCA_TissueSourceSite
 
 organization:UniversityOfCaliforniaSanFrancisco_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5262,8 +4709,6 @@ organization:UniversityOfCaliforniaSanFrancisco_GBM_TissueSourceSite
 
 organization:UniversityOfCaliforniaSanFrancisco_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5285,8 +4730,6 @@ organization:UniversityOfCaliforniaSantaCruz_OrganizationDomain
 
 organization:UniversityOfFlorida_GBM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:GlioblastomaMultiforme_Glioblastoma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5300,8 +4743,6 @@ organization:UniversityOfFlorida_GBM_TissueSourceSite
 
 organization:UniversityOfFlorida_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5315,8 +4756,6 @@ organization:UniversityOfFlorida_LGG_TissueSourceSite
 
 organization:UniversityOfFlorida_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5350,8 +4789,6 @@ organization:UniversityOfHawaii_OrganizationDomain
 
 organization:UniversityOfHawaiii_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5365,8 +4802,6 @@ organization:UniversityOfHawaiii_CESC_TissueSourceSite
 
 organization:UniversityOfHawaiii_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5390,8 +4825,6 @@ organization:UniversityOfMiami_OrganizationDomain
 
 organization:UniversityOfMichigan_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5405,8 +4838,6 @@ organization:UniversityOfMichigan_COAD_TissueSourceSite
 
 organization:UniversityOfMichigan_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5430,8 +4861,6 @@ organization:UniversityOfMichigan_OrganizationDomain
 
 organization:UniversityOfMichigan_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5445,8 +4874,6 @@ organization:UniversityOfMichigan_READ_TissueSourceSite
 
 organization:UniversityOfNebraskaMedicalCenter_DBLC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:DiffuseLargeBCellLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5460,8 +4887,6 @@ organization:UniversityOfNebraskaMedicalCenter_DBLC_TissueSourceSite
 
 organization:UniversityOfNebraskaMedicalCenter_LNNH_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:NonHodgkinsLymphoma_LymphomicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5485,8 +4910,6 @@ organization:UniversityOfNebraskaMedicalCenter_OrganizationDomain
 
 organization:UniversityOfNorthCarolina_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5500,8 +4923,6 @@ organization:UniversityOfNorthCarolina_BLCA_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5515,8 +4936,6 @@ organization:UniversityOfNorthCarolina_BRCA_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5530,8 +4949,6 @@ organization:UniversityOfNorthCarolina_CESC_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5553,8 +4970,6 @@ organization:UniversityOfNorthCarolina_GCC
 
 organization:UniversityOfNorthCarolina_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5568,8 +4983,6 @@ organization:UniversityOfNorthCarolina_HNSC_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5583,8 +4996,6 @@ organization:UniversityOfNorthCarolina_KIRC_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5598,8 +5009,6 @@ organization:UniversityOfNorthCarolina_KIRP_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_LGG_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BrainLowerGradeGlioma_Glioma ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5613,8 +5022,6 @@ organization:UniversityOfNorthCarolina_LGG_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5628,8 +5035,6 @@ organization:UniversityOfNorthCarolina_LIHC_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5643,8 +5048,6 @@ organization:UniversityOfNorthCarolina_LUAD_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5668,8 +5071,6 @@ organization:UniversityOfNorthCarolina_OrganizationDomain
 
 organization:UniversityOfNorthCarolina_PAAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PancreaticAdenocarcinoma_PancreaticTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5683,8 +5084,6 @@ organization:UniversityOfNorthCarolina_PAAD_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5698,8 +5097,6 @@ organization:UniversityOfNorthCarolina_READ_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_STAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:StomachAdenocarcinoma_StomachTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5713,8 +5110,6 @@ organization:UniversityOfNorthCarolina_STAD_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5728,8 +5123,6 @@ organization:UniversityOfNorthCarolina_THCA_TissueSourceSite
 
 organization:UniversityOfNorthCarolina_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5743,8 +5136,6 @@ organization:UniversityOfNorthCarolina_UCEC_TissueSourceSite
 
 organization:UniversityOfPittsburg_BLCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BladderUrothelialCarcinoma_BladderTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5758,8 +5149,6 @@ organization:UniversityOfPittsburg_BLCA_TissueSourceSite
 
 organization:UniversityOfPittsburg_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5773,8 +5162,6 @@ organization:UniversityOfPittsburg_BRCA_TissueSourceSite
 
 organization:UniversityOfPittsburg_CESC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:CervicalSquamousCellCarcinoma_CervicalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5788,8 +5175,6 @@ organization:UniversityOfPittsburg_CESC_TissueSourceSite
 
 organization:UniversityOfPittsburg_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5803,8 +5188,6 @@ organization:UniversityOfPittsburg_COAD_TissueSourceSite
 
 organization:UniversityOfPittsburg_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5818,8 +5201,6 @@ organization:UniversityOfPittsburg_HNSC_TissueSourceSite
 
 organization:UniversityOfPittsburg_KIRC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RenalCelllClearCellCarcinoma_KidneyTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5833,8 +5214,6 @@ organization:UniversityOfPittsburg_KIRC_TissueSourceSite
 
 organization:UniversityOfPittsburg_KIRP_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PapillaryRenalCelllCarcinoma_KidneyCancer ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5848,8 +5227,6 @@ organization:UniversityOfPittsburg_KIRP_TissueSourceSite
 
 organization:UniversityOfPittsburg_LIHC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HepatocellularCarcinoma_LiverTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5863,8 +5240,6 @@ organization:UniversityOfPittsburg_LIHC_TissueSourceSite
 
 organization:UniversityOfPittsburg_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5878,8 +5253,6 @@ organization:UniversityOfPittsburg_LUAD_TissueSourceSite
 
 organization:UniversityOfPittsburg_LUSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungSmallCellCarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5893,8 +5266,6 @@ organization:UniversityOfPittsburg_LUSC_TissueSourceSite
 
 organization:UniversityOfPittsburg_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5918,8 +5289,6 @@ organization:UniversityOfPittsburg_OrganizationDomain
 
 organization:UniversityOfPittsburg_PAAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:PancreaticAdenocarcinoma_PancreaticTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5933,8 +5302,6 @@ organization:UniversityOfPittsburg_PAAD_TissueSourceSite
 
 organization:UniversityOfPittsburg_PRAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ProstateAdenocarcinoma_ProstateTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5948,8 +5315,6 @@ organization:UniversityOfPittsburg_PRAD_TissueSourceSite
 
 organization:UniversityOfPittsburg_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5963,8 +5328,6 @@ organization:UniversityOfPittsburg_READ_TissueSourceSite
 
 organization:UniversityOfPittsburg_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5978,8 +5341,6 @@ organization:UniversityOfPittsburg_SKCM_TissueSourceSite
 
 organization:UniversityOfPittsburg_THCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ThyroidCarcinoma_ThyroidTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -5993,8 +5354,6 @@ organization:UniversityOfPittsburg_THCA_TissueSourceSite
 
 organization:UniversityOfPittsburg_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6018,8 +5377,6 @@ organization:UniversityOfSydney_OrganizationDomain
 
 organization:UniversityOfSydney_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6033,8 +5390,6 @@ organization:UniversityOfSydney_SKCM_TissueSourceSite
 
 organization:UniversityOfUtah_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6058,8 +5413,6 @@ organization:UniversityOfUtah_OrganizationDomain
 
 organization:Vanderbuilt_HNSC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:HeadAndNeckSquamousCellCarcinoma_HeadAndNeckTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6083,8 +5436,6 @@ organization:Vanderbuilt_OrganizationDomain
 
 organization:WalterReed_BRCA_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:BreastInvasiveCarcinoma_BreastTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6108,8 +5459,6 @@ organization:WalterReed_OrganizationDomain
 
 organization:WashingtonUniversitySchoolOfMedicine_COAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:ColonAdenocarcinoma_ColonTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6139,8 +5488,6 @@ organization:WashingtonUniversitySchoolOfMedicine_GSC
 
 organization:WashingtonUniversitySchoolOfMedicine_LAML_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:AcuteMyeloidLeukemicTumor_LeukemicTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6154,8 +5501,6 @@ organization:WashingtonUniversitySchoolOfMedicine_LAML_TissueSourceSite
 
 organization:WashingtonUniversitySchoolOfMedicine_LUAD_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:LungAdenocarcinoma_LungTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6169,8 +5514,6 @@ organization:WashingtonUniversitySchoolOfMedicine_LUAD_TissueSourceSite
 
 organization:WashingtonUniversitySchoolOfMedicine_OV_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:OvarianSerousCystadenocarcinoma_OvarianTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6193,8 +5536,6 @@ organization:WashingtonUniversitySchoolOfMedicine_OrganizationDomain
 
 organization:WashingtonUniversitySchoolOfMedicine_READ_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:RectalAdenocarcinoma_RectalTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6208,8 +5549,6 @@ organization:WashingtonUniversitySchoolOfMedicine_READ_TissueSourceSite
 
 organization:WashingtonUniversitySchoolOfMedicine_UCEC_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:UterineCorpusEndometrioidCarcinoma_UterineTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
@@ -6233,8 +5572,6 @@ organization:Yale_OrganizationDomain
 
 organization:Yale_SKCM_TissueSourceSite
       rdf:type organization:TissueSourceSite ;
-      clincal:tumorClassification
-              clincal:SkinCutaneousMelanoma_SkinTumor ;
       label:architect foaf:MoSanyang ;
       label:creator foaf:JimLomax ;
       label:developer foaf:PradheepRaju , foaf:DawitGebremichael ;
